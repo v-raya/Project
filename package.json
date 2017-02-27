@@ -2,9 +2,14 @@
   "name": "rails-webpacker",
   "private": true,
   "dependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.16.1",
     "foreman": "^2.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
+  },
+  "scripts": {
+    "lint": "eslint app/;exit 0;"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -15,6 +20,11 @@
     "coffee-script": "^1.12.4",
     "compression-webpack-plugin": "^0.3.2",
     "css-loader": "^0.26.2",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
     "glob": "^7.1.1",
     "node-sass": "^4.5.0",
     "path-complete-extname": "^0.1.0",
