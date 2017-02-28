@@ -6,6 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 gem 'foreman'
+gem 'rspec-rails'
+gem 'rspec'
+gem 'activeresource', github: 'rails/activeresource', branch: 'master'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0.beta1'
@@ -42,6 +45,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.7.0'
   gem 'selenium-webdriver'
+  gem 'vcr'
+gem 'webmock'
 end
 
 group :development do
