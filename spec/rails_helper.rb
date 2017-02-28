@@ -16,6 +16,7 @@ Capybara.register_driver :selenium_chrome do |app|
 end
 
 Capybara.javascript_driver = :selenium_chrome
+ Capybara.run_server = true
 Capybara.app_host = "http://localhost:5000"
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
