@@ -3,10 +3,17 @@
   "private": true,
   "dependencies": {
     "babel-eslint": "^7.1.1",
+    "babel-preset-env": "^1.2.1",
     "eslint": "^3.16.1",
+    "file-loader": "^0.10.1",
     "foreman": "^2.0.0",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^3.0.2",
+    "redux": "^3.6.0",
+    "url-loader": "^0.5.8",
+    "whatwg-fetch": "^2.0.3"
   },
   "scripts": {
     "lint": "eslint app/;exit 0;"

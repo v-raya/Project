@@ -1,1 +1,1 @@
-BASE_CALS_URL = 'https://cals-mock-api.herokuapp.com/v1'
+BASE_CALS_URL = 'http://api.cs-cals.com/v1/'

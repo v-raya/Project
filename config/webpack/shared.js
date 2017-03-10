@@ -22,7 +22,10 @@ const config = {
                    }, {}
                    ),
 
-    output: { filename: '[name].js', path: path.resolve('public', distDir) },
+    output: {
+        filename: '[name].js',
+        path: path.resolve('public', distDir)
+    },
 
     module: {
         rules: [
@@ -34,7 +37,7 @@ const config = {
             options: {
                 presets: [
                     'react',
-                    ['latest', { es2015: { modules: false } }]
+                    ['env', { es2015: { modules: false } }]
                 ]
             }
         },
@@ -48,10 +51,18 @@ const config = {
             }
         },
         {
-            test: /\.sass$/,
+            test: /\.(sass|scss)$/,
             loader: ['style-loader', 'css-loader', 'sass-loader'],
         },
-        ]
+         {
+            test: /\.(png|jpg)$/,
+            loader: ['url-loader']
+        },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'file?name=app/assets/fonts/[name].[ext]'
+            }
+            ]
     },
 
     plugins: [
