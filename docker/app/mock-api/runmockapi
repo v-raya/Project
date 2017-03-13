@@ -1,0 +1,2 @@
+./stopmockapi
+docker run -td -p 3001:3001 --net dev-cs-cals --ip 192.168.213.101 --hostname dev-mockapi --name dev-mockapi dev-mockapi:latest

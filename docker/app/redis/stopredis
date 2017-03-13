@@ -1,0 +1,2 @@
+docker stop dev-redis
+docker rm dev-redis

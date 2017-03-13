@@ -1,0 +1,39 @@
+#!/bin/bash
+
+set -e
+
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
+    CREATE USER pguser;
+    CREATE DATABASE fas;
+    CREATE DATABASE lis;
+    CREATE DATABASE cwscms;
+    GRANT ALL PRIVILEGES ON DATABASE fas TO pguser;
+    GRANT ALL PRIVILEGES ON DATABASE lis TO pguser;
+    GRANT ALL PRIVILEGES ON DATABASE cwscms TO pguser;
+EOSQL
+
+#FAS
+psql -v -d fas -f /tmp/FASDDLStatements.sql -U pguser
+psql -v -d fas -f /tmp/FASDMLStatements.sql -U pguser
+
+#LIS
+psql -v -d lis -f /tmp/LISDDLStatements.sql -U pguser
+
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" <<-EOSQL
+    CREATE DATABASE pguser;
+    GRANT ALL PRIVILEGES ON DATABASE pguser TO pguser;
+EOSQL
+
+psql -v OM_ERROR_STOP=1 -d pguser -U pguser <<-EOSQL
+    CREATE SCHEMA fas;
+    CREATE SCHEMA lis;
+    CREATE SCHEMA cwscms;
+EOSQL
+
+#FAS
+psql "dbname=pguser options=--search_path=fas" -f /tmp/FASDDLStatements.sql -U pguser
+psql "dbname=pguser options=--search_path=fas" -f /tmp/FASDMLStatements.sql -U pguser
+
+#LIS
+psql "dbname=pguser options=--search_path=lis" -f /tmp/LISDDLStatements.sql -U pguser
+
