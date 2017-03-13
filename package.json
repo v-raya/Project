@@ -16,7 +16,10 @@
     "whatwg-fetch": "^2.0.3"
   },
   "scripts": {
-    "lint": "eslint app/;exit 0;"
+    "lint": "eslint app/;exit 0;",
+    "spec":"rspec spec",
+    "compile-webpack":"rails -g webpacker:compile",
+    "dev":"./bin/server"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
