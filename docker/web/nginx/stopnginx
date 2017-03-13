@@ -1,0 +1,2 @@
+docker stop dev-nginx
+docker rm dev-nginx

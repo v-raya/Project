@@ -1,0 +1,4 @@
+$HOME/db/postgres/runpostgres
+$HOME/app/redis/runredis
+$HOME/app/ruby/runruby
+$HOME/web/nginx/runnginx

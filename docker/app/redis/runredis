@@ -1,0 +1,2 @@
+./stopredis
+docker run -itd -p 6379:6379 --net dev-cs-cals --ip 192.168.213.150 --hostname dev-redis --name dev-redis dev-redis:latest
