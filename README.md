@@ -32,7 +32,7 @@ to view the facilities demo webapp, go to
 ### Karma details/instructions
 TODO
 
- ### Rspec details/instructions
+### Rspec details/instructions
  rspec tests live in the root spec/ folder. you can run all tests with either of the following commands
  
  `npm run spec`
