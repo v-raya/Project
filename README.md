@@ -14,7 +14,11 @@ Make sure XCode is installed.
 
 ## initialization
 
-run the command 'npm run dev' from the root folder. This will perform the following actions:
+run the command:
+
+`npm run dev`
+
+from the root folder. This will perform the following actions:
  - `bundle install`
  - `npm install `
  - `compiles webpack assets`
