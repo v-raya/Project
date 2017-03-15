@@ -22,7 +22,8 @@
     "lint": "eslint app/;exit 0;",
     "spec": "rspec spec",
     "compile-webpack": "rails -g webpacker:compile",
-    "dev": "./bin/server"
+    "dev": "./bin/server",
+    "karma": "cd config;karma start karma.conf.js; open ../reports/karma_test_results.html;"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
@@ -43,7 +44,9 @@
     "jasmine-core": "*",
     "karma": "^1.5.0",
     "karma-chrome-launcher": "^2.0.0",
+    "karma-htmlfile-reporter": "^0.3.5",
     "karma-jasmine": "^1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-webpack": "^2.0.2",
     "node-sass": "^4.5.0",
