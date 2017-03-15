@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 var TestUtils = require('react-dom/lib/ReactTestUtils');
-var App = require('./../../../app/javascript/facility/App.js');
-
+import App from './../../../app/javascript/facility/App';
 
 describe('check App Component loaded', function () {
-    it('render the component', function () {
-       var a = 1
-     //   var element = TestUtils.renderIntoDocument(<App />);
-     //   var h1_Tag = ReactDOM.findDOMNode(element);
-     //   expect(h1_Tag.tagName).toEqual("DIV");
-       expect(a).toEqual(1);
-    });
+  it('render the component', function () {
+    var div = document.createElement('div');
+    document.documentElement.appendChild(div);
+    const renderer = TestUtils.createRenderer();
+    renderer.render(<App />);
+    const result = renderer.getRenderOutput();
+    expect (result.type).toBe('div');
+//TODO: more test expect on results 
+  });
 });
