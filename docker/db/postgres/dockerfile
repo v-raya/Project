@@ -1,0 +1,5 @@
+FROM postgres
+
+COPY scripts/* /tmp/
+
+COPY init-user-db.sh /docker-entrypoint-initdb.d/

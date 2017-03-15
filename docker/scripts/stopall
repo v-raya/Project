@@ -1,0 +1,4 @@
+$HOME/db/postgres/stoppostgres
+$HOME/app/redis/stopredis
+$HOME/app/ruby/stopruby
+$HOME/web/nginx/stopnginx
