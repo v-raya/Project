@@ -4,11 +4,13 @@ A React front end with a Rails backend serving up assets through webpacker for t
 
 ## System 
 Ruby version: `2.3.1`
+
 Rails version: `5.0.1`
 
 ## Configuration 
 Make sure homebrew is up to date and xcode is installed. 
-Brew update 
+`Brew update` 
+
 Make sure XCode is installed. 
 `xcode-select --install`
 
