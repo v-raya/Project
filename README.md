@@ -31,10 +31,17 @@ The App is running on
 to view the facilities demo webapp, go to
 `localhost:5000/facilities` .
 
+assets compiled via webpack live on:
+
+`localhost:8080`
+
 ## Testing 
 
 ### Karma details/instructions
-TODO
+To run the karma tests, from the root folder run:
+`npm run karma`
+
+this command will run the automated tests and open a browser with the results. 
 
 ### Rspec details/instructions
  rspec tests live in the root spec/ folder. you can run all tests with either of the following commands
