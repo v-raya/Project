@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore .env file containing environment variables
+.env
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -19,3 +22,9 @@
 .byebug_history
 /public/packs
 /node_modules
+
+# ignore mac folders
+.DS_Store
+
+#ignore rubyMine Files
+/.idea/*
