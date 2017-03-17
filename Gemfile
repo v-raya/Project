@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Environment variables configuration
+gem 'dotenv-rails', '~> 2.2', groups: [:development, :test]
+
 gem 'foreman'
 gem 'rspec-rails'
 gem 'rspec'
@@ -48,7 +51,7 @@ group :development, :test do
   gem 'capybara', '~> 2.7.0'
   gem 'selenium-webdriver'
   gem 'vcr'
-gem 'webmock'
+  gem 'webmock'
 end
 
 group :development do

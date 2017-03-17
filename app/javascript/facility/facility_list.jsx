@@ -6,7 +6,7 @@ export default class FacilityList extends React.Component {
 
     render() {
 
-        let facility = "/facility/";
+        let facility = "/facilities/";
         let string = String(this.props.fac_nbr);
         let url = facility.concat(string);
         return (
