@@ -6,13 +6,13 @@ RSpec.feature 'Facilities', js: true do
         visit '/facilities'
         expect(page).to have_text('MARCH, AMY CFH')
     end
-    scenario 'click into facility show from list of facilities' do 
+    scenario 'click into facility show from list of facilities' do
         visit '/facilities'
         click_link("MARCH, AMY CFH")
         expect(page).to have_text('MARCH, AMY CFH')
     end
 
-    scenario 'refresh facility' do 
+    scenario 'refresh facility' do
         visit '/facilities'
         click_link("MARCH, AMY CFH")
         expect(page).to have_text('MARCH, AMY CFH')
@@ -20,5 +20,3 @@ RSpec.feature 'Facilities', js: true do
         expect(page).to have_text('MARCH, AMY CFH')
     end
 end
-
-

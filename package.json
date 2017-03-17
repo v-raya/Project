@@ -21,10 +21,11 @@
   },
   "scripts": {
     "lint": "eslint app/;exit 0;",
-    "spec": "rspec spec",
+    "spec": "rspec spec; open reports/rspec_test_results.txt;",
     "compile-webpack": "rails -g webpacker:compile",
     "dev": "./bin/server",
-    "karma": "cd config;karma start karma.conf.js; open ../reports/karma_test_results.html;"
+    "karma": "cd config;karma start karma.conf.js; open ../reports/karma_test_results.html;",
+    "tests": "npm run spec; npm run karma;"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
