@@ -68,6 +68,12 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+anchorate@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/anchorate/-/anchorate-1.1.0.tgz#2ef6fa48a43b989c31e7e6856e3618e14da5a28d"
+  dependencies:
+    css.escape "^1.5.0"
+
 ansi-escapes@^1.1.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
@@ -1490,6 +1496,10 @@ css-selector-tokenizer@^0.7.0:
     cssesc "^0.1.0"
     fastparse "^1.1.1"
     regexpu-core "^1.0.0"
+
+css.escape@^1.5.0:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/css.escape/-/css.escape-1.5.1.tgz#42e27d4fa04ae32f931a4b4d4191fa9cddee97cb"
 
 cssesc@^0.1.0:
   version "0.1.0"
@@ -3076,7 +3086,13 @@ karma-htmlfile-reporter@^0.3.5:
   dependencies:
     xmlbuilder "3.1.0"
 
-karma-jasmine@^1.1.0:
+karma-jasmine-html-reporter@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/karma-jasmine-html-reporter/-/karma-jasmine-html-reporter-0.2.2.tgz#48a8e5ef18807617ee2b5e33c1194c35b439524c"
+  dependencies:
+    karma-jasmine "^1.0.2"
+
+karma-jasmine@^1.0.2, karma-jasmine@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/karma-jasmine/-/karma-jasmine-1.1.0.tgz#22e4c06bf9a182e5294d1f705e3733811b810acf"
 
