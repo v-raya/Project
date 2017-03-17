@@ -23,7 +23,8 @@
     "lint": "eslint app/;exit 0;",
     "spec": "rspec spec; open reports/rspec_test_results.txt;",
     "compile-webpack": "rails -g webpacker:compile",
-    "dev": "./bin/server",
+    "dev-build": "./bin/server",
+    "dev":"foreman start -f Procfile.dev;",
     "karma": "cd config;karma start karma.conf.js; open ../reports/karma_test_results.html;",
     "tests": "npm run spec; npm run karma;"
   },
