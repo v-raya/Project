@@ -56,6 +56,11 @@ class FacilitiesController < ApplicationController
       redirect_to action: 'index'
     end
 
+   def search
+     @facilities = Facility.search_results(params[:query])
+     json_response @facilities
+   end
+
     private
     def find_facility
       @facility = Facility.find params[:id]
