@@ -47,6 +47,12 @@ body {
   border-radius: 5px;
   margin-bottom: 20px;
 }
+.facility-list .list_block h1 {
+  font-size: 28px;
+}
+.facility-list .list_block > div {
+  padding: 0px;
+}
 .facility-address .map_image .map{
   height: 188px;
 }
@@ -141,28 +147,5 @@ body {
 .facility-address .last_visit .address_street {
   margin-bottom: 52px;
 }
-@media only screen and (max-width: 787px) {
-  .facility_blocks > div {
-    margin-bottom: 20px;
-  }
-  .facility-address .inner_block:last-child {
-    padding: 20px 20px 20px 15px;
-  }
-  .visit_reason, .last_visit {
-    padding-left: 0px;
-  }
-  .facility-address-block > div {
-    padding-left: 0px;
-  }
-  .postal_address {
-    margin-bottom: 0px;
-  }
-  .visit_reason p:last-child {
-    margin-bottom: 0px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 840px) {
-  .facility-details .inner_block{
-    height: 263px;
-  }
-}
+
+@import "mobile/facility_mobile.scss";
