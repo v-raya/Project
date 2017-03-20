@@ -10,6 +10,10 @@
 # Ignore .env file containing environment variables
 .env
 
+# Ignore karma test reports
+/reports
+/reports/*
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
