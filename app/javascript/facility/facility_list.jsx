@@ -15,7 +15,7 @@ export default class FacilityList extends React.Component {
                     <h1>
                         <Link to={{ pathname: url, state: { data: this.props } }}> {this.props.fac_name}</Link>
                     </h1>
-                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                         <div className="inner_block">
                             <p>NAME OF LICENSEE/ PARENTS</p>
                             <p>{this.props.fac_licensee_name}</p>
