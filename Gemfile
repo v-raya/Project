@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Environment variables configuration
-gem 'dotenv-rails', '~> 2.2', groups: [:development, :test]
+gem 'dotenv-rails', '~> 2.2', groups: [:development, :test, :aws_dev]
 
 gem 'foreman'
 gem 'rspec-rails'
