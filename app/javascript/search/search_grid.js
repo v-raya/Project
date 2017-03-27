@@ -6,7 +6,7 @@ export default class Search_grid extends React.Component {
             <div className="grid_view col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div className="grid_view_inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="col-xs-12 col-sm-1 col-md-1 col-lg-1">
-                        <img src="#" />
+                        <img src="http://placehold.it/80x70" />
                     </div>
                     <div className="col-xs-12 col-sm-11 col-md-11 col-lg-11">
                         <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">

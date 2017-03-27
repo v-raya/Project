@@ -8,6 +8,9 @@ export default class Search_input extends React.Component {
             <div className="search_input col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div className="field_input col-xs-12 col-sm-11 col-md-11 col-lg-11">
                     <div className="input_data col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                        <div>
+                            <span>County</span>
+                        </div>
                         <div className="dropdown">
                             <button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 Orange County
@@ -23,6 +26,9 @@ export default class Search_input extends React.Component {
                         </div>
                     </div>
                     <div className="input_data col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                        <div>
+                            <span>Facility Type</span>
+                        </div>
                         <div className="dropdown">
                             <button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 RFA
@@ -38,17 +44,26 @@ export default class Search_input extends React.Component {
                         </div>
                     </div>
                     <div className="input_data col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                        <div>
+                            <span>Facility ID #</span>
+                        </div>
                         <input type="text" className="" placeholder="Enter Facility ID #" aria-describedby="sizing-addon1" />
                     </div>
                     <div className="input_data col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <div>
+                            <span>Facility Name</span>
+                        </div>
                         <input type="text" className="form-control" placeholder="Enter Facility Name" aria-describedby="sizing-addon1" />
                     </div>
                     <div className="input_data col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <div>
+                            <span>Facility Street Address</span>
+                        </div>
                         <input type="text" className="form-control" placeholder="Enter Facility Address" aria-describedby="sizing-addon1" />
                     </div>
                 </div>
                 <div className="field_search col-xs-12 col-sm-1 col-md-1 col-lg-1">
-                    <div className="input_data col-xs-12 col-sm-1 col-md-1 col-lg-1">
+                    <div className="search_block">
                         <button>Search</button>
                     </div>
                 </div>
