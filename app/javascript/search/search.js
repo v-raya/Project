@@ -23,12 +23,12 @@ export default class Search extends React.Component {
                     <Search_input />
                 </div>
                 <div className="search-toggle col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div className="col-xs-12 col-sm-7 col-md-7 col-lg-7">
-                        <span>Search Results: 1-6</span>
-                        <span>County: Orange</span>
-                        <span>Search Results: 1-6</span>
+                    <div className="search_details col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                        <p>Search Results: <span>1-6</span></p>
+                        <p>County: <span>Orange</span></p>
+                        <p>Facility Name: <span>Sunshine</span></p>
                     </div>
-                    <div className="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                    <div className="toggle_result col-xs-12 col-sm-5 col-md-5 col-lg-5">
                         <div className="pull-right">
                             <img className="navbar-brand" onClick={this.handleToggle} src="http://placehold.it/30x30" />
                             <img className="navbar-brand" onClick={this.handleToggle} src="http://placehold.it/30x30" />
