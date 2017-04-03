@@ -17,11 +17,11 @@ Make sure XCode is installed.
 ## initialization
 
 run the command:
-`npm run dev`
+`npm run dev-build`
 
 from the root folder. This will perform the following actions:
  - `bundle install`
- - `npm install `
+ - `yarn install packages`
  - `compiles webpack assets`
  - `starts assets`
  - `starts rails server`
@@ -34,6 +34,16 @@ to view the facilities demo webapp, go to
 
 assets compiled via webpack live on:
 `localhost:8080`
+
+## REDIS
+NOTE: it is also important to also have redis server running. Start server with 
+`redis-server`
+
+if redis is not installed, enter the following command from terminal:
+`brew install redis `
+
+this command will install all necessary redis files. 
+
 
 ## Testing
 
