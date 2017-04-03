@@ -37,13 +37,22 @@ assets compiled via webpack live on:
 
 ## Testing
 
-### Karma details/instructions
+to run linting on the project:
+
+`npm run lint`
+
+### run all tests instructions
+to run all tests and output code coverage:
+
+`npm run all-tests`
+
+### Karma tests instructions
 To run the karma tests, from the root folder run:
 `npm run karma`
 
 this command will run the automated tests and open a browser with the results.
 
-### Rspec details/instructions
+### Rspec tests instructions
  rspec tests live in the root spec/ folder. you can run all tests with either of the following commands
 
  `npm run spec`
