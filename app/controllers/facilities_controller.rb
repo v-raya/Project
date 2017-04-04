@@ -1,8 +1,9 @@
 class FacilitiesController < ApplicationController
   include Response
+  include FacilitiesHelper
 
   def index
-    @facilities = Facility.all
+    @facilities = fetch_facilities
     respond_to do |format|
       format.html
       format.js
