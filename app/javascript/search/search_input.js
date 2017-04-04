@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {FacilityTypes, CountyList} from '../constants/constants'
 
 
 export default class Search_input extends React.Component {
     render () {
+        const facilityIterate = FacilityTypes.map((facility) =>
+            <option key={facility.toString()}>{facility}</option>
+        );
+        const countyIterate = CountyList.map((county) =>
+            <option key={county.toString()}>{county}</option>
+        );
         return (
             <div className="search_input col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div className="field_input col-xs-12 col-sm-11 col-md-11 col-lg-11">
@@ -13,9 +20,7 @@ export default class Search_input extends React.Component {
                         </div>
                         <div className="styled-select county">
                             <select>
-                                <option>Orange County</option>
-                                <option>San Mateo</option>
-                                <option>San Fransisco</option>
+                                {countyIterate}
                             </select>
                             <span className="glyphicon glyphicon-triangle-bottom"></span>
                         </div>
@@ -26,8 +31,7 @@ export default class Search_input extends React.Component {
                         </div>
                         <div className="styled-select county">
                             <select>
-                                <option>RFA</option>
-                                <option>Group</option>
+                                {facilityIterate}
                             </select>
                             <span className="glyphicon glyphicon-triangle-bottom"></span>
                         </div>
