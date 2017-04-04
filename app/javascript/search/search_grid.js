@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 export default class Search_grid extends React.Component {
     render () {
-        return (
-            <div className="grid_view col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        let searchResults= this.props.searchResults;
+        let gridResult = searchResults.map((result) => {
+            return (
                 <div className="grid_view_inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div className="col-xs-12 col-sm-1 col-md-1 col-lg-1">
                         <img src="http://placehold.it/80x70" />
@@ -11,33 +12,34 @@ export default class Search_grid extends React.Component {
                     <div className="col-xs-12 col-sm-11 col-md-11 col-lg-11">
                         <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <p>
-                                Facility Name <span>Sunshine House</span>
+                                Facility Name <span>{result.fac_name}</span>
                             </p>
                             <p>
-                                Facility ID/Approval # <span>193600031</span>
+                                Facility ID/Approval # <span>{result.fac_nbr}</span>
                             </p>
                             <p>
-                                Facility Type <span>RFA</span>
+                                Facility Type <span>{result.status}</span>
                             </p>
                             <p>
-                                Status <span>Active</span>
+                                Status <span>{result.status}</span>
                             </p>
                             <p>
-                                Licensee Name <span>Mary jone</span>
+                                Licensee Name <span>{result.fac_licensee_name}</span>
                             </p>
                         </div>
                         <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <p>
-                                Facility Address <span>Sunshine House</span>
+                                Facility Address <span>{result.fac_res_street_addr},
+                                {result.fac_res_city}, {result.fac_res_state} {' ' + result.fac_res_zip_code}</span>
                             </p>
                             <p>
-                                County <span>193600031</span>
+                                County <span>{result.county}</span>
                             </p>
                             <p>
-                                Facility Phone Number <span>RFA</span>
+                                Facility Phone Number <span>{result.facility_telephone}</span>
                             </p>
                             <p>
-                                Facility Email <span>Active</span>
+                                Facility Email <span>{result.fac_email_address ? result.fac_email_address : 'N/A' }</span>
                             </p>
                         </div>
                         <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -45,11 +47,16 @@ export default class Search_grid extends React.Component {
                                 Assigned Worker <span>Tom Smith</span>
                             </p>
                             <p>
-                                Assigned Worker Phone# <span>123-123-1234</span>
+                                Assigned Worker Phone# <span>N/A</span>
                             </p>
                         </div>
                     </div>
                 </div>
+            )
+        });
+        return (
+            <div className="grid_view col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    {gridResult}
             </div>
         )
     }

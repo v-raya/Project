@@ -3,6 +3,24 @@ import ReactDOM from 'react-dom';
 
 export default class Search_list extends React.Component {
     render() {
+        let searchResult = this.props.searchResults;
+        const resultTable = searchResult.map((result) => {
+            return (
+                <tr>
+                    <td>{result.fac_name}</td>
+                    <td>{result.fac_nbr}</td>
+                    <td>{result.type}</td>
+                    <td>{result.status}</td>
+                    <td>{result.fac_licensee_name}</td>
+                    <td>{result.fac_res_street_addr},
+                        {result.fac_res_city}, {result.fac_res_state} {' ' + result.fac_res_zip_code}</td>
+                    <td>{result.county}</td>
+                    <td>{result.facility_telephone}</td>
+                    <td>{result.fac_email_address}</td>
+                    <td>{result.assigned_worker}<p>Phone: <span>N/A</span></p></td>
+                </tr>
+            )
+        });
         return (
             <div>
                 <table className="table">
@@ -21,71 +39,7 @@ export default class Search_list extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Facility Name 1</td>
-                            <td>1234561</td>
-                            <td>RFA</td>
-                            <td>Active</td>
-                            <td>Mary Jones</td>
-                            <td>1234 Pleasant Street,
-                                Smallville, CA 08765</td>
-                            <td>Los Angeles</td>
-                            <td>123-123-1234</td>
-                            <td>lovinghome@gmail.com</td>
-                            <td>Tom Smith<p>Phone: <span>123-123-1234</span></p></td>
-                        </tr>
-                        <tr>
-                            <td>Facility Name 2</td>
-                            <td>1234561</td>
-                            <td>RFA</td>
-                            <td>Active</td>
-                            <td>Mary Jones</td>
-                            <td>1234 Pleasant Street,
-                                Smallville, CA 08765</td>
-                            <td>Los Angeles</td>
-                            <td>123-123-1234</td>
-                            <td>lovinghome@gmail.com</td>
-                            <td>Tom Smith<p>Phone: <span>123-123-1234</span></p></td>
-                        </tr>
-                        <tr>
-                            <td>Facility Name 3</td>
-                            <td>1234561</td>
-                            <td>RFA</td>
-                            <td>Active</td>
-                            <td>Mary Jones</td>
-                            <td>1234 Pleasant Street,
-                                Smallville, CA 08765</td>
-                            <td>Los Angeles</td>
-                            <td>123-123-1234</td>
-                            <td>lovinghome@gmail.com</td>
-                            <td>Tom Smith<p>Phone: <span>123-123-1234</span></p></td>
-                        </tr>
-                        <tr>
-                            <td>Facility Name 4</td>
-                            <td>1234561</td>
-                            <td>RFA</td>
-                            <td>Active</td>
-                            <td>Mary Jones</td>
-                            <td>1234 Pleasant Street,
-                                Smallville, CA 08765</td>
-                            <td>Los Angeles</td>
-                            <td>123-123-1234</td>
-                            <td>lovinghome@gmail.com</td>
-                            <td>Tom Smith<p>Phone: <span>123-123-1234</span></p></td>
-                        </tr>
-                        <tr>
-                            <td>Facility Name 5</td>
-                            <td>1234561</td>
-                            <td>RFA</td>
-                            <td>Active</td>
-                            <td>Mary Jones</td>
-                            <td>1234 Pleasant Street,
-                                Smallville, CA 08765</td>
-                            <td>Los Angeles</td>
-                            <td>123-123-1234</td>
-                            <td>lovinghome@gmail.com</td>
-                            <td>Tom Smith <p>Phone: <span>123-123-1234</span></p></td>
-                        </tr>
+                        {resultTable}
                     </tbody>
                 </table>
             </div>
