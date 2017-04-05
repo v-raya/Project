@@ -30,7 +30,7 @@ RUN cd /var/www/cals
 RUN bundle install
 
 #run node package installer
-RUN npm install
+RUN yarn install
 
 # compile assets
 RUN rails assets:precompile
