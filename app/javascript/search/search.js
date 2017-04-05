@@ -13,6 +13,8 @@ export default class Search extends React.Component {
         super(props);
         this.state = {
             isToggled : true,
+            inputData : ' ',
+            fromResponse : false,
             searchData : []
         };
 
@@ -26,6 +28,7 @@ export default class Search extends React.Component {
     }
     addSearchInput (DataSearch) {
         var fac_nbr = DataSearch;
+        this.state.inputData = DataSearch;
         fetch(`/facilities/search?query=${fac_nbr}`, {
             mode: "no-cors",
             method: "GET",
@@ -38,13 +41,13 @@ export default class Search extends React.Component {
         .then((response) => {
             console.log(response);
             return this.setState({
-                searchData: response,
-                fromResponse : true
+                searchData: response
             });
 
         })
         .catch(error => {
             console.log('request failed', error);
+            return this.setState({fromResponse : true});
         });
     }
     render() {
@@ -58,7 +61,7 @@ export default class Search extends React.Component {
                 <div className="result-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     {this.state.isToggled && <Search_grid searchResults={this.state.searchData}/>}
                     {!this.state.isToggled && <Search_list searchResults={this.state.searchData}/>}
-                    {!searchArray && this.state.fromResponse && <Search_notfound />}
+                    {(this.state.fromResponse && !searchArray) && <Search_notfound />}
                 </div>
             </div>
         )

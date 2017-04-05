@@ -7,7 +7,7 @@ import search_off from './search_off.png'
 export default class Search_input extends React.Component {
     sendSearchInput (event) {
         event.preventDefault();
-        let finalQuery = this.refs.facilityId.value + ',' + this.refs.facilityHome.value;
+        let finalQuery = (this.refs.facilityHome.value.length == 0) ? this.refs.facilityId.value : this.refs.facilityId.value + ',' + this.refs.facilityHome.value;
         this.props.sendSearchInput(finalQuery);
         this.refs.facilityId.value = '';
         this.refs.facilityHome.value = '';
@@ -28,7 +28,7 @@ export default class Search_input extends React.Component {
                                 <span>County</span>
                             </div>
                             <div className="styled-select county">
-                                <select>
+                                <select disabled>
                                     {countyIterate}
                                 </select>
                                 <span className="glyphicon glyphicon-triangle-bottom"></span>
@@ -39,7 +39,7 @@ export default class Search_input extends React.Component {
                                 <span>Facility Type</span>
                             </div>
                             <div className="styled-select county">
-                                <select>
+                                <select disabled>
                                     {facilityIterate}
                                 </select>
                                 <span className="glyphicon glyphicon-triangle-bottom"></span>
