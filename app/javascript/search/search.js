@@ -3,9 +3,8 @@ import Search_grid from './search_grid';
 import Search_input from './search_input';
 import Search_list from './search_list';
 import Search_notfound from './search_notfount';
-import Response from './search_result';
 import SearchDetails from './search_Data';
-
+import 'whatwg-fetch'
 
 
 export default class Search extends React.Component {
