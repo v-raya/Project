@@ -7,7 +7,10 @@ import search_off from './search_off.png'
 export default class Search_input extends React.Component {
     sendSearchInput (event) {
         event.preventDefault();
-        this.props.sendSearchInput(this.refs.facilityInput.value);
+        let finalQuery = this.refs.facilityId.value + ',' + this.refs.facilityHome.value;
+        this.props.sendSearchInput(finalQuery);
+        this.refs.facilityId.value = '';
+        this.refs.facilityHome.value = '';
     }
     render () {
         const facilityIterate = FacilityTypes.map((facility) =>
@@ -46,13 +49,13 @@ export default class Search_input extends React.Component {
                             <div className="input_lable">
                                 <span>Facility ID #</span>
                             </div>
-                            <input ref="facilityInput" type="text" className="form-control type_number" placeholder="Enter Facility ID #" />
+                            <input ref="facilityId" type="number" className="form-control type_number" placeholder="Enter Facility ID #" />
                         </div>
                         <div className="input_data col-xs-12 col-sm-3 col-md-3 col-lg-3">
                             <div className="input_lable">
                                 <span>Facility Name</span>
                             </div>
-                            <input type="text" className="form-control" placeholder="Enter Facility Name" aria-describedby="sizing-addon1" />
+                            <input ref="facilityHome" type="text" className="form-control" placeholder="Enter Facility Name" aria-describedby="sizing-addon1" />
                         </div>
                         <div className="input_data col-xs-12 col-sm-3 col-md-3 col-lg-3">
                             <div className="input_lable">
