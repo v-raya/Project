@@ -1,10 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
-import 'whatwg-fetch'
-
-// import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import actions from './redux/actions';
+import 'whatwg-fetch';
 import FacilityList from './facility_list.jsx';
 
 export default class App extends React.Component {

@@ -12,7 +12,14 @@ RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
 # install nodejs and npm
 RUN apt-get install -y nodejs
 
-RUN mkdir /var/www; cd /var/www; 
+# get latest yarn repo
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+# install yarn
+RUN apt-get update && apt-get install yarn
+
+RUN mkdir /var/www; cd /var/www;
 
 # clone CALS
 RUN git clone -b aws_dev https://github.com/ca-cwds/CALS.git /var/www/cals
@@ -23,12 +30,17 @@ RUN cd /var/www/cals
 RUN bundle install
 
 #run node package installer
-RUN npm install
+RUN yarn install
 
-# build assets using webpack
-RUN npm run build-no-watch
+# compile assets
+RUN rails assets:precompile
 
+#### ENV variables
+
+# cals api url
 ENV BASE_CALS_API_URL=http://devmockapi1.cs-cals.com:3001/v1
+# cals redis host
+ENV REDIS_SERVER_HOST=192.168.213.150
 
 # run rails server
 CMD rails server -e aws_dev -b 192.168.213.100

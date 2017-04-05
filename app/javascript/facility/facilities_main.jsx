@@ -1,14 +1,16 @@
 import React from 'react';
 import FacilityDetails from './facility_details.jsx';
 import FacilityAddress from './facility_address.jsx';
-import logo from "./logo.jpg"
-import 'whatwg-fetch'
-import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
+import logo from "./logo.jpg";
+import 'whatwg-fetch';
+import { Router, Route, browserHistory } from 'react-router';
 
 
 export default class Facilities extends React.Component {
   componentDidMount() {
+
     var fac_nbr = parseInt(this.props.params.fac_nbr);
+
        fetch(`/facilities/${fac_nbr}`, {
            mode: "no-cors",
            method: "GET",

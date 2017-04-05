@@ -1,5 +1,5 @@
 #!/bin/bash -i
 bundle install
-npm install 
+yarn install
 rails webpacker:compile
 bundle exec foreman start -f Procfile.dev
