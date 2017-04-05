@@ -2,7 +2,11 @@ import React from 'react'
 import Search_grid from './search_grid';
 import Search_input from './search_input';
 import Search_list from './search_list';
-import Response from './search_result'
+import Search_notfound from './search_notfount';
+import Response from './search_result';
+import SearchDetails from './search_Data';
+
+
 
 export default class Search extends React.Component {
     constructor (props) {
@@ -33,7 +37,10 @@ export default class Search extends React.Component {
             response => response.json())
         .then((response) => {
             console.log(response);
-            return this.setState({ searchData: response});
+            return this.setState({
+                searchData: response,
+                fromResponse : true
+            });
 
         })
         .catch(error => {
@@ -41,27 +48,17 @@ export default class Search extends React.Component {
         });
     }
     render() {
+        let searchArray = this.state.searchData[0] ?  this.state.searchData : false;
         return (
             <div className="search_page">
                 <div className="search-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <Search_input sendSearchInput={this.addSearchInput.bind(this)}/>
                 </div>
-                <div className="search-toggle col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div className="search_details col-xs-12 col-sm-7 col-md-7 col-lg-7">
-                        <p>Search Results: <span>1-6</span></p>
-                        <p>County: <span>Orange</span></p>
-                        <p>Facility Name: <span>Sunshine</span></p>
-                    </div>
-                    <div className="toggle_result col-xs-12 col-sm-5 col-md-5 col-lg-5">
-                        <div className="pull-right">
-                            <img className="navbar-brand" onClick={this.handleToggle} src="http://placehold.it/30x30" />
-                            <img className="navbar-brand" onClick={this.handleToggle} src="http://placehold.it/30x30" />
-                        </div>
-                    </div>
-                </div>
+                {searchArray && <SearchDetails {...this}/>}
                 <div className="result-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     {this.state.isToggled && <Search_grid searchResults={this.state.searchData}/>}
                     {!this.state.isToggled && <Search_list searchResults={this.state.searchData}/>}
+                    {!searchArray && this.state.fromResponse && <Search_notfound />}
                 </div>
             </div>
         )
