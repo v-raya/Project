@@ -8,7 +8,9 @@ import { Router, Route, browserHistory } from 'react-router';
 
 export default class Facilities extends React.Component {
   componentDidMount() {
-    var fac_nbr = parseInt(this.props.params.fac_nbr)
+
+    var fac_nbr = parseInt(this.props.params.fac_nbr);
+
        fetch(`/facilities/${fac_nbr}`, {
            mode: "no-cors",
            method: "GET",
