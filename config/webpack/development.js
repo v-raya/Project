@@ -8,6 +8,10 @@ const sharedConfig = require('./shared.js')
 module.exports = merge(sharedConfig.config, {
   devtool: 'sourcemap',
 
+  devServer: {
+    port: 5080
+  },
+
   stats: {
     errorDetails: true
   },
