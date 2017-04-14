@@ -1,17 +1,17 @@
-Which User story does this relate to?
+#### Which User story does this relate to?
+-
 
+#### Brief feature description
+-
 
-Brief feature description
+#### Does this PR block/effect other stories?
+-
 
+#### Do any commands needs to be run in order to run the project with this PR?
+-
 
-Does this PR block/effect other stories?
+#### Code coverage percent diff as a result of this PR?
+-
 
-
-Do any commands needs to be run in order to run the project with this PR?
-
-
-Code coverage percent diff as a result of this PR?
-
-
-JS errors diff as a result of this PR?
-
+#### JS errors diff as a result of this PR?
+-
