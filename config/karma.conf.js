@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var webpackConfig = require('./webpack/test');
 
+
 module.exports = function(config) {
   config.set({
 
@@ -24,11 +25,14 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      './../test/javascript/**/*_tests.js': ['webpack', 'coverage']
+      './../test/javascript/**/*_tests.js': ['webpack','sourcemap','coverage']
 
     },
 
-    webpack:{ module: webpackConfig.module},
+    webpack:{
+      module: webpackConfig.module,
+      devtool: 'cheap-module-inline-source-map'
+    },
 
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
@@ -68,7 +72,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+    singleRun: false,
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity

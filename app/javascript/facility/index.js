@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -25,8 +24,7 @@ function hashLinkScroll() {
 ReactDOM.render(
   <Router
     onUpdate={hashLinkScroll}
-    history={browserHistory}
-  >
+    history={browserHistory}>
     <Route path="/facilities" component={App} />
     <Route path="/facilities/:fac_nbr" component={Facilities} />
   </Router>,
