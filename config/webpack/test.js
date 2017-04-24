@@ -9,5 +9,18 @@ module.exports = merge(sharedConfig.config, {
   devtool: 'cheap-module-inline-source-map',
   resolveLoader: {
     root: path.join(__dirname, 'node_modules')
+  },
+  module: {
+    rules : [
+      {
+        test:/\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'istanbul-instrumenter-loader',
+        query: {
+          esModules: true
+        }
+      }
+    ]
   }
+
 });

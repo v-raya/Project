@@ -23,12 +23,3 @@ describe('Render Search Inputs', function () {
   });
 
 });
-
-describe('Render Search Results', function () {
-  const tableComp = TestUtils.renderIntoDocument(<SearchGrid />);
-  const resultTable = renderTAble.getRenderOutput();
-
-  it('Render Results block', function () {
-
-  })
-});
