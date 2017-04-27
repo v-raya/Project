@@ -8,27 +8,23 @@ end
 # Environment variables configuration
 gem 'dotenv-rails', '~> 2.2', groups: [:development, :test, :aws_dev]
 
-gem 'foreman'
-gem 'rspec-rails'
-gem 'rspec'
-gem 'activeresource', github: 'rails/activeresource', branch: 'master'
-gem 'responders'
-gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3.6'
-gem 'bootstrap'
-gem 'hypernova'
-
-gem 'redis'
-gem 'redis-namespace'
-gem 'redis-rails'
-gem 'redis-rack-cache'
-gem 'rubocop', require: false
-gem 'factory_girl'
-gem 'factory_girl_rails'
-gem 'rails-controller-testing'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0.beta1'
+
+gem 'foreman'
+
+gem 'activeresource', github: 'rails/activeresource', branch: 'master'
+gem 'responders', '~> 2.3'
+gem 'autoprefixer-rails', '~> 6.7'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap'
+gem 'hypernova', '~> 1.2'
+
+#gem 'redis'
+#gem 'redis-namespace'
+#gem 'redis-rack-cache'
+gem 'redis-rails', '~> 5.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -42,14 +38,8 @@ gem 'webpacker', github: "rails/webpacker"
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -62,12 +52,20 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'vcr'
   gem 'webmock'
+
+  gem 'rspec', '~> 3.5'
+  gem 'rspec-rails', '~> 3.5'
+
+  gem 'rubocop', '~> 0.48.1', require: false
+
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
 end
 
 group :test do
- gem "simplecov", require: false
- gem "codeclimate-test-reporter", "~> 1.0.0"
-
+ gem 'simplecov', require: false
+ gem 'codeclimate-test-reporter', '~> 1.0.0'
 end
 
 group :development do

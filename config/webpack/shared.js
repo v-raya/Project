@@ -69,7 +69,7 @@ const config = {
     ],
 
     resolve: {
-        extensions: ['.js', '.jsx', '.coffee'],
+        extensions: ['.js', '.jsx'],
         modules: [
             path.resolve('app/javascript'),
             path.resolve('node_modules')
