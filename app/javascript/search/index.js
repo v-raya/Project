@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Search from './search';
-import './search.scss'
+import './stylesheets/search.scss'
 
 
 ReactDOM.render(

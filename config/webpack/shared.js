@@ -29,11 +29,10 @@ const config = {
 
     module: {
         rules: [
-        { test: /\.coffee(\.erb)?$/, loader: 'coffee-loader' },
         {
             test:/\.(js|jsx)$/,
-            exclude: /node_modules/,
             loader: 'babel-loader',
+            exclude: /node_modules/,
             options: {
                 presets: [
                     'react',
@@ -70,7 +69,7 @@ const config = {
     ],
 
     resolve: {
-        extensions: ['.js', '.jsx', '.coffee'],
+        extensions: ['.js', '.jsx'],
         modules: [
             path.resolve('app/javascript'),
             path.resolve('node_modules')
