@@ -1,31 +1,26 @@
-class FacilitiesController < ApplicationController
+class FacilitiesController < CalsBaseController
   include Response
-  include FacilitiesHelper
 
   def index
     @facilities = Facility.all
     respond_to do |format|
       format.html
       format.js
-      format.json {render json: @facilities, status: :ok}
+      format.json { render json: @facilities, status: :ok }
     end
   end
+
   def show
-    @facility = find_facility
+    @facility ||= Facility.find_by_id(params[:id])
     respond_to do |format|
       format.html
       format.js
-      format.json {render json: @facility, status: :ok}
+      format.json { render json: @facility, status: :ok }
     end
   end
 
   def search
     @facilities = Facility.search_results(params[:query])
     json_response @facilities
-  end
-
-  private
-  def find_facility
-    @facility ||= Facility.find params[:id]
   end
 end

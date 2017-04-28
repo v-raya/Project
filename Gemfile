@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
 # Environment variables configuration
-gem 'dotenv-rails', '~> 2.2', groups: [:development, :test, :aws_dev]
+gem 'dotenv-rails', '~> 2.2', groups: %i[development test aws_dev]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0.beta1'
@@ -20,39 +20,30 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap'
 gem 'hypernova', '~> 1.2'
 
-#gem 'redis'
-#gem 'redis-namespace'
-#gem 'redis-rack-cache'
 gem 'redis-rails', '~> 5.0'
-
+gem 'faraday'
+gem 'faraday_middleware'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'sass-rails', github: "rails/sass-rails"
-
+gem 'sass-rails', github: 'rails/sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', github: "rails/webpacker"
-
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'webpacker', github: 'rails/webpacker'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.7.0'
   gem 'selenium-webdriver'
   gem 'vcr'
   gem 'webmock'
-
+  gem 'faker'
   gem 'rspec', '~> 3.5'
   gem 'rspec-rails', '~> 3.5'
 
@@ -64,8 +55,8 @@ group :development, :test do
 end
 
 group :test do
- gem 'simplecov', require: false
- gem 'codeclimate-test-reporter', '~> 1.0.0'
+  gem 'simplecov', require: false
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
 end
 
 group :development do
@@ -78,4 +69,4 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
