@@ -1,0 +1,2 @@
+# Pass --no-cache as command line argument if docker should ignore caching (workaround for "git clone" in dockerfile)
+docker build -t calsmockapi:latest . $*

@@ -1,0 +1,2 @@
+docker stop calspostgres
+docker rm calspostgres

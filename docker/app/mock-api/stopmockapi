@@ -1,2 +1,0 @@
-docker stop dev-mockapi
-docker rm dev-mockapi

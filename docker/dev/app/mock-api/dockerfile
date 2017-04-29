@@ -1,0 +1,40 @@
+FROM ruby:latest
+
+RUN gem install rails
+
+RUN gem install puma
+
+RUN apt-get update && apt-get install -y nodejs
+
+RUN mkdir /var/www
+
+# Clone the mock-api
+# RUN git clone git@github.com:ca-cwds/cals-mock-api.git /var/www/cals-mock-api
+RUN git clone https://github.com/ca-cwds/cals-mock-api.git /var/www/cals-mock-api
+
+WORKDIR /var/www/cals-mock-api
+RUN cd /var/www/cals-mock-api
+
+RUN bundle install
+
+ENV ELASTICSEARCH_HOST_URL=http://calses:9200
+
+# 20170427- the following 2 lines added as a workaround for aws_dev 
+RUN cp /var/www/cals-mock-api/config/database.yml /var/www/cals-mock-api/config/database.bak
+RUN sed s/devdb1.cs-cals.com/calspostgres/ < /var/www/cals-mock-api/config/database.bak > /var/www/cals-mock-api/config/database.yml
+
+# ONBUILD rake db:migrate RAILS_ENV=aws_dev
+# ONBUILD rake environment elasticsearch:import:all DIR=app/models FORCE=y RAILS_ENV=aws_dev
+
+#CMD ["bundle", "exec", "rails", "server", "-e aws_dev", "--binding", "0.0.0.0", "-p 3001"]
+
+CMD rails server -e aws_dev -p 3001 -b 0.0.0.0
+
+
+
+
+
+
+
+
+

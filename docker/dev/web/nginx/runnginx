@@ -1,0 +1,1 @@
+docker run -itd -p 80:80 --net dev-cs-cals --hostname calsnginx --name calsnginx calsnginx:latest

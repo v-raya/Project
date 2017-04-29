@@ -1,2 +1,0 @@
-./stopnginx
-docker run -itd -p 80:80 --net dev-cs-cals --ip 192.168.213.50 --hostname dev-nginx --name dev-nginx dev-nginx:latest

@@ -1,0 +1,2312 @@
+Creating network "scripts_dev-cs-cals" with driver "bridge"
+Creating calspostgres ... 
+Creating calses ... 
+Creating calspostgres
+Creating calses
+[1A[2KCreating calspostgres ... [32mdone[0m[1B[1A[2KCreating calses ... [32mdone[0m[1BAttaching to calspostgres, calses
+[36mcalspostgres |[0m The files belonging to this database system will be owned by user "postgres".
+[36mcalspostgres |[0m This user must also own the server process.
+[36mcalspostgres |[0m 
+[36mcalspostgres |[0m The database cluster will be initialized with locale "en_US.utf8".
+[36mcalspostgres |[0m The default database encoding has accordingly been set to "UTF8".
+[36mcalspostgres |[0m The default text search configuration will be set to "english".
+[36mcalspostgres |[0m 
+[36mcalspostgres |[0m Data page checksums are disabled.
+[36mcalspostgres |[0m 
+[36mcalspostgres |[0m fixing permissions on existing directory /var/lib/postgresql/data ... ok
+[36mcalspostgres |[0m creating subdirectories ... ok
+[36mcalspostgres |[0m selecting default max_connections ... 100
+[36mcalspostgres |[0m selecting default shared_buffers ... 128MB
+[36mcalspostgres |[0m selecting dynamic shared memory implementation ... posix
+[36mcalspostgres |[0m creating configuration files ... ok
+[36mcalspostgres |[0m running bootstrap script ... ok
+[36mcalspostgres |[0m performing post-bootstrap initialization ... ok
+[36mcalspostgres |[0m syncing data to disk ... ok
+[36mcalspostgres |[0m 
+[36mcalspostgres |[0m WARNING: enabling "trust" authentication for local connections
+[36mcalspostgres |[0m You can change this by editing pg_hba.conf or using the option -A, or
+[36mcalspostgres |[0m --auth-local and --auth-host, the next time you run initdb.
+[36mcalspostgres |[0m 
+[36mcalspostgres |[0m Success. You can now start the database server using:
+[36mcalspostgres |[0m 
+[36mcalspostgres |[0m     pg_ctl -D /var/lib/postgresql/data -l logfile start
+[36mcalspostgres |[0m 
+[36mcalspostgres |[0m ****************************************************
+[36mcalspostgres |[0m WARNING: No password has been set for the database.
+[36mcalspostgres |[0m          This will allow anyone with access to the
+[36mcalspostgres |[0m          Postgres port to access your database. In
+[36mcalspostgres |[0m          Docker's default configuration, this is
+[36mcalspostgres |[0m          effectively any other container on the same
+[36mcalspostgres |[0m          system.
+[36mcalspostgres |[0m 
+[36mcalspostgres |[0m          Use "-e POSTGRES_PASSWORD=password" to set
+[36mcalspostgres |[0m          it in "docker run".
+[36mcalspostgres |[0m ****************************************************
+[36mcalspostgres |[0m waiting for server to start....LOG:  database system was shut down at 2017-04-29 22:28:50 UTC
+[36mcalspostgres |[0m LOG:  MultiXact member wraparound protections are now enabled
+[36mcalspostgres |[0m LOG:  database system is ready to accept connections
+[36mcalspostgres |[0m LOG:  autovacuum launcher started
+[33mcalses      |[0m [2017-04-29T22:28:51,072][INFO ][o.e.n.Node               ] [] initializing ...
+[33mcalses      |[0m [2017-04-29T22:28:51,181][INFO ][o.e.e.NodeEnvironment    ] [fqG7ODQ] using [1] data paths, mounts [[/usr/share/elasticsearch/data (/dev/xvda1)]], net usable_space [2.2gb], net total_space [7.7gb], spins? [possibly], types [ext4]
+[33mcalses      |[0m [2017-04-29T22:28:51,182][INFO ][o.e.e.NodeEnvironment    ] [fqG7ODQ] heap size [1.9gb], compressed ordinary object pointers [true]
+[33mcalses      |[0m [2017-04-29T22:28:51,184][INFO ][o.e.n.Node               ] node name [fqG7ODQ] derived from node ID [fqG7ODQAS3eaR4uFdgug_g]; set [node.name] to override
+[33mcalses      |[0m [2017-04-29T22:28:51,185][INFO ][o.e.n.Node               ] version[5.3.1], pid[1], build[5f9cf58/2017-04-17T15:52:53.846Z], OS[Linux/4.4.44-39.55.amzn1.x86_64/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/1.8.0_121/25.121-b13]
+[36mcalspostgres |[0m  done
+[36mcalspostgres |[0m server started
+[36mcalspostgres |[0m ALTER ROLE
+[36mcalspostgres |[0m 
+[36mcalspostgres |[0m 
+[36mcalspostgres |[0m /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/init-user-db.sh
+[36mcalspostgres |[0m CREATE ROLE
+[36mcalspostgres |[0m CREATE DATABASE
+[36mcalspostgres |[0m GRANT
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:100: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:101: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'736', N'Type', NULL, N'736 RCFCI');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'840', N'Type', NULL, N'840 CCC-SA');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'845', N'Type', NULL, N'845 CCC-Ill');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'775', N'Type', NULL, N'775 ADC');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'776', N'Type', NULL, N'776 ADSC');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'830', N'Type', NULL, N'830 CCC-1');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:102: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:103: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:104: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'433', N'Type', NULL, N'433 CFFH');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:105: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:106: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:107: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:108: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:109: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:110: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:111: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:112: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'810', N'Type', NULL, N'810 FCCH');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'740', N'Type', NULL, N'740 RCFE');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'711', N'Type', NULL, N'711 FFH');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'850', N'Type', NULL, N'850 CCC');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'772', N'Type', NULL, N'772 SRF');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'430', N'Type', NULL, N'430 FFA');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:113: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:114: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:115: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'734', N'Type', NULL, N'734 ARFPSHN');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'431', N'Type', NULL, N'431 FFAsub');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'730', N'Type', NULL, N'730 GH');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'710', N'Type', NULL, N'710 SFH');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:116: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'400', N'Type', NULL, N'400 AA');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:117: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:118: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:119: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Complaints', N'Database', NULL, N'StatewideComplaints.nsf');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'900', N'Type', NULL, N'900 TRL');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'720', N'Type', NULL, N'720 CN');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:120: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'726', N'Type', NULL, N'726 THPP');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:121: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'735', N'Type', NULL, N'735 ARF');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:122: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:123: ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Case Management - Incident', N'Visit Type', NULL, N'Case Management - Incident');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Case Management - Legal/Non-compliance', N'Visit Type', NULL, N'Case Management - Legal/Non-compliance');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Case Management - Licensee Initiated', N'Visit Type', NULL, N'Case Management - Licensee Initiated');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:124: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:125: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:126: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Case Management - Deficiencies', N'Visit Type', NULL, N'Case Management - Deficiencies');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Case Management - Annual Continuation', N'Visit Type', NULL, N'Case Management - Annual Continuation');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:127: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Case Management - Other', N'Visit Type', NULL, N'Case Management - Other');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:128: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Office', N'Visit Type', NULL, N'Office');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:129: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:130: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:131: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'POC', N'Visit Type', NULL, N'POC');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Collateral', N'Visit Type', NULL, N'Collateral');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Random Select', N'Database', NULL, N'Training\MasterTrainingDB.nsf');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:132: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Server', N'Database', NULL, N'Domino06/CDSS');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:133: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Log Server', N'Database', NULL, N'Domino06/CDSS');
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'FAS Log', N'Database', NULL, N'Training\MTFASLog.nsf');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:134: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:135: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Log Key', N'Database', NULL, N'MTFASLog.nsf');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:136: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m ERROR:  column "key_word_category" of relation "keywrd" does not exist at character 31
+[36mcalspostgres |[0m STATEMENT:  INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, Return_Value) VALUES (N'Key', N'Database', NULL, N'MTFASLog.nsf');
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:137: ERROR:  column "key_word_category" of relation "keywrd" does not exist
+[36mcalspostgres |[0m LINE 1: INSERT INTO KEYWRD (Key_Word, Key_Word_Category, NoExport, R...
+[36mcalspostgres |[0m                                       ^
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m ERROR:  invalid byte sequence for encoding "UTF8": 0x92
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:2047: ERROR:  invalid byte sequence for encoding "UTF8": 0x92
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:2098: ERROR:  invalid byte sequence for encoding "UTF8": 0x92
+[36mcalspostgres |[0m ERROR:  invalid byte sequence for encoding "UTF8": 0x92
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:2735: ERROR:  invalid byte sequence for encoding "UTF8": 0x92
+[36mcalspostgres |[0m ERROR:  invalid byte sequence for encoding "UTF8": 0x92
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:2875: ERROR:  invalid byte sequence for encoding "UTF8": 0x92
+[36mcalspostgres |[0m ERROR:  invalid byte sequence for encoding "UTF8": 0x92
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m psql:./scripts/FASDMLStatements.sql:3046: ERROR:  invalid byte sequence for encoding "UTF8": 0x92
+[36mcalspostgres |[0m ERROR:  invalid byte sequence for encoding "UTF8": 0x92
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[33mcalses      |[0m [2017-04-29T22:28:53,248][INFO ][o.e.p.PluginsService     ] [fqG7ODQ] loaded module [aggs-matrix-stats]
+[36mcalspostgres |[0m INSERT 0 1
+[33mcalses      |[0m [2017-04-29T22:28:53,248][INFO ][o.e.p.PluginsService     ] [fqG7ODQ] loaded module [ingest-common]
+[33mcalses      |[0m [2017-04-29T22:28:53,250][INFO ][o.e.p.PluginsService     ] [fqG7ODQ] loaded module [lang-expression]
+[33mcalses      |[0m [2017-04-29T22:28:53,250][INFO ][o.e.p.PluginsService     ] [fqG7ODQ] loaded module [lang-groovy]
+[33mcalses      |[0m [2017-04-29T22:28:53,251][INFO ][o.e.p.PluginsService     ] [fqG7ODQ] loaded module [lang-mustache]
+[33mcalses      |[0m [2017-04-29T22:28:53,251][INFO ][o.e.p.PluginsService     ] [fqG7ODQ] loaded module [lang-painless]
+[33mcalses      |[0m [2017-04-29T22:28:53,251][INFO ][o.e.p.PluginsService     ] [fqG7ODQ] loaded module [percolator]
+[33mcalses      |[0m [2017-04-29T22:28:53,251][INFO ][o.e.p.PluginsService     ] [fqG7ODQ] loaded module [reindex]
+[36mcalspostgres |[0m INSERT 0 1
+[33mcalses      |[0m [2017-04-29T22:28:53,251][INFO ][o.e.p.PluginsService     ] [fqG7ODQ] loaded module [transport-netty3]
+[33mcalses      |[0m [2017-04-29T22:28:53,253][INFO ][o.e.p.PluginsService     ] [fqG7ODQ] loaded module [transport-netty4]
+[36mcalspostgres |[0m INSERT 0 1
+[33mcalses      |[0m [2017-04-29T22:28:53,253][INFO ][o.e.p.PluginsService     ] [fqG7ODQ] no plugins loaded
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m DROP TABLE
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m SET
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m ALTER TABLE
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m INSERT 0 1
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m CREATE TABLE
+[36mcalspostgres |[0m 
+[36mcalspostgres |[0m LOG:  received fast shutdown request
+[36mcalspostgres |[0m LOG:  aborting any active transactions
+[36mcalspostgres |[0m LOG:  autovacuum launcher shutting down
+[36mcalspostgres |[0m waiting for server to shut down...LOG:  shutting down
+[36mcalspostgres |[0m .LOG:  database system is shut down
+[36mcalspostgres |[0m  done
+[36mcalspostgres |[0m server stopped
+[36mcalspostgres |[0m 
+[36mcalspostgres |[0m PostgreSQL init process complete; ready for start up.
+[36mcalspostgres |[0m 
+[36mcalspostgres |[0m LOG:  database system was shut down at 2017-04-29 22:28:55 UTC
+[36mcalspostgres |[0m LOG:  MultiXact member wraparound protections are now enabled
+[36mcalspostgres |[0m LOG:  database system is ready to accept connections
+[36mcalspostgres |[0m LOG:  autovacuum launcher started
+[33mcalses      |[0m [2017-04-29T22:28:57,370][INFO ][o.e.n.Node               ] initialized
+[33mcalses      |[0m [2017-04-29T22:28:57,370][INFO ][o.e.n.Node               ] [fqG7ODQ] starting ...
+[33mcalses      |[0m [2017-04-29T22:28:57,476][WARN ][i.n.u.i.MacAddressUtil   ] Failed to find a usable hardware address from the network interfaces; using random bytes: 68:26:aa:36:08:f3:61:1e
+[33mcalses      |[0m [2017-04-29T22:28:57,551][INFO ][o.e.t.TransportService   ] [fqG7ODQ] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[33mcalses      |[0m [2017-04-29T22:28:57,561][WARN ][o.e.b.BootstrapChecks    ] [fqG7ODQ] max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]
+[33mcalses      |[0m [2017-04-29T22:28:57,561][WARN ][o.e.b.BootstrapChecks    ] [fqG7ODQ] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+[33mcalses      |[0m [2017-04-29T22:29:00,624][INFO ][o.e.c.s.ClusterService   ] [fqG7ODQ] new_master {fqG7ODQ}{fqG7ODQAS3eaR4uFdgug_g}{YE7hLEPLSM--gJVRhsWKAg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-elected-as-master ([0] nodes joined)
+[33mcalses      |[0m [2017-04-29T22:29:00,655][INFO ][o.e.h.n.Netty4HttpServerTransport] [fqG7ODQ] publish_address {172.18.0.3:9200}, bound_addresses {[::]:9200}
+[33mcalses      |[0m [2017-04-29T22:29:00,667][INFO ][o.e.n.Node               ] [fqG7ODQ] started
+[33mcalses      |[0m [2017-04-29T22:29:00,675][INFO ][o.e.g.GatewayService     ] [fqG7ODQ] recovered [0] indices into cluster_state
+calspostgres is up-to-date
+calses is up-to-date
+Creating calsredis ... 
+Creating calsredis
+Creating calsmockapi ... 
+Creating calsmockapi
+[1A[2KCreating calsredis ... [32mdone[0m[1BCreating cals ... 
+Creating cals
+[1A[2KCreating calsmockapi ... [32mdone[0m[1B[1A[2KCreating cals ... [32mdone[0m[1BCreating calsnginx ... 
+Creating calsnginx
+[1A[2KCreating calsnginx ... [32mdone[0m[1B/usr/local/bundle/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:51: warning: constant ::Fixnum is deprecated
+/usr/local/bundle/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:52: warning: constant ::Bignum is deprecated
+/usr/local/bundle/gems/activesupport-5.0.1/lib/active_support/core_ext/numeric/conversions.rb:138: warning: constant ::Fixnum is deprecated
+== 20170419182553 CreateChild: migrating ======================================
+-- create_table(:children)
+   -> 0.0138s
+== 20170419182553 CreateChild: migrated (0.0140s) =============================
+
+/usr/local/bundle/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:51: warning: constant ::Fixnum is deprecated
+/usr/local/bundle/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:52: warning: constant ::Bignum is deprecated
+/usr/local/bundle/gems/activesupport-5.0.1/lib/active_support/core_ext/numeric/conversions.rb:138: warning: constant ::Fixnum is deprecated
+[IMPORT] Loading models from: app/models
+[IMPORT] Processing model: Facility...
+[!!!] Index does not exist (Elasticsearch::Transport::Transport::Errors::NotFound)
+[33mcalses      |[0m [2017-04-29T22:30:54,911][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [fac_name]
+[33mcalses      |[0m [2017-04-29T22:30:54,915][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [fac_type]
+[33mcalses      |[0m [2017-04-29T22:30:54,916][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [fac_nbr]
+[33mcalses      |[0m [2017-04-29T22:30:54,917][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [fac_co_nbr]
+[33mcalses      |[0m [2017-04-29T22:30:54,986][INFO ][o.e.c.m.MetaDataCreateIndexService] [fqG7ODQ] [aws_dev_facilities] creating index, cause [api], templates [], shards [5]/[1], mappings [facility]
+[IMPORT] Done
+

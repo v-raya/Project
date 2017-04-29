@@ -1,4 +1,23 @@
-$HOME/db/postgres/runpostgres
-$HOME/app/redis/runredis
-$HOME/app/ruby/runruby
-$HOME/web/nginx/runnginx
+#!/bin/bash
+if [ -n "$CALS_HOME" ] && [ -n "$CALS_ENV" ] 
+then
+   echo Environment variables set ... continuing
+else 
+   echo 'Appropriate environment variables not set ... exiting'
+   exit 1
+fi
+echo Starting postgres
+${CALS_HOME}/docker/${CALS_ENV}/db/postgres/runpostgres
+echo Starting elasticsearch
+${CALS_HOME}/docker/${CALS_ENV}/app/es/runes
+echo Waiting for postgres to become stable
+sleep 120
+echo Starting mock-api
+${CALS_HOME}/docker/${CALS_ENV}/app/mock-api/runmockapi
+echo Starting redis
+${CALS_HOME}/docker/${CALS_ENV}/app/redis/runredis
+echo Starting cals
+${CALS_HOME}/docker/${CALS_ENV}/app/cals/runcals
+echo Starting nginx
+${CALS_HOME}/docker/${CALS_ENV}/web/nginx/runnginx
+echo Done

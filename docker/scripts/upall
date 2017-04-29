@@ -1,0 +1,24 @@
+#!/bin/bash
+if [ -n "$CALS_HOME" ] && [ -n "$CALS_ENV" ] 
+then
+   echo Environment variables set ... continuing
+else 
+   echo 'Appropriate environment variables not set ... exiting'
+   exit 1
+fi
+echo Starting postgres and elasticsearh first 
+rm ./zzlogupall
+docker-compose up db es >> ./zzlogupall 2>&1 &
+echo Started postgres and elasticsearch
+echo Waiting 2 minutes for postgres container to be ready
+sleep 120
+echo Starting the rest of the services now
+docker-compose up -d >> ./zzlogupall 2>&1
+echo Started the rest of the services
+echo mock-api: migrating DB
+docker exec -it calsmockapi rake db:migrate RAILS_ENV=aws_dev >> ./zzlogupall 2>&1
+echo mock-api: migrated DB
+echo mock-api: indexing elasticsearch
+docker exec -it calsmockapi rake environment elasticsearch:import:all DIR=app/models FORCE=y RAILS_ENV=aws_dev >> ./zzlogupall 2>&1
+echo mock-api: indexed elasticsearch
+echo Done

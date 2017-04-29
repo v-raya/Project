@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ -n "$CALS_HOME" ] && [ -n "$CALS_ENV" ] 
+then
+   echo Environment variables set ... continuing
+else 
+   echo 'Appropriate environment variables not set ... exiting'
+   exit 1
+fi
+echo Downing all
+docker-compose down
