@@ -3,7 +3,7 @@ class CalsBaseController < ApplicationController
 
   # before_action :authenticate
 
-  PERRY_URL = "#{ENV['AUTHENTICATION_API_BASE_URL']}/authn/login".freeze
+  PERRY_URL = "#{AUTHENTICATION_API_BASE_URL}/authn/login".freeze
 
   protected
 

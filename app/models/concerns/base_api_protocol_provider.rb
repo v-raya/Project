@@ -4,13 +4,13 @@ module BaseApiProtocolProvider
   # class methods
   class_methods do
     def all
-      response = Faraday.get ENV['BASE_CALS_API_URL'] + '/' + class_name_downcase_pluralized
-  
+      response = Faraday.get CALS_API_BASE_URL + '/' + class_name_downcase_pluralized
+
       JSON.parse(response.body).map { |itm| new(itm) }
     end
 
     def find_by_id(id)
-      response = Faraday.get "#{ENV['BASE_CALS_API_URL']}/#{class_name_downcase_pluralized}/#{id}"
+      response = Faraday.get "#{CALS_API_BASE_URL}/#{class_name_downcase_pluralized}/#{id}"
       new(JSON.parse(response.body))
     end
   end

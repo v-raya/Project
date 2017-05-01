@@ -4,7 +4,7 @@ module ComplaintApiProtocolProvider
 
   class_methods do
     def find_by_facility(facility_id)
-      response = Faraday.get ENV['BASE_CALS_API_URL'] + "/facilities/#{facility_id}/complaints"
+      response = Faraday.get CALS_API_BASE_URL + "/facilities/#{facility_id}/complaints"
       JSON.parse(response.body)
     end
   end
