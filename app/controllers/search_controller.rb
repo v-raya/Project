@@ -1,4 +1,3 @@
-class SearchController < ApplicationController
-  def index
-  end
+class SearchController < CalsBaseController
+  def index; end
 end

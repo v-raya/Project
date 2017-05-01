@@ -1,4 +1,6 @@
 require "simplecov"
+require 'webmock/rspec'
+
 SimpleCov.start 'rails' do
  coverage_dir 'reports/coverage/rspec/'
 
@@ -9,6 +11,9 @@ SimpleCov.start 'rails' do
   add_filter '/log/'
   add_filter '/spec/'
 
+ add_filter 'app/controllers/pages_controller'
+
+  
   add_filter 'app/mailers/'
   add_filter 'app/jobs/'
   add_filter 'app/helpers/'

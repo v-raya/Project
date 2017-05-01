@@ -1,91 +1,127 @@
-body {
-  margin: 0 auto;
-  padding: 0;
+body
+{
+    margin: 0 auto;
+    padding: 0;
 }
 /***********Stylesheet for Facility Profil Page***************/
-.facility-details {
-  padding: 0px;
+.facility-details
+{
+    padding: 0;
 }
-.facility-details .facility_header, .facility-details .facility_header *{
-  padding: 0px;
+.facility-details .facility_header,
+.facility-details .facility_header *
+{
+    padding: 0;
 }
-.main_page .header_cwds {
-  background: #363636;
-  padding: 5px 20px;
+.main_page .header_cwds
+{
+    padding: 5px 20px;
+
+    background: #363636;
 }
-.facility-details .header_left {
-  float: left;
-  margin-bottom: 0px;
-  font-size: 28px;
-  color: #8b8b8b;
-  font-family: "Source Sans Pro Bold", sans-serif;
+.facility-details .header_left
+{
+    font-family: 'Source Sans Pro Bold', sans-serif;
+    font-size: 28px;
+
+    float: left;
+
+    margin-bottom: 0;
+
+    color: #8b8b8b;
 }
-.facility-details .header_right {
-  display: inline;
-  float: right;
-  margin-bottom: 0px;
-  margin-top: 33px;
+.facility-details .header_right
+{
+    display: inline;
+    float: right;
+
+    margin-top: 33px;
+    margin-bottom: 0;
 }
-.header_right .header_bold {
-  margin-bottom: 0px;
-  font-family: "Source Sans Pro Bold", sans-serif;
-  font-size: 14px;
-  display: inline;
-  color: #8d8d8d;
+.header_right .header_bold
+{
+    font-family: 'Source Sans Pro Bold', sans-serif;
+    font-size: 14px;
+
+    display: inline;
+
+    margin-bottom: 0;
+
+    color: #8d8d8d;
 }
-.header_right .header_light {
-  margin-bottom: 0px;
-  font-family: "Source Sans Pro ExtraLight", sans-serif;
-  color: #2b2b2b;
-  font-size: 16px;
-  display: inline;
-  font-weight: 100;
+.header_right .header_light
+{
+    font-family: 'Source Sans Pro ExtraLight', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+
+    display: inline;
+
+    margin-bottom: 0;
+
+    color: #2b2b2b;
 }
-.facility-list .list_block {
-  padding: 0px 20px;
-  border: 1px solid #337ab7;
-  border-radius: 5px;
-  margin-bottom: 20px;
+.facility-list .list_block
+{
+    margin-bottom: 20px;
+    padding: 0 20px;
+
+    border: 1px solid #337ab7;
+    border-radius: 5px;
 }
-.facility-list .list_block h1 {
-  font-size: 28px;
+.facility-list .list_block h1
+{
+    font-size: 28px;
 }
-.facility-address .map_image .map{
-  height: 188px;
+.facility-address .map_image .map
+{
+    height: 188px;
 }
-.facility-details-block {
-  padding: 20px 0px;
+.facility-details-block
+{
+    padding: 20px 0;
 }
-.facility-details-block > div {
-  padding: 0px;
-  padding-right: 138px;
+.facility-details-block > div
+{
+    padding: 0;
+    padding-right: 138px;
 }
-.headliner {
-  margin-bottom: 30px;
-  border-bottom: 1px solid;
-  padding: 0px;
+.headliner
+{
+    margin-bottom: 30px;
+    padding: 0;
+
+    border-bottom: 1px solid;
 }
-.headliner div{
-  width: 30%;
-  height: 2px;
-  background: #000;
+.headliner div
+{
+    width: 30%;
+    height: 2px;
+
+    background: #000;
 }
-.facility-details .facility_blocks {
-  padding: 0px;
+.facility-details .facility_blocks
+{
+    padding: 0;
 }
-.facility-details .inner_block{
-  height: 212px;
-  padding: 20px 10px 20px 20px;
+.facility-details .inner_block
+{
+    height: 212px;
+    padding: 20px 10px 20px 20px;
 }
-.facility-address .inner_block {
-  padding: 20px 10px 20px 5px;
+.facility-address .inner_block
+{
+    padding: 20px 10px 20px 5px;
 }
-.facility-address .inner_block:last-child {
-  padding-left: 20px;
+.facility-address .inner_block:last-child
+{
+    padding-left: 20px;
 }
-.facility-details .inner_block {
-  background-color: #f5f5f5;
-  border-left: 10px solid #8f8f8f;
+.facility-details .inner_block
+{
+    border-left: 10px solid #8f8f8f;
+    border-left: 10px solid #8f8f8f;
+    background-color: #f5f5f5;
 }
 //.facility-details .inner_block.yellow {
 //  border-left: 10px solid yellow;
@@ -96,76 +132,169 @@ body {
 //.facility-details .inner_block.orange {
 //  border-left: 10px solid darkorange;
 //}
-.small_inner_block p:first-child {
-  margin-bottom: 0px;
-  color: #8d8d8d;
-  font-size: 12px;
-  font-family: "Source Sans Pro Bold", sans-serif;
-  font-weight: bold;
-}
-.small_inner_block p:last-child {
-  margin-bottom: 30px;
-  color: #2b2b2b;
-  font-size: 16px;
-  font-family: "Source Sans Pro ExtraLight", sans-serif;
-  font-weight: 100;
-}
-.facility-address .facility-address-block{
-  background-color: #f5f5f5;
-}
-.facility-address .facility-address-block .facility-address-details{
-  padding: 0px;
-}
-.physical_address, .postal_address, .county_details {
-  margin-bottom: 30px;
-}
-.visit_reason, .last_visit {
-  padding-left: 20px;
-}
-.facility-address .address_street {
-  margin-bottom: 0px;
-  color: #2b2b2b;
-  font-size: 16px;
-  font-family: "Source Sans Pro ExtraLight", sans-serif;
-  font-weight: 100;
-}
-.phone_primary {
-  display: inline;
-  float: left;
-  margin-right: 20px;
-}
-.phone_alt {
-  display: inline-block;
+.small_inner_block p:first-child
+{
+    font-family: 'Source Sans Pro Bold', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
 
+    margin-bottom: 0;
+
+    color: #8d8d8d;
 }
-.phone_details .small_inner_block p:last-child {
-  margin-bottom: 0px;
+.small_inner_block p:last-child
+{
+    font-family: 'Source Sans Pro ExtraLight', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+
+    margin-bottom: 30px;
+
+    color: #2b2b2b;
 }
-.facility-address .last_visit .address_street {
-  margin-bottom: 52px;
+
+.facility-children
+{
+    margin-top: 20px;
+    padding: 20px;
+
+    background-color: #f5f5f5;
 }
-@media only screen and (max-width: 787px) {
-.facility_blocks > div {
-  margin-bottom: 20px;
+
+.facility-children-block
+{
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+
+    border: 1px solid #ddd;
+    background-color: #fff;
 }
-.facility-address .inner_block:last-child {
-  padding: 20px 20px 20px 15px;
+.facility-children table
+{
+    border: #ddd;
 }
-.visit_reason, .last_visit {
-  padding-left: 0px;
+.facility-children table tr td
+{
+    font-family: 'Source Sans Pro Bold', sans-serif;
+
+    vertical-align: middle;
 }
-.facility-address-block > div {
-  padding-left: 0px;
+.facility-children .table > tbody tr:nth-child(even)
+{
+    background-color: #f5f5f5;
 }
-.postal_address {
-  margin-bottom: 0px;
+.facility-children .table > tbody tr:last-child
+{
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #ddd;
 }
-.visit_reason p:last-child {
-  margin-bottom: 0px;
+.facility-children .table > thead > tr > th
+{
+    font-family: 'Source Sans Pro Bold', sans-serif;
 }
+.facility-children .table > thead > tr
+{
+    color: #000;
+    border-top: 1px solid #ddd;
 }
-@media only screen and (min-width: 768px) and (max-width: 840px) {
-.facility-details .inner_block{
-  height: 263px;
+.facility-children .children-title
+{
+    font-family: 'Source Sans Pro ExtraLight', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+
+    margin-bottom: 0;
+    padding-left: 20px;
+
+    color: #8b8b8b;
 }
+.facility-children .children-title h3
+{
+    font-family: 'Source Sans Pro ExtraLight', sans-serif;
+    font-weight: 100;
+}
+.facility-address .facility-address-block
+{
+    background-color: #f5f5f5;
+}
+.facility-address .facility-address-block .facility-address-details
+{
+    padding: 0;
+}
+.physical_address,
+.postal_address,
+.county_details
+{
+    margin-bottom: 30px;
+}
+.visit_reason,
+.last_visit
+{
+    padding-left: 20px;
+}
+.facility-address .address_street
+{
+    font-family: 'Source Sans Pro ExtraLight', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+
+    margin-bottom: 0;
+
+    color: #2b2b2b;
+}
+.phone_primary
+{
+    display: inline;
+    float: left;
+
+    margin-right: 20px;
+}
+.phone_alt
+{
+    display: inline-block;
+}
+.phone_details .small_inner_block p:last-child
+{
+    margin-bottom: 0;
+}
+.facility-address .last_visit .address_street
+{
+    margin-bottom: 52px;
+}
+@media only screen and (max-width: 787px)
+{
+    .facility_blocks > div
+    {
+        margin-bottom: 20px;
+    }
+    .facility-address .inner_block:last-child
+    {
+        padding: 20px 20px 20px 15px;
+    }
+    .visit_reason,
+    .last_visit
+    {
+        padding-left: 0;
+    }
+    .facility-address-block > div
+    {
+        padding-left: 0;
+    }
+    .postal_address
+    {
+        margin-bottom: 0;
+    }
+    .visit_reason p:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 840px)
+{
+    .facility-details .inner_block
+    {
+        height: 263px;
+    }
 }
