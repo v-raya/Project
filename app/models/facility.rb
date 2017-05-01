@@ -22,8 +22,4 @@ class Facility < CalsBase
     Complaint.find_by_facility(fac_nbr)
   end
 
-  def self.search_results(param)
-    # do stuff here to query so that query is full
-    get(:search, query: param)
-  end
 end

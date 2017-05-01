@@ -20,7 +20,7 @@ class FacilitiesController < CalsBaseController
   end
 
   def search
-    @facilities = Facility.search_results(params[:query])
+    @facilities = Facility.search(params[:query])
     json_response @facilities
   end
 end
