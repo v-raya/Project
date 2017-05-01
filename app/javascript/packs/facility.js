@@ -1,2 +1,4 @@
+import { renderReact } from 'hypernova-react';
+import facility from '../facility';
 
-require('../facility');
+export default renderReact('facility', facility);

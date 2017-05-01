@@ -1,31 +1,31 @@
-class FacilitiesController < ApplicationController
+require 'hypernova'
+
+class FacilitiesController < CalsBaseController
+   around_action :hypernova_render_support
   include Response
-  include FacilitiesHelper
 
   def index
-    @facilities = Facility.all
-    respond_to do |format|
-      format.html
-      format.js
-      format.json {render json: @facilities, status: :ok}
-    end
+    @facilities = Facility.all.to_json
+
+    # respond_to do |format|
+    #   format.html
+    #   format.js
+    #   format.json { render json: @facilities, status: :ok }
+    # end
   end
+
   def show
-    @facility = find_facility
+    @facility ||= Facility.find_by_id(params[:id]).to_json
+
     respond_to do |format|
       format.html
       format.js
-      format.json {render json: @facility, status: :ok}
+      format.json { render json: @facility, status: :ok }
     end
   end
 
   def search
     @facilities = Facility.search_results(params[:query])
     json_response @facilities
-  end
-
-  private
-  def find_facility
-    @facility ||= Facility.find params[:id]
   end
 end
