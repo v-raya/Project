@@ -2,8 +2,8 @@
 RailsWebpacker::Application.config.session_store :redis_store, {
   servers: [
     {
-      host: ENV['REDIS_SERVER_HOST'],
-      port: 6379,
+      host: REDIS_HOST,
+      port: REDIS_PORT,
       db: 0,
       namespace: "cals:session"
     }
