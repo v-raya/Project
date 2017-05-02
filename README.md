@@ -35,7 +35,7 @@ to view the facilities demo webapp, go to
 `localhost:5000/facilities` .
 
 assets compiled via webpack live on:
-`localhost:8080`
+`localhost:5080`
 
 ## REDIS
 NOTE: it is also important to also have redis server running. Start server with 
