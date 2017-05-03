@@ -59,8 +59,8 @@ export default class FacilityDetails extends React.Component {
                   <p>LICENSE EFFECTIVE DATE</p>
                   <p>{this.props.status == ('Pending' || 'Probationary License') ? 'N/A' : (this.props.facilityData.fac_lic_eff_date == null ? 'N/A' : this.props.facilityData.fac_lic_eff_date)}</p>
                 </div>
-                <div className='small_inner_block'>
-                  <p>APPICATION RECEIVED DATE</p>
+                <div className="small_inner_block">
+                  <p>APPLICATION RECEIVED DATE</p>
                   <p>{this.props.facilityData.fac_orig_appl_rec_date == null ? 'N/A' : this.props.facilityData.fac_orig_appl_rec_date}</p>
                 </div>
               </div>

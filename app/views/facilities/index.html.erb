@@ -1,2 +1,4 @@
-<div id = "root"></div>
-<%= javascript_pack_tag 'facility' %>
+<div id = 'root'>
+    <%= render_react_component('facility', facilities: @facilities) %>
+    <%= javascript_pack_tag 'facility' %>
+</div>
