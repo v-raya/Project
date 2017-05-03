@@ -40,15 +40,16 @@ export default class Search extends React.Component {
     .then(
       response => response.json())
     .then((response) => {
-      console.log(response);
       return this.setState({
           searchData: response
       });
 
     })
     .catch(error => {
-      console.log('request failed', error);
-      return this.setState({fromResponse : true});
+      return this.setState({
+        searchData: [],
+        fromResponse : true
+      });
     });
   }
   render() {
@@ -58,10 +59,10 @@ export default class Search extends React.Component {
         <div className="search-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <SearchInput sendSearchInput={this.addSearchInput.bind(this)}/>
         </div>
-        {searchArray && <SearchDetails {...this}/>}
+        {searchArray && <SearchDetails sendSearchInput={this.addSearchInput.bind(this)} {...this}/>}
         <div className="result-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          {this.state.isToggled && <SearchGrid searchResults={this.state.searchData}/>}
-          {!this.state.isToggled && <SearchList searchResults={this.state.searchData}/>}
+          {this.state.isToggled && <SearchGrid searchResults={this.state.searchData} />}
+          {!this.state.isToggled && <SearchList searchResults={this.state.searchData} />}
           {(this.state.fromResponse && !searchArray) && <SearchNotFound />}
         </div>
       </div>

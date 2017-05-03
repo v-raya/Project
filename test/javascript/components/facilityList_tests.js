@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import FacilityList from '../../../app/javascript/facility/facility_list.jsx';
 var TestUtils = require('react-dom/lib/ReactTestUtils');
 

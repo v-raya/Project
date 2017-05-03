@@ -1,6 +1,5 @@
 import React from 'react';
 import SearchInput from '../../../app/javascript/search/search_input';
-import SearchGrid from '../../../app/javascript/search/search_grid';
 var TestUtils = require('react-dom/lib/ReactTestUtils');
 
 

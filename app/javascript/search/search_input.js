@@ -46,6 +46,7 @@ export default class SearchInput extends React.Component {
             </div>
             <div className="styled-select county">
               <select ref={this.state.county} value={this.state.county} onChange={this.handleCountyChange}>
+                <option value=" "></option>
                 {countyIterate}
               </select>
               <span className="glyphicon glyphicon-triangle-bottom"></span>
@@ -57,6 +58,7 @@ export default class SearchInput extends React.Component {
             </div>
             <div className="styled-select county">
               <select ref={this.state.facility} value={this.state.facility} onChange={this.handleTypeChange}>
+                <option value=""></option>
                 {facilityIterate}
               </select>
               <span className="glyphicon glyphicon-triangle-bottom"></span>
