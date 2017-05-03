@@ -1,7 +1,7 @@
-var webpack = require('webpack');
-var webpackConfig = require('./webpack/test');
+var webpack = require('webpack')
+var webpackConfig = require('./webpack/test')
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -27,14 +27,14 @@ module.exports = function(config) {
       './../test/javascript/tests.webpack.js': ['webpack', 'sourcemap']
     },
 
-    webpack:{
+    webpack: {
       devtool: 'inline-source-map',
       module: webpackConfig.module
     },
 
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress','html', 'coverage'],
+    reporters: ['progress', 'html', 'coverage'],
     htmlReporter: {
       outputFile: './../reports/karma_test_results.html',
       // Optional
@@ -51,7 +51,7 @@ module.exports = function(config) {
     },
 
     webpackMiddleware: {
-      noInfo: true //please don't spam the console when running in karma!
+      noInfo: true // please don't spam the console when running in karma!
     },
     plugins: [
       'karma-sourcemap-loader',
@@ -85,5 +85,5 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  });
-};
+  })
+}

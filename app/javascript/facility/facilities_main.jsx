@@ -1,7 +1,8 @@
 import React from 'react'
 import FacilityDetails from './facility_details.jsx'
 import FacilityAddress from './facility_address.jsx'
-{ /* import FacilityChildren from './children.jsx' */ }
+import FacilityChildren from './children.jsx'
+import FacilityComplaints from './complaints.jsx'
 import './stylesheets/facility.scss'
 import logo from './images/logo.jpg'
 import 'whatwg-fetch'
@@ -39,7 +40,8 @@ export default class Facilities extends React.Component {
         <div className='body_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <FacilityDetails facilityData={propsData} />
           <FacilityAddress facilityData={propsData} />
-          {/*  <FacilityChildren facilityData={propsData} /> */}
+          <FacilityChildren facilityData={propsData} />
+          <FacilityComplaints facilityData={propsData} />
         </div>
       </div>
     )

@@ -1,5 +1,5 @@
 {
-"extends": "airbnb",
+"extends": "standard",
 "plugins": [
 "react",
 "jsx-a11y",
@@ -14,4 +14,3 @@
     "react/require-extension": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }] }
 }
-  

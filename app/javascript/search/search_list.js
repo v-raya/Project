@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 export default class SearchList extends React.Component {
-  render() {
-    const searchResult = this.props.searchResults;
+  render () {
+    const searchResult = this.props.searchResults
     const resultTable = searchResult.map((result) => {
       return (
         <tr key={result.fac_nbr}>
@@ -18,11 +18,11 @@ export default class SearchList extends React.Component {
           <td>{result.fac_email_address}</td>
           <td>{result.assigned_worker}<p>Phone: <span>N/A</span></p></td>
         </tr>
-      );
-    });
+      )
+    })
     return (
-      <div className="main_table">
-        <table className="table">
+      <div className='main_table'>
+        <table className='table'>
           <thead>
             <tr>
               <th>Facility Name </th>
@@ -42,6 +42,6 @@ export default class SearchList extends React.Component {
           </tbody>
         </table>
       </div>
-    );
+    )
   }
 }

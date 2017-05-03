@@ -1,8 +1,8 @@
 
 import '../constants/constants'
-//require('../search')
+// require('../search')
 
-import { renderReact } from 'hypernova-react';
-import SearchMain from '../search';
+import { renderReact } from 'hypernova-react'
+import SearchMain from '../search'
 
-export default renderReact('search', SearchMain);
+export default renderReact('search', SearchMain)

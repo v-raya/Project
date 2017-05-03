@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const webpack = require('webpack')
 const merge = require('webpack-merge')
@@ -11,9 +11,9 @@ module.exports = merge(sharedConfig.config, {
     root: path.join(__dirname, 'node_modules')
   },
   module: {
-    rules : [
+    rules: [
       {
-        test:/\.(js|jsx)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'istanbul-instrumenter-loader',
         query: {
@@ -23,4 +23,4 @@ module.exports = merge(sharedConfig.config, {
     ]
   }
 
-});
+})

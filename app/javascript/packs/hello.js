@@ -1,4 +1,4 @@
-import { renderReact } from 'hypernova-react';
-import hello from '../hello';
+import { renderReact } from 'hypernova-react'
+import hello from '../hello'
 
-export default renderReact('hello', hello);
+export default renderReact('hello', hello)

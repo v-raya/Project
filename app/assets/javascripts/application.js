@@ -11,5 +11,5 @@
 // about supported directives.
 //
 
-//= require rails-ujs
-//= require bootstrap-sprockets
+// = require rails-ujs
+// = require bootstrap-sprockets

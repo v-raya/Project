@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 export default class Hello extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { liked: props.liked, title: props.title };
+  constructor (props) {
+    super(props)
+    this.state = { liked: props.liked, title: props.title }
   }
 
-  onClickLike() {
+  onClickLike () {
     this.setState({
       liked: !this.state.liked,
-      title: this.state.title });
+      title: this.state.title })
   }
 
-  render() {
+  render () {
     return (
       <div>
         <h1>Hello {this.props.title}!</h1>
@@ -20,7 +20,7 @@ export default class Hello extends Component {
           {this.state.liked ? 'liked' : 'not liked' }
         </button>
       </div>
-    );
+    )
   }
 }
 /*
