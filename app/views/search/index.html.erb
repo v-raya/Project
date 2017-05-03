@@ -1,2 +1,5 @@
-<div id="search"></div>
-<%= javascript_pack_tag 'search' %>
+<div id="search_page">
+  <%=render_react_component('search', landingUrl: @landingPage_url) %>
+  <%= javascript_pack_tag 'search' %>
+
+</div>

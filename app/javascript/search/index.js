@@ -1,10 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
 import Search from './search';
 import './stylesheets/search.scss'
 
 
-ReactDOM.render(
-    <Search />,
-    document.getElementById("search")
-);
+
+export default class SearchMain extends Component {
+  render() {
+    return (
+      <Search {...this.props}/>
+    )
+  }
+}
