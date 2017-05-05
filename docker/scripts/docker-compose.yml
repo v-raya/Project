@@ -1,0 +1,62 @@
+version: "2.1"
+networks:
+        dev-cs-cals:
+                driver: bridge
+services:
+        db:
+                build: ${CALS_HOME}/docker/${CALS_ENV}/db/postgres
+                image: calspostgres:latest
+                container_name: calspostgres
+                ports:
+                        - 5432:5432
+                networks: 
+                        - dev-cs-cals
+        es:
+                build: ${CALS_HOME}/docker/${CALS_ENV}/app/es
+                image: calses:latest
+                container_name: calses
+                ports:
+                        - 9200:9200
+                networks: 
+                        - dev-cs-cals
+        mock-api:
+                build: ${CALS_HOME}/docker/${CALS_ENV}/app/mock-api
+                image: calsmockapi:latest
+                container_name: calsmockapi
+                ports:
+                        - 3001:3001
+                depends_on: 
+                        - db
+                        - es
+                networks: 
+                        - dev-cs-cals
+        redis:
+                build: ${CALS_HOME}/docker/${CALS_ENV}/app/redis
+                image: calsredis:latest
+                container_name: calsredis
+                ports:
+                        - 6379:6379
+                networks: 
+                        - dev-cs-cals
+        cals:
+                build: ${CALS_HOME}/docker/${CALS_ENV}/app/cals
+                image: cals:latest
+                container_name: cals
+                ports:
+                        - 3000:3000
+                depends_on: 
+                        - redis
+                networks: 
+                        - dev-cs-cals
+        nginx:
+                build: ${CALS_HOME}/docker/${CALS_ENV}/web/nginx
+                image: calsnginx:latest
+                container_name: calsnginx
+                ports:
+                        - 80:80
+                depends_on: 
+                        - cals
+                        - mock-api
+                networks: 
+                        - dev-cs-cals
+

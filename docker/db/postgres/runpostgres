@@ -1,2 +1,0 @@
-./stoppostgres
-docker run -itd -p 5432:5432 --net dev-cs-cals --ip 192.168.213.200 --hostname dev-postgres --name dev-postgres dev-postgres:latest

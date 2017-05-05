@@ -1,4 +1,22 @@
-$HOME/db/postgres/stoppostgres
-$HOME/app/redis/stopredis
-$HOME/app/ruby/stopruby
-$HOME/web/nginx/stopnginx
+#!/bin/bash
+if [ -n "$CALS_HOME" ] && [ -n "$CALS_ENV" ] 
+then
+   echo Environment variables set ... continuing
+else 
+   echo 'Appropriate environment variables not set ... exiting'
+   exit 1
+fi
+
+echo Stopping nginx
+${CALS_HOME}/docker/${CALS_ENV}/web/nginx/stopnginx
+echo Stopping cals
+${CALS_HOME}/docker/${CALS_ENV}/app/cals/stopcals
+echo Stopping redis
+${CALS_HOME}/docker/${CALS_ENV}/app/redis/stopredis
+echo Stopping mock-api
+${CALS_HOME}/docker/${CALS_ENV}/app/mock-api/stopmockapi
+echo Stopping elasticsearch
+${CALS_HOME}/docker/${CALS_ENV}/app/es/stopes
+echo Stopping postgres
+${CALS_HOME}/docker/${CALS_ENV}/db/postgres/stoppostgres
+echo Done

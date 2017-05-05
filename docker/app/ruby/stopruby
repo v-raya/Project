@@ -1,2 +1,0 @@
-docker stop dev-ruby
-docker rm dev-ruby

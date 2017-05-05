@@ -1,0 +1,5 @@
+# Pass --no-cache as command line argument if docker should ignore caching (workaround for "git clone" in dockerfile)
+# For security reasons, creds are copied into the docker build directory and then later removed
+cp $HOME/.ssh/id_rsa id_rsa
+docker build -t calsmockapi:latest . $*
+rm id_rsa

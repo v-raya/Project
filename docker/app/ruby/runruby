@@ -1,2 +1,0 @@
-./stopruby
-docker run -td -p 3000:3000 --net dev-cs-cals --ip 192.168.213.100 --hostname dev-ruby --name dev-ruby dev-ruby:latest
