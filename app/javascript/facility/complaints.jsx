@@ -39,7 +39,7 @@
 
      const facilityComplaintsTable = FacilityComplaints.complaints.map((complaint) => {
        return (
-         <tr>
+         <tr key={complaint.id} >
            <td> {complaint.id} </td>
            <td> {complaint.complaint_date} </td>
            <td> {complaint.assigned_worker} </td>

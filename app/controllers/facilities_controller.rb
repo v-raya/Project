@@ -2,7 +2,7 @@
 require 'hypernova'
 
 class FacilitiesController < CalsBaseController
-   around_action :hypernova_render_support
+  around_action :hypernova_render_support
   include Response
 
   def index
@@ -16,13 +16,17 @@ class FacilitiesController < CalsBaseController
   end
 
   def show
-    @facility ||= Facility.find_by_id(params[:id]).to_json
+    @facility ||= Facility.find_by_id(params[:id])
 
-    respond_to do |format|
-      format.html
-      format.js
-      format.json { render json: @facility, status: :ok }
-    end
+    @children ||= @facility.children.to_json
+    @complaints ||= @facility.complaints.to_json
+    @facility = @facility.to_json
+
+    # respond_to do |format|
+    #   format.html
+    #   format.js
+    #   format.json { render json: @facility, status: :ok }
+    # end
   end
 
   def search

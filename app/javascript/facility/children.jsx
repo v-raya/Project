@@ -39,13 +39,13 @@ const facilityChildren = {
 
 export default class Children extends React.Component {
   render () {
-    //  let facilityChildren = this.props.FacilityChildren
+    //  let facilityChildren = this.props.children
     // since we don't have api set up to send us correct child yet,
     // lets mock the response here
 
     const facilityChildredTable = facilityChildren.children.map((child) => {
       return (
-        <tr>
+        <tr key={child.id} >
           <td> {child.id} </td>
           <td> {child.first_name} </td>
           <td> {child.last_name} </td>

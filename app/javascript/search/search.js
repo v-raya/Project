@@ -5,7 +5,7 @@ import SearchList from './search_list'
 import SearchNotFound from './search_notfount'
 import SearchDetails from './search_Data'
 import 'whatwg-fetch'
-import logo from '../facility/images/logo.jpg'
+import logo from '../facilities/images/logo.jpg'
 
 export default class Search extends React.Component {
   constructor (props) {

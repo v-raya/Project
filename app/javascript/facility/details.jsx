@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router'
 
 export default class FacilityDetails extends React.Component {
   render () {
@@ -57,9 +56,9 @@ export default class FacilityDetails extends React.Component {
               <div className='inner_block orange'>
                 <div className='small_inner_block'>
                   <p>LICENSE EFFECTIVE DATE</p>
-                  <p>{this.props.status == ('Pending' || 'Probationary License') ? 'N/A' : (this.props.facilityData.fac_lic_eff_date == null ? 'N/A' : this.props.facilityData.fac_lic_eff_date)}</p>
+                  <p>{this.props.status === ('Pending' || 'Probationary License') ? 'N/A' : (this.props.facilityData.fac_lic_eff_date == null ? 'N/A' : this.props.facilityData.fac_lic_eff_date)}</p>
                 </div>
-                <div className="small_inner_block">
+                <div className='small_inner_block'>
                   <p>APPLICATION RECEIVED DATE</p>
                   <p>{this.props.facilityData.fac_orig_appl_rec_date == null ? 'N/A' : this.props.facilityData.fac_orig_appl_rec_date}</p>
                 </div>

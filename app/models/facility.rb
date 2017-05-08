@@ -13,6 +13,12 @@ class Facility < CalsBase
   # attr_accessor :license_effective_date, :original_application_recieved_date
 
   # has_many children association
+  # attr_accessor :children
+  # def get_children
+  #   self.children = Child.find_by_facility(fac_nbr)
+  # end
+
+  # has_many children association
   def children
     Child.find_by_facility(fac_nbr)
   end
