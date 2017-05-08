@@ -37,7 +37,8 @@ export default class Search extends React.Component {
       method: 'GET',
       headers: {
         'Accept': 'application/json'
-      }
+      },
+      credentials: 'same-origin'
     })
     .then(
       response => response.json())
