@@ -13,7 +13,6 @@ gem 'rails', '~> 5.1.0.beta1'
 
 gem 'foreman'
 
-gem 'activeresource', github: 'rails/activeresource', branch: 'master'
 gem 'responders', '~> 2.3'
 gem 'autoprefixer-rails', '~> 6.7'
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -34,6 +33,8 @@ gem 'webpacker', '1.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
+gem 'cwds-authentication', github: 'ca-cwds/cwds-authentication', :ref => "5ce2828"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
