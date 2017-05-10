@@ -21,7 +21,7 @@ ENV ELASTICSEARCH_HOST_URL=http://calses:9200
 ENV DATABASE_USERNAME=pguser
 ENV DATABASE_PASSWORD=
 ENV DATABASE_NAME=pguser
-ENVHOST_URL=calspostgres
+ENV HOST_URL=calspostgres
 ENV HOST_PORT=5432
 
 # 20170427- the following 2 lines added as a workaround for aws_dev 
