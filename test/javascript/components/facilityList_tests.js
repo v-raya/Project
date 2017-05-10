@@ -1,5 +1,5 @@
 import React from 'react'
-import FacilityList from '../../../app/javascript/facility/facility_list.jsx'
+import FacilityList from '../../../app/javascript/facilities/facility_list.jsx'
 var TestUtils = require('react-dom/lib/ReactTestUtils')
 
 describe('check Facility List', function () {

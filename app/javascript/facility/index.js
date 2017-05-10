@@ -9,7 +9,9 @@ import logo from './../facilities/images/logo.jpg'
 export default class Facility extends Component {
   constructor (props) {
     super(props)
-    this.state = { facility: JSON.parse(props.facility) }
+    this.state = { facility: JSON.parse(props.facility),
+      children: JSON.parse(props.children),
+      complaints: JSON.parse(props.complaints)}
   }
 
   render () {

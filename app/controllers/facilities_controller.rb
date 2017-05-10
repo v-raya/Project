@@ -1,4 +1,3 @@
-
 require 'hypernova'
 
 class FacilitiesController < CalsBaseController
@@ -17,7 +16,6 @@ class FacilitiesController < CalsBaseController
 
   def show
     @facility ||= Facility.find_by_id(params[:id])
-
     @children ||= @facility.children.to_json
     @complaints ||= @facility.complaints.to_json
     @facility = @facility.to_json

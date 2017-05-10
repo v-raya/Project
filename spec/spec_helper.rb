@@ -13,7 +13,7 @@ SimpleCov.start 'rails' do
 
  add_filter 'app/controllers/pages_controller'
 
-  
+
   add_filter 'app/mailers/'
   add_filter 'app/jobs/'
   add_filter 'app/helpers/'

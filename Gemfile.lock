@@ -1,12 +1,11 @@
 GIT
-  remote: https://github.com/rails/activeresource.git
-  revision: c38f18ce4ee6c83e034e7b465459fdd547804b64
-  branch: master
+  remote: https://github.com/ca-cwds/cwds-authentication.git
+  revision: 5ce28289190a5dd4e1c3ffd50647c9e8f9e2c3b2
+  ref: 5ce2828
   specs:
-    activeresource (5.0.0)
-      activemodel (>= 5.0, < 6)
-      activemodel-serializers-xml (~> 1.0)
-      activesupport (>= 5.0, < 6)
+    cwds-authentication (0.1.0)
+      activesupport (~> 5.0)
+      faraday (~> 0.9.2)
 
 GIT
   remote: https://github.com/rails/sass-rails.git
@@ -49,11 +48,6 @@ GEM
       globalid (>= 0.3.6)
     activemodel (5.1.0)
       activesupport (= 5.1.0)
-    activemodel-serializers-xml (1.0.1)
-      activemodel (> 5.x)
-      activerecord (> 5.x)
-      activesupport (> 5.x)
-      builder (~> 3.1)
     activerecord (5.1.0)
       activemodel (= 5.1.0)
       activesupport (= 5.1.0)
@@ -107,7 +101,7 @@ GEM
       railties (>= 3.0.0)
     faker (1.7.3)
       i18n (~> 0.5)
-    faraday (0.12.1)
+    faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.11.0.1)
       faraday (>= 0.7.4, < 1.0)
@@ -141,7 +135,7 @@ GEM
     multi_json (1.12.1)
     multipart-post (2.0.0)
     nio4r (2.0.0)
-    nokogiri (1.7.1)
+    nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     parser (2.4.0.0)
       ast (~> 2.2)
@@ -289,13 +283,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activeresource!
   autoprefixer-rails (~> 6.7)
   bootstrap
   bootstrap-sass (~> 3.3.6)
   byebug
   capybara (~> 2.7.0)
   codeclimate-test-reporter (~> 1.0.0)
+  cwds-authentication!
   dotenv-rails (~> 2.2)
   factory_girl
   factory_girl_rails
