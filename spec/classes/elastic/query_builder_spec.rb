@@ -14,10 +14,10 @@ describe FacilitiesController do
           ]
       }}
 
-      input = {fac_co_nbr: '23', fac_name: 'home'}
+      input = {fac_co_nbr: '28', fac_name: 'home'}
       output = Elastic::QueryBuilder.match_and(input)
 
-      expect(output).should eql?(expected_output)
+      expect(output).to eq(expected_output)
     end
 
     it "builds complex bool AND/OR" do
@@ -43,10 +43,10 @@ describe FacilitiesController do
         }
       }
 
-      input = [ {fac_co_nbr: '23', fac_name: 'home'}, {fac_co_nbr: '45'} ]
+      input = [ {fac_co_nbr: '28', fac_name: 'home'}, {fac_co_nbr: '18'} ]
       output = Elastic::QueryBuilder.match_boolean(input)
 
-      expect(output).should eql?(expected_output)
+      expect(output).to eq(expected_output)
     end
 
   end
