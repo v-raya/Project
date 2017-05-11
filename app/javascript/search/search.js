@@ -32,18 +32,17 @@ export default class Search extends React.Component {
      county : query[0],
      type : query[1],
      fac_nbr: query[2],
-     fac_name : query[3],
-     fac_addr : ''
+     fac_name : query[3]
     };
-    // var esc = encodeURIComponent;
-    // // var queryObj = Object.keys(params)
-    // //   .map(k => esc(k) + '=' + esc(params[k]))
-    // //   .join('&');
-    // //var queryUrl = url + '?query=' + queryObj;
-    // Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+    var esc = encodeURIComponent;
+    var queryObj = Object.keys(params)
+      .map(k => esc(k) + '=' + esc(params[k]))
+      .join('&');
+    var queryUrl = url + 'query=' + queryObj;
+    //Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
     this.state.inputData = DataSearch
-    fetch(`/facilities/`, {
+    fetch(`${queryUrl}`, {
       mode: 'no-cors',
       method: 'POST',
       headers: {
