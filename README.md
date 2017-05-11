@@ -1,4 +1,5 @@
 <a href="http://codeclimate.com/github/ca-cwds/CALS"><img src="http://codeclimate.com/github/ca-cwds/CALS/badges/gpa.svg" /></a>
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8cf2373d85364e24976380e4e5a10cce)](https://www.codacy.com/app/CALS/CALS?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ca-cwds/CALS&amp;utm_campaign=Badge_Grade)
 
 # README
 
