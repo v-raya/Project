@@ -1,5 +1,5 @@
 # config/initializers/session_store.rb
-RailsWebpacker::Application.config.session_store :redis_store, {
+Cals::Application.config.session_store :redis_store, {
   servers: [
     {
       host: REDIS_HOST,
