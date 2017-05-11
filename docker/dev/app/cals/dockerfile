@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install yarn
 RUN mkdir /var/www; cd /var/www;
 
 # clone CALS
-RUN git clone -b aws_dev https://github.com/ca-cwds/CALS.git /var/www/cals
+RUN git clone -b development https://github.com/ca-cwds/CALS.git /var/www/cals
 
 WORKDIR /var/www/cals
 RUN cd /var/www/cals
@@ -44,11 +44,5 @@ ENV REDIS_HOST=calsredis
 ENV REDIS_PORT=6379
 # ENV SANDBOX_LANDING_URL=
 
-# cals redis host
-ENV REDIS_SERVER_HOST=calsredis
-
 # run rails server
-# CMD rails server -e aws_dev -b 192.168.213.100
 CMD rails server -e aws_dev -b 0.0.0.0
-
-

@@ -1,3 +1,3 @@
 docker run -td -p 3001:3001 --net dev-cs-cals --hostname calsmockapi --name calsmockapi calsmockapi:latest
-docker exec -it calsmockapi rake db:migrate RAILS_ENV=aws_dev >> /dev/null
-docker exec -it calsmockapi rake environment elasticsearch:import:all DIR=app/models FORCE=y RAILS_ENV=aws_dev >> /dev/null
+docker exec -it calsmockapi rake db:migrate RAILS_ENV=development >> /dev/null
+docker exec -it calsmockapi rake environment elasticsearch:import:all DIR=app/models FORCE=y RAILS_ENV=development >> /dev/null
