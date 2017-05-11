@@ -26,12 +26,23 @@ export default class Search extends React.Component {
     this.state.isToggled = false
   }
   addSearchInput (DataSearch) {
-    // var url = new URL("https://geo.example.org/api"),
-    //     params = {lat:35.696233, long:139.570431}
-    // Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+    var query = DataSearch.split(",");
+    var url = "/facilities/";
+    var params = {
+     county : query[0],
+     type : query[1],
+     fac_nbr: query[2],
+     fac_name : query[3]
+    };
+    var esc = encodeURIComponent;
+    var queryObj = Object.keys(params)
+      .map(k => esc(k) + '=' + esc(params[k]))
+      .join('&');
+    var queryUrl = url + 'query=' + queryObj;
+    //Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
     this.state.inputData = DataSearch
-    fetch(`/facilities/search?query=${DataSearch}`, {
+    fetch(`${queryUrl}`, {
       mode: 'no-cors',
       method: 'GET',
       headers: {
