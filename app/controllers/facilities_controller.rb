@@ -28,7 +28,7 @@ class FacilitiesController < CalsBaseController
 
   private
   def search_query(unprocessed_params)
-    if unprocessed_params['county'].is_a?(Array) || unprocessed_params['county'].is_a?(Array)
+    if unprocessed_params['county'].is_a?(Array) || unprocessed_params['type'].is_a?(Array)
       query_builder_params = process_params(unprocessed_params)
       Elastic::QueryBuilder.match_boolean(query_builder_params)
     else
@@ -41,7 +41,7 @@ class FacilitiesController < CalsBaseController
     single_value_params = params.reject { |k| ['county', 'type'].include?(k) }
 
     params['county'] = params['county'].is_a?(Array) ? params['county'] : [params['county']]
-    params['type'] = params['county'].is_a?(Array) ? params['county'] : [params['county']]
+    params['type'] = params['type'].is_a?(Array) ? params['type'] : [params['type']]
 
     params['county'].each do |county|
       params['type'].each do |type|
