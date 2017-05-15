@@ -15,13 +15,14 @@ require 'capybara/rspec'
 
 Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f }
 
-Capybara.register_driver :selenium_chrome do |app|
+Capybara.register_driver :accessible_selenium do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
-Capybara.javascript_driver = :selenium_chrome
-Capybara.app_host = "http://localhost:5000"
- Capybara.run_server = true
+Capybara.javascript_driver = :accessible_selenium
+# Capybara.app_host = "http://localhost:5000"
+# Capybara.run_server = true
+
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!

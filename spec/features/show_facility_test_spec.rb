@@ -4,11 +4,11 @@ require 'vcr'
 RSpec.feature 'Facilities', js: true do
   before(:each) do
   visit '/facilities'
-  #we may need to change the guest guest later 
+  # we may need to change the guest guest later
     page.fill_in 'username', with: 'guest'
     page.fill_in 'password', with: 'guest'
     page.click_button 'Sign In'
-  Capybara.current_session.driver.browser.manage.add_cookie(name: 'token', value: page.driver.current_url.split("token=")[1])
+    sleep(3)
   end
   scenario 'List of facilities' do
     visit '/facilities'
