@@ -6,7 +6,7 @@ export default class SearchList extends React.Component {
     const resultTable = searchResult.map((result) => {
       return (
         <tr key={result.fac_nbr}>
-          <td>{result.fac_name}</td>
+          <td><a href={'/facilities/' + result.fac_nbr}>{result.fac_name}</a></td>
           <td>{result.fac_nbr}</td>
           <td>{result.type}</td>
           <td>{result.status}</td>

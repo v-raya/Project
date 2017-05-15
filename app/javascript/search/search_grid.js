@@ -8,12 +8,15 @@ export default class SearchGrid extends React.Component {
       return (
         <div key={result.fac_nbr} className='grid_view_inner col-xs-12 col-sm-12 col-md-12 col-lg-12' >
           <div className='col-xs-12 col-sm-1 col-md-1 col-lg-1'>
-            <img src={home} />
+            <a href={'/facilities/' + result.fac_nbr}><img src={home} /></a>
           </div>
           <div className='col-xs-12 col-sm-11 col-md-11 col-lg-11'>
             <div className='grid_layout col-xs-12 col-sm-4 col-md-4 col-lg-4'>
               <div>
-                <p className='block_label'>Facility Name</p> <p className='block_text'>{result.fac_name}</p>
+                <p className='block_label'>Facility Name </p>
+                <p className='block_text'>
+                  <a href={'/facilities/' + result.fac_nbr}>{result.fac_name}</a>
+                </p>
               </div>
               <div>
                 <p className='block_label'>Facility ID/Approval # </p>
