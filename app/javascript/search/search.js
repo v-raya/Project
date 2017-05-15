@@ -43,10 +43,11 @@ export default class Search extends React.Component {
     // Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
     this.state.inputData = DataSearch
-    fetch(`/facilities/`, {
+    fetch('/facilities/search', {
       mode: 'no-cors',
       method: 'POST',
       headers: {
+        'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
       credentials: 'same-origin',
