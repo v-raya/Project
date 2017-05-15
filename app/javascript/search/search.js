@@ -27,7 +27,6 @@ export default class Search extends React.Component {
   }
   addSearchInput (DataSearch) {
     var query = DataSearch.split(",");
-    var url = "/facilities/";
     var params = {
      county : query[0],
      type : query[1],
@@ -35,12 +34,6 @@ export default class Search extends React.Component {
      fac_name : query[3],
      fac_addr : ''
     };
-    // var esc = encodeURIComponent;
-    // // var queryObj = Object.keys(params)
-    // //   .map(k => esc(k) + '=' + esc(params[k]))
-    // //   .join('&');
-    // //var queryUrl = url + '?query=' + queryObj;
-    // Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
     this.state.inputData = DataSearch
     fetch('/facilities/search', {
