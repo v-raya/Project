@@ -4,7 +4,7 @@ module FacilityApiProtocolProvider
 
   class_methods do
     def search(query)
-      response =  Faraday.post "#{ENV['BASE_CALS_API_URL']}/#{class_name_downcase_pluralized}/search", query
+      response = Faraday.post "#{ENV['BASE_CALS_API_URL']}/#{class_name_downcase_pluralized}/search", query
       JSON.parse(response.body)
     end
 
@@ -15,8 +15,5 @@ module FacilityApiProtocolProvider
       'example of an instance method'
     end
 
-
   end
-
-
 end
