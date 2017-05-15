@@ -59,7 +59,7 @@ export default class Search extends React.Component {
       response => response.json())
     .then((response) => {
       return this.setState({
-        searchData: response
+        searchData: response.facilities
       })
     })
     .catch(error => {
