@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'search#index'
   resources :facilities,  only:[:index, :show] do
-    collection { get :search }
+    collection { post :search }
   end
   resources :search, only:[:index] do
 
