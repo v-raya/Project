@@ -20,5 +20,5 @@ psql -v -d pguser -f ./scripts/facility_info_lis.sql -U pguser
 #LIS
 psql -v -d pguser -f ./scripts/LISDDLStatements.sql -U pguser
 
-psql -v -d pguser_test -f ./scripts/insert_children.sql -U pguser
-psql -v -d pguser_test -f ./scripts/insert_complaints.sql -U pguser
+psql -v -d pguser -f ./scripts/insert_children.sql -U pguser
+psql -v -d pguser -f ./scripts/insert_complaints.sql -U pguser
