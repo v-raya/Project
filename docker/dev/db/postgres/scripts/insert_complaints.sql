@@ -30,5 +30,5 @@ CREATE TABLE IF NOT EXISTS complaints (
 
 ALTER TABLE complaints OWNER TO pguser;
 
-INSERT INTO complaints VALUES ('2010-01-01', 'Tom Doe', 'X5-A4-7f8239', '2', 'Pending', '2010-01-05', '909453695');
-INSERT INTO complaints VALUES ('2010-02-03', 'Jan Doe', 'X5-A7-8S325D', '2', 'Pending', '2010-03-05', '909453695');
+INSERT INTO complaints VALUES ('2010-01-01', 'Tom Doe', '23-CR20170105112053', '2', 'Pending', '2010-01-05', '909453695');
+INSERT INTO complaints VALUES ('2010-02-03', 'Jan Doe', '12-CR20161205112053', '2', 'Pending', '2010-03-05', '909453695');
