@@ -31,5 +31,5 @@ CREATE TABLE IF NOT EXISTS children (
 
 ALTER TABLE children OWNER TO pguser;
 
-INSERT INTO children VALUES ('Tom', 'Doe', '2010-01-01', 'Jane Doe', 'M', '2010-01-05', 'Sacramento', '909453695');
-INSERT INTO children VALUES ('Jane', 'Doe', '2010-01-01', 'Tom Doe', 'F', '2010-01-05', 'Los Angeles', '909453695');
+INSERT INTO children VALUES ('Tom', 'Donald', '2010-01-01', 'Jay Thomas', 'M', '2010-01-05', 'Sacramento', '909453695');
+INSERT INTO children VALUES ('Jane', 'Doe', '2010-01-01', 'Tom Goodguy', 'F', '2010-01-05', 'Los Angeles', '909453695');
