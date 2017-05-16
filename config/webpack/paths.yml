@@ -25,6 +25,9 @@ default: &default
 development:
   <<: *default
 
+aws_dev:
+  <<: *default
+
 test:
   <<: *default
   manifest: manifest-test.json

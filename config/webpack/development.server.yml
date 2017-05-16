@@ -8,6 +8,10 @@ default: &default
 development:
   <<: *default
 
+aws_dev:
+  <<: *default
+  enabled: false
+
 test:
   <<: *default
   enabled: false
