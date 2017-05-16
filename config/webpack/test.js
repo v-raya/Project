@@ -1,15 +1,11 @@
-'use strict'
+// Note: You must restart bin/webpack-dev-server for changes to take effect
 
-const webpack = require('webpack')
 const merge = require('webpack-merge')
 const sharedConfig = require('./shared.js')
-const path = require('path')
-module.exports = merge(sharedConfig.config, {
-  entry: './../test/javascript/tests.webpack.js',
-  devtool: 'cheap-module-inline-source-map',
-  resolveLoader: {
-    root: path.join(__dirname, 'node_modules')
-  },
+
+module.exports = merge(sharedConfig, {
+
+  devtool: 'sourcemap',
   module: {
     rules: [
       {
@@ -22,5 +18,4 @@ module.exports = merge(sharedConfig.config, {
       }
     ]
   }
-
 })

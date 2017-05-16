@@ -1,87 +1,54 @@
-// Note: You must restart bin/webpack-watcher for changes to take effect
+// Note: You must restart bin/webpack-dev-server for changes to take effect
+
+/* eslint global-require: 0 */
+/* eslint import/no-dynamic-require: 0 */
 
 const webpack = require('webpack')
-const path = require('path')
-const process = require('process')
-const glob = require('glob')
+const { basename, dirname, join, relative, resolve } = require('path')
+const { sync } = require('glob')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ManifestPlugin = require('webpack-manifest-plugin')
 const extname = require('path-complete-extname')
+const { env, paths, publicPath, loadersDir } = require('./configuration.js')
 
-let distDir = process.env.WEBPACK_DIST_DIR
+const extensionGlob = `**/*{${paths.extensions.join(',')}}*`
+const packPaths = sync(join(paths.source, paths.entry, extensionGlob))
 
-if (distDir === undefined) {
-  distDir = 'packs'
-}
-
-const config = {
-  entry: glob.sync(path.join('app', 'javascript', 'packs', '*.js*')).reduce(
-                   (map, entry) => {
-                     const basename = path.basename(entry, extname(entry))
-                     const localMap = map
-                     localMap[basename] = path.resolve(entry)
-                     return localMap
-                   }, {}
-                   ),
+module.exports = {
+  entry: packPaths.reduce(
+    (map, entry) => {
+      const localMap = map
+      const namespace = relative(join(paths.source, paths.entry), dirname(entry))
+      localMap[join(namespace, basename(entry, extname(entry)))] = resolve(entry)
+      return localMap
+    }, {}
+  ),
 
   output: {
     filename: '[name].js',
-    path: path.resolve('public', distDir)
+    path: resolve(paths.output, paths.entry),
+    publicPath
   },
 
   module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          presets: [
-            'react',
-                    ['env', { es2015: { modules: false } }]
-          ]
-        }
-      },
-      {
-        test: /\.erb$/,
-        enforce: 'pre',
-        exclude: /node_modules/,
-        loader: 'rails-erb-loader',
-        options: {
-          runner: 'DISABLE_SPRING=1 bin/rails runner'
-        }
-      },
-      {
-        test: /\.(sass|scss)$/,
-        loader: ['style-loader', 'css-loader', 'sass-loader']
-      },
-      {
-        test: /\.(png|jpg)$/,
-        loader: ['url-loader']
-      },
-      {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file?name=app/assets/fonts/[name].[ext]'
-      }
-    ]
+    rules: sync(join(loadersDir, '*.js')).map(loader => require(loader))
   },
 
   plugins: [
-    new webpack.EnvironmentPlugin(Object.keys(process.env))
+    new webpack.EnvironmentPlugin(JSON.parse(JSON.stringify(env))),
+    new ExtractTextPlugin(env.NODE_ENV === 'production' ? '[name]-[hash].css' : '[name].css'),
+    new ManifestPlugin({ fileName: paths.manifest, publicPath, writeToFileEmit: true })
   ],
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: paths.extensions,
     modules: [
-      path.resolve('app/javascript'),
-      path.resolve('node_modules')
+      resolve(paths.source),
+      resolve(paths.node_modules)
     ]
   },
 
   resolveLoader: {
-    modules: [path.resolve('node_modules')]
+    modules: [paths.node_modules]
   }
-}
-
-module.exports = {
-  distDir,
-  config
 }
