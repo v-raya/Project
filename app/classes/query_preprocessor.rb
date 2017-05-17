@@ -1,5 +1,9 @@
 class QueryPreprocessor
 
+  def self.params_to_elasticsearch_query(params)
+    Elastic::QueryBuilder.match_boolean(params_to_query_hash(params))
+  end
+
   def self.params_to_query_hash(params)
     # remove blank values from each array
     params.each{ |k,v| params[k] = v.reject{ |value| value.blank? } }
