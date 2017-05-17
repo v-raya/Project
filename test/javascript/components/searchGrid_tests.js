@@ -1,9 +1,9 @@
 import React from 'react'
-import SearchList from '../../../app/javascript/search/search_list'
+import SearchGrid from '../../../app/javascript/search/search_grid'
 var TestUtils = require('react-dom/lib/ReactTestUtils');
 
-describe('Render search list', function () {
-  const props = {
+describe('Render Search results to Grid', function () {
+  const prop = {
     searchResults: [
       {
         assigned_worker: 'Kari Gutierrez',
@@ -33,22 +33,21 @@ describe('Render search list', function () {
       }
     ]
   }
-  let searchListComp = TestUtils.createRenderer();
-  let searchListRender = searchListComp.render(<SearchList {...props} />);
-  let tableElement = searchListRender.props.children;
-  it('Create table view', function () {
-    expect(searchListRender.props.className).toBe('main_table');
+  let searchGridComp = TestUtils.createRenderer();
+  let searchGridRender = searchGridComp.render(<SearchGrid {...prop} />);
+  let gridElement = searchGridRender.props.children;
+  it('Render Grid view block', function () {
+    expect(gridElement[0].props.className).toBe('grid_view_inner col-xs-12 col-sm-12 col-md-12 col-lg-12')
+  });
+  it('verify loaded Facility ID', function () {
+    expect(gridElement[0].key).toEqual(prop.searchResults[0].fac_nbr.toString());
+  });
+  const gridObjects = gridElement[0].props.children;
+  const gridArrayChildElem = gridObjects[0].props.children;
+  it('expect anchor Tag', function () {
+    expect(gridArrayChildElem.type).toBe("a")
+  });
+  it('Verify Anchor Tag href value', function () {
+    expect(gridArrayChildElem.props.href).toEqual("/facilities/193600008")
   })
-  it('Render Table', function () {
-    expect(tableElement.type).toBe('table');
-  })
-  it('Render Table Body for Facility List', function () {
-    let tableChild = tableElement.props.children;
-    expect(tableChild[1].type).toBe('tbody');
-  })
-  it('Verify assigned Facility ID', function () {
-    let tableFaclityID = tableElement.props.children[1].props.children[0];
-    expect(tableFaclityID.key).toEqual('193600008');
-  })
-
-})
+});

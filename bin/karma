@@ -4,7 +4,7 @@ $stdout.sync = true
 require "shellwords"
 require "yaml"
 
-ENV["RAILS_ENV"] ||= "development"
+ENV["RAILS_ENV"] ||= "test"
 RAILS_ENV = ENV["RAILS_ENV"]
 
 ENV["NODE_ENV"] ||= RAILS_ENV
@@ -28,7 +28,8 @@ rescue Errno::ENOENT, NoMethodError
 end
 
 newenv = { "NODE_PATH" => NODE_MODULES_PATH }
-cmdline = [WEBPACK_BIN, "--progress", "--color", "--config", DEV_SERVER_CONFIG] + ARGV
+# cmdline = ['npm run karma'] + ARGV
+cmdline = ['karma start ./config/karma.conf.js;open ./reports/karma_test_results.html; open ./reports/coverage/karma/index.html'] + ARGV
 
 Dir.chdir(APP_PATH) do
   exec newenv, *cmdline
