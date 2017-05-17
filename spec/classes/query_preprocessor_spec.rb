@@ -9,7 +9,7 @@ describe QueryPreprocessor do
         expected_output = {query: {bool: {should: [{bool: {must: [{match: {county: '01'}}, {match: {type: '02'}}, {match: {fac_name: 'home'}}]}}]}}}
 
         unprocessed_params = {'county': ['01'], 'type': ['02'], 'fac_nbr': [''], 'fac_name': ['home'], 'fac_addr': ['']}
-        output = QueryPreprocessor.params_to_query_hash(unprocessed_params)
+        output = QueryPreprocessor.params_to_elasticsearch_query(unprocessed_params)
 
         expect(output).to eq(expected_output)
       end
@@ -31,7 +31,7 @@ describe QueryPreprocessor do
         }
 
         unprocessed_params = {'county': ['01', '02'], 'type': ['2', '4'], 'fac_nbr': ['80', '90']}
-        output = QueryPreprocessor.params_to_query_hash(unprocessed_params)
+        output = QueryPreprocessor.params_to_elasticsearch_query(unprocessed_params)
 
         expect(output).to eq(expected_output)
       end
@@ -42,7 +42,7 @@ describe QueryPreprocessor do
         expected_output = {query: {bool: {should: [{bool: {must: [{match: {county: '01'}}]}}, {bool: {must: [{match: {county: '02'}}]}},
                                                    {bool: {must: [{match: {county: '03'}}]}}]}}}
         unprocessed_params = {'county': ['01', '02', '03']}
-        output = QueryPreprocessor.params_to_query_hash(unprocessed_params)
+        output = QueryPreprocessor.params_to_elasticsearch_query(unprocessed_params)
 
         expect(output).to eq(expected_output)
       end
