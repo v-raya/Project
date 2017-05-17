@@ -1,7 +1,7 @@
 require 'rspec'
 require 'rails_helper'
 
-describe Elastic::QueryProcessor do
+describe QueryPreprocessor do
 
   describe '#search_query' do
     context 'with more than 1 non empty arrays as values' do
@@ -9,7 +9,7 @@ describe Elastic::QueryProcessor do
         expected_output = {query: {bool: {should: [{bool: {must: [{match: {county: '01'}}, {match: {type: '02'}}, {match: {fac_name: 'home'}}]}}]}}}
 
         unprocessed_params = {'county': ['01'], 'type': ['02'], 'fac_nbr': [''], 'fac_name': ['home'], 'fac_addr': ['']}
-        output = Elastic::QueryProcessor.search_query(unprocessed_params)
+        output = QueryPreprocessor.params_to_query_hash(unprocessed_params)
 
         expect(output).to eq(expected_output)
       end
@@ -31,7 +31,7 @@ describe Elastic::QueryProcessor do
         }
 
         unprocessed_params = {'county': ['01', '02'], 'type': ['2', '4'], 'fac_nbr': ['80', '90']}
-        output = Elastic::QueryProcessor.search_query(unprocessed_params)
+        output = QueryPreprocessor.params_to_query_hash(unprocessed_params)
 
         expect(output).to eq(expected_output)
       end
@@ -42,7 +42,7 @@ describe Elastic::QueryProcessor do
         expected_output = {query: {bool: {should: [{bool: {must: [{match: {county: '01'}}]}}, {bool: {must: [{match: {county: '02'}}]}},
                                                    {bool: {must: [{match: {county: '03'}}]}}]}}}
         unprocessed_params = {'county': ['01', '02', '03']}
-        output = Elastic::QueryProcessor.search_query(unprocessed_params)
+        output = QueryPreprocessor.params_to_query_hash(unprocessed_params)
 
         expect(output).to eq(expected_output)
       end
