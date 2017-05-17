@@ -28,8 +28,8 @@ export default class Search extends React.Component {
   addSearchInput (DataSearch) {
     var query = DataSearch.split(",");
     var params = {
-     county : [query[0]],
-     type : [query[1]],
+     fac_co_nbr : [query[0]],
+     fac_type : [query[1]],
      fac_nbr: [query[2]],
      fac_name : [query[3]],
      fac_addr : ['']
