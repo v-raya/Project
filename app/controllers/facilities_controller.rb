@@ -3,6 +3,7 @@ require 'hypernova'
 class FacilitiesController < CalsBaseController
   around_action :hypernova_render_support
   skip_before_action :verify_authenticity_token, only: [:search]
+
   include Response
 
   def index
@@ -19,8 +20,14 @@ class FacilitiesController < CalsBaseController
   def search
     post_data = request.body.read
     parsed_post_data = JSON.parse(post_data)
-    query = Elastic::QueryProcessor.search_query(parsed_post_data['params'])
-    @facilities = Facility.search query
+
+    query_hash = QueryPreprocessor.params_to_query_hash(parsed_post_data['params'])
+    puts "query_hash: #{query_hash}"
+    es_query = Elastic::QueryBuilder.match_boolean(query_hash)
+    puts "es query: #{es_query}"
+    @facilities = Facility.search es_query
+
+
     json_response @facilities
   end
 end
