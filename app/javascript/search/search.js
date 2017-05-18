@@ -17,8 +17,15 @@ export default class Search extends React.Component {
       searchData: []
     }
 
-    this.handleToggle = this.handleToggle.bind(this)
+    this.handleToggle = this.handleToggle.bind(this);
+    this.getCsrfToken = this.getCsrfToken.bind(this);
+
   }
+    getCsrfToken (value){
+    var metas = document.getElementsByTagName('meta');
+    var csrfToken = metas[value].content
+    return csrfToken;
+    }
   handleToggle () {
     this.setState({isToggled: !this.state.isToggled})
   }
@@ -37,16 +44,18 @@ export default class Search extends React.Component {
 
     this.state.inputData = DataSearch
     fetch('/facilities/search', {
-      mode: 'no-cors',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      credentials: 'same-origin',
-      body: JSON.stringify({
-        params
-      })
+        mode: 'cors',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'X-CSRF-Token' : this.getCsrfToken('csrf-token'),
+            'X-CSRF-param' : this.getCsrfToken('csrf-param')
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+            params
+        })
     })
     .then(
       response => response.json())
@@ -55,7 +64,8 @@ export default class Search extends React.Component {
         searchData: response.facilities
       })
     })
-    .catch(error => {
+      // getCSRFToken(){ return _.find(document.getElementsByTagName("meta"), (meta) => { return meta.name === "csrf-token" }).content }
+  .catch(error => {
       console.log(error)
       return this.setState({
         searchData: [],
