@@ -2,8 +2,6 @@ require 'hypernova'
 
 class FacilitiesController < CalsBaseController
   around_action :hypernova_render_support
-  skip_before_action :verify_authenticity_token, only: [:search]
-
   include Response
 
   def index
