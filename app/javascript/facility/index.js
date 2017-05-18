@@ -3,8 +3,7 @@ import FacilityDetails from './details.jsx'
 import FacilityAddress from './address.jsx'
 import FacilityChildren from './children.jsx'
 import FacilityComplaints from './complaints.jsx'
-import './../facilities/stylesheets/facility.scss'
-import logo from './../facilities/images/logo.jpg'
+import './stylesheets/facility.scss'
 
 export default class Facility extends Component {
   constructor (props) {
@@ -22,7 +21,7 @@ export default class Facility extends Component {
     return (
       <div className='main_page'>
         <div className='header_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <img src={logo} alt={'logo'} />
+          <div className='header-logo' />
         </div>
         <div className='body_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <FacilityDetails facilityData={propsData} />

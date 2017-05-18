@@ -17,6 +17,16 @@ GIT
       sprockets (~> 4.x)
       sprockets-rails (< 4.0)
 
+GIT
+  remote: https://github.com/rails/webpacker.git
+  revision: 549988b795ca1b1dcec97ecef392e2dceb347bf7
+  ref: 549988b
+  specs:
+    webpacker (1.2)
+      activesupport (>= 4.2)
+      multi_json (~> 1.2)
+      railties (>= 4.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -268,10 +278,6 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
-    webpacker (1.0)
-      activesupport (>= 5.0)
-      multi_json (~> 1.2)
-      railties (>= 5.0)
     websocket (1.2.4)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
@@ -318,7 +324,7 @@ DEPENDENCIES
   vcr
   web-console (>= 3.3.0)
   webmock
-  webpacker (= 1.0)
+  webpacker!
 
 BUNDLED WITH
    1.14.6

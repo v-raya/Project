@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import FacilityList from './facility_list.jsx'
-
+import './stylesheets/facilities.scss'
 export default class Facility extends Component {
   constructor (props) {
     super(props)

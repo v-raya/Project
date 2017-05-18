@@ -6,7 +6,6 @@ VCR.configure do |c|
   c.hook_into :webmock, :faraday
   c.allow_http_connections_when_no_cassette = true
   c.ignore_localhost = false
-  c.debug_logger = File.open("debugging asdqwefvc", 'w')
   c.ignore_request do |request|
     localhost_has_identify?(request)
   end
