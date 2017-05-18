@@ -45,7 +45,6 @@ export default class Search extends React.Component {
 
     this.state.inputData = DataSearch
     fetch('/facilities/search', {
-        mode: 'cors',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -53,7 +52,7 @@ export default class Search extends React.Component {
             'X-CSRF-Token' : this.getCsrfToken('csrf-token'),
             'X-CSRF-param' : this.getCsrfToken('csrf-param')
         },
-        credentials: 'include',
+        credentials: 'same-origin',
         body: JSON.stringify({
             params
         })
