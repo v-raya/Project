@@ -9,9 +9,4 @@ module ChildApiProtocolProvider
     end
   end
 
-  included do
-    def patch
-      'patch'
-    end
-  end
 end

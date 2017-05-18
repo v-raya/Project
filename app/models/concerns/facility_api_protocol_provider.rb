@@ -11,12 +11,9 @@ module FacilityApiProtocolProvider
   end
 
   included do
-    def instance_method_example
-      'example of an instance method'
-    end
-
+    # def instance_method_example
+    #   'example of an instance method'
+    # end
 
   end
-
-
 end

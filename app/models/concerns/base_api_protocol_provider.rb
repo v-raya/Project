@@ -17,12 +17,12 @@ module BaseApiProtocolProvider
 
   # instance methods
   included do
-    def update(_attrs = {})
-      'update'
-    end
-
-    def destroy
-      'destroy'
-    end
+    # def update(_attrs = {})
+    #   'update'
+    # end
+    #
+    # def destroy
+    #   'destroy'
+    # end
   end
 end

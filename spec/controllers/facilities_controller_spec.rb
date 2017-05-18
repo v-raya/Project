@@ -5,8 +5,7 @@ include RSpec
 
 describe FacilitiesController do
   before(:each) do
-allow(controller).to receive_messages(:authenticate_with_cwds => true)
-
+    allow(controller).to receive_messages(:authenticate_with_cwds => true)
   end
 
   describe "GET index" do
@@ -20,4 +19,13 @@ allow(controller).to receive_messages(:authenticate_with_cwds => true)
       expect(response).to render_template("index")
     end
   end
+
+  describe "GET search" do
+    it "renders search" do
+      get :search, {:params => {query:"01,,,hood"}}
+      expect(response.status).to  eq(200)
+      expect(response.body.include?("ROBIN HOOD SFH"))
+    end
+  end
+
 end

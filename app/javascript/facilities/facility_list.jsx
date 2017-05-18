@@ -5,7 +5,7 @@ export default class FacilityList extends React.Component {
   render () {
     let facility = '/facilities/'
     let string = String(this.props.fac_nbr)
-    let url = facility.concat(string)
+    const url = facility.concat(string)
     return (
       <div className='facility-list col-xs-12 col-sm-12 col-md-12 col-lg-12'>
         <div className='list_block col-xs-12 col-sm-12 col-md-12 col-lg-12'>
