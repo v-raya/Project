@@ -15,7 +15,11 @@ class FacilitiesController < CalsBaseController
   end
 
   def show
-    @facility ||= Facility.find_by_id(params[:id])
+    f = Helpers::FacilityHelper.new( {authn_header: session['token']} )
+    @facility = f.find_by_id(params[:id])
+
+    # @facility ||= Facility.find_by_id(params[:id])
+
     @children ||= @facility.children.to_json
     @complaints ||= @facility.complaints.to_json
     @facility = @facility.to_json
