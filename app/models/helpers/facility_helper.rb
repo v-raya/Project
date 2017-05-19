@@ -6,4 +6,7 @@ class Helpers::FacilityHelper < Helpers::ModelHelperBase
   end
 
 
+def search(query)
+    Facility.search(query, self.authn_header)
+  end
 end

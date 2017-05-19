@@ -9,7 +9,11 @@ class Helpers::ModelHelperBase
   end
 
   def find_by_id(id)
-    return self.model_class.find_by_id(id, self.authn_header)
+    self.model_class.find_by_id(id, self.authn_header)
+  end
+
+  def all
+    self.model_class.all(self.authn_header)
   end
 
 end
