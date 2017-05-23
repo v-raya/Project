@@ -19,13 +19,21 @@ export default class Search extends React.Component {
 
     this.handleToggle = this.handleToggle.bind(this);
     this.getCsrfToken = this.getCsrfToken.bind(this);
+    this.addressQuery = this.addressQuery.bind(this);
 
   }
-    getCsrfToken (value){
+  addressQuery(query) {
+    var addQuery = [];
+    for (var i=4; i >= 4 && i < query.length; i++) {
+      addQuery.push(query[i]);
+    }
+    return addQuery;
+  }
+  getCsrfToken (value){
     var metas = document.getElementsByTagName('meta');
     var csrfToken = metas[value].content
     return csrfToken;
-    }
+  }
   handleToggle () {
     this.setState({isToggled: !this.state.isToggled})
   }
@@ -34,12 +42,14 @@ export default class Search extends React.Component {
   }
   addSearchInput (DataSearch) {
     var query = DataSearch.split(",");
+    var addressField = query[4]+ ',' +  query[5] + ',' + query[6];
+    var addressData = this.addressQuery(query)
     var params = {
      fac_co_nbr : [query[0]],
      fac_type : [query[1]],
      fac_nbr: [query[2]],
      fac_name : [query[3]],
-     fac_addr : [query[4]]
+     fac_addr : addressData
     };
 
     this.state.inputData = DataSearch
