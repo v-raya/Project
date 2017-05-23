@@ -76,7 +76,7 @@ fi
 
 git commit -m &quot;Automated Jenkins commit&quot;
 
-git push -q -u origin development</command>
+git push -q -u origin jenkinsauto</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
