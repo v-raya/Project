@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin_-Descriptor plugin="publish-over-ssh@1.17">
+  <hostConfigurations>
+    <jenkins.plugins.publish__over__ssh.BapSshHostConfiguration>
+      <name>CALS Dev</name>
+      <hostname>dev.cs-cals.com</hostname>
+      <username>ec2-user</username>
+      <secretPassword>{AQAAABAAAAAQKvEHGGkNceXo4H7SgdrllsiLHeizlcqAAFZs+OFPc4U=}</secretPassword>
+      <remoteRootDir></remoteRootDir>
+      <port>22</port>
+      <commonConfig class="jenkins.plugins.publish_over_ssh.BapSshCommonConfiguration">
+        <secretPassphrase>{AQAAABAAAAAQ1ZLikQP+/jXLkpRxCKFlPmD0YZ476+F6zD5Q8LHcDkc=}</secretPassphrase>
+        <key></key>
+        <keyPath></keyPath>
+        <disableAllExec>false</disableAllExec>
+      </commonConfig>
+      <timeout>300000</timeout>
+      <overrideKey>true</overrideKey>
+      <disableExec>false</disableExec>
+      <keyInfo>
+        <secretPassphrase>{AQAAABAAAAAQ55HO8YGBCiddGp5oNH6hE6Hax8jN0kAR6hG7wVMnH9o=}</secretPassphrase>
+        <key>-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAkZ4fJmHPmh9Lg3M3TusunTFFkO/w407dNLSPqnqYK1ZAksQbPn7YPft8fOX4
+1F+HsBYRyZ0GXABcfZN44HfkJqXS6YrGq3eFp4S4pJx6ITyMNjDQgtUm6y3JtHehcAMke6MsAWMd
+mEnpeYCpEglREU9dWGMigdF3i1vhOZJ98pvgLC78X8bUdQZjOL7JV2lNHrcUX4nLKaPS2FU1mWEJ
+4mXG0lGAYT6qa/2VRYAO7ChC6jnaNsOe7MxC/OMh+TohPYu+ca5tW7jgJnehSRbxLz4VKvBne1q4
+29EpIU8vBOOHejHPn6g3GWxx/6dCPGYs+bTbr4QMl6utzDXKEi9gDwIDAQABAoIBAEL+MyiOYVtv
+wGcGb9CgBH8PNwkaSoHZO43O8DWnVzDA6s5a6InVA5lohPpVNyhFlwBc9uwBkPZsuCCR40+p+M4L
+BkCptwMV5uiN+ADLeKin2X3o8VTvyYrzMtQTIbONzpAPHuS4e9ofTwm2NpJ0tNY45CIQ4cRF4TC9
+IZ5CFi2x9T9OPKIh+n6TXHT0U92pR7xeg7oBjGbKz+yegoa1DeGO86z+dtxmrnt+3VjP4XB/swnk
+LJGaCP4qdxPAT4W+/zOF7uWpy2/h9diXjA4cc0OlkySbgXiQE/xW+r7pVkxA4BlyzDjgzdoKihUU
+u+rMIWeT0rNaHIyff284l9TLXlkCgYEAxFVF+5XPrbAOIenmBu/KwJq6whN39K/2Si9OMLEmTTm7
+E0kqqrf2Z/qlW6ko5nIq+a/wOXokHJfE6SbemPnGwvkSfCyxk9F6bIkO2DhY4siO2AqA0BoxlvcF
+x0ITvqz8PBwhH0GF7c1XG3uxB47ZtEVtTkufa0Q6Ke8tiegFtdMCgYEAvd8vNDAX+IQ0Zvg4DzPK
+nsX48P+8o8IRH1kETzcK8Dm9Eq6NNPyAo1pZYY/MREwHU2t9IuzPgojCDp2wE6ye1y164IMdsvP3
+Krfp41APnR5lnlwGoUDmdaZhYGDqt4pewQ2IYjkW1+GQw8RoMtHR9PMZeLJ3d6gGvs65r8u4W1UC
+gYEAnkl1q5kjn4+SRUtTFgKbv16/9RpHGvIGqdarvlwEWjySE8FocczxDvGoAVdHT0t6VGXBUkWj
++Z1utt6Mll7CHY07lvtdi6RWhEyXuEDtgKFbcNg+9Ag6NNEhSn1+d7r1fOzc01s7Q/bKJLE7j7Fe
+2ZUjw/z6ITwXfJmFaGq0t9sCgYALn5oYK8mL4SwEEbX82ELTLXNr7Xvy2nKJ5L0qzEfTJPW6Kw1h
+7QNC/Mjz/AWZOL5KEQ58ENszNoQKuQSKb8rZiWM4U06CIgVDjDa5P7F1AONfqmqNfJefJCxZ5hT4
+X3QlhVqQCMapOJnQIjnuwoGD6U3p4aMGpDalf6pGZMZIcQKBgQCIC8UuD93E3+hKDXLGACGWZqOp
+sVSwhBL1DN7FFyARZygfNGDppL5j677CXRgQrZAPIYo67NbF3QUtYYKOD+CKzDf7H6GbJ+gIX6N2
+yK69qclahnnQcdavbGHFrcGiFn+lU0sPDDQz9Ys3flo/u9j51IAO7lzj7UmsVbjICjV2OA==
+-----END RSA PRIVATE KEY-----</key>
+        <keyPath></keyPath>
+      </keyInfo>
+      <jumpHost></jumpHost>
+      <proxyType></proxyType>
+      <proxyHost></proxyHost>
+      <proxyPort>0</proxyPort>
+      <proxyUser></proxyUser>
+      <proxyPassword></proxyPassword>
+    </jenkins.plugins.publish__over__ssh.BapSshHostConfiguration>
+  </hostConfigurations>
+  <commonConfig reference="../hostConfigurations/jenkins.plugins.publish__over__ssh.BapSshHostConfiguration/commonConfig"/>
+  <defaults class="jenkins.plugins.publish_over_ssh.options.SshPluginDefaults"/>
+</jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin_-Descriptor>

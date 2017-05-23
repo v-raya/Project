@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.plugins.buildblocker.BuildBlockerProperty plugin="build-blocker-plugin@1.7.3">
+      <useBuildBlocker>true</useBuildBlocker>
+      <blockLevel>GLOBAL</blockLevel>
+      <scanQueueFor>ALL</scanQueueFor>
+      <blockingJobs>CALS-Dev-Build</blockingJobs>
+    </hudson.plugins.buildblocker.BuildBlockerProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <org.jenkinsci.plugins.registry.notification.DockerHubTrigger plugin="dockerhub-notification@2.2.0">
+      <spec></spec>
+      <options class="vector">
+        <org.jenkinsci.plugins.registry.notification.opt.impl.TriggerForAllUsedInJob/>
+        <org.jenkinsci.plugins.registry.notification.opt.impl.TriggerOnSpecifiedImageNames>
+          <repoNames>
+            <string>cwds/calsnginx</string>
+            <string>cwds/calses</string>
+            <string>cwds/calsmockapi</string>
+            <string>cwds/cals</string>
+            <string>cwds/calsredis</string>
+            <string>cwds/calspostgres</string>
+          </repoNames>
+        </org.jenkinsci.plugins.registry.notification.opt.impl.TriggerOnSpecifiedImageNames>
+      </options>
+    </org.jenkinsci.plugins.registry.notification.DockerHubTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>cat &lt;&lt;EOF &gt; dockerpull.sh
+docker rm \$(docker ps -q -f status=exited) || true
+docker volume rm \$(docker volume ls -qf dangling=true) || true
+docker rmi \$(docker images -qf dangling=true --no-trunc) || true
+docker pull cwds/cals:latest
+docker pull cwds/calsmockapi:latest
+docker pull cwds/calsnginx:latest
+docker pull cwds/calses:latest
+docker pull cwds/calspostgres:latest
+docker pull cwds/calsredis:latest
+EOF
+cat &lt;&lt;EOF &gt; jenkins.yml
+version: &quot;2.1&quot;
+networks:
+        dev-cs-cals:
+                driver: bridge
+services:
+        db:
+                image: cwds/calspostgres:latest
+                container_name: calspostgres
+                ports:
+                        - 5432:5432
+                networks:
+                        - dev-cs-cals
+        es:
+                image: cwds/calses:latest
+                container_name: calses
+                ports:
+                        - 9200:9200
+                networks:
+                        - dev-cs-cals
+        mock-api:
+                image: cwds/calsmockapi:latest
+                container_name: calsmockapi
+                ports:
+                        - 3001:3001
+                depends_on:
+                        - db
+                        - es
+                networks:
+                        - dev-cs-cals
+        redis:
+                image: cwds/calsredis:latest
+                container_name: calsredis
+                ports:
+                        - 6379:6379
+                networks:
+                        - dev-cs-cals
+        cals:
+                image: cwds/cals:latest
+                container_name: cals
+                ports:
+                        - 3000:3000
+                depends_on:
+                        - redis
+                networks:
+                        - dev-cs-cals
+        nginx:
+                image: cwds/calsnginx:latest
+                container_name: calsnginx
+                ports:
+                        - 80:80
+                depends_on:
+                        - cals
+                        - mock-api
+                networks:
+                        - dev-cs-cals
+EOF
+cat &lt;&lt;EOF &gt; upall.sh
+echo Downing running containers
+docker-compose -f ./deploy/jenkins.yml down 
+echo Downed running containers
+echo Starting postgres and elasticsearch
+docker-compose -f ./deploy/jenkins.yml up -d db es
+echo Started postgres and elasticsearch
+echo Waiting 2 minutes for postgres container to be ready
+sleep 120
+echo Starting the rest of the services now
+docker-compose  -f ./deploy/jenkins.yml up -d
+echo Started the rest of the services
+echo mock-api: migrating DB
+docker exec -i calsmockapi rake db:migrate RAILS_ENV=development
+echo mock-api: migrated DB
+echo mock-api: indexing elasticsearch
+docker exec -i calsmockapi rake environment elasticsearch:import:all DIR=app/models FORCE=y RAILS_ENV=development
+echo mock-api: indexed elasticsearch
+echo Done
+EOF</command>
+    </hudson.tasks.Shell>
+    <jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin plugin="publish-over-ssh@1.17">
+      <delegate>
+        <consolePrefix>SSH: </consolePrefix>
+        <delegate>
+          <publishers>
+            <jenkins.plugins.publish__over__ssh.BapSshPublisher>
+              <configName>CALS Dev</configName>
+              <verbose>false</verbose>
+              <transfers>
+                <jenkins.plugins.publish__over__ssh.BapSshTransfer>
+                  <remoteDirectory>./deploy</remoteDirectory>
+                  <sourceFiles>dockerpull.sh, upall.sh, jenkins.yml</sourceFiles>
+                  <excludes></excludes>
+                  <removePrefix></removePrefix>
+                  <remoteDirectorySDF>false</remoteDirectorySDF>
+                  <flatten>false</flatten>
+                  <cleanRemote>false</cleanRemote>
+                  <noDefaultExcludes>false</noDefaultExcludes>
+                  <makeEmptyDirs>false</makeEmptyDirs>
+                  <patternSeparator>[, ]+</patternSeparator>
+                  <execCommand>sh ./deploy/dockerpull.sh
+sh ./deploy/upall.sh</execCommand>
+                  <execTimeout>1200000</execTimeout>
+                  <usePty>false</usePty>
+                  <useAgentForwarding>false</useAgentForwarding>
+                </jenkins.plugins.publish__over__ssh.BapSshTransfer>
+              </transfers>
+              <useWorkspaceInPromotion>false</useWorkspaceInPromotion>
+              <usePromotionTimestamp>false</usePromotionTimestamp>
+            </jenkins.plugins.publish__over__ssh.BapSshPublisher>
+          </publishers>
+          <continueOnError>false</continueOnError>
+          <failOnError>false</failOnError>
+          <alwaysPublishFromMaster>false</alwaysPublishFromMaster>
+          <hostConfigurationAccess class="jenkins.plugins.publish_over_ssh.BapSshPublisherPlugin" reference="../.."/>
+        </delegate>
+      </delegate>
+    </jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

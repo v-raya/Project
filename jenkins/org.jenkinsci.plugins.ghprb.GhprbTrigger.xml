@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jenkinsci.plugins.ghprb.GhprbTrigger_-DescriptorImpl plugin="ghprb@1.36.2">
+  <configVersion>1</configVersion>
+  <whitelistPhrase>.*add\W+to\W+whitelist.*</whitelistPhrase>
+  <okToTestPhrase>.*ok\W+to\W+test.*</okToTestPhrase>
+  <retestPhrase>.*test\W+this\W+please.*</retestPhrase>
+  <skipBuildPhrase>.*\[skip\W+ci\].*</skipBuildPhrase>
+  <cron>H/5 * * * *</cron>
+  <useComments>false</useComments>
+  <useDetailedComments>false</useDetailedComments>
+  <manageWebhooks>true</manageWebhooks>
+  <unstableAs>FAILURE</unstableAs>
+  <autoCloseFailedPullRequests>false</autoCloseFailedPullRequests>
+  <displayBuildErrorsOnDownstreamBuilds>false</displayBuildErrorsOnDownstreamBuilds>
+  <githubAuth>
+    <org.jenkinsci.plugins.ghprb.GhprbGitHubAuth>
+      <serverAPIUrl>https://api.github.com</serverAPIUrl>
+      <id>c2510512-84cb-44aa-b646-d0e0d38e1ee6</id>
+      <description>Anonymous connection</description>
+    </org.jenkinsci.plugins.ghprb.GhprbGitHubAuth>
+  </githubAuth>
+  <extensions>
+    <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+      <commitStatusContext></commitStatusContext>
+      <showMatrixStatus>false</showMatrixStatus>
+      <addTestResults>false</addTestResults>
+      <completedStatus/>
+    </org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+  </extensions>
+</org.jenkinsci.plugins.ghprb.GhprbTrigger_-DescriptorImpl>
