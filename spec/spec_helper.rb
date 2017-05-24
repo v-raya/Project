@@ -1,5 +1,6 @@
 require "simplecov"
 require 'webmock/rspec'
+require 'selenium/webdriver'
 
 SimpleCov.start 'rails' do
  coverage_dir 'reports/coverage/rspec/'
