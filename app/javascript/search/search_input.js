@@ -1,6 +1,5 @@
 import React from 'react'
 import { FacilityTypes, CountyList } from '../constants/constants'
-import SearchOff from './images/search_off.png'
 
 export default class SearchInput extends React.Component {
   constructor (props) {
@@ -84,7 +83,7 @@ export default class SearchInput extends React.Component {
           </div>
           <div className='field_search col-xs-12 col-sm-1 col-md-1 col-lg-1'>
             <div className='search_block'>
-              <button type='submit'><img src={SearchOff} /></button>
+              <button type='submit'><div className='search-icon' /></button>
             </div>
           </div>
         </form>

@@ -3,7 +3,8 @@
 default: &default
   config: config/webpack
   entry: packs
-  output: public
+  output: public/cals
+  public_url_dir: cals
   manifest: manifest.json
   node_modules: node_modules
   source: app/javascript
