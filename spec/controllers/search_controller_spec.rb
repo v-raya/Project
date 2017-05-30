@@ -5,7 +5,7 @@ include RSpec
 
 describe SearchController do
   before(:each) do
-  allow(controller).to receive_messages(:authenticate_with_cwds => true)
+    allow(controller).to receive_messages(:authenticate_with_cwds => true)
   end
 
   it 'renders the index template' do

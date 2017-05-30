@@ -8,8 +8,9 @@ RSpec.feature 'Search', js: true do
 
   scenario 'Search a facility' do
     visit '/search'
+
     fill_in 'Enter Facility Address', with: 'TOONTOWN'
-    find_button('submit').click
+    find_button('search').click
     expect(page).to have_text('TOONTOWN')
   end
 end
