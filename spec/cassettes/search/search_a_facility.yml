@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3001/v1/facilities/search
+    body:
+      encoding: UTF-8
+      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"match":{"fac_addr":"TOONTOWN"}}]}}]}}}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - W/"ba0d968e6abe505131660998308bb866"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - c95dfbd4-019d-4c2b-9fe6-84be11f8dd5e
+      x-runtime:
+      - '0.845671'
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"facilities":[{"fac_name":"MARCH, AMY CFH","fac_nbr":909453695,"type":"FFA-Certified
+        Home","fac_licensee_name":"MARCH, AMY","fac_mail_street_addr":"2366 WATERCOLOR
+        DR.","fac_mail_city":"TOONTOWN","fac_mail_state":"CA","fac_mail_zip_code":"95800","fac_res_street_addr":"2366
+        WATERCOLOR DR.","fac_res_city":"TOONTOWN","fac_res_state":"CA","fac_res_zip_code":"95800","county":"Alameda","facility_telephone":"9515912000","district_office":"PACIFIC
+        INLAND CR","status":"Certified (CFH \u0026 OSGH)","assigned_worker":"Steve
+        Schmitz","fac_licensee_type":null,"fac_lic_eff_date":"2010-01-01","fac_last_visit_date":null,"last_visit_reason":null,"fac_email_address":null,"fac_capacity":4,"fac_orig_appl_rec_date":null,"fac_addr":"2366
+        WATERCOLOR DR. TOONTOWN CA 95800"},{"fac_name":"MARCH, MEG CFH","fac_nbr":909453699,"type":"FFA-Certified
+        Home","fac_licensee_name":"MARCH, MEG","fac_mail_street_addr":"2366 TWINS
+        STREET","fac_mail_city":"TOONTOWN","fac_mail_state":"CA","fac_mail_zip_code":"95800","fac_res_street_addr":"2366
+        TWINS STREET","fac_res_city":"TOONTOWN","fac_res_state":"CA","fac_res_zip_code":"95800","county":"Alameda","facility_telephone":"9515912001","district_office":"PACIFIC
+        INLAND CR","status":"Certified (CFH \u0026 OSGH)","assigned_worker":"Steve
+        Schmitz","fac_licensee_type":null,"fac_lic_eff_date":"2012-01-01","fac_last_visit_date":null,"last_visit_reason":null,"fac_email_address":null,"fac_capacity":2,"fac_orig_appl_rec_date":null,"fac_addr":"2366
+        TWINS STREET TOONTOWN CA 95800"},{"fac_name":"MARCH, JOSEPHINE CFH","fac_nbr":909453722,"type":"FFA-Certified
+        Home","fac_licensee_name":"MARCH, JOSEPHINE","fac_mail_street_addr":"2366
+        PLUMLEY AVE","fac_mail_city":"TOONTOWN","fac_mail_state":"CA","fac_mail_zip_code":"95800","fac_res_street_addr":"2366
+        PLUMLEY AVE","fac_res_city":"TOONTOWN","fac_res_state":"CA","fac_res_zip_code":"95800","county":"Alameda","facility_telephone":"9515912002","district_office":"PACIFIC
+        INLAND CR","status":"Certified (CFH \u0026 OSGH)","assigned_worker":"Steve
+        Schmitz","fac_licensee_type":null,"fac_lic_eff_date":"2014-01-01","fac_last_visit_date":null,"last_visit_reason":null,"fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":null,"fac_addr":"2366
+        PLUMLEY AVE TOONTOWN CA 95800"},{"fac_name":"BENNET, JANE RFA","fac_nbr":909453900,"type":"FFA-Resource
+        Family Home","fac_licensee_name":"BENNET, JANE ","fac_mail_street_addr":"2366
+        DANCING DR.","fac_mail_city":"TOONTOWN","fac_mail_state":"CA","fac_mail_zip_code":"95800","fac_res_street_addr":"2366
+        DANCING DR.","fac_res_city":"TOONTOWN","fac_res_state":"CA","fac_res_zip_code":"95800","county":"Alameda","facility_telephone":"9515917000","district_office":"PACIFIC
+        INLAND CR","status":"Certified (CFH \u0026 OSGH)","assigned_worker":"Steve
+        Schmitz","fac_licensee_type":null,"fac_lic_eff_date":"2017-01-01","fac_last_visit_date":null,"last_visit_reason":null,"fac_email_address":null,"fac_capacity":4,"fac_orig_appl_rec_date":null,"fac_addr":"2366
+        DANCING DR. TOONTOWN CA 95800"},{"fac_name":"BENNET, ELIZABETH RFA","fac_nbr":909453999,"type":"FFA-Resource
+        Family Home","fac_licensee_name":"BENNET, ELIZABETH ","fac_mail_street_addr":"2366
+        WALKING STREET","fac_mail_city":"TOONTOWN","fac_mail_state":"CA","fac_mail_zip_code":"95800","fac_res_street_addr":"2366
+        WALKING STREET","fac_res_city":"TOONTOWN","fac_res_state":"CA","fac_res_zip_code":"95800","county":"Alameda","facility_telephone":"9515917001","district_office":"PACIFIC
+        INLAND CR","status":"Certified (CFH \u0026 OSGH)","assigned_worker":"Steve
+        Schmitz","fac_licensee_type":null,"fac_lic_eff_date":"2017-02-01","fac_last_visit_date":null,"last_visit_reason":null,"fac_email_address":null,"fac_capacity":2,"fac_orig_appl_rec_date":null,"fac_addr":"2366
+        WALKING STREET TOONTOWN CA 95800"},{"fac_name":"BENNET, LYDIA RFA","fac_nbr":909453922,"type":"FFA-Resource
+        Family Home","fac_licensee_name":"BENNET, LYDIA ","fac_mail_street_addr":"2366
+        FEATHERHEAD AVE","fac_mail_city":"TOONTOWN","fac_mail_state":"CA","fac_mail_zip_code":"95800","fac_res_street_addr":"2366
+        FEATHERHEAD AVE","fac_res_city":"TOONTOWN","fac_res_state":"CA","fac_res_zip_code":"95800","county":"Alameda","facility_telephone":"9515917002","district_office":"PACIFIC
+        INLAND CR","status":"Certified (CFH \u0026 OSGH)","assigned_worker":"Steve
+        Schmitz","fac_licensee_type":null,"fac_lic_eff_date":"2017-03-01","fac_last_visit_date":null,"last_visit_reason":null,"fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":null,"fac_addr":"2366
+        FEATHERHEAD AVE TOONTOWN CA 95800"}],"meta":{"total":6}}'
+    http_version: 
+  recorded_at: Tue, 30 May 2017 02:02:38 GMT
+recorded_with: VCR 3.0.3
