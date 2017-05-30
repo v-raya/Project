@@ -1,4 +1,5 @@
-class Helpers::FacilityModelHelper < Helpers::ModelHelperBase
+class Helpers::Facility < Helpers::ModelHelperBase
+
   def model_class
     Facility
   end
@@ -6,4 +7,5 @@ class Helpers::FacilityModelHelper < Helpers::ModelHelperBase
   def search(query)
     Facility.search(query, auth_header)
   end
+
 end
