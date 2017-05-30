@@ -5,8 +5,9 @@ class FacilitiesController < CalsBaseController
   include Response
 
   def index
-    @facilities = facility_helper_session.all.to_json
-
+  #  @facilities = facility_helper_session.all.to_json
+    f ||= atomic_facility
+    @facilities = f.all.to_json
     # respond_to do |format|
     #   format.html
     #   format.js
@@ -15,7 +16,8 @@ class FacilitiesController < CalsBaseController
   end
 
   def show
-    @facility = facility_helper_session.find_by_id(params[:id])
+    f ||= atomic_facility
+    @facility = f.find_by_id(params[:id])
     # @facility ||= Facility.find_by_id(params[:id])
 
     @children ||= @facility.children.to_json
@@ -30,13 +32,13 @@ class FacilitiesController < CalsBaseController
   end
 
   def search
-    @facilities = facility_helper_session.search(params[:query])
+    @facilities = atomic_facility.search(params[:query])
     json_response @facilities
   end
 end
 
-private
-
-def facility_helper_session
-  Helpers::FacilityHelper.new( {authn_header: session['token']} )
+def atomic_facility
+  Helpers::FacilityModelHelper.new(auth_header: session['token'])
 end
+
+private :atomic_facility
