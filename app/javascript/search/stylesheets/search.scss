@@ -182,3 +182,46 @@ input[type=number]::-webkit-outer-spin-button {
   width: 80px;
   background-size: 80px 64px;
 }
+.line_off-icon
+{
+  background: url(../images/line_off.png) no-repeat;
+  border: 0;
+  border-radius: 0;
+  height: 53px;
+  width: 50px;
+}
+.line_on-icon
+{
+  background: url(../images/line_on.png) no-repeat;
+  border: 0;
+  border-radius: 0;
+  height: 53px;
+  width: 50px;
+}
+.grid_on-icon
+{
+  background: url(../images/grid_on.png) no-repeat;
+  border: 0;
+  border-radius: 0;
+  height: 53px;
+  width: 50px;
+}
+
+.grid_off-icon
+{
+  background: url(../images/grid_off.png) no-repeat;
+  border: 0;
+  border-radius: 0;
+  height: 53px;
+  width: 50px;
+}
+.cross-icon
+{
+  background: url(../images/cross.png) no-repeat;
+  display: inline-block;
+  border: 0;
+  border-radius: 0;
+  height: 20px;
+  width: 50px;
+  margin-left: 20px;
+}
