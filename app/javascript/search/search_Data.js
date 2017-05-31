@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import close from './images/cross.png'
 
 export default class SearchDetails extends React.Component {
   constructor (props) {
@@ -45,7 +44,7 @@ export default class SearchDetails extends React.Component {
     if (this.state.searchData[2] && this.state.searchData[2].length > 1) {
       searchFacilityId = (<p>Facility ID:
         <span>{this.state.searchData[2]}</span>
-        <div onClick={this.removeCriteria.bind(this, this.state.searchData[2])} alt='cross-icon' src={close} />
+        <div onClick={this.removeCriteria.bind(this, this.state.searchData[2])} alt='cross-icon' className='cross-icon' />
       </p>)
     }
     let searchFacilityName = null
