@@ -21,7 +21,7 @@ module Cals
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    logger = ActiveSupport::Logger.new(STDOUT)
+    config.logger = ActiveSupport::Logger.new(STDOUT)
     config.log_level = :debug
 
   end

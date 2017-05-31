@@ -1,0 +1,94 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3001/v1/facilities/search
+    body:
+      encoding: UTF-8
+      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"match":{"fac_name":"home"}}]}}]}}}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - W/"65bc5e5e84d738480761670435583742"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 6f26eefd-b06b-4ec0-a80d-2edf86c03bd2
+      x-runtime:
+      - '0.479330'
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"facilities":[{"fac_name":"DEPUTY DOG''S GROUP HOME","fac_nbr":193600008,"type":"GH
+        - Enhanced Behavioral Supports Home","fac_licensee_name":"TERRIER PROGRAMS,
+        INC.","fac_mail_street_addr":"767 GLEN EAGLES DRIVE","fac_mail_city":"MODESTO","fac_mail_state":"CA","fac_mail_zip_code":"95350","fac_res_street_addr":"767
+        GLEN EAGLES DRIVE","fac_res_city":"MODESTO","fac_res_state":"CA","fac_res_zip_code":"95350","county":"Marin","facility_telephone":"8183366556","district_office":"NO.
+        CAL SC/RES","status":"Licensed","assigned_worker":"Kari Gutierrez","fac_licensee_type":"C","fac_lic_eff_date":"1992-02-22","fac_last_visit_date":"1991-12-10","last_visit_reason":"Renewal
+        (Fac.''s w/Expir.)","fac_email_address":null,"fac_capacity":7,"fac_orig_appl_rec_date":"1983-02-02"},{"fac_name":"STRAWBERRY
+        SHORT CAKE FOSTER FAMILY HOME","fac_nbr":193600013,"type":"Foster Family Home
+        (Confidential - Do not release)","fac_licensee_name":"SHORT CAKE, STRAWBERRY","fac_mail_street_addr":"569
+        OAK LANE","fac_mail_city":"VAN NUYS","fac_mail_state":"CA","fac_mail_zip_code":"91406","fac_res_street_addr":"569
+        OAK LANE","fac_res_city":"VAN NUYS","fac_res_state":"CA","fac_res_zip_code":"91406","county":"Sonoma","facility_telephone":"9513022317","district_office":"NO.
+        CAL SC/RES","status":"Licensed","assigned_worker":"Denise Tugade","fac_licensee_type":"A","fac_lic_eff_date":"1993-04-18","fac_last_visit_date":"2015-12-16","last_visit_reason":"Caseload
+        Management","fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":null},{"fac_name":"TWEEDLE
+        DEE \u0026 TWEEDLE DUM GROUP HOME","fac_nbr":193600020,"type":"GH - Enhanced
+        Behavioral Supports Home","fac_licensee_name":"FULL TEACUPS, INC.","fac_mail_street_addr":"7726
+        CARPENTER ST.","fac_mail_city":"EL CAJON","fac_mail_state":"CA","fac_mail_zip_code":"92020","fac_res_street_addr":"7726
+        CARPENTER ST.","fac_res_city":"EL CAJON","fac_res_state":"CA","fac_res_zip_code":"92020","county":"Marin","facility_telephone":"9095991227","district_office":"NO.
+        CAL SC/RES","status":"Provisional License","assigned_worker":"Alexis Hollon","fac_licensee_type":"D","fac_lic_eff_date":"1993-07-02","fac_last_visit_date":"2004-05-17","last_visit_reason":"Caseload
+        Management","fac_email_address":null,"fac_capacity":5,"fac_orig_appl_rec_date":"1987-04-28"},{"fac_name":"SHREK
+        FOSTER FAMILY HOME","fac_nbr":193600035,"type":"Foster Family Home (Confidential
+        - Do not release)","fac_licensee_name":"ORGE, SHREK AND FIONA","fac_mail_street_addr":"52
+        UNION ST.","fac_mail_city":"SAN DIEGO","fac_mail_state":"CA","fac_mail_zip_code":"92117","fac_res_street_addr":"52
+        UNION ST.","fac_res_city":"SAN DIEGO","fac_res_state":"CA","fac_res_zip_code":"92117","county":"Sonoma","facility_telephone":"9097970114","district_office":"NO.
+        CAL SC/RES","status":"Application Withdrawn","assigned_worker":"Denise Tugade","fac_licensee_type":"B","fac_lic_eff_date":"1993-07-18","fac_last_visit_date":"2015-07-06","last_visit_reason":"Complaint","fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":null},{"fac_name":"ALICE''S
+        WONDERLAND GROUP HOME","fac_nbr":193600043,"type":"GH - Enhanced Behavioral
+        Supports Home","fac_licensee_name":"WHITE RABBIT, INC.","fac_mail_street_addr":"469
+        WILLIAM ST.","fac_mail_city":"MORENO VALLEY","fac_mail_state":"CA","fac_mail_zip_code":"92553","fac_res_street_addr":"469
+        WILLIAM ST.","fac_res_city":"MORENO VALLEY","fac_res_state":"CA","fac_res_zip_code":"92553","county":"Marin","facility_telephone":"9096281217","district_office":"NO.
+        CAL SC/RES","status":"Closed, Agency Initiated","assigned_worker":"Kari Gutierrez","fac_licensee_type":"C","fac_lic_eff_date":null,"fac_last_visit_date":null,"last_visit_reason":null,"fac_email_address":null,"fac_capacity":10,"fac_orig_appl_rec_date":"1985-04-23"},{"fac_name":"TARZAN''S
+        GROUP HOME FOR BOYS","fac_nbr":193600048,"type":"Group Home","fac_licensee_name":"SWINGING
+        VINES, INC.","fac_mail_street_addr":"487 SOUTH GREEN ST.","fac_mail_city":"SAN
+        DIEGO","fac_mail_state":"CA","fac_mail_zip_code":"92115","fac_res_street_addr":"487
+        SOUTH GREEN ST.","fac_res_city":"SAN DIEGO","fac_res_state":"CA","fac_res_zip_code":"92115","county":"Napa","facility_telephone":"5302335200","district_office":"NO.
+        CAL SC/RES","status":"Closed, License Initiated","assigned_worker":"Alexis
+        Hollon","fac_licensee_type":"C","fac_lic_eff_date":"1993-07-25","fac_last_visit_date":"2003-11-13","last_visit_reason":"Complaint","fac_email_address":null,"fac_capacity":20,"fac_orig_appl_rec_date":"1983-07-27"},{"fac_name":"QUASIMODO''S
+        GROUP HOME FOR YOUTH","fac_nbr":193600126,"type":"Group Home","fac_licensee_name":"NOTRE
+        DAME, INC.","fac_mail_street_addr":"723 RIDGE LANE","fac_mail_city":"PALMDALE","fac_mail_state":"CA","fac_mail_zip_code":"93550","fac_res_street_addr":"723
+        RIDGE LANE","fac_res_city":"PALMDALE","fac_res_state":"CA","fac_res_zip_code":"93550","county":"Imperial","facility_telephone":"9516729690","district_office":"SO.
+        CAL SC/RES","status":"Closed, Agency Initiated","assigned_worker":"Zach Ulhaq","fac_licensee_type":"C","fac_lic_eff_date":"1999-12-10","fac_last_visit_date":"2003-12-09","last_visit_reason":"CCC
+        Annaul (All Fac.''s)","fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":"1999-04-05"},{"fac_name":"LILO
+        \u0026 STITCH''S HOME","fac_nbr":193600129,"type":"Transitional Shelter Care","fac_licensee_name":"SURFING,
+        INC.","fac_mail_street_addr":"7566 HILL FIELD DRIVE","fac_mail_city":"WILMINGTON","fac_mail_state":"CA","fac_mail_zip_code":"90744","fac_res_street_addr":"7566
+        HILL FIELD DRIVE","fac_res_city":"WILMINGTON","fac_res_state":"CA","fac_res_zip_code":"90744","county":"Napa","facility_telephone":"7073998927","district_office":"NO.
+        CAL SC/RES","status":"Probationary License","assigned_worker":"Kari Gutierrez","fac_licensee_type":"C","fac_lic_eff_date":"1993-02-01","fac_last_visit_date":"1992-11-18","last_visit_reason":"Renewal
+        (Fac.''s w/Expir.)","fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":"1984-01-17"},{"fac_name":"SPONGE
+        BOB FOSTER FAMILY HOME","fac_nbr":193600142,"type":"Foster Family Home (Confidential
+        - Do not release)","fac_licensee_name":"SQUAREPANTS, SPONGEBOB","fac_mail_street_addr":"537
+        BAY MEADOWS ST.","fac_mail_city":"OCEANSIDE","fac_mail_state":"CA","fac_mail_zip_code":"92056","fac_res_street_addr":"537
+        BAY MEADOWS ST.","fac_res_city":"OCEANSIDE","fac_res_state":"CA","fac_res_zip_code":"92056","county":"Lassen","facility_telephone":"6619472251","district_office":"CHICO
+        - RESIDENTIAL","status":"Licensed","assigned_worker":"Henk Keukenkamp","fac_licensee_type":"A","fac_lic_eff_date":null,"fac_last_visit_date":"1991-01-10","last_visit_reason":"Pre-Licensing","fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":"1991-01-02"},{"fac_name":"JETSON''S
+        HOME","fac_nbr":193600025,"type":"Short Term Res Therapeutic Program","fac_licensee_name":"ASTRO,
+        INC.","fac_mail_street_addr":"69 LINDA ST.","fac_mail_city":"SAN DIEGO","fac_mail_state":"CA","fac_mail_zip_code":"92115","fac_res_street_addr":"69
+        LINDA ST.","fac_res_city":"SAN DIEGO","fac_res_state":"CA","fac_res_zip_code":"92115","county":"Napa","facility_telephone":"3233562534","district_office":"NO.
+        CAL SC/RES","status":"Licensed","assigned_worker":"Kari Gutierrez","fac_licensee_type":"C","fac_lic_eff_date":"1992-06-15","fac_last_visit_date":"1992-03-24","last_visit_reason":"Complaint","fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":"1987-05-26"}],"meta":{"total":10}}'
+    http_version: 
+  recorded_at: Sun, 21 May 2017 21:27:00 GMT
+recorded_with: VCR 3.0.3
