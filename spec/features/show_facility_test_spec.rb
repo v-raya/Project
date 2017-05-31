@@ -2,14 +2,8 @@ require 'rails_helper'
 require 'vcr'
 
 RSpec.feature 'Facilities', js: true do
-before(:each) do
-      visit '/facilities'
-      # we may need to change the guest guest later
-      page.fill_in 'username', with: 'guest'
-      page.fill_in 'password', with: 'guest'
-      page.click_button 'Sign In'
-      sleep(3)
-
+  before(:each) do
+    allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
   end
   scenario 'List of facilities' do
     visit '/facilities'

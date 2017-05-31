@@ -44,8 +44,8 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock'
   gem 'faker'
-  gem 'rspec', '~> 3.5'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec', '~> 3.5', '< 3.6.0'
+  gem 'rspec-rails', '~> 3.5', '< 3.6.0'
 
   gem 'rubocop', '~> 0.48.1', require: false
 
