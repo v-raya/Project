@@ -39,6 +39,7 @@
     "dev": "foreman start -f Procfile.dev;",
     "spec": "rspec spec; open reports/coverage/rspec/index.html;",
     "karma": "./bin/karma",
+    "karma-ci": "./bin/karma; open ./reports/karma_test_results.html; open ./reports/coverage/karma/index.html;",
     "all-tests": "./bin/karma;  npm run spec;"
   },
   "devDependencies": {
