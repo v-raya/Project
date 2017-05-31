@@ -1,20 +1,36 @@
 import React from 'react'
-import SearchInput from '../../../app/javascript/search/search_input'
+import SearchApp from '../../../app/javascript/search/search'
 var TestUtils = require('react-dom/lib/ReactTestUtils')
 
-describe('Render Search Inputs', function () {
-  const renderedComp = TestUtils.createRenderer()
-  const compRendered = renderedComp.render(<SearchInput />)
-  const result_tag = renderedComp.getRenderOutput()
+describe('Verify Search component Fields', function () {
 
-  // it('Rendered A React Component or Not', function () {
-  //     expect(TestUtils.isDOMComponent(compRendered)).toBe(true)
-  // });
+  beforeEach(function(){
+    let createElem = document.createElement('meta');
+    let csrfTokenAtt = document.createAttribute("name");
+    let csrfTokenContent = document.createAttribute("content");
+    csrfTokenAtt.value = "csrf-token";
+    csrfTokenContent.value = " ";
+    createElem.setAttributeNode(csrfTokenAtt);
+    createElem.setAttributeNode(csrfTokenContent);
+    document.getElementsByTagName('head')[0].appendChild(createElem);
 
-  it('render Input block', function () {
-    expect(result_tag.type).toBe('div')
+    let createElem2 = document.createElement('meta');
+    let csrfTokenAtt2 = document.createAttribute("name");
+    let csrfTokenContent2 = document.createAttribute("content");
+    csrfTokenAtt2.value = "csrf-param";
+    csrfTokenContent2.value = "authenticity_token";
+    createElem2.setAttributeNode(csrfTokenAtt2);
+    createElem2.setAttributeNode(csrfTokenContent2);
+    document.getElementsByTagName('head')[0].appendChild(createElem2);
   });
-  it('verify class name', function () {
-    expect(result_tag.props.className).toBe('search_input col-xs-12 col-sm-12 col-md-12 col-lg-12')
-  });
-});
+  const renderSearch = TestUtils.createRenderer()
+  const searchComp = renderSearch.render(<SearchApp/>)
+  const sendSearch = searchComp.props.children[1];
+  const sendSearchFun = sendSearch.props.children.props
+  it('verify search component', function () {
+    //let searchResults = renderIntoDocument(<SearchApp />);
+    let DataSearch = "02, 738, 193600008, home, 2024 W el camino, Sacramento, Ca, 95833"
+    let sendQueryFunc = sendSearchFun.sendSearchInput(DataSearch);
+    let x = sendQueryFunc;
+  })
+})
