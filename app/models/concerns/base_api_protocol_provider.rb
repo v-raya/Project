@@ -3,14 +3,13 @@ module BaseApiProtocolProvider
 
   # class methods
   class_methods do
-    def all
-      response = Faraday.get CALS_API_BASE_URL + '/' + class_name_downcase_pluralized
-
+    def all(auth_header)
+      response = FaradayBase.get(CALS_API_BASE_URL + '/' + class_name_downcase_pluralized, auth_header)
       JSON.parse(response.body).map { |itm| new(itm) }
     end
 
-    def find_by_id(id)
-      response = Faraday.get "#{CALS_API_BASE_URL}/#{class_name_downcase_pluralized}/#{id}"
+    def find_by_id(id, auth_header)
+      response = FaradayBase.get("#{CALS_API_BASE_URL}/#{class_name_downcase_pluralized}/#{id}", auth_header)
       new(JSON.parse(response.body))
     end
   end

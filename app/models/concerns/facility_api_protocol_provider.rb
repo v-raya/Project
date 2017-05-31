@@ -3,11 +3,10 @@ module FacilityApiProtocolProvider
   include BaseApiProtocolProvider
 
   class_methods do
-    def search(query)
-      response = Faraday.post "#{ENV['BASE_CALS_API_URL']}/#{class_name_downcase_pluralized}/search", query
+    def search(query, auth_header)
+      response = FaradayBase.get("#{ENV['BASE_CALS_API_URL']}/#{class_name_downcase_pluralized}/search?query=#{query}", auth_header)
       JSON.parse(response.body)
     end
-
   end
 
   included do
