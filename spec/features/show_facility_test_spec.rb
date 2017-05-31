@@ -3,7 +3,6 @@ require 'vcr'
 
 RSpec.feature 'Facilities', js: true do
 before(:each) do
-byebug
       visit '/facilities'
       # we may need to change the guest guest later
       page.fill_in 'username', with: 'guest'
