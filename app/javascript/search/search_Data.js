@@ -1,10 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import lineOff from './images/line_off.png'
-import lineOn from './images/line_on.png'
-import gridOn from './images/grid_on.png'
-import gridOff from './images/grid_off.png'
-import close from './images/cross.png'
 
 export default class SearchDetails extends React.Component {
   constructor (props) {
@@ -49,14 +44,14 @@ export default class SearchDetails extends React.Component {
     if (this.state.searchData[2] && this.state.searchData[2].length > 1) {
       searchFacilityId = (<p>Facility ID:
         <span>{this.state.searchData[2]}</span>
-        <img onClick={this.removeCriteria.bind(this, this.state.searchData[2])} alt='close' src={close} />
+        <span onClick={this.removeCriteria.bind(this, this.state.searchData[2])} alt='cross-icon' className='cross-icon' />
       </p>)
     }
     let searchFacilityName = null
     if (this.state.searchData[3] && this.state.searchData[3].length > 1) {
       searchFacilityName = (<p>Facility Name:
         <span>{this.state.searchData[3]}</span>
-        <img onClick={this.removeCriteria.bind(this, this.state.searchData[3])} alt='close' src={close} />
+        <span onClick={this.removeCriteria.bind(this, this.state.searchData[3])} alt='cross-icon'  className='cross-icon' />
       </p>)
     }
     // Below code for future reference of UX changes
@@ -80,8 +75,8 @@ export default class SearchDetails extends React.Component {
         </div>
         <div className='toggle_result col-xs-12 col-sm-3 col-md-3 col-lg-3'>
           <div className='pull-right'>
-            <img className='navbar-brand' onClick={this.props.handleToggle} src={this.props.state.isToggled ? lineOff : lineOn} alt={'list'} />
-            <img className='navbar-brand' onClick={this.props.handleToggle} src={this.props.state.isToggled ? gridOn : gridOff} alt={'grid'} />
+            <div onClick={this.props.handleToggle} className={(this.props.state.isToggled ? 'line_off-icon' : 'line_on-icon') +' ' + 'navbar-brand'} alt={'list'}  />
+            <div onClick={this.props.handleToggle} className={(this.props.state.isToggled ? 'grid_on-icon' : 'grid_off-icon') +' ' +'navbar-brand'} alt={'grid'} />
           </div>
         </div>
       </div>

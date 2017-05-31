@@ -5,7 +5,7 @@ import SearchList from './search_list'
 import SearchNotFound from './search_notfount'
 import SearchDetails from './search_Data'
 import 'whatwg-fetch'
-import logo from './../../assets/images/logo.jpg'
+
 export default class Search extends React.Component {
   constructor (props) {
     super(props)
@@ -77,7 +77,7 @@ export default class Search extends React.Component {
     return (
       <div className='search_page'>
         <div className='header_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <img src={logo} alt={'logo'} />
+          <div className='header-logo' />
           <a href={this.state.landingPageUrl} className='btn btn-default btn-lg active pull-right back-button' role='button'>Back</a>
         </div>
         <div className='search-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
