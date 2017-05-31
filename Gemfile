@@ -12,7 +12,6 @@ gem 'dotenv-rails', '~> 2.2', groups: %i[development test aws_dev]
 gem 'rails', '~> 5.1.0.beta1'
 
 gem 'foreman'
-gem 'awesome_print'
 gem 'responders', '~> 2.3'
 gem 'autoprefixer-rails', '~> 6.7'
 gem 'bootstrap-sass', '~> 3.3.6'
