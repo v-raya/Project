@@ -17,7 +17,14 @@ class FacilitiesController < CalsBaseController
   end
 
   def search
-    @facilities = facility_helper.search(params[:query])
+    post_data = request.body.read
+    parsed_post_data = JSON.parse(post_data)
+
+    query_hash = QueryPreprocessor.params_to_query_hash(parsed_post_data['params'])
+    logger.info "query_hash: #{query_hash}"
+    es_query_json = Elastic::QueryBuilder.match_boolean(query_hash).to_json
+    logger.info "es query: #{es_query_json}"
+    @facilities = facility_helper.search es_query_json
     json_response @facilities
   end
 

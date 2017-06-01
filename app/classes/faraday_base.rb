@@ -5,9 +5,9 @@ class FaradayBase
     faraday_shared(:get, url, auth_header)
   end
 
-  # def self.post(url, auth_header, body)
-  #   faraday_shared(:post, url, auth_header, body)
-  # end
+  def self.post(url, auth_header, body)
+    faraday_shared(:post, url, auth_header, body)
+  end
 
 
   # private
