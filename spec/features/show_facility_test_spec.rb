@@ -15,7 +15,7 @@ RSpec.feature 'Facilities', js: true do
     expect(page).to have_text('MARCH, AMY CFH')
   end
 
-  scenario 'refresh facility', :skip_before => true do
+  scenario 'refresh facility' do
     visit '/facilities'
     click_link('MARCH, AMY CFH')
     expect(page).to have_text('MARCH, AMY CFH')
