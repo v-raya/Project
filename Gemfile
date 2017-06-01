@@ -12,7 +12,6 @@ gem 'dotenv-rails', '~> 2.2', groups: %i[development test aws_dev]
 gem 'rails', '~> 5.1.0.beta1'
 
 gem 'foreman'
-
 gem 'responders', '~> 2.3'
 gem 'autoprefixer-rails', '~> 6.7'
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -45,14 +44,15 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock'
   gem 'faker'
-  gem 'rspec', '~> 3.5'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec', '~> 3.5', '< 3.6.0'
+  gem 'rspec-rails', '~> 3.5', '< 3.6.0'
 
   gem 'rubocop', '~> 0.48.1', require: false
 
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'rails-controller-testing'
+  gem 'poltergeist'
 end
 
 group :test do

@@ -4,7 +4,7 @@ var TestUtils = require('react-dom/lib/ReactTestUtils')
 
 describe('Verify Children Component', function () {
   const props = {
-    facilityData : {
+    facilityData: {
       count: 3,
       children: [{
         id: 2222,
@@ -17,11 +17,11 @@ describe('Verify Children Component', function () {
         assigned_worker: 'asdfg',
         county_of_origin: 'sacramento'
       }]}
-  };
+  }
   const renderChildComp = TestUtils.createRenderer()
-  const childComp = renderChildComp.render(<Children {...props}/>)
+  const childComp = renderChildComp.render(<Children {...props} />)
   const result_tag = childComp.props
   it('check Children table', function () {
-    expect(result_tag.className).toBe("facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12");
+    expect(result_tag.className).toBe('facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12')
   })
 })

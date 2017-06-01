@@ -4,6 +4,6 @@ var TestUtils = require('react-dom/lib/ReactTestUtils')
 
 describe('Facility Complaints Section', function () {
   it('Verify Facility Complaints Table', function () {
-    
+
   })
 })

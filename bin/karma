@@ -29,7 +29,7 @@ end
 
 newenv = { "NODE_PATH" => NODE_MODULES_PATH }
 # cmdline = ['npm run karma'] + ARGV
-cmdline = ['karma start ./config/karma.conf.js;open ./reports/karma_test_results.html; open ./reports/coverage/karma/index.html'] + ARGV
+cmdline = ['karma start ./config/karma.conf.js;'] + ARGV
 
 Dir.chdir(APP_PATH) do
   exec newenv, *cmdline
