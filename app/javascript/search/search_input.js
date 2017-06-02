@@ -25,7 +25,7 @@ export default class SearchInput extends React.Component {
   }
   sendSearchInput (event) {
     event.preventDefault()
-    const finalQuery = (this.state.county + ',' + this.state.facility + ',' + this.refs.facilityId.value + ',' + this.refs.facilityHome.value + ',' +this.refs.facilityAddress.value)
+    const finalQuery = (this.state.county + ',' + this.state.facility + ',' + this.refs.facilityId.value + ',' + this.refs.facilityHome.value + ',' + this.refs.facilityAddress.value)
     this.props.sendSearchInput(finalQuery)
   }
   render () {

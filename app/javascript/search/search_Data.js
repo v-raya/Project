@@ -15,11 +15,13 @@ export default class SearchDetails extends React.Component {
     }
     this.removeCriteria = this.removeCriteria.bind(this)
   }
+
   getInitialState () {
     this.state = {
       searchData: this.props.state.inputData.split(',')
     }
   }
+
   componentWillReceiveProps (nextProps) {
     if (nextProps.state.inputData !== this.state.searchQuery) {
       this.setState(
@@ -29,6 +31,7 @@ export default class SearchDetails extends React.Component {
       )
     }
   }
+
   removeCriteria (event) {
     const newState = this.state.searchData
     if (newState.indexOf(event) > -1) {
@@ -43,20 +46,21 @@ export default class SearchDetails extends React.Component {
     const newQuery = this.state.searchData.toString()
     this.props.sendSearchInput(newQuery)
   }
+
   render () {
     const searchCount = this.props.state.searchData
     let searchFacilityId = null
     if (this.state.searchData[2] && this.state.searchData[2].length > 1) {
       searchFacilityId = (<p>Facility ID:
         <span>{this.state.searchData[2]}</span>
-        <img onClick={this.removeCriteria.bind(this, this.state.searchData[2])} alt='close' src={close} />
+        <img onClick={this.removeCriteria.bind(this, this.state.searchData[2])} alt='close' src={close}/>
       </p>)
     }
     let searchFacilityName = null
     if (this.state.searchData[3] && this.state.searchData[3].length > 1) {
       searchFacilityName = (<p>Facility Name:
         <span>{this.state.searchData[3]}</span>
-        <img onClick={this.removeCriteria.bind(this, this.state.searchData[3])} alt='close' src={close} />
+        <img onClick={this.removeCriteria.bind(this, this.state.searchData[3])} alt='close' src={close}/>
       </p>)
     }
     // Below code for future reference of UX changes
@@ -70,7 +74,7 @@ export default class SearchDetails extends React.Component {
     return (
       <div className='search-toggle col-xs-12 col-sm-12 col-md-12 col-lg-12'>
         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <span className='glyphicon glyphicon-triangle-right' />
+          <span className='glyphicon glyphicon-triangle-right'/>
           <span>Advanced Search</span>
         </div>
         <div className='search_details col-xs-12 col-sm-9 col-md-9 col-lg-9'>
@@ -80,8 +84,10 @@ export default class SearchDetails extends React.Component {
         </div>
         <div className='toggle_result col-xs-12 col-sm-3 col-md-3 col-lg-3'>
           <div className='pull-right'>
-            <img className='navbar-brand' onClick={this.props.handleToggle} src={this.props.state.isToggled ? lineOff : lineOn} alt={'list'} />
-            <img className='navbar-brand' onClick={this.props.handleToggle} src={this.props.state.isToggled ? gridOn : gridOff} alt={'grid'} />
+            <img className='navbar-brand' onClick={this.props.handleToggle}
+                 src={this.props.state.isToggled ? lineOff : lineOn} alt={'list'}/>
+            <img className='navbar-brand' onClick={this.props.handleToggle}
+                 src={this.props.state.isToggled ? gridOn : gridOff} alt={'grid'}/>
           </div>
         </div>
       </div>
