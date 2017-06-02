@@ -48,6 +48,12 @@ RUN yarn install
 # compile assets
 RUN rails assets:precompile RAILS_ENV=aws_dev
 
+# RUN tests
+ENV BASE_CALS_API_URL=http://localhost:3001/v1
+
+RUN npm run karma-ci
+RUN npm run spec-ci
+
 #### ENV variables
 
 # cals api url
