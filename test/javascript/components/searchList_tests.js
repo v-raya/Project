@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchList from '../../../app/javascript/search/search_list'
-var TestUtils = require('react-dom/lib/ReactTestUtils');
+var TestUtils = require('react-dom/lib/ReactTestUtils')
 
 describe('Render search list', function () {
   const props = {
@@ -33,22 +33,21 @@ describe('Render search list', function () {
       }
     ]
   }
-  let searchListComp = TestUtils.createRenderer();
-  let searchListRender = searchListComp.render(<SearchList {...props} />);
-  let tableElement = searchListRender.props.children;
+  let searchListComp = TestUtils.createRenderer()
+  let searchListRender = searchListComp.render(<SearchList {...props} />)
+  let tableElement = searchListRender.props.children
   it('Create table view', function () {
-    expect(searchListRender.props.className).toBe('main_table');
+    expect(searchListRender.props.className).toBe('main_table')
   })
   it('Render Table', function () {
-    expect(tableElement.type).toBe('table');
+    expect(tableElement.type).toBe('table')
   })
   it('Render Table Body for Facility List', function () {
-    let tableChild = tableElement.props.children;
-    expect(tableChild[1].type).toBe('tbody');
+    let tableChild = tableElement.props.children
+    expect(tableChild[1].type).toBe('tbody')
   })
   it('Verify assigned Facility ID', function () {
-    let tableFaclityID = tableElement.props.children[1].props.children[0];
-    expect(tableFaclityID.key).toEqual('193600008');
+    let tableFaclityID = tableElement.props.children[1].props.children[0]
+    expect(tableFaclityID.key).toEqual('193600008')
   })
-
 })

@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var webpackConfig = require('./webpack/test.js')
+// process.env.PHANTOMJS_BIN = './../node_modules/.bin/phantomjs'
 
 module.exports = function (config) {
   config.set({
@@ -59,6 +60,7 @@ module.exports = function (config) {
       'karma-jasmine',
       'karma-coverage',
       'karma-chrome-launcher',
+      'karma-phantomjs-launcher',
       'karma-webpack',
       'istanbul-instrumenter-loader'
     ],
@@ -77,13 +79,19 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true,
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    phantomjsLauncher: {
+      // Have phantomjs exit if a ResourceError is encountered
+      //  (useful if karma exits without killing phantom)
+      exitOnResourceError: true
+    }
   })
 }

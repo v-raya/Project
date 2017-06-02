@@ -5,7 +5,7 @@ import SearchList from './search_list'
 import SearchNotFound from './search_notfount'
 import SearchDetails from './search_Data'
 import 'whatwg-fetch'
-import logo from './../../assets/images/logo.jpg'
+
 export default class Search extends React.Component {
   constructor (props) {
     super(props)
@@ -49,8 +49,8 @@ export default class Search extends React.Component {
 
   addSearchInput (DataSearch) {
     var query = DataSearch.split(',')
-    var addressField = query[4] + ',' + query[5] + ',' + query[6]
     var addressData = this.addressQuery(query)
+
     var params = {
       fac_co_nbr: [query[0]],
       fac_type: [query[1]],
@@ -86,7 +86,9 @@ export default class Search extends React.Component {
         searchData: [],
         fromResponse: true
       })
+
     })
+  })
   }
 
   render () {
@@ -94,9 +96,8 @@ export default class Search extends React.Component {
     return (
       <div className='search_page'>
         <div className='header_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <img src={logo} alt={'logo'}/>
-          <a href={this.state.landingPageUrl} className='btn btn-default btn-lg active pull-right back-button'
-             role='button'>Back</a>
+          <div className='header-logo' />
+          <a href={this.state.landingPageUrl} className='btn btn-default btn-lg active pull-right back-button' role='button'>Back</a>
         </div>
         <div className='search-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <SearchInput sendSearchInput={this.addSearchInput.bind(this)}/>
