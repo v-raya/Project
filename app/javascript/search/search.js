@@ -31,12 +31,7 @@ export default class Search extends React.Component {
 
   getCsrfToken (value) {
     var metas = document.getElementsByTagName('meta')
-    if (metas[value].content) {
-      var csrfToken = metas[value].content
-    } else {
-      csrfToken = ''
-    }
-    return csrfToken
+    return metas[value].content) ? metas[value].content : '';
   }
 
   handleToggle () {
