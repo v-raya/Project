@@ -19,7 +19,7 @@
         <hudson.model.StringParameterDefinition>
           <name>sha1</name>
           <description></description>
-          <defaultValue>a22df966385264709daae882153ba5b601bab55b</defaultValue>
+          <defaultValue>3169f5f6ed87edbeacaeff9a468d06b53d88e720</defaultValue>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
@@ -92,24 +92,23 @@
     <hudson.tasks.Shell>
       <command>#!/bin/bash
 
+export PATH=&quot;$PATH:/usr/local/share&quot;
+
+export BASE_CALS_API_URL=&apos;http://localhost:3001/v1&apos;
+
+env
+
 source &quot;$HOME/.rvm/scripts/rvm&quot;
 
 set -e
 
-$BASE_CALS_API_URL=&apos;http://localhost:3001/v1&apos;
-$AUTHENTICATION_API_BASE_URL=&apos;http://perry.dev.cwds.tabordasolutions.net&apos;
-
-
 rvm use &quot;ruby-2.4.0&quot;
 
 bundle install
-
 yarn install
 
-npm run spec
-
-npm run karma
-</command>
+npm run karma-ci
+npm run spec-ci</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>

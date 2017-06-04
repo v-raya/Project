@@ -12,19 +12,26 @@
   <unstableAs>FAILURE</unstableAs>
   <autoCloseFailedPullRequests>false</autoCloseFailedPullRequests>
   <displayBuildErrorsOnDownstreamBuilds>false</displayBuildErrorsOnDownstreamBuilds>
+  <blackListLabels></blackListLabels>
+  <whiteListLabels></whiteListLabels>
   <githubAuth>
     <org.jenkinsci.plugins.ghprb.GhprbGitHubAuth>
       <serverAPIUrl>https://api.github.com</serverAPIUrl>
+      <credentialsId>55376fcb-1198-4fe1-9991-ba647645d5b0</credentialsId>
       <id>c2510512-84cb-44aa-b646-d0e0d38e1ee6</id>
       <description>Anonymous connection</description>
+      <secret>{AQAAABAAAAAQqoyJpg01c7IbFVzIDZTIp09Tbqz41RICa51ew5P64Hw=}</secret>
     </org.jenkinsci.plugins.ghprb.GhprbGitHubAuth>
   </githubAuth>
+  <adminlist></adminlist>
+  <requestForTestingPhrase>Can one of the admins verify this patch?</requestForTestingPhrase>
   <extensions>
     <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
       <commitStatusContext></commitStatusContext>
-      <showMatrixStatus>false</showMatrixStatus>
+      <triggeredStatus></triggeredStatus>
+      <startedStatus></startedStatus>
+      <statusUrl></statusUrl>
       <addTestResults>false</addTestResults>
-      <completedStatus/>
     </org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
   </extensions>
 </org.jenkinsci.plugins.ghprb.GhprbTrigger_-DescriptorImpl>
