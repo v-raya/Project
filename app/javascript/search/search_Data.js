@@ -55,7 +55,7 @@ export default class SearchDetails extends React.Component {
     if (this.state.searchData[3] && this.state.searchData[3].length > 1) {
       searchFacilityName = (<p>Facility Name:
         <span>{this.state.searchData[3]}</span>
-        <span onClick={this.removeCriteria.bind(this, this.state.searchData[3])} alt='cross-icon'  className='cross-icon' />
+        <span onClick={this.removeCriteria.bind(this, this.state.searchData[3])} alt='cross-icon' className='cross-icon' />
       </p>)
     }
     // Below code for future reference of UX changes
@@ -79,8 +79,8 @@ export default class SearchDetails extends React.Component {
         </div>
         <div className='toggle_result col-xs-12 col-sm-3 col-md-3 col-lg-3'>
           <div className='pull-right'>
-            <div onClick={this.props.handleToggle} className={(this.props.state.isToggled ? 'line_off-icon' : 'line_on-icon') +' ' + 'navbar-brand'} alt={'list'}  />
-            <div onClick={this.props.handleToggle} className={(this.props.state.isToggled ? 'grid_on-icon' : 'grid_off-icon') +' ' +'navbar-brand'} alt={'grid'} />
+            <div onClick={this.props.handleToggle} className={(this.props.state.isToggled ? 'line_off-icon' : 'line_on-icon') + ' ' + 'navbar-brand'} alt={'list'} />
+            <div onClick={this.props.handleToggle} className={(this.props.state.isToggled ? 'grid_on-icon' : 'grid_off-icon') + ' ' + 'navbar-brand'} alt={'grid'} />
           </div>
         </div>
       </div>
