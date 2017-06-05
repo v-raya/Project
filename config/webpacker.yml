@@ -1,15 +1,17 @@
 # Note: You must restart bin/webpack-dev-server for changes to take effect
 
 default: &default
-  config: config/webpack
-  entry: packs
-  output: public/cals
-  public_url_dir: cals
-  manifest: manifest.json
-  node_modules: node_modules
-  source: app/javascript
+  source_path: app/javascript
+  source_entry_path: packs
+  public_output_path: cals/packs
+
+  # config: config/webpack
+  # manifest: manifest.json
+  # node_modules: node_modules
+
   extensions:
     - .coffee
+    - .erb
     - .js
     - .jsx
     - .ts
@@ -26,12 +28,15 @@ default: &default
 development:
   <<: *default
 
-aws_dev:
-  <<: *default
+  dev_server:
+    host: 0.0.0.0
+    port: 5080
+    https: false
 
 test:
   <<: *default
-  manifest: manifest-test.json
+
+  public_output_path: packs-test
 
 production:
   <<: *default
