@@ -10,11 +10,13 @@ export default class SearchDetails extends React.Component {
     }
     this.removeCriteria = this.removeCriteria.bind(this)
   }
+
   getInitialState () {
     this.state = {
       searchData: this.props.state.inputData.split(',')
     }
   }
+
   componentWillReceiveProps (nextProps) {
     if (nextProps.state.inputData !== this.state.searchQuery) {
       this.setState(
@@ -24,6 +26,7 @@ export default class SearchDetails extends React.Component {
       )
     }
   }
+
   removeCriteria (event) {
     const newState = this.state.searchData
     if (newState.indexOf(event) > -1) {
@@ -38,6 +41,7 @@ export default class SearchDetails extends React.Component {
     const newQuery = this.state.searchData.toString()
     this.props.sendSearchInput(newQuery)
   }
+
   render () {
     const searchCount = this.props.state.searchData
     let searchFacilityId = null
@@ -65,7 +69,7 @@ export default class SearchDetails extends React.Component {
     return (
       <div className='search-toggle col-xs-12 col-sm-12 col-md-12 col-lg-12'>
         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <span className='glyphicon glyphicon-triangle-right' />
+          <span className='glyphicon glyphicon-triangle-right'/>
           <span>Advanced Search</span>
         </div>
         <div className='search_details col-xs-12 col-sm-9 col-md-9 col-lg-9'>

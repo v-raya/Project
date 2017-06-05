@@ -16,29 +16,42 @@ export default class Search extends React.Component {
       fromResponse: false,
       searchData: []
     }
-
     this.handleToggle = this.handleToggle.bind(this)
     this.getCsrfToken = this.getCsrfToken.bind(this)
+    this.addressQuery = this.addressQuery.bind(this)
   }
+
+  addressQuery (query) {
+    var addQuery = []
+    for (var i = 4; i >= 4 && i < query.length; i++) {
+      addQuery.push(query[i])
+    }
+    return addQuery
+  }
+
   getCsrfToken (value) {
     var metas = document.getElementsByTagName('meta')
-    var csrfToken = metas[value].content
-    return csrfToken
+    return metas[value] ? metas[value].content : '';
   }
+
   handleToggle () {
     this.setState({isToggled: !this.state.isToggled})
   }
+
   getInitialState () {
     this.state.isToggled = false
   }
+
   addSearchInput (DataSearch) {
     var query = DataSearch.split(',')
+    var addressData = this.addressQuery(query)
+
     var params = {
       fac_co_nbr: [query[0]],
       fac_type: [query[1]],
       fac_nbr: [query[2]],
       fac_name: [query[3]],
-      fac_addr: ['']
+      fac_addr: addressData
     }
 
     this.state.inputData = DataSearch
@@ -62,15 +75,15 @@ export default class Search extends React.Component {
         searchData: response.facilities
       })
     })
-      // getCSRFToken(){ return _.find(document.getElementsByTagName("meta"), (meta) => { return meta.name === "csrf-token" }).content }
-  .catch(error => {
-    console.log(error)
-    return this.setState({
-      searchData: [],
-      fromResponse: true
+    .catch(error => {
+      console.log(error)
+      return this.setState({
+        searchData: [],
+        fromResponse: true
+      })
     })
-  })
   }
+
   render () {
     let searchArray = this.state.searchData[0] ? this.state.searchData : false
     return (
@@ -80,12 +93,12 @@ export default class Search extends React.Component {
           <a href={this.state.landingPageUrl} className='btn btn-default btn-lg active pull-right back-button' role='button'>Back</a>
         </div>
         <div className='search-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <SearchInput sendSearchInput={this.addSearchInput.bind(this)} />
+          <SearchInput sendSearchInput={this.addSearchInput.bind(this)}/>
         </div>
         {searchArray && <SearchDetails sendSearchInput={this.addSearchInput.bind(this)} {...this} />}
         <div className='result-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          {this.state.isToggled && <SearchGrid searchResults={this.state.searchData} />}
-          {!this.state.isToggled && <SearchList searchResults={this.state.searchData} />}
+          {this.state.isToggled && <SearchGrid searchResults={this.state.searchData}/>}
+          {!this.state.isToggled && <SearchList searchResults={this.state.searchData}/>}
           {(this.state.fromResponse && !searchArray) && <SearchNotFound />}
         </div>
       </div>
