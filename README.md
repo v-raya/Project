@@ -39,13 +39,13 @@ assets compiled via webpack live on:
 `localhost:5080`
 
 ## REDIS
-NOTE: it is also important to also have redis server running. Start server with 
+NOTE: it is also important to also have redis server running. Start server with
 `redis-server`
 
 if redis is not installed, enter the following command from terminal:
 `brew install redis `
 
-this command will install all necessary redis files. 
+this command will install all necessary redis files.
 
 
 ## Testing
@@ -61,7 +61,7 @@ to run all tests and output code coverage:
 
 ### Karma tests instructions
 To run the karma tests, from the root folder run:
-`npm run karma`
+`npm run karma` (with reports), `npm run karma-ci` (without reports)
 
 this command will run the automated tests and open a browser with the results.
 
