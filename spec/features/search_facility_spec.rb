@@ -3,7 +3,7 @@ require 'vcr'
 
 RSpec.feature 'Search', js: true do
   before(:each) do
-    CalsBaseController.any_instance.stub(:authenticate_with_cwds).and_return(true)
+    allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
   end
 
   scenario 'Search a facility' do
