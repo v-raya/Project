@@ -20,6 +20,8 @@ SET default_tablespace = '';
 
 SET default_with_oids = false;
 
+CREATE SEQUENCE children_id_seq;
+
 --
 -- Name: children; Type: TABLE; Schema: public; Owner: pguser
 --
@@ -38,6 +40,8 @@ CREATE TABLE children (
 
 
 ALTER TABLE children OWNER TO pguser;
+
+ALTER SEQUENCE children_id_seq OWNER TO pguser;
 
 --
 -- Data for Name: children; Type: TABLE DATA; Schema: public; Owner: pguser
