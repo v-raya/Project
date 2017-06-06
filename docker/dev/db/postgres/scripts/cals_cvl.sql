@@ -50,7 +50,6 @@ INSERT INTO cals_cvl VALUES ('DO', '13', 'CHICO-DAY CARE', 'CodeMapping::Distric
 INSERT INTO cals_cvl VALUES ('DO', '14', 'CENTRAL COAST SC/RES', 'CodeMapping::DistrictOffice');
 INSERT INTO cals_cvl VALUES ('DO', '15', 'GREATER B.AREA ADULT', 'CodeMapping::DistrictOffice');
 INSERT INTO cals_cvl VALUES ('DO', '17', 'CENTRAL COAST-CHILD', 'CodeMapping::DistrictOffice');
-INSERT INTO cals_cvl VALUES ('DO', '19', 'PACIFIC INLAND CR', 'CodeMapping::DistrictOffice');
 INSERT INTO cals_cvl VALUES ('CO', '2', 'Alpine', 'CodeMapping::County');
 INSERT INTO cals_cvl VALUES ('CO', '3', 'Amador', 'CodeMapping::County');
 INSERT INTO cals_cvl VALUES ('CO', '4', 'Butte', 'CodeMapping::County');
@@ -120,8 +119,6 @@ INSERT INTO cals_cvl VALUES ('DO', '25', 'CHICO - RESIDENTIAL', 'CodeMapping::Di
 INSERT INTO cals_cvl VALUES ('DO', '28', 'LA TRI-COUNTY AC/RES', 'CodeMapping::DistrictOffice');
 INSERT INTO cals_cvl VALUES ('DO', '29', 'CENTRAL COAST-RES.', 'CodeMapping::DistrictOffice');
 INSERT INTO cals_cvl VALUES ('DO', '31', 'GREATER LA AREA SC', 'CodeMapping::DistrictOffice');
-INSERT INTO cals_cvl VALUES ('DO', '32', 'LA & TRI-COASTAL CR', 'CodeMapping::DistrictOffice');
-INSERT INTO cals_cvl VALUES ('DO', '34', 'LA METRO & VALLEY CR', 'CodeMapping::DistrictOffice');
 INSERT INTO cals_cvl VALUES ('DO', '39', 'LA REGION DO', 'CodeMapping::DistrictOffice');
 INSERT INTO cals_cvl VALUES ('DO', '42', 'SENIOR CARE PROGRAM', 'CodeMapping::DistrictOffice');
 INSERT INTO cals_cvl VALUES ('DO', '43', 'CHILD CARE SOUTH', 'CodeMapping::DistrictOffice');
@@ -142,6 +139,8 @@ INSERT INTO cals_cvl VALUES ('CO', '34', 'Sacramento', 'CodeMapping::County');
 INSERT INTO cals_cvl VALUES ('CO', '35', 'San Benito', 'CodeMapping::County');
 INSERT INTO cals_cvl VALUES ('CO', '36', 'San Bernardino', 'CodeMapping::County');
 INSERT INTO cals_cvl VALUES ('CO', '37', 'San Diego', 'CodeMapping::County');
+INSERT INTO cals_cvl VALUES ('DO', '32', 'MONTEREY PARK', 'CodeMapping::DistrictOffice');
+INSERT INTO cals_cvl VALUES ('DO', '34', 'CULVER CITY', 'CodeMapping::DistrictOffice');
 INSERT INTO cals_cvl VALUES ('CO', '38', 'San Francisco', 'CodeMapping::County');
 INSERT INTO cals_cvl VALUES ('CO', '39', 'San Joaquin', 'CodeMapping::County');
 INSERT INTO cals_cvl VALUES ('CO', '40', 'San Luis Obispo', 'CodeMapping::County');
@@ -189,7 +188,6 @@ INSERT INTO cals_cvl VALUES ('FT', '845', 'Day Care Center/Ill Child', 'CodeMapp
 INSERT INTO cals_cvl VALUES ('FT', '850', 'Day Care Center', 'CodeMapping::FacilityType');
 INSERT INTO cals_cvl VALUES ('DO', '21', 'NO. CAL SC/RES', 'CodeMapping::DistrictOffice');
 INSERT INTO cals_cvl VALUES ('DO', '23', 'NO. CAL CR/RES.', 'CodeMapping::DistrictOffice');
-INSERT INTO cals_cvl VALUES ('DO', '26', 'CENTRAL COAST CR/RES', 'CodeMapping::DistrictOffice');
 INSERT INTO cals_cvl VALUES ('DO', '30', 'L.A. DAYCARE-NO.WEST', 'CodeMapping::DistrictOffice');
 INSERT INTO cals_cvl VALUES ('DO', '33', 'L.A. DAY CARE-EAST', 'CodeMapping::DistrictOffice');
 INSERT INTO cals_cvl VALUES ('DO', '41', 'OUT OF STATE GH CERT', 'CodeMapping::DistrictOffice');
@@ -218,6 +216,21 @@ INSERT INTO cals_cvl VALUES ('AW', '1231', 'Diane Hussey', 'CodeMapping::Assigne
 INSERT INTO cals_cvl VALUES ('AW', 'P906', 'Lynda Smyth', 'CodeMapping::AssignedWorker');
 INSERT INTO cals_cvl VALUES ('AW', '7702', 'Blake Jeter', 'CodeMapping::AssignedWorker');
 INSERT INTO cals_cvl VALUES ('AW', 'TRAN', 'Gayle Lowery', 'CodeMapping::AssignedWorker');
+INSERT INTO cals_cvl VALUES ('AW', 'A001', 'Beth Claffey', 'CodeMapping::AssignedWorker');
+INSERT INTO cals_cvl VALUES ('DO', '19', 'RIVERSIDE', 'CodeMapping::DistrictOffice');
+INSERT INTO cals_cvl VALUES ('DO', '26', 'SAN JOSE', 'CodeMapping::DistrictOffice');
+INSERT INTO cals_cvl VALUES ('AW', 'A007', 'Victor Beason', 'CodeMapping::AssignedWorker');
+INSERT INTO cals_cvl VALUES ('AW', 'A002', 'Jeremy Raiford', 'CodeMapping::AssignedWorker');
+INSERT INTO cals_cvl VALUES ('AW', 'A003', 'Louis Stiffler', 'CodeMapping::AssignedWorker');
+INSERT INTO cals_cvl VALUES ('AW', 'A004', 'Chris Clancy', 'CodeMapping::AssignedWorker');
+INSERT INTO cals_cvl VALUES ('AW', 'A005', 'Wilma Aguillon', 'CodeMapping::AssignedWorker');
+INSERT INTO cals_cvl VALUES ('AW', 'A006', 'Ruben Pounds', 'CodeMapping::AssignedWorker');
+INSERT INTO cals_cvl VALUES ('AW', 'A008', 'Rebecca Bayliss', 'CodeMapping::AssignedWorker');
+INSERT INTO cals_cvl VALUES ('AW', 'A009', 'Cheryl Diener', 'CodeMapping::AssignedWorker');
+INSERT INTO cals_cvl VALUES ('AW', 'A010', 'Dennis Cranford', 'CodeMapping::AssignedWorker');
+INSERT INTO cals_cvl VALUES ('AW', 'A011', 'Daisy Rosario', 'CodeMapping::AssignedWorker');
+INSERT INTO cals_cvl VALUES ('AW', 'A012', 'Kurk Lemire', 'CodeMapping::AssignedWorker');
+INSERT INTO cals_cvl VALUES ('FT', '724', 'Transitional Care Facility for Children', 'CodeMapping::FacilityType');
 
 
 --
