@@ -20,6 +20,8 @@ SET default_tablespace = '';
 
 SET default_with_oids = false;
 
+CREATE SEQUENCE complaints_id_seq;
+
 --
 -- Name: complaints; Type: TABLE; Schema: public; Owner: pguser
 --
@@ -37,6 +39,8 @@ CREATE TABLE complaints (
 
 
 ALTER TABLE complaints OWNER TO pguser;
+
+ALTER SEQUENCE complaints_id_seq OWNER TO pguser;
 
 --
 -- Data for Name: complaints; Type: TABLE DATA; Schema: public; Owner: pguser
