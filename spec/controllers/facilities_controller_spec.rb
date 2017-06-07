@@ -25,10 +25,27 @@ describe FacilitiesController do
       request.headers['Content-Type'] = 'application/json'
       request.headers['Accept'] = 'application/json'
 
-      post :search, {:params => {:params => {:fac_name  => ['home']}}}
-      expect(response.status).to  eq(200)
+      post :search, {:params => {:params => {:fac_name => ['home']}}}
+      expect(response.status).to eq(200)
       expect(response.body.include?('TWEEDLE'))
     end
   end
+end
 
+describe FacilitiesController, :type => :controller do
+  context 'set session token' do
+    it 'should token if token is empty' do
+      allow(Cwds::Authentication).to receive(:token_validation).with('abcd', AUTHENTICATION_API_BASE_URL).and_return(true)
+
+      get :index, params: {token: 'abcd'}
+      expect(session['token']).to eq('abcd')
+    end
+  end
+
+  it 'should redirect if token invalid' do
+    allow(Cwds::Authentication).to receive(:authentication_url).with(AUTHENTICATION_API_BASE_URL, 'http://test.host/facilities').and_return('www.google.com')
+
+    get :index
+    response.should redirect_to 'www.google.com'
+  end
 end
