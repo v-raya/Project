@@ -11,13 +11,13 @@
        facilityComplaintsTable = complaints.map((complaint) => {
          return (
            <tr key={complaint.id} >
-             <td> {complaint.id} </td>
-             <td> {complaint.complaint_date} </td>
-             <td> {complaint.assigned_worker} </td>
-             <td> {complaint.control_number} </td>
-             <td> {complaint.priority_level} </td>
-             <td> {complaint.status} </td>
-             <td> {complaint.approval_date} </td>
+             <td data-label='id'> {complaint.id} </td>
+             <td data-label='complaint date'> {complaint.complaint_date} </td>
+             <td data-label='assigned worker'> {complaint.assigned_worker} </td>
+             <td data-label='control number' > {complaint.control_number} </td>
+             <td data-label='priority level'> {complaint.priority_level} </td>
+             <td data-label='status'> {complaint.status} </td>
+             <td data-label='approval date'> {complaint.approval_date} </td>
            </tr>
          )
        })

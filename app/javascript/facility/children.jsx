@@ -12,15 +12,15 @@ export default class Children extends React.Component {
       facilityChildrenTable = children.map((child) => {
         return (
           <tr key={child.id} >
-            <td> {child.id} </td>
-            <td> {child.first_name} </td>
-            <td> {child.last_name} </td>
-            <td> {child.sex} </td>
-            <td> {child.age} </td>
-            <td> {child.date_of_birth} </td>
-            <td> {child.date_of_placement} </td>
-            <td> {child.assigned_worker} </td>
-            <td> {child.county_of_origin} </td>
+            <td data-label='id'> {child.id} </td>
+            <td data-label='first name'> {child.first_name} </td>
+            <td data-label='last name'> {child.last_name} </td>
+            <td data-label='sex'> {child.sex} </td>
+            <td data-label='age'> {child.age} </td>
+            <td data-label='date of birth'> {child.date_of_birth} </td>
+            <td data-label='date of placement'> {child.date_of_placement} </td>
+            <td data-label='assigned worker'> {child.assigned_worker} </td>
+            <td data-label='county of origin'> {child.county_of_origin} </td>
           </tr>
         )
       })

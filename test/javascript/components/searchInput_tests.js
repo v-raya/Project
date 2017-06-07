@@ -13,8 +13,8 @@ describe('Render Search Inputs', function () {
 
   it('render Input block', function () {
     expect(result_tag.type).toBe('div')
-  });
+  })
   it('verify class name', function () {
     expect(result_tag.props.className).toBe('search_input col-xs-12 col-sm-12 col-md-12 col-lg-12')
-  });
-});
+  })
+})

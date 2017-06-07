@@ -93,12 +93,12 @@ export default class Search extends React.Component {
           <a href={this.state.landingPageUrl} className='btn btn-default btn-lg active pull-right back-button' role='button'>Back</a>
         </div>
         <div className='search-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <SearchInput sendSearchInput={this.addSearchInput.bind(this)}/>
+          <SearchInput sendSearchInput={this.addSearchInput.bind(this)} />
         </div>
         {searchArray && <SearchDetails sendSearchInput={this.addSearchInput.bind(this)} {...this} />}
         <div className='result-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          {this.state.isToggled && <SearchGrid searchResults={this.state.searchData}/>}
-          {!this.state.isToggled && <SearchList searchResults={this.state.searchData}/>}
+          {this.state.isToggled && <SearchGrid searchResults={this.state.searchData} />}
+          {!this.state.isToggled && <SearchList searchResults={this.state.searchData} />}
           {(this.state.fromResponse && !searchArray) && <SearchNotFound />}
         </div>
       </div>
