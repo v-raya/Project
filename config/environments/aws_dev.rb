@@ -45,7 +45,7 @@ Rails.application.configure do
     config.assets.quiet = true
 
     # change output to resolve conflicts with assets of other projects
-    config.assets.prefix = "/assets/cals"
+    config.assets.prefix = "/assets"
 
     # Raises error for missing translations
     # config.action_view.raise_on_missing_translations = true
