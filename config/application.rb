@@ -24,5 +24,9 @@ module Cals
     config.logger = ActiveSupport::Logger.new(STDOUT)
     config.log_level = :debug
 
+
+    # use environment variable to set sub-directory/sub-uri for deployment
+    config.action_controller.relative_url_root = ENV['RAILS_RELATIVE_URL_ROOT'] || '/'
+
   end
 end
