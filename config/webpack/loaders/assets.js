@@ -5,8 +5,7 @@ module.exports = {
   use: [{
     loader: 'file-loader',
     options: {
-      useRelativePath: true,
-      publicPath: output.publicPath,
+      publicPath: env.RAILS_RELATIVE_URL_ROOT ? env.RAILS_RELATIVE_URL_ROOT + output.publicPath : output.publicPath,
       name: env.NODE_ENV === 'production' ? '[name]-[hash].[ext]' : '[name].[ext]'
     }
   }]
