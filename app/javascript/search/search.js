@@ -58,19 +58,20 @@ export default class Search extends React.Component {
     this.state.inputData = DataSearch
 
     //call http request function with arguments
-    fetchRequest('POST', params, 'headers').then(
+    var url = '/facilities/search';
+    fetchRequest(url, 'POST', params).then(
       response => response.json())
     .then((response) => {
-      return this.state = {
+      return this.setState ({
         searchData: response.facilities
-      }
+      })
     })
     .catch(error => {
       console.log(error)
-      return this.state = {
+      return this.setState ({
         searchData: [],
         fromResponse: true
-      }
+      })
     })
 
     // fetch('/facilities/search', {

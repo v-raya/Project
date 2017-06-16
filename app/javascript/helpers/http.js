@@ -1,12 +1,10 @@
 
 
-var url = '/facilities/search';
-
 const getCsrfToken = function getCsrfToken (value) {
     var metas = document.getElementsByTagName('meta')
     return metas[value] ? metas[value].content : ''
   }
-export const fetchRequest = (method, params, headerParams) => {
+export const fetchRequest = (url, method, params) => {
 	return fetch(url, {
 		method: 'POST',
 		headers: {
