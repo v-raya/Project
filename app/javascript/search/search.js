@@ -5,6 +5,7 @@ import SearchList from './search_list'
 import SearchNotFound from './search_notfount'
 import SearchDetails from './search_Data'
 import {fetchRequest} from '../helpers/http'
+import {urlPrefixHelper} from '../helpers/url_prefix_helper'
 import 'whatwg-fetch'
 
 export default class Search extends React.Component {
@@ -58,7 +59,7 @@ export default class Search extends React.Component {
     this.state.inputData = DataSearch
 
     //call http request function with arguments
-    var url = '/facilities/search';
+    var url = urlPrefixHelper('/facilities/search');
     fetchRequest(url, 'POST', params).then(
       response => response.json())
     .then((response) => {
