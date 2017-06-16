@@ -1,5 +1,5 @@
 <div id="search_page">
-  <%=render_react_component('search', landingUrl: @landingPage_url) %>
+  <%= react_component('search', {landingUrl: @landingPage_url}, {prerender: true}) %>
   <%= javascript_pack_tag 'search' %>
   <%= stylesheet_pack_tag 'search' %>
 </div>

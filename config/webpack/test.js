@@ -7,17 +7,14 @@ module.exports = merge(sharedConfig, {
   devtool: 'sourcemap',
   module: {
     rules: [
-    {
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      loader: 'istanbul-instrumenter-loader',
-      query: {
-        esModules: true
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'istanbul-instrumenter-loader',
+        query: {
+          esModules: true
+        }
       }
-    }
     ]
   }
 })
-
-
-
