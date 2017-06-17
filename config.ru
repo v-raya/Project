@@ -2,10 +2,4 @@
 
 require_relative 'config/environment'
 
-# run Rails.application
-
-run Rack::Builder.new {
- map ENV['RAILS_RELATIVE_URL_ROOT'] || '/' do
-   run Rails.application
- end
-}
+run Rails.application
