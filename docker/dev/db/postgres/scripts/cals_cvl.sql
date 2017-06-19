@@ -231,6 +231,7 @@ INSERT INTO cals_cvl VALUES ('AW', 'A010', 'Dennis Cranford', 'CodeMapping::Assi
 INSERT INTO cals_cvl VALUES ('AW', 'A011', 'Daisy Rosario', 'CodeMapping::AssignedWorker');
 INSERT INTO cals_cvl VALUES ('AW', 'A012', 'Kurk Lemire', 'CodeMapping::AssignedWorker');
 INSERT INTO cals_cvl VALUES ('FT', '724', 'Transitional Care Facility for Children', 'CodeMapping::FacilityType');
+INSERT INTO cals_cvl VALUES ('AW', 'O101', 'Linda Harrison', 'CodeMapping::AssignedWorker');
 
 
 --

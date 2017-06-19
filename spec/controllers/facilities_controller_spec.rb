@@ -11,7 +11,7 @@ describe FacilitiesController do
   describe 'GET index' do
     it 'assigns @facilities' do
       get :index
-      expect(assigns(:facilities).size).to eq(38547)
+      expect(assigns(:facilities).size).to eq(53)
     end
 
     it 'renders the index template' do

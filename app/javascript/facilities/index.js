@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import FacilityList from './facility_list.jsx'
 import './stylesheets/facilities.scss'
-export default class Facility extends Component {
+
+export default class Facilities extends Component {
   constructor (props) {
     super(props)
-    this.state = { items: JSON.parse(props.facilities) }
+    this.state = { items: props.facilities }
   }
 
   render () {

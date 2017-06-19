@@ -390,9 +390,11 @@ INSERT INTO children VALUES (541770727, 'Dana', 'Austin', 'Female', '2001-01-23'
 INSERT INTO children VALUES (541770729, 'Erin', 'Grant', 'Female', '2003-01-07', '2017-03-18', 'Sylvia Walker', 'San Francisco', 385512341);
 INSERT INTO children VALUES (541770731, 'Carla', 'Franklin', 'Female', '2002-09-03', '2016-09-19', 'Forest Swangler', 'Santa Cruz', 385512341);
 INSERT INTO children VALUES (541770733, 'Inez', 'Montanez', 'Female', '1998-11-14', '2012-05-05', 'Cassandra Niland', 'San Francisco', 385512341);
+INSERT INTO children VALUES (541770013, 'Landon', 'Wardell', 'Male', '2004-02-25', '2016-11-21', 'Cassandra Niland', 'San Francisco', 602300097);
 INSERT INTO children VALUES (541770855, 'Douglas', 'Payne', 'Male', '2000-06-02', '2016-02-27', 'Roger Witherspoon', 'Santa Clara', 430707079);
 INSERT INTO children VALUES (541770859, 'Eric', 'Schneider', 'Male', '1999-11-19', '2014-12-14', 'Roger Witherspoon', 'Santa Clara', 430707079);
 INSERT INTO children VALUES (541770861, 'Dexter', 'Davidson', 'Male', '2005-11-15', '2017-04-27', 'Roger Witherspoon', 'Santa Clara', 430707079);
+INSERT INTO children VALUES (541769970, 'Bryan', 'York', 'Male', '2002-08-06', '2016-09-12', 'Gladys Clifton', 'Monterey', 602300097);
 INSERT INTO children VALUES (541770863, 'Bernadette', 'Hinojos', 'Female', '2001-09-13', '2016-06-13', 'Roger Witherspoon', 'Santa Clara', 430707079);
 INSERT INTO children VALUES (541770865, 'Susan', 'Hawkins', 'Female', '2006-03-01', '2017-03-11', 'Roger Witherspoon', 'Santa Clara', 430707079);
 INSERT INTO children VALUES (541770867, 'Jody', 'Johnson', 'Female', '2002-09-09', '2014-10-09', 'Roger Witherspoon', 'Santa Clara', 430707079);
@@ -409,6 +411,8 @@ INSERT INTO children VALUES (541770741, 'Dominic', 'Thompson', 'Male', '1999-06-
 INSERT INTO children VALUES (541770743, 'Julian', 'Allison', 'Male', '2004-03-08', '2017-04-08', 'Michael Hodge', 'San Francisco', 385512341);
 INSERT INTO children VALUES (541770535, 'Anne', 'Clark', 'Female', '2004-02-05', '2017-06-03', 'Yun Zhao', 'Orange', 300173398);
 INSERT INTO children VALUES (541770537, 'Clement', 'Dunne', 'Male', '2000-06-16', '2017-06-04', 'Rosa Sosa', 'Orange', 300173398);
+INSERT INTO children VALUES (541770000, 'Tran', 'Yen', 'Female', '2000-09-29', '2016-12-30', 'Phyllis Dusso', 'San Mateo', 602300097);
+INSERT INTO children VALUES (541769993, 'Tosha', 'Bryant-Brown', 'Female', '2002-03-11', '2017-02-15', 'Stanley Wolf', 'San Mateo', 602300097);
 INSERT INTO children VALUES (541770539, 'Carter', 'Sales', 'Male', '2006-06-25', '2017-05-17', 'Rosa Sosa', 'Orange', 300173398);
 INSERT INTO children VALUES (541770875, 'Desiree', 'Marshall', 'Female', '1998-11-17', '2014-06-08', 'Juanita Sauceda', 'Santa Clara', 430707079);
 INSERT INTO children VALUES (541770877, 'Victoria', 'Fields', 'Female', '2000-02-12', '2015-03-09', 'Juanita Sauceda', 'Santa Clara', 430707079);
@@ -440,6 +444,10 @@ INSERT INTO children VALUES (541770560, 'Heriberto', 'Holguin', 'Male', '2002-12
 INSERT INTO children VALUES (541770559, 'Lanh', 'Chan', 'Male', '2003-12-25', '2016-07-17', 'Phyllis Dusso', 'San Mateo', 411400060);
 INSERT INTO children VALUES (541770561, 'Virgilio', 'Moran', 'Male', '2003-03-06', '2017-06-02', 'Nancy Chang', 'San Mateo', 411400060);
 INSERT INTO children VALUES (541770562, 'Rodney', 'North', 'Male', '2001-12-28', '2017-02-11', 'Stanley Wolf', 'San Mateo', 411400060);
+INSERT INTO children VALUES (541770002, 'Hoa', 'Tran', 'Female', '2003-07-15', '2017-04-11', 'Phyllis Dusso', 'San Mateo', 602300022);
+INSERT INTO children VALUES (541770935, 'Amy', 'Diaz', 'Female', '2004-10-28', '2017-05-20', 'Derek Nesbitt', 'Orange', 602300022);
+INSERT INTO children VALUES (541770551, 'Ulysses', 'Unger', 'Male', '2005-03-21', '2016-08-17', 'Padma Singh', 'Riverside', 602300022);
+INSERT INTO children VALUES (541770549, 'Willy', 'Allen', 'Male', '2001-06-14', '2016-05-23', 'Yun Zhao', 'Orange', 602300022);
 
 
 --

@@ -5,12 +5,12 @@ import FacilityChildren from './children.jsx'
 import FacilityComplaints from './complaints.jsx'
 import './stylesheets/facility.scss'
 
-export default class Facility extends Component {
+export default class Facility extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { facility: JSON.parse(props.facility),
-      children: JSON.parse(props.children),
-      complaints: JSON.parse(props.complaints)}
+    this.state = { facility: props.facility,
+      children: props.children,
+      complaints: props.complaints}
   }
 
   render () {

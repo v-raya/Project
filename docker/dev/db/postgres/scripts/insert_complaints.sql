@@ -220,7 +220,6 @@ INSERT INTO complaints VALUES (171, '2014-09-18', 'Louis Stiffler', '26-CR-20140
 INSERT INTO complaints VALUES (172, '2016-10-02', 'Dennis Cranford', '34-CR-20161002112931', 1, NULL, 'Pending', 197499562);
 INSERT INTO complaints VALUES (173, '2015-11-13', 'Chris Clancy', '26-CR-20151113152103', 3, '2016-02-04', 'Approved', 411400060);
 
-
 --
 -- Name: complaints complaints_pkey; Type: CONSTRAINT; Schema: public; Owner: pguser
 --

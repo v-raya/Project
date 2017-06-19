@@ -1,19 +1,19 @@
-require 'hypernova'
+# require 'hypernova'
 
 class FacilitiesController < CalsBaseController
-  around_action :hypernova_render_support
+
   include Response
 
   def index
-    @facilities = facility_helper.all.to_json
+    @facilities = facility_helper.all
   end
 
   def show
     @facility = facility_helper.find_by_id(params[:id])
     # @facility ||= Facility.find_by_id(params[:id])
-    @children ||= @facility.children.to_json
-    @complaints ||= @facility.complaints.to_json
-    @facility = @facility.to_json
+    @children ||= @facility.children
+    @complaints ||= @facility.complaints
+    @facility = @facility
   end
 
   def search

@@ -1,6 +1,6 @@
 <div id = 'root'>
-    <%= render_react_component('facility',
-     facility: @facility, children: @children, complaints: @complaints) %>
+<%= react_component("facility", { facility: @facility, children: @children, complaints: @complaints }, {prerender: true}) %>
     <%= javascript_pack_tag 'facility' %>
     <%= stylesheet_pack_tag 'facility' %>
+
 </div>

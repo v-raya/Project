@@ -24,6 +24,18 @@ module Cals
     config.logger = ActiveSupport::Logger.new(STDOUT)
     config.log_level = :debug
 
+    config.react.addons = true
+
+    # Settings for the pool of renderers:
+    config.react.server_renderer_timeout    ||= 20 # seconds
+    config.react.server_renderer = React::ServerRendering::BundleRenderer
+    config.react.server_renderer_options = {
+      files: ["server_rendering.js"],       # files to load for prerendering
+      replay_console: true,                 # if true, console.* will be replayed client-side
+    }
+    # Changing files matching these dirs/exts will cause the server renderer to reload:
+    config.react.server_renderer_extensions = ["jsx", "js"]
+    config.react.server_renderer_directories = ["/app/assets/javascripts", "/app/javascripts/"]
 
     # use environment variable to set sub-directory/sub-uri for deployment
     config.relative_url_root = ENV['RAILS_RELATIVE_URL_ROOT'] || '/'

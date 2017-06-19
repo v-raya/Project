@@ -1,5 +1,5 @@
 <div id = 'root'>
-    <%= render_react_component('facilities', facilities: @facilities) %>
+    <%= react_component('facilities', {facilities: @facilities}, {prerender: true}) %>
     <%= javascript_pack_tag 'facilities' %>
     <%= stylesheet_pack_tag 'facilities' %>
 </div>
