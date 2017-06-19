@@ -3,7 +3,7 @@ const getCsrfToken = function getCsrfToken (value) {
     return metas[value] ? metas[value].content : ''
   }
 export const fetchRequest = (url, method, params, headerParams) => {
-	return fetch( '<%= RAILS_RELATIVE_URL_ROOT %>' + url, {
+	return fetch(url, {
 		method: 'POST',
 		headers: {
 		   'Content-Type': 'application/json',
