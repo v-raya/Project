@@ -4,7 +4,7 @@ var TestUtils = require('react-dom/lib/ReactTestUtils')
 
 describe('Verify Search component Fields', function () {
   const searchComp = TestUtils.renderIntoDocument(<SearchApp />)
-  it('verify address fields', function () {
+  it('Verify Search Address fields', function () {
     // let searchResults = renderIntoDocument(<SearchApp />);
     let DataSearch = '02,738,193600008,home,2024 W el camino,Sacramento,Ca,95833'
     var query = DataSearch.split(',')
