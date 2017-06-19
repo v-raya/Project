@@ -7,7 +7,7 @@ RSpec.feature 'Search', js: true do
   end
 
   scenario 'Search a facility' do
-    visit '/search'
+    visit search_index_path
 
     fill_in 'Enter Facility Address', with: 'TOONTOWN'
     find_button('search').click
