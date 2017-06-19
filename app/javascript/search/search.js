@@ -58,50 +58,22 @@ export default class Search extends React.Component {
 
     this.state.inputData = DataSearch
 
-    //call http request function with arguments
-    var url = urlPrefixHelper('/facilities/search');
+    // call http request function with arguments
+    var url = urlPrefixHelper('/facilities/search')
     fetchRequest(url, 'POST', params).then(
       response => response.json())
     .then((response) => {
-      return this.setState ({
+      return this.setState({
         searchData: response.facilities
       })
     })
     .catch(error => {
       console.log(error)
-      return this.setState ({
+      return this.setState({
         searchData: [],
         fromResponse: true
       })
     })
-
-    // fetch('/facilities/search', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'Accept': 'application/json',
-    //     'X-CSRF-Token': this.getCsrfToken('csrf-token'),
-    //     'X-CSRF-param': this.getCsrfToken('csrf-param')
-    //   },
-    //   credentials: 'same-origin',
-    //   body: JSON.stringify({
-    //     params
-    //   })
-    // })
-    // .then(
-    //   response => response.json())
-    // .then((response) => {
-    //   return this.setState({
-    //     searchData: response.facilities
-    //   })
-    // })
-    // .catch(error => {
-    //   console.log(error)
-    //   return this.setState({
-    //     searchData: [],
-    //     fromResponse: true
-    //   })
-    // })
   }
 
   render () {
