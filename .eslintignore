@@ -1,1 +1,4 @@
 app/assets/javascripts/cable.js
+/test/
+/spec/
+/node_modules/

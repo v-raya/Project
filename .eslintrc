@@ -1,5 +1,5 @@
 {
-"extends": "standard",
+"extends": "eslint-config-standard",
 "plugins": [
 "react",
 "jsx-a11y",
@@ -12,7 +12,7 @@
   },
 
   "rules": {
-      "no-unused-vars": [0, { "vars": 'local', "args": "after-used", "ignoreRestSiblings": false }],
+    "no-unused-vars": [0, { "vars": 'local', "args": "after-used", "ignoreRestSiblings": false }],
     "react/require-extension": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }] }
-}
+    }

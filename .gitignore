@@ -32,7 +32,9 @@ dump.rdb
 /yarn-error.log
 
 .byebug_history
+/public/assets
 /public/packs
+/public/packs-tests
 /node_modules
 
 # ignore mac folders
