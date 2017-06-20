@@ -46,7 +46,8 @@
     "spec-ci": "rspec spec;",
     "karma-ci": "./bin/karma",
     "karma": "./bin/karma; open ./reports/karma_test_results.html; open ./reports/coverage/karma/index.html;",
-    "all-tests": "./bin/karma;  npm run spec;"
+    "all-tests": "./bin/karma;  npm run spec;",
+    "postinstall": "npm rebuild node-sass"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
