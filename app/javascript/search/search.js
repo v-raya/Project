@@ -5,7 +5,7 @@ import SearchList from './search_list'
 import SearchNotFound from './search_notfount'
 import SearchDetails from './search_Data'
 import {fetchRequest} from '../helpers/http'
-import {urlPrefixHelper} from '../helpers/url_prefix_helper'
+import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 import 'whatwg-fetch'
 
 export default class Search extends React.Component {

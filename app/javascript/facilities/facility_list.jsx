@@ -1,5 +1,5 @@
 import React from 'react'
-import {urlPrefixHelper} from '../helpers/url_prefix_helper'
+import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 
 export default class FacilityList extends React.Component {
   render () {
