@@ -40,3 +40,6 @@ dump.rdb
 
 #ignore rubyMine Files
 /.idea/*
+/public/packs
+/public/packs-test
+/node_modules
