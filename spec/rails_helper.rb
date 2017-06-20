@@ -12,7 +12,7 @@ require 'capybara/poltergeist'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
-#ActiveRecord::Migration.maintain_test_schema!
+# ActiveRecord::Migration.maintain_test_schema!
 
 Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f }
 
@@ -42,28 +42,6 @@ RSpec.configure do |config|
     end
   end
 
-  #
   ## WebMock.allow_net_connect!
 
-  #  config.before(:suite) do
-  #    DatabaseCleaner.clean_with(:truncation)
-  #  end
-
-  #  config.before(:each) do
-  #    DatabaseCleaner.strategy = :transaction
-  #  end
-
-  #  config.before(:each, js: true) do
-  #    DatabaseCleaner.strategy = :truncation
-  #  end
-
-  # This block must be here, do not combine with the other `before(:each)` block.
-  # This makes it so Capybara can see the database.
-  #  config.before(:each) do
-  #    DatabaseCleaner.start
-  #  end
-
-  #  config.after(:each) do
-  #    DatabaseCleaner.clean
-  #  end
 end
