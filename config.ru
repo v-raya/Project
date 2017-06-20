@@ -6,6 +6,6 @@ require_relative 'config/environment'
 
 run Rack::Builder.new {
   map ENV['RAILS_RELATIVE_URL_ROOT'] || '/' do
-    run Rails.application
+    run Cals::Application
   end
 }
