@@ -20,7 +20,7 @@ module.exports = merge(sharedConfig, {
     https: settings.dev_server.https,
     host: settings.dev_server.host,
     port: settings.dev_server.port,
-    contentBase: '/cals' + output.path,
+    contentBase: output.path,
     publicPath: output.publicPath,
     compress: true,
     headers: { 'Access-Control-Allow-Origin': '*' },
