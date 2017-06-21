@@ -47,23 +47,20 @@ RUN bundle install
 #run node package installer
 RUN yarn install
 
-# compile assets
-RUN rails assets:precompile RAILS_ENV=aws_dev
-
-# RUN tests
-ENV BASE_CALS_API_URL=http://localhost:3001/v1
-
-RUN npm run karma-ci
-RUN npm run spec-ci
-
 #### ENV variables
-
 # cals api url
 ENV BASE_CALS_API_URL=http://calsmockapi:3001/v1
 ENV AUTHENTICATION_API_BASE_URL=http://perry.dev.cwds.tabordasolutions.net
 ENV REDIS_HOST=calsredis
 ENV REDIS_PORT=6379
 # ENV SANDBOX_LANDING_URL=
+
+# compile assets
+RUN rails assets:precompile RAILS_ENV=aws_dev
+
+# RUN tests
+RUN npm run karma-ci
+RUN npm run spec-ci
 
 # run rails server
 CMD rails server -e aws_dev -b 0.0.0.0 -p 3000
