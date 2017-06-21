@@ -4,6 +4,8 @@ import SearchInput from './search_input'
 import SearchList from './search_list'
 import SearchNotFound from './search_notfount'
 import SearchDetails from './search_Data'
+import {fetchRequest} from '../helpers/http'
+import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 import 'whatwg-fetch'
 
 export default class Search extends React.Component {
@@ -55,20 +57,10 @@ export default class Search extends React.Component {
     }
 
     this.state.inputData = DataSearch
-    fetch('/facilities/search', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'X-CSRF-Token': this.getCsrfToken('csrf-token'),
-        'X-CSRF-param': this.getCsrfToken('csrf-param')
-      },
-      credentials: 'same-origin',
-      body: JSON.stringify({
-        params
-      })
-    })
-    .then(
+
+    // call http request function with arguments
+    var url = urlPrefixHelper('/facilities/search')
+    fetchRequest(url, 'POST', params).then(
       response => response.json())
     .then((response) => {
       return this.setState({

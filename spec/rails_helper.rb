@@ -1,7 +1,7 @@
 ENV['RAILS_ENV'] = 'test'
-    require 'simplecov'
-    SimpleCov.start 'rails'
-    puts "required simplecov"
+require 'simplecov'
+SimpleCov.start 'rails'
+puts "required simplecov"
 
 require File.expand_path('../../config/environment', __FILE__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
@@ -12,7 +12,7 @@ require 'capybara/poltergeist'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
-#ActiveRecord::Migration.maintain_test_schema!
+# ActiveRecord::Migration.maintain_test_schema!
 
 Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f }
 
@@ -21,8 +21,8 @@ Capybara.register_driver :accessible_selenium do |app|
 end
 
 Capybara.javascript_driver = :poltergeist
-# Capybara.app_host = "http://localhost:5000"
-# Capybara.run_server = true
+# Capybara.app = eval("Rack::Builder.new {( " + File.read(File.dirname(__FILE__) + '/../config.ru') + "\n )}")
+Capybara.app = Rack::Builder.parse_file(File.expand_path('../../config.ru', __FILE__)).first
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
@@ -42,28 +42,6 @@ RSpec.configure do |config|
     end
   end
 
-#
   ## WebMock.allow_net_connect!
 
-#  config.before(:suite) do
-#    DatabaseCleaner.clean_with(:truncation)
-#  end
-
-#  config.before(:each) do
-#    DatabaseCleaner.strategy = :transaction
-#  end
-
-#  config.before(:each, js: true) do
-#    DatabaseCleaner.strategy = :truncation
-#  end
-
-  # This block must be here, do not combine with the other `before(:each)` block.
-  # This makes it so Capybara can see the database.
-#  config.before(:each) do
-#    DatabaseCleaner.start
-#  end
-
-#  config.after(:each) do
-#    DatabaseCleaner.clean
-#  end
 end

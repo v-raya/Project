@@ -1,4 +1,5 @@
 import React from 'react'
+import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 
 export default class SearchGrid extends React.Component {
   render () {
@@ -14,7 +15,7 @@ export default class SearchGrid extends React.Component {
               <div>
                 <p className='block_label'>Facility Name </p>
                 <p className='block_text'>
-                  <a href={'/facilities/' + result.fac_nbr}>{result.fac_name}</a>
+                  <a href={urlPrefixHelper('/facilities/' + result.fac_nbr)}>{result.fac_name}</a>
                 </p>
               </div>
               <div>

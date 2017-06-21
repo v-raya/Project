@@ -9,7 +9,7 @@ end
 gem 'dotenv-rails', '~> 2.2', groups: %i[development test aws_dev]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.0.beta1'
+gem 'rails', '~> 5.1.1'
 
 gem 'foreman'
 gem 'responders', '~> 2.3'
@@ -29,7 +29,7 @@ gem 'sass-rails', github: 'rails/sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', github: 'rails/webpacker', :ref => "e4b3ec4"
+gem 'webpacker', github: 'rails/webpacker', :ref => "48ef089"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
