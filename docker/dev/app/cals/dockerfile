@@ -54,6 +54,7 @@ ENV AUTHENTICATION_API_BASE_URL=http://perry.dev.cwds.tabordasolutions.net
 ENV REDIS_HOST=calsredis
 ENV REDIS_PORT=6379
 # ENV SANDBOX_LANDING_URL=
+ENV RAILS_RELATIVE_URL_ROOT=/cals
 
 # compile assets
 RUN rails assets:precompile RAILS_ENV=aws_dev
