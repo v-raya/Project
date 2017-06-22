@@ -47,6 +47,12 @@ RUN bundle install
 #run node package installer
 RUN yarn install
 
+# RUN tests
+ENV BASE_CALS_API_URL=http://localhost:3001/v1
+
+RUN npm run spec-ci
+RUN npm run karma-ci
+
 #### ENV variables
 # cals api url
 ENV BASE_CALS_API_URL=http://calsmockapi:3001/v1
@@ -58,10 +64,6 @@ ENV RAILS_RELATIVE_URL_ROOT=/cals
 
 # compile assets
 RUN rails assets:precompile RAILS_ENV=aws_dev
-
-# RUN tests
-RUN npm run karma-ci
-RUN npm run spec-ci
 
 # run rails server
 CMD rails server -e aws_dev -b 0.0.0.0 -p 3000
