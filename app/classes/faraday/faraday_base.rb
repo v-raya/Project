@@ -1,12 +1,15 @@
-class FaradayBase
+class Faraday::FaradayBase
   BODY_METHODS = %i[post put].freeze
 
+  class_attribute :base_url
+
+
   def self.get(url, auth_header)
-    faraday_shared(:get, url, auth_header)
+    faraday_shared(:get, "#{self.base_url}#{url}", auth_header)
   end
 
   def self.post(url, auth_header, body)
-    faraday_shared(:post, url, auth_header, body)
+    faraday_shared(:post, "#{self.base_url}#{url}", auth_header, body)
   end
 
 
