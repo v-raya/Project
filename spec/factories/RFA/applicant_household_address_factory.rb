@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :applicant_household_address, class: RFA::ApplicantHouseholdAddress  do
+  factory :applicant_household_address, class: 'RFA::ApplicantHouseholdAddress'  do
     #sequence(:property_type) #TODO whats this
   #  sequence(:own_rent_lease)
     sequence(:weapons){Faker::Boolean.boolean}

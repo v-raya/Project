@@ -1,6 +1,6 @@
 FactoryGirl.define do
 
-factory :reference, class: Reference do
+factory :reference, class: 'Reference' do
  sequence(:email_address) {Faker::Internet.email}
   sequence(:legal_first) {Faker::Name.first_name}
   sequence(:legal_middle) {Faker::Name.first_name}

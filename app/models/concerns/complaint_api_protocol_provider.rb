@@ -1,6 +1,6 @@
-module ComplaintApiProtocolProvider
+module Concerns::ComplaintApiProtocolProvider
   extend ActiveSupport::Concern
-  include BaseApiProtocolProvider
+  include Concerns::BaseApiProtocolProvider
 
   class_methods do
     def find_by_facility(facility_id)

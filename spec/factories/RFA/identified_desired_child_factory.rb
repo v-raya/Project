@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :identified_desired_child, class:RFA::IdentifiedDesiredChild do
+  factory :identified_desired_child, class: 'RFA::IdentifiedDesiredChild' do
     sequence(:currently_in_home) {Faker::Boolean.boolean}
     sequence(:date_of_birth) {Faker::Date.birthday}
   #  sequence(:gender) #TODO: what's this dropdown

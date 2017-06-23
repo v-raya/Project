@@ -1,6 +1,6 @@
 FactoryGirl.define do
 
-  factory :address, class: Address do
+  factory :address, class: 'Address' do
     sequence(:street) {Faker::Address.street_address}
     sequence(:zip) {Faker::Address.zip}
     sequence(:city) {Faker::Address.city}

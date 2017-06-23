@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :occupation, class: Occupation do
+  factory :occupation, class: 'Occupation' do
     sequence(:employer_name) {Faker::Company.name}
     sequence(:job_title) {Faker::Company.bs}
     sequence(:income) {Faker::Number.number(5)}

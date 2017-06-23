@@ -1,4 +1,4 @@
-module BaseApiProtocolProvider
+module Concerns::BaseApiProtocolProvider
   extend ActiveSupport::Concern
 
   # class methods

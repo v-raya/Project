@@ -1,5 +1,5 @@
 class Child < CalsBase
-  include ChildApiProtocolProvider
+  include Concerns::ChildApiProtocolProvider
 
   attr_accessor :id, :name
 end

@@ -5,7 +5,11 @@ class FacilitiesController < CalsBaseController
   include Response
 
   def index
-    @facilities = facility_helper.all
+   @facilities = facility_helper.all
+  #  below is for proof of concept testing
+  #  byebug
+#   @age_group_preferences = child_preference_helper.age_group_preferences
+#   @sibling_groups = child_preference_helper.sibling_groups
   end
 
   def show
@@ -32,5 +36,9 @@ class FacilitiesController < CalsBaseController
 
   def facility_helper
     Helpers::Facility.new(auth_header: session['token'])
+  end
+
+  def child_preference_helper
+   Helpers::ChildPreference.new(auth_header: session['token'])
   end
 end

@@ -21,10 +21,11 @@ class FaradayBase
   end
 
   def self.default_headers(auth_header)
-    {
-      :'Content-Type' => 'application/json',
-      :'Authorization' => auth_header
+    h = {
+      :'Content-Type' => 'application/json'
     }
+    h.merge({:'Authorization' => auth_header}) if auth_header.present?
+    return h
   end
 
   private_class_method :default_headers, :faraday_shared

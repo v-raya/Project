@@ -1,5 +1,5 @@
 class Facility < CalsBase
-  include FacilityApiProtocolProvider
+  include Concerns::FacilityApiProtocolProvider
 
   attr_accessor :fac_name, :fac_nbr, :type, :fac_licensee_name, :fac_mail_street_addr, :fac_addr
   attr_accessor :fac_mail_city, :fac_mail_state, :fac_mail_zip_code, :fac_res_street_addr

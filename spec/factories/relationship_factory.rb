@@ -1,6 +1,6 @@
 FactoryGirl.define do
 
-factory :relationship, class: Relationship do
+factory :relationship, class: 'Relationship' do
 #  sequence(:relationship_type) #TODO: whats this
   sequence(:union_date) {Faker::Date.backward(680)}
   sequence(:union_city) {Faker::Address.city}

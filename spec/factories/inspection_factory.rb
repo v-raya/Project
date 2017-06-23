@@ -1,9 +1,9 @@
 FactoryGirl.define do
-  factory :inspection, class: Inspection do
+  factory :inspection, class: 'Inspection' do
     sequence(:id) { Faker::Number.number(9) }
   end
 
-  factory :inspections, class: Inspection do
+  factory :inspections, class: 'Inspection' do
     inspections { create_list(:inspection, 10) }
   end
 end
