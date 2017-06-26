@@ -1,15 +1,11 @@
-# require 'hypernova'
-
 class FacilitiesController < CalsBaseController
 
   include Response
 
   def index
-   @facilities = facility_helper.all
-  #  below is for proof of concept testing
-  #  byebug
-#   @age_group_preferences = child_preference_helper.age_group_preferences
-#   @sibling_groups = child_preference_helper.sibling_groups
+  #  @race_types = Helpers::Dictionaries::RaceTypeHelper.new(auth_header: 'abc').all
+
+    @facilities = facility_helper.all
   end
 
   def show
@@ -38,7 +34,4 @@ class FacilitiesController < CalsBaseController
     Helpers::Facility.new(auth_header: session['token'])
   end
 
-  def child_preference_helper
-   Helpers::ChildPreference.new(auth_header: session['token'])
-  end
 end

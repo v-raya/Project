@@ -16,11 +16,19 @@ class Faraday::FaradayBase
   # private
 
   def self.faraday_shared(method, url, auth_header, body = nil)
-    Faraday.send(method) do |req|
+    Rails.logger.info('API call request: ')
+    Rails.logger.info("URL : #{url}")
+    Rails.logger.info("Method : #{method.to_s}")
+    response = Faraday.send(method) do |req|
       req.url url
       req.headers = default_headers(auth_header)
       req.body = body if method.in?(BODY_METHODS)
     end
+
+    Rails.logger.info('API call response:')
+    Rails.logger.info(response)
+
+    return response
   end
 
   def self.default_headers(auth_header)
