@@ -1,10 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<org.jenkinsci.plugins.ghprb.GhprbTrigger_-DescriptorImpl plugin="ghprb@1.36.2">
+<org.jenkinsci.plugins.ghprb.GhprbTrigger_-DescriptorImpl plugin="ghprb@1.38.0">
   <configVersion>1</configVersion>
   <whitelistPhrase>.*add\W+to\W+whitelist.*</whitelistPhrase>
   <okToTestPhrase>.*ok\W+to\W+test.*</okToTestPhrase>
   <retestPhrase>.*test\W+this\W+please.*</retestPhrase>
   <skipBuildPhrase>.*\[skip\W+ci\].*</skipBuildPhrase>
+  <blackListCommitAuthor></blackListCommitAuthor>
   <cron>H/5 * * * *</cron>
   <useComments>false</useComments>
   <useDetailedComments>false</useDetailedComments>
@@ -17,7 +18,7 @@
   <githubAuth>
     <org.jenkinsci.plugins.ghprb.GhprbGitHubAuth>
       <serverAPIUrl>https://api.github.com</serverAPIUrl>
-      <credentialsId>55376fcb-1198-4fe1-9991-ba647645d5b0</credentialsId>
+      <credentialsId>909a4e0d-e4d1-4556-8b6c-4a17213e53ca</credentialsId>
       <id>c2510512-84cb-44aa-b646-d0e0d38e1ee6</id>
       <description>Anonymous connection</description>
       <secret>{AQAAABAAAAAQqoyJpg01c7IbFVzIDZTIp09Tbqz41RICa51ew5P64Hw=}</secret>
@@ -28,10 +29,9 @@
   <extensions>
     <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
       <commitStatusContext></commitStatusContext>
-      <triggeredStatus></triggeredStatus>
-      <startedStatus></startedStatus>
-      <statusUrl></statusUrl>
+      <showMatrixStatus>false</showMatrixStatus>
       <addTestResults>false</addTestResults>
+      <completedStatus/>
     </org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
   </extensions>
 </org.jenkinsci.plugins.ghprb.GhprbTrigger_-DescriptorImpl>

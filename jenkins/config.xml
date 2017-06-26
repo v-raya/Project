@@ -1,12 +1,74 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson>
-  <disabledAdministrativeMonitors/>
-  <version>2.46.2</version>
+  <disabledAdministrativeMonitors>
+    <string>OldData</string>
+  </disabledAdministrativeMonitors>
+  <version>2.46.3</version>
   <numExecutors>2</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
-  <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
-    <denyAnonymousReadAccess>false</denyAnonymousReadAccess>
+  <authorizationStrategy class="hudson.security.ProjectMatrixAuthorizationStrategy">
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:dtalwar</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:rraval</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:dtalwar</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:rraval</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:dtalwar</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:rraval</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:dtalwar</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:rraval</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:dtalwar</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:rraval</permission>
+    <permission>hudson.model.Computer.Build:dtalwar</permission>
+    <permission>hudson.model.Computer.Build:rraval</permission>
+    <permission>hudson.model.Computer.Configure:dtalwar</permission>
+    <permission>hudson.model.Computer.Configure:rraval</permission>
+    <permission>hudson.model.Computer.Connect:dtalwar</permission>
+    <permission>hudson.model.Computer.Connect:rraval</permission>
+    <permission>hudson.model.Computer.Create:dtalwar</permission>
+    <permission>hudson.model.Computer.Create:rraval</permission>
+    <permission>hudson.model.Computer.Delete:dtalwar</permission>
+    <permission>hudson.model.Computer.Delete:rraval</permission>
+    <permission>hudson.model.Computer.Disconnect:dtalwar</permission>
+    <permission>hudson.model.Computer.Disconnect:rraval</permission>
+    <permission>hudson.model.Hudson.Administer:dtalwar</permission>
+    <permission>hudson.model.Hudson.Administer:rraval</permission>
+    <permission>hudson.model.Hudson.Read:anonymous</permission>
+    <permission>hudson.model.Hudson.Read:dtalwar</permission>
+    <permission>hudson.model.Hudson.Read:rraval</permission>
+    <permission>hudson.model.Item.Build:dtalwar</permission>
+    <permission>hudson.model.Item.Build:rraval</permission>
+    <permission>hudson.model.Item.Cancel:dtalwar</permission>
+    <permission>hudson.model.Item.Cancel:rraval</permission>
+    <permission>hudson.model.Item.Configure:dtalwar</permission>
+    <permission>hudson.model.Item.Configure:rraval</permission>
+    <permission>hudson.model.Item.Create:dtalwar</permission>
+    <permission>hudson.model.Item.Create:rraval</permission>
+    <permission>hudson.model.Item.Delete:dtalwar</permission>
+    <permission>hudson.model.Item.Delete:rraval</permission>
+    <permission>hudson.model.Item.Discover:dtalwar</permission>
+    <permission>hudson.model.Item.Discover:rraval</permission>
+    <permission>hudson.model.Item.Move:dtalwar</permission>
+    <permission>hudson.model.Item.Move:rraval</permission>
+    <permission>hudson.model.Item.Read:dtalwar</permission>
+    <permission>hudson.model.Item.Read:rraval</permission>
+    <permission>hudson.model.Item.Workspace:dtalwar</permission>
+    <permission>hudson.model.Item.Workspace:rraval</permission>
+    <permission>hudson.model.Run.Delete:dtalwar</permission>
+    <permission>hudson.model.Run.Delete:rraval</permission>
+    <permission>hudson.model.Run.Replay:dtalwar</permission>
+    <permission>hudson.model.Run.Replay:rraval</permission>
+    <permission>hudson.model.Run.Update:dtalwar</permission>
+    <permission>hudson.model.Run.Update:rraval</permission>
+    <permission>hudson.model.View.Configure:dtalwar</permission>
+    <permission>hudson.model.View.Configure:rraval</permission>
+    <permission>hudson.model.View.Create:dtalwar</permission>
+    <permission>hudson.model.View.Create:rraval</permission>
+    <permission>hudson.model.View.Delete:dtalwar</permission>
+    <permission>hudson.model.View.Delete:rraval</permission>
+    <permission>hudson.model.View.Read:dtalwar</permission>
+    <permission>hudson.model.View.Read:rraval</permission>
+    <permission>hudson.scm.SCM.Tag:dtalwar</permission>
+    <permission>hudson.scm.SCM.Tag:rraval</permission>
   </authorizationStrategy>
   <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
     <disableSignup>true</disableSignup>
