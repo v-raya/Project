@@ -2,9 +2,9 @@ class CalsBaseController < ApplicationController
   include AuthenticationProvider
 
   before_action :authenticate_with_cwds
-  #
-  #
-  #
+
+
+
 
   protected
 
