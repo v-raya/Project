@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'search#index'
+  root 'welcome#index'
 
   resources :facilities, only: [:index, :show] do
     collection { post :search }
@@ -10,6 +10,17 @@ Rails.application.routes.draw do
 
   # heartbeat page
   get 'heartbeat', to: 'heartbeat#show'
+
+
+  namespace :rfa do
+    resources :a01, only: [ :show, :create, :edit, :update] do
+
+      resources :applicant, only: [:index, :create, :edit]
+      resource :residence, only: [:show, :create, :edit]
+
+    end
+
+  end
 
   resource :rfa, controller: :rfa, only: [] do
     member do
@@ -23,4 +34,5 @@ Rails.application.routes.draw do
       post :residence
     end
   end
+
 end

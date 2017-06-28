@@ -9,9 +9,9 @@ factory :applicant, class: 'RFA::Applicant' do
     sequence(:dl_state)  {Faker::Address.state_abbr}
     sequence(:email_address)  {Faker::Internet.email}
     #sequence(:exclusion_order) #TODO: what to put here
-    sequence(:legal_first) {Faker::Name.first_name}
-    sequence(:legal_middle) {Faker::Name.first_name}
-    sequence(:legal_last) {Faker::Name.last_name}
+    sequence(:first_name) {Faker::Name.first_name}
+    sequence(:middle_name) {Faker::Name.first_name}
+    sequence(:last_name) {Faker::Name.last_name}
 
 
   # has_one :occupation

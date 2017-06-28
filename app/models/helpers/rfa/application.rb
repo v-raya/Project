@@ -1,7 +1,11 @@
 class Helpers::RFA::Application < Helpers::ModelHelperBase
 
   def model_class
-    RFA::RfaApplication
+    RFA::Application
+  end
+
+  def create_application
+    RFA::Application.create_application(auth_header)
   end
 
   def name_types

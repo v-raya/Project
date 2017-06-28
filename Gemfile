@@ -9,7 +9,7 @@ end
 gem 'dotenv-rails', '~> 2.2', groups: %i[development test aws_dev]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.1', '<= 5.1.2'
 
 gem 'foreman'
 gem 'responders', '~> 2.3'

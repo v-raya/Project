@@ -15,4 +15,9 @@ class Helpers::ModelHelperBase
   def all
     model_class.all(auth_header)
   end
+
+  def create(body)
+    byebug
+    model_class.create(auth_header, body)
+  end
 end

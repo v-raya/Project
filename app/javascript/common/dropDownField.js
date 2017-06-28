@@ -1,9 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-const DropDownField = ({gridClassName, selectClassName, optionList,onChange, label}) => (
+const DropDownField = ({gridClassName, value, disable, selectClassName, optionList, onChange, label}) => (
   <div className={gridClassName}>
     <label>{label}</label>
-    <select defaultValue="" onChange={onChange} className={selectClassName}>
+    <select value={value} disabled={disable} onChange={onChange} className={selectClassName}>
+      {!disable && <option key='' value='' />}
       {
         optionList.map((item) => {
           return (

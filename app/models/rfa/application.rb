@@ -1,7 +1,11 @@
 class RFA::Application < CalsBase
   include Concerns::RFA::ApplicationApiProtocolProvider
-  attr_accessor :application_type, :county, :progress_state
+  attr_accessor :id, :application_type, :county, :progress_state
 
+
+  def initialize(id=nil)
+    @id = id
+  end
   # has_many :applicants
   # has_many :signatories
   # has_many :references

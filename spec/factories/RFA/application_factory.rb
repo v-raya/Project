@@ -2,7 +2,7 @@ FactoryGirl.define do
 
 factory :application, class: 'RFA::Application' do
 #  sequence(:application_type) {} #TODO: what to put here
-  sequence(:county) {Faker::Address.county}
+  sequence(:id) {Faker::Number.Faker::Number.number(6)}
 #    sequence(:progress_state) {} #TODO: what to put here
 
 

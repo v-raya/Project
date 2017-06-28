@@ -60,6 +60,18 @@ const CountyList = Object.freeze({
   '60': 'OUT OF STATE'
 })
 
+const yesNo = Object.freeze({
+  'items': [
+    {
+      'id': 1,
+      'value': 'Yes'
+    },
+    {
+      'id': 2,
+      'value': 'No'
+    }]}
+)
+
 const FacilityTypes = Object.freeze({
   '400': 'ADOPTION AGENCY',
   '403': 'RESOURCE FAMILY HOME',
@@ -82,4 +94,4 @@ const FacilityTypes = Object.freeze({
   '733': 'SHORT TERM RESIDENTIAL THERAPEUTIC PROGRAM - GH'
 })
 
-export {CountyList, FacilityTypes}
+export {CountyList, yesNo, FacilityTypes}

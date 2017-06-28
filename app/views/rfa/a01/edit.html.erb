@@ -1,0 +1,17 @@
+<div id="edi_page">
+  <%#byebug%>
+  <%= react_component('forms', {
+    nameTypes: @name_types,
+    phoneTypes: @phone_types,
+    genderTypes: @gender_types,
+    ethnicityTypes: @ethnicity_types,
+    educationLevels: @education_levels,
+    languageTypes: @language_types,
+    stateTypes: @state_types,
+    salaryTypes: @salary_types,
+    residenceTypes: @residence_types},
+    {prerender: false}) %>
+
+    <%= javascript_pack_tag 'forms' %>
+    <%= stylesheet_pack_tag 'forms' %>
+  </div>

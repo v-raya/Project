@@ -1,9 +1,7 @@
 class CalsBaseController < ApplicationController
   include AuthenticationProvider
 
-  before_action :authenticate_with_cwds
-
-
+  before_action :authenticate_with_cwds, unless: 'Rails.env.development?'
 
 
   protected

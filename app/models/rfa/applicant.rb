@@ -2,10 +2,16 @@ class RFA::Applicant < CalsBase
   include Concerns::RFA::ApplicantApiProtocolProvider
 
   attr_accessor :language, :education_level, :date_of_birth, :race, :gender,
-   :dl_number,:dl_state, :email_address, :exclusion_order,
-                 :legal_first, :legal_middle, :legal_last
-#TODO: what is an exclusion_order
-#belongs_to :rfa_application
+    :dl_number,:dl_state, :email_address, :exclusion_order,
+    :first_name, :middle_name, :last_name
+
+
+  attr_accessor :id
+
+  attr_accessor :other_names, :phones
+
+  #TODO: what is an exclusion_order
+  #belongs_to :rfa_application
 
   # has_one :occupation
   # has_one :desired_child
@@ -26,4 +32,14 @@ class RFA::Applicant < CalsBase
   # desired children should move to application
 
   # has many license_history
+
+  # def other_names=(val)
+  #   @other_names = JSON.parse(val).map { |itm| AlternativeName.new(itm) }
+  # end
+
+  # def phone_numbers=(val)
+  #   @phone_numbers = Phone.new(JSON.parse(val))
+  # end
+
+
 end
