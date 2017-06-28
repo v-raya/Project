@@ -8,7 +8,7 @@ const DropDownField = ({gridClassName, value, disable, selectClassName, optionLi
       {
         optionList.map((item) => {
           return (
-            <option key={item.id} value={item.id}>{item.value}</option>
+            <option key={item.id}>{item.value}</option>
           )
         })
       }

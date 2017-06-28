@@ -45,10 +45,10 @@ export class NameCardField extends React.Component {
     var finalState = this.state
   }
   render () {
-    let nameTypes = this.state.nameTypes
+    //let nameTypes = this.state.nameTypes
     if (this.props.id == 1) {
       this.state.ifLegal = true
-      nameTypes = {
+      this.state.nameTypes = {
         items: [
           {
             'id': 1,
