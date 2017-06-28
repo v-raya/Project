@@ -6,6 +6,7 @@ export default class ResidenceCards extends React.Component {
   constructor (props) {
     super(...arguments)
     this.state = {
+      isFocused : {},
       formData: {
         first_name: null,
         last_name: null,
@@ -17,11 +18,15 @@ export default class ResidenceCards extends React.Component {
         races: []
       }
     }
-    this.setField = this.setField.bind(this)
   }
-  setField (fieldSeq, value) {
-    const formData = this.state.formData.setIn(fieldSeq, value)
-    this.setState({formData: formData})
+  toggleOnFocus (name, event) {
+    let focused = this.state.isFocused;
+    focused = {};
+    let focusedCard = focused[name] == 'focused' ? 'show' : 'edit';
+    focused[name] = focusedCard
+    this.setState({
+      isFocused : focused
+    })
   }
   submitForm () {
     console.log('Hello')
@@ -30,13 +35,13 @@ export default class ResidenceCards extends React.Component {
     const {formData} = this.state
     return (
       <div className='residence_cards'>
-        <div className='card edit phone-section double-gap-top'>
+        <div id="residentAddress" onClick={this.toggleOnFocus.bind(this, 'residentAddress')} className={(this.state.isFocused['residentAddress']) + ' '  + "card name-section double-gap-top"}>
           <div className='card-header'>
             <span>Address</span>
           </div>
           <AddressCard {...this.props} />
         </div>
-        <div className='card edit phone-section double-gap-top'>
+        <div id="aboutResidence" onClick={this.toggleOnFocus.bind(this, 'aboutResidence')} className={(this.state.isFocused['aboutResidence']) + ' '  + "card name-section double-gap-top"}>
           <div className='card-header'>
             <span>About This Residence</span>
           </div>
