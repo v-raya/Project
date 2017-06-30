@@ -16,8 +16,12 @@ class Helpers::ModelHelperBase
     model_class.all(auth_header)
   end
 
+  # def create(url_path, body)
+  #   byebug
+  #   model_class.create(auth_header, url_path, body)
+  # end
+
   def create(body)
-    byebug
     model_class.create(auth_header, body)
   end
 end

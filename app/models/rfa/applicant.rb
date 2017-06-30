@@ -14,8 +14,6 @@ class RFA::Applicant < CalsBase
   #belongs_to :rfa_application
 
   # has_one :occupation
-  # has_one :desired_child
-  # has_one :identified_desired_child
   #
   # has_many :licenses
   # has_many :phones
@@ -23,23 +21,21 @@ class RFA::Applicant < CalsBase
   # has_many :household_adults
   # has_many :relationships
   # has_many :alternative_names
-
-  # include legal name as part of the applicant object
-  # use names for (maiden, preferred, etc)
-
   # has_one spouse
-
-  # desired children should move to application
-
   # has many license_history
 
-  # def other_names=(val)
-  #   @other_names = JSON.parse(val).map { |itm| AlternativeName.new(itm) }
-  # end
+  def other_names=(val)
+    @other_names = val.map { |itm| AlternativeName.new(itm) } if val.present?
+  end
 
-  # def phone_numbers=(val)
-  #   @phone_numbers = Phone.new(JSON.parse(val))
-  # end
+  def phones=(val)
+    @phones = val.map { |itm| Phone.new(itm) } if val.present?
+  end
 
+  # methods
+
+  def self.parent_path
+    'rfa-1a-forms'
+  end
 
 end

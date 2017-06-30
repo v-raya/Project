@@ -4,6 +4,10 @@ class Helpers::RFA::Applicant < Helpers::ModelHelperBase
     RFA::Applicant
   end
 
+  def create(parent_id, body)
+    model_class.create(auth_header, parent_id, body)
+  end
+
   def gender_types
     RFA::Applicant.gender_types(auth_header)
   end
@@ -31,4 +35,5 @@ class Helpers::RFA::Applicant < Helpers::ModelHelperBase
   def residence_types
     RFA::Applicant.residence_types(auth_header)
   end
+
 end

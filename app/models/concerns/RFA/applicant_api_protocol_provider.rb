@@ -5,11 +5,9 @@ module Concerns::RFA::ApplicantApiProtocolProvider
   class_methods do
     def create(auth_header, parent_id, body)
       byebug
-      response = FaradayCals.post("/rfa-1a-forms/#{parent_id}/#{api_resource_path}", auth_header, body)
+      response = FaradayCals.post("/#{parent_path}/#{parent_id}/#{api_resource_path}", auth_header, body)
       new(JSON.parse(response.body))
     end
-
-
 
     def ethnicity_types(auth_header)
       response = FaradayCals.get('/dictionaries/ethnicity-types?token=null', auth_header)

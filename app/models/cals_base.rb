@@ -8,4 +8,8 @@ class CalsBase
   def self.api_resource_path
     name.demodulize.downcase.pluralize
   end
+
+  def self.parent_path
+    ''
+  end
 end
