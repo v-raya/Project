@@ -16,12 +16,13 @@ class Rfa::A01Controller < CalsBaseController
     @name_types = rfa_application_helper.name_types
     @phone_types = rfa_application_helper.phone_types
     @gender_types = rfa_applicant_helper.gender_types
-    @ethnicity_types = rfa_applicant_helper.ethnicity_types
     @education_levels = rfa_applicant_helper.education_levels
     @language_types =  rfa_applicant_helper.language_types
     @state_types = rfa_applicant_helper.state_types
     @salary_types = rfa_applicant_helper.salary_types
     @residence_types =  rfa_applicant_helper.residence_types
+
+    @ethnicity_types = dictionaries_helper.ethnicity_types
   end
 
   def update
@@ -36,6 +37,10 @@ class Rfa::A01Controller < CalsBaseController
 
   def rfa_applicant_helper
     Helpers::RFA::Applicant.new(auth_header: session['token'])
+  end
+
+  def dictionaries_helper
+    Helpers::Dictionary.new(auth_header: session['token'])
   end
 
 end

@@ -8,7 +8,7 @@ export default class AboutApplicant extends React.Component {
     this.state = {
       educationLevels: {items: this.props.educationLevels.items},
       genderTypes: {items: this.props.genderTypes.items},
-      ethnicityTypes: {items: this.props.ethnicityTypes.items},
+      ethnicityTypes: this.props.ethnicityTypes,
       languageTypes: {items: this.props.languageTypes.items},
       stateTypes: {items: this.props.stateTypes.items}
 
@@ -36,7 +36,7 @@ export default class AboutApplicant extends React.Component {
 
             <DropDownField gridClassName='col-md-4'
               selectClassName={'reusable-select'}
-              optionList={this.state.ethnicityTypes.items}
+              optionList={this.state.ethnicityTypes}
               label={'Race / Ethnicity'} />
 
             <InputComponent gridClassName='col-md-4' id='DlId' value={this.props.date_of_birth}
