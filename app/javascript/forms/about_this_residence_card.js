@@ -8,7 +8,7 @@ export default class AboutThisResidenceCard extends React.Component {
     super(props)
     this.state = {
       languageTypes: {items: this.props.languageTypes.items},
-      residenceTypes: {items: this.props.residenceTypes.items}
+      residenceTypes: this.props.residenceTypes
     }
     this.onChange = this.onChange.bind(this)
   }
@@ -23,7 +23,7 @@ export default class AboutThisResidenceCard extends React.Component {
           <form>
             <DropDownField gridClassName='col-md-7'
               selectClassName={'reusable-select'}
-              optionList={this.state.residenceTypes.items}
+              optionList={this.state.residenceTypes}
               label={'Do you own, rent or lease the residence?'} />
             <br />
             <DropDownField gridClassName='col-md-7'

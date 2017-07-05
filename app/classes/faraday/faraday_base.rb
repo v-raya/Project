@@ -12,6 +12,9 @@ class Faraday::FaradayBase
     faraday_shared(:post, "#{self.base_url}#{url}", auth_header, body)
   end
 
+  def self.put(url, auth_header, body)
+    faraday_shared(:put, "#{self.base_url}#{url}", auth_header, body)
+  end
 
   # private
 

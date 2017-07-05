@@ -20,9 +20,10 @@ class Rfa::A01Controller < CalsBaseController
     @language_types =  rfa_applicant_helper.language_types
     @state_types = rfa_applicant_helper.state_types
     @salary_types = rfa_applicant_helper.salary_types
-    @residence_types =  rfa_applicant_helper.residence_types
 
+    @residence_types =  dictionaries_helper.residence_ownership_types
     @ethnicity_types = dictionaries_helper.ethnicity_types
+    @address_types = dictionaries_helper.address_types
   end
 
   def update
