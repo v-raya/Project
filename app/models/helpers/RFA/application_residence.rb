@@ -8,8 +8,4 @@ class Helpers::RFA::ApplicationResidence < Helpers::ModelHelperBase
     model_class.create(auth_header, parent_id, body)
   end
 
-  def residence_types
-    RFA::ApplicationResidence.residence_types(auth_header)
-  end
-
 end

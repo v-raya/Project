@@ -12,10 +12,6 @@ class Helpers::RFA::Applicant < Helpers::ModelHelperBase
     RFA::Applicant.gender_types(auth_header)
   end
 
-  def ethnicity_types
-    RFA::Applicant.ethnicity_types(auth_header)
-  end
-
   def education_levels
     RFA::Applicant.education_levels(auth_header)
   end
@@ -30,10 +26,6 @@ class Helpers::RFA::Applicant < Helpers::ModelHelperBase
 
   def salary_types
     RFA::Applicant.salary_types(auth_header)
-  end
-
-  def residence_types
-    RFA::Applicant.residence_types(auth_header)
   end
 
 end

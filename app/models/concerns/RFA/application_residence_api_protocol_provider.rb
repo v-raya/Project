@@ -9,9 +9,5 @@ module Concerns::RFA::ApplicationResidenceApiProtocolProvider
       new(JSON.parse(response.body))
     end
 
-    def residence_types(auth_header)
-      response = FaradayCals.get('/dictionaries/residence-ownership-types?token=null', auth_header)
-      JSON.parse(response.body)
-    end
   end
 end

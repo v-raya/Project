@@ -5,7 +5,7 @@ class FacilitiesController < CalsBaseController
   def index
     #  @race_types = Helpers::Dictionaries::RaceTypeHelper.new(auth_header: 'abc').all
     # byebug
-    # rfa_application_helper.create_application
+
     @facilities = facility_helper.all
   end
 
@@ -33,8 +33,5 @@ class FacilitiesController < CalsBaseController
 
   def facility_helper
     Helpers::Facility.new(auth_header: session['token'])
-  end
-  def rfa_application_helper
-    Helpers::RFA::Application.new(auth_header: session['token'])
   end
 end

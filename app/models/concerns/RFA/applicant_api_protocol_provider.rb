@@ -8,11 +8,6 @@ module Concerns::RFA::ApplicantApiProtocolProvider
       new(JSON.parse(response.body))
     end
 
-    def ethnicity_types(auth_header)
-      response = FaradayCals.get('/dictionaries/ethnicity-types?token=null', auth_header)
-      JSON.parse(response.body)
-    end
-
     def education_levels(auth_header)
       response = FaradayCals.get('/dictionaries/education-level-types?token=null', auth_header)
       JSON.parse(response.body)
@@ -35,11 +30,6 @@ module Concerns::RFA::ApplicantApiProtocolProvider
 
     def salary_types(auth_header)
       response = FaradayCals.get('/dictionaries/income-types?token=null',auth_header)
-      JSON.parse(response.body)
-    end
-
-    def residence_types(auth_header)
-      response = FaradayCals.get('/dictionaries/residence-ownership-types?token=null', auth_header)
       JSON.parse(response.body)
     end
 

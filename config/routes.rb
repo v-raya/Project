@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
   namespace :rfa do
-    resources :a01, only: [ :show, :create, :edit, :update] do
+    resources :a01 do
 
       resources :applicant, only: [:index, :create, :edit]
       resource :residence, only: [:show, :create, :edit]
@@ -22,17 +22,6 @@ Rails.application.routes.draw do
 
   end
 
-  resource :rfa, controller: :rfa, only: [] do
-    member do
-      get :show
-      get :index
-      get :residence_ownership_types
-      get :languages
-      get :name_types
-      get :phone_number_types
 
-      post :residence
-    end
-  end
 
 end

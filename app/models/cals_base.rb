@@ -1,6 +1,8 @@
 class CalsBase
   include ActiveModel::Model
 
+  attr_accessor :uniqueId, :code, :message
+
   def self.class_name_downcase_pluralized
     name.demodulize.downcase.pluralize
   end
@@ -12,4 +14,6 @@ class CalsBase
   def self.parent_path
     ''
   end
+
+
 end

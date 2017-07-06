@@ -1,0 +1,672 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/name-types?token=null
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 06 Jul 2017 15:21:51 GMT
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '238'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "id" : 1,
+            "value" : "Alias"
+          }, {
+            "id" : 2,
+            "value" : "Legal"
+          }, {
+            "id" : 3,
+            "value" : "Maiden"
+          }, {
+            "id" : 4,
+            "value" : "Preferred"
+          }, {
+            "id" : 5,
+            "value" : "Other"
+          } ]
+        }
+    http_version: 
+  recorded_at: Thu, 06 Jul 2017 15:21:47 GMT
+- request:
+    method: get
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/phone-number-types?token=null
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 06 Jul 2017 15:21:51 GMT
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '144'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "id" : 1,
+            "value" : "Cell"
+          }, {
+            "id" : 2,
+            "value" : "Home"
+          }, {
+            "id" : 3,
+            "value" : "Work"
+          } ]
+        }
+    http_version: 
+  recorded_at: Thu, 06 Jul 2017 15:21:47 GMT
+- request:
+    method: get
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/genders?token=null
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 06 Jul 2017 15:21:51 GMT
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '147'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "id" : 1,
+            "value" : "Male"
+          }, {
+            "id" : 2,
+            "value" : "Female"
+          }, {
+            "id" : 3,
+            "value" : "Other"
+          } ]
+        }
+    http_version: 
+  recorded_at: Thu, 06 Jul 2017 15:21:47 GMT
+- request:
+    method: get
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/education-level-types?token=null
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 06 Jul 2017 15:21:51 GMT
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '153'
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "id" : 1,
+            "value" : "High School"
+          }, {
+            "id" : 2,
+            "value" : "GED"
+          }, {
+            "id" : 3,
+            "value" : "Some College"
+          }, {
+            "id" : 4,
+            "value" : "College - Bachelors"
+          }, {
+            "id" : 5,
+            "value" : "College - Masters"
+          }, {
+            "id" : 6,
+            "value" : "College - PhD"
+          }, {
+            "id" : 7,
+            "value" : "Medical School"
+          } ]
+        }
+    http_version: 
+  recorded_at: Thu, 06 Jul 2017 15:21:47 GMT
+- request:
+    method: get
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/languages?token=null
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 06 Jul 2017 15:21:51 GMT
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '251'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "id" : 1,
+            "value" : "Chinese Mandarin"
+          }, {
+            "id" : 2,
+            "value" : "English"
+          }, {
+            "id" : 3,
+            "value" : "French"
+          }, {
+            "id" : 4,
+            "value" : "Russian"
+          }, {
+            "id" : 5,
+            "value" : "Spanish"
+          } ]
+        }
+    http_version: 
+  recorded_at: Thu, 06 Jul 2017 15:21:47 GMT
+- request:
+    method: get
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/states?token=null
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 06 Jul 2017 15:21:51 GMT
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '634'
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "id" : 1,
+            "value" : "Alabama"
+          }, {
+            "id" : 2,
+            "value" : "Alaska"
+          }, {
+            "id" : 3,
+            "value" : "American Samoa"
+          }, {
+            "id" : 4,
+            "value" : "Arizona"
+          }, {
+            "id" : 5,
+            "value" : "Arkansas"
+          }, {
+            "id" : 6,
+            "value" : "California"
+          }, {
+            "id" : 7,
+            "value" : "Canal Zone"
+          }, {
+            "id" : 8,
+            "value" : "Colorado"
+          }, {
+            "id" : 9,
+            "value" : "Connecticut"
+          }, {
+            "id" : 10,
+            "value" : "Delaware"
+          }, {
+            "id" : 11,
+            "value" : "District of Columbia"
+          }, {
+            "id" : 12,
+            "value" : "Florida"
+          }, {
+            "id" : 13,
+            "value" : "Georgia"
+          }, {
+            "id" : 14,
+            "value" : "Guam"
+          }, {
+            "id" : 15,
+            "value" : "Hawaii"
+          }, {
+            "id" : 16,
+            "value" : "Idaho"
+          }, {
+            "id" : 17,
+            "value" : "Illinois"
+          }, {
+            "id" : 18,
+            "value" : "Indiana"
+          }, {
+            "id" : 19,
+            "value" : "Iowa"
+          }, {
+            "id" : 20,
+            "value" : "Kansas"
+          }, {
+            "id" : 21,
+            "value" : "Kentucky"
+          }, {
+            "id" : 22,
+            "value" : "Louisiana"
+          }, {
+            "id" : 23,
+            "value" : "Maine"
+          }, {
+            "id" : 24,
+            "value" : "Maryland"
+          }, {
+            "id" : 25,
+            "value" : "Massachusetts"
+          }, {
+            "id" : 26,
+            "value" : "Michigan"
+          }, {
+            "id" : 27,
+            "value" : "Minnesota"
+          }, {
+            "id" : 28,
+            "value" : "Mississippi"
+          }, {
+            "id" : 29,
+            "value" : "Missouri"
+          }, {
+            "id" : 30,
+            "value" : "Montana"
+          }, {
+            "id" : 31,
+            "value" : "Nebraska"
+          }, {
+            "id" : 32,
+            "value" : "Nevada"
+          }, {
+            "id" : 33,
+            "value" : "New Hampshire"
+          }, {
+            "id" : 34,
+            "value" : "New Jersey"
+          }, {
+            "id" : 35,
+            "value" : "New Mexico"
+          }, {
+            "id" : 36,
+            "value" : "New York"
+          }, {
+            "id" : 37,
+            "value" : "North Carolina"
+          }, {
+            "id" : 38,
+            "value" : "North Dakota"
+          }, {
+            "id" : 39,
+            "value" : "Northern Marianas Islands"
+          }, {
+            "id" : 40,
+            "value" : "Ohio"
+          }, {
+            "id" : 41,
+            "value" : "Oklahoma"
+          }, {
+            "id" : 42,
+            "value" : "Oregon"
+          }, {
+            "id" : 43,
+            "value" : "Pennsylvania"
+          }, {
+            "id" : 44,
+            "value" : "Puerto Rico"
+          }, {
+            "id" : 45,
+            "value" : "Rhode Island"
+          }, {
+            "id" : 46,
+            "value" : "South Carolina"
+          }, {
+            "id" : 47,
+            "value" : "South Dakota"
+          }, {
+            "id" : 48,
+            "value" : "Tennessee"
+          }, {
+            "id" : 49,
+            "value" : "Texas"
+          }, {
+            "id" : 50,
+            "value" : "Trust Territories"
+          }, {
+            "id" : 51,
+            "value" : "Utah"
+          }, {
+            "id" : 52,
+            "value" : "Vermont"
+          }, {
+            "id" : 53,
+            "value" : "Virgin Islands"
+          }, {
+            "id" : 54,
+            "value" : "Virginia"
+          }, {
+            "id" : 55,
+            "value" : "Washington"
+          }, {
+            "id" : 56,
+            "value" : "West Virginia"
+          }, {
+            "id" : 57,
+            "value" : "Wisconsin"
+          }, {
+            "id" : 58,
+            "value" : "Wyoming"
+          } ]
+        }
+    http_version: 
+  recorded_at: Thu, 06 Jul 2017 15:21:48 GMT
+- request:
+    method: get
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/income-types?token=null
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 06 Jul 2017 15:21:51 GMT
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '151'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "id" : 1,
+            "value" : "yearly"
+          }, {
+            "id" : 2,
+            "value" : "monthly"
+          }, {
+            "id" : 3,
+            "value" : "hourly"
+          } ]
+        }
+    http_version: 
+  recorded_at: Thu, 06 Jul 2017 15:21:48 GMT
+- request:
+    method: get
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/residence-ownership-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 06 Jul 2017 15:21:51 GMT
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '144'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "id" : 1,
+            "value" : "Own"
+          }, {
+            "id" : 2,
+            "value" : "Rent"
+          }, {
+            "id" : 3,
+            "value" : "Lease"
+          } ]
+        }
+    http_version: 
+  recorded_at: Thu, 06 Jul 2017 15:21:48 GMT
+- request:
+    method: get
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/ethnicity-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 06 Jul 2017 15:21:51 GMT
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '420'
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "id" : 1,
+            "value" : "Alaskan Native"
+          }, {
+            "id" : 2,
+            "value" : "American Indian"
+          }, {
+            "id" : 3,
+            "value" : "Asian Indian"
+          }, {
+            "id" : 4,
+            "value" : "Black"
+          }, {
+            "id" : 5,
+            "value" : "Cambodian"
+          }, {
+            "id" : 6,
+            "value" : "Caribbean"
+          }, {
+            "id" : 7,
+            "value" : "Central American"
+          }, {
+            "id" : 8,
+            "value" : "Chinese"
+          }, {
+            "id" : 9,
+            "value" : "Declines to State"
+          }, {
+            "id" : 10,
+            "value" : "Ethiopian"
+          }, {
+            "id" : 11,
+            "value" : "Filipino"
+          }, {
+            "id" : 12,
+            "value" : "Guamanian"
+          }, {
+            "id" : 13,
+            "value" : "Hawaiian"
+          }, {
+            "id" : 14,
+            "value" : "Hispanic"
+          }, {
+            "id" : 15,
+            "value" : "Hmong"
+          }, {
+            "id" : 16,
+            "value" : "Japanese"
+          }, {
+            "id" : 17,
+            "value" : "Korean"
+          }, {
+            "id" : 18,
+            "value" : "Laotian"
+          }, {
+            "id" : 19,
+            "value" : "Mexican"
+          }, {
+            "id" : 20,
+            "value" : "Other Asian"
+          }, {
+            "id" : 21,
+            "value" : "Other Pacific Islander"
+          }, {
+            "id" : 22,
+            "value" : "Other Race Unknown"
+          }, {
+            "id" : 23,
+            "value" : "Polynesian"
+          }, {
+            "id" : 24,
+            "value" : "Samoan"
+          }, {
+            "id" : 25,
+            "value" : "South American"
+          }, {
+            "id" : 26,
+            "value" : "Unable to Determine"
+          }, {
+            "id" : 27,
+            "value" : "Vietnamese"
+          }, {
+            "id" : 28,
+            "value" : "White - Armenian"
+          }, {
+            "id" : 29,
+            "value" : "White - Central American"
+          }, {
+            "id" : 30,
+            "value" : "White - European"
+          }, {
+            "id" : 31,
+            "value" : "White - Middle Eastern"
+          }, {
+            "id" : 32,
+            "value" : "White - Romanian"
+          }, {
+            "id" : 33,
+            "value" : "White"
+          } ]
+        }
+    http_version: 
+  recorded_at: Thu, 06 Jul 2017 15:21:48 GMT
+- request:
+    method: get
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/address-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 06 Jul 2017 15:21:51 GMT
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '154'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "id" : 1,
+            "value" : "Residential"
+          }, {
+            "id" : 2,
+            "value" : "Home"
+          }, {
+            "id" : 3,
+            "value" : "Mailing"
+          } ]
+        }
+    http_version: 
+  recorded_at: Thu, 06 Jul 2017 15:21:48 GMT
+recorded_with: VCR 3.0.3

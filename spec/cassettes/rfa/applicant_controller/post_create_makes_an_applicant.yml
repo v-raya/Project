@@ -1,0 +1,33 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms/1/applicants
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      date:
+      - Thu, 06 Jul 2017 15:21:40 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '55'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 8,
+          "other_names" : [ ],
+          "phones" : [ ]
+        }
+    http_version: 
+  recorded_at: Thu, 06 Jul 2017 15:21:37 GMT
+recorded_with: VCR 3.0.3

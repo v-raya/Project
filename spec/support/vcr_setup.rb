@@ -7,23 +7,6 @@ VCR.configure do |c|
   c.allow_http_connections_when_no_cassette = true
   c.ignore_localhost = false
   c.ignore_request do |request|
-    localhost_has_identify?(request)
+  !(request.uri.starts_with?(CALS_API_BASE_URL) || request.uri.starts_with?(CALS_API_URL))
   end
-end
-
-private
-def localhost_has_identify?(request)
-  #byebug
-  if request.uri.starts_with?(CALS_API_BASE_URL)
-    false
-  else
-    true
-  end
-
-  # if (request.uri =~ /127.0.0.1:\d{5}\/__identify__/)
-  #
-  #   true
-  # else
-  #   false
-  # end
 end
