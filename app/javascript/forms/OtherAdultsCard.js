@@ -1,4 +1,4 @@
-import React from 'React'
+import React from 'react'
 import {OtherAdultsCardField} from '../common/OtherAdultsCardField'
 
 export default class OtherAdultsCard extends React.Component {
