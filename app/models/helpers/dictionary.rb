@@ -15,4 +15,8 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
   def residence_ownership_types
     Dictionaries::ResidenceOwnershipType.all(auth_header)
   end
+
+  def relationship_types
+    Dictionaries::ApplicantRelationshipType.all(auth_header)
+  end
 end

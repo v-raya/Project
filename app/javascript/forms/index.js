@@ -1,6 +1,7 @@
 import React from 'react'
 import Cards from './cardsMain'
 import ResidenceCards from './residenceCardsMain'
+import OtherAdultsCard from './OtherAdultsCard'
 import './stylesheets/cards-main.scss'
 
 export default class Forms extends React.Component {
@@ -39,14 +40,22 @@ export default class Forms extends React.Component {
                 <button id='saveProgress' onClick={this.submitForm}>Save Progress</button>
               </div>
             </div>
+
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h3>I. Application 1 - <span>Information</span></h3>
               <Cards {...this.props} />
             </div>
+
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h3>II. Applicant (S) - <span>Residence</span></h3>
               <ResidenceCards {...this.props} />
             </div>
+
+            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+              <h3>V. Applicant (S) - <span>Other Adults</span></h3>
+              <OtherAdultsCard {...this.props} />
+            </div>
+
             <div className='col-xs-2 col-sm-2 col-md-2 col-lg-2'>
 
               <button id='saveProgress' onClick={this.submitForm}>Save Progress</button>
