@@ -49,6 +49,7 @@ RUN yarn install
 
 # RUN tests
 ENV BASE_CALS_API_URL=http://localhost:3001/v1
+ENV CALS_API_URL=http://tpt2.dev.cwds.io:8084
 
 RUN rails assets:precompile RAILS_ENV=test
 RUN npm run spec-ci
