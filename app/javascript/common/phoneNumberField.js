@@ -23,7 +23,7 @@ export class PhoneNumberField extends React.Component {
     }
   }
   clickClose (id) {
-    if (id == 1) {
+    if (id === 1) {
       this.setState({
         phoneField: {
           number: '',
@@ -39,9 +39,9 @@ export class PhoneNumberField extends React.Component {
     }
   }
   phoneChange (event, id) {
-    if (event && id == 'phone_type') {
+    if (event && id === 'phone_type') {
       var value = this.state.phoneTypes.items.filter(function (item) {
-        return item.id == event
+        return item.id === event
       })
     }
     this.state.phoneField[id] = value ? value[0] : event
@@ -55,7 +55,7 @@ export class PhoneNumberField extends React.Component {
     if (event.target.id) {
 
     }
-    if (is_preferred == 'false') {
+    if (is_preferred === 'false') {
       is_preferred = false
     } else {
       is_preferred = true

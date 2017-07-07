@@ -23,7 +23,7 @@ export class OtherAdultsCardField extends React.Component {
     }
   }
   clickClose (id) {
-    if (id == 1) {
+    if (id === 1) {
       this.setState({
         nameField: {
           firstName: '',

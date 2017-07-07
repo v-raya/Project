@@ -19,7 +19,7 @@ export class NameCardField extends React.Component {
     }
   }
   clickClose (id) {
-    if (id == 1) {
+    if (id === 1) {
       this.setState({
         nameField: {
           first_name: '',
@@ -32,9 +32,9 @@ export class NameCardField extends React.Component {
     }
   }
   onChange (event, id) {
-    if (event && id == 'name_type') {
+    if (event && id === 'name_type') {
       var value = this.state.nameTypes.items.filter(function (item) {
-        return item.id == event
+        return item.id === event
       })
     }
     this.state.nameField[id] = event
@@ -46,7 +46,7 @@ export class NameCardField extends React.Component {
   }
   render () {
     // let nameTypes = this.state.nameTypes
-    if (this.props.id == 1) {
+    if (this.props.id === 1) {
       this.state.ifLegal = true
       this.state.nameTypes = {
         items: [
