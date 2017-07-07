@@ -1,7 +1,7 @@
 import React from 'react'
 import Cards from './cardsMain'
 import ResidenceCards from './residenceCardsMain'
-import OtherAdultsCard from './OtherAdultsCard'
+import OtherAdultsCard from './OtherAdultsCardsMain'
 import './stylesheets/cards-main.scss'
 
 export default class Forms extends React.Component {

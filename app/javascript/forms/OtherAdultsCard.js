@@ -39,7 +39,7 @@ export default class OtherAdultsCard extends React.Component {
 
   render () {
     return (
-      <div className='other_adults'>
+      <div className='card-body'>
         {this.state.otherAdultsComponents}
         <div className='text-center'>
           <button onClick={this.addCard} className='btn btn-default'>Add another Adult +</button>

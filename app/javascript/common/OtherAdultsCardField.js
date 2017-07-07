@@ -63,36 +63,36 @@ export class OtherAdultsCardField extends React.Component {
 
   render () {
     return (
-      <div className='card-body' >
-        <div className='row-list' >
-          <span onClick={() => this.clickClose(this.props.id)} className='pull-right glyphicon glyphicon-remove' />
-          <form>
 
-            <DropDownField gridClassName='col-md-4' id='relationshipTypes'
-              selectClassName={'reusable-select'}
-              optionList={this.state.relationshipTypes.items}
-              label={'relationship type'} onChange={(event, id) => this.onChange(event.target.value, ('relationshipTypes'))} />
-            <DropDownField gridClassName='col-md-4' id='availableApplicants'
-              selectClassName={'reusable-select'}
-              optionList={this.state.availableApplicants.items}
-              label={'to whom'} onChange={(event, id) => this.onChange(event.target.value, ('availableApplicants'))} />
-            <InputComponent gridClassName='col-md-4' id='dateOfBirth' value={this.state.dateOfBirth}
-              label='Date of Birth' placeholder='Enter Date of Birth'
-              type={'text'} onChange={(event, id) => this.onChange(event.target.value, ('dateOfBirth'))} />
+      <div className='row list-item' >
+        <span onClick={() => this.clickClose(this.props.id)} className='pull-right glyphicon glyphicon-remove' />
+        <form>
 
-            <InputComponent gridClassName='col-md-4' id='firstName' value={this.state.nameField.firstName}
-              label='First Name' placeholder='Enter First Name'
-              type={'text'} onChange={(event, id) => this.onChange(event.target.value, ('firstName'))} />
-            <InputComponent gridClassName='col-md-4' id='middleName' value={this.state.nameField.middleName}
-              label='Middle Name' placeholder='Enter Middle Name'
-              type={'text'} onChange={(event, id) => this.onChange(event.target.value, ('middleName'))} />
-            <InputComponent gridClassName='col-md-4' id='lastName' value={this.state.nameField.lastName}
-              label='Last Name' placeholder='Enter Last Name'
-              type={'text'} onChange={(event, id) => this.onChange(event.target.value, ('lastName'))} />
+          <DropDownField gridClassName='col-md-4' id='relationshipTypes'
+            selectClassName={'reusable-select'}
+            optionList={this.state.relationshipTypes.items}
+            label={'relationship type'} onChange={(event, id) => this.onChange(event.target.value, ('relationshipTypes'))} />
+          <DropDownField gridClassName='col-md-4' id='availableApplicants'
+            selectClassName={'reusable-select'}
+            optionList={this.state.availableApplicants.items}
+            label={'to whom'} onChange={(event, id) => this.onChange(event.target.value, ('availableApplicants'))} />
+          <InputComponent gridClassName='col-md-4' id='dateOfBirth' value={this.state.dateOfBirth}
+            label='Date of Birth' placeholder='Enter Date of Birth'
+            type={'text'} onChange={(event, id) => this.onChange(event.target.value, ('dateOfBirth'))} />
 
-          </form>
-        </div>
+          <InputComponent gridClassName='col-md-4' id='firstName' value={this.state.nameField.firstName}
+            label='First Name' placeholder='Enter First Name'
+            type={'text'} onChange={(event, id) => this.onChange(event.target.value, ('firstName'))} />
+          <InputComponent gridClassName='col-md-4' id='middleName' value={this.state.nameField.middleName}
+            label='Middle Name' placeholder='Enter Middle Name'
+            type={'text'} onChange={(event, id) => this.onChange(event.target.value, ('middleName'))} />
+          <InputComponent gridClassName='col-md-4' id='lastName' value={this.state.nameField.lastName}
+            label='Last Name' placeholder='Enter Last Name'
+            type={'text'} onChange={(event, id) => this.onChange(event.target.value, ('lastName'))} />
+
+        </form>
       </div>
+
     )
   }
             }

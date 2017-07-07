@@ -1,5 +1,5 @@
 import React from 'react'
-import OtherAdults from './other_adults_card'
+import OtherAdults from './OtherAdultsCard'
 
 export default class OtherAdultsCards extends React.Component {
   constructor (props) {
@@ -25,7 +25,7 @@ export default class OtherAdultsCards extends React.Component {
 
         PROBLEM IS HERE with the div ID not  being makde
 
-        <div id='OtherAdults' onClick={this.toggleOnFocus.bind(this, 'OtherAdults')} className={(this.state.isFocused['OtherAdults']) + ' ' + 'card other-adults-section double-gap-top'}>
+        <div id='otherAdultsSection' onClick={this.toggleOnFocus.bind(this, 'otherAdultsSection')} className={(this.state.isFocused['otherAdultsSection']) + ' ' + 'card other-adults-section double-gap-top'}>
           <div className='card-header'>
             <span>Other adults residing or Regularly present in the home</span>
           </div>
