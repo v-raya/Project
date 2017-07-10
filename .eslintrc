@@ -1,18 +1,24 @@
 {
-"extends": "eslint-config-standard",
-"plugins": [
-"react",
-"jsx-a11y",
-"import"
-],
-"globals": {
-  "document": true,
-  "window": true,
-  "fetch": false
+  "extends": "eslint-config-standard",
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import",
+    "jasmine"
+  ],
+  "globals": {
+    "document": true,
+    "window": true,
+    "fetch": false
   },
 
   "rules": {
     "no-unused-vars": [0, { "vars": 'local', "args": "after-used", "ignoreRestSiblings": false }],
     "react/require-extension": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }] }
-    }
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  },
+
+  "env": {
+    "jasmine": true
+  }
+}
