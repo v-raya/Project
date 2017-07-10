@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/name-types?token=null
+    uri: https://cals-api.preint.cwds.io/dictionaries/name-types?token=null
     body:
       encoding: US-ASCII
       string: ''
@@ -14,14 +14,16 @@ http_interactions:
       code: 200
       message: 
     headers:
-      date:
-      - Thu, 06 Jul 2017 15:21:51 GMT
       content-type:
       - application/json
+      date:
+      - Mon, 10 Jul 2017 18:14:36 GMT
       vary:
       - Accept-Encoding
       content-length:
       - '238'
+      connection:
+      - keep-alive
     body:
       encoding: UTF-8
       string: |-
@@ -44,10 +46,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 06 Jul 2017 15:21:47 GMT
+  recorded_at: Mon, 10 Jul 2017 18:14:36 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/phone-number-types?token=null
+    uri: https://cals-api.preint.cwds.io/dictionaries/phone-number-types?token=null
     body:
       encoding: US-ASCII
       string: ''
@@ -59,14 +61,16 @@ http_interactions:
       code: 200
       message: 
     headers:
-      date:
-      - Thu, 06 Jul 2017 15:21:51 GMT
       content-type:
       - application/json
+      date:
+      - Mon, 10 Jul 2017 18:14:36 GMT
       vary:
       - Accept-Encoding
       content-length:
       - '144'
+      connection:
+      - keep-alive
     body:
       encoding: UTF-8
       string: |-
@@ -83,10 +87,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 06 Jul 2017 15:21:47 GMT
+  recorded_at: Mon, 10 Jul 2017 18:14:36 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/genders?token=null
+    uri: https://cals-api.preint.cwds.io/dictionaries/genders?token=null
     body:
       encoding: US-ASCII
       string: ''
@@ -98,14 +102,16 @@ http_interactions:
       code: 200
       message: 
     headers:
-      date:
-      - Thu, 06 Jul 2017 15:21:51 GMT
       content-type:
       - application/json
+      date:
+      - Mon, 10 Jul 2017 18:14:37 GMT
       vary:
       - Accept-Encoding
       content-length:
       - '147'
+      connection:
+      - keep-alive
     body:
       encoding: UTF-8
       string: |-
@@ -122,10 +128,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 06 Jul 2017 15:21:47 GMT
+  recorded_at: Mon, 10 Jul 2017 18:14:37 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/education-level-types?token=null
+    uri: https://cals-api.preint.cwds.io/dictionaries/education-level-types?token=null
     body:
       encoding: US-ASCII
       string: ''
@@ -137,14 +143,16 @@ http_interactions:
       code: 200
       message: 
     headers:
-      date:
-      - Thu, 06 Jul 2017 15:21:51 GMT
       content-type:
       - application/json
+      date:
+      - Mon, 10 Jul 2017 18:14:38 GMT
       vary:
       - Accept-Encoding
       content-length:
       - '153'
+      connection:
+      - keep-alive
     body:
       encoding: ASCII-8BIT
       string: |-
@@ -173,10 +181,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 06 Jul 2017 15:21:47 GMT
+  recorded_at: Mon, 10 Jul 2017 18:14:38 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/languages?token=null
+    uri: https://cals-api.preint.cwds.io/dictionaries/languages?token=null
     body:
       encoding: US-ASCII
       string: ''
@@ -188,14 +196,16 @@ http_interactions:
       code: 200
       message: 
     headers:
-      date:
-      - Thu, 06 Jul 2017 15:21:51 GMT
       content-type:
       - application/json
+      date:
+      - Mon, 10 Jul 2017 18:14:38 GMT
       vary:
       - Accept-Encoding
       content-length:
       - '251'
+      connection:
+      - keep-alive
     body:
       encoding: UTF-8
       string: |-
@@ -218,10 +228,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 06 Jul 2017 15:21:47 GMT
+  recorded_at: Mon, 10 Jul 2017 18:14:38 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/states?token=null
+    uri: https://cals-api.preint.cwds.io/dictionaries/states?token=null
     body:
       encoding: US-ASCII
       string: ''
@@ -233,14 +243,16 @@ http_interactions:
       code: 200
       message: 
     headers:
-      date:
-      - Thu, 06 Jul 2017 15:21:51 GMT
       content-type:
       - application/json
+      date:
+      - Mon, 10 Jul 2017 18:14:38 GMT
       vary:
       - Accept-Encoding
       content-length:
       - '634'
+      connection:
+      - keep-alive
     body:
       encoding: ASCII-8BIT
       string: |-
@@ -422,10 +434,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 06 Jul 2017 15:21:48 GMT
+  recorded_at: Mon, 10 Jul 2017 18:14:38 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/income-types?token=null
+    uri: https://cals-api.preint.cwds.io/dictionaries/income-types?token=null
     body:
       encoding: US-ASCII
       string: ''
@@ -437,14 +449,16 @@ http_interactions:
       code: 200
       message: 
     headers:
-      date:
-      - Thu, 06 Jul 2017 15:21:51 GMT
       content-type:
       - application/json
+      date:
+      - Mon, 10 Jul 2017 18:14:39 GMT
       vary:
       - Accept-Encoding
       content-length:
       - '151'
+      connection:
+      - keep-alive
     body:
       encoding: UTF-8
       string: |-
@@ -461,10 +475,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 06 Jul 2017 15:21:48 GMT
+  recorded_at: Mon, 10 Jul 2017 18:14:39 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/residence-ownership-types
+    uri: https://cals-api.preint.cwds.io/dictionaries/residence-ownership-types
     body:
       encoding: US-ASCII
       string: ''
@@ -476,14 +490,16 @@ http_interactions:
       code: 200
       message: 
     headers:
-      date:
-      - Thu, 06 Jul 2017 15:21:51 GMT
       content-type:
       - application/json
+      date:
+      - Mon, 10 Jul 2017 18:14:40 GMT
       vary:
       - Accept-Encoding
       content-length:
       - '144'
+      connection:
+      - keep-alive
     body:
       encoding: UTF-8
       string: |-
@@ -500,10 +516,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 06 Jul 2017 15:21:48 GMT
+  recorded_at: Mon, 10 Jul 2017 18:14:39 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/ethnicity-types
+    uri: https://cals-api.preint.cwds.io/dictionaries/ethnicity-types
     body:
       encoding: US-ASCII
       string: ''
@@ -515,14 +531,16 @@ http_interactions:
       code: 200
       message: 
     headers:
-      date:
-      - Thu, 06 Jul 2017 15:21:51 GMT
       content-type:
       - application/json
+      date:
+      - Mon, 10 Jul 2017 18:14:40 GMT
       vary:
       - Accept-Encoding
       content-length:
       - '420'
+      connection:
+      - keep-alive
     body:
       encoding: ASCII-8BIT
       string: |-
@@ -629,10 +647,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 06 Jul 2017 15:21:48 GMT
+  recorded_at: Mon, 10 Jul 2017 18:14:39 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/address-types
+    uri: https://cals-api.preint.cwds.io/dictionaries/address-types
     body:
       encoding: US-ASCII
       string: ''
@@ -644,14 +662,16 @@ http_interactions:
       code: 200
       message: 
     headers:
-      date:
-      - Thu, 06 Jul 2017 15:21:51 GMT
       content-type:
       - application/json
+      date:
+      - Mon, 10 Jul 2017 18:14:40 GMT
       vary:
       - Accept-Encoding
       content-length:
       - '154'
+      connection:
+      - keep-alive
     body:
       encoding: UTF-8
       string: |-
@@ -668,5 +688,49 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 06 Jul 2017 15:21:48 GMT
+  recorded_at: Mon, 10 Jul 2017 18:14:40 GMT
+- request:
+    method: get
+    uri: https://cals-api.preint.cwds.io/dictionaries/applicant-relationship-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Mon, 10 Jul 2017 18:14:41 GMT
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '231'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "id" : 1,
+            "value" : "Married"
+          }, {
+            "id" : 2,
+            "value" : "Domestic Partnership"
+          }, {
+            "id" : 3,
+            "value" : "Related (Family Member)"
+          }, {
+            "id" : 4,
+            "value" : "Cohabitants"
+          } ]
+        }
+    http_version: 
+  recorded_at: Mon, 10 Jul 2017 18:14:41 GMT
 recorded_with: VCR 3.0.3
