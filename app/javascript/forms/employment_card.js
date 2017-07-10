@@ -4,12 +4,18 @@ import {DropDownField} from '../common/dropDownField'
 
 export default class Employment extends React.Component {
   constructor (props) {
-    super(props)
+    super(props);
     this.state = {
-
       stateTypes: {items: this.props.stateTypes.items},
-      salaryTypes: {items: this.props.salaryTypes.items}
-
+      salaryTypes: {items: this.props.salaryTypes.items},
+      salaryDropdown : {
+        id : '',
+        value: ''
+      },
+      stateDropDown : {
+        id : '',
+        value : ''
+      }
     }
   }
 
@@ -30,6 +36,7 @@ export default class Employment extends React.Component {
 
             <DropDownField gridClassName='col-md-1'
               selectClassName={'reusable-select'}
+              value={this.state.salaryDropdown.value}
               optionList={this.state.salaryTypes.items}
               label='.' />
 
@@ -46,6 +53,7 @@ export default class Employment extends React.Component {
 
             <DropDownField gridClassName='col-md-4'
               selectClassName={'reusable-select'}
+              value={this.state.stateDropDown.value}
               optionList={this.state.stateTypes.items}
               label={'Driver License State'} />
           </form>

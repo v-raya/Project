@@ -10,7 +10,8 @@ export class NameCardField extends React.Component {
       nameField: {
         first_name: '',
         last_name: '',
-        middle_name: ''
+        middle_name: '',
+        nameType : ''
       },
       ifLegal: false,
       nameTypes: {
@@ -51,7 +52,7 @@ export class NameCardField extends React.Component {
       this.state.nameTypes = {
         items: [
           {
-            'id': 1,
+            'id': 2,
             'value': 'Legal'
           }
         ]
@@ -73,6 +74,7 @@ export class NameCardField extends React.Component {
           <DropDownField gridClassName='col-md-4' id='name_type'
             selectClassName={'reusable-select'}
             disable={this.state.ifLegal}
+            value={this.state.nameField.nameType.id}
             optionList={this.state.nameTypes.items}
             label={'Name Type'} onChange={(event, id) => this.onChange(event.target.value, ('name_type'))} />
         </form>
