@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms?token=null
+    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms?token=null
     body:
       encoding: US-ASCII
       string: ''
@@ -14,22 +14,20 @@ http_interactions:
       code: 201
       message: 
     headers:
+      date:
+      - Mon, 10 Jul 2017 18:38:24 GMT
       content-type:
       - application/json
-      date:
-      - Mon, 10 Jul 2017 18:14:41 GMT
       content-length:
-      - '76'
-      connection:
-      - keep-alive
+      - '77'
     body:
       encoding: UTF-8
       string: |-
         {
-          "id" : 7,
+          "id" : 47,
           "is_initial_application" : true,
           "is_other_type" : false
         }
     http_version: 
-  recorded_at: Mon, 10 Jul 2017 18:14:41 GMT
+  recorded_at: Mon, 10 Jul 2017 18:38:24 GMT
 recorded_with: VCR 3.0.3

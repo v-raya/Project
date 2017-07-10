@@ -27,9 +27,9 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 064f0e21-db12-4a98-b884-6bc5c7ec78a7
+      - da2873a0-073f-42ec-ba92-a2bab1b4ba02
       x-runtime:
-      - '0.076085'
+      - '0.102115'
       transfer-encoding:
       - chunked
     body:
@@ -72,5 +72,5 @@ http_interactions:
         Schmitz","fac_licensee_type":null,"fac_lic_eff_date":"2017-03-01","fac_last_visit_date":null,"last_visit_reason":null,"fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":null,"fac_addr":"2366
         FEATHERHEAD AVE TOONTOWN CA 95800"}],"meta":{"total":6}}'
     http_version: 
-  recorded_at: Mon, 10 Jul 2017 18:14:45 GMT
+  recorded_at: Mon, 10 Jul 2017 18:38:29 GMT
 recorded_with: VCR 3.0.3
