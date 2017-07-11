@@ -14,6 +14,7 @@ export class OtherAdultsCardField extends React.Component {
         middleName: ''
       },
       dateOfBirth: '',
+      relationshipType: '',
       relationshipTypes: {
         items: this.props.props.relationshipTypes
       },
@@ -31,11 +32,12 @@ export class OtherAdultsCardField extends React.Component {
           middleName: ''
         },
         dateOfBirth: '',
+        relationshipType: '',
         relationshipTypes: {
-          items: this.props.props.relationshipTypes.items
+          items: this.props.props.relationshipTypes
         },
         availableApplicants: {
-          items: this.props.props.relationshipTypes.items
+          items: []
         }
       })
     } else {
@@ -48,7 +50,9 @@ export class OtherAdultsCardField extends React.Component {
       this.state.relationshipTypes.items.filter(function (item) {
         return item.id === event
       })
+      this.setState({relationshipType: event })
     }
+
     if (event && id === 'availableApplicants') {
       this.state.availableApplicants.items.filter(function (item) {
         return item.id === event
@@ -73,7 +77,7 @@ export class OtherAdultsCardField extends React.Component {
         <span onClick={() => this.clickClose(this.props.id)} className='pull-right glyphicon glyphicon-remove' />
         <form>
 
-          <DropDownField gridClassName='col-md-4' id='relationshipTypes'
+          <DropDownField gridClassName='col-md-4' id='relationshipType' value = {this.state.relationshipType}
             selectClassName={'reusable-select'}
             optionList={this.state.relationshipTypes.items}
             label={'relationship type'} onChange={(event, id) => this.onChange(event.target.value, ('relationshipTypes'))} />
