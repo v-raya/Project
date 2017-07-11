@@ -8,6 +8,7 @@ export default class AddressCard extends React.Component {
     super(props)
     this.state = {
       stateTypes: {items: this.props.stateTypes.items},
+      visibleMailingSameAsPhysical: false,
       addressFieldValues: {
         state: {
           id: '',
@@ -19,11 +20,21 @@ export default class AddressCard extends React.Component {
         },
         street_address: '',
         city: '',
-        zip: ''
+        zip: '',
+
+        secondary_state: {
+          id: '',
+          value: ''
+        },
+        secondary_street_address: '',
+        secondary_city: '',
+        secondary_zip: ''
       },
+
       physical_mailing_similar: ''
     }
     this.onChange = this.onChange.bind(this)
+    this.handleMailingAddress = this.handleMailingAddress.bind(this)
   }
   onChange (value, e) {
     let data = this.state.addressFieldValues
@@ -42,7 +53,20 @@ export default class AddressCard extends React.Component {
     this.props.sendProps(this.state)
   }
 
+  handleMailingAddress (event) {
+    if (event.target.value === '2') {
+      this.setState({
+        visibleMailingSameAsPhysical: true
+      })
+    } else {
+      this.setState({
+        visibleMailingSameAsPhysical: false
+      })
+    }
+  }
+
   render () {
+    const hiddenMailingSameAsPhysical = this.state.visibleMailingSameAsPhysical ? '' : 'hidden'
     return (
       <div className='card-body'>
         <div className='row'>
@@ -65,12 +89,33 @@ export default class AddressCard extends React.Component {
               label={'State'}
               onChange={(event, number) => this.onChange(event, ('state'))} />
 
-            <DropDownField defaultValue='ddd'
-              gridClassName='col-md-6'
+            <DropDownField gridClassName='col-md-6'
               selectClassName={'reusable-select'}
               optionList={yesNo.items}
               label={'Mailing address the same as Physical Address?'}
-              onChange={(event, number) => this.onChange(event.target.selectedOptions[0].text, ('physical_mailing_similar'))} />
+              onChange={this.handleMailingAddress} />
+
+            <div className={hiddenMailingSameAsPhysical}>
+              <InputComponent gridClassName='col-md-12' id='secondary_street_address'
+                label='Physical Address:' placeholder=''
+                onChange={(event, number) => this.onChange(event.target.value, ('secondary_street_address'))} />
+
+              <InputComponent gridClassName='col-md-4' id='secondary_zip'
+                label='Zip Code:' placeholder=''
+                onChange={(event, number) => this.onChange(event.target.value, ('secondary_zip'))} />
+
+              <InputComponent gridClassName='col-md-4' id='secondary_city'
+                label='City:' placeholder=''
+                onChange={(event, number) => this.onChange(event.target.value, ('secondary_city'))} />
+
+              <DropDownField gridClassName='col-md-4' id='secondary_state'
+                selectClassName={'reusable-select'}
+                optionList={this.state.stateTypes.items}
+                label={'State'}
+                onChange={(event, number) => this.onChange(event, ('secondary_state'))} />
+
+            </div>
+
           </form>
         </div>
       </div>
