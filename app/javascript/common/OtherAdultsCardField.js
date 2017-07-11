@@ -54,6 +54,11 @@ export class OtherAdultsCardField extends React.Component {
         return item.id === event
       })
     }
+    if (event && id === 'dateOfBirth') {
+      this.setState({
+        dateOfBirth: event
+      })
+    }
     this.state.nameField[id] = event
     let newNameField = this.state.nameField
     this.setState({
