@@ -11,7 +11,7 @@ describe('Verify List of Card Components', function () {
     expect(cardTag.className).toBe('cards')
   })
 
-  it('expect to have 4 componets' , function () {
-    expect(cardTag.children.length).toEqual(4)
+  it('expect to have 6 componets', function () {
+    expect(cardTag.children.length).toEqual(6)
   })
 })
