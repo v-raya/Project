@@ -6,7 +6,7 @@ module Concerns::RFA::ApplicationApiProtocolProvider
 
     def create_application(auth_header)
       #create, so we aren't posting a body
-      response = FaradayCals.post('/rfa-1a-forms?token=null', auth_header, nil)
+      response = FaradayCals.post('/rfa-1a-forms?token=null', auth_header,'{}')
       JSON.parse(response.body)
     end
 

@@ -6,6 +6,7 @@ import './stylesheets/cards-main.scss'
 export default class Forms extends React.Component {
   constructor (props) {
     super(props)
+    this.getResidentsProps = this.getResidentsProps.bind(this)
     // TODO: init dictionaries here
     // @name_types = rfa_application_helper.name_types
     // this.nameTypeValues = this.props.nameTypes
@@ -20,6 +21,9 @@ export default class Forms extends React.Component {
     var x = this.props
     // TODO: route to save
     console.log(this)
+  }
+  getResidentsProps (data) {
+    console.log(data)
   }
   render () {
     return (
@@ -45,7 +49,7 @@ export default class Forms extends React.Component {
             </div>
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h3>II. Applicant (S) - <span>Residence</span></h3>
-              <ResidenceCards {...this.props} />
+              <ResidenceCards parentProps={this.getResidentsProps} {...this.props} />
             </div>
             <div className='col-xs-2 col-sm-2 col-md-2 col-lg-2'>
 
