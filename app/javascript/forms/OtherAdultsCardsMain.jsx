@@ -20,11 +20,7 @@ export default class OtherAdultsCards extends React.Component {
   render () {
     const {formData} = this.state
     return (
-
       <div className='other_adults_cards'>
-
-        PROBLEM IS HERE with the div ID not  being makde
-
         <div id='otherAdultsSection' onClick={this.toggleOnFocus.bind(this, 'otherAdultsSection')} className={(this.state.isFocused['otherAdultsSection']) + ' ' + 'card other-adults-section double-gap-top'}>
           <div className='card-header'>
             <span>Other adults residing or Regularly present in the home</span>

@@ -23,7 +23,9 @@ export default class OtherAdultsCard extends React.Component {
       'insert': true
     })
     if (this.state.insert) {
-      this.state.otherAdultsComponentValue += 1
+      this.setState({
+        'otherAdultsComponentValue': this.state.otherAdultsComponentValue += 1
+      })
       this.state.otherAdultsComponents.push(<OtherAdultsCardField {... this} id={this.state.otherAdultsComponentValue} key={this.state.otherAdultsComponentValue} />)
     }
   }
