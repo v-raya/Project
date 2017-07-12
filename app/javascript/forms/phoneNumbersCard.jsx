@@ -1,79 +1,81 @@
+import Immutable from 'immutable'
 import React from 'react'
 import {PhoneNumberField} from '../common/phoneNumberFields'
+
+const blankPhoneNumberFields = {
+  number: '',
+  phoneType: '',
+  isPreferred: false
+}
 
 export default class PhoneComponent extends React.Component {
   constructor (props) {
     super(props)
     this.addCard = this.addCard.bind(this)
-    this.removeCard = this.removeCard.bind(this)
-    this.checkPreferred = this.checkPreferred.bind(this)
+    this.onPhoneClickClose = this.onPhoneClickClose.bind(this)
+    this.onPhoneFieldChange = this.onPhoneFieldChange.bind(this)
+
     this.state = {
-      phoneComponentValue: 0,
-      phoneFieldList: [{
-        ID: 0,
-        number: '',
-        phone_type: {
-          id: '',
-          value: ''
-        },
-        is_preferred: false
-      }],
-      'insert': true
+      phoneNumbers: [
+        blankPhoneNumberFields]
     }
   }
-  removeCard (value) {
-    let newPhoneList = []
-    newPhoneList = newPhoneList.concat(this.state.phoneFieldList)
-    if (this.state.phoneComponentValue > 0) {
-      for (var i = 0; i < this.state.phoneFieldList.length; i++) {
-        if (newPhoneList[i].ID === value) {
-          newPhoneList.splice(i, 1)
-          break
-        }
-      }
-      this.state.phoneComponentValue -= 1
+
+  onPhoneClickClose (phoneCardIndex) {
+    let phoneNumbersList = Immutable.fromJS(this.state.phoneNumbers)
+
+    phoneNumbersList = phoneNumbersList.delete(phoneCardIndex)
+    if (phoneNumbersList.size === 0) {
+      phoneNumbersList = phoneNumbersList.push(blankPhoneNumberFields)
     }
+
     this.setState({
-      phoneFieldList: newPhoneList
+      // convert to regular js array
+      phoneNumbers: phoneNumbersList.toJS()
     })
   }
+
+  onPhoneFieldChange (phoneCardIndex, value, type) {
+    let phoneNumbersList = Immutable.fromJS(this.state.phoneNumbers)
+
+    // if type preferred then set all isPreferred=false
+    if (type === 'isPreferred') {
+      phoneNumbersList = phoneNumbersList.map(x => x.set(type, false))
+    }
+
+    phoneNumbersList = phoneNumbersList.update(phoneCardIndex, x => x.set(type, value))
+
+    this.setState({
+      // convert to regular js array
+      phoneNumbers: phoneNumbersList.toJS()
+    })
+  }
+
   addCard (event) {
+    let phoneNumbersList = this.state.phoneNumbers
+    phoneNumbersList.push(blankPhoneNumberFields)
+
     this.setState({
-      'insert': true
+      phoneNumbers: phoneNumbersList
     })
-    if (this.state.insert) {
-      this.state.phoneComponentValue += 1
-      let phoneList = this.state.phoneFieldList
-      phoneList.push({
-        ID: this.state.phoneComponentValue,
-        number: '',
-        phone_type: {
-          id: '',
-          value: ''
-        },
-        is_preferred: false
-      })
-      this.setState({
-        phoneFieldList: phoneList
-      })
-    }
   }
-  checkPreferred (data) {
-    var changedPhoneList = []
-    changedPhoneList = changedPhoneList.concat(this.state.phoneFieldList)
-    for (var i = 0; i < changedPhoneList.length; i++) {
-      if (data.phoneField.ID !== changedPhoneList[i].ID) {
-        changedPhoneList[i].is_preferred = false
-      }
-    }
-  }
+
   render () {
-    let phoneListToChild = this.state.phoneFieldList
+    let phoneListToChild = this.state.phoneNumbers
     return (
       <div className='card-body'>
         {
-          phoneListToChild.map((i) => {
-            return <PhoneNumberField key={i.ID} id={i.ID} {...this}/>
+          phoneListToChild.map((numberFields, index) => {
+            return (
+              <PhoneNumberField
+                key={index}
+                index={index}
+                phoneFields={numberFields}
+                phoneTypes={this.props.phoneTypes}
+                onPhoneFieldChange={this.onPhoneFieldChange}
+                onClickClose={this.onPhoneClickClose}
+              />
+            )
           })
         }
         <div className='text-center'>

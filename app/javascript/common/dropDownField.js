@@ -17,6 +17,6 @@ const DropDownField = ({gridClassName, value, disable, selectClassName, optionLi
   </div>
 )
 DropDownField.PropTypes = {
-  value: React.PropTypes.string
+  value: PropTypes.string
 }
 export {DropDownField}
