@@ -74,17 +74,18 @@ export class OtherAdultsCardField extends React.Component {
     return (
 
       <div className='row list-item' >
-        <span onClick={() => this.clickClose(this.props.id)} className='pull-right glyphicon glyphicon-remove' />
-        <form>
+        <div > <span onClick={() => this.clickClose(this.props.id)} className='pull-right glyphicon glyphicon-remove' />
+        </div><form>
 
           <DropDownField gridClassName='col-md-4' id='relationshipType' value={this.state.relationshipType}
             selectClassName='reusable-select'
             optionList={this.state.relationshipTypes.items}
-            label='relationship type' onChange={(event, id) => this.onChange(event.target.value, ('relationshipTypes'))} />
+            label='Relationship Type' onChange={(event, id) => this.onChange(event.target.value, ('relationshipTypes'))} />
           <DropDownField gridClassName='col-md-4' id='availableApplicants'
             selectClassName='reusable-select'
             optionList={this.state.availableApplicants.items}
-            label='to whom' onChange={(event, id) => this.onChange(event.target.value, ('availableApplicants'))} />
+            label='To Whom' onChange={(event, id) => this.onChange(event.target.value, ('availableApplicants'))} />
+
           <InputComponent gridClassName='col-md-4' id='dateOfBirth' value={this.state.dateOfBirth}
             label='Date of Birth' placeholder='Enter Date of Birth'
             type='text' onChange={(event, id) => this.onChange(event.target.value, ('dateOfBirth'))} />
