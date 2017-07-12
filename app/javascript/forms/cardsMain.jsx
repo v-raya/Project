@@ -1,20 +1,25 @@
 import React from 'react'
 import NameCard from './name_card'
-import PhoneComponent from './phoneNumber_card'
-import AboutApplicant from './aboutApplicant_card'
+import PhoneComponent from './phoneNumbersCard.jsx'
+import AboutApplicant from './aboutApplicantCard'
 import Employment from './employment_card'
 
 export default class Cards extends React.Component {
   constructor (props) {
     super(props)
+    this.clickClose = this.clickClose.bind(this)
     this.state = {
-      isFocused: {}
+      isFocused: {},
+      numApplicantCards: this.props.id + 1
     }
+  }
+  clickClose (id) {
+    this.props.clickClose(id)
   }
   toggleOnFocus (name, event) {
     let focused = this.state.isFocused
     focused = {}
-    let focusedCard = focused[name] == 'focused' ? 'show' : 'edit'
+    let focusedCard = focused[name] === 'focused' ? 'show' : 'edit'
     focused[name] = focusedCard
     this.setState({
       isFocused: focused
@@ -22,8 +27,14 @@ export default class Cards extends React.Component {
   }
   render () {
     const {formData} = this.state
+    let showClose = this.props.id !== 0
+    let applicantNumber = this.state.numApplicantCards
+
     return (
+
       <div className='cards'>
+        <h3>I. Applicant {String(applicantNumber)} - <span>Information</span></h3>
+        {showClose && <span onClick={() => this.clickClose(this.props.id)} className='pull-right glyphicon glyphicon-remove' />}
         <div id='nameSection' onClick={this.toggleOnFocus.bind(this, 'nameSection')} className={(this.state.isFocused['nameSection']) + ' ' + 'card name-section double-gap-top'}>
           <div className='card-header'>
             <span>Name</span>

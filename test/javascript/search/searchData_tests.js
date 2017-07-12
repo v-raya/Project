@@ -37,7 +37,6 @@ describe('Render Search Data', function () {
   }
   const renderDataCop = TestUtils.createRenderer()
   const dataCompRendered = renderDataCop.render(<SearchData {...props} />)
-  debugger
   it('Verify Search Data component was Rendered', function () {
   	let toggleDiv = dataCompRendered.props
   	expect(toggleDiv.className).toEqual('search-toggle col-xs-12 col-sm-12 col-md-12 col-lg-12')

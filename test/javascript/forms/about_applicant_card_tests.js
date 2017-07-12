@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutApplicant from '../../../app/javascript/forms/aboutApplicant_card.js'
+import AboutApplicant from '../../../app/javascript/forms/aboutApplicantCard.js'
 var TestUtils = require('react-dom/lib/ReactTestUtils')
 import {languageTypes, stateTypes, educationLevels, genderTypes, ethnicityTypes} from '../helpers/constants'
 

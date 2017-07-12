@@ -6,7 +6,17 @@ import {yesNo} from '../constants/constants'
 export default class AddressCard extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {stateTypes: {items: this.props.stateTypes.items}}
+    this.state = {
+      stateTypes: {items: this.props.stateTypes.items},
+      yesNo: {
+        id: '',
+        value: ''
+      },
+      stateDropDown: {
+        id: '',
+        value: ''
+      }
+    }
     this.onChange = this.onChange.bind(this)
   }
   onChange (value) {
@@ -29,11 +39,13 @@ export default class AddressCard extends React.Component {
 
             <DropDownField gridClassName='col-md-4'
               selectClassName={'reusable-select'}
+              value={this.state.stateDropDown.id}
               optionList={this.state.stateTypes.items}
               label={'State'} />
 
             <DropDownField defaultValue='ddd'
               gridClassName='col-md-6'
+              value={this.state.yesNo.id}
               selectClassName={'reusable-select'}
               optionList={yesNo.items}
               label={'Mailing address the same as Physical Address?'} />

@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutThisResidenceCard from '../../../app/javascript/forms/about_this_residence_card.js'
+import AboutThisResidenceCard from '../../../app/javascript/forms/aboutThisResidenceCard.js'
 var TestUtils = require('react-dom/lib/ReactTestUtils')
 import {languageTypes, residenceTypes} from '../helpers/constants'
 

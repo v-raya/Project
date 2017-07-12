@@ -7,6 +7,13 @@ import './stylesheets/cards-main.scss'
 export default class Forms extends React.Component {
   constructor (props) {
     super(props)
+    this.addCard = this.addCard.bind(this)
+    this.removeCard = this.removeCard.bind(this)
+    this.state = {
+      applicantValue: 0,
+      numApplicantCards: [0]
+    }
+    this.getResidentsProps = this.getResidentsProps.bind(this)
     // TODO: init dictionaries here
     // @name_types = rfa_application_helper.name_types
     // this.nameTypeValues = this.props.nameTypes
@@ -22,7 +29,32 @@ export default class Forms extends React.Component {
     // TODO: route to save
     console.log(this)
   }
+  removeCard (id) {
+    if (id > 0) {
+      let newtotalCards = []
+      newtotalCards = newtotalCards.concat(this.state.numApplicantCards)
+      this.state.applicantValue -= 1
+      newtotalCards.pop()
+      this.setState({
+        numApplicantCards: newtotalCards
+      })
+    }
+  }
+  addCard () {
+    let totalCards = []
+    totalCards = totalCards.concat(this.state.numApplicantCards)
+    this.state.applicantValue += 1
+    totalCards.push(this.state.applicantValue)
+    this.setState({
+      numApplicantCards: totalCards
+    })
+  }
+  getResidentsProps (data) {
+    console.log(data)
+  }
   render () {
+    var numApplicantCards = this.state.numApplicantCards
+    const propData = this.props
     return (
       <div className='main_page'>
         <div className='header_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -42,13 +74,21 @@ export default class Forms extends React.Component {
             </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-              <h3>I. Application 1 - <span>Information</span></h3>
-              <Cards {...this.props} />
+              {
+                numApplicantCards.map((i) => {
+                  return <Cards clickClose={this.removeCard} key={i} id={i} {...propData} />
+                })
+              }
+            </div>
+            <div className='add-another col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+              <div className='text-center'>
+                <button onClick={this.addCard} className='btn btn-default'>Add Another Applicant +</button>
+              </div>
             </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h3>II. Applicant (S) - <span>Residence</span></h3>
-              <ResidenceCards {...this.props} />
+              <ResidenceCards parentProps={this.getResidentsProps} {...this.props} />
             </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>

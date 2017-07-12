@@ -1,5 +1,5 @@
 import React from 'react'
-import AddressCard from '../../../app/javascript/forms/address_card.js'
+import AddressCard from '../../../app/javascript/forms/addressCard.js'
 var TestUtils = require('react-dom/lib/ReactTestUtils')
 import {stateTypes} from '../helpers/constants'
 
