@@ -1,69 +1,53 @@
 FROM ruby:latest
 
-RUN gem install rails
+RUN gem install rails \
+  && gem install puma
 
-RUN gem install puma
+# Get latest nodejs PPA and other repos
+RUN apt-get update \
+  && curl -sL https://deb.nodesource.com/setup_7.x | bash - \
+  && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+  && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+  && apt-get install -y nodejs yarn build-essential chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
 
-RUN apt-get update
+#### ENV variables
+ENV PHANTOM_JS=phantomjs-2.1.1-linux-x86_64 \
+  BASE_CALS_API_URL=http://localhost:3001/v1 \
+  CALS_API_URL=http://tpt2.dev.cwds.io:8084 \
+  BASE_CALS_API_URL=http://calsmockapi:3001/v1 \
+  AUTHENTICATION_API_BASE_URL=http://perry.dev.cwds.tabordasolutions.net \
+  REDIS_HOST=calsredis \
+  REDIS_PORT=6379 \
+  RAILS_RELATIVE_URL_ROOT=/cals
 
-# Get latest nodejs PPA
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
-
-# install nodejs and npm
-RUN apt-get install -y nodejs
-
-# get latest yarn repo
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-
-# install yarn
-RUN apt-get update && apt-get install yarn
-
-RUN apt-get install -y build-essential chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
-
-ENV PHANTOM_JS=phantomjs-2.1.1-linux-x86_64
 # RUN wget --user-agent="Mozilla" https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2
 # RUN wget 'https://cambriasolutionsinc-my.sharepoint.com/personal/dtalwar_cambriasolutions_com/_layouts/15/guestaccess.aspx?docid=07376a6ae3f3c45dea8a9135781a0bbfc&authkey=AaSPiMF0Aza3iH9SWKPDBsg' -O $PHANTOM_JS.tar.bz2
-RUN wget 'https://drive.google.com/uc?export=download&id=0B8styZ_fXfKEQkFPTldZWkRYV3M' -O $PHANTOM_JS.tar.bz2
+RUN wget 'https://drive.google.com/uc?export=download&id=0B8styZ_fXfKEQkFPTldZWkRYV3M' -O /usr/local/share/$PHANTOM_JS.tar.bz2
 
-RUN mv $PHANTOM_JS.tar.bz2 /usr/local/share/
-WORKDIR /usr/local/share/
-RUN cd /usr/local/share/
-RUN tar xvjf $PHANTOM_JS.tar.bz2
-RUN ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/share/phantomjs
-RUN ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin/phantomjs
-RUN ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/bin/phantomj
+WORKDIR /usr/local/share/ 
 
+RUN cd /usr/local/share/ \
+  && tar xvjf $PHANTOM_JS.tar.bz2 \
+  && ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/share/phantomjs \
+  && ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin/phantomjs \
+  && ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/bin/phantomjs
 
-RUN mkdir /var/www; cd /var/www;
+RUN mkdir /var/www \
+  && cd /var/www
 
 # clone CALS
 RUN git clone -b development https://github.com/ca-cwds/CALS.git /var/www/cals
 
 WORKDIR /var/www/cals
-RUN cd /var/www/cals
 
-RUN bundle install
-
-#run node package installer
-RUN yarn install
+RUN cd /var/www/cals \
+  && bundle install \
+  && yarn install
 
 # RUN tests
-ENV BASE_CALS_API_URL=http://localhost:3001/v1
-ENV CALS_API_URL=http://tpt2.dev.cwds.io:8084
-
-RUN rails assets:precompile RAILS_ENV=test
-RUN npm run spec-ci
-RUN npm run karma-ci
-
-#### ENV variables
-# cals api url
-ENV BASE_CALS_API_URL=http://calsmockapi:3001/v1
-ENV AUTHENTICATION_API_BASE_URL=http://perry.dev.cwds.tabordasolutions.net
-ENV REDIS_HOST=calsredis
-ENV REDIS_PORT=6379
-# ENV SANDBOX_LANDING_URL=
-ENV RAILS_RELATIVE_URL_ROOT=/cals
+RUN rails assets:precompile RAILS_ENV=test \
+  && npm run spec-ci \
+  && npm run karma-ci
 
 # compile assets
 RUN rails assets:precompile RAILS_ENV=aws_dev
