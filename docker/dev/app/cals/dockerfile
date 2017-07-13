@@ -45,8 +45,9 @@ ENV BASE_CALS_API_URL=http://localhost:3001/v1 \
   
 # RUN tests
 RUN rails assets:precompile RAILS_ENV=test \
-  && npm run spec-ci \
-  && npm run karma-ci
+  && npm run spec-ci 
+#
+#  && npm run karma-ci
 
 # ENV variables
 ENV BASE_CALS_API_URL=http://calsmockapi:3001/v1 \
