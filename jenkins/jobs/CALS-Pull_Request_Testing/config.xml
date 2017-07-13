@@ -102,6 +102,7 @@
 export PATH=/var/lib/jenkins/.rvm/gems/ruby-2.3.3/bin:/var/lib/jenkins/.rvm/gems/ruby-2.3.3@global/bin:/var/lib/jenkins/.rvm/rubies/ruby-2.3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/aws/bin:/var/lib/jenkins/.rvm/bin:/var/lib/jenkins/.rvm/bin
 
 export BASE_CALS_API_URL=&quot;http://localhost:3001/v1&quot;
+export CALS_API_URL=&quot;http://tpt2.dev.cwds.io:8084&quot;
 # export RAILS_RELATIVE_URL_ROOT=&quot;/&quot;
 export DISABLE_SPRING=1
 
