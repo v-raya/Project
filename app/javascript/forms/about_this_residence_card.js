@@ -66,4 +66,4 @@ export default class AboutThisResidenceCard extends React.Component {
       </div>
     )
   }
-            }
+}

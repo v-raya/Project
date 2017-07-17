@@ -1,5 +1,5 @@
 import React from 'react'
-import PhoneNumbersCard from '../../../app/javascript/forms/phoneNumbersCard.jsx'
+import PhoneNumbersCard from '../../../app/javascript/forms/phoneNumberCardsGroup.jsx'
 var TestUtils = require('react-dom/lib/ReactTestUtils')
 
 describe('Verify Phone Card Component View', function () {

@@ -1,84 +1,37 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {InputComponent} from './inputFields'
 import {DropDownField} from './dropDownField'
 
 export class NameCardField extends React.Component {
-  constructor (props) {
-    super(props)
-    this.clickClose = this.clickClose.bind(this)
-    this.state = {
-      nameField: {
-        first_name: '',
-        last_name: '',
-        middle_name: '',
-        nameType : ''
-      },
-      ifLegal: false,
-      nameTypes: {
-        items: this.props.props.nameTypes.items
-      }
-    }
-  }
-  clickClose (id) {
-    if (id === 1) {
-      this.setState({
-        nameField: {
-          first_name: '',
-          last_name: '',
-          middle_name: ''
-        }
-      })
-    } else {
-      this.props.removeCard(id)
-    }
-  }
-  onChange (event, id) {
-    if (event && id === 'name_type') {
-      var value = this.state.nameTypes.items.filter(function (item) {
-        return item.id === event
-      })
-    }
-    this.state.nameField[id] = event
-    let newNameField = this.state.nameField
-    this.setState({
-      nameField: newNameField
-    })
-    var finalState = this.state
-  }
   render () {
-    // let nameTypes = this.state.nameTypes
-    if (this.props.id === 1) {
-      this.state.ifLegal = true
-      this.state.nameTypes = {
-        items: [
-          {
-            'id': 2,
-            'value': 'Legal'
-          }
-        ]
-      }
-    }
     return (
-      <div className='row list-item'>
-        <span onClick={() => this.clickClose(this.props.id)} className='pull-right glyphicon glyphicon-remove' />
-        <form>
-          <InputComponent gridClassName='col-md-4' id='firstname' value={this.state.nameField.first_name}
-            label='First Name' placeholder='Enter First Name'
-            type={'text'} onChange={(event, first_name) => this.onChange(event.target.value, ('first_name'))} />
-          <InputComponent gridClassName='col-md-4' id='middleName' value={this.state.nameField.middle_name}
-            label='Middle Name' placeholder='Enter Middle Name'
-            type={'text'} onChange={(event) => this.onChange(event.target.value, ('middle_name'))} />
-          <InputComponent gridClassName='col-md-4' id='lastName' value={this.state.nameField.last_name}
-            label='Last Name' placeholder='Enter Last Name'
-            type={'text'} onChange={(event) => this.onChange(event.target.value, ('last_name'))} />
-          <DropDownField gridClassName='col-md-4' id='name_type'
-            selectClassName={'reusable-select'}
-            disable={this.state.ifLegal}
-            value={this.state.nameField.nameType.id}
-            optionList={this.state.nameTypes.items}
-            label={'Name Type'} onChange={(event, id) => this.onChange(event.target.value, ('name_type'))} />
-        </form>
-      </div>
+      <form>
+        <InputComponent gridClassName='col-md-4' id='firstname'
+          value={this.props.fieldValues.first_name}
+          label='First Name' placeholder='Enter First Name'
+          type={'text'} onChange={(event) => this.props.onChange(this.props.index, 'first_name', event.target.value)} />
+        <InputComponent gridClassName='col-md-4' id='middleName'
+          value={this.props.fieldValues.middle_name}
+          label='Middle Name' placeholder='Enter Middle Name'
+          type={'text'} onChange={(event) => this.props.onChange(this.props.index, 'middle_name', event.target.value)} />
+        <InputComponent gridClassName='col-md-4' id='lastName'
+          value={this.props.fieldValues.last_name}
+          label='Last Name' placeholder='Enter Last Name'
+          type={'text'} onChange={(event) => this.props.onChange(this.props.index, 'last_name', event.target.value)} />
+        <DropDownField gridClassName='col-md-4' id='name_type'
+          value={this.props.fieldValues.name_type.id}
+          selectClassName={'reusable-select'}
+          optionList={this.props.nameTypes}
+          label={'Name Type'}
+          onChange={(event, id) => this.props.onChange(this.props.index, 'name_type', {id: event.target.selectedOptions[0].value, value: event.target.selectedOptions[0].text})} />
+      </form>
     )
   }
+}
+
+NameCardField.propTypes = {
+  nameTypes: PropTypes.array.isRequired,
+  fieldValues: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired
 }

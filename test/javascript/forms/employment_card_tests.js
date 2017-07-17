@@ -1,5 +1,5 @@
 import React from 'react'
-import Employment from '../../../app/javascript/forms/employment_card.js'
+import Employment from '../../../app/javascript/forms/employmentCard.jsx'
 var TestUtils = require('react-dom/lib/ReactTestUtils')
 import {stateTypes, salaryTypes} from '../helpers/constants'
 

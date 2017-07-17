@@ -28,7 +28,19 @@ class Rfa::A01Controller < CalsBaseController
   end
 
   def update
+    applicants = params[:applicants]
 
+    application_response = {}
+
+    applicants_result = []
+    applicants.each do |applicant|
+      applicants_result << rfa_applicant_helper.create(params[:id], applicant)
+    end
+
+    application_response[:applicants] = applicants_result
+
+    # params[:residence]
+    # params[:other_adults]
   end
 
   private

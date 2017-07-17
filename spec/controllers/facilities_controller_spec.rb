@@ -25,7 +25,7 @@ describe FacilitiesController do
       request.headers['Content-Type'] = 'application/json'
       request.headers['Accept'] = 'application/json'
 
-      post :search, {:params => {:params => {:fac_name => ['home']}}}
+      post :search, {:params => {:fac_name => ['home']}}
       expect(response.status).to eq(200)
       expect(response.body.include?('TWEEDLE'))
     end

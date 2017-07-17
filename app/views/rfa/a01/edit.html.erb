@@ -1,6 +1,7 @@
 <div id="edi_page">
   <%#byebug%>
   <%= react_component('forms', {
+    application_id: params[:id],
     nameTypes: @name_types,
     phoneTypes: @phone_types,
     genderTypes: @gender_types,

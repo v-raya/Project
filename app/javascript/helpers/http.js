@@ -4,7 +4,7 @@ const getCsrfToken = function getCsrfToken (value) {
 }
 export const fetchRequest = (url, method, params, headerParams) => {
   return fetch(url, {
-    method: 'POST',
+    method: method,
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
@@ -12,8 +12,6 @@ export const fetchRequest = (url, method, params, headerParams) => {
       'X-CSRF-param': getCsrfToken('csrf-param')
     },
     credentials: 'same-origin',
-    body: JSON.stringify({
-      params
-    })
+    body: JSON.stringify(params)
   })
 }
