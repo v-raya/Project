@@ -8,65 +8,59 @@ export default class AddressCard extends React.Component {
     super(props)
     this.state = {
       stateTypes: {items: this.props.stateTypes.items},
-      visibleMailingSameAsPhysical: false,
       addressFieldValues: {
-        state: {
-          id: '',
-          value: ''
+        address: [{
+          street_address: '',
+          zip: '',
+          city: '',
+          state: {
+            id: '',
+            value: ''
+          },
+          type: {
+            id: '1',
+            value: 'physical'
+          }
         },
-        type: {
-          id: '1',
-          value: 'physical'
-        },
-        street_address: '',
-        city: '',
-        zip: '',
-
-        secondary_state: {
-          id: '',
-          value: ''
-        },
-        secondary_street_address: '',
-        secondary_city: '',
-        secondary_zip: ''
+        {
+          street_address: '',
+          zip: '',
+          city: '',
+          state: {
+            id: '',
+            value: ''
+          },
+          type: {
+            id: '2',
+            value: 'mailing'
+          }
+        }
+        ]
       },
-
-      physical_mailing_similar: ''
+      physical_mailing_similar: true
     }
     this.onChange = this.onChange.bind(this)
-    this.handleMailingAddress = this.handleMailingAddress.bind(this)
   }
   onChange (value, e) {
-    let data = this.state.addressFieldValues
+    let data = this.state.addressFieldValues.address
+    let index = e.includes('secondary') === true ? 1 : 0
     if (typeof (value) !== 'object' && e === 'physical_mailing_similar') {
       this.state.physical_mailing_similar = value.toLowerCase() === 'yes'
     } else if (typeof (value) === 'object') {
-      data[e] = {id: value.target.selectedOptions[0].value, value: value.target.selectedOptions[0].text}
+      data[index]['state'] = {id: value.target.selectedOptions[0].value, value: value.target.selectedOptions[0].text}
     } else {
-      data[e] = value
+      data[index][e] = value
     }
 
     this.setState({
       addressFieldValues: data
     })
 
-    this.props.sendProps(this.state)
-  }
-
-  handleMailingAddress (event) {
-    if (event.target.value === '2') {
-      this.setState({
-        visibleMailingSameAsPhysical: true
-      })
-    } else {
-      this.setState({
-        visibleMailingSameAsPhysical: false
-      })
-    }
+    this.props.sendProps(this.state.addressFieldValues)
   }
 
   render () {
-    const hiddenMailingSameAsPhysical = this.state.visibleMailingSameAsPhysical ? '' : 'hidden'
+    const hiddenMailingSameAsPhysical = this.state.physical_mailing_similar ? 'hidden' : ''
     return (
       <div className='card-body'>
         <div className='row'>
@@ -93,11 +87,11 @@ export default class AddressCard extends React.Component {
               selectClassName={'reusable-select'}
               optionList={yesNo.items}
               label={'Mailing address the same as Physical Address?'}
-              onChange={this.handleMailingAddress} />
+              onChange={(event, number) => this.onChange(event.target.selectedOptions[0].text, ('physical_mailing_similar'))}  />
 
             <div className={hiddenMailingSameAsPhysical}>
               <InputComponent gridClassName='col-md-12' id='secondary_street_address'
-                label='Physical Address:' placeholder=''
+                label='Mailing Address:' placeholder=''
                 onChange={(event, number) => this.onChange(event.target.value, ('secondary_street_address'))} />
 
               <InputComponent gridClassName='col-md-4' id='secondary_zip'

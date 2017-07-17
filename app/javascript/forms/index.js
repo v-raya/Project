@@ -14,15 +14,9 @@ export default class Forms extends React.Component {
       numApplicantCards: [0]
     }
     this.getResidentsProps = this.getResidentsProps.bind(this)
-    // TODO: init dictionaries here
-    // @name_types = rfa_application_helper.name_types
-    // this.nameTypeValues = this.props.nameTypes
-    // this.phoneTypeValues = this.props.phoneTypes
-    // this.genderTypeValues = this.props.genderTypes
-    // this.ethnicityTypeValues = this.props.ethnicityTypes
-    // this.educationLevelValues = this.props.educationLevels
-    // this.languageTypeValues = this.props.languageTypes
-    // this.salaryTypeValues = this.props.salaryTypes
+    // TODO: add fetch methof
+
+    // this.getResidentData = this.getResidentData.bind(this)
   }
   submitForm () {
     var x = this.props
@@ -52,6 +46,14 @@ export default class Forms extends React.Component {
   getResidentsProps (data) {
     console.log(data)
   }
+
+  /*  getResidentData (data) {
+    let formData = this.state.application
+    formData['residence'] = data
+    this.setState({
+      application: formData
+    })
+  } */
   render () {
     var numApplicantCards = this.state.numApplicantCards
     const propData = this.props
@@ -88,6 +90,9 @@ export default class Forms extends React.Component {
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h3>II. Applicant (S) - <span>Residence</span></h3>
+{/*
+              <ResidenceCards getData={this.getResidentData} {...this.props} />
+*/}
               <ResidenceCards parentProps={this.getResidentsProps} {...this.props} />
             </div>
 
