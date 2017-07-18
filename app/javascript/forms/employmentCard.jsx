@@ -3,7 +3,7 @@ import {InputComponent} from '../common/inputFields'
 import {DropDownField} from '../common/dropDownField'
 import {getDictionaryId} from '../helpers/commonHelper.jsx'
 
-const blankEmploymentFields = {
+const blankEmploymentFields = Object.freeze({
   employer_name: '',
   occupation: '',
   income: '',
@@ -20,7 +20,7 @@ const blankEmploymentFields = {
       value: ''
     }
   }
-}
+})
 
 export default class Employment extends React.Component {
   onEmploymentChange (key, value) {

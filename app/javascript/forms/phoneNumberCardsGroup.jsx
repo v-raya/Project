@@ -4,11 +4,11 @@ import PropTypes from 'prop-types'
 import {PhoneNumberField} from '../common/phoneNumberFields'
 import {getDictionaryId, checkArrayObjectPresence} from '../helpers/commonHelper.jsx'
 
-const blankPhoneNumberFields = {
+const blankPhoneNumberFields = Object.freeze({
   number: '',
   phone_type: {id: '', value: ''},
   preferred: false
-}
+})
 
 export default class PhoneComponent extends React.Component {
   constructor (props) {

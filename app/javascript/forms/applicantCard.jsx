@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Immutable from 'immutable'
 import NameCard from './nameCard'
 import PhoneComponent from './phoneNumberCardsGroup.jsx'
 import AboutApplicant from './aboutApplicantCard.jsx'
@@ -13,29 +14,10 @@ export default class ApplicantCard extends React.Component {
     this.getFocusClassName = this.getFocusClassName.bind(this)
   }
 
-  getAboutAplicantData (data) {
-    let aboutApplicantOj = data
-    let newStateData = this.state.applicantData
-    for (var k in aboutApplicantOj) newStateData[k] = aboutApplicantOj[k]
-    this.setState({
-      applicantData: newStateData
-    })
-    this.props.getData(this.state.applicantData)
-  }
-  getNameData (index, key, value) {
-    let applicantData = this.props.applicantFields
-    if (index >= 0) {
-      applicantData.other_names = value.other_names
-    } else {
-      applicantData[key] = value[key]
-    }
-    this.props.setParentState(this.props.index, applicantData)
-  }
-
   setApplicantState (key, value) {
-    let applicantData = this.props.applicantFields
-    applicantData[key] = value
-    this.props.setParentState(this.props.index, applicantData)
+    let applicantData = Immutable.fromJS(this.props.applicantFields)
+    applicantData = applicantData.set(key, value)
+    this.props.setParentState(this.props.index, applicantData.toJS())
   }
 
   getFocusClassName (componentName) {
@@ -71,8 +53,7 @@ export default class ApplicantCard extends React.Component {
             raceTypes={this.props.raceTypes}
             languageTypes={this.props.languageTypes}
             applicantFields={this.props.applicantFields}
-            setParentState={this.setApplicantState}
-            sendToParent={this.getAboutAplicantData.bind(this)} />
+            setParentState={this.setApplicantState} />
         </div>
 
         <div id='employmentSection' onClick={() => this.props.setFocusState('EmploymentCard')}

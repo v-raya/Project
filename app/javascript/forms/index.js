@@ -16,9 +16,7 @@ export default class Forms extends React.Component {
         residence: {}
       }
     }
-    this.getApplicantData = this.getApplicantData.bind(this)
     this.submitForm = this.submitForm.bind(this)
-    this.getResidentsProps = this.getResidentsProps.bind(this)
 
     this.setApplicationState = this.setApplicationState.bind(this)
     this.setFocusState = this.setFocusState.bind(this)
@@ -26,13 +24,7 @@ export default class Forms extends React.Component {
   componentDidMount () {
     // set Dictionaty Here
   }
-  getApplicantData (data) {
-    let formData = this.state.application
-    formData['applicants'] = data
-    this.setState({
-      application: formData
-    })
-  }
+
   submitForm () {
     var url = '/rfa/a01/' + this.props.application_id
     let params = this.state.application
@@ -58,20 +50,7 @@ export default class Forms extends React.Component {
     this.setState({focusComponentName: focusComponentName})
   }
 
-  getResidentsProps (data) {
-    console.log(data)
-  }
-
-  /*  getResidentData (data) {
-    let formData = this.state.application
-    formData['residence'] = data
-    this.setState({
-      application: formData
-    })
-  } */
   render () {
-    var numApplicantCards = this.state.numApplicantCards
-    const propData = this.props
     return (
       <div className='main_page'>
         <div className='header_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>

@@ -5,7 +5,7 @@ import {InputComponent} from '../common/inputFields'
 import {DropDownField} from '../common/dropDownField'
 import {checkArrayObjectPresence} from '../helpers/commonHelper.jsx'
 
-const blankNameFields = {
+const blankNameFields = Object.freeze({
   first_name: '',
   middle_name: '',
   last_name: '',
@@ -13,7 +13,7 @@ const blankNameFields = {
     id: '',
     value: ''
   }
-}
+})
 
 const legalTypeId = 2
 

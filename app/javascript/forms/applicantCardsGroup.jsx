@@ -3,7 +3,7 @@ import React from 'react'
 import ApplicantCard from './applicantCard.jsx'
 import {checkArrayObjectPresence} from '../helpers/commonHelper.jsx'
 
-const blankApplicantFields = {
+const blankApplicantFields = Object.freeze({
   first_name: '',
   middle_name: '',
   last_name: '',
@@ -17,7 +17,7 @@ const blankApplicantFields = {
   driver_license_state: '',
   email: '',
   phones: []
-}
+})
 
 export default class ApplicantCardsGroup extends React.Component {
   constructor (props) {
@@ -25,7 +25,6 @@ export default class ApplicantCardsGroup extends React.Component {
     this.addCard = this.addCard.bind(this)
     this.onApplicantClickClose = this.onApplicantClickClose.bind(this)
 
-    this.getApplicantData = this.getApplicantData.bind(this)
     this.setApplicantsState = this.setApplicantsState.bind(this)
   }
 
@@ -51,9 +50,6 @@ export default class ApplicantCardsGroup extends React.Component {
     this.props.setParentState('applicants', applicantsList.toJS())
   }
 
-  getApplicantData (data) {
-    // set Props here
-  }
   render () {
     let applicantsList = checkArrayObjectPresence(this.props.applicants) || [blankApplicantFields]
 
