@@ -3,106 +3,32 @@ import {InputComponent} from './inputFields'
 import {DropDownField} from './dropDownField'
 
 export class OtherAdultsCardField extends React.Component {
-  constructor (props) {
-    super(props)
-    this.clickClose = this.clickClose.bind(this)
-    this.onChange = this.onChange.bind(this)
-    this.state = {
-      nameField: {
-        firstName: '',
-        lastName: '',
-        middleName: ''
-      },
-      dateOfBirth: '',
-      relationshipType: '',
-      relationshipTypes: {
-        items: this.props.props.relationshipTypes
-      },
-      availableApplicants: {
-        items: []
-      }
-    }
-  }
-  clickClose (id) {
-    if (id === 1) {
-      this.setState({
-        nameField: {
-          firstName: '',
-          lastName: '',
-          middleName: ''
-        },
-        dateOfBirth: '',
-        relationshipType: '',
-        relationshipTypes: {
-          items: this.props.props.relationshipTypes
-        },
-        availableApplicants: {
-          items: []
-        }
-      })
-    } else {
-      this.props.removeCard(id)
-    }
-  }
-
-  onChange (event, id) {
-    if (event && id === 'relationshipTypes') {
-      this.state.relationshipTypes.items.filter(function (item) {
-        return item.id === event
-      })
-      this.setState({relationshipType: event })
-    }
-
-    if (event && id === 'availableApplicants') {
-      this.state.availableApplicants.items.filter(function (item) {
-        return item.id === event
-      })
-    }
-    if (event && id === 'dateOfBirth') {
-      this.setState({
-        dateOfBirth: event
-      })
-    }
-    this.state.nameField[id] = event
-    let newNameField = this.state.nameField
-    this.setState({
-      nameField: newNameField
-    })
-  }
-
   render () {
+    const adult = this.props.otherAdults
+
     return (
-
-      <div className='row list-item' >
-        <div > <span onClick={() => this.clickClose(this.props.id)} className='pull-right glyphicon glyphicon-remove' />
-        </div><form>
-
-          <DropDownField gridClassName='col-md-4' id='relationshipType' value={this.state.relationshipType}
+        <form>
+          <DropDownField gridClassName='col-md-4' id='relationshipType' value={adult.relationshipType}
             selectClassName='reusable-select'
-            optionList={this.state.relationshipTypes.items}
-            label='Relationship Type' onChange={(event, id) => this.onChange(event.target.value, ('relationshipTypes'))} />
+            optionList={this.props.relationshipTypes}
+            label='Relationship Type' onChange={(event) => this.props.onFieldChange(this.props.index, event.target.value, 'relationshipType')} />
           <DropDownField gridClassName='col-md-4' id='availableApplicants'
             selectClassName='reusable-select'
-            optionList={this.state.availableApplicants.items}
-            label='To Whom' onChange={(event, id) => this.onChange(event.target.value, ('availableApplicants'))} />
-
-          <InputComponent gridClassName='col-md-4' id='dateOfBirth' value={this.state.dateOfBirth}
+            optionList={adult.availableApplicants.items}
+            label='To Whom' onChange={(event) => this.props.onFieldChange(this.props.index, event.target.value, 'availableApplicant')} />
+          <InputComponent gridClassName='col-md-4' id='dateOfBirth' value={adult.dateOfBirth}
             label='Date of Birth' placeholder='Enter Date of Birth'
-            type='text' onChange={(event, id) => this.onChange(event.target.value, ('dateOfBirth'))} />
-
-          <InputComponent gridClassName='col-md-4' id='firstName' value={this.state.nameField.firstName}
+            type='text' onChange={(event) => this.props.onFieldChange(this.props.index, event.target.value, 'dateOfBirth')} />
+          <InputComponent gridClassName='col-md-4' id='firstName' value={adult.nameField.firstName}
             label='First Name' placeholder='Enter First Name'
-            type='text' onChange={(event, id) => this.onChange(event.target.value, ('firstName'))} />
-          <InputComponent gridClassName='col-md-4' id='middleName' value={this.state.nameField.middleName}
+            type='text' onChange={(event) => this.props.handleNameFieldInput(this.props.index, event.target.value, ('firstName'))} />
+          <InputComponent gridClassName='col-md-4' id='middleName' value={adult.nameField.middleName}
             label='Middle Name' placeholder='Enter Middle Name'
-            type='text' onChange={(event, id) => this.onChange(event.target.value, ('middleName'))} />
-          <InputComponent gridClassName='col-md-4' id='lastName' value={this.state.nameField.lastName}
+            type='text' onChange={(event, id) => this.props.handleNameFieldInput(this.props.index, event.target.value, ('middleName'))} />
+          <InputComponent gridClassName='col-md-4' id='lastName' value={adult.nameField.lastName}
             label='Last Name' placeholder='Enter Last Name'
-            type='text' onChange={(event, id) => this.onChange(event.target.value, ('lastName'))} />
-
+            type='text' onChange={(event, id) => this.props.handleNameFieldInput(this.props.index, event.target.value, ('lastName'))} />
         </form>
-      </div>
-
     )
   }
-            }
+          }

@@ -2,7 +2,7 @@ import React from 'react'
 // import Cards from './cardsMain'
 import ApplicantCardsGroup from './applicantCardsGroup.jsx'
 import ResidenceCards from './residenceCardsMain'
-import OtherAdultsCard from './OtherAdultsCardsMain'
+import OtherAdultsCard from './OtherAdultsCardsGroup'
 import './stylesheets/cards-main.scss'
 import {fetchRequest} from '../helpers/http'
 
@@ -13,7 +13,8 @@ export default class Forms extends React.Component {
       focusComponentName: '',
       application: {
         applicants: [],
-        residence: {}
+        residence: {},
+        otherAdults: []
       }
     }
     this.submitForm = this.submitForm.bind(this)
@@ -30,10 +31,10 @@ export default class Forms extends React.Component {
     let params = this.state.application
     fetchRequest(url, 'PUT', this.state.application).then(
       response => response.json()).then((response) => {
-      return this.setState({
-        formData: response
+        return this.setState({
+          formData: response
+        })
       })
-    })
       .catch(error => {
         console.log(error)
         return this.setState({
@@ -90,12 +91,18 @@ export default class Forms extends React.Component {
                 residence={this.state.application.residence}
                 setFocusState={this.setFocusState}
                 parentProps={this.getResidentsProps}
+
                 {...this.props} />
             </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h3>V. Applicant (S) - <span>Other Adults</span></h3>
-              <OtherAdultsCard {...this.props} />
+              <OtherAdultsCard
+                focusComponentName={this.state.focusComponentName}
+                setFocusState={this.setFocusState}
+                setParentState={this.setApplicationState}
+                otherAdults={this.state.application.otherAdults}
+                {...this.props} />
             </div>
 
             <div className='col-xs-2 col-sm-2 col-md-2 col-lg-2'>

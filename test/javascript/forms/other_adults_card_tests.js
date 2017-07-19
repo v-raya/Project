@@ -1,5 +1,5 @@
 import React from 'react'
-import OtherAdults from '../../../app/javascript/forms/OtherAdultsCard'
+import OtherAdults from '../../../app/javascript/forms/OtherAdultsCardsGroup'
 var TestUtils = require('react-dom/lib/ReactTestUtils')
 import {relationshipTypes} from '../helpers/constants'
 
@@ -14,6 +14,6 @@ describe('Verify Physical Address', function () {
 
   it('verify other adults fields', function () {
     let residenceClassName = cardRendered
-    expect(residenceClassName.props.className).toBe('card-body')
+    expect(residenceClassName.props.className).toBe('other_adults_card')
   })
 })
