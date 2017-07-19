@@ -30,7 +30,13 @@ module.exports = function (config) {
 
     webpack: {
       devtool: 'inline-source-map',
-      module: webpackConfig.module
+      module: webpackConfig.module,
+      externals: {
+        'react/addons': true,
+        'react/lib/ReactContext': true,
+        'react-addons-test-utils': true,
+        'react/lib/ExecutionEnvironment': true
+      }
     },
 
     // possible values: 'dots', 'progress'

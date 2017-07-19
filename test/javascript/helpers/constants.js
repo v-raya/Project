@@ -316,3 +316,16 @@ const ethnicityTypes = Object.freeze({
     }
   ]}
 )
+
+const phoneTypes = Object.freeze(
+  [
+    {
+      'id': 1,
+      'value': 'Cell'
+    },
+    {
+      'id': 2,
+      'value': 'Mobile'
+    }
+  ]
+)
