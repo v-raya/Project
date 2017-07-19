@@ -17,8 +17,8 @@ export default class Forms extends React.Component {
         otherAdults: []
       }
     }
-    this.submitForm = this.submitForm.bind(this)
 
+    this.submitForm = this.submitForm.bind(this)
     this.setApplicationState = this.setApplicationState.bind(this)
     this.setFocusState = this.setFocusState.bind(this)
   }
@@ -89,10 +89,11 @@ export default class Forms extends React.Component {
               <ResidenceCards
                 focusComponentName={this.state.focusComponentName}
                 residence={this.state.application.residence}
+                languageTypes={this.props.languageTypes.items}
+                residenceTypes={this.props.residenceTypes}
+                stateTypes={this.props.stateTypes.items}
                 setFocusState={this.setFocusState}
-                parentProps={this.getResidentsProps}
-
-                {...this.props} />
+                setParentState={this.setApplicationState} />
             </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>

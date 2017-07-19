@@ -63,11 +63,11 @@ const CountyList = Object.freeze({
 const yesNo = Object.freeze({
   'items': [
     {
-      'id': 1,
+      'id': true,
       'value': 'Yes'
     },
     {
-      'id': 2,
+      'id': false,
       'value': 'No'
     }]}
 )

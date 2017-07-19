@@ -1,112 +1,104 @@
 import React from 'react'
+import Immutable from 'immutable'
 import {InputComponent} from '../common/inputFields'
 import {DropDownField} from '../common/dropDownField'
 import {yesNo} from '../constants/constants'
 
-export default class AddressCard extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      stateTypes: {items: this.props.stateTypes.items},
-      addressFieldValues: {
-        address: [{
-          street_address: '',
-          zip: '',
-          city: '',
-          state: {
-            id: '',
-            value: ''
-          },
-          type: {
-            id: '1',
-            value: 'physical'
-          }
-        },
-        {
-          street_address: '',
-          zip: '',
-          city: '',
-          state: {
-            id: '',
-            value: ''
-          },
-          type: {
-            id: '2',
-            value: 'mailing'
-          }
-        }
-        ]
-      },
-      physical_mailing_similar: true
-    }
-    this.onChange = this.onChange.bind(this)
+const blankPhysicalAddress = Object.freeze({
+  street_address: '',
+  zip: '',
+  city: '',
+  state: {
+    id: '',
+    value: ''
+  },
+  type: {
+    id: '1',
+    value: 'Physical'
   }
-  onChange (value, e) {
-    let data = this.state.addressFieldValues.address
-    let index = e.includes('secondary') === true ? 1 : 0
-    if (typeof (value) !== 'object' && e === 'physical_mailing_similar') {
-      this.state.physical_mailing_similar = value.toLowerCase() === 'yes'
-    } else if (typeof (value) === 'object') {
-      data[index]['state'] = {id: value.target.selectedOptions[0].value, value: value.target.selectedOptions[0].text}
-    } else {
-      data[index][e] = value
+})
+const blankMailingAddress = Object.freeze({
+  street_address: '',
+  zip: '',
+  city: '',
+  state: {
+    id: '',
+    value: ''
+  },
+  type: {
+    id: '2',
+    value: 'Mailing'
+  }
+})
+
+const physicalAddressType = 'Physical'
+const mailingAddressType = 'Mailing'
+
+export default class AddressCard extends React.Component {
+  onAddressChange (typeString, key, value) {
+    // find index of address with type.id=physical
+    const blankAddressFields = (typeString === physicalAddressType) ? blankPhysicalAddress : blankMailingAddress
+    let data = Immutable.fromJS(this.props.address || [blankAddressFields])
+    let index = data.findIndex(x => x.get('type').get('value') === typeString)
+
+    if (index === -1) {
+      // data is immutable list, important to push blankaddress as immutable
+      data = data.push(Immutable.fromJS(blankAddressFields))
+      index = data.size - 1
     }
 
-    this.setState({
-      addressFieldValues: data
-    })
-
-    this.props.sendProps(this.state.addressFieldValues)
+    data = data.update(index, x => x.set(key, value))
+    this.props.setParentState('address', data.toJS())
   }
 
   render () {
-    const hiddenMailingSameAsPhysical = this.state.physical_mailing_similar ? 'hidden' : ''
+    const hiddenMailingSameAsPhysical = this.props.physicalMailingSimilar === 'false' ? '' : 'hidden'
     return (
       <div className='card-body'>
         <div className='row'>
           <form>
             <InputComponent gridClassName='col-md-12' id='street_address'
               label='Physical Address:' placeholder=''
-              onChange={(event, number) => this.onChange(event.target.value, ('street_address'))} />
+              onChange={(event) => this.onAddressChange(physicalAddressType, 'street_address', event.target.value)} />
 
             <InputComponent gridClassName='col-md-4' id='zip'
               label='Zip Code:' placeholder=''
-              onChange={(event, number) => this.onChange(event.target.value, ('zip'))} />
+              onChange={(event) => this.onAddressChange(physicalAddressType, 'zip', event.target.value)} />
 
             <InputComponent gridClassName='col-md-4' id='city'
               label='City:' placeholder=''
-              onChange={(event, number) => this.onChange(event.target.value, ('city'))} />
+              onChange={(event) => this.onAddressChange(physicalAddressType, 'city', event.target.value)} />
 
             <DropDownField gridClassName='col-md-4' id='state'
-              selectClassName={'reusable-select'}
-              optionList={this.state.stateTypes.items}
-              label={'State'}
-              onChange={(event, number) => this.onChange(event, ('state'))} />
+              selectClassName='reusable-select'
+              optionList={this.props.stateTypes}
+              label='State'
+              onChange={(event) => this.onAddressChange(physicalAddressType, 'state', {id: event.target.selectedOptions[0].value, value: event.target.selectedOptions[0].text})} />
 
-            <DropDownField gridClassName='col-md-6'
-              selectClassName={'reusable-select'}
+            <DropDownField gridClassName='col-md-6' selectClassName='reusable-select'
+              text={this.props.physicalMailingSimilar}
               optionList={yesNo.items}
-              label={'Mailing address the same as Physical Address?'}
-              onChange={(event, number) => this.onChange(event.target.selectedOptions[0].text, ('physical_mailing_similar'))}  />
+              label='Mailing address the same as Physical Address?'
+              onChange={(event) => this.props.setParentState('physical_mailing_similar', event.target.selectedOptions[0].value)} />
 
             <div className={hiddenMailingSameAsPhysical}>
               <InputComponent gridClassName='col-md-12' id='secondary_street_address'
                 label='Mailing Address:' placeholder=''
-                onChange={(event, number) => this.onChange(event.target.value, ('secondary_street_address'))} />
+                onChange={(event) => this.onAddressChange(mailingAddressType, 'street_address', event.target.value)} />
 
               <InputComponent gridClassName='col-md-4' id='secondary_zip'
                 label='Zip Code:' placeholder=''
-                onChange={(event, number) => this.onChange(event.target.value, ('secondary_zip'))} />
+                onChange={(event) => this.onAddressChange(mailingAddressType, 'zip', event.target.value)} />
 
               <InputComponent gridClassName='col-md-4' id='secondary_city'
                 label='City:' placeholder=''
-                onChange={(event, number) => this.onChange(event.target.value, ('secondary_city'))} />
+                onChange={(event) => this.onAddressChange(mailingAddressType, 'city', event.target.value)} />
 
               <DropDownField gridClassName='col-md-4' id='secondary_state'
-                selectClassName={'reusable-select'}
-                optionList={this.state.stateTypes.items}
-                label={'State'}
-                onChange={(event, number) => this.onChange(event, ('secondary_state'))} />
+                selectClassName='reusable-select'
+                optionList={this.props.stateTypes}
+                label='State'
+                onChange={(event) => this.onAddressChange(mailingAddressType, 'state', {id: event.target.selectedOptions[0].value, value: event.target.selectedOptions[0].text})} />
 
             </div>
 
