@@ -1,7 +1,7 @@
-class Helpers::RFA::ApplicationResidence < Helpers::ModelHelperBase
+class Helpers::Rfa::ApplicationResidence < Helpers::ModelHelperBase
 
   def model_class
-    RFA::ApplicationResidence
+    Rfa::ApplicationResidence
   end
 
   def create(parent_id, body)

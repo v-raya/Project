@@ -7,7 +7,7 @@ class Rfa::A01Controller < CalsBaseController
     # make api call to create application
     rfa_app_response = rfa_application_helper.create_application
     #TODO: some method here to return our application object more betterly
-    rfa_application = RFA::Application.new(rfa_app_response['id'])
+    rfa_application = Rfa::Application.new(rfa_app_response['id'])
     redirect_to  edit_rfa_a01_path(rfa_application.id)
   end
 
@@ -46,11 +46,11 @@ class Rfa::A01Controller < CalsBaseController
   private
 
   def rfa_application_helper
-    Helpers::RFA::Application.new(auth_header: session['token'])
+    Helpers::Rfa::ApplicationHelper.new(auth_header: session['token'])
   end
 
   def rfa_applicant_helper
-    Helpers::RFA::Applicant.new(auth_header: session['token'])
+    Helpers::Rfa::ApplicantHelper.new(auth_header: session['token'])
   end
 
   def dictionaries_helper

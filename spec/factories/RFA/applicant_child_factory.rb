@@ -1,6 +1,6 @@
 FactoryGirl.define do
 
-factory :applicant_child, class: 'RFA::ApplicantChild' do
+factory :applicant_child, class: 'Rfa::ApplicantChild' do
   #  sequence(:relationship_type) #TODO: what to put here
      sequence(:date_of_birth)  {Faker::Date.backward(2000)}
     #  sequence(:gender) #TODO: what to put here

@@ -6,6 +6,6 @@ class Rfa::ResidenceController < CalsBaseController
   end
 
   def rfa_residence_helper
-    Helpers::RFA::ApplicationResidence.new(auth_header: session['token'])
+    Helpers::Rfa::ApplicationResidence.new(auth_header: session['token'])
   end
 end

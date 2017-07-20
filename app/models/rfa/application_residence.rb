@@ -1,5 +1,5 @@
-class RFA::ApplicationResidence < CalsBase
-  include Concerns::RFA::ApplicationResidenceApiProtocolProvider
+class Rfa::ApplicationResidence < CalsBase
+  include Concerns::Rfa::ApplicationResidenceApiProtocolProvider
 
   # attr_accessor :property_type, :own_rent_lease,
   #   :weapons, :body_of_water, :directions

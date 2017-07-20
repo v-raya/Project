@@ -1,4 +1,4 @@
-module Concerns::RFA::ApplicationApiProtocolProvider
+module Concerns::Rfa::ApplicationApiProtocolProvider
   extend ActiveSupport::Concern
   include Concerns::BaseApiProtocolProvider
 

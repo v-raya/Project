@@ -1,5 +1,5 @@
 FactoryGirl.define do
-factory :applicant, class: 'RFA::Applicant' do
+factory :applicant, class: 'Rfa::Applicant' do
    #sequence(:language)  #TODO: what to put here
   #  sequence(:education_level)  #TODO: what to put here
     sequence(:date_of_birth) {Faker::Date.birthday}

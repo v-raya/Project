@@ -1,5 +1,5 @@
-class RFA::Applicant < CalsBase
-  include Concerns::RFA::ApplicantApiProtocolProvider
+class Rfa::Applicant < CalsBase
+  include Concerns::Rfa::ApplicantApiProtocolProvider
 
   attr_accessor :language, :education_level, :date_of_birth, :race, :gender,
     :dl_number,:dl_state, :email_address, :exclusion_order,
