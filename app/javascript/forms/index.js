@@ -1,5 +1,5 @@
 import React from 'react'
-// import Cards from './cardsMain'
+import Immutable from 'immutable'
 import ApplicantCardsGroup from './applicantCardsGroup.jsx'
 import ResidenceCards from './residenceCardsMain'
 import OtherAdultsCard from './OtherAdultsCardsGroup'
@@ -31,10 +31,10 @@ export default class Forms extends React.Component {
     let params = this.state.application
     fetchRequest(url, 'PUT', this.state.application).then(
       response => response.json()).then((response) => {
-        return this.setState({
-          formData: response
-        })
+      return this.setState({
+        formData: response
       })
+    })
       .catch(error => {
         console.log(error)
         return this.setState({
@@ -44,8 +44,9 @@ export default class Forms extends React.Component {
   }
 
   setApplicationState (key, value) {
-    const newState = {application: {[key]: value}}
-    this.setState(newState)
+    let newState = Immutable.fromJS(this.state)
+    newState = newState.setIn(['application', key], value)
+    this.setState(newState.toJS())
   }
   setFocusState (focusComponentName) {
     this.setState({focusComponentName: focusComponentName})

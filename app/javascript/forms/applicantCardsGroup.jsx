@@ -8,13 +8,8 @@ const blankApplicantFields = Object.freeze({
   middle_name: '',
   last_name: '',
   other_names: [],
-  highest_education_level: '',
   date_of_birth: '',
-  gender: '',
-  race: '',
-  ethnicity: '',
   driver_license_number: '',
-  driver_license_state: '',
   email: '',
   phones: []
 })

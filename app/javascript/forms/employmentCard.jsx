@@ -1,37 +1,33 @@
 import React from 'react'
+import Immutable from 'immutable'
 import {InputComponent} from '../common/inputFields'
 import {DropDownField} from '../common/dropDownField'
-import {getDictionaryId} from '../helpers/commonHelper.jsx'
+import {getDictionaryId, dictionaryNilSelect} from '../helpers/commonHelper.jsx'
 
 const blankEmploymentFields = Object.freeze({
   employer_name: '',
   occupation: '',
   income: '',
-  income_type: {
-    id: '',
-    value: ''
-  },
+  income_type: null,
   physical_address: {
     street_address: '',
     zip: '',
     city: '',
-    state: {
-      id: '',
-      value: ''
-    }
+    state: null
   }
 })
 
 export default class Employment extends React.Component {
   onEmploymentChange (key, value) {
-    let newData = this.props.employmentFields || blankEmploymentFields
-    newData[key] = value
-    this.props.setParentState('employment', newData)
+    let newData = Immutable.fromJS(this.props.employment || blankEmploymentFields)
+    newData = newData.set(key, value)
+    this.props.setParentState('employment', newData.toJS())
   }
   onPhysicalAddressChange (key, value) {
-    let newData = this.props.employmentFields || blankEmploymentFields
-    newData.physical_address[key] = value
-    this.props.setParentState('employment', newData)
+    let newData = Immutable.fromJS(this.props.employment || blankEmploymentFields)
+    // newData.physical_address[key] = value
+    newData = newData.setIn(['physical_address', key], value)
+    this.props.setParentState('employment', newData.toJS())
   }
 
   render () {
@@ -61,7 +57,7 @@ export default class Employment extends React.Component {
               selectClassName='reusable-select'
               optionList={this.props.salaryTypes}
               label='.'
-              onChange={(event) => this.onEmploymentChange('income_type', {id: event.target.selectedOptions[0].value, value: event.target.selectedOptions[0].text})}/>
+              onChange={(event) => this.onEmploymentChange('income_type', dictionaryNilSelect(event.target.selectedOptions[0]))}/>
 
             <InputComponent gridClassName='col-md-12' id='street_address'
               value={employmentFields.physical_address.street_address}
@@ -83,7 +79,7 @@ export default class Employment extends React.Component {
               value={getDictionaryId(employmentFields.physical_address.state)}
               optionList={this.props.stateTypes}
               label='State'
-              onChange={(event) => this.onPhysicalAddressChange('state', {id: event.target.selectedOptions[0].value, value: event.target.selectedOptions[0].text})}/>
+              onChange={(event) => this.onPhysicalAddressChange('state', dictionaryNilSelect(event.target.selectedOptions[0]))}/>
           </form>
         </div>
       </div>

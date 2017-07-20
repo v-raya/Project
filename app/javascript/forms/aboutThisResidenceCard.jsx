@@ -4,28 +4,7 @@ import {DropDownField} from '../common/dropDownField'
 import {TextAreaComponent} from '../common/textArea'
 import {yesNo} from '../constants/constants'
 import {InputComponent} from '../common/inputFields'
-import {getDictionaryId} from '../helpers/commonHelper.jsx'
-
-const blankAboutThisResidenceFields = Object.freeze({
-  residence_ownership_type: {
-    id: '',
-    value: ''
-  },
-  home_languages: [{
-    id: '',
-    value: ''
-  }],
-  directions_to_home: '',
-  weapon_in_home: '',
-  body_of_water_exist: '',
-  body_of_water_description: '',
-  others_using_residence_as_mailing: '',
-  other_people_using_residence_as_mailing: [{
-    first_name: '',
-    middle_name: '',
-    last_name: ''
-  }]
-})
+import {getDictionaryId, dictionaryNilSelect} from '../helpers/commonHelper.jsx'
 
 const othersUsingAddressMailing = Object.freeze({
   first_name: '',
@@ -47,7 +26,7 @@ export default class AboutThisResidenceCard extends React.Component {
 
   render () {
     const aboutResidence = this.props.aboutResidence
-    const othersMailing = this.props.aboutResidence.other_people_using_residence_as_mailing || [othersUsingAddressMailing]
+    const othersMailing = aboutResidence.other_people_using_residence_as_mailing || [othersUsingAddressMailing]
 
     const hiddenBodyOfWater = aboutResidence.body_of_water_exist === 'true' ? '' : 'hidden'
     const hiddenUseAsMailingAddress = aboutResidence.others_using_residence_as_mailing === 'true' ? '' : 'hidden'
@@ -61,7 +40,7 @@ export default class AboutThisResidenceCard extends React.Component {
               value={getDictionaryId(aboutResidence.residence_ownership_type)}
               optionList={this.props.residenceTypes}
               label={'Do you own, rent or lease the residence?'}
-              onChange={(event) => this.props.setParentState('residence_ownership_type', {id: event.target.selectedOptions[0].value, value: event.target.selectedOptions[0].text})} />
+              onChange={(event) => this.props.setParentState('residence_ownership_type', dictionaryNilSelect(event.target.selectedOptions[0]))} />
             <DropDownField id='weapons' gridClassName='col-md-7'
               selectClassName={'reusable-select'}
               text={aboutResidence.weapon_in_home}
@@ -113,7 +92,7 @@ export default class AboutThisResidenceCard extends React.Component {
               value={getDictionaryId(aboutResidence.home_languages || '')}
               optionList={this.props.languageTypes}
               label={'Language(s) spoken in the home'}
-              onChange={(event) => this.props.setParentState('home_languages', {id: event.target.selectedOptions[0].value, value: event.target.selectedOptions[0].text})} />
+              onChange={(event) => this.props.setParentState('home_languages', dictionaryNilSelect(event.target.selectedOptions[0]))} />
           </form>
         </div>
       </div>

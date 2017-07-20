@@ -3,6 +3,7 @@ import Immutable from 'immutable'
 import {InputComponent} from '../common/inputFields'
 import {DropDownField} from '../common/dropDownField'
 import {yesNo} from '../constants/constants'
+import {dictionaryNilSelect} from '../helpers/commonHelper.jsx'
 
 const blankPhysicalAddress = Object.freeze({
   street_address: '',
@@ -73,7 +74,7 @@ export default class AddressCard extends React.Component {
               selectClassName='reusable-select'
               optionList={this.props.stateTypes}
               label='State'
-              onChange={(event) => this.onAddressChange(physicalAddressType, 'state', {id: event.target.selectedOptions[0].value, value: event.target.selectedOptions[0].text})} />
+              onChange={(event) => this.onAddressChange(physicalAddressType, 'state', dictionaryNilSelect(event.target.selectedOptions[0]))} />
 
             <DropDownField gridClassName='col-md-6' selectClassName='reusable-select'
               text={this.props.physicalMailingSimilar}
@@ -98,7 +99,7 @@ export default class AddressCard extends React.Component {
                 selectClassName='reusable-select'
                 optionList={this.props.stateTypes}
                 label='State'
-                onChange={(event) => this.onAddressChange(mailingAddressType, 'state', {id: event.target.selectedOptions[0].value, value: event.target.selectedOptions[0].text})} />
+                onChange={(event) => this.onAddressChange(mailingAddressType, 'state', dictionaryNilSelect(event.target.selectedOptions[0]))} />
 
             </div>
 

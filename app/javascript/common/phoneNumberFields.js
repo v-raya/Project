@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {InputComponent} from './inputFields'
 import {DropDownField} from './dropDownField'
 import {CheckboxField} from './checkboxField'
+import {dictionaryNilSelect} from '../helpers/commonHelper.jsx'
 
 export class PhoneNumberField extends React.Component {
   render () {
@@ -23,7 +24,7 @@ export class PhoneNumberField extends React.Component {
           optionList={phoneTypes} value={phoneFields.phone_type.id}
           label='Phone Type' onChange={(event) => this.props.onPhoneFieldChange(
             this.props.index,
-            {id: event.target.selectedOptions[0].value, value: event.target.selectedOptions[0].text},
+            dictionaryNilSelect(event.target.selectedOptions[0]),
             'phone_type')} />
 
         <CheckboxField gridClassName='col-md-4' id={this.props.index} type='checkbox'

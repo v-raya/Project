@@ -9,10 +9,7 @@ const blankNameFields = Object.freeze({
   first_name: '',
   middle_name: '',
   last_name: '',
-  name_type: {
-    id: '',
-    value: ''
-  }
+  name_type: null
 })
 
 const legalTypeId = 2
