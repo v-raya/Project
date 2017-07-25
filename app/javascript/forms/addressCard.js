@@ -9,30 +9,24 @@ const blankPhysicalAddress = Object.freeze({
   street_address: '',
   zip: '',
   city: '',
-  state: {
-    id: '',
-    value: ''
-  },
+  state: null,
   type: {
     id: '1',
-    value: 'Physical'
+    value: 'Residential'
   }
 })
 const blankMailingAddress = Object.freeze({
   street_address: '',
   zip: '',
   city: '',
-  state: {
-    id: '',
-    value: ''
-  },
+  state: null,
   type: {
-    id: '2',
+    id: '3',
     value: 'Mailing'
   }
 })
 
-const physicalAddressType = 'Physical'
+const physicalAddressType = 'Residential'
 const mailingAddressType = 'Mailing'
 
 export default class AddressCard extends React.Component {
@@ -49,7 +43,7 @@ export default class AddressCard extends React.Component {
     }
 
     data = data.update(index, x => x.set(key, value))
-    this.props.setParentState('address', data.toJS())
+    this.props.setParentState('addresses', data.toJS())
   }
 
   render () {

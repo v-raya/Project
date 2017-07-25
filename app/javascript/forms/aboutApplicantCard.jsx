@@ -28,12 +28,12 @@ export default class AboutApplicant extends React.Component {
               label='Gender'
               onChange={(event) => this.props.setParentState('gender', dictionaryNilSelect(event.target.selectedOptions[0]))} />
 
-            <DropDownField gridClassName='col-md-4' id='race'
-              value={getDictionaryId(this.props.applicantFields.race)}
+            <DropDownField gridClassName='col-md-4' id='ethnicity'
+              value={getDictionaryId(this.props.applicantFields.ethnicity)}
               selectClassName='reusable-select'
-              optionList={this.props.raceTypes}
+              optionList={this.props.ethnicityTypes}
               label='Race / Ethnicity'
-              onChange={(event) => this.props.setParentState('race', dictionaryNilSelect(event.target.selectedOptions[0]))} />
+              onChange={(event) => this.props.setParentState('ethnicity', {id: event.target.selectedOptions[0].value, value: event.target.selectedOptions[0].text})} />
 
             <InputComponent gridClassName='col-md-4' id='driver_license_number'
               value={this.props.applicantFields.driver_license_number}

@@ -1,8 +1,8 @@
 class Rfa::Applicant < CalsBase
   include Concerns::Rfa::ApplicantApiProtocolProvider
 
-  attr_accessor :language, :education_level, :date_of_birth, :race, :gender,
-    :dl_number,:dl_state, :email_address, :exclusion_order,
+  attr_accessor :language, :highest_education_level, :email, :date_of_birth, :ethnicity, :race, :gender,
+    :driver_license_number,:driver_license_state, :email_address, :employment, :exclusion_order,
     :first_name, :middle_name, :last_name
 
 

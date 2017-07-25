@@ -23,24 +23,38 @@ class Rfa::A01Controller < CalsBaseController
 
     @residence_types =  dictionaries_helper.residence_ownership_types
     @ethnicity_types = dictionaries_helper.ethnicity_types
+    # @race_types = dictionaries_helper.race_types
     @address_types = dictionaries_helper.address_types
     @relationship_types = dictionaries_helper.relationship_types
+
+    @application = rfa_application_helper.find_by_id(params[:id])
+    # @application.applicants = rfa_application_helper.find_applicants()
+    @application.applicants = rfa_applicant_helper.find_by_application_id(params[:id])
+    @application.residence = rfa_residence_helper.find_by_application_id(params[:id])
   end
 
   def update
-    applicants = params[:applicants]
-
+    applicants = params['applicants']
+    residence = params['residence']
     application_response = {}
 
-    applicants_result = []
-    applicants.each do |applicant|
-      applicants_result << rfa_applicant_helper.create(params[:id], applicant)
+    if applicants.present?
+      applicants_result = []
+
+      applicants.each do |applicant|
+        applicant = applicant.permit!
+        applicants_result << rfa_applicant_helper.create(params[:id], applicant.to_json)
+      end
+
+      application_response[:applicants] = applicants_result
     end
 
-    application_response[:applicants] = applicants_result
+    if residence.present?
+      residence = residence.permit!
+      rfa_residence_helper.create(params[:id], residence.except('home_languages').to_json)
+    end
 
-    # params[:residence]
-    # params[:other_adults]
+    render action: 'edit.html.erb'
   end
 
   private
@@ -51,6 +65,10 @@ class Rfa::A01Controller < CalsBaseController
 
   def rfa_applicant_helper
     Helpers::Rfa::ApplicantHelper.new(auth_header: session['token'])
+  end
+
+  def rfa_residence_helper
+    Helpers::Rfa::ApplicationResidenceHelper.new(auth_header: session['token'])
   end
 
   def dictionaries_helper

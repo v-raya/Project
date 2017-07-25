@@ -1,6 +1,6 @@
 module Concerns::Rfa::ApplicationResidenceApiProtocolProvider
   extend ActiveSupport::Concern
-  include Concerns::BaseApiProtocolProvider
+  include Concerns::BaseCalsApiProtocolProvider
 
   class_methods do
 
@@ -9,5 +9,9 @@ module Concerns::Rfa::ApplicationResidenceApiProtocolProvider
       new(JSON.parse(response.body))
     end
 
+    def find_by_application_id(auth_header, parent_id)
+      response = FaradayCals.get("/#{parent_path}/#{parent_id}/residence", auth_header)
+      response.status == 200 ? JSON.parse(response.body) : nil
+    end
   end
 end

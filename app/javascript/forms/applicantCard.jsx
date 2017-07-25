@@ -50,7 +50,8 @@ export default class ApplicantCard extends React.Component {
             stateTypes={this.props.stateTypes}
             educationLevels={this.props.educationLevels}
             genderTypes={this.props.genderTypes}
-            raceTypes={this.props.raceTypes}
+            // raceTypes={this.props.raceTypes}
+            ethnicityTypes={this.props.ethnicityTypes}
             languageTypes={this.props.languageTypes}
             applicantFields={this.props.applicantFields}
             setParentState={this.setApplicantState} />
@@ -92,7 +93,8 @@ ApplicantCard.propTypes = {
   stateTypes: PropTypes.array.isRequired,
   educationLevels: PropTypes.array.isRequired,
   genderTypes: PropTypes.array.isRequired,
-  raceTypes: PropTypes.array.isRequired,
+  // raceTypes: PropTypes.array.isRequired,
+  ethnicityTypes: PropTypes.array.isRequired,
   languageTypes: PropTypes.array.isRequired,
   focusComponentName: PropTypes.string.isRequired,
   applicantFields: PropTypes.object.isRequired,

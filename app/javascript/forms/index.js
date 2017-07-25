@@ -78,7 +78,8 @@ export default class Forms extends React.Component {
               stateTypes={this.props.stateTypes.items}
               educationLevels={this.props.educationLevels.items}
               genderTypes={this.props.genderTypes.items}
-              raceTypes={this.props.ethnicityTypes}
+              // raceTypes={this.props.raceTypes}
+              ethnicityTypes={this.props.ethnicityTypes}
               languageTypes={this.props.languageTypes.items}
               focusComponentName={this.state.focusComponentName}
               applicants={this.state.application.applicants}

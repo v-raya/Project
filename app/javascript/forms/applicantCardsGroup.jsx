@@ -65,7 +65,8 @@ export default class ApplicantCardsGroup extends React.Component {
                     stateTypes={this.props.stateTypes}
                     educationLevels={this.props.educationLevels}
                     genderTypes={this.props.genderTypes}
-                    raceTypes={this.props.raceTypes}
+                    // raceTypes={this.props.raceTypes}
+                    ethnicityTypes={this.props.ethnicityTypes}
                     languageTypes={this.props.languageTypes}
                     focusComponentName={this.props.focusComponentName}
                     applicantFields={applicantFields}

@@ -37,10 +37,10 @@ export default class AboutThisResidenceCard extends React.Component {
           <form>
             <DropDownField id='residenceTypes' gridClassName='col-md-7'
               selectClassName={'reusable-select'}
-              value={getDictionaryId(aboutResidence.residence_ownership_type)}
+              value={getDictionaryId(aboutResidence.residence_ownership)}
               optionList={this.props.residenceTypes}
               label={'Do you own, rent or lease the residence?'}
-              onChange={(event) => this.props.setParentState('residence_ownership_type', dictionaryNilSelect(event.target.selectedOptions[0]))} />
+              onChange={(event) => this.props.setParentState('residence_ownership', dictionaryNilSelect(event.target.selectedOptions[0]))} />
             <DropDownField id='weapons' gridClassName='col-md-7'
               selectClassName={'reusable-select'}
               text={aboutResidence.weapon_in_home}

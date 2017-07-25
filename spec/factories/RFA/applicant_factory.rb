@@ -5,8 +5,8 @@ factory :applicant, class: 'Rfa::Applicant' do
     sequence(:date_of_birth) {Faker::Date.birthday}
   #  sequence(:race) #TODO: what to put here
   #  sequence( :gender) #TODO: what to put here
-    sequence(:dl_number) {Faker::Number.number(6)}
-    sequence(:dl_state)  {Faker::Address.state_abbr}
+    sequence(:driver_license_number) {Faker::Number.number(6)}
+    sequence(:driver_license_state)  {Faker::Address.state_abbr}
     sequence(:email_address)  {Faker::Internet.email}
     #sequence(:exclusion_order) #TODO: what to put here
     sequence(:first_name) {Faker::Name.first_name}

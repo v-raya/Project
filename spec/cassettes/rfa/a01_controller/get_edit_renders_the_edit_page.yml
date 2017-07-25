@@ -1,6 +1,36 @@
 ---
 http_interactions:
 - request:
+    method: post
+    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms?token=null
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      date:
+      - Tue, 25 Jul 2017 15:07:10 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '79'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 111,
+          "is_initial_application" : false,
+          "is_other_type" : false
+        }
+    http_version: 
+  recorded_at: Tue, 25 Jul 2017 15:07:10 GMT
+- request:
     method: get
     uri: http://tpt2.dev.cwds.io:8084/dictionaries/name-types?token=null
     body:
@@ -15,36 +45,33 @@ http_interactions:
       message: 
     headers:
       date:
-      - Mon, 10 Jul 2017 18:38:22 GMT
+      - Tue, 25 Jul 2017 15:07:10 GMT
       content-type:
       - application/json
       vary:
       - Accept-Encoding
       content-length:
-      - '238'
+      - '187'
     body:
       encoding: UTF-8
       string: |-
         {
           "items" : [ {
             "id" : 1,
-            "value" : "Alias"
+            "value" : "AKA"
           }, {
             "id" : 2,
-            "value" : "Legal"
+            "value" : "Doe"
           }, {
             "id" : 3,
-            "value" : "Maiden"
+            "value" : "Legal"
           }, {
             "id" : 4,
-            "value" : "Preferred"
-          }, {
-            "id" : 5,
-            "value" : "Other"
+            "value" : "Maiden"
           } ]
         }
     http_version: 
-  recorded_at: Mon, 10 Jul 2017 18:38:22 GMT
+  recorded_at: Tue, 25 Jul 2017 15:07:10 GMT
 - request:
     method: get
     uri: http://tpt2.dev.cwds.io:8084/dictionaries/phone-number-types?token=null
@@ -60,13 +87,13 @@ http_interactions:
       message: 
     headers:
       date:
-      - Mon, 10 Jul 2017 18:38:22 GMT
+      - Tue, 25 Jul 2017 15:07:10 GMT
       content-type:
       - application/json
       vary:
       - Accept-Encoding
       content-length:
-      - '144'
+      - '232'
     body:
       encoding: UTF-8
       string: |-
@@ -80,10 +107,16 @@ http_interactions:
           }, {
             "id" : 3,
             "value" : "Work"
+          }, {
+            "id" : 4,
+            "value" : "Alternate"
+          }, {
+            "id" : 5,
+            "value" : "Fax"
           } ]
         }
     http_version: 
-  recorded_at: Mon, 10 Jul 2017 18:38:22 GMT
+  recorded_at: Tue, 25 Jul 2017 15:07:10 GMT
 - request:
     method: get
     uri: http://tpt2.dev.cwds.io:8084/dictionaries/genders?token=null
@@ -99,13 +132,13 @@ http_interactions:
       message: 
     headers:
       date:
-      - Mon, 10 Jul 2017 18:38:23 GMT
+      - Tue, 25 Jul 2017 15:07:10 GMT
       content-type:
       - application/json
       vary:
       - Accept-Encoding
       content-length:
-      - '147'
+      - '104'
     body:
       encoding: UTF-8
       string: |-
@@ -116,13 +149,10 @@ http_interactions:
           }, {
             "id" : 2,
             "value" : "Female"
-          }, {
-            "id" : 3,
-            "value" : "Other"
           } ]
         }
     http_version: 
-  recorded_at: Mon, 10 Jul 2017 18:38:22 GMT
+  recorded_at: Tue, 25 Jul 2017 15:07:10 GMT
 - request:
     method: get
     uri: http://tpt2.dev.cwds.io:8084/dictionaries/education-level-types?token=null
@@ -138,42 +168,42 @@ http_interactions:
       message: 
     headers:
       date:
-      - Mon, 10 Jul 2017 18:38:23 GMT
+      - Tue, 25 Jul 2017 15:07:10 GMT
       content-type:
       - application/json
       vary:
       - Accept-Encoding
       content-length:
-      - '153'
+      - '207'
     body:
       encoding: ASCII-8BIT
       string: |-
         {
           "items" : [ {
             "id" : 1,
-            "value" : "High School"
+            "value" : "Eighth Grade or Less"
           }, {
             "id" : 2,
-            "value" : "GED"
+            "value" : "Some High School"
           }, {
             "id" : 3,
-            "value" : "Some College"
+            "value" : "High School or Equivalent"
           }, {
             "id" : 4,
-            "value" : "College - Bachelors"
+            "value" : "Technical Training beyond High School"
           }, {
             "id" : 5,
-            "value" : "College - Masters"
+            "value" : "Some College or College-Level courses"
           }, {
             "id" : 6,
-            "value" : "College - PhD"
+            "value" : "College Graduate"
           }, {
             "id" : 7,
-            "value" : "Medical School"
+            "value" : "Post-Graduate Education"
           } ]
         }
     http_version: 
-  recorded_at: Mon, 10 Jul 2017 18:38:23 GMT
+  recorded_at: Tue, 25 Jul 2017 15:07:10 GMT
 - request:
     method: get
     uri: http://tpt2.dev.cwds.io:8084/dictionaries/languages?token=null
@@ -189,36 +219,120 @@ http_interactions:
       message: 
     headers:
       date:
-      - Mon, 10 Jul 2017 18:38:23 GMT
+      - Tue, 25 Jul 2017 15:07:10 GMT
       content-type:
       - application/json
       vary:
       - Accept-Encoding
       content-length:
-      - '251'
+      - '373'
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: |-
         {
           "items" : [ {
             "id" : 1,
-            "value" : "Chinese Mandarin"
+            "value" : "American Sign Language"
           }, {
             "id" : 2,
-            "value" : "English"
+            "value" : "Arabic"
           }, {
             "id" : 3,
-            "value" : "French"
+            "value" : "Armenian"
           }, {
             "id" : 4,
-            "value" : "Russian"
+            "value" : "Cambodian"
           }, {
             "id" : 5,
+            "value" : "Cantonese"
+          }, {
+            "id" : 6,
+            "value" : "English"
+          }, {
+            "id" : 7,
+            "value" : "Farsi"
+          }, {
+            "id" : 8,
+            "value" : "French"
+          }, {
+            "id" : 9,
+            "value" : "Hebrew"
+          }, {
+            "id" : 10,
+            "value" : "Hmong"
+          }, {
+            "id" : 11,
+            "value" : "Ilacano"
+          }, {
+            "id" : 12,
+            "value" : "Italian"
+          }, {
+            "id" : 13,
+            "value" : "Japanese"
+          }, {
+            "id" : 14,
+            "value" : "Korean"
+          }, {
+            "id" : 15,
+            "value" : "Lao"
+          }, {
+            "id" : 16,
+            "value" : "Mandarin"
+          }, {
+            "id" : 17,
+            "value" : "Mien"
+          }, {
+            "id" : 18,
+            "value" : "Other Chinese"
+          }, {
+            "id" : 19,
+            "value" : "Other Non-English"
+          }, {
+            "id" : 20,
+            "value" : "German"
+          }, {
+            "id" : 21,
+            "value" : "Hawaiian"
+          }, {
+            "id" : 22,
+            "value" : "Polish"
+          }, {
+            "id" : 23,
+            "value" : "Portuguese"
+          }, {
+            "id" : 24,
+            "value" : "Russian"
+          }, {
+            "id" : 25,
+            "value" : "Samoan"
+          }, {
+            "id" : 26,
+            "value" : "Sign Language (Not ASL)"
+          }, {
+            "id" : 27,
             "value" : "Spanish"
+          }, {
+            "id" : 28,
+            "value" : "Tagalog"
+          }, {
+            "id" : 29,
+            "value" : "Thai"
+          }, {
+            "id" : 30,
+            "value" : "Turkish"
+          }, {
+            "id" : 31,
+            "value" : "Vietnamese"
+          }, {
+            "id" : 32,
+            "value" : "Indochinese"
+          }, {
+            "id" : 33,
+            "value" : "Romanian"
           } ]
         }
     http_version: 
-  recorded_at: Mon, 10 Jul 2017 18:38:23 GMT
+  recorded_at: Tue, 25 Jul 2017 15:07:10 GMT
 - request:
     method: get
     uri: http://tpt2.dev.cwds.io:8084/dictionaries/states?token=null
@@ -234,38 +348,38 @@ http_interactions:
       message: 
     headers:
       date:
-      - Mon, 10 Jul 2017 18:38:23 GMT
+      - Tue, 25 Jul 2017 15:07:10 GMT
       content-type:
       - application/json
       vary:
       - Accept-Encoding
       content-length:
-      - '634'
+      - '635'
     body:
       encoding: ASCII-8BIT
       string: |-
         {
           "items" : [ {
             "id" : 1,
-            "value" : "Alabama"
+            "value" : "Alaska"
           }, {
             "id" : 2,
-            "value" : "Alaska"
+            "value" : "Alabama"
           }, {
             "id" : 3,
             "value" : "American Samoa"
           }, {
             "id" : 4,
-            "value" : "Arizona"
+            "value" : "Arkansas"
           }, {
             "id" : 5,
-            "value" : "Arkansas"
+            "value" : "Arizona"
           }, {
             "id" : 6,
             "value" : "California"
           }, {
             "id" : 7,
-            "value" : "Canal Zone"
+            "value" : "Northern Marianas Islands"
           }, {
             "id" : 8,
             "value" : "Colorado"
@@ -274,94 +388,94 @@ http_interactions:
             "value" : "Connecticut"
           }, {
             "id" : 10,
-            "value" : "Delaware"
+            "value" : "Canal Zone"
           }, {
             "id" : 11,
             "value" : "District of Columbia"
           }, {
             "id" : 12,
-            "value" : "Florida"
+            "value" : "Delaware"
           }, {
             "id" : 13,
-            "value" : "Georgia"
+            "value" : "Florida"
           }, {
             "id" : 14,
-            "value" : "Guam"
+            "value" : "Georgia"
           }, {
             "id" : 15,
-            "value" : "Hawaii"
+            "value" : "Guam"
           }, {
             "id" : 16,
-            "value" : "Idaho"
+            "value" : "Hawaii"
           }, {
             "id" : 17,
-            "value" : "Illinois"
-          }, {
-            "id" : 18,
-            "value" : "Indiana"
-          }, {
-            "id" : 19,
             "value" : "Iowa"
           }, {
+            "id" : 18,
+            "value" : "Idaho"
+          }, {
+            "id" : 19,
+            "value" : "Illinois"
+          }, {
             "id" : 20,
-            "value" : "Kansas"
+            "value" : "Indiana"
           }, {
             "id" : 21,
-            "value" : "Kentucky"
+            "value" : "Kansas"
           }, {
             "id" : 22,
-            "value" : "Louisiana"
+            "value" : "Kentucky"
           }, {
             "id" : 23,
-            "value" : "Maine"
+            "value" : "Louisiana"
           }, {
             "id" : 24,
-            "value" : "Maryland"
-          }, {
-            "id" : 25,
             "value" : "Massachusetts"
           }, {
+            "id" : 25,
+            "value" : "Maryland"
+          }, {
             "id" : 26,
-            "value" : "Michigan"
+            "value" : "Maine"
           }, {
             "id" : 27,
-            "value" : "Minnesota"
+            "value" : "Michigan"
           }, {
             "id" : 28,
-            "value" : "Mississippi"
+            "value" : "Minnesota"
           }, {
             "id" : 29,
             "value" : "Missouri"
           }, {
             "id" : 30,
-            "value" : "Montana"
+            "value" : "Mississippi"
           }, {
             "id" : 31,
-            "value" : "Nebraska"
+            "value" : "Montana"
           }, {
             "id" : 32,
-            "value" : "Nevada"
-          }, {
-            "id" : 33,
-            "value" : "New Hampshire"
-          }, {
-            "id" : 34,
-            "value" : "New Jersey"
-          }, {
-            "id" : 35,
-            "value" : "New Mexico"
-          }, {
-            "id" : 36,
-            "value" : "New York"
-          }, {
-            "id" : 37,
             "value" : "North Carolina"
           }, {
-            "id" : 38,
+            "id" : 33,
             "value" : "North Dakota"
           }, {
+            "id" : 34,
+            "value" : "Nebraska"
+          }, {
+            "id" : 35,
+            "value" : "New Hampshire"
+          }, {
+            "id" : 36,
+            "value" : "New Jersey"
+          }, {
+            "id" : 37,
+            "value" : "New Mexico"
+          }, {
+            "id" : 38,
+            "value" : "Nevada"
+          }, {
             "id" : 39,
-            "value" : "Northern Marianas Islands"
+            "value" : "New York"
           }, {
             "id" : 40,
             "value" : "Ohio"
@@ -391,38 +505,38 @@ http_interactions:
             "value" : "Tennessee"
           }, {
             "id" : 49,
-            "value" : "Texas"
+            "value" : "Trust Territories"
           }, {
             "id" : 50,
-            "value" : "Trust Territories"
+            "value" : "Texas"
           }, {
             "id" : 51,
             "value" : "Utah"
           }, {
             "id" : 52,
-            "value" : "Vermont"
+            "value" : "Virginia"
           }, {
             "id" : 53,
             "value" : "Virgin Islands"
           }, {
             "id" : 54,
-            "value" : "Virginia"
+            "value" : "Vermont"
           }, {
             "id" : 55,
             "value" : "Washington"
           }, {
             "id" : 56,
-            "value" : "West Virginia"
+            "value" : "Wisconsin"
           }, {
             "id" : 57,
-            "value" : "Wisconsin"
+            "value" : "West Virginia"
           }, {
             "id" : 58,
             "value" : "Wyoming"
           } ]
         }
     http_version: 
-  recorded_at: Mon, 10 Jul 2017 18:38:23 GMT
+  recorded_at: Tue, 25 Jul 2017 15:07:10 GMT
 - request:
     method: get
     uri: http://tpt2.dev.cwds.io:8084/dictionaries/income-types?token=null
@@ -438,7 +552,7 @@ http_interactions:
       message: 
     headers:
       date:
-      - Mon, 10 Jul 2017 18:38:23 GMT
+      - Tue, 25 Jul 2017 15:07:11 GMT
       content-type:
       - application/json
       vary:
@@ -461,7 +575,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Mon, 10 Jul 2017 18:38:23 GMT
+  recorded_at: Tue, 25 Jul 2017 15:07:10 GMT
 - request:
     method: get
     uri: http://tpt2.dev.cwds.io:8084/dictionaries/residence-ownership-types
@@ -477,7 +591,7 @@ http_interactions:
       message: 
     headers:
       date:
-      - Mon, 10 Jul 2017 18:38:23 GMT
+      - Tue, 25 Jul 2017 15:07:11 GMT
       content-type:
       - application/json
       vary:
@@ -500,7 +614,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Mon, 10 Jul 2017 18:38:23 GMT
+  recorded_at: Tue, 25 Jul 2017 15:07:10 GMT
 - request:
     method: get
     uri: http://tpt2.dev.cwds.io:8084/dictionaries/ethnicity-types
@@ -516,7 +630,7 @@ http_interactions:
       message: 
     headers:
       date:
-      - Mon, 10 Jul 2017 18:38:24 GMT
+      - Tue, 25 Jul 2017 15:07:11 GMT
       content-type:
       - application/json
       vary:
@@ -629,7 +743,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Mon, 10 Jul 2017 18:38:24 GMT
+  recorded_at: Tue, 25 Jul 2017 15:07:11 GMT
 - request:
     method: get
     uri: http://tpt2.dev.cwds.io:8084/dictionaries/address-types
@@ -645,7 +759,7 @@ http_interactions:
       message: 
     headers:
       date:
-      - Mon, 10 Jul 2017 18:38:24 GMT
+      - Tue, 25 Jul 2017 15:07:11 GMT
       content-type:
       - application/json
       vary:
@@ -668,7 +782,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Mon, 10 Jul 2017 18:38:24 GMT
+  recorded_at: Tue, 25 Jul 2017 15:07:11 GMT
 - request:
     method: get
     uri: http://tpt2.dev.cwds.io:8084/dictionaries/applicant-relationship-types
@@ -684,7 +798,7 @@ http_interactions:
       message: 
     headers:
       date:
-      - Mon, 10 Jul 2017 18:38:24 GMT
+      - Tue, 25 Jul 2017 15:07:11 GMT
       content-type:
       - application/json
       vary:
@@ -710,5 +824,111 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Mon, 10 Jul 2017 18:38:24 GMT
+  recorded_at: Tue, 25 Jul 2017 15:07:11 GMT
+- request:
+    method: get
+    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms/111
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Tue, 25 Jul 2017 15:07:11 GMT
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '79'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 111,
+          "is_initial_application" : false,
+          "is_other_type" : false
+        }
+    http_version: 
+  recorded_at: Tue, 25 Jul 2017 15:07:11 GMT
+- request:
+    method: get
+    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms/111/applicants
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      date:
+      - Tue, 25 Jul 2017 15:07:11 GMT
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-type:
+      - text/html;charset=iso-8859-1
+      content-length:
+      - '259'
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/111/applicants. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Tue, 25 Jul 2017 15:07:11 GMT
+- request:
+    method: get
+    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms/111/residence
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      date:
+      - Tue, 25 Jul 2017 15:07:12 GMT
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-type:
+      - text/html;charset=iso-8859-1
+      content-length:
+      - '258'
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/111/residence. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Tue, 25 Jul 2017 15:07:11 GMT
 recorded_with: VCR 3.0.3

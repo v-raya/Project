@@ -1,6 +1,6 @@
 module Concerns::Rfa::ApplicationApiProtocolProvider
   extend ActiveSupport::Concern
-  include Concerns::BaseApiProtocolProvider
+  include Concerns::BaseCalsApiProtocolProvider
 
   class_methods do
 

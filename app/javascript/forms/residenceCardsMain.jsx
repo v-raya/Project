@@ -4,7 +4,7 @@ import AddressCard from './addressCard'
 import AboutThisResidenceCard from './aboutThisResidenceCard.jsx'
 
 const blankResidenceFields = Object.freeze({
-  residence_ownership_type: '',
+  residence_ownership: '',
   physical_mailing_similar: true,
   weapon_in_home: '',
   body_of_water_exist: '',
@@ -43,7 +43,7 @@ export default class ResidenceCards extends React.Component {
           </div>
           <AddressCard
             stateTypes={this.props.stateTypes}
-            address={residenceData.address}
+            addresses={residenceData.address}
             physicalMailingSimilar={residenceData.physical_mailing_similar}
             setParentState={this.setResidenceState}
           />

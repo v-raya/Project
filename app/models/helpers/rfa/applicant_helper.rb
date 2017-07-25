@@ -8,6 +8,10 @@ class Helpers::Rfa::ApplicantHelper < Helpers::ModelHelperBase
     model_class.create(auth_header, parent_id, body)
   end
 
+  def find_by_application_id(parent_id)
+    model_class.find_by_application_id(auth_header, parent_id)
+  end
+
   def gender_types
     Rfa::Applicant.gender_types(auth_header)
   end

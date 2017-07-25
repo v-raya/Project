@@ -19,8 +19,10 @@ describe  Rfa::A01Controller do
   
   describe 'get edit' do
     it 'renders the edit page' do
-      rfa_application =   FactoryGirl.build(:application, id: 7)
-      get :edit, {params: {id: rfa_application.id}}
+      application_helper = Helpers::Rfa::ApplicationHelper.new(auth_header: session['token'])
+      rfa_application_response = application_helper.create_application
+
+      get :edit, {params: {id: rfa_application_response['id']}}
       expect(response).to render_template('edit')
     end
   end
