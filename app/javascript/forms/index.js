@@ -5,6 +5,7 @@ import ResidenceCards from './residenceCardsMain'
 import OtherAdultsCard from './OtherAdultsCardsGroup'
 import './stylesheets/cards-main.scss'
 import {fetchRequest} from '../helpers/http'
+import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 
 export default class Forms extends React.Component {
   constructor (props) {
@@ -27,7 +28,7 @@ export default class Forms extends React.Component {
   }
 
   submitForm () {
-    var url = '/rfa/a01/' + this.props.application_id
+    var url = urlPrefixHelper('/rfa/a01/' + this.props.application_id)
     let params = this.state.application
     fetchRequest(url, 'PUT', this.state.application).then(
       response => response.json()).then((response) => {
