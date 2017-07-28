@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import {PhoneNumberField} from '../common/phoneNumberFields'
 import {getDictionaryId, checkArrayObjectPresence} from '../helpers/commonHelper.jsx'
 
-const blankPhoneNumberFields = Object.freeze({
+export const blankPhoneNumberFields = Object.freeze({
   number: '',
   phone_type: {id: '', value: ''},
   preferred: false

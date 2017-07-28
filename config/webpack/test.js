@@ -9,7 +9,7 @@ module.exports = merge(sharedConfig, {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /test/],
         loader: 'istanbul-instrumenter-loader',
         query: {
           esModules: true

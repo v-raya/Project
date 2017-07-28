@@ -317,7 +317,7 @@ const ethnicityTypes = Object.freeze({
   ]}
 )
 
-const phoneTypes = Object.freeze(
+export const phoneTypes = Object.freeze(
   [
     {
       'id': 1,
