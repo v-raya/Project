@@ -52,7 +52,7 @@ export default class Employment extends React.Component {
               label='Annual Income' placeholder=''
               onChange={(event) => this.onEmploymentChange('income', event.target.value)}/>
 
-            <DropDownField gridClassName='col-md-1' id='income'
+            <DropDownField gridClassName='col-md-1' id='income_type'
               value={getDictionaryId(employmentFields.income_type)}
               selectClassName='reusable-select'
               optionList={this.props.salaryTypes}
@@ -74,7 +74,7 @@ export default class Employment extends React.Component {
               label='City' placeholder=''
               type='text' onChange={(event) => this.onPhysicalAddressChange('city', event.target.value)}/>
 
-            <DropDownField gridClassName='col-md-4' id='props'
+            <DropDownField gridClassName='col-md-4' id='state_type'
               selectClassName='reusable-select'
               value={getDictionaryId(employmentFields.physical_address.state)}
               optionList={this.props.stateTypes}

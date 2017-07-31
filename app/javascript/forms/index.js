@@ -72,20 +72,22 @@ export default class Forms extends React.Component {
               </div>
             </div>
 
-            <ApplicantCardsGroup
-              nameTypes={this.props.nameTypes.items}
-              phoneTypes={this.props.phoneTypes.items}
-              salaryTypes={this.props.salaryTypes.items}
-              stateTypes={this.props.stateTypes.items}
-              educationLevels={this.props.educationLevels.items}
-              genderTypes={this.props.genderTypes.items}
-              // raceTypes={this.props.raceTypes}
-              ethnicityTypes={this.props.ethnicityTypes}
-              languageTypes={this.props.languageTypes.items}
-              focusComponentName={this.state.focusComponentName}
-              applicants={this.state.application.applicants}
-              setParentState={this.setApplicationState}
-              setFocusState={this.setFocusState} />
+            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+              <ApplicantCardsGroup
+                nameTypes={this.props.nameTypes.items}
+                phoneTypes={this.props.phoneTypes.items}
+                salaryTypes={this.props.salaryTypes.items}
+                stateTypes={this.props.stateTypes.items}
+                educationLevels={this.props.educationLevels.items}
+                genderTypes={this.props.genderTypes.items}
+                // raceTypes={this.props.raceTypes}
+                ethnicityTypes={this.props.ethnicityTypes}
+                languageTypes={this.props.languageTypes.items}
+                focusComponentName={this.state.focusComponentName}
+                applicants={this.state.application.applicants}
+                setParentState={this.setApplicationState}
+                setFocusState={this.setFocusState} />
+            </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h3>II. Applicant (S) - <span>Residence</span></h3>

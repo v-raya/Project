@@ -1,10 +1,11 @@
 import React from 'react'
 import PhoneNumbersCard from '../../../app/javascript/forms/phoneNumberCardsGroup.jsx'
+import {phoneTypes} from '../helpers/constants'
 var TestUtils = require('react-dom/lib/ReactTestUtils')
 
 describe('Verify Phone Card Component View', function () {
   let phoneCardComp = TestUtils.createRenderer()
-  let phoneCardRender = phoneCardComp.render(<PhoneNumbersCard />)
+  let phoneCardRender = phoneCardComp.render(<PhoneNumbersCard phoneTypes={phoneTypes}/>)
   let phoneCardTag = phoneCardRender.props
   it('has class name', function () {
     expect(phoneCardTag.className).toBe('card-body')

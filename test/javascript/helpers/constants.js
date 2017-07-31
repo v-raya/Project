@@ -316,6 +316,21 @@ const ethnicityTypes = Object.freeze({
     }
   ]}
 )
+const nameTypes = Object.freeze({
+  'items': [
+    {
+      'id': 1,
+      'value': 'Alias'
+    },
+    {
+      'id': 2,
+      'value': 'Legal'
+    }
+  ]}
+)
+
+export {nameTypes, salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes, languageTypes, residenceTypes}
+
 
 export const phoneTypes = Object.freeze(
   [
