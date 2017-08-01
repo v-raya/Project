@@ -31,27 +31,36 @@ class Rfa::A01Controller < CalsBaseController
     # @application.applicants = rfa_application_helper.find_applicants()
     @application.applicants = rfa_applicant_helper.find_by_application_id(params[:id])
     @application.residence = rfa_residence_helper.find_by_application_id(params[:id])
+    @application.minor_children = rfa_minor_children_helper.find_by_application_id(params[:id])
   end
 
   def update
     applicants = params['applicants']
     residence = params['residence']
+    minor_children = params['minorChildren']
     application_response = {}
 
     if applicants.present?
       applicants_result = []
-
       applicants.each do |applicant|
         applicant = applicant.permit!
         applicants_result << rfa_applicant_helper.create(params[:id], applicant.to_json)
       end
-
       application_response[:applicants] = applicants_result
     end
 
     if residence.present?
       residence = residence.permit!
       rfa_residence_helper.create(params[:id], residence.except('home_languages').to_json)
+    end
+
+    if minor_children.present?
+      minor_children_result = []
+      minor_children.each do |child|
+        child = child.permit!
+        minor_children_result << rfa_minor_children_helper.create(params[:id], child.except('nameField', 'child_related_to').to_json)
+      end
+      application_response[:minor_children] = minor_children_result
     end
 
     render action: 'edit.html.erb'
@@ -69,6 +78,10 @@ class Rfa::A01Controller < CalsBaseController
 
   def rfa_residence_helper
     Helpers::Rfa::ApplicationResidenceHelper.new(auth_header: session['token'])
+  end
+
+  def rfa_minor_children_helper
+    Helpers::Rfa::ApplicationMinorChildrenHelper.new(auth_header: session['token'])
   end
 
   def dictionaries_helper

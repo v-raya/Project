@@ -59,7 +59,7 @@ export default class OtherAdultsCardsGroup extends React.Component {
   handleNameFieldInput (index, value, type) {
     let otherAdultsList = Immutable.fromJS(checkArrayObjectPresence(this.props.otherAdults) || [otherAdultsDefaults])
     otherAdultsList = otherAdultsList.update(index,
-       otherAdult => otherAdult.setIn(['nameField', type], value))
+      otherAdult => otherAdult.setIn(['nameField', type], value))
     this.props.setParentState('otherAdults', otherAdultsList.toJS())
   }
 
@@ -77,31 +77,30 @@ export default class OtherAdultsCardsGroup extends React.Component {
           className={this.getFocusClassName('otherAdultsSection') + ' ' + 'card other-adults-section double-gap-top'}>
 
           <div className='card-header'>
-            <span>Other adults residing or Regularly present in the home</span>
+            <span>Other Information</span>
           </div>
           <div className='card-body'>
             {
-          otherAdultsList.map((otherAdultsFields, index) => {
-            return (
-              <div key={index} className='row list-item' >
-                <div > <span onClick={() => this.clickClose(index)} className='pull-right glyphicon glyphicon-remove' />
-                </div>
-                <OtherAdultsCardField
-                  index={index}
-                  relationshipTypes={this.props.relationshipTypes}
-                  otherAdults={otherAdultsFields}
-                  handleNameFieldInput={this.handleNameFieldInput}
-                  clickClose={this.clickClose}
-                  onFieldChange={this.onFieldChange} />
-              </div>
+              otherAdultsList.map((otherAdultsFields, index) => {
+                return (
+                  <div key={index} className='row list-item' >
+                    <div > <span onClick={() => this.clickClose(index)} className='pull-right glyphicon glyphicon-remove' />
+                    </div>
+                    <OtherAdultsCardField
+                      index={index}
+                      relationshipTypes={this.props.relationshipTypes}
+                      otherAdults={otherAdultsFields}
+                      handleNameFieldInput={this.handleNameFieldInput}
+                      clickClose={this.clickClose}
+                      onFieldChange={this.onFieldChange} />
+                  </div>
 
-            )
-          })
-        }
-          </div>
-
-          <div className='text-center'>
-            <button onClick={this.addCard} className='btn btn-default'>Add another Adult +</button>
+                )
+              })
+            }
+            <div className='text-center'>
+              <button onClick={this.addCard} className='btn btn-default'>Add another Adult +</button>
+            </div>
           </div>
         </div>
       </div>

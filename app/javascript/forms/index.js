@@ -3,6 +3,8 @@ import Immutable from 'immutable'
 import ApplicantCardsGroup from './applicantCardsGroup.jsx'
 import ResidenceCards from './residenceCardsMain'
 import OtherAdultsCard from './OtherAdultsCardsGroup'
+import MinorCardsGroup from './minorCardsGroup'
+
 import './stylesheets/cards-main.scss'
 import {fetchRequest} from '../helpers/http'
 import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
@@ -15,7 +17,8 @@ export default class Forms extends React.Component {
       application: {
         applicants: [],
         residence: {},
-        otherAdults: []
+        otherAdults: [],
+        minorChildren: []
       }
     }
 
@@ -102,7 +105,19 @@ export default class Forms extends React.Component {
             </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-              <h3>V. Applicant (S) - <span>Other Adults</span></h3>
+              <h3>IV. <span>Minor Children Residing in the home</span></h3>
+              <MinorCardsGroup
+                genderTypes={this.props.genderTypes.items}
+                relationshipTypes={this.props.relationshipTypes}
+                focusComponentName={this.state.focusComponentName}
+                setFocusState={this.setFocusState}
+                setParentState={this.setApplicationState}
+                minorChildren={this.state.application.minorChildren}/>
+            </div>
+
+            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+              <h3>V.<span>Other adults residing or Regularly present in the home</span></h3>
+              <p> Each adult residing or regularly present in the home must complete a Criminal Record Statement RFA 01B</p>
               <OtherAdultsCard
                 focusComponentName={this.state.focusComponentName}
                 setFocusState={this.setFocusState}

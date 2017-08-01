@@ -8,7 +8,7 @@ describe  Rfa::A01Controller do
     allow(controller).to receive_messages(:authenticate_with_cwds => true)
   end
 
-  describe 'Post create' do
+  describe 'Post call' do
     it 'makes a application and returns its id' do
       post :create
 
@@ -17,7 +17,7 @@ describe  Rfa::A01Controller do
     end
   end
   
-  describe 'get edit' do
+  describe 'get call' do
     it 'renders the edit page' do
       application_helper = Helpers::Rfa::ApplicationHelper.new(auth_header: session['token'])
       rfa_application_response = application_helper.create_application
