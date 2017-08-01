@@ -1,8 +1,8 @@
 import React from 'react'
-import PhoneComponent, {blankPhoneNumberFields} from '../../../app/javascript/forms/phoneNumberCardsGroup.jsx'
-import {PhoneNumberField} from '../../../app/javascript/common/phoneNumberFields'
+import PhoneComponent, {blankPhoneNumberFields} from 'rfa_forms/rfa01a_edit_view/phoneNumberCardsGroup'
+import {PhoneNumberField} from 'components/common/phoneNumberFields'
 import {shallow, mount} from 'enzyme'
-import {phoneTypes} from '../helpers/constants'
+import {phoneTypes} from './../../helpers/constants'
 var TestUtils = require('react-dom/test-utils')
 
 describe('Verify Phone Card Component View', function () {

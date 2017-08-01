@@ -1,7 +1,7 @@
 import React from 'react'
-import AboutThisResidenceCard from '../../../app/javascript/forms/aboutThisResidenceCard.jsx'
-import {languageTypes, residenceTypes} from '../helpers/constants'
-var TestUtils = require('react-dom/lib/ReactTestUtils')
+import AboutThisResidenceCard from 'rfa_forms/rfa01a_edit_view/aboutThisResidenceCard.jsx'
+import {languageTypes, residenceTypes} from './../../helpers/constants'
+var TestUtils = require('react-dom/test-utils')
 
 describe('Verify Physical Address', function () {
   const blankAboutThisResidenceFields = Object.freeze({

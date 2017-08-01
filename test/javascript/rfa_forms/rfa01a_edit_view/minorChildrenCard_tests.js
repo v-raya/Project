@@ -1,7 +1,7 @@
 import React from 'react'
-import MinorCardsGroup from '../../../app/javascript/forms/minorCardsGroup.jsx'
+import MinorCardsGroup from 'rfa_forms/rfa01a_edit_view//minorCardsGroup.jsx'
+import {genderTypes} from './../../helpers/constants'
 var TestUtils = require('react-dom/lib/ReactTestUtils')
-import {genderTypes} from '../helpers/constants'
 
 describe('Verify gender', function () {
   const props = {

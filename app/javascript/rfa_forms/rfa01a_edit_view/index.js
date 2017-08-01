@@ -6,10 +6,10 @@ import OtherAdultsCard from './OtherAdultsCardsGroup'
 import MinorCardsGroup from './minorCardsGroup'
 
 import './stylesheets/cards-main.scss'
-import {fetchRequest} from '../helpers/http'
-import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
+import {fetchRequest} from 'helpers/http'
+import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 
-export default class Forms extends React.Component {
+export default class Rfa01EditView extends React.Component {
   constructor (props) {
     super(props)
     this.state = {

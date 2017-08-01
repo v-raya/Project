@@ -1,7 +1,7 @@
 import Immutable from 'immutable'
 import React from 'react'
 import ApplicantCard from './applicantCard.jsx'
-import {checkArrayObjectPresence} from '../helpers/commonHelper.jsx'
+import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 
 const blankApplicantFields = Object.freeze({
   first_name: '',

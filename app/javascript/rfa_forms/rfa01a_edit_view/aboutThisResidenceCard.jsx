@@ -1,10 +1,10 @@
 import React from 'react'
 import Immutable from 'immutable'
-import {DropDownField} from '../common/dropDownField'
-import {TextAreaComponent} from '../common/textArea'
-import {yesNo} from '../constants/constants'
-import {InputComponent} from '../common/inputFields'
-import {getDictionaryId, dictionaryNilSelect} from '../helpers/commonHelper.jsx'
+import {DropDownField} from 'components/common/dropDownField'
+import {TextAreaComponent} from 'components/common/textArea'
+import {yesNo} from 'constants/constants'
+import {InputComponent} from 'components/common/inputFields'
+import {getDictionaryId, dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 
 const othersUsingAddressMailing = Object.freeze({
   first_name: '',

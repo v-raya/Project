@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {InputComponent} from './inputFields'
 import {DropDownField} from './dropDownField'
-import {getDictionaryId, dictionaryNilSelect} from '../helpers/commonHelper.jsx'
+import {getDictionaryId, dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 
 export class NameCardField extends React.Component {
   render () {

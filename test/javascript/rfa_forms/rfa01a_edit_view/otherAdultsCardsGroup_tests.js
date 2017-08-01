@@ -1,7 +1,7 @@
 import React from 'react'
-import OtherAdults from '../../../app/javascript/forms/OtherAdultsCardsGroup'
-var TestUtils = require('react-dom/lib/ReactTestUtils')
-import {relationshipTypes} from '../helpers/constants'
+import OtherAdults from 'rfa_forms/rfa01a_edit_view/OtherAdultsCardsGroup'
+import {relationshipTypes} from './../../helpers/constants'
+var TestUtils = require('react-dom/test-utils')
 
 describe('Verify Physical Address', function () {
   const props = {

@@ -1,7 +1,7 @@
 import React from 'react'
-import {InputComponent} from '../common/inputFields'
-import {DropDownField} from '../common/dropDownField'
-import {getDictionaryId, dictionaryNilSelect} from '../helpers/commonHelper.jsx'
+import {InputComponent} from 'components/common/inputFields'
+import {DropDownField} from 'components/common/dropDownField'
+import {getDictionaryId, dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 
 export default class AboutApplicant extends React.Component {
   render () {

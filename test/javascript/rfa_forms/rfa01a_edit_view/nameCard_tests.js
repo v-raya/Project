@@ -1,16 +1,17 @@
 import sinon from 'sinon'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {nameTypes} from './../../helpers/constants'
+import NameCard from 'rfa_forms/rfa01a_edit_view/nameCard'
 var TestUtils = require('react-dom/test-utils')
-import {nameTypes} from '../helpers/constants'
-import NameCard from '../../../app/javascript/forms/nameCard'
 
 describe('Name Card Component', () => {
   let setCardState, isNameCardRemoved,
     handleNameChangeFun, nameType,
     nameField, otherName, renderedCard,
     renderedDOM, renderedDom
-  beforeEach (() => {
+
+  beforeEach(() => {
     setCardState = sinon.spy()
     isNameCardRemoved = sinon.spy()
     handleNameChangeFun = sinon.spy()
@@ -35,7 +36,7 @@ describe('Name Card Component', () => {
       setParentState={setCardState}
       removeCard={isNameCardRemoved}
       handleNameChange={handleNameChangeFun}/>)
-    renderedDOM = (domTobeRendered) => ReactDOM.findDOMNode(domTobeRendered);
+    renderedDOM = (domTobeRendered) => ReactDOM.findDOMNode(domTobeRendered)
     renderedDom = renderedDOM(renderedCard)
   })
   it('Verify First name Props', () => {
@@ -71,7 +72,7 @@ describe('Name Card Component', () => {
   it('Change First Name in Name Card', () => {
     let firstName = 'myName'
     let firstNameField = renderedDom.children[0].children[0].children[0].children[0].children[1]
-    ReactDOM.findDOMNode(firstNameField).value  = firstName
+    ReactDOM.findDOMNode(firstNameField).value = firstName
     TestUtils.Simulate.keyPress(firstNameField, {target: firstName})
     expect(firstNameField.value).toEqual('myName')
     TestUtils.Simulate.change(firstNameField, {target: {value: firstName}})
@@ -80,7 +81,7 @@ describe('Name Card Component', () => {
   it('Change Middle Name in Name Card', () => {
     let middleName = 'Douglous'
     let middleNameField = renderedDom.children[0].children[0].children[1].children[0].children[1]
-    ReactDOM.findDOMNode(middleNameField).value  = middleName
+    ReactDOM.findDOMNode(middleNameField).value = middleName
     TestUtils.Simulate.change(middleNameField, {target: {value: middleName}})
     expect(renderedCard.props.setParentState.called).toBe(true)
   })

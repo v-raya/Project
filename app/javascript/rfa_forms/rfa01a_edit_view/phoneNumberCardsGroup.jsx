@@ -1,8 +1,8 @@
 import Immutable from 'immutable'
 import React from 'react'
 import PropTypes from 'prop-types'
-import {PhoneNumberField} from '../common/phoneNumberFields'
-import {getDictionaryId, checkArrayObjectPresence} from '../helpers/commonHelper.jsx'
+import {PhoneNumberField} from 'components/common/phoneNumberFields'
+import {getDictionaryId, checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 
 export const blankPhoneNumberFields = Object.freeze({
   number: '',

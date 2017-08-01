@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-var TestUtils = require('react-dom/test-utils')
 import {shallow, mount} from 'enzyme'
-import {salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes} from '../helpers/constants'
-import AboutApplicant from '../../../app/javascript/forms/aboutApplicantCard.jsx'
+import {salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes} from './../../helpers/constants'
+import AboutApplicant from 'rfa_forms/rfa01a_edit_view/aboutApplicantCard.jsx'
+var TestUtils = require('react-dom/test-utils')
 
 describe('Verify More About Applican', () => {
   let aboutApplicantComp, setCardState,
@@ -41,7 +41,7 @@ describe('Verify More About Applican', () => {
       setParentState={setCardState} />)
   })
   it('High Level Education DropDown Change', () => {
-    //spyOn(aboutApplicantComp.instance().props.setParentState, setCardState).and.callThrough()
+    // spyOn(aboutApplicantComp.instance().props.setParentState, setCardState).and.callThrough()
     let higherEducationField = aboutApplicantComp.find('#highest_education_level')
     higherEducationField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'GED'}]}})
     expect(setCardState).toHaveBeenCalledWith('highest_education_level', {id: '2', value: 'GED'})

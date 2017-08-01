@@ -1,7 +1,7 @@
 import Immutable from 'immutable'
 import React from 'react'
-import {checkArrayObjectPresence} from '../helpers/commonHelper.jsx'
-import {OtherAdultsCardField} from '../common/OtherAdultsCardField'
+import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
+import {OtherAdultsCardField} from 'components/common/OtherAdultsCardField'
 
 const otherAdultsDefaults = Object.freeze({
   index: 0,
@@ -98,9 +98,10 @@ export default class OtherAdultsCardsGroup extends React.Component {
                 )
               })
             }
-            <div className='text-center'>
-              <button onClick={this.addCard} className='btn btn-default'>Add another Adult +</button>
-            </div>
+          </div>
+
+          <div className='text-center'>
+            <button onClick={this.addCard} className='btn btn-default'>Add another Adult +</button>
           </div>
         </div>
       </div>

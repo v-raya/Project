@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {InputComponent} from './inputFields'
 import {DropDownField} from './dropDownField'
 import {CheckboxField} from './checkboxField'
-import {dictionaryNilSelect} from '../helpers/commonHelper.jsx'
+import {dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 
 export class PhoneNumberField extends React.Component {
   render () {

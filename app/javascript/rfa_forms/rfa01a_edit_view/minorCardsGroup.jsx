@@ -1,7 +1,7 @@
 import Immutable from 'immutable'
 import React from 'react'
-import {checkArrayObjectPresence} from '../helpers/commonHelper.jsx'
-import {MinorCardField} from '../forms/minorCardField'
+import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
+import {MinorCardField} from './minorCardField'
 
 const minorDefaults = Object.freeze({
   nameField: {

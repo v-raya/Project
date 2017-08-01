@@ -1,8 +1,8 @@
 import React from 'react'
 import Immutable from 'immutable'
-import {InputComponent} from '../common/inputFields'
-import {DropDownField} from '../common/dropDownField'
-import {getDictionaryId, dictionaryNilSelect} from '../helpers/commonHelper.jsx'
+import {InputComponent} from 'components/common/inputFields'
+import {DropDownField} from 'components/common/dropDownField'
+import {getDictionaryId, dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 
 const blankEmploymentFields = Object.freeze({
   employer_name: '',

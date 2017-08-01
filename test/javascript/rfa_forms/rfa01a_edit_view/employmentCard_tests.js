@@ -1,10 +1,9 @@
 import React from 'react'
-import Employment from '../../../app/javascript/forms/employmentCard.jsx'
+import Employment from 'rfa_forms/rfa01a_edit_view/employmentCard.jsx'
 import ReactDOM from 'react-dom'
-var TestUtils = require('react-dom/test-utils')
 import {shallow, mount} from 'enzyme'
-import {salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes} from '../helpers/constants'
-
+import {salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes} from './../../helpers/constants'
+var TestUtils = require('react-dom/test-utils')
 
 describe('Employment Card', function () {
   const props = {
@@ -36,7 +35,7 @@ describe('Employment Card', function () {
   let employmentCardComp, onEmploymentChange, setCardState
   const employmentCard = TestUtils.createRenderer()
   const cardRendered = employmentCard.render(<Employment {...props} />)
-    // debugger
+  // debugger
 
   it('verify Resident Address fields', function () {
     let employmentClassName = cardRendered
@@ -55,22 +54,22 @@ describe('Employment Card', function () {
     let employmentNameField = employmentCardComp.find('#employer_name')
     spyOn(employmentCardComp.instance(), 'onEmploymentChange').and.callThrough()
     employmentNameField.simulate('change', {target: {value: 'Child Welfare'}})
-    expect(employmentCardComp.instance().onEmploymentChange).toHaveBeenCalledWith('employer_name','Child Welfare')
+    expect(employmentCardComp.instance().onEmploymentChange).toHaveBeenCalledWith('employer_name', 'Child Welfare')
     applicantFields.employer_name = 'Child Welfare'
-    expect(setCardState).toHaveBeenCalledWith('employment',applicantFields)
+    expect(setCardState).toHaveBeenCalledWith('employment', applicantFields)
   })
   it('verify Occupation Change', () => {
     let occupationField = employmentCardComp.find('#occupation')
     spyOn(employmentCardComp.instance(), 'onEmploymentChange').and.callThrough()
     occupationField.simulate('change', {target: {value: 'Lead Developer'}})
-    expect(employmentCardComp.instance().onEmploymentChange).toHaveBeenCalledWith('occupation','Lead Developer')
+    expect(employmentCardComp.instance().onEmploymentChange).toHaveBeenCalledWith('occupation', 'Lead Developer')
   })
   it('verify Income Change', () => {
     let incomeField = employmentCardComp.find('#income')
     employmentCardComp.update()
     spyOn(employmentCardComp.instance(), 'onEmploymentChange').and.callThrough()
     incomeField.simulate('change', {target: {value: '10,000'}})
-    expect(employmentCardComp.instance().onEmploymentChange).toHaveBeenCalledWith('income','10,000')
+    expect(employmentCardComp.instance().onEmploymentChange).toHaveBeenCalledWith('income', '10,000')
   })
   it('verify Income Type Change', () => {
     let incomeTypeField = employmentCardComp.find('#income_type')
@@ -89,7 +88,7 @@ describe('Employment Card', function () {
     let physicalZipField = employmentCardComp.find('#zip')
     spyOn(employmentCardComp.instance(), 'onPhysicalAddressChange').and.callThrough()
     physicalZipField.simulate('change', {target: {value: '95832'}})
-    expect(employmentCardComp.instance().onPhysicalAddressChange).toHaveBeenCalledWith('zip','95832')
+    expect(employmentCardComp.instance().onPhysicalAddressChange).toHaveBeenCalledWith('zip', '95832')
     applicantFields.physical_address.zip = '95832'
     expect(setCardState).toHaveBeenCalledWith('employment', applicantFields)
   })
@@ -97,7 +96,7 @@ describe('Employment Card', function () {
     let physicalCityField = employmentCardComp.find('#city')
     spyOn(employmentCardComp.instance(), 'onPhysicalAddressChange').and.callThrough()
     physicalCityField.simulate('change', {target: {value: 'San Mateo'}})
-    expect(employmentCardComp.instance().onPhysicalAddressChange).toHaveBeenCalledWith('city','San Mateo')
+    expect(employmentCardComp.instance().onPhysicalAddressChange).toHaveBeenCalledWith('city', 'San Mateo')
   })
   it('verify State Type Change', () => {
     let physicalStateField = employmentCardComp.find('#state_type')

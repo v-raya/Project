@@ -1,9 +1,9 @@
 import React from 'react'
-import {NameCardField} from '../common/nameCardField'
+import {NameCardField} from 'components/common/nameCardField'
 import Immutable from 'immutable'
-import {InputComponent} from '../common/inputFields'
-import {DropDownField} from '../common/dropDownField'
-import {checkArrayObjectPresence} from '../helpers/commonHelper.jsx'
+import {InputComponent} from 'components/common/inputFields'
+import {DropDownField} from 'components/common/dropDownField'
+import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 
 const blankNameFields = Object.freeze({
   first_name: '',

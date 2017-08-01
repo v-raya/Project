@@ -1,8 +1,8 @@
 import React from 'react'
 import sinon from 'sinon'
-import {nameTypes, stateTypes, genderTypes, educationLevels, ethnicityTypes, languageTypes, salaryTypes} from '../helpers/constants.js'
+import {nameTypes, stateTypes, genderTypes, educationLevels, ethnicityTypes, languageTypes, salaryTypes} from './../../helpers/constants.js'
 import ShallowRenderer from 'react-test-renderer/shallow'
-import ApplicantCardsGroup from '../../../app/javascript/forms/applicantCardsGroup.jsx'
+import ApplicantCardsGroup from 'rfa_forms/rfa01a_edit_view/applicantCardsGroup.jsx'
 import ReactDOM from 'react-dom'
 var TestUtils = require('react-dom/test-utils')
 

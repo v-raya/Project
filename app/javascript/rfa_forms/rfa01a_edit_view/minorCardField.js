@@ -1,8 +1,8 @@
 import React from 'react'
-import {InputComponent} from '../common/inputFields'
-import {DropDownField} from '../common/dropDownField'
-import {getDictionaryId, dictionaryNilSelect} from '../helpers/commonHelper.jsx'
-import {yesNo} from '../constants/constants'
+import {InputComponent} from 'components/common/inputFields'
+import {DropDownField} from 'components/common/dropDownField'
+import {getDictionaryId, dictionaryNilSelect} from 'helpers/commonHelper.jsx'
+import {yesNo} from 'constants/constants'
 
 export class MinorCardField extends React.Component {
   render () {

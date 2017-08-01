@@ -1,9 +1,9 @@
 import React from 'react'
 import Immutable from 'immutable'
-import {InputComponent} from '../common/inputFields'
-import {DropDownField} from '../common/dropDownField'
-import {yesNo} from '../constants/constants'
-import {dictionaryNilSelect} from '../helpers/commonHelper.jsx'
+import {InputComponent} from 'components/common/inputFields'
+import {DropDownField} from 'components/common/dropDownField'
+import {yesNo} from 'constants/constants'
+import {dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 
 const blankPhysicalAddress = Object.freeze({
   street_address: '',
