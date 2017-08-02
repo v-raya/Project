@@ -6,18 +6,18 @@ module Concerns::Rfa::ApplicationApiProtocolProvider
 
     def create_application(auth_header)
       #create, so we aren't posting a body
-      response = FaradayCals.post('/rfa-1a-forms?token=null', auth_header,'{}')
+      response = FaradayCals.post('/rfa-1a-forms', auth_header,'{}')
       JSON.parse(response.body)
     end
 
 
     def name_types(auth_header)
-      response = FaradayCals.get('/dictionaries/name-types?token=null', auth_header)
+      response = FaradayCals.get('/dictionaries/name-types', auth_header)
       JSON.parse(response.body)
     end
 
     def phone_types(auth_header)
-      response = FaradayCals.get('/dictionaries/phone-number-types?token=null', auth_header)
+      response = FaradayCals.get('/dictionaries/phone-number-types', auth_header)
       JSON.parse(response.body)
     end
 

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms?token=null
+    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms
     body:
       encoding: UTF-8
       string: "{}"
@@ -12,7 +12,7 @@ http_interactions:
   response:
     status:
       code: 201
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:06 GMT
@@ -28,11 +28,11 @@ http_interactions:
           "is_initial_application" : false,
           "is_other_type" : false
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/name-types?token=null
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/name-types
     body:
       encoding: US-ASCII
       string: ''
@@ -42,7 +42,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:06 GMT
@@ -70,11 +70,11 @@ http_interactions:
             "value" : "Maiden"
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/phone-number-types?token=null
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/phone-number-types
     body:
       encoding: US-ASCII
       string: ''
@@ -84,7 +84,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:06 GMT
@@ -115,11 +115,11 @@ http_interactions:
             "value" : "Fax"
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/genders?token=null
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/genders
     body:
       encoding: US-ASCII
       string: ''
@@ -129,7 +129,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:06 GMT
@@ -151,11 +151,11 @@ http_interactions:
             "value" : "Female"
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/education-level-types?token=null
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/education-level-types
     body:
       encoding: US-ASCII
       string: ''
@@ -165,7 +165,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:06 GMT
@@ -202,11 +202,11 @@ http_interactions:
             "value" : "Post-Graduate Education"
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/languages?token=null
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/languages
     body:
       encoding: US-ASCII
       string: ''
@@ -216,7 +216,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:06 GMT
@@ -331,11 +331,11 @@ http_interactions:
             "value" : "Romanian"
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/states?token=null
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/states
     body:
       encoding: US-ASCII
       string: ''
@@ -345,7 +345,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:07 GMT
@@ -535,11 +535,11 @@ http_interactions:
             "value" : "Wyoming"
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/income-types?token=null
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/income-types
     body:
       encoding: US-ASCII
       string: ''
@@ -549,7 +549,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:07 GMT
@@ -574,7 +574,7 @@ http_interactions:
             "value" : "hourly"
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
@@ -588,7 +588,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:07 GMT
@@ -613,7 +613,7 @@ http_interactions:
             "value" : "Lease"
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
@@ -627,7 +627,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:07 GMT
@@ -742,7 +742,7 @@ http_interactions:
             "value" : "White"
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 - request:
     method: get
@@ -756,7 +756,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:07 GMT
@@ -781,7 +781,7 @@ http_interactions:
             "value" : "Mailing"
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 - request:
     method: get
@@ -795,7 +795,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:07 GMT
@@ -823,7 +823,7 @@ http_interactions:
             "value" : "Cohabitants"
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 - request:
     method: get
@@ -837,7 +837,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:07 GMT
@@ -855,7 +855,7 @@ http_interactions:
           "is_initial_application" : false,
           "is_other_type" : false
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 - request:
     method: get
@@ -869,7 +869,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:07 GMT
@@ -892,7 +892,7 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 - request:
     method: get
@@ -906,7 +906,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:07 GMT
@@ -929,7 +929,7 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 - request:
     method: get
@@ -943,7 +943,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       date:
       - Tue, 01 Aug 2017 16:20:07 GMT
@@ -966,6 +966,6 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 recorded_with: VCR 3.0.3

@@ -15,27 +15,27 @@ module Concerns::Rfa::ApplicantApiProtocolProvider
 
 
     def education_levels(auth_header)
-      response = FaradayCals.get('/dictionaries/education-level-types?token=null', auth_header)
+      response = FaradayCals.get('/dictionaries/education-level-types', auth_header)
       JSON.parse(response.body)
     end
 
     def gender_types(auth_header)
-      response = FaradayCals.get('/dictionaries/genders?token=null', auth_header)
+      response = FaradayCals.get('/dictionaries/genders', auth_header)
       JSON.parse(response.body)
     end
 
     def language_types(auth_header)
-      response = FaradayCals.get('/dictionaries/languages?token=null', auth_header)
+      response = FaradayCals.get('/dictionaries/languages', auth_header)
       JSON.parse(response.body)
     end
 
     def state_types(auth_header)
-      response = FaradayCals.get('/dictionaries/states?token=null', auth_header)
+      response = FaradayCals.get('/dictionaries/states', auth_header)
       JSON.parse(response.body)
     end
 
     def salary_types(auth_header)
-      response = FaradayCals.get('/dictionaries/income-types?token=null',auth_header)
+      response = FaradayCals.get('/dictionaries/income-types',auth_header)
       JSON.parse(response.body)
     end
 
