@@ -21,7 +21,7 @@ class Faraday::FaradayBase
   def self.faraday_shared(method, url, auth_header, body = nil)
     Rails.logger.info('API call request: ')
     Rails.logger.info("URL : #{url}")
-    Rails.logger.info("Method : #{method.to_s}")
+    Rails.logger.info("Method : #{method}")
     response = Faraday.send(method) do |req|
       req.url url
       req.headers = default_headers(auth_header)
@@ -35,11 +35,11 @@ class Faraday::FaradayBase
   end
 
   def self.default_headers(auth_header)
-    h = {
+    header_hash = {
       :'Content-Type' => 'application/json'
     }
-    h.merge({:'Authorization' => auth_header}) if auth_header.present?
-    return h
+    header_hash.merge!({:'Authorization' => auth_header}) if auth_header.present?
+    return header_hash
   end
 
   private_class_method :default_headers, :faraday_shared
