@@ -108,7 +108,7 @@ export default class Rfa01EditView extends React.Component {
               <h3>IV. <span>Minor Children Residing in the home</span></h3>
               <MinorCardsGroup
                 genderTypes={this.props.genderTypes.items}
-                relationshipTypes={this.props.relationshipTypes}
+                relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
                 focusComponentName={this.state.focusComponentName}
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}

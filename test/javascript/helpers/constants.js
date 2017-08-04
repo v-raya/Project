@@ -328,8 +328,21 @@ const nameTypes = Object.freeze({
     }
   ]}
 )
+const relationshipTypes = Object.freeze(
+  [
+    {
+      'id': 1,
+      'value': 'Sibling'
+    },
+    {
+      'id': 2,
+      'value': 'Neice'
+    }
+  ]
+)
 
-export {nameTypes, salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes, languageTypes, residenceTypes}
+
+export {nameTypes, salaryTypes, relationshipTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes, languageTypes, residenceTypes}
 
 
 export const phoneTypes = Object.freeze(
@@ -344,3 +357,4 @@ export const phoneTypes = Object.freeze(
     }
   ]
 )
+

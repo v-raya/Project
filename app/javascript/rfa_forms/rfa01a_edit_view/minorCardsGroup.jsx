@@ -3,18 +3,7 @@ import React from 'react'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import {MinorCardField} from './minorCardField'
 
-const minorDefaults = Object.freeze({
-  nameField: {
-    firstName: '',
-    lastName: '',
-    middleName: ''
-  },
-  relationship_to_applicant: '',
-  gender: '',
-  child_financially_supported: '',
-  child_adopted: '',
-  date_of_birth: '',
-  child_related_to: ''
+export const minorDefaults = Object.freeze({
 })
 
 export default class MinorCardsGroup extends React.Component {
@@ -45,9 +34,6 @@ export default class MinorCardsGroup extends React.Component {
 
   onFieldChange (cardIndex, value, type) {
     let minorChildrenList = Immutable.fromJS(checkArrayObjectPresence(this.props.minorChildren) || [minorDefaults])
-    if (minorChildrenList.size === 0) {
-      minorChildrenList = minorChildrenList.push(minorDefaults)
-    }
     minorChildrenList = minorChildrenList.update(cardIndex, x => x.set(type, value))
     this.props.setParentState('minorChildren', minorChildrenList.toJS())
   }
@@ -85,7 +71,7 @@ export default class MinorCardsGroup extends React.Component {
                     <MinorCardField
                       index={index}
                       genderTypes={this.props.genderTypes}
-                      relationshipTypes={this.props.relationshipTypes}
+                      relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
                       minorChildren={minorDefaults}
                       handleNameFieldInput={this.handleNameFieldInput}
                       clickClose={this.clickClose}

@@ -785,7 +785,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/applicant-relationship-types
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/relationship-to-applicant-types
     body:
       encoding: US-ASCII
       string: ''
@@ -811,17 +811,20 @@ http_interactions:
         {
           "items" : [ {
             "id" : 1,
-            "value" : "Married"
+            "value" : "Child"
           }, {
             "id" : 2,
-            "value" : "Domestic Partnership"
+            "value" : "Sibling"
           }, {
             "id" : 3,
-            "value" : "Related (Family Member)"
+            "value" : "Cousin"
           }, {
             "id" : 4,
-            "value" : "Cohabitants"
-          } ]
+            "value" : "Niece"
+          }, {
+           "id" : 3,
+            "value" : "Nephew"
+            } ]
         }
     http_version:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
