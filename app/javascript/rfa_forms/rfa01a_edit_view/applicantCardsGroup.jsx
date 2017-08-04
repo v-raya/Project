@@ -10,8 +10,7 @@ const blankApplicantFields = Object.freeze({
   other_names: [],
   date_of_birth: '',
   driver_license_number: '',
-  email: '',
-  phones: []
+  email: ''
 })
 
 export default class ApplicantCardsGroup extends React.Component {

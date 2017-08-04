@@ -2,7 +2,7 @@ import Immutable from 'immutable'
 import React from 'react'
 import PropTypes from 'prop-types'
 import {PhoneNumberField} from 'components/common/phoneNumberFields'
-import {getDictionaryId, checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
+import {addCardAsJS, removeCardAsJS} from 'helpers/cardsHelper.jsx'
 
 export const blankPhoneNumberFields = Object.freeze({
   number: '',
@@ -19,18 +19,12 @@ export default class PhoneComponent extends React.Component {
   }
 
   onPhoneClickClose (phoneCardIndex) {
-    let phoneNumbersList = Immutable.fromJS(checkArrayObjectPresence(this.props.phones) || [blankPhoneNumberFields])
-
-    phoneNumbersList = phoneNumbersList.delete(phoneCardIndex)
-    if (phoneNumbersList.size === 0) {
-      phoneNumbersList = phoneNumbersList.push(blankPhoneNumberFields)
-    }
-    this.props.setParentState('phones', phoneNumbersList.toJS())
+    this.props.setParentState('phones',
+      removeCardAsJS(this.props.phones, phoneCardIndex, blankPhoneNumberFields))
   }
 
   onPhoneFieldChange (phoneCardIndex, value, type) {
-    let phoneNumbersList = Immutable.fromJS(checkArrayObjectPresence(this.props.phones) || [blankPhoneNumberFields])
-
+    let phoneNumbersList = Immutable.fromJS(this.props.phones)
     // if type preferred then set all preferred =false
     if (type === 'preferred') {
       phoneNumbersList = phoneNumbersList.map(x => x.set(type, false))
@@ -41,13 +35,11 @@ export default class PhoneComponent extends React.Component {
   }
 
   addCard (event) {
-    let phonesList = checkArrayObjectPresence(this.props.phones) || [blankPhoneNumberFields]
-    phonesList.push(blankPhoneNumberFields)
-    this.props.setParentState('phones', phonesList)
+    this.props.setParentState('phones', addCardAsJS(this.props.phones, blankPhoneNumberFields))
   }
 
   render () {
-    let phonesList = checkArrayObjectPresence(this.props.phones) || [blankPhoneNumberFields]
+    let phonesList = this.props.phones
     return (
       <div className='card-body'>
         {
@@ -78,4 +70,8 @@ PhoneComponent.propTypes = {
   phoneTypes: PropTypes.array.isRequired,
   phones: PropTypes.array.isRequired,
   setParentState: PropTypes.func.isRequired
+}
+
+PhoneComponent.defaultProps = {
+  phones: [blankPhoneNumberFields]
 }
