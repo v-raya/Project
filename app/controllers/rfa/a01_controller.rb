@@ -27,7 +27,7 @@ class Rfa::A01Controller < CalsBaseController
     @address_types = dictionaries_helper.address_types
     @relationship_to_applicant_types = dictionaries_helper.relationship_to_applicant_types
     @relationship_types = dictionaries_helper.relationship_types
-
+    @relationship_to_applicant_types = dictionaries_helper.relationship_to_applicant_types
     @application = rfa_application_helper.find_by_id(params[:id])
     # @application.applicants = rfa_application_helper.find_applicants()
     @application.applicants = rfa_applicant_helper.find_by_application_id(params[:id])
@@ -39,6 +39,7 @@ class Rfa::A01Controller < CalsBaseController
     applicants = params['applicants']
     residence = params['residence']
     minor_children = params['minorChildren']
+    other_adults = params['otherAdults']
     application_response = {}
 
     if applicants.present?
@@ -63,6 +64,14 @@ class Rfa::A01Controller < CalsBaseController
       end
       application_response[:minor_children] = minor_children_result
     end
+    if other_adults.present?
+      other_adults_result = []
+      other_adults.each do |adult|
+        adult = adult.permit!
+        other_adults_result << rfa_other_adults_helper.create(params[:id], adult.except('relationship_types', 'index','relationship_to_applicants').to_json)
+      end
+      application_response[:other_adults] = other_adults_result
+    end
 
     render action: 'edit.html.erb'
   end
@@ -83,6 +92,10 @@ class Rfa::A01Controller < CalsBaseController
 
   def rfa_minor_children_helper
     Helpers::Rfa::ApplicationMinorChildrenHelper.new(auth_header: session['token'])
+  end
+
+  def rfa_other_adults_helper
+    Helpers::Rfa::ApplicationOtherAdultsHelper.new(auth_header: session['token'])
   end
 
   def dictionaries_helper

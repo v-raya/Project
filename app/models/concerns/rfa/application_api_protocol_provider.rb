@@ -1,6 +1,6 @@
 module Concerns::Rfa::ApplicationApiProtocolProvider
   extend ActiveSupport::Concern
-  include Concerns::BaseCalsApiProtocolProvider
+  include Concerns::RfaBaseApiProtocolProvider
 
   class_methods do
 
@@ -20,6 +20,5 @@ module Concerns::Rfa::ApplicationApiProtocolProvider
       response = FaradayCals.get('/dictionaries/phone-number-types', auth_header)
       JSON.parse(response.body)
     end
-
   end
 end

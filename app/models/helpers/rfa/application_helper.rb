@@ -15,5 +15,4 @@ class Helpers::Rfa::ApplicationHelper < Helpers::ModelHelperBase
   def phone_types
     Rfa::Application.phone_types(auth_header)
   end
-
 end

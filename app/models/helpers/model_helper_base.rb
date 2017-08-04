@@ -16,12 +16,11 @@ class Helpers::ModelHelperBase
     model_class.all(auth_header)
   end
 
-  # def create(url_path, body)
-  #   byebug
-  #   model_class.create(auth_header, url_path, body)
-  # end
+  def create(parent_id, body)
+    model_class.create(auth_header, parent_id, body)
+  end
 
-  def create(body)
-    model_class.create(auth_header, body)
+  def find_by_application_id(parent_id)
+    model_class.find_by_application_id(auth_header, parent_id)
   end
 end

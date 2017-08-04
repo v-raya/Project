@@ -155,6 +155,42 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
+    uri: http://tpt2.dev.cwds.io:8084/dictionaries/relationship-to-applicant-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      date:
+      - Tue, 01 Aug 2017 16:20:06 GMT
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '104'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "id" : 1,
+            "value" : "Male"
+          }, {
+            "id" : 2,
+            "value" : "Female"
+          } ]
+        }
+    http_version:
+  recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
+- request:
+    method: get
     uri: http://tpt2.dev.cwds.io:8084/dictionaries/education-level-types
     body:
       encoding: US-ASCII

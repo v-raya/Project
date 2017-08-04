@@ -2,21 +2,31 @@ import Immutable from 'immutable'
 import React from 'react'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import {OtherAdultsCardField} from 'components/common/OtherAdultsCardField'
-
+const relationshipToAdultsDefaults = Object.freeze({
+//  'applicant_id': null,
+  'relationship_to_applicant': {
+    'id': 0,
+    'value': ''
+  }
+})
 const otherAdultsDefaults = Object.freeze({
   index: 0,
-  nameField: {
-    firstName: '',
-    lastName: '',
-    middleName: ''
-  },
-  dateOfBirth: '',
-  availableApplicant: '',
-  relationshipType: '',
-  relationshipTypes: {
-    items: []
-  },
-  availableApplicants: {
+  // 'name_prefix': {
+  //   'id': 0,
+  //   'value': ''
+  // },
+  'first_name': '',
+  'middle_name': '',
+  'last_name': '',
+  // 'name_suffix': {
+  //   'id': 0,
+  //   'value': ''
+  // },
+//  'date_of_birth': '',
+  'relationship_to_applicants': [
+    relationshipToAdultsDefaults
+  ],
+  relationship_types: {
     items: []
   }
 })
@@ -26,7 +36,8 @@ export default class OtherAdultsCardsGroup extends React.Component {
     super(props)
 
     this.addCard = this.addCard.bind(this)
-    this.handleNameFieldInput = this.handleNameFieldInput.bind(this)
+    this.handleRelationshipTypeToApplicant = this.handleRelationshipTypeToApplicant.bind(this)
+    this.handleToWhom = this.handleToWhom.bind(this)
     this.onFieldChange = this.onFieldChange.bind(this)
     this.clickClose = this.clickClose.bind(this)
   }
@@ -56,12 +67,32 @@ export default class OtherAdultsCardsGroup extends React.Component {
     this.props.setParentState('otherAdults', otherAdultsList.toJS())
   }
 
-  handleNameFieldInput (index, value, type) {
-    let otherAdultsList = Immutable.fromJS(checkArrayObjectPresence(this.props.otherAdults) || [otherAdultsDefaults])
-    otherAdultsList = otherAdultsList.update(index,
-      otherAdult => otherAdult.setIn(['nameField', type], value))
+  handleRelationshipTypeToApplicant (index, value) {
+    let otherAdults = checkArrayObjectPresence(this.props.otherAdults) || [otherAdultsDefaults]
+    let otherAdultsList = Immutable.fromJS(otherAdults)
+    let relationshipList = Immutable.fromJS(otherAdults[index].relationship_to_applicants[0])
+
+    relationshipList = relationshipList.setIn(['relationship_to_applicant', 'id'], value)
+    relationshipList = relationshipList.setIn(['relationship_to_applicant', 'value'], this.props.relationship_types[value].value)
+
+    otherAdultsList = otherAdultsList.update(index, x => x.set('relationship_to_applicants', relationshipList))
     this.props.setParentState('otherAdults', otherAdultsList.toJS())
   }
+  handleToWhom (index, value) {
+    let otherAdults = checkArrayObjectPresence(this.props.otherAdults) || [otherAdultsDefaults]
+    let otherAdultsList = Immutable.fromJS(otherAdults)
+    let relationships = Immutable.fromJS(otherAdults[index].relationship_to_applicants)
+    relationships = relationships.set('applicant_id', value)
+    otherAdultsList = otherAdultsList.update(index, x => x.set('relationship_to_applicants', relationships))
+
+    this.props.setParentState('otherAdults', otherAdultsList.toJS())
+  }
+  // handleNameFieldInput (index, value, type) {
+  //   let otherAdultsList = Immutable.fromJS(checkArrayObjectPresence(this.props.otherAdults) || [otherAdultsDefaults])
+  //   otherAdultsList = otherAdultsList.update(index,
+  //     otherAdult => otherAdult.setIn(['nameField', type], value))
+  //   this.props.setParentState('otherAdults', otherAdultsList.toJS())
+  // }
 
   getFocusClassName (componentName) {
     return this.props.focusComponentName === componentName ? 'edit' : 'show'
@@ -88,9 +119,10 @@ export default class OtherAdultsCardsGroup extends React.Component {
                     </div>
                     <OtherAdultsCardField
                       index={index}
-                      relationshipTypes={this.props.relationshipTypes}
+                      relationship_types={this.props.relationship_types}
                       otherAdults={otherAdultsFields}
-                      handleNameFieldInput={this.handleNameFieldInput}
+                      handleRelationshipTypeToApplicant={this.handleRelationshipTypeToApplicant}
+                      handleToWhom={this.handleToWhom}
                       clickClose={this.clickClose}
                       onFieldChange={this.onFieldChange} />
                   </div>

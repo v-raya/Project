@@ -35,12 +35,11 @@ export default class Rfa01EditView extends React.Component {
     let params = this.state.application
     fetchRequest(url, 'PUT', this.state.application).then(
       response => response.json()).then((response) => {
-      return this.setState({
-        formData: response
+        return this.setState({
+          formData: response
+        })
       })
-    })
       .catch(error => {
-        console.log(error)
         return this.setState({
           data: error
         })
@@ -112,7 +111,7 @@ export default class Rfa01EditView extends React.Component {
                 focusComponentName={this.state.focusComponentName}
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
-                minorChildren={this.state.application.minorChildren}/>
+                minorChildren={this.state.application.minorChildren} />
             </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -123,7 +122,7 @@ export default class Rfa01EditView extends React.Component {
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
                 otherAdults={this.state.application.otherAdults}
-                {...this.props} />
+                relationship_types={this.props.relationshipToApplicantTypes} />
             </div>
 
             <div className='col-xs-2 col-sm-2 col-md-2 col-lg-2'>

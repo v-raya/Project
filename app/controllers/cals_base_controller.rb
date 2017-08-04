@@ -7,6 +7,7 @@ class CalsBaseController < ApplicationController
   protected
 
   def authenticate_with_cwds
+    session.delete(:token) if params[:token].present?
     if session[:token].blank?
       if Cwds::Authentication.token_validation(params[:token], AUTHENTICATION_API_BASE_URL)
         store_token_in_redis(params[:token])

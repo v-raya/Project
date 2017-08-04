@@ -1,19 +1,8 @@
 module Concerns::Rfa::ApplicantApiProtocolProvider
   extend ActiveSupport::Concern
-  include Concerns::BaseCalsApiProtocolProvider
+  include Concerns::RfaBaseApiProtocolProvider
 
   class_methods do
-    def create(auth_header, parent_id, body)
-      response = FaradayCals.post("/#{parent_path}/#{parent_id}/#{api_resource_path}", auth_header, body)
-      new(JSON.parse(response.body))
-    end
-
-    def find_by_application_id(auth_header, parent_id)
-      response = FaradayCals.get("/#{parent_path}/#{parent_id}/#{class_name_downcase_pluralized}", auth_header)
-      response.status == 200 ? JSON.parse(response.body)['items'].map { |itm| new(itm) } : nil
-    end
-
-
     def education_levels(auth_header)
       response = FaradayCals.get('/dictionaries/education-level-types', auth_header)
       JSON.parse(response.body)
