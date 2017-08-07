@@ -8,6 +8,7 @@ var TestUtils = require('react-dom/test-utils')
 
 describe('Verify Applicant Card Group', () => {
   const isApplicantAdded = sinon.spy()
+  const getFocusClassNameSpy = sinon.spy()
   const applicantRender = TestUtils.renderIntoDocument(<ApplicantCardsGroup nameTypes={nameTypes.items}
     phoneTypes={nameTypes.items}
     salaryTypes={salaryTypes.items}
@@ -16,7 +17,8 @@ describe('Verify Applicant Card Group', () => {
     genderTypes={genderTypes.items}
     ethnicityTypes={ethnicityTypes.items}
     languageTypes={languageTypes.items}
-    setParentState={isApplicantAdded} />)
+    setParentState={isApplicantAdded}
+    getFocusClassName={getFocusClassNameSpy}/>)
   const renderedDOM = () => ReactDOM.findDOMNode(applicantRender)
   it('Spy on Button Click doesnot call', () => {
     const addCardButton = renderedDOM()

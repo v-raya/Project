@@ -11,7 +11,6 @@ export default class ApplicantCard extends React.Component {
     super(props)
 
     this.setApplicantState = this.setApplicantState.bind(this)
-    this.getFocusClassName = this.getFocusClassName.bind(this)
   }
 
   setApplicantState (key, value) {
@@ -20,16 +19,12 @@ export default class ApplicantCard extends React.Component {
     this.props.setParentState(this.props.index, applicantData.toJS())
   }
 
-  getFocusClassName (componentName) {
-    return this.props.focusComponentName === componentName ? 'edit' : 'show'
-  }
-
   render () {
     return (
       <div className='cards'>
 
         <div id='nameSection' onClick={() => this.props.setFocusState('NameCard')}
-          className={this.getFocusClassName('NameCard') + ' ' + 'card name-section double-gap-top'}>
+          className={this.props.getFocusClassName('NameCard') + ' ' + 'card name-section double-gap-top'}>
 
           <div className='card-header'>
             <span>Name</span>
@@ -41,7 +36,7 @@ export default class ApplicantCard extends React.Component {
         </div>
 
         <div id='aboutAppSection' onClick={() => this.props.setFocusState('AboutApplicantCard')}
-          className={this.getFocusClassName('AboutApplicantCard') + ' ' + 'card aboutApp-section double-gap-top'}>
+          className={this.props.getFocusClassName('AboutApplicantCard') + ' ' + 'card aboutApp-section double-gap-top'}>
 
           <div className='card-header'>
             <span>More about Applicant</span>
@@ -58,7 +53,7 @@ export default class ApplicantCard extends React.Component {
         </div>
 
         <div id='employmentSection' onClick={() => this.props.setFocusState('EmploymentCard')}
-          className={this.getFocusClassName('EmploymentCard') + ' ' + 'card employment-section double-gap-top'}>
+          className={this.props.getFocusClassName('EmploymentCard') + ' ' + 'card employment-section double-gap-top'}>
 
           <div className='card-header'>
             <span>Employment</span>
@@ -71,7 +66,7 @@ export default class ApplicantCard extends React.Component {
         </div>
 
         <div id='phoneSection' onClick={() => this.props.setFocusState('PhoneNumbersCard')}
-          className={this.getFocusClassName('PhoneNumbersCard') + ' ' + 'card phone-section double-gap-top'}>
+          className={this.props.getFocusClassName('PhoneNumbersCard') + ' ' + 'card phone-section double-gap-top'}>
 
           <div className='card-header'>
             <span>Phone Number</span>

@@ -345,6 +345,27 @@ const relationshipTypes = Object.freeze(
 export {nameTypes, salaryTypes, relationshipTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes, languageTypes, residenceTypes}
 
 
+export const licenseTypes = Object.freeze({
+  'items': [
+    {
+      'id': 1,
+      'value': 'Approval'
+    }
+  ]}
+)
+
+export const yesNo = Object.freeze({
+  'items': [
+    {
+      'id': true,
+      'value': 'Yes'
+    },
+    {
+      'id': false,
+      'value': 'No'
+    }]}
+)
+
 export const phoneTypes = Object.freeze(
   [
     {

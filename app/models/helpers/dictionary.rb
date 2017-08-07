@@ -19,6 +19,10 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
   def relationship_types
     Dictionaries::ApplicantRelationshipType.all(auth_header)
   end
+  
+  def license_types
+    Dictionaries::LicenseType.all(auth_header)
+  end
 
   def relationship_to_applicant_types
     Dictionaries::RelationshipToApplicantType.all(auth_header)

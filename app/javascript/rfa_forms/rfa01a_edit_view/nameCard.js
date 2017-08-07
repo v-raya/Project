@@ -41,7 +41,7 @@ export default class NameCard extends React.Component {
     let nameCardsList = checkArrayObjectPresence(this.props.nameFields.other_names)
     return (
       <div className='card-body'>
-        <div className="row">
+        <div className='row'>
           <form>
             <InputComponent gridClassName='col-md-4' id='firstname' value={this.props.nameFields.first_name}
               label='First Name' placeholder='Enter First Name'
@@ -55,7 +55,7 @@ export default class NameCard extends React.Component {
             <DropDownField gridClassName='col-md-4' id='name_type'
               value={legalTypeId}
               selectClassName={'reusable-select'}
-              disable={true}
+              disable
               optionList={this.props.nameTypes}
               label='Name Type' />
           </form>

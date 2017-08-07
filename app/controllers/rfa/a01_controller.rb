@@ -27,11 +27,13 @@ class Rfa::A01Controller < CalsBaseController
     @address_types = dictionaries_helper.address_types
     @relationship_to_applicant_types = dictionaries_helper.relationship_to_applicant_types
     @relationship_types = dictionaries_helper.relationship_types
+    @license_types = dictionaries_helper.license_types
     @relationship_to_applicant_types = dictionaries_helper.relationship_to_applicant_types
     @application = rfa_application_helper.find_by_id(params[:id])
     # @application.applicants = rfa_application_helper.find_applicants()
     @application.applicants = rfa_applicant_helper.find_by_application_id(params[:id])
     @application.residence = rfa_residence_helper.find_by_application_id(params[:id])
+    @application.adoption_history = rfa_adoption_history_helper.find_by_application_id(params[:id])
     @application.minor_children = rfa_minor_children_helper.find_by_application_id(params[:id])
   end
 
@@ -40,6 +42,7 @@ class Rfa::A01Controller < CalsBaseController
     residence = params['residence']
     minor_children = params['minorChildren']
     other_adults = params['otherAdults']
+    adoption_history= params['fosterCareHistory']
     application_response = {}
 
     if applicants.present?
@@ -64,6 +67,7 @@ class Rfa::A01Controller < CalsBaseController
       end
       application_response[:minor_children] = minor_children_result
     end
+
     if other_adults.present?
       other_adults_result = []
       other_adults.each do |adult|
@@ -71,6 +75,12 @@ class Rfa::A01Controller < CalsBaseController
         other_adults_result << rfa_other_adults_helper.create(params[:id], adult.except('relationship_types', 'index','relationship_to_applicants').to_json)
       end
       application_response[:other_adults] = other_adults_result
+    end
+
+    if adoption_history.present?
+      adoption_history.permit!
+      adoption_history_results = rfa_adoption_history_helper.create(params[:id], adoption_history.to_json)
+      application_response[:adoption_history] = adoption_history_results
     end
 
     render action: 'edit.html.erb'
@@ -88,6 +98,10 @@ class Rfa::A01Controller < CalsBaseController
 
   def rfa_residence_helper
     Helpers::Rfa::ApplicationResidenceHelper.new(auth_header: session['token'])
+  end
+
+  def rfa_adoption_history_helper
+    Helpers::Rfa::AdoptionHistoryHelper.new(auth_header: session['token'])
   end
 
   def rfa_minor_children_helper

@@ -2,6 +2,7 @@ import React from 'react'
 import Immutable from 'immutable'
 import ApplicantCardsGroup from './applicantCardsGroup.jsx'
 import ResidenceCards from './residenceCardsMain'
+import FosterCareHistoryCardMain from './FosterCareHistoryCard.jsx'
 import OtherAdultsCard from './OtherAdultsCardsGroup'
 import MinorCardsGroup from './minorCardsGroup'
 
@@ -18,14 +19,18 @@ export default class Rfa01EditView extends React.Component {
         applicants: [],
         residence: {},
         otherAdults: [],
+        fosterCareHistory: {},
         minorChildren: []
       }
     }
 
     this.submitForm = this.submitForm.bind(this)
+    this.getFocusClassName = this.getFocusClassName.bind(this)
     this.setApplicationState = this.setApplicationState.bind(this)
     this.setFocusState = this.setFocusState.bind(this)
+  //  this.setVisibleState = this.setVisibleState.bind(this)
   }
+
   componentDidMount () {
     // set Dictionaty Here
   }
@@ -51,8 +56,13 @@ export default class Rfa01EditView extends React.Component {
     newState = newState.setIn(['application', key], value)
     this.setState(newState.toJS())
   }
+
   setFocusState (focusComponentName) {
     this.setState({focusComponentName: focusComponentName})
+  }
+
+  getFocusClassName (componentName) {
+    return this.state.focusComponentName === componentName ? 'edit' : 'show'
   }
 
   render () {
@@ -74,22 +84,21 @@ export default class Rfa01EditView extends React.Component {
               </div>
             </div>
 
-            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-              <ApplicantCardsGroup
-                nameTypes={this.props.nameTypes.items}
-                phoneTypes={this.props.phoneTypes.items}
-                salaryTypes={this.props.salaryTypes.items}
-                stateTypes={this.props.stateTypes.items}
-                educationLevels={this.props.educationLevels.items}
-                genderTypes={this.props.genderTypes.items}
-                // raceTypes={this.props.raceTypes}
-                ethnicityTypes={this.props.ethnicityTypes}
-                languageTypes={this.props.languageTypes.items}
-                focusComponentName={this.state.focusComponentName}
-                applicants={this.state.application.applicants}
-                setParentState={this.setApplicationState}
-                setFocusState={this.setFocusState} />
-            </div>
+            <ApplicantCardsGroup
+              nameTypes={this.props.nameTypes.items}
+              phoneTypes={this.props.phoneTypes.items}
+              salaryTypes={this.props.salaryTypes.items}
+              stateTypes={this.props.stateTypes.items}
+              educationLevels={this.props.educationLevels.items}
+              genderTypes={this.props.genderTypes.items}
+              // raceTypes={this.props.raceTypes}
+              ethnicityTypes={this.props.ethnicityTypes}
+              languageTypes={this.props.languageTypes.items}
+              focusComponentName={this.state.focusComponentName}
+              applicants={this.state.application.applicants}
+              setParentState={this.setApplicationState}
+              setFocusState={this.setFocusState}
+              getFocusClassName={this.getFocusClassName} />
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h3>II. Applicant (S) - <span>Residence</span></h3>
@@ -125,10 +134,19 @@ export default class Rfa01EditView extends React.Component {
                 relationship_types={this.props.relationshipToApplicantTypes} />
             </div>
 
-            <div className='col-xs-2 col-sm-2 col-md-2 col-lg-2'>
-              <button id='saveProgress' onClick={this.submitForm}>Save Progress</button>
+            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+              <h3>VIII. Foster Care / Adoption / Licensure History</h3>
+              <FosterCareHistoryCardMain
+                focusComponentName={this.state.focusComponentName}
+                fosterCareHistory={this.state.application.fosterCareHistory}
+                getFocusClassName={this.getFocusClassName}
+                setParentState={this.setApplicationState}
+                setFocusState={this.setFocusState}
+                {...this.props}
+              />
             </div>
           </div>
+
           <div className='right-content col-xs-4 col-sm-4 col-md-4 col-lg-4'>
             <div className='right-inner-content'>
               <img className='' src='http://via.placeholder.com/350x650' />

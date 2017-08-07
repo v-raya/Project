@@ -2,8 +2,7 @@ class Rfa::Application < CalsBase
   include Concerns::Rfa::ApplicationApiProtocolProvider
   attr_accessor :id, :application_type, :county, :progress_state
 
-  attr_accessor :applicants, :residence, :minor_children, :other_adults
-
+  attr_accessor :applicants, :residence, :minor_children, :other_adults, :adoption_history
 
   def initialize(id=nil)
     @id = id

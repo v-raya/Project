@@ -75,7 +75,6 @@ export default class AddressCard extends React.Component {
               optionList={yesNo.items}
               label='Mailing address the same as Physical Address?'
               onChange={(event) => this.props.setParentState('physical_mailing_similar', event.target.selectedOptions[0].value)} />
-
             <div className={hiddenMailingSameAsPhysical}>
               <InputComponent gridClassName='col-md-12' id='secondary_street_address'
                 label='Mailing Address:' placeholder=''
