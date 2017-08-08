@@ -7,6 +7,6 @@ class Rfa::ApplicantController < CalsBaseController
   end
 
   def rfa_applicant_helper
-    Helpers::Rfa::ApplicantHelper.new(auth_header: session['token'])
+    Helpers::Rfa::ApplicantHelper.new(auth_header: get_session_token)
   end
 end

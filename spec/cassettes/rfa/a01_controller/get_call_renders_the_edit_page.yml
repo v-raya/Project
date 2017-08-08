@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms
+    uri: https://cals-api.preint.cwds.io/rfa-1a-forms
     body:
       encoding: UTF-8
       string: "{}"
@@ -32,7 +32,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/name-types
+    uri: https://cals-api.preint.cwds.io/dictionaries/name-types
     body:
       encoding: US-ASCII
       string: ''
@@ -74,7 +74,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/phone-number-types
+    uri: https://cals-api.preint.cwds.io/dictionaries/phone-number-types
     body:
       encoding: US-ASCII
       string: ''
@@ -119,7 +119,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/genders
+    uri: https://cals-api.preint.cwds.io/dictionaries/genders
     body:
       encoding: US-ASCII
       string: ''
@@ -155,7 +155,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/relationship-to-applicant-types
+    uri: https://cals-api.preint.cwds.io/dictionaries/relationship-to-applicant-types
     body:
       encoding: US-ASCII
       string: ''
@@ -191,7 +191,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/education-level-types
+    uri: https://cals-api.preint.cwds.io/dictionaries/education-level-types
     body:
       encoding: US-ASCII
       string: ''
@@ -242,7 +242,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/languages
+    uri: https://cals-api.preint.cwds.io/dictionaries/languages
     body:
       encoding: US-ASCII
       string: ''
@@ -371,7 +371,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/states
+    uri: https://cals-api.preint.cwds.io/dictionaries/states
     body:
       encoding: US-ASCII
       string: ''
@@ -575,7 +575,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/income-types
+    uri: https://cals-api.preint.cwds.io/dictionaries/income-types
     body:
       encoding: US-ASCII
       string: ''
@@ -614,7 +614,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/residence-ownership-types
+    uri: https://cals-api.preint.cwds.io/dictionaries/residence-ownership-types
     body:
       encoding: US-ASCII
       string: ''
@@ -653,7 +653,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:04 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/ethnicity-types
+    uri: https://cals-api.preint.cwds.io/dictionaries/ethnicity-types
     body:
       encoding: US-ASCII
       string: ''
@@ -782,7 +782,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/address-types
+    uri: https://cals-api.preint.cwds.io/dictionaries/address-types
     body:
       encoding: US-ASCII
       string: ''
@@ -821,7 +821,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/dictionaries/relationship-to-applicant-types
+    uri: https://cals-api.preint.cwds.io/dictionaries/relationship-to-applicant-types
     body:
       encoding: US-ASCII
       string: ''
@@ -866,7 +866,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms/93
+    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/93
     body:
       encoding: US-ASCII
       string: ''
@@ -898,7 +898,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms/93/applicants
+    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/93/applicants
     body:
       encoding: US-ASCII
       string: ''
@@ -935,7 +935,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms/93/residence
+    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/93/residence
     body:
       encoding: US-ASCII
       string: ''
@@ -972,7 +972,7 @@ http_interactions:
   recorded_at: Tue, 01 Aug 2017 16:20:05 GMT
 - request:
     method: get
-    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms/93/minor-children
+    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/93/minor-children
     body:
       encoding: US-ASCII
       string: ''

@@ -89,31 +89,31 @@ class Rfa::A01Controller < CalsBaseController
   private
 
   def rfa_application_helper
-    Helpers::Rfa::ApplicationHelper.new(auth_header: session['token'])
+    Helpers::Rfa::ApplicationHelper.new(auth_header: get_session_token)
   end
 
   def rfa_applicant_helper
-    Helpers::Rfa::ApplicantHelper.new(auth_header: session['token'])
+    Helpers::Rfa::ApplicantHelper.new(auth_header: get_session_token)
   end
 
   def rfa_residence_helper
-    Helpers::Rfa::ApplicationResidenceHelper.new(auth_header: session['token'])
+    Helpers::Rfa::ApplicationResidenceHelper.new(auth_header: get_session_token)
   end
 
   def rfa_adoption_history_helper
-    Helpers::Rfa::AdoptionHistoryHelper.new(auth_header: session['token'])
+    Helpers::Rfa::AdoptionHistoryHelper.new(auth_header: get_session_token)
   end
 
   def rfa_minor_children_helper
-    Helpers::Rfa::ApplicationMinorChildrenHelper.new(auth_header: session['token'])
+    Helpers::Rfa::ApplicationMinorChildrenHelper.new(auth_header: get_session_token)
   end
 
   def rfa_other_adults_helper
-    Helpers::Rfa::ApplicationOtherAdultsHelper.new(auth_header: session['token'])
+    Helpers::Rfa::ApplicationOtherAdultsHelper.new(auth_header: get_session_token)
   end
 
   def dictionaries_helper
-    Helpers::Dictionary.new(auth_header: session['token'])
+    Helpers::Dictionary.new(auth_header: get_session_token)
   end
 
 end

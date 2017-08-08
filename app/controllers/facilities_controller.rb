@@ -31,6 +31,6 @@ class FacilitiesController < CalsBaseController
   private
 
   def facility_helper
-    Helpers::Facility.new(auth_header: session['token'])
+    Helpers::Facility.new(auth_header: get_session_token)
   end
 end

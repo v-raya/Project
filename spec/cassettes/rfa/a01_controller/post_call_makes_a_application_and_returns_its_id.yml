@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://tpt2.dev.cwds.io:8084/rfa-1a-forms
+    uri: https://cals-api.preint.cwds.io/rfa-1a-forms
     body:
       encoding: UTF-8
       string: "{}"
