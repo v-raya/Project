@@ -1,6 +1,7 @@
 class Rfa::A01Controller < CalsBaseController
 
-  def show
+  def index
+    @applications = rfa_application_helper.all
   end
 
   def create
