@@ -28,7 +28,6 @@ export default class Rfa01EditView extends React.Component {
     this.getFocusClassName = this.getFocusClassName.bind(this)
     this.setApplicationState = this.setApplicationState.bind(this)
     this.setFocusState = this.setFocusState.bind(this)
-  //  this.setVisibleState = this.setVisibleState.bind(this)
   }
 
   componentDidMount () {
@@ -120,6 +119,7 @@ export default class Rfa01EditView extends React.Component {
                 focusComponentName={this.state.focusComponentName}
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
+                applicants={this.state.application.applicants}
                 minorChildren={this.state.application.minorChildren} />
             </div>
 
@@ -130,6 +130,7 @@ export default class Rfa01EditView extends React.Component {
                 focusComponentName={this.state.focusComponentName}
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
+                applicants={this.state.application.applicants}
                 otherAdults={this.state.application.otherAdults}
                 relationship_types={this.props.relationshipToApplicantTypes} />
             </div>

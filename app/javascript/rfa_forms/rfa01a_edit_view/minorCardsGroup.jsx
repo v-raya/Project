@@ -2,6 +2,7 @@ import Immutable from 'immutable'
 import React from 'react'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import {MinorCardField} from './minorCardField'
+import {setToWhom} from 'helpers/cardsHelper.jsx'
 
 export const minorDefaults = Object.freeze({
 })
@@ -73,6 +74,8 @@ export default class MinorCardsGroup extends React.Component {
                       genderTypes={this.props.genderTypes}
                       relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
                       minorChildren={minorDefaults}
+                      applicants={this.props.applicants}
+                      setToWhom={setToWhom}
                       handleNameFieldInput={this.handleNameFieldInput}
                       clickClose={this.clickClose}
                       onFieldChange={this.onFieldChange} />

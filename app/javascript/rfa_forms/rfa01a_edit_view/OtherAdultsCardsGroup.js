@@ -2,6 +2,8 @@ import Immutable from 'immutable'
 import React from 'react'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import {OtherAdultsCardField} from 'components/common/OtherAdultsCardField'
+import {setToWhom} from 'helpers/cardsHelper.jsx'
+
 const relationshipToAdultsDefaults = Object.freeze({
 //  'applicant_id': null,
   'relationship_to_applicant': {
@@ -87,6 +89,7 @@ export default class OtherAdultsCardsGroup extends React.Component {
 
     this.props.setParentState('otherAdults', otherAdultsList.toJS())
   }
+
   // handleNameFieldInput (index, value, type) {
   //   let otherAdultsList = Immutable.fromJS(checkArrayObjectPresence(this.props.otherAdults) || [otherAdultsDefaults])
   //   otherAdultsList = otherAdultsList.update(index,
@@ -121,7 +124,9 @@ export default class OtherAdultsCardsGroup extends React.Component {
                       index={index}
                       relationship_types={this.props.relationship_types}
                       otherAdults={otherAdultsFields}
+                      applicants={this.props.applicants}
                       handleRelationshipTypeToApplicant={this.handleRelationshipTypeToApplicant}
+                      setToWhom={setToWhom}
                       handleToWhom={this.handleToWhom}
                       clickClose={this.clickClose}
                       onFieldChange={this.onFieldChange} />

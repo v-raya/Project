@@ -5,11 +5,11 @@ const DropDownField = ({gridClassName, id, value, disable, selectClassName, opti
   <div className={gridClassName}>
     <label>{label}</label>
     <select value={value} id={id} disabled={disable} onChange={onChange} className={selectClassName}>
-      {!disable && <option key='' value='' />}
+      {!disable && <option key='' value='' />} }
       {
-        optionList.map((item) => {
+        optionList.map((item, index) => {
           return (
-            <option key={item.id} value={item.id}>{item.value}</option>
+            <option key={index} value={item.id}>{item.value}</option>
           )
         })
       }

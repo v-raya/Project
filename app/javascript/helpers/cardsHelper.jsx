@@ -17,3 +17,10 @@ export const removeCardAsJS = (inputArray, index, newCardFields) => {
 export const getFocusClassName = (focusedComponentName, currentComponentName) => {
   return focusedComponentName === currentComponentName ? 'edit' : 'show'
 }
+
+export const setToWhom = (applicants) => {
+  const newApplicants = applicants.map(function (applicant, index) {
+    return {key: index, value: applicant.first_name + ' ' + applicant.middle_name + ' ' + applicant.last_name}
+  })
+  return newApplicants
+}

@@ -16,12 +16,14 @@ export class MinorCardField extends React.Component {
           label='Relationship Type' onChange={(event) => this.props.onFieldChange(this.props.index, dictionaryNilSelect(event.target.selectedOptions[0]), 'relationship_to_applicant')} />
         <DropDownField gridClassName='col-md-4' id='child_related_to'
           selectClassName='reusable-select'
-          optionList={this.props.relationshipToApplicantTypes}
-          label='To whom' onChange={(event) => this.props.onFieldChange(this.props.index, dictionaryNilSelect(event.target.selectedOptions[0]), 'child_related_to')} />
-        <InputComponent gridClassName='col-md-3' id='date_of_birth' value={minor.date_of_birth}
+          optionList={this.props.setToWhom(this.props.applicants)}
+          label='To whom'
+          onChange={(event) => this.props.onFieldChange(this.props.index, event.target.value, 'child_related_to')} />
+        <InputComponent gridClassName='col-md-3' id='date_of_birth'
+          value={minor.date_of_birth}
           label='Date of Birth' placeholder='Enter Date of Birth'
           type='text' onChange={(event) => this.props.onFieldChange(this.props.index, event.target.value, 'date_of_birth')} />
-        <DropDownField gridClassName='col-md-4' id='gender'
+        <DropDownField gridClassName='col-md-3' id='gender'
           selectClassName='reusable-select'
           optionList={this.props.genderTypes}
           label='Gender'

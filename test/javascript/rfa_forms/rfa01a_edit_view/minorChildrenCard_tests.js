@@ -7,6 +7,11 @@ import {relationshipTypes, genderTypes} from  './../../helpers/constants'
 
 
 describe('Verify gender', function () {
+  const applicants = [{
+    first_name: "gdfghfhgv",
+    last_name: "hgbhg",
+    middle_name: ""
+  }]
   const minorChildren = {
     index: 0,
     nameField: {
@@ -18,6 +23,14 @@ describe('Verify gender', function () {
     child_financially_supported: 'yes',
     child_adopted: 'yes',
   }
+
+  const setToWhom = (applicants) => {
+    const newApplicants = applicants.map(function (applicant, index) {
+      return {key: index, value: applicant.first_name + ' ' + applicant.middle_name + ' ' + applicant.last_name}
+    })
+    return newApplicants
+  }
+
   let minorChildCardComp, handleNameFieldInputSpy, onFieldChangeSpy, setCardState
   let relationType = relationshipTypes
   beforeEach(() => {
@@ -26,6 +39,8 @@ describe('Verify gender', function () {
     minorChildCardComp = shallow(<MinorCardField
       genderTypes={genderTypes.items}
       relationshipTypes={relationType}
+      setToWhom={setToWhom}
+      applicants={applicants}
       handleNameFieldInput={handleNameFieldInputSpy}
       onFieldChange={onFieldChangeSpy}
       minorChildren={minorChildren} />)
@@ -40,8 +55,8 @@ describe('Verify gender', function () {
   it('verify child related field', () => {
     let relationShipField = minorChildCardComp.find('#child_related_to')
     // spyOn(minorChildCardComp.instance(), 'onFieldChange').and.callThrough()
-    relationShipField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'Sibling'}]}})
-    expect(onFieldChangeSpy).toHaveBeenCalledWith(undefined, {id: '2', value: 'Sibling'}, 'child_related_to')
+    relationShipField.simulate('change', {target: {value: '2'}})
+    expect(onFieldChangeSpy).toHaveBeenCalledWith(undefined, '2', 'child_related_to')
   })
 
   it('verify Gender', () => {

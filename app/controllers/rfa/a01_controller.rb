@@ -72,6 +72,7 @@ class Rfa::A01Controller < CalsBaseController
       other_adults_result = []
       other_adults.each do |adult|
         adult = adult.permit!
+        #  adult.relationship_to_applicants[:applicant_id] = application_response[:applicants][index].id
         other_adults_result << rfa_other_adults_helper.create(params[:id], adult.except('relationship_types', 'index','relationship_to_applicants').to_json)
       end
       application_response[:other_adults] = other_adults_result

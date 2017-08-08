@@ -16,8 +16,10 @@ export class OtherAdultsCardField extends React.Component {
         />
         <DropDownField gridClassName='col-md-4' id='availableApplicants'
           selectClassName='reusable-select'
-          optionList={[]}
+          optionList={this.props.setToWhom(this.props.applicants)}
           label='To Whom'
+          onChange={(event) => this.props.onFieldChange(this.props.index, event.target.value, 'child_related_to')}
+
           // onChange={(event) => this.props.handleToWhom(this.props.index, event.target.value)}
          />
         <InputComponent gridClassName='col-md-4' id='dateOfBirth' value={adult.date_of_birth}
