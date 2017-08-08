@@ -19,11 +19,11 @@ export class MinorCardField extends React.Component {
           optionList={this.props.setToWhom(this.props.applicants)}
           label='To whom'
           onChange={(event) => this.props.onFieldChange(this.props.index, event.target.value, 'child_related_to')} />
-        <InputComponent gridClassName='col-md-3' id='date_of_birth'
+        <InputComponent gridClassName='col-md-4' id='date_of_birth'
           value={minor.date_of_birth}
           label='Date of Birth' placeholder='Enter Date of Birth'
           type='text' onChange={(event) => this.props.onFieldChange(this.props.index, event.target.value, 'date_of_birth')} />
-        <DropDownField gridClassName='col-md-3' id='gender'
+        <DropDownField gridClassName='col-md-4' id='gender'
           selectClassName='reusable-select'
           optionList={this.props.genderTypes}
           label='Gender'
@@ -33,7 +33,7 @@ export class MinorCardField extends React.Component {
           optionList={yesNo.items}
           label={'Do you financially support this child?'}
           onChange={(event) => this.props.onFieldChange(this.props.index, event.target.selectedOptions[0].value, 'child_financially_supported')} />
-        <DropDownField id='child_adopted' gridClassName='col-md-3' value={minor.child_adopted}
+        <DropDownField id='child_adopted' gridClassName='col-md-4' value={minor.child_adopted}
           selectClassName={'reusable-select'}
           optionList={yesNo.items}
           label={'Is this child adopted?'}

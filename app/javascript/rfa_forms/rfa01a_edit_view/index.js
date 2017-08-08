@@ -71,7 +71,7 @@ export default class Rfa01EditView extends React.Component {
           <div className='header-logo' />
         </div>
         <div className='form-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <div className='left-content col-xs-8 col-sm-8 col-md-8 col-lg-8'>
+          <div className='left-content col-xs-9 col-sm-9 col-md-9 col-lg-9'>
             <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <div className='col-xs-10 col-sm-10 col-md-10 col-lg-10'>
                 <h1 className='page-header'>Resource Family Applications (RFA 01A)</h1>
@@ -148,9 +148,9 @@ export default class Rfa01EditView extends React.Component {
             </div>
           </div>
 
-          <div className='right-content col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+          <div className='right-content col-xs-3 col-sm-3 col-md-3 col-lg-3'>
             <div className='right-inner-content'>
-              <img className='' src='http://via.placeholder.com/350x650' />
+              <img className='' src='http://via.placeholder.com/280x650' />
             </div>
           </div>
         </div>
