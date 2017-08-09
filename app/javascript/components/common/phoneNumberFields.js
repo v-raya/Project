@@ -48,8 +48,9 @@ export class PhoneNumberField extends React.Component {
             maskedPhoneRaw(event.target.value),
             'number')}
           onBlur={(event) => this.validateOnBlur(
-            'number', maskedPhoneRaw(event.target.value)
-            )} />
+            this.props.index,
+            maskedPhoneRaw(event.target.value),
+            'number')} />
 
         <DropDownField gridClassName='col-md-4' id='phone_type'
           selectClassName='reusable-select'

@@ -33,10 +33,7 @@ const MaskedInputField = ({
     <FormField {...formFieldProps}>
       <MaskedInput id={id} type={type} value={value} mask={mask}
         placeholder={placeholder} required={required} aria-required={required}
-       onBlur={(event) => {
-         event.target.placeholder = blurPlaceholder
-         if (!_.isEmpty(onBlur)) onBlur(id, event.target.value)
-       }}
+        onBlur={onBlur}
         onFocus={(event) => {
           event.target.placeholder = focusPlaceholder
         }}
