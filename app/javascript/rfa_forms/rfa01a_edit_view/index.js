@@ -15,13 +15,14 @@ export default class Rfa01EditView extends React.Component {
     super(props)
     this.state = {
       focusComponentName: '',
-      application: {
-        applicants: [],
-        residence: {},
-        otherAdults: [],
-        fosterCareHistory: {},
-        minorChildren: []
-      }
+      application: this.props.application
+      // application: {
+      //   applicants: (this.props.application.applicants && this.props.application.applicants.items.length > 0) ? this.props.application.applicants.items : [],
+      //   residence: this.props.application.residence || {},
+      //   otherAdults: [],
+      //   fosterCareHistory: {},
+      //   minorChildren: []
+      // }
     }
 
     this.submitForm = this.submitForm.bind(this)
@@ -39,10 +40,10 @@ export default class Rfa01EditView extends React.Component {
     let params = this.state.application
     fetchRequest(url, 'PUT', this.state.application).then(
       response => response.json()).then((response) => {
-        return this.setState({
-          formData: response
-        })
+      return this.setState({
+        formData: response
       })
+    })
       .catch(error => {
         return this.setState({
           data: error
@@ -94,7 +95,7 @@ export default class Rfa01EditView extends React.Component {
               ethnicityTypes={this.props.ethnicityTypes}
               languageTypes={this.props.languageTypes.items}
               focusComponentName={this.state.focusComponentName}
-              applicants={this.state.application.applicants}
+              applicants={this.state.application.applicants || []}
               setParentState={this.setApplicationState}
               setFocusState={this.setFocusState}
               getFocusClassName={this.getFocusClassName} />
@@ -103,7 +104,7 @@ export default class Rfa01EditView extends React.Component {
               <h3>II. Applicant (S) - <span>Residence</span></h3>
               <ResidenceCards
                 focusComponentName={this.state.focusComponentName}
-                residence={this.state.application.residence}
+                residence={this.state.application.residence || {}}
                 languageTypes={this.props.languageTypes.items}
                 residenceTypes={this.props.residenceTypes}
                 stateTypes={this.props.stateTypes.items}
@@ -119,8 +120,8 @@ export default class Rfa01EditView extends React.Component {
                 focusComponentName={this.state.focusComponentName}
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
-                applicants={this.state.application.applicants}
-                minorChildren={this.state.application.minorChildren} />
+                applicants={this.state.application.applicants || []}
+                minorChildren={this.state.application.minorChildren || []} />
             </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -130,8 +131,8 @@ export default class Rfa01EditView extends React.Component {
                 focusComponentName={this.state.focusComponentName}
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
-                applicants={this.state.application.applicants}
-                otherAdults={this.state.application.otherAdults}
+                applicants={this.state.application.applicants || []}
+                otherAdults={this.state.application.otherAdults || []}
                 relationship_types={this.props.relationshipToApplicantTypes} />
             </div>
 
@@ -139,7 +140,7 @@ export default class Rfa01EditView extends React.Component {
               <h3>VIII. Foster Care / Adoption / Licensure History</h3>
               <FosterCareHistoryCardMain
                 focusComponentName={this.state.focusComponentName}
-                fosterCareHistory={this.state.application.fosterCareHistory}
+                fosterCareHistory={this.state.application.fosterCareHistory || {}}
                 getFocusClassName={this.getFocusClassName}
                 setParentState={this.setApplicationState}
                 setFocusState={this.setFocusState}

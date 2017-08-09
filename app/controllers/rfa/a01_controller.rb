@@ -32,7 +32,7 @@ class Rfa::A01Controller < CalsBaseController
     @relationship_to_applicant_types = dictionaries_helper.relationship_to_applicant_types
     @application = rfa_application_helper.find_by_id(params[:id])
     # @application.applicants = rfa_application_helper.find_applicants()
-    @application.applicants = rfa_applicant_helper.find_by_application_id(params[:id])
+    @application.applicants = rfa_applicant_helper.find_by_application_id(params[:id])['items']
     @application.residence = rfa_residence_helper.find_by_application_id(params[:id])
     @application.adoption_history = rfa_adoption_history_helper.find_by_application_id(params[:id])
     @application.minor_children = rfa_minor_children_helper.find_by_application_id(params[:id])

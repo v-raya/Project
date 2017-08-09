@@ -94,3 +94,7 @@ export default class MinorCardsGroup extends React.Component {
     )
   }
 }
+
+MinorCardsGroup.defaultProps = {
+  applicants: []
+}

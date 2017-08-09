@@ -87,3 +87,7 @@ export default class ApplicantCardsGroup extends React.Component {
     )
   }
 }
+
+ApplicantCardsGroup.defaultProps = {
+  phones: [blankApplicantFields]
+}

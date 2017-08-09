@@ -24,7 +24,7 @@ const otherAdultsDefaults = Object.freeze({
   //   'id': 0,
   //   'value': ''
   // },
-//  'date_of_birth': '',
+  //  'date_of_birth': '',
   'relationship_to_applicants': [
     relationshipToAdultsDefaults
   ],
@@ -144,4 +144,8 @@ export default class OtherAdultsCardsGroup extends React.Component {
       </div>
     )
   }
+}
+
+OtherAdultsCardsGroup.defaultProps = {
+  applicants: []
 }

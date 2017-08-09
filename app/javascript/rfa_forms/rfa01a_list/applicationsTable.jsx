@@ -2,7 +2,7 @@ import React from 'react'
 import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 
 export default class ApplicationsTable extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       applicationsList: this.props.applications
@@ -22,7 +22,7 @@ export default class ApplicationsTable extends React.Component {
             applicationList && applicationList.map((application, index) => {
               let applicantsList = application.id
               return (
-                <a href={urlPrefixHelper('rfa/a01/' + applicantsList.id + '/edit')} className='table-row' key={index}>
+                <a href={urlPrefixHelper('/rfa/a01/' + applicantsList.id + '/edit')} className='table-row' key={index}>
                   <div className='table-cell'>{applicantsList.id}</div>
                   <div className='table-cell'>{(applicantsList.applicants.length > 0) && applicantsList.applicants[0].first_name}</div>
                   <div className='table-cell'>{(applicantsList.applicants.length > 0) && applicantsList.applicants[0].last_name}</div>
