@@ -16,13 +16,6 @@ export default class Rfa01EditView extends React.Component {
     this.state = {
       focusComponentName: '',
       application: this.props.application
-      // application: {
-      //   applicants: (this.props.application.applicants && this.props.application.applicants.items.length > 0) ? this.props.application.applicants.items : [],
-      //   residence: this.props.application.residence || {},
-      //   otherAdults: [],
-      //   fosterCareHistory: {},
-      //   minorChildren: []
-      // }
     }
 
     this.submitForm = this.submitForm.bind(this)

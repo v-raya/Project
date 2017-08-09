@@ -23,7 +23,7 @@ export class MinorCardField extends React.Component {
           value={minor.date_of_birth}
           label='Date of Birth' placeholder='Enter Date of Birth'
           type='text' onChange={(event) => this.props.onFieldChange(this.props.index, event.target.value, 'date_of_birth')} />
-        <DropDownField gridClassName='col-md-3' id='gender'
+        <DropDownField gridClassName='col-md-4' id='gender'
           selectClassName='reusable-select'
           optionList={this.props.genderTypes}
           label='Gender'
