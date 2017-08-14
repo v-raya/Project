@@ -1,24 +1,26 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
 import {dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 import {yesNo} from 'constants/constants'
+import {setToWhom} from 'helpers/cardsHelper.jsx'
 
 export class MinorCardField extends React.Component {
   render () {
-    const minor = this.props.minorChildren
+    const minor = this.props.minorChild
 
     return (
       <form>
         <DropDownField gridClassName='col-md-4' id='relationship_to_applicant'
           selectClassName='reusable-select'
           optionList={this.props.relationshipToApplicantTypes}
-          label='Relationship Type' onChange={(event) => this.props.onFieldChange(this.props.index, dictionaryNilSelect(event.target.selectedOptions[0]), 'relationship_to_applicant')} />
-        <DropDownField gridClassName='col-md-4' id='child_related_to'
+          label='Relationship Type' onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, dictionaryNilSelect(event.target.selectedOptions[0]), 'relationship_to_applicant')} />
+        <DropDownField gridClassName='col-md-4' id='applicant_id'
           selectClassName='reusable-select'
-          optionList={this.props.setToWhom(this.props.applicants)}
+          optionList={setToWhom(this.props.applicants)}
           label='To whom'
-          onChange={(event) => this.props.onFieldChange(this.props.index, event.target.value, 'child_related_to')} />
+          onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, event.target.value, 'applicant_id')} />
         <InputComponent gridClassName='col-md-4' id='date_of_birth'
           value={minor.date_of_birth}
           label='Date of Birth' placeholder='Enter Date of Birth'
@@ -41,4 +43,14 @@ export class MinorCardField extends React.Component {
       </form>
     )
   }
+}
+
+MinorCardField.propTypes = {
+  index: PropTypes.number,
+  minorChild: PropTypes.object.isRequired,
+  applicants: PropTypes.array.isRequired,
+  relationshipToApplicantTypes: PropTypes.array,
+  genderTypes: PropTypes.array,
+  handleRelationshipTypeToApplicant: PropTypes.func,
+  onFieldChange: PropTypes.func
 }

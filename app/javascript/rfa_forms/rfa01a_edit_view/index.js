@@ -15,6 +15,7 @@ export default class Rfa01EditView extends React.Component {
     super(props)
     this.state = {
       focusComponentName: '',
+
       application: this.props.application
     }
 
@@ -114,7 +115,7 @@ export default class Rfa01EditView extends React.Component {
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
                 applicants={this.state.application.applicants || []}
-                minorChildren={this.state.application.minorChildren || []} />
+                minorChildren={this.state.application.minorChildren } />
             </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>

@@ -29,7 +29,6 @@ class Rfa::A01Controller < CalsBaseController
     @relationship_to_applicant_types = dictionaries_helper.relationship_to_applicant_types
     @relationship_types = dictionaries_helper.relationship_types
     @license_types = dictionaries_helper.license_types
-    @relationship_to_applicant_types = dictionaries_helper.relationship_to_applicant_types
     @application = rfa_application_helper.find_by_id(params[:id])
     # @application.applicants = rfa_application_helper.find_applicants()
     @application.applicants = rfa_applicant_helper.find_by_application_id(params[:id]).present? ? rfa_applicant_helper.find_by_application_id(params[:id])['items'] : nil
@@ -64,7 +63,7 @@ class Rfa::A01Controller < CalsBaseController
       minor_children_result = []
       minor_children.each do |child|
         child = child.permit!
-        minor_children_result << rfa_minor_children_helper.create(params[:id], child.except('child_related_to').to_json)
+        minor_children_result << rfa_minor_children_helper.create(params[:id], child.to_json)
       end
       application_response[:minor_children] = minor_children_result
     end

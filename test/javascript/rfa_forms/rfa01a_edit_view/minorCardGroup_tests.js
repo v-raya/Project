@@ -1,38 +1,73 @@
 import React from 'react'
-import MinorCardsGroup , {minorDefaults} from 'rfa_forms/rfa01a_edit_view//minorCardsGroup.jsx'
-import {shallow} from 'enzyme'
+import MinorCardsGroup, {minorDefaults} from 'rfa_forms/rfa01a_edit_view//minorCardsGroup.jsx'
+import {shallow, mount} from 'enzyme'
 import {genderTypes, relationshipTypes} from '../../helpers/constants'
 
-
-
 describe('Verify minor children Component View', function () {
-  let component
+  let component, componentMount
   let props
   const minorCardChild = {
-    relationship_to_applicant: 'Sibling',
-    gender: 'Female',
+    relationship_to_applicants: [
+      {
+        relationship_to_applicant: null
+      }
+    ],
     child_financially_supported: 'yes',
     child_adopted: 'yes',
     date_of_birth: '01-01-2017',
     child_related_to: 'yes'
-    }
+  }
 
   let setParentStateSpy = jasmine.createSpy()
 
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
+    let handleRelationshipTypeToApplicantSpy = jasmine.createSpy('handleRelationshipTypeToApplicant')
+    let onFieldChangeSpy = jasmine.createSpy('onFieldChange')
+
     props = {
       minorChildren: [minorCardChild],
-      genderTypes: genderTypes,
+      genderTypes: genderTypes.items,
       relationshipTypes: relationshipTypes,
+      relationshipToApplicantTypes: relationshipTypes,
       setParentState: setParentStateSpy
+
     }
 
     component = shallow(
       <MinorCardsGroup {...props} />
     )
 
+    componentMount = mount(<MinorCardsGroup {...props}/>)
   })
+  describe('Verify minor card Component View', () => {
+    it('has class name', function () {
+      componentMount.update()
+      spyOn(componentMount.instance(), 'handleRelationshipTypeToApplicant').and.callThrough()
+      let relationShipField = componentMount.find('#relationship_to_applicant')
+      relationShipField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'Sibling'}]}})
+      minorCardChild.relationship_to_applicants[0].relationship_to_applicant = { id: '2', value: 'Sibling' }
+      expect(setParentStateSpy).toHaveBeenCalledWith('minorChildren', [minorCardChild])
+    })
+
+    it('verify date of birth', () => {
+      componentMount.update()
+      spyOn(componentMount.instance(), 'onFieldChange').and.callThrough()
+      let relationShipField = componentMount.find('#date_of_birth')
+      relationShipField.simulate('change', {target: {value: '01-01-2017'}})
+      expect(setParentStateSpy).toHaveBeenCalledWith('minorChildren', [minorCardChild])
+    })
+    it('verify child adopted field', () => {
+      componentMount.update()
+      spyOn(componentMount.instance(), 'onFieldChange').and.callThrough()
+      let relationShipField = componentMount.find('#child_adopted')
+      relationShipField.simulate('change', {target: {selectedOptions: [{id: '2', value: 'yes'}]}})
+      minorCardChild.child_related_to =  'yes'
+
+      expect(setParentStateSpy).toHaveBeenCalledWith('minorChildren', [minorCardChild])
+    })
+  })
+
 
   describe('Verify minor card Component View', () => {
     it('has class name', function () {
@@ -60,11 +95,9 @@ describe('Verify minor children Component View', function () {
       newData[0] = minorCardChild
       newData[1] = minorDefaults
 
-      //expect(props.minorchil.length).toEqual(1)
+      // expect(props.minorchil.length).toEqual(1)
       expect(setParentStateSpy).toHaveBeenCalledWith('minorChildren', newData)
-
     })
-
 
     describe('when close minor card is clicked', () => {
       it('Clears data when 1 phone number is present', () => {
@@ -77,8 +110,6 @@ describe('Verify minor children Component View', function () {
 
         expect(props.minorChildren.length).toEqual(1)
         expect(setParentStateSpy).toHaveBeenCalledWith('minorChildren', [minorDefaults])
-
-
       })
 
       it('Deletes minor children when 2 cards are present', () => {
@@ -97,8 +128,9 @@ describe('Verify minor children Component View', function () {
         expect(setParentStateSpy).toHaveBeenCalledWith('minorChildren', [minorDefaults])
         expect(props.minorChildren.length).toEqual(1)
       })
-
-    })
     })
   })
 
+
+
+})

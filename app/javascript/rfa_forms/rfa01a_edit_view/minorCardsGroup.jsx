@@ -1,10 +1,17 @@
 import Immutable from 'immutable'
 import React from 'react'
+import PropTypes from 'prop-types'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import {MinorCardField} from './minorCardField'
-import {setToWhom} from 'helpers/cardsHelper.jsx'
+import {addCardAsJS, removeCardAsJS} from 'helpers/cardsHelper.jsx'
 
 export const minorDefaults = Object.freeze({
+  relationship_to_applicants: [
+    {
+      applicant_id: '',
+      relationship_to_applicant: null
+    }
+  ]
 })
 
 export default class MinorCardsGroup extends React.Component {
@@ -12,37 +19,29 @@ export default class MinorCardsGroup extends React.Component {
     super(props)
 
     this.addCard = this.addCard.bind(this)
-    this.handleNameFieldInput = this.handleNameFieldInput.bind(this)
+    this.handleRelationshipTypeToApplicant = this.handleRelationshipTypeToApplicant.bind(this)
     this.onFieldChange = this.onFieldChange.bind(this)
     this.clickClose = this.clickClose.bind(this)
   }
 
   addCard (event) {
-    let minorList = checkArrayObjectPresence(this.props.minorChildren) || [minorDefaults]
-    minorList.push(minorDefaults)
-    this.props.setParentState('minorChildren', minorList)
+    this.props.setParentState('minorChildren', addCardAsJS(this.props.minorChildren, minorDefaults))
   }
 
   clickClose (cardIndex) {
-    let minorChildren = Immutable.fromJS(checkArrayObjectPresence(this.props.minorChildren) || [minorDefaults])
-
-    minorChildren = minorChildren.delete(cardIndex)
-    if (minorChildren.size === 0) {
-      minorChildren = minorChildren.push(minorDefaults)
-    }
-    this.props.setParentState('minorChildren', minorChildren.toJS())
+    this.props.setParentState('minorChildren',
+      removeCardAsJS(this.props.minorChildren, cardIndex, minorDefaults))
   }
 
   onFieldChange (cardIndex, value, type) {
-    let minorChildrenList = Immutable.fromJS(checkArrayObjectPresence(this.props.minorChildren) || [minorDefaults])
+    let minorChildrenList = Immutable.fromJS(this.props.minorChildren)
     minorChildrenList = minorChildrenList.update(cardIndex, x => x.set(type, value))
     this.props.setParentState('minorChildren', minorChildrenList.toJS())
   }
 
-  handleNameFieldInput (index, value, type) {
-    let minorChildrenList = Immutable.fromJS(checkArrayObjectPresence(this.props.minorChildren) || [minorDefaults])
-    minorChildrenList = minorChildrenList.update(index,
-      otherMinor => otherMinor.setIn(['nameField', type], value))
+  handleRelationshipTypeToApplicant (index, value, type) {
+    let minorChildrenList = Immutable.fromJS(this.props.minorChildren)
+    minorChildrenList = minorChildrenList.setIn([index, 'relationship_to_applicants', 0, type], value)
     this.props.setParentState('minorChildren', minorChildrenList.toJS())
   }
 
@@ -51,7 +50,7 @@ export default class MinorCardsGroup extends React.Component {
   }
 
   render () {
-    let minorChildrenList = checkArrayObjectPresence(this.props.minorChildren) || [minorDefaults]
+    let minorChildrenList = this.props.minorChildren
 
     return (
       <div className='minor_card'>
@@ -73,11 +72,9 @@ export default class MinorCardsGroup extends React.Component {
                       index={index}
                       genderTypes={this.props.genderTypes}
                       relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
-                      minorChildren={minorDefaults}
+                      minorChild={minorDefaults}
+                      handleRelationshipTypeToApplicant={this.handleRelationshipTypeToApplicant}
                       applicants={this.props.applicants}
-                      setToWhom={setToWhom}
-                      handleNameFieldInput={this.handleNameFieldInput}
-                      clickClose={this.clickClose}
                       onFieldChange={this.onFieldChange} />
                   </div>
 
@@ -95,6 +92,13 @@ export default class MinorCardsGroup extends React.Component {
   }
 }
 
+MinorCardsGroup.propTypes = {
+  minorChildren: PropTypes.array.isRequired,
+  applicants: PropTypes.array.isRequired
+
+}
+
 MinorCardsGroup.defaultProps = {
+  minorChildren: [minorDefaults],
   applicants: []
 }
