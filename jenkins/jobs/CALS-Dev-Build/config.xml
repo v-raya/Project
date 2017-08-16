@@ -18,7 +18,7 @@
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.3.0">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.3.2">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -53,8 +53,8 @@ docker rmi $(docker images -qf dangling=true --no-trunc) || true
 echo Docker environment cleaned</command>
     </hudson.tasks.Shell>
     <com.cloudbees.dockerpublish.DockerBuilder plugin="docker-build-publish@1.3.2">
-      <server plugin="docker-commons@1.6"/>
-      <registry plugin="docker-commons@1.6">
+      <server plugin="docker-commons@1.8"/>
+      <registry plugin="docker-commons@1.8">
         <credentialsId>55376fcb-1198-4fe1-9991-ba647645d5b0</credentialsId>
       </registry>
       <repoName>cwds/cals</repoName>
@@ -63,7 +63,7 @@ echo Docker environment cleaned</command>
       <buildContext>docker/dev/app/cals</buildContext>
       <skipBuild>false</skipBuild>
       <skipDecorate>false</skipDecorate>
-      <repoTag></repoTag>
+      <repoTag>0.36-${BUILD_NUMBER}</repoTag>
       <skipPush>false</skipPush>
       <createFingerprint>true</createFingerprint>
       <skipTagLatest>false</skipTagLatest>

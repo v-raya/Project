@@ -27,7 +27,7 @@
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.3.0">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.3.2">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -50,7 +50,7 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.38.0">
+    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.39.0">
       <spec>H/5 * * * *</spec>
       <configVersion>3</configVersion>
       <adminlist></adminlist>
@@ -102,7 +102,7 @@
 export PATH=/var/lib/jenkins/.rvm/gems/ruby-2.3.3/bin:/var/lib/jenkins/.rvm/gems/ruby-2.3.3@global/bin:/var/lib/jenkins/.rvm/rubies/ruby-2.3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/aws/bin:/var/lib/jenkins/.rvm/bin:/var/lib/jenkins/.rvm/bin
 
 export BASE_CALS_API_URL=&quot;http://localhost:3001/v1&quot;
-export CALS_API_URL=&quot;http://tpt2.dev.cwds.io:8084&quot;
+export CALS_API_URL=&quot;https://cals-api.preint.cwds.io&quot;
 # export RAILS_RELATIVE_URL_ROOT=&quot;/&quot;
 export DISABLE_SPRING=1
 
@@ -130,7 +130,7 @@ sleep 5</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <htmlpublisher.HtmlPublisher plugin="htmlpublisher@1.13">
+    <htmlpublisher.HtmlPublisher plugin="htmlpublisher@1.14">
       <reportTargets>
         <htmlpublisher.HtmlPublisherTarget>
           <reportName>JS Code Coverage</reportName>
@@ -140,6 +140,7 @@ sleep 5</command>
           <reportTitles></reportTitles>
           <keepAll>true</keepAll>
           <allowMissing>false</allowMissing>
+          <includes>**/*</includes>
         </htmlpublisher.HtmlPublisherTarget>
         <htmlpublisher.HtmlPublisherTarget>
           <reportName>Ruby Code Coverage</reportName>
@@ -149,6 +150,7 @@ sleep 5</command>
           <reportTitles></reportTitles>
           <keepAll>true</keepAll>
           <allowMissing>false</allowMissing>
+          <includes>**/*</includes>
         </htmlpublisher.HtmlPublisherTarget>
       </reportTargets>
     </htmlpublisher.HtmlPublisher>
@@ -181,7 +183,7 @@ sleep 5</command>
       <cleanupParameter></cleanupParameter>
       <externalDelete></externalDelete>
     </hudson.plugins.ws__cleanup.PreBuildCleanup>
-    <org.jenkinsci.plugins.ghprb.upstream.GhprbUpstreamStatus plugin="ghprb@1.38.0">
+    <org.jenkinsci.plugins.ghprb.upstream.GhprbUpstreamStatus plugin="ghprb@1.39.0">
       <showMatrixStatus>false</showMatrixStatus>
       <commitStatusContext>Pull Request Testing</commitStatusContext>
       <triggeredStatus></triggeredStatus>
