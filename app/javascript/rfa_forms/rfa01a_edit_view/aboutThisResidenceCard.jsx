@@ -92,7 +92,7 @@ export default class AboutThisResidenceCard extends React.Component {
               value={getDictionaryId(aboutResidence.home_languages || '')}
               optionList={this.props.languageTypes}
               label={'Language(s) spoken in the home'}
-              onChange={(event) => this.props.setParentState('home_languages', dictionaryNilSelect(event.target.selectedOptions[0]))} />
+              onChange={(event) => this.props.setParentState('home_languages', [dictionaryNilSelect(event.target.selectedOptions[0])])} />
           </form>
         </div>
       </div>

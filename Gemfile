@@ -16,7 +16,6 @@ gem 'responders', '~> 2.3'
 gem 'autoprefixer-rails', '~> 6.7'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap'
-
 gem 'react-rails', '~> 2.2'
 
 gem 'redis-rails', '~> 5.0'
@@ -48,7 +47,7 @@ group :development, :test do
   gem 'faker'
   gem 'rspec', '~> 3.5', '< 3.6.0'
   gem 'rspec-rails', '~> 3.5', '< 3.6.0'
-
+  gem 'awesome_print', :require => 'ap'
   gem 'rubocop', '~> 0.48.1', require: false
 
   gem 'factory_girl'

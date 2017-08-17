@@ -34,10 +34,10 @@ export default class Rfa01EditView extends React.Component {
     let params = this.state.application
     fetchRequest(url, 'PUT', this.state.application).then(
       response => response.json()).then((response) => {
-      return this.setState({
-        formData: response
+        return this.setState({
+          formData: response
+        })
       })
-    })
       .catch(error => {
         return this.setState({
           data: error
@@ -79,15 +79,15 @@ export default class Rfa01EditView extends React.Component {
             </div>
 
             <ApplicantCardsGroup
-              nameTypes={this.props.nameTypes.items}
-              phoneTypes={this.props.phoneTypes.items}
-              salaryTypes={this.props.salaryTypes.items}
-              stateTypes={this.props.stateTypes.items}
-              educationLevels={this.props.educationLevels.items}
-              genderTypes={this.props.genderTypes.items}
+              nameTypes={this.props.nameTypes}
+              phoneTypes={this.props.phoneTypes}
+              salaryTypes={this.props.salaryTypes}
+              stateTypes={this.props.stateTypes}
+              educationLevels={this.props.educationLevels}
+              genderTypes={this.props.genderTypes}
               // raceTypes={this.props.raceTypes}
               ethnicityTypes={this.props.ethnicityTypes}
-              languageTypes={this.props.languageTypes.items}
+              languageTypes={this.props.languageTypes}
               focusComponentName={this.state.focusComponentName}
               applicants={this.state.application.applicants || []}
               setParentState={this.setApplicationState}
@@ -99,9 +99,9 @@ export default class Rfa01EditView extends React.Component {
               <ResidenceCards
                 focusComponentName={this.state.focusComponentName}
                 residence={this.state.application.residence || {}}
-                languageTypes={this.props.languageTypes.items}
+                languageTypes={this.props.languageTypes}
                 residenceTypes={this.props.residenceTypes}
-                stateTypes={this.props.stateTypes.items}
+                stateTypes={this.props.stateTypes}
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState} />
             </div>
@@ -109,13 +109,13 @@ export default class Rfa01EditView extends React.Component {
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h3>IV. <span>Minor Children Residing in the home</span></h3>
               <MinorCardsGroup
-                genderTypes={this.props.genderTypes.items}
+                genderTypes={this.props.genderTypes}
                 relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
                 focusComponentName={this.state.focusComponentName}
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
                 applicants={this.state.application.applicants || []}
-                minorChildren={this.state.application.minorChildren } />
+                minorChildren={this.state.application.minorChildren || undefined} />
             </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -126,7 +126,7 @@ export default class Rfa01EditView extends React.Component {
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
                 applicants={this.state.application.applicants || []}
-                otherAdults={this.state.application.otherAdults || []}
+                otherAdults={this.state.application.otherAdults}
                 relationship_types={this.props.relationshipToApplicantTypes} />
             </div>
 

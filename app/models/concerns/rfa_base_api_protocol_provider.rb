@@ -8,9 +8,20 @@ module Concerns::RfaBaseApiProtocolProvider
       new(JSON.parse(response.body))
     end
 
+    def update(auth_header, parent_id, id, body)
+      response = FaradayCals.put("/#{parent_path}/#{parent_id}/#{api_resource_path}/#{id}", auth_header, body)
+      new(JSON.parse(response.body))
+    end
+
     def find_by_application_id(auth_header, parent_id)
       response = FaradayCals.get("/#{parent_path}/#{parent_id}/#{api_resource_path}", auth_header)
       response.status == 200 ? JSON.parse(response.body) : nil
+    end
+
+    def find_items_by_application_id(auth_header, parent_id)
+      response = FaradayCals.get("/#{parent_path}/#{parent_id}/#{api_resource_path}", auth_header)
+      body = response.status == 200 ? JSON.parse(response.body) : nil
+       body.present? ? body['items'] : nil
     end
   end
 end

@@ -75,9 +75,9 @@ export default class OtherAdultsCardsGroup extends React.Component {
     let relationshipList = Immutable.fromJS(otherAdults[index].relationship_to_applicants[0])
 
     relationshipList = relationshipList.setIn(['relationship_to_applicant', 'id'], value)
-    relationshipList = relationshipList.setIn(['relationship_to_applicant', 'value'], this.props.relationship_types[value].value)
+    relationshipList = relationshipList.setIn(['relationship_to_applicant', 'value'], this.props.relationship_types[value - 1].value)
 
-    otherAdultsList = otherAdultsList.update(index, x => x.set('relationship_to_applicants', relationshipList))
+    otherAdultsList = otherAdultsList.update(index, x => x.set('relationship_to_applicants', [relationshipList]))
     this.props.setParentState('otherAdults', otherAdultsList.toJS())
   }
   handleToWhom (index, value) {
@@ -85,7 +85,7 @@ export default class OtherAdultsCardsGroup extends React.Component {
     let otherAdultsList = Immutable.fromJS(otherAdults)
     let relationships = Immutable.fromJS(otherAdults[index].relationship_to_applicants)
     relationships = relationships.set('applicant_id', value)
-    otherAdultsList = otherAdultsList.update(index, x => x.set('relationship_to_applicants', relationships))
+    otherAdultsList = otherAdultsList.update(index, x => x.set('relationship_to_applicants', [relationships]))
 
     this.props.setParentState('otherAdults', otherAdultsList.toJS())
   }

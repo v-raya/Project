@@ -19,12 +19,58 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
   def relationship_types
     Dictionaries::ApplicantRelationshipType.all(auth_header)
   end
-  
+
   def license_types
     Dictionaries::LicenseType.all(auth_header)
   end
 
   def relationship_to_applicant_types
     Dictionaries::RelationshipToApplicantType.all(auth_header)
+  end
+
+  def  name_types
+    Dictionaries::NameType.all(auth_header)
+  end
+
+  def  phone_types
+    Dictionaries::PhoneNumberType.all(auth_header)
+  end
+
+  def  gender_types
+    Dictionaries::Gender.all(auth_header)
+  end
+
+  def education_levels
+    Dictionaries::EducationLevelType.all(auth_header)
+  end
+
+  def language_types
+    Dictionaries::Language.all(auth_header)
+  end
+
+  def  state_types
+    Dictionaries::State.all(auth_header)
+  end
+
+  def  salary_types
+    Dictionaries::IncomeType.all(auth_header)
+  end
+
+  def rfa_a01_dictioniaries
+    dictionaries = {}
+    dictionaries[:residence_types]= residence_ownership_types
+    dictionaries[:ethnicity_types]= ethnicity_types
+    dictionaries[:address_types]=address_types
+    dictionaries[:relationship_types]= relationship_types
+    dictionaries[:license_types]= license_types
+    dictionaries[:relationship_to_applicant_types]= relationship_to_applicant_types
+    dictionaries[:name_types] = name_types
+    dictionaries[:phone_types] = phone_types
+    dictionaries[:gender_types] = gender_types
+    dictionaries[:education_levels] = education_levels
+    dictionaries[:language_types] =  language_types
+    dictionaries[:state_types] = state_types
+    dictionaries[:salary_types] = salary_types
+    return dictionaries
   end
 end

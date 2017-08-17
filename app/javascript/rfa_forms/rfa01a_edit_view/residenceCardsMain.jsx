@@ -11,7 +11,7 @@ const blankResidenceFields = Object.freeze({
   body_of_water_description: '',
   others_using_residence_as_mailing: '',
   directions_to_home: '',
-  home_languages: ''
+  home_languages: []
 })
 
 export default class ResidenceCards extends React.Component {
@@ -33,7 +33,7 @@ export default class ResidenceCards extends React.Component {
 
   render () {
     let residenceData = this.props.residence || blankResidenceFields
-
+// TODO: fix street address zip and city not coming into params
     return (
       <div className='residence_cards'>
         <div id='nameSection' onClick={() => this.props.setFocusState('residentAddress')}

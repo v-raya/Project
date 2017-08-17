@@ -12,11 +12,4 @@ class Helpers::Rfa::ApplicationHelper < Helpers::ModelHelperBase
     Rfa::Application.all_expanded(auth_header)
   end
 
-  def name_types
-    Rfa::Application.name_types(auth_header)
-  end
-
-  def phone_types
-    Rfa::Application.phone_types(auth_header)
-  end
 end
