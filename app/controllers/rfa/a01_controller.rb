@@ -43,7 +43,8 @@ class Rfa::A01Controller < CalsBaseController
         :physical_address=>[:street_address, :city, :zip, :state=>[:id, :value]]]},
         {:highest_education_level =>[:id, :value]}, {:gender =>[:id, :value]},
         {:ethnicity => [:id, :value]}, {:driver_license_state=>[:id, :value]},
-        :phones => [:number, :preferred, :phone_type => [:id,:value]], :other_names => [])
+        :phones => [:number, :preferred, :phone_type => [:id,:value]],
+        :other_names => [:first_name, :last_name, :middle_name, :name_type => [:id, :value]])
       end
 
     end
