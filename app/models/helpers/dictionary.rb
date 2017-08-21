@@ -39,6 +39,12 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
   def  gender_types
     Dictionaries::Gender.all(auth_header)
   end
+  def  name_suffix_types
+    Dictionaries::NameSuffixType.all(auth_header)
+  end
+  def  name_prefix_types
+    Dictionaries::NamePrefixType.all(auth_header)
+  end
 
   def education_levels
     Dictionaries::EducationLevelType.all(auth_header)
@@ -65,6 +71,8 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     dictionaries[:license_types]= license_types
     dictionaries[:relationship_to_applicant_types]= relationship_to_applicant_types
     dictionaries[:name_types] = name_types
+    dictionaries[:name_suffix_types] = name_suffix_types
+    dictionaries[:name_prefix_types] = name_prefix_types
     dictionaries[:phone_types] = phone_types
     dictionaries[:gender_types] = gender_types
     dictionaries[:education_levels] = education_levels

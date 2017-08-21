@@ -59,6 +59,8 @@ export default class ApplicantCardsGroup extends React.Component {
                   <ApplicantCard
                     index={index}
                     nameTypes={this.props.nameTypes}
+                    prefixTypes={this.props.prefixTypes}
+                    suffixTypes={this.props.suffixTypes}
                     phoneTypes={this.props.phoneTypes}
                     salaryTypes={this.props.salaryTypes}
                     stateTypes={this.props.stateTypes}

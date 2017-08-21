@@ -80,6 +80,7 @@ GEM
     ast (2.3.0)
     autoprefixer-rails (6.7.7.2)
       execjs
+    awesome_print (1.8.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -310,6 +311,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails (~> 6.7)
+  awesome_print
   bootstrap
   bootstrap-sass (~> 3.3.6)
   byebug

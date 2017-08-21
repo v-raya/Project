@@ -1,6 +1,6 @@
 import React from 'react'
 import sinon from 'sinon'
-import {nameTypes, stateTypes, genderTypes, educationLevels, ethnicityTypes, languageTypes, salaryTypes} from './../../helpers/constants.js'
+import {nameTypes, suffixTypes, prefixTypes, stateTypes, genderTypes, educationLevels, ethnicityTypes, languageTypes, salaryTypes} from './../../helpers/constants.js'
 import ShallowRenderer from 'react-test-renderer/shallow'
 import ApplicantCardsGroup from 'rfa_forms/rfa01a_edit_view/applicantCardsGroup.jsx'
 import ReactDOM from 'react-dom'
@@ -9,7 +9,10 @@ var TestUtils = require('react-dom/test-utils')
 describe('Verify Applicant Card Group', () => {
   const isApplicantAdded = sinon.spy()
   const getFocusClassNameSpy = sinon.spy()
-  const applicantRender = TestUtils.renderIntoDocument(<ApplicantCardsGroup nameTypes={nameTypes.items}
+  const applicantRender = TestUtils.renderIntoDocument(<ApplicantCardsGroup
+    nameTypes={nameTypes.items}
+    suffixTypes={suffixTypes.items}
+    prefixTypes={prefixTypes.items}
     phoneTypes={nameTypes.items}
     salaryTypes={salaryTypes.items}
     stateTypes={stateTypes.items}

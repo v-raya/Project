@@ -31,6 +31,8 @@ export default class ApplicantCard extends React.Component {
           </div>
           <NameCard
             nameTypes={this.props.nameTypes}
+            suffixTypes={this.props.suffixTypes}
+            prefixTypes={this.props.prefixTypes}
             nameFields={this.props.applicantFields}
             setParentState={this.setApplicantState} />
         </div>

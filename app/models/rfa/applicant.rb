@@ -3,7 +3,7 @@ class Rfa::Applicant < CalsBase
 
   attr_accessor :language, :highest_education_level, :email, :date_of_birth, :ethnicity, :race, :gender,
     :driver_license_number,:driver_license_state, :email_address, :employment, :exclusion_order,
-    :first_name, :middle_name, :last_name
+    :first_name, :middle_name, :last_name, :name_suffix, :name_prefix
 
 
   attr_accessor :id

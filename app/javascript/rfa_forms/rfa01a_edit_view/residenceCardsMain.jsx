@@ -43,7 +43,7 @@ export default class ResidenceCards extends React.Component {
           </div>
           <AddressCard
             stateTypes={this.props.stateTypes}
-            addresses={residenceData.address}
+            addresses={residenceData.addresses}
             physicalMailingSimilar={residenceData.physical_mailing_similar}
             setParentState={this.setResidenceState}
           />

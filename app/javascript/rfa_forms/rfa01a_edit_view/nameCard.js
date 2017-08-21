@@ -3,9 +3,12 @@ import {NameCardField} from 'components/common/nameCardField'
 import Immutable from 'immutable'
 import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
+import CompleteNameFields from './completeNameField.jsx'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 
 const blankNameFields = Object.freeze({
+  name_suffix: null,
+  name_prefix: null,
   first_name: '',
   middle_name: '',
   last_name: '',
@@ -26,7 +29,7 @@ export default class NameCard extends React.Component {
     nameCardsList = nameCardsList.delete(indexValue)
     this.props.setParentState('other_names', nameCardsList.toJS())
   }
-  handleNameChange (nameIndex, key, value) {
+  handleNameChange (key, value, nameIndex) {
     let otherNameList = Immutable.fromJS(this.props.nameFields.other_names)
 
     otherNameList = otherNameList.update(nameIndex, x => x.set(key, value))
@@ -42,23 +45,12 @@ export default class NameCard extends React.Component {
     return (
       <div className='card-body'>
         <div className='row'>
-          <form>
-            <InputComponent gridClassName='col-md-4' id='firstname' value={this.props.nameFields.first_name}
-              label='First Name' placeholder='Enter First Name'
-              type={'text'} onChange={(event) => this.props.setParentState('first_name', event.target.value)} />
-            <InputComponent gridClassName='col-md-4' id='middleName' value={this.props.nameFields.middle_name}
-              label='Middle Name' placeholder='Enter Middle Name'
-              type={'text'} onChange={(event) => this.props.setParentState('middle_name', event.target.value)} />
-            <InputComponent gridClassName='col-md-4' id='lastName' value={this.props.nameFields.last_name}
-              label='Last Name' placeholder='Enter Last Name'
-              type={'text'} onChange={(event) => this.props.setParentState('last_name', event.target.value)} />
-            <DropDownField gridClassName='col-md-4' id='name_type'
-              value={legalTypeId}
-              selectClassName={'reusable-select'}
-              disable
-              optionList={this.props.nameTypes}
-              label='Name Type' />
-          </form>
+          <CompleteNameFields
+            fieldValues={this.props.nameFields || blankNameFields}
+            onChange={this.props.setParentState}
+            nameTypes={this.props.nameTypes}
+            suffixTypes={this.props.suffixTypes}
+            prefixTypes={this.props.prefixTypes}/>
         </div>
         {
           nameCardsList && this.props.nameFields.other_names.map((nameCardFields, index) => {
@@ -66,11 +58,13 @@ export default class NameCard extends React.Component {
               <div key={index} className='row list-item'>
                 <span onClick={(event) => this.removeCard(index)}
                   className='pull-right glyphicon glyphicon-remove' />
-                <NameCardField
+                <CompleteNameFields
                   index={index}
                   fieldValues={nameCardFields}
+                  onChange={this.handleNameChange}
                   nameTypes={this.props.nameTypes}
-                  onChange={this.handleNameChange} />
+                  suffixTypes={this.props.suffixTypes}
+                  prefixTypes={this.props.prefixTypes}/>
               </div>
             )
           })

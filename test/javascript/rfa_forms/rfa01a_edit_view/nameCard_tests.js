@@ -1,13 +1,14 @@
 import sinon from 'sinon'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {nameTypes} from './../../helpers/constants'
+import {nameTypes, suffixTypes, prefixTypes} from './../../helpers/constants'
 import NameCard from 'rfa_forms/rfa01a_edit_view/nameCard'
 var TestUtils = require('react-dom/test-utils')
 
 describe('Name Card Component', () => {
   let setCardState, isNameCardRemoved,
     handleNameChangeFun, nameType,
+    suffixType, prefixType,
     nameField, otherName, renderedCard,
     renderedDOM, renderedDom
 
@@ -16,6 +17,8 @@ describe('Name Card Component', () => {
     isNameCardRemoved = sinon.spy()
     handleNameChangeFun = sinon.spy()
     nameType = nameTypes
+    suffixType = suffixTypes
+    prefixType = prefixTypes
     nameField = {
       first_name: 'John',
       middle_name: '',
@@ -32,7 +35,10 @@ describe('Name Card Component', () => {
       }
     }
     renderedCard = TestUtils.renderIntoDocument(<NameCard
-      nameFields={nameField} nameTypes={nameType.items}
+      nameFields={nameField}
+      nameTypes={nameType.items}
+      suffixTypes={suffixType.items}
+      prefixTypes={prefixType.items}
       setParentState={setCardState}
       removeCard={isNameCardRemoved}
       handleNameChange={handleNameChangeFun}/>)
@@ -40,12 +46,8 @@ describe('Name Card Component', () => {
     renderedDom = renderedDOM(renderedCard)
   })
   it('Verify First name Props', () => {
-    let firstNameValue = renderedDom.children[0].children[0].children[0].children[0].children[1]
+    let firstNameValue = renderedDom.children[0].children[0].children[1].children[0].children[0].children[0].children[1]
     expect(firstNameValue.value).toBe('John')
-  })
-  it('Verify Name Type to be legal by default', () => {
-    let nameTypeDropdwon = renderedDom.children[0].children[0].children[3].children[1]
-    expect(nameTypeDropdwon.disabled).toBe(true)
   })
   it('renders Only Default Name Fields and Button', () => {
     expect(renderedDom.children.length).toEqual(2)
@@ -56,12 +58,15 @@ describe('Name Card Component', () => {
     expect(setCardState.calledOnce).toBe(true)
     nameField.other_names.push(otherName)
     const newRenderedCard = TestUtils.renderIntoDocument(<NameCard
-      nameFields={nameField} nameTypes={nameType.items}
+      nameFields={nameField}
+      nameTypes={nameType.items}
+      suffixTypes={suffixType.items}
+      prefixTypes={prefixType.items}
       setParentState={setCardState}
       removeCard={isNameCardRemoved}
       handleNameChange={handleNameChangeFun}/>)
     expect(renderedDOM(newRenderedCard).children.length).toEqual(3)
-    let otherNameField = renderedDOM(newRenderedCard).children[1].children[1].children[0].children[0].children[1]
+    let otherNameField = renderedDOM(newRenderedCard).children[1].children[1].children[1].children[0].children[0].children[0].children[1]
     TestUtils.Simulate.change(otherNameField, {target: {value: 'othername'}})
     expect(setCardState.called).toBe(true)
     let closeButton = renderedDOM(newRenderedCard).children[1].children[0]
@@ -71,7 +76,7 @@ describe('Name Card Component', () => {
 
   it('Change First Name in Name Card', () => {
     let firstName = 'myName'
-    let firstNameField = renderedDom.children[0].children[0].children[0].children[0].children[1]
+    let firstNameField = renderedDom.children[0].children[0].children[1].children[0].children[0].children[0].children[1]
     ReactDOM.findDOMNode(firstNameField).value = firstName
     TestUtils.Simulate.keyPress(firstNameField, {target: firstName})
     expect(firstNameField.value).toEqual('myName')
@@ -80,14 +85,14 @@ describe('Name Card Component', () => {
   })
   it('Change Middle Name in Name Card', () => {
     let middleName = 'Douglous'
-    let middleNameField = renderedDom.children[0].children[0].children[1].children[0].children[1]
+    let middleNameField = renderedDom.children[0].children[0].children[1].children[0].children[1].children[0].children[1]
     ReactDOM.findDOMNode(middleNameField).value = middleName
     TestUtils.Simulate.change(middleNameField, {target: {value: middleName}})
     expect(renderedCard.props.setParentState.called).toBe(true)
   })
   it('Change Last Name in Name Card', () => {
     let lastName = 'myLastName'
-    let lastNameField = renderedDom.children[0].children[0].children[2].children[0].children[1]
+    let lastNameField = renderedDom.children[0].children[0].children[1].children[0].children[2].children[0].children[1]
     TestUtils.Simulate.change(lastNameField, {target: {value: lastName}})
     expect(renderedCard.props.setParentState.called).toBe(true)
   })

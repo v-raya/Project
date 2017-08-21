@@ -79,6 +79,8 @@ export default class Rfa01EditView extends React.Component {
             </div>
 
             <ApplicantCardsGroup
+              suffixTypes={this.props.suffixTypes}
+              prefixTypes={this.props.prefixTypes}
               nameTypes={this.props.nameTypes}
               phoneTypes={this.props.phoneTypes}
               salaryTypes={this.props.salaryTypes}
