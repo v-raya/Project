@@ -7,15 +7,22 @@ describe('Verify minor children Component View', function () {
   let component, componentMount
   let props
   const minorCardChild = {
+    gender: {
+      'id': 0,
+      'value': ''
+    },
     relationship_to_applicants: [
       {
-        relationship_to_applicant: null
+        applicant_id: null,
+        relationship_to_applicant: {
+          'id': 0,
+          'value': ''
+        }
       }
     ],
     child_financially_supported: 'yes',
     child_adopted: 'yes',
-    date_of_birth: '01-01-2017',
-    child_related_to: 'yes'
+    date_of_birth: '2017-01-01'
   }
 
   let setParentStateSpy = jasmine.createSpy()
@@ -38,7 +45,7 @@ describe('Verify minor children Component View', function () {
       <MinorCardsGroup {...props} />
     )
 
-    componentMount = mount(<MinorCardsGroup {...props}/>)
+    componentMount = mount(<MinorCardsGroup {...props} />)
   })
   describe('Verify minor card Component View', () => {
     it('has class name', function () {
@@ -54,20 +61,10 @@ describe('Verify minor children Component View', function () {
       componentMount.update()
       spyOn(componentMount.instance(), 'onFieldChange').and.callThrough()
       let relationShipField = componentMount.find('#date_of_birth')
-      relationShipField.simulate('change', {target: {value: '01-01-2017'}})
-      expect(setParentStateSpy).toHaveBeenCalledWith('minorChildren', [minorCardChild])
-    })
-    it('verify child adopted field', () => {
-      componentMount.update()
-      spyOn(componentMount.instance(), 'onFieldChange').and.callThrough()
-      let relationShipField = componentMount.find('#child_adopted')
-      relationShipField.simulate('change', {target: {selectedOptions: [{id: '2', value: 'yes'}]}})
-      minorCardChild.child_related_to =  'yes'
-
+      relationShipField.simulate('change', {target: {value: '2017-01-01'}})
       expect(setParentStateSpy).toHaveBeenCalledWith('minorChildren', [minorCardChild])
     })
   })
-
 
   describe('Verify minor card Component View', () => {
     it('has class name', function () {
@@ -130,7 +127,4 @@ describe('Verify minor children Component View', function () {
       })
     })
   })
-
-
-
 })

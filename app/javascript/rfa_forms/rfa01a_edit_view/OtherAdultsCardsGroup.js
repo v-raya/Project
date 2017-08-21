@@ -2,29 +2,20 @@ import Immutable from 'immutable'
 import React from 'react'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import {OtherAdultsCardField} from 'components/common/OtherAdultsCardField'
-import {setToWhom} from 'helpers/cardsHelper.jsx'
+import {setToWhomOptionList, handleRelationshipTypeToApplicant, getFocusClassName} from 'helpers/cardsHelper.jsx'
 
 const relationshipToAdultsDefaults = Object.freeze({
-//  'applicant_id': null,
+  applicant_id: '',
   'relationship_to_applicant': {
-    'id': 0,
+    'id': '',
     'value': ''
   }
 })
 const otherAdultsDefaults = Object.freeze({
   index: 0,
-  // 'name_prefix': {
-  //   'id': 0,
-  //   'value': ''
-  // },
   'first_name': '',
   'middle_name': '',
   'last_name': '',
-  // 'name_suffix': {
-  //   'id': 0,
-  //   'value': ''
-  // },
-  //  'date_of_birth': '',
   'relationship_to_applicants': [
     relationshipToAdultsDefaults
   ],
@@ -39,7 +30,6 @@ export default class OtherAdultsCardsGroup extends React.Component {
 
     this.addCard = this.addCard.bind(this)
     this.handleRelationshipTypeToApplicant = this.handleRelationshipTypeToApplicant.bind(this)
-    this.handleToWhom = this.handleToWhom.bind(this)
     this.onFieldChange = this.onFieldChange.bind(this)
     this.clickClose = this.clickClose.bind(this)
   }
@@ -69,36 +59,8 @@ export default class OtherAdultsCardsGroup extends React.Component {
     this.props.setParentState('otherAdults', otherAdultsList.toJS())
   }
 
-  handleRelationshipTypeToApplicant (index, value) {
-    let otherAdults = checkArrayObjectPresence(this.props.otherAdults) || [otherAdultsDefaults]
-    let otherAdultsList = Immutable.fromJS(otherAdults)
-    let relationshipList = Immutable.fromJS(otherAdults[index].relationship_to_applicants[0])
-
-    relationshipList = relationshipList.setIn(['relationship_to_applicant', 'id'], value)
-    relationshipList = relationshipList.setIn(['relationship_to_applicant', 'value'], this.props.relationship_types[value - 1].value)
-
-    otherAdultsList = otherAdultsList.update(index, x => x.set('relationship_to_applicants', [relationshipList]))
-    this.props.setParentState('otherAdults', otherAdultsList.toJS())
-  }
-  handleToWhom (index, value) {
-    let otherAdults = checkArrayObjectPresence(this.props.otherAdults) || [otherAdultsDefaults]
-    let otherAdultsList = Immutable.fromJS(otherAdults)
-    let relationships = Immutable.fromJS(otherAdults[index].relationship_to_applicants)
-    relationships = relationships.set('applicant_id', value)
-    otherAdultsList = otherAdultsList.update(index, x => x.set('relationship_to_applicants', [relationships]))
-
-    this.props.setParentState('otherAdults', otherAdultsList.toJS())
-  }
-
-  // handleNameFieldInput (index, value, type) {
-  //   let otherAdultsList = Immutable.fromJS(checkArrayObjectPresence(this.props.otherAdults) || [otherAdultsDefaults])
-  //   otherAdultsList = otherAdultsList.update(index,
-  //     otherAdult => otherAdult.setIn(['nameField', type], value))
-  //   this.props.setParentState('otherAdults', otherAdultsList.toJS())
-  // }
-
-  getFocusClassName (componentName) {
-    return this.props.focusComponentName === componentName ? 'edit' : 'show'
+  handleRelationshipTypeToApplicant (index, value, type) {
+    this.props.setParentState('otherAdults', handleRelationshipTypeToApplicant(index, value, type, checkArrayObjectPresence(this.props.otherAdults) || [otherAdultsDefaults]))
   }
 
   render () {
@@ -108,7 +70,7 @@ export default class OtherAdultsCardsGroup extends React.Component {
       <div className='other_adults_card'>
 
         <div id='otherAdultsSection' onClick={() => this.props.setFocusState('otherAdultsSection')}
-          className={this.getFocusClassName('otherAdultsSection') + ' ' + 'card other-adults-section double-gap-top'}>
+          className={getFocusClassName('otherAdultsSection') + ' ' + 'card other-adults-section double-gap-top'}>
 
           <div className='card-header'>
             <span>Other Information</span>
@@ -126,8 +88,6 @@ export default class OtherAdultsCardsGroup extends React.Component {
                       otherAdults={otherAdultsFields}
                       applicants={this.props.applicants}
                       handleRelationshipTypeToApplicant={this.handleRelationshipTypeToApplicant}
-                      setToWhom={setToWhom}
-                      handleToWhom={this.handleToWhom}
                       clickClose={this.clickClose}
                       onFieldChange={this.onFieldChange} />
                   </div>
@@ -135,10 +95,10 @@ export default class OtherAdultsCardsGroup extends React.Component {
                 )
               })
             }
-          </div>
 
-          <div className='text-center'>
-            <button onClick={this.addCard} className='btn btn-default'>Add another Adult +</button>
+            <div className='text-center'>
+              <button onClick={this.addCard} className='btn btn-default'>Add another Adult +</button>
+            </div>
           </div>
         </div>
       </div>

@@ -16,8 +16,21 @@ describe('Verify MinorCardFields', function () {
     //   firstName: 'child1',
     //   middleName: 'child2',
     //   lastName: 'child 3'
-    // },
-    date_of_birth: '01-01-2017',
+    // }
+    gender: {
+      'id': 0,
+      'value': ''
+    },
+    relationship_to_applicants: [
+      {
+        applicant_id: null,
+        relationship_to_applicant: {
+          'id': 0,
+          'value': ''
+        }
+      }
+    ],
+    date_of_birth: '2017-01-01',
     child_financially_supported: 'yes',
     child_adopted: 'yes'
   }
@@ -59,19 +72,19 @@ describe('Verify MinorCardFields', function () {
   it('verify date of birth', () => {
     let relationShipField = minorChildCardComp.find('#date_of_birth')
     // spyOn(minorChildCardComp.instance(), 'onFieldChange').and.callThrough()
-    relationShipField.simulate('change', {target: {value: '01-01-2017'}})
-    expect(onFieldChangeSpy).toHaveBeenCalledWith(0, '01-01-2017', 'date_of_birth')
+    relationShipField.simulate('change', {target: {value: '2017-01-01'}})
+    expect(onFieldChangeSpy).toHaveBeenCalledWith(0, '2017-01-01', 'date_of_birth')
   })
   it('verify child_financially_supported field', () => {
     let relationShipField = minorChildCardComp.find('#child_financially_supported')
     // spyOn(minorChildCardComp.instance(), 'onFieldChange').and.callThrough()
     relationShipField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'yes'}]}})
-    expect(onFieldChangeSpy).toHaveBeenCalledWith(0,'2', 'child_financially_supported')
+    expect(onFieldChangeSpy).toHaveBeenCalledWith(0, '2', 'child_financially_supported')
   })
   it('verify child adopted field', () => {
     let relationShipField = minorChildCardComp.find('#child_adopted')
     // spyOn(minorChildCardComp.instance(), 'onFieldChange').and.callThrough()
     relationShipField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'yes'}]}})
-    expect(onFieldChangeSpy).toHaveBeenCalledWith(0,'2', 'child_adopted')
+    expect(onFieldChangeSpy).toHaveBeenCalledWith(0, '2', 'child_adopted')
   })
 })

@@ -4,22 +4,23 @@ import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
 import {dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 import {yesNo} from 'constants/constants'
-import {setToWhom} from 'helpers/cardsHelper.jsx'
+import {setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
 
 export class MinorCardField extends React.Component {
   render () {
     const minor = this.props.minorChild
-
     return (
       <form>
         <DropDownField gridClassName='col-md-4' id='relationship_to_applicant'
           selectClassName='reusable-select'
           optionList={this.props.relationshipToApplicantTypes}
+          value={minor.relationship_to_applicants[0].relationship_to_applicant.id}
           label='Relationship Type' onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, dictionaryNilSelect(event.target.selectedOptions[0]), 'relationship_to_applicant')} />
         <DropDownField gridClassName='col-md-4' id='applicant_id'
           selectClassName='reusable-select'
-          optionList={setToWhom(this.props.applicants)}
+          optionList={setToWhomOptionList(this.props.applicants)}
           label='To whom'
+          value={handleToWhomValue(minor.relationship_to_applicants[0].applicant_id, this.props.applicants).id}
           onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, event.target.value, 'applicant_id')} />
         <InputComponent gridClassName='col-md-4' id='date_of_birth'
           value={minor.date_of_birth}
@@ -28,6 +29,7 @@ export class MinorCardField extends React.Component {
         <DropDownField gridClassName='col-md-4' id='gender'
           selectClassName='reusable-select'
           optionList={this.props.genderTypes}
+          value={minor.gender.id}
           label='Gender'
           onChange={(event) => this.props.onFieldChange(this.props.index, dictionaryNilSelect(event.target.selectedOptions[0]), 'gender')} />
         <DropDownField id='child_financially_supported' gridClassName='col-md-4' value={minor.child_financially_supported}

@@ -3,13 +3,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import {MinorCardField} from './minorCardField'
-import {addCardAsJS, removeCardAsJS} from 'helpers/cardsHelper.jsx'
+import {addCardAsJS, removeCardAsJS, handleRelationshipTypeToApplicant, getFocusClassName} from 'helpers/cardsHelper.jsx'
 
 export const minorDefaults = Object.freeze({
+  gender: {
+    'id': 0,
+    'value': ''
+  },
   relationship_to_applicants: [
     {
       applicant_id: '',
-      relationship_to_applicant: null
+      relationship_to_applicant: {
+        'id': 0,
+        'value': ''
+      }
     }
   ]
 })
@@ -40,13 +47,7 @@ export default class MinorCardsGroup extends React.Component {
   }
 
   handleRelationshipTypeToApplicant (index, value, type) {
-    let minorChildrenList = Immutable.fromJS(this.props.minorChildren)
-    minorChildrenList = minorChildrenList.setIn([index, 'relationship_to_applicants', 0, type], value)
-    this.props.setParentState('minorChildren', minorChildrenList.toJS())
-  }
-
-  getFocusClassName (componentName) {
-    return this.props.focusComponentName === componentName ? 'edit' : 'show'
+    this.props.setParentState('minorChildren', handleRelationshipTypeToApplicant(index, value, type, this.props.minorChildren))
   }
 
   render () {
@@ -56,14 +57,14 @@ export default class MinorCardsGroup extends React.Component {
       <div className='minor_card'>
 
         <div id='minorsSection' onClick={() => this.props.setFocusState('minorsSection')}
-          className={this.getFocusClassName('minorsSection') + ' ' + 'card minors-section double-gap-top'}>
+          className={getFocusClassName('minorsSection') + ' ' + 'card minors-section double-gap-top'}>
 
           <div className='card-header'>
             <span>Other Information</span>
           </div>
           <div className='card-body'>
             {
-              minorChildrenList.map((minorDefaults, index) => {
+              minorChildrenList.map((minor, index) => {
                 return (
                   <div key={index} className='row list-item' >
                     <div> <span onClick={() => this.clickClose(index)} className='pull-right glyphicon glyphicon-remove' />
@@ -72,7 +73,7 @@ export default class MinorCardsGroup extends React.Component {
                       index={index}
                       genderTypes={this.props.genderTypes}
                       relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
-                      minorChild={minorDefaults}
+                      minorChild={minor}
                       handleRelationshipTypeToApplicant={this.handleRelationshipTypeToApplicant}
                       applicants={this.props.applicants}
                       onFieldChange={this.onFieldChange} />
