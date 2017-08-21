@@ -28,8 +28,8 @@ export default class AboutThisResidenceCard extends React.Component {
     const aboutResidence = this.props.aboutResidence
     const othersMailing = aboutResidence.other_people_using_residence_as_mailing || [othersUsingAddressMailing]
 
-    const hiddenBodyOfWater = aboutResidence.body_of_water_exist === 'true' ? '' : 'hidden'
-    const hiddenUseAsMailingAddress = aboutResidence.others_using_residence_as_mailing === 'true' ? '' : 'hidden'
+    const hiddenBodyOfWater = (aboutResidence.body_of_water_exist !== undefined && aboutResidence.body_of_water_exist.toString() === 'true') ? '' : 'hidden'
+    const hiddenUseAsMailingAddress = (aboutResidence.others_using_residence_as_mailing !== undefined && aboutResidence.others_using_residence_as_mailing.toString() === 'true') ? '' : 'hidden'
 
     return (
       <div className='card-body'>
@@ -44,12 +44,14 @@ export default class AboutThisResidenceCard extends React.Component {
             <DropDownField id='weapons' gridClassName='col-md-7'
               selectClassName={'reusable-select'}
               text={aboutResidence.weapon_in_home}
+              value={(aboutResidence.weapon_in_home)}
               optionList={yesNo.items}
               label={'Weapons in home?'}
               onChange={(event) => this.props.setParentState('weapon_in_home', event.target.selectedOptions[0].value)} />
 
             <DropDownField id='body_of_water_exist' gridClassName='col-md-7'
               selectClassName={'reusable-select'}
+              value={(aboutResidence.body_of_water_exist)}
               text={aboutResidence.body_of_water_exist}
               optionList={yesNo.items}
               label={'Body of Water?'}
@@ -65,6 +67,7 @@ export default class AboutThisResidenceCard extends React.Component {
             <DropDownField id='others_using_residence_as_mailing' gridClassName='col-md-9'
               selectClassName={'reusable-select'}
               text={aboutResidence.others_using_residence_as_mailing}
+              value={(aboutResidence.others_using_residence_as_mailing)}
               optionList={yesNo.items}
               label={'Does any person not listed in this document use the residence as their mailing address?'}
               onChange={(event) => this.props.setParentState('others_using_residence_as_mailing', event.target.selectedOptions[0].value)} />
@@ -82,14 +85,14 @@ export default class AboutThisResidenceCard extends React.Component {
             </div>
 
             <TextAreaComponent gridClassName='col-md-12' id='directions'
-              value={aboutResidence.directions}
               optionList={this.props.directions}
+              value={aboutResidence.directions_to_home}
               label='Please provide directions, including major cross-street information, to your residence.' placeholder=''
               onChange={(event) => this.props.setParentState('directions_to_home', event.target.value)} />
 
             <DropDownField id='languagesSpoken' gridClassName='col-md-12'
               selectClassName={'reusable-select'}
-              value={getDictionaryId(aboutResidence.home_languages || '')}
+              value={getDictionaryId(aboutResidence.home_languages !== undefined && aboutResidence.home_languages[0] ? aboutResidence.home_languages[0] : '')}
               optionList={this.props.languageTypes}
               label={'Language(s) spoken in the home'}
               onChange={(event) => this.props.setParentState('home_languages', [dictionaryNilSelect(event.target.selectedOptions[0])])} />

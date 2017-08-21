@@ -36,7 +36,7 @@ export default class ResidenceCards extends React.Component {
 // TODO: fix street address zip and city not coming into params
     return (
       <div className='residence_cards'>
-        <div id='nameSection' onClick={() => this.props.setFocusState('residentAddress')}
+        <div id='residentAddress' onClick={() => this.props.setFocusState('residentAddress')}
           className={this.getFocusClassName('residentAddress') + ' ' + 'card resident-section double-gap-top'}>
           <div className='card-header'>
             <span> Address</span>
@@ -49,7 +49,7 @@ export default class ResidenceCards extends React.Component {
           />
 
         </div>
-        <div id='nameSection' onClick={() => this.props.setFocusState('aboutResidence')}
+        <div id='aboutResidence' onClick={() => this.props.setFocusState('aboutResidence')}
           className={this.getFocusClassName('aboutResidence') + ' ' + 'card about-resident-section double-gap-top'}>
           <div className='card-header'>
             <span>About This Residence</span>

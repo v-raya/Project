@@ -48,6 +48,7 @@ class Rfa::A01Controller < CalsBaseController
 
     end
 
+
     def residence_params
       params.require(:residence).permit(:id, :physical_mailing_similar, :weapon_in_home,
       :body_of_water_exist, :body_of_water_description, :others_using_residence_as_mailing,
