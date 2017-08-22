@@ -46,11 +46,11 @@ export default class NameCard extends React.Component {
       <div className='card-body'>
         <div className='row'>
           <CompleteNameFields
-            fieldValues={this.props.nameFields || blankNameFields}
+            fieldValues={this.props.nameFields}
             onChange={this.props.setParentState}
             nameTypes={this.props.nameTypes}
             suffixTypes={this.props.suffixTypes}
-            prefixTypes={this.props.prefixTypes}/>
+            prefixTypes={this.props.prefixTypes} />
         </div>
         {
           nameCardsList && this.props.nameFields.other_names.map((nameCardFields, index) => {
@@ -64,7 +64,7 @@ export default class NameCard extends React.Component {
                   onChange={this.handleNameChange}
                   nameTypes={this.props.nameTypes}
                   suffixTypes={this.props.suffixTypes}
-                  prefixTypes={this.props.prefixTypes}/>
+                  prefixTypes={this.props.prefixTypes} />
               </div>
             )
           })

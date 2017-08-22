@@ -37,8 +37,9 @@ class Rfa::A01Controller < CalsBaseController
       applicant.permit!
       ActionController::Parameters.new(applicant.to_h).permit(:id, :email,
                                                               :date_of_birth, :first_name, :middle_name, :last_name, :driver_license_number,
+                                                              {name_suffix: %i[id value]},{ name_prefix: %i[id value]},
                                                               { employment: [:employer_name, :occupation, :income, income_type: %i[id value],
-                                                                                                                   physical_address: [:street_address, :city, :zip, state: %i[id value]]] },
+                                                                physical_address: [:street_address, :city, :zip, state: %i[id value]]] },
                                                               { highest_education_level: %i[id value] }, { gender: %i[id value] },
                                                               { ethnicity: %i[id value] }, { driver_license_state: %i[id value] },
                                                               phones: [:number, :preferred, phone_type: %i[id value]], other_names: [])
