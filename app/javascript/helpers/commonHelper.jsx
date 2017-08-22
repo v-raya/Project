@@ -9,3 +9,8 @@ export const dictionaryNilSelect = (object) => {
 export const checkArrayObjectPresence = (obj) => {
   return (obj && obj.length > 0) ? obj : null
 }
+
+export const removeLegalNameType = (nameTypes) => {
+  delete nameTypes[2]
+  return nameTypes
+}

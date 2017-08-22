@@ -4,7 +4,7 @@ import Immutable from 'immutable'
 import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
 import CompleteNameFields from './completeNameField.jsx'
-import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
+import {checkArrayObjectPresence, removeLegalNameType} from 'helpers/commonHelper.jsx'
 
 const blankNameFields = Object.freeze({
   name_suffix: null,
@@ -62,7 +62,7 @@ export default class NameCard extends React.Component {
                   index={index}
                   fieldValues={nameCardFields}
                   onChange={this.handleNameChange}
-                  nameTypes={this.props.nameTypes}
+                  nameTypes={removeLegalNameType(this.props.nameTypes)}
                   suffixTypes={this.props.suffixTypes}
                   prefixTypes={this.props.prefixTypes} />
               </div>
