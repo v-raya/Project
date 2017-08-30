@@ -54,7 +54,7 @@ export class PhoneNumberField extends React.Component {
 
         <DropDownField gridClassName='col-md-4' id='phone_type'
           selectClassName='reusable-select'
-          optionList={phoneTypes} value={phoneFields.phone_type.id}
+          optionList={phoneTypes} value={phoneFields.phone_type.id ? phoneFields.phone_type.id : phoneTypes[1].id}
           label='Phone Type' onChange={(event) => this.props.onPhoneFieldChange(
             this.props.index,
             dictionaryNilSelect(event.target.selectedOptions[0]),
@@ -64,6 +64,7 @@ export class PhoneNumberField extends React.Component {
           checked={phoneFields.preferred}
           value={phoneFields.preferred}
           label='Preferred Contact Number'
+          disabled={phoneFields.number.length < 10}
           onChange={(event) => this.props.onPhoneFieldChange(
             this.props.index,
             event.target.checked,

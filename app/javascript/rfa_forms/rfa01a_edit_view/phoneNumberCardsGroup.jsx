@@ -7,7 +7,7 @@ import Validator from 'helpers/validator'
 
 export const blankPhoneNumberFields = Object.freeze({
   number: '',
-  phone_type: {id: '', value: ''},
+  phone_type: {id: 2, value: 'Home'},
   preferred: false
 })
 
