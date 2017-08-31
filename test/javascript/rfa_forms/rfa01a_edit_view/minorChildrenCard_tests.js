@@ -2,7 +2,6 @@ import React from 'react'
 import {MinorCardField} from 'rfa_forms/rfa01a_edit_view/minorCardField.js'
 import {shallow, mount} from 'enzyme'
 import {relationshipTypes, genderTypes} from './../../helpers/constants'
-var TestUtils = require('react-dom/test-utils')
 
 describe('Verify MinorCardFields', function () {
   const applicants = [{
@@ -35,7 +34,7 @@ describe('Verify MinorCardFields', function () {
     child_adopted: 'yes'
   }
 
-  let minorChildCardComp, handleNameFieldInputSpy, handleRelationshipTypeToApplicantSpy, onFieldChangeSpy, setCardState
+  let minorChildCardComp, handleNameFieldInputSpy, handleRelationshipTypeToApplicantSpy, onFieldChangeSpy
   let relationType = relationshipTypes
   beforeEach(() => {
     handleRelationshipTypeToApplicantSpy = jasmine.createSpy('')

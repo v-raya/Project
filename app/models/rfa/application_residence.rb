@@ -8,7 +8,7 @@ class Rfa::ApplicationResidence < CalsBase
 
   attr_accessor :physical_mailing_similar,
     :residence_ownership, :weapon_in_home, :body_of_water_exist,
-    :body_of_water_description, :directions_to_home, :home_languages
+    :body_of_water_description, :directions_to_home, :home_languages, :validation_details
 
   attr_accessor :others_using_residence_as_mailing, :other_people_using_residence_as_mailing
 

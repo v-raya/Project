@@ -340,6 +340,18 @@ const relationshipTypes = Object.freeze(
     }
   ]
 )
+const applicantrelationTypes = Object.freeze(
+  [
+    {
+      'id': 1,
+      'value': 'Married'
+    },
+    {
+      'id': 2,
+      'value': 'Cohabitants'
+    }
+  ]
+)
 const suffixTypes = Object.freeze({
   'items': [
     {
@@ -365,7 +377,7 @@ const prefixTypes = Object.freeze({
   ]
 })
 
-export {nameTypes, suffixTypes, prefixTypes, salaryTypes, relationshipTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes, languageTypes, residenceTypes}
+export {nameTypes, suffixTypes, prefixTypes, salaryTypes, relationshipTypes, applicantrelationTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes, languageTypes, residenceTypes}
 
 
 export const licenseTypes = Object.freeze({

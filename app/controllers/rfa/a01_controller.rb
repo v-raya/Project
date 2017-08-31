@@ -19,6 +19,8 @@ class Rfa::A01Controller < CalsBaseController
     @application.minorChildren = rfa_minor_children_helper.find_items_by_application_id(params[:id])
     @application.otherAdults = rfa_other_adults_helper.find_items_by_application_id(params[:id])
     @application.fosterCareHistory = rfa_adoption_history_helper.find_by_application_id(params[:id])
+    @application.relationshipBetweenApplicants = rfa_relation_between_applicants_helper.find_by_application_id(params[:id])
+
   end
 
   def update
@@ -28,6 +30,7 @@ class Rfa::A01Controller < CalsBaseController
     @application_response[:minorChildren] = process_items_for_persistance(minor_children_params, rfa_minor_children_helper, params[:id]) if params[:minorChildren].present?
     @application_response[:otherAdults] = process_items_for_persistance(other_adults_params, rfa_other_adults_helper, params[:id]) if params[:otherAdults].present?
     @application_response[:fosterCareHistory] = process_items_for_persistance(adoption_history_params, rfa_adoption_history_helper, params[:id]) if params[:fosterCareHistory].present?
+    @application_response[:relationshipBetweenApplicants] = process_items_for_persistance(relationship_between_applicants_params, rfa_relation_between_applicants_helper, params[:id]) if params[:relationshipBetweenApplicants].present?
   end
 
   private
@@ -77,6 +80,12 @@ class Rfa::A01Controller < CalsBaseController
         relationship_to_applicants: [:applicant_id, relationship_to_applicant: %i[id value]]
       )
     end
+  end
+
+  def relationship_between_applicants_params
+    params.require(:relationshipBetweenApplicants).permit(:other_relationship, :place_of_relationship_city,
+                                                          :date_of_relationship, relationship_type: %i[id value],
+                                                          place_of_relationship_state: %i[id value])
   end
 
   def adoption_history_params
@@ -135,6 +144,10 @@ class Rfa::A01Controller < CalsBaseController
 
   def rfa_other_adults_helper
     Helpers::Rfa::ApplicationOtherAdultsHelper.new(auth_header: get_session_token)
+  end
+
+  def rfa_relation_between_applicants_helper
+    Helpers::Rfa::ApplicationRelationApplicantsHelper.new(auth_header: get_session_token)
   end
 
   def dictionaries_helper

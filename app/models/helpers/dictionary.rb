@@ -54,22 +54,22 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     Dictionaries::Language.all(auth_header)
   end
 
-  def  state_types
+  def state_types
     Dictionaries::State.all(auth_header)
   end
 
-  def  salary_types
+  def salary_types
     Dictionaries::IncomeType.all(auth_header)
   end
 
   def rfa_a01_dictioniaries
     dictionaries = {}
-    dictionaries[:residence_types]= residence_ownership_types
-    dictionaries[:ethnicity_types]= ethnicity_types
-    dictionaries[:address_types]=address_types
-    dictionaries[:relationship_types]= relationship_types
-    dictionaries[:license_types]= license_types
-    dictionaries[:relationship_to_applicant_types]= relationship_to_applicant_types
+    dictionaries[:residence_types] = residence_ownership_types
+    dictionaries[:ethnicity_types] = ethnicity_types
+    dictionaries[:address_types] = address_types
+    dictionaries[:relationship_types] = relationship_types
+    dictionaries[:license_types] = license_types
+    dictionaries[:relationship_to_applicant_types] = relationship_to_applicant_types
     dictionaries[:name_types] = name_types
     dictionaries[:name_suffix_types] = name_suffix_types
     dictionaries[:name_prefix_types] = name_prefix_types
