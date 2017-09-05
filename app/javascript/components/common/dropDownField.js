@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const DropDownField = ({gridClassName, id, value, disable, selectClassName, optionList, onChange, label}) => (
+const DropDownField = ({gridClassName, id, value, disable, disableNullVal, selectClassName, optionList, onChange, label}) => (
   <div className={gridClassName}>
     <label>{label}</label>
     <select value={value} id={id} disabled={disable} onChange={onChange} className={selectClassName}>
-      {!disable && <option key='' value='' />} }
+      {!disable}
+      { !disableNullVal && <option key='' value='' />}
       {
         optionList.map((item, index) => {
           return (

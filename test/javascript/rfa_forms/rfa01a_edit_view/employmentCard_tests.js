@@ -11,7 +11,7 @@ describe('Employment Card', function () {
       stateTypes
     },
     salaryTypes: {
-      items: salaryTypes
+      salaryTypes
     }
   }
   const applicantFields = {
@@ -67,9 +67,9 @@ describe('Employment Card', function () {
   it('verify Income Change', () => {
     let incomeField = employmentCardComp.find('#income')
     employmentCardComp.update()
-    spyOn(employmentCardComp.instance(), 'onEmploymentChange').and.callThrough()
-    incomeField.simulate('change', {target: {value: '10,000'}})
-    expect(employmentCardComp.instance().onEmploymentChange).toHaveBeenCalledWith('income', '10,000')
+    const spyEvent = spyOn(employmentCardComp.instance(), 'onEmploymentChange').and.callThrough()
+    incomeField.simulate('changeEvent', {target: {value: '10111112'}})
+    expect(spyEvent).toHaveBeenCalledWith('income', '10111112')
   })
   it('verify Income Type Change', () => {
     let incomeTypeField = employmentCardComp.find('#income_type')

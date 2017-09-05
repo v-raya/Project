@@ -93,8 +93,8 @@ ApplicantCard.propTypes = {
   // raceTypes: PropTypes.array.isRequired,
   ethnicityTypes: PropTypes.array.isRequired,
   languageTypes: PropTypes.array.isRequired,
-  focusComponentName: PropTypes.string.isRequired,
+//  focusComponentName: PropTypes.string.isRequired,
   applicantFields: PropTypes.object.isRequired,
-  setParentState: PropTypes.func.isRequired,
-  setFocusState: PropTypes.func.isRequired
+  setParentState: PropTypes.func.isRequired
+//  setFocusState: PropTypes.func.isRequired
 }

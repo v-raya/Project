@@ -239,9 +239,18 @@ const salaryTypes = Object.freeze({
   'items': [
     {
       'id': 1,
-      'value': 'Yearly'
+      'value': 'yearly'
+    },
+    {
+      'id': 2,
+      'value': 'monthly'
+    },
+    {
+      'id': 3,
+      'value': 'hourly'
     }
-  ]}
+  ]
+}
 )
 
 const languageTypes = Object.freeze({
@@ -355,30 +364,29 @@ const applicantrelationTypes = Object.freeze(
 const suffixTypes = Object.freeze({
   'items': [
     {
-      "id": 1,
-      "value": "Esq"
+      'id': 1,
+      'value': 'Esq'
     },
     {
-      "id": 2,
-      "value": "II"
+      'id': 2,
+      'value': 'II'
     }
   ]
 })
 const prefixTypes = Object.freeze({
   'items': [
     {
-      "id": 4,
-      "value": "Dr."
+      'id': 4,
+      'value': 'Dr.'
     },
     {
-      "id": 5,
-      "value": "Miss"
+      'id': 5,
+      'value': 'Miss'
     }
   ]
 })
 
 export {nameTypes, suffixTypes, prefixTypes, salaryTypes, relationshipTypes, applicantrelationTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes, languageTypes, residenceTypes}
-
 
 export const licenseTypes = Object.freeze({
   'items': [
@@ -413,4 +421,3 @@ export const phoneTypes = Object.freeze(
     }
   ]
 )
-

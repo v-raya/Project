@@ -3,12 +3,16 @@ import Immutable from 'immutable'
 import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
 import {getDictionaryId, dictionaryNilSelect} from 'helpers/commonHelper.jsx'
+import CurrencyInput from 'react-currency-input'
 
 const blankEmploymentFields = Object.freeze({
   employer_name: '',
   occupation: '',
   income: '',
-  income_type: null,
+  income_type: {
+    id: 1,
+    value: 'yearly'
+  },
   physical_address: {
     street_address: '',
     zip: '',
@@ -32,7 +36,6 @@ export default class Employment extends React.Component {
 
   render () {
     const employmentFields = this.props.employment || blankEmploymentFields
-
     return (
       <div className='card-body'>
         <div className='row'>
@@ -47,16 +50,22 @@ export default class Employment extends React.Component {
               label='Occupation' placeholder=''
               type='text' onChange={(event) => this.onEmploymentChange('occupation', event.target.value)} />
 
-            <InputComponent gridClassName='col-md-3' id='income'
-              value={employmentFields.income}
-              label='Annual Income' placeholder=''
-              onChange={(event) => this.onEmploymentChange('income', event.target.value)} />
+            <div className='col-md-3'>
+              <label>{'Personal Income'}</label>
+              <CurrencyInput className='col-md-12' id='income'
+                value={employmentFields.income}
+                prefix='$'
+                precision='0'
+                maxLength={11}
+                onChangeEvent={(event) => this.onEmploymentChange('income', event.target.value)} />
+            </div>
 
             <DropDownField gridClassName='col-md-1' id='income_type'
-              value={getDictionaryId(employmentFields.income_type)}
+              value={employmentFields.income_type.id}
               selectClassName='reusable-select'
               optionList={this.props.salaryTypes}
-              label='.'
+              label='Interval'
+              disableNullVal
               onChange={(event) => this.onEmploymentChange('income_type', dictionaryNilSelect(event.target.selectedOptions[0]))} />
 
             <InputComponent gridClassName='col-md-12' id='street_address'
