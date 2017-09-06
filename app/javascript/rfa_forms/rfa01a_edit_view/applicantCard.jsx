@@ -75,6 +75,7 @@ export default class ApplicantCard extends React.Component {
           </div>
           <PhoneComponent
             phoneTypes={this.props.phoneTypes}
+            applicant_id={this.props.index}
             phones={this.props.applicantFields.phones}
             setParentState={this.setApplicantState} />
         </div>

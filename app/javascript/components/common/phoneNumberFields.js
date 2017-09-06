@@ -43,32 +43,25 @@ export class PhoneNumberField extends React.Component {
           mask='(111)111-1111'
           type='text'
           errors={this.validator.fieldErrors('number')}
-          onChange={(event) => this.props.onPhoneFieldChange(
-            this.props.index,
-            maskedPhoneRaw(event.target.value),
-            'number')}
-          onBlur={(event) => this.validateOnBlur(
-            this.props.index,
-            maskedPhoneRaw(event.target.value),
-            'number')} />
+          onChange={(event) => this.props.onPhoneFieldChange(this.props.index,
+            maskedPhoneRaw(event.target.value), 'number')}
+          onBlur={(event) => this.validateOnBlur(this.props.index,
+            maskedPhoneRaw(event.target.value), 'number')} />
 
         <DropDownField gridClassName='col-md-4' id='phone_type'
           selectClassName='reusable-select'
-          optionList={phoneTypes} value={phoneFields.phone_type.id ? phoneFields.phone_type.id : phoneTypes[1].id}
-          label='Phone Type' onChange={(event) => this.props.onPhoneFieldChange(
-            this.props.index,
-            dictionaryNilSelect(event.target.selectedOptions[0]),
-            'phone_type')} />
+          optionList={phoneTypes} value={phoneFields.phone_type.id}
+          label='Phone Type'
+          disableNullVal
+          onChange={(event) => this.props.onPhoneFieldChange(this.props.index,
+            dictionaryNilSelect(event.target.selectedOptions[0]), 'phone_type')} />
 
-        <CheckboxField gridClassName='col-md-4' id={this.props.index} type='checkbox'
+        <CheckboxField gridClassName='col-md-4' id={this.props.index + 'applicant id ' + this.props.applicant_id} type='checkbox'
           checked={phoneFields.preferred}
           value={phoneFields.preferred}
           label='Preferred Contact Number'
-          disabled={phoneFields.number.length < 10}
-          onChange={(event) => this.props.onPhoneFieldChange(
-            this.props.index,
-            event.target.checked,
-            'preferred')} />
+          onChange={(event) => this.props.onPhoneFieldChange(this.props.index,
+            event.target.checked, 'preferred')} />
       </div>
     )
   }
