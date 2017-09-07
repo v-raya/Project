@@ -1,7 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
-import {getDictionaryId, dictionaryNilSelect} from 'helpers/commonHelper.jsx'
+import MaskedInputField from 'components/common/maskedInputField.jsx'
+import {getDictionaryId, dictionaryNilSelect, FormateDobForDisplay, FormatDoBForPersistance} from 'helpers/commonHelper.jsx'
 
 export default class AboutApplicant extends React.Component {
   render () {
@@ -16,10 +18,14 @@ export default class AboutApplicant extends React.Component {
               label='Highest Level of Education'
               onChange={(event) => this.props.setParentState('highest_education_level', dictionaryNilSelect(event.target.selectedOptions[0]))} />
 
-            <InputComponent gridClassName='col-md-4' id='date_of_birth'
-              value={this.props.applicantFields.date_of_birth}
-              label='Date of Birth' placeholder=''
-              type='text' onChange={(event) => this.props.setParentState('date_of_birth', event.target.value)} />
+            <MaskedInputField
+              gridClassName='col-md-4' label='Date of Birth' id='date_of_birth'
+              mask='11/11/1111' name='expiry' placeholder='mm/dd/yyyy'
+              value={FormateDobForDisplay(this.props.applicantFields.date_of_birth)}
+              blurPlaceholder=''
+              focusPlaceholder='__/__/____'
+              onChange={(event) => this.props.setParentState('date_of_birth',
+                  FormatDoBForPersistance(event.target.value))} />
 
             <DropDownField gridClassName='col-md-4' id='gender'
               selectClassName='reusable-select'
@@ -56,4 +62,14 @@ export default class AboutApplicant extends React.Component {
       </div>
     )
   }
+}
+
+AboutApplicant.propTypes = {
+  stateTypes: PropTypes.array.isRequired,
+  educationLevels: PropTypes.array.isRequired,
+  genderTypes: PropTypes.array.isRequired,
+  ethnicityTypes: PropTypes.array.isRequired,
+  languageTypes: PropTypes.array.isRequired,
+  applicantFields: PropTypes.object.isRequired,
+  setParentState: PropTypes.func.isRequired
 }
