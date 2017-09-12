@@ -9,23 +9,25 @@ import RelationshipBetweenApplicantsCardMain from './relationshipBetweenApplican
 
 import './stylesheets/cards-main.scss'
 import {fetchRequest} from 'helpers/http'
+import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
+import {checkForNameValidation} from 'helpers/cardsHelper.jsx'
 import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
+import Validator from 'helpers/validator'
 
 export default class Rfa01EditView extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {
-      focusComponentName: '',
-
-      application: this.props.application
-    }
-
     this.submitForm = this.submitForm.bind(this)
     this.getFocusClassName = this.getFocusClassName.bind(this)
     this.setApplicationState = this.setApplicationState.bind(this)
     this.setFocusState = this.setFocusState.bind(this)
+    this.validator = new Validator({})
+    this.state = {
+      focusComponentName: '',
+      application: this.props.application,
+      disableSave: !(checkForNameValidation(this.props.application.applicants))
+    }
   }
-
   componentDidMount () {
     // set Dictionaty Here
   }
@@ -35,10 +37,10 @@ export default class Rfa01EditView extends React.Component {
     let params = this.state.application
     fetchRequest(url, 'PUT', this.state.application).then(
       response => response.json()).then((response) => {
-        return this.setState({
-          formData: response
-        })
+      return this.setState({
+        formData: response
       })
+    })
       .catch(error => {
         return this.setState({
           data: error
@@ -50,6 +52,15 @@ export default class Rfa01EditView extends React.Component {
     let newState = Immutable.fromJS(this.state)
     newState = newState.setIn(['application', key], value)
     this.setState(newState.toJS())
+    if (key === 'applicants' && checkForNameValidation(value)) {
+      this.setState({
+        disableSave: false
+      })
+    } else {
+      this.setState({
+        disableSave: true
+      })
+    }
   }
 
   setFocusState (focusComponentName) {
@@ -76,7 +87,7 @@ export default class Rfa01EditView extends React.Component {
                   Resource Family Approval by a County. Please type or print clearly</p>
               </div>
               <div className='col-xs-2 col-sm-2 col-md-2 col-lg-2'>
-                <button id='saveProgress' onClick={this.submitForm}>Save Progress</button>
+                <button disabled={this.state.disableSave} id='saveProgress' className="btn btn-default" onClick={this.submitForm}>Save Progress</button>
               </div>
             </div>
 
@@ -96,7 +107,9 @@ export default class Rfa01EditView extends React.Component {
               applicants={this.state.application.applicants || []}
               setParentState={this.setApplicationState}
               setFocusState={this.setFocusState}
-              getFocusClassName={this.getFocusClassName} />
+              getFocusClassName={this.getFocusClassName}
+              hasValidName={this.state.disableSave}
+              validator={this.validator} />
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h3>II. Applicant (S) - <span>Residence</span></h3>

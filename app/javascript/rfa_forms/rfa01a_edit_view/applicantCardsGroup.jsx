@@ -1,5 +1,6 @@
 import Immutable from 'immutable'
 import React from 'react'
+import PropTypes from 'prop-types'
 import ApplicantCard from './applicantCard.jsx'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 
@@ -74,6 +75,8 @@ export default class ApplicantCardsGroup extends React.Component {
                     setParentState={this.setApplicantsState}
                     setFocusState={this.props.setFocusState}
                     getFocusClassName={this.props.getFocusClassName}
+                    validator={this.props.validator}
+                    hasValidName={this.props.hasValidName}
                   />
                 </div>
               )
@@ -88,6 +91,21 @@ export default class ApplicantCardsGroup extends React.Component {
       </div>
     )
   }
+}
+
+ApplicantCardsGroup.propTypes = {
+  phoneTypes: PropTypes.array.isRequired,
+  salaryTypes: PropTypes.array.isRequired,
+  stateTypes: PropTypes.array.isRequired,
+  educationLevels: PropTypes.array.isRequired,
+  genderTypes: PropTypes.array.isRequired,
+  ethnicityTypes: PropTypes.array.isRequired,
+  languageTypes: PropTypes.array.isRequired,
+  focusComponentName: PropTypes.string.isRequired,
+  applicantFields: PropTypes.object,
+  setParentState: PropTypes.func.isRequired,
+  setFocusState: PropTypes.func.isRequired,
+  validator: PropTypes.object
 }
 
 ApplicantCardsGroup.defaultProps = {

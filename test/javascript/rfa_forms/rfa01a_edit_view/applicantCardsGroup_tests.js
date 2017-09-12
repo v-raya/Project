@@ -5,6 +5,7 @@ import ShallowRenderer from 'react-test-renderer/shallow'
 import ApplicantCardsGroup from 'rfa_forms/rfa01a_edit_view/applicantCardsGroup.jsx'
 import ReactDOM from 'react-dom'
 var TestUtils = require('react-dom/test-utils')
+import Validator from 'helpers/validator.js'
 
 describe('Verify Applicant Card Group', () => {
   const isApplicantAdded = sinon.spy()
@@ -21,6 +22,7 @@ describe('Verify Applicant Card Group', () => {
     ethnicityTypes={ethnicityTypes.items}
     languageTypes={languageTypes.items}
     setParentState={isApplicantAdded}
+    validator={new Validator({})}
     getFocusClassName={getFocusClassNameSpy}/>)
   const renderedDOM = () => ReactDOM.findDOMNode(applicantRender)
   it('Spy on Button Click doesnot call', () => {

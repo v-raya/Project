@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import {nameTypes, suffixTypes, prefixTypes} from './../../helpers/constants'
 import NameCard from 'rfa_forms/rfa01a_edit_view/nameCard'
 var TestUtils = require('react-dom/test-utils')
+import Validator from 'helpers/validator.js'
 
 describe('Name Card Component', () => {
   let setCardState, isNameCardRemoved,
@@ -41,7 +42,8 @@ describe('Name Card Component', () => {
       prefixTypes={prefixType.items}
       setParentState={setCardState}
       removeCard={isNameCardRemoved}
-      handleNameChange={handleNameChangeFun}/>)
+      handleNameChange={handleNameChangeFun}
+      validator={new Validator({})}/>)
     renderedDOM = (domTobeRendered) => ReactDOM.findDOMNode(domTobeRendered)
     renderedDom = renderedDOM(renderedCard)
   })
@@ -64,6 +66,7 @@ describe('Name Card Component', () => {
       prefixTypes={prefixType.items}
       setParentState={setCardState}
       removeCard={isNameCardRemoved}
+      validator={new Validator({})}
       handleNameChange={handleNameChangeFun}/>)
     expect(renderedDOM(newRenderedCard).children.length).toEqual(3)
     let otherNameField = renderedDOM(newRenderedCard).children[1].children[1].children[1].children[0].children[0].children[0].children[1]

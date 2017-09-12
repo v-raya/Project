@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {PhoneNumberField} from 'components/common/phoneNumberFields'
 import {addCardAsJS, removeCardAsJS} from 'helpers/cardsHelper.jsx'
-import Validator from 'helpers/validator'
+import {validateOnBlur} from 'helpers/validationHelper.jsx'
 
 export const blankPhoneNumberFields = Object.freeze({
   number: '',
@@ -17,13 +17,6 @@ export default class PhoneComponent extends React.Component {
     this.addCard = this.addCard.bind(this)
     this.onPhoneClickClose = this.onPhoneClickClose.bind(this)
     this.onPhoneFieldChange = this.onPhoneFieldChange.bind(this)
-
-    // const phoneNumberValidator = {
-    //   number: [
-    //     {rule: 'is10digits', message: 'Invalid Phone Number'}
-    //   ]
-    // }
-    // this.validator = new Validator(phoneNumberValidator)
   }
 
   onPhoneClickClose (phoneCardIndex) {
@@ -32,10 +25,6 @@ export default class PhoneComponent extends React.Component {
   }
 
   onPhoneFieldChange (phoneCardIndex, value, type) {
-    // if (!this.validator.fieldErrors(type).isEmpty()) {
-    // this.validator.validateField(type, value)
-    // }
-
     let phoneNumbersList = Immutable.fromJS(this.props.phones)
     // if type preferred then set all preferred =false
     if (type === 'preferred') {
@@ -62,11 +51,11 @@ export default class PhoneComponent extends React.Component {
                   className='pull-right glyphicon glyphicon-remove' />
                 <PhoneNumberField
                   index={index}
+                  idPrefix={this.props.idPrefix + 'phones' + index}
                   phoneFields={numberFields}
                   phoneTypes={this.props.phoneTypes}
                   onPhoneFieldChange={this.onPhoneFieldChange}
-                  applicant_id={this.props.applicant_id}
-                  // validator={this.validator}
+                  validator={this.props.validator}
                 />
               </div>
             )
@@ -81,11 +70,13 @@ export default class PhoneComponent extends React.Component {
 }
 
 PhoneComponent.propTypes = {
+  idPrefix: PropTypes.string,
   phoneTypes: PropTypes.array.isRequired,
   phones: PropTypes.array.isRequired,
   setParentState: PropTypes.func.isRequired
 }
 
 PhoneComponent.defaultProps = {
+  idPrefix: '',
   phones: [blankPhoneNumberFields]
 }

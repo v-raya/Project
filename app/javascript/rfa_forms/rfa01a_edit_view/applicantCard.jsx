@@ -30,11 +30,14 @@ export default class ApplicantCard extends React.Component {
             <span>Name</span>
           </div>
           <NameCard
+            idPrefix={'applicant' + this.props.index}
             nameTypes={this.props.nameTypes}
             suffixTypes={this.props.suffixTypes}
             prefixTypes={this.props.prefixTypes}
             nameFields={this.props.applicantFields}
-            setParentState={this.setApplicantState} />
+            setParentState={this.setApplicantState}
+            validator={this.props.validator}
+            hasValidName={this.props.hasValidName}/>
         </div>
 
         <div id='aboutAppSection' onClick={() => this.props.setFocusState('AboutApplicantCard')}
@@ -74,10 +77,12 @@ export default class ApplicantCard extends React.Component {
             <span>Phone Number</span>
           </div>
           <PhoneComponent
+            idPrefix={'applicant' + this.props.index}
             phoneTypes={this.props.phoneTypes}
             applicant_id={this.props.index}
             phones={this.props.applicantFields.phones}
-            setParentState={this.setApplicantState} />
+            setParentState={this.setApplicantState}
+            validator={this.props.validator} />
         </div>
       </div>
     )

@@ -4,6 +4,7 @@ import {PhoneNumberField} from 'components/common/phoneNumberFields'
 import {shallow, mount} from 'enzyme'
 import {phoneTypes} from './../../helpers/constants'
 var TestUtils = require('react-dom/test-utils')
+import Validator from 'helpers/validator.js'
 
 describe('Verify Phone Card Component View', function () {
   let component
@@ -19,7 +20,8 @@ describe('Verify Phone Card Component View', function () {
     props = {
       phoneTypes: phoneTypes,
       phones: [phoneNumber],
-      setParentState: setParentStateSpy
+      setParentState: setParentStateSpy,
+      validator: new Validator({})
     }
 
     component = shallow(
@@ -119,6 +121,7 @@ describe('Preferred logic', () => {
     props = {
       phoneTypes: phoneTypes,
       phones: [phoneNumber],
+      validator: new Validator({}),
       setParentState: setParentStateSpy
     }
 

@@ -5,36 +5,28 @@ import {DropDownField} from './dropDownField'
 import {CheckboxField} from './checkboxField'
 import {dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 import {maskedPhoneRaw} from 'helpers/maskedFieldValue'
-import Validator from 'helpers/validator'
+import {validateOnBlur} from 'helpers/validationHelper.jsx'
+
+const phoneNumberRule = [{rule: 'is10digits', message: 'Invalid Phone Number'}]
 
 export class PhoneNumberField extends React.Component {
   constructor (props) {
     super(props)
 
-    const phoneNumberValidator = {
-      number: [
-        {rule: 'is10digits', message: 'Invalid Phone Number'}
-      ]
-    }
-    this.validator = new Validator(phoneNumberValidator)
-    // this.validateOnChange = this.validateOnChange.bind(this)
-  }
-
-  validateOnBlur (phoneCardIndex, value, type) {
-    this.validator.validateField(type, value)
-    this.forceUpdate()
-    // this.props.onPhoneFieldChange(phoneCardIndex, value, type)
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'number', phoneNumberRule)
   }
 
   render () {
     const phoneFields = this.props.phoneFields
     const phoneTypes = this.props.phoneTypes
 
+    const phoneNumberId = this.props.idPrefix + 'number'
+
     return (
       <div>
         <MaskedInputField
           gridClassName='col-md-4'
-          id='number'
+          id={phoneNumberId}
           value={maskedPhoneRaw(phoneFields.number)}
           label='Phone Number'
           placeholder=''
@@ -42,12 +34,13 @@ export class PhoneNumberField extends React.Component {
           focusPlaceholder='(___)___-____'
           mask='(111)111-1111'
           type='text'
-          errors={this.validator.fieldErrors('number')}
-          onChange={(event) => this.props.onPhoneFieldChange(this.props.index,
-            maskedPhoneRaw(event.target.value), 'number')}
-          onBlur={(event) => this.validateOnBlur(this.props.index,
-            maskedPhoneRaw(event.target.value), 'number')} />
-
+          errors={this.props.validator.fieldErrors(phoneNumberId)}
+          onChange={(event) => this.props.onPhoneFieldChange(
+            this.props.index,
+            maskedPhoneRaw(event.target.value),
+            'number')}
+          onBlur={(event) => validateOnBlur(this, phoneNumberId, maskedPhoneRaw(event.target.value))}
+        />
         <DropDownField gridClassName='col-md-4' id='phone_type'
           selectClassName='reusable-select'
           optionList={phoneTypes} value={phoneFields.phone_type.id}
@@ -69,11 +62,17 @@ export class PhoneNumberField extends React.Component {
 
 PhoneNumberField.propTypes = {
   index: PropTypes.number,
+  idPrefix: PropTypes.string,
   phoneFields: PropTypes.shape({
     number: PropTypes.string,
     phone_type: PropTypes.object,
     preferred: PropTypes.bool
   }).isRequired,
   phoneTypes: PropTypes.array.isRequired,
-  onPhoneFieldChange: PropTypes.func.isRequired
+  onPhoneFieldChange: PropTypes.func.isRequired,
+  validator: PropTypes.object
+}
+
+PhoneNumberField.defaultProps = {
+  idPrefix: ''
 }

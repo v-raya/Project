@@ -6,7 +6,6 @@ import {DropDownField} from 'components/common/dropDownField'
 import {dictionaryNilSelect, getDictionaryId} from 'helpers/commonHelper.jsx'
 
 export default class RelationshipBetweenApplicantsFields extends React.Component {
-
   constructor (props) {
     super(props)
     this.onChange = this.onChange.bind(this)
@@ -19,17 +18,16 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
     this.props.setParentState('relationshipBetweenApplicants', newData.toJS())
   }
   render () {
-
     const relationship = this.props.relationshipBetweenApplicants
     const relationshipType = relationship !== undefined && relationship.relationship_type !== undefined ? relationship.relationship_type.value : false
     const hideRelationshipDetails = relationshipType === 'Married' || relationshipType === 'Domestic Partnership' ? 'row' : 'row hidden'
     const hideOtherRelationship = relationshipType === 'Other' ? 'row' : 'row hidden'
-    const applicant1FirstName =  this.props.applicants[0] !== undefined && this.props.applicants[0].first_name ? this.props.applicants[0].first_name : false
-    const applicant1MiddleName =  this.props.applicants[0] !== undefined && this.props.applicants[0].middle_name ? this.props.applicants[0].middle_name : ''
-    const applicant1LastName =  this.props.applicants[0] !== undefined && this.props.applicants[0].last_name ? this.props.applicants[0].last_name : ''
-    const applicant2FirstName =  this.props.applicants[1] !== undefined && this.props.applicants[1].first_name ? this.props.applicants[1].first_name : false
-    const applicant2MiddleName =  this.props.applicants[1] !== undefined && this.props.applicants[1].middle_name ? this.props.applicants[1].middle_name : ''
-    const applicant2LastName =  this.props.applicants[1] !== undefined && this.props.applicants[1].last_name ? this.props.applicants[1].last_name : ''
+    const applicant1FirstName = this.props.applicants[0] !== undefined && this.props.applicants[0].first_name ? this.props.applicants[0].first_name : false
+    const applicant1MiddleName = this.props.applicants[0] !== undefined && this.props.applicants[0].middle_name ? this.props.applicants[0].middle_name : ''
+    const applicant1LastName = this.props.applicants[0] !== undefined && this.props.applicants[0].last_name ? this.props.applicants[0].last_name : ''
+    const applicant2FirstName = this.props.applicants[1] !== undefined && this.props.applicants[1].first_name ? this.props.applicants[1].first_name : false
+    const applicant2MiddleName = this.props.applicants[1] !== undefined && this.props.applicants[1].middle_name ? this.props.applicants[1].middle_name : ''
+    const applicant2LastName = this.props.applicants[1] !== undefined && this.props.applicants[1].last_name ? this.props.applicants[1].last_name : ''
 
     return (
       <form>
@@ -38,8 +36,8 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
             selectClassName='reusable-select'
             value={getDictionaryId(relationship.relationship_type)}
             optionList={this.props.relationshipTypes}
-            label={'Relationship between ' + applicant1FirstName+ ' '+ applicant1MiddleName+ ' ' + applicant1LastName +' and' +
-            ' ' + applicant2FirstName+ ' ' + applicant2MiddleName+ ' ' + applicant2LastName}
+            label={'Relationship between ' + applicant1FirstName + ' ' + applicant1MiddleName + ' ' + applicant1LastName + ' and' +
+            ' ' + applicant2FirstName + ' ' + applicant2MiddleName + ' ' + applicant2LastName}
             onChange={(event) => this.props.setParentState('relationship_type', dictionaryNilSelect(event.target.selectedOptions[0]))} />
         </div>
         <div className={'relationship-status ' + hideRelationshipDetails}>Status of relationship</div>
@@ -62,13 +60,12 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
         </div>
         <div className={hideOtherRelationship}>
           <TextAreaComponent gridClassName='col-md-12' id='other_relationship'
-                             value={relationship.other_relationship}
-                             label='Please provide details of other_relationship' placeholder=''
-                             onChange={(event) => this.props.setParentState('other_relationship', event.target.value)} />
+            value={relationship.other_relationship}
+            label='Please provide details of other_relationship' placeholder=''
+            onChange={(event) => this.props.setParentState('other_relationship', event.target.value)} />
 
         </div>
       </form>
     )
   }
 }
-

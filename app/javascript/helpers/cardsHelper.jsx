@@ -1,4 +1,5 @@
 import Immutable from 'immutable'
+import {checkArrayObjectPresence} from './commonHelper'
 
 export const addCardAsJS = (inputArray, newCardFields) => {
   let inputList = Immutable.fromJS(inputArray)
@@ -45,4 +46,13 @@ export const handleToWhomValue = (applicantId, applicants) => {
     // }
   }
   return newApplicants
+}
+export const checkForNameValidation = (applicantData) => {
+  let validationResult = false
+  if (checkArrayObjectPresence(applicantData)) {
+    if (applicantData[0] && applicantData[0].first_name && applicantData[0].last_name) {
+      validationResult = applicantData[0].first_name.length > 0 && applicantData[0].last_name.length > 0
+    }
+  }
+  return validationResult
 }

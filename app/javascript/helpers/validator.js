@@ -13,6 +13,15 @@ export default class Validator {
       is10digits: this.is10digits
     }
   }
+
+  addNewValidation (validation) {
+    this.validations = this.validations.merge(validation)
+  }
+
+  addFieldValidation (fieldName, validation) {
+    this.validations = this.validations.merge({[fieldName]: validation})
+  }
+
   allFieldsErrors (container) {
     let errors = {}
     if (container) {
