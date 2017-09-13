@@ -101,10 +101,10 @@ ApplicantCardsGroup.propTypes = {
   genderTypes: PropTypes.array.isRequired,
   ethnicityTypes: PropTypes.array.isRequired,
   languageTypes: PropTypes.array.isRequired,
-  focusComponentName: PropTypes.string.isRequired,
+  focusComponentName: PropTypes.string,
   applicantFields: PropTypes.object,
   setParentState: PropTypes.func.isRequired,
-  setFocusState: PropTypes.func.isRequired,
+  setFocusState: PropTypes.func,
   validator: PropTypes.object
 }
 

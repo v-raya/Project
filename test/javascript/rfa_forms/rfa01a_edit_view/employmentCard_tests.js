@@ -67,9 +67,10 @@ describe('Employment Card', function () {
   it('verify Income Change', () => {
     let incomeField = employmentCardComp.find('#income')
     employmentCardComp.update()
-    const spyEvent = spyOn(employmentCardComp.instance(), 'onEmploymentChange').and.callThrough()
-    incomeField.simulate('changeEvent', {target: {value: '10111112'}})
-    expect(spyEvent).toHaveBeenCalledWith('income', '10111112')
+    const spy = spyOn(employmentCardComp.instance(), 'onEmploymentChange').and.callThrough()
+    incomeField.simulate('change', {target: {rawValue: '50'}})
+    employmentCardComp.update()
+    expect(employmentCardComp.instance().onEmploymentChange).toHaveBeenCalledWith('income', '50')
   })
   it('verify Income Type Change', () => {
     let incomeTypeField = employmentCardComp.find('#income_type')

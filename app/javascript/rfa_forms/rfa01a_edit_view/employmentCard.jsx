@@ -5,6 +5,8 @@ import {DropDownField} from 'components/common/dropDownField'
 import {getDictionaryId, dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 import CurrencyInput from 'react-currency-input'
 
+import Cleave from 'cleave.js/react'
+
 const blankEmploymentFields = Object.freeze({
   employer_name: '',
   occupation: '',
@@ -50,14 +52,22 @@ export default class Employment extends React.Component {
               label='Occupation' placeholder=''
               type='text' onChange={(event) => this.onEmploymentChange('occupation', event.target.value)} />
 
-            <div className='col-md-3'>
+            <div className='col-md-3' >
               <label>{'Personal Income'}</label>
-              <CurrencyInput className='col-md-12' id='income'
+
+              { <Cleave placeholder='$0'
+                id='income'
                 value={employmentFields.income}
-                prefix='$'
-                precision='0'
-                maxLength={11}
-                onChangeEvent={(event) => this.onEmploymentChange('income', event.target.value)} />
+                options={{
+                  prefix: '$',
+                  numeral: true,
+                  numeralThousandsGroupStyle: 'thousand',
+                  numeralDecimalScale: 0,
+                  numeralIntegerScale: 8,
+                  rawValueTrimPrefix: true
+                }}
+                onChange={(event) => this.onEmploymentChange('income', event.target.rawValue)} /> }
+
             </div>
 
             <DropDownField gridClassName='col-md-1' id='income_type'
