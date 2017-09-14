@@ -21,7 +21,9 @@ module Concerns::RfaBaseApiProtocolProvider
     def find_items_by_application_id(auth_header, parent_id)
       response = FaradayCals.get("/#{parent_path}/#{parent_id}/#{api_resource_path}", auth_header)
       body = response.status == 200 ? JSON.parse(response.body) : nil
-       body.present? ? body['items'] : nil
+      body.present? ? body['items'] : nil
     end
+
+
   end
 end

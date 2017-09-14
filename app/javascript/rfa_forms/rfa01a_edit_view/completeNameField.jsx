@@ -13,7 +13,6 @@ const CompleteNameFields = ({
   prefixTypes,
   nameTypes,
   validator}) => {
-  const isAddedComponent = index === undefined
   return (
     <div>
       <div className="col-md-12 remove-padding">
@@ -25,7 +24,8 @@ const CompleteNameFields = ({
           onChange={(event, id) => onChange('name_prefix', dictionaryNilSelect(event.target.selectedOptions[0]), index)} />
       </div>
       <div className="col-md-12 remove-padding">
-        <NameCommonFields index={index}
+        <NameCommonFields
+          index={index}
           fieldValues={fieldValues}
           onChange={onChange}
           validator={validator} />
@@ -38,7 +38,7 @@ const CompleteNameFields = ({
           label={'Suffix'}
           onChange={(event, id) => onChange('name_suffix', dictionaryNilSelect(event.target.selectedOptions[0]), index)} />
       </div>
-      {!isAddedComponent && <div className="col-md-4 remove-padding">
+      {nameTypes && <div className="col-md-4 remove-padding">
         <DropDownField gridClassName='col-md-12' id='name_type'
           value={getDictionaryId(fieldValues.name_type)}
           selectClassName={'reusable-select'}
@@ -52,7 +52,7 @@ const CompleteNameFields = ({
 }
 
 CompleteNameFields.propTypes = {
-  nameTypes: PropTypes.array.isRequired,
+  nameTypes: PropTypes.array,
   prefixTypes: PropTypes.array.isRequired,
   suffixTypes: PropTypes.array.isRequired,
   fieldValues: PropTypes.object.isRequired,

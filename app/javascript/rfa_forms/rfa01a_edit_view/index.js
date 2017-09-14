@@ -5,6 +5,7 @@ import ResidenceCards from './residenceCardsMain'
 import FosterCareHistoryCardMain from './FosterCareHistoryCard.jsx'
 import OtherAdultsCard from './OtherAdultsCardsGroup'
 import MinorCardsGroup from './minorCardsGroup'
+import ReferencesMain from './referencesMain'
 import RelationshipBetweenApplicantsCardMain from './relationshipBetweenApplicantsCard'
 
 import './stylesheets/cards-main.scss'
@@ -170,6 +171,22 @@ export default class Rfa01EditView extends React.Component {
                 setFocusState={this.setFocusState}
                 {...this.props}
               />
+            </div>
+            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+              <div>
+                <h3>IX. References</h3>
+                <ReferencesMain
+                  focusComponentName={this.state.focusComponentName}
+                  setParentState={this.setApplicationState}
+                  getFocusClassName={this.getFocusClassName}
+                  setFocusState={this.setFocusState}
+                  stateTypes={this.props.stateTypes}
+                  references={this.state.application.references || undefined }
+                  suffixTypes={this.props.suffixTypes}
+                  prefixTypes={this.props.prefixTypes}
+                  nameTypes={this.props.nameTypes}
+                />
+              </div>
             </div>
           </div>
 

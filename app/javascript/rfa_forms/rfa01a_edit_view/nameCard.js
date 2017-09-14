@@ -16,8 +16,6 @@ const blankNameFields = Object.freeze({
   name_type: null
 })
 
-const legalTypeId = 2
-
 const requiredNameRule = [{rule: 'isRequired', message: 'Required'}]
 
 export default class NameCard extends React.Component {
@@ -54,9 +52,9 @@ export default class NameCard extends React.Component {
           <CompleteNameFields
             fieldValues={this.props.nameFields}
             onChange={this.props.setParentState}
-            nameTypes={this.props.nameTypes}
             suffixTypes={this.props.suffixTypes}
             prefixTypes={this.props.prefixTypes}
+            hideNameType={true}
             validator={this.props.validator} />
         </div>
         {
@@ -72,6 +70,7 @@ export default class NameCard extends React.Component {
                   nameTypes={removeLegalNameType(this.props.nameTypes)}
                   suffixTypes={this.props.suffixTypes}
                   prefixTypes={this.props.prefixTypes}
+                  hideNameType={false}
                   validator={this.props.validator} />
               </div>
             )

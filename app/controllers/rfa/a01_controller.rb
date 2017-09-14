@@ -20,6 +20,7 @@ class Rfa::A01Controller < CalsBaseController
     @application.otherAdults = rfa_other_adults_helper.find_items_by_application_id(params[:id])
     @application.fosterCareHistory = rfa_adoption_history_helper.find_by_application_id(params[:id])
     @application.relationshipBetweenApplicants = rfa_relation_between_applicants_helper.find_by_application_id(params[:id])
+    @application.references = rfa_references_helper.find_items_by_application_id(params[:id])
 
   end
 
@@ -31,6 +32,9 @@ class Rfa::A01Controller < CalsBaseController
     @application_response[:otherAdults] = process_items_for_persistance(other_adults_params, rfa_other_adults_helper, params[:id]) if params[:otherAdults].present?
     @application_response[:fosterCareHistory] = process_items_for_persistance(adoption_history_params, rfa_adoption_history_helper, params[:id]) if params[:fosterCareHistory].present?
     @application_response[:relationshipBetweenApplicants] = process_items_for_persistance(relationship_between_applicants_params, rfa_relation_between_applicants_helper, params[:id]) if params[:relationshipBetweenApplicants].present?
+    @application_response[:references] = process_items_for_persistance(references_params, rfa_references_helper,
+                                                                       params[:id]) if params[:references][0].present?
+
   end
 
   private
@@ -42,12 +46,12 @@ class Rfa::A01Controller < CalsBaseController
                                                               :date_of_birth, :first_name, :middle_name, :last_name, :driver_license_number,
                                                               {name_suffix: %i[id value]},{ name_prefix: %i[id value]},
                                                               { employment: [:employer_name, :occupation, :income, income_type: %i[id value],
-                                                                physical_address: [:street_address, :city, :zip, state: %i[id value]]] },
+                                                                             physical_address: [:street_address, :city, :zip, state: %i[id value]]] },
                                                               { highest_education_level: %i[id value] }, { gender: %i[id value] },
                                                               { ethnicity: %i[id value] }, { driver_license_state: %i[id value] },
                                                               phones: [:number, :preferred, phone_type: %i[id value]],
-                                                               other_names: [:first_name, :middle_name, :last_name, name_type: %i[id value],
-                                                               name_suffix: %i[id value], name_prefix: %i[id value]])
+                                                              other_names: [:first_name, :middle_name, :last_name, name_type: %i[id value],
+                                                                            name_suffix: %i[id value], name_prefix: %i[id value]])
     end
   end
 
@@ -55,9 +59,9 @@ class Rfa::A01Controller < CalsBaseController
     params.require(:residence).permit(:id, :physical_mailing_similar, :weapon_in_home,
                                       :body_of_water_exist, :body_of_water_description, :others_using_residence_as_mailing,
                                       :directions_to_home, residence_ownership: %i[id value], home_languages: %i[id value],
-                                                           other_people_using_residence_as_mailing: %i[first_name middle_name last_name],
-                                                           physical_address: [:street_address, :zip, :city, state: %i[id value]],
-                                                           addresses: [:street_address, :zip, :city, state: %i[id value], type: %i[id value]])
+                                      other_people_using_residence_as_mailing: %i[first_name middle_name last_name],
+                                      physical_address: [:street_address, :zip, :city, state: %i[id value]],
+                                      addresses: [:street_address, :zip, :city, state: %i[id value], type: %i[id value]])
   end
 
   def minor_children_params
@@ -66,7 +70,7 @@ class Rfa::A01Controller < CalsBaseController
       minor = set_relationship_to_applicants(minor, @application_response[:applicants])
       ActionController::Parameters.new(minor.to_h).permit(
         :id, :child_financially_supported, :date_of_birth, :child_adopted, gender: %i[id value],
-                                                                           relationship_to_applicants: [:applicant_id, relationship_to_applicant: %i[id value]]
+        relationship_to_applicants: [:applicant_id, relationship_to_applicant: %i[id value]]
       )
     end
   end
@@ -96,6 +100,15 @@ class Rfa::A01Controller < CalsBaseController
                                               employment_in_facilities_q4: [:was_employed_or_volunteered, facilities: []],
                                               denial_history_q5: [:had_denials, agencies: [:name, type: %i[id value]]],
                                               suspension_revocation_history_q6: [:had_suspensions_revocations, agencies: [:name, type: %i[id value]]])
+  end
+
+  def references_params
+    permitted_params = params.permit(references: [:first_name, :middle_name, :last_name, :phone_number,:email,
+                                                :phone_number, :email,
+                               mailing_address: [:street_address, :zip, :city, state: %i[id value]],name_prefix: %i[id value], name_suffix: %i[id value]])
+
+    permitted_params[:items] = permitted_params.delete(:references)
+    permitted_params
   end
 
   def process_items_for_persistance(items, helper, parent_id)
@@ -148,6 +161,10 @@ class Rfa::A01Controller < CalsBaseController
 
   def rfa_relation_between_applicants_helper
     Helpers::Rfa::ApplicationRelationApplicantsHelper.new(auth_header: get_session_token)
+  end
+
+  def rfa_references_helper
+    Helpers::Rfa::ApplicationReferencessHelper.new(auth_header: get_session_token)
   end
 
   def dictionaries_helper

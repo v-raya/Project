@@ -33,7 +33,6 @@ export default class ResidenceCards extends React.Component {
 
   render () {
     let residenceData = this.props.residence || blankResidenceFields
-// TODO: fix street address zip and city not coming into params
     return (
       <div className='residence_cards'>
         <div id='residentAddress' onClick={() => this.props.setFocusState('residentAddress')}
