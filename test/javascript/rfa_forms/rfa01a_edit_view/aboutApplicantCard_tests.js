@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom'
 import {shallow, mount} from 'enzyme'
 import {salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes} from './../../helpers/constants'
 import AboutApplicant from 'rfa_forms/rfa01a_edit_view/aboutApplicantCard.jsx'
+import {DateOfBirthField} from 'components/common/DateFields.jsx'
+import Validator from 'helpers/validator.js'
+
 var TestUtils = require('react-dom/test-utils')
 
 describe('Verify More About Applican', () => {
@@ -31,14 +34,17 @@ describe('Verify More About Applican', () => {
   }
   beforeEach(() => {
     setCardState = jasmine.createSpy('setParentState')
+    let validator = new Validator({})
     aboutApplicantComp = mount(<AboutApplicant
+      idPrefix={'applicant0'}
       applicantFields={applicantFields}
       salaryTypes={salaryTypes.items}
       genderTypes={genderTypes.items}
       ethnicityTypes={ethnicityTypes.items}
       educationLevels={educationLevels.items}
       stateTypes={stateTypes.items}
-      setParentState={setCardState} />)
+      setParentState={setCardState}
+      validator={validator} />)
   })
   it('High Level Education DropDown Change', () => {
     // spyOn(aboutApplicantComp.instance().props.setParentState, setCardState).and.callThrough()
@@ -47,7 +53,12 @@ describe('Verify More About Applican', () => {
     expect(setCardState).toHaveBeenCalledWith('highest_education_level', {id: '2', value: 'GED'})
   })
   it('Date Of Birth Change', () => {
-      // TODO will update when switching from react-maskedinput to cleave.js
+    console.log(aboutApplicantComp.html())
+    let dobField = aboutApplicantComp.find('#applicant0date_of_birth')
+  //  aboutApplicantComp.update()
+    // dobField.simulate('change', {target: {value: '2011-12-10'}})
+  //  expect(aboutApplicantComp.find(DateOfBirthField)).to.equal(true)
+//    expect(setCardState).toHaveBeenCalledWith('date_of_relationship', '2011-12-10')
   })
   it('Gender DropDown Change', () => {
     let genderField = aboutApplicantComp.find('#gender')

@@ -3,7 +3,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {PhoneNumberField} from 'components/common/phoneNumberFields'
 import {addCardAsJS, removeCardAsJS} from 'helpers/cardsHelper.jsx'
-import {validateOnBlur} from 'helpers/validationHelper.jsx'
 
 export const blankPhoneNumberFields = Object.freeze({
   number: '',

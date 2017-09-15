@@ -55,7 +55,7 @@ export default class Employment extends React.Component {
             <div className='col-md-3' >
               <label>{'Personal Income'}</label>
 
-              { <Cleave placeholder='$0'
+              <Cleave placeholder='$0'
                 id='income'
                 value={employmentFields.income}
                 options={{
@@ -66,7 +66,7 @@ export default class Employment extends React.Component {
                   numeralIntegerScale: 8,
                   rawValueTrimPrefix: true
                 }}
-                onChange={(event) => this.onEmploymentChange('income', event.target.rawValue)} /> }
+                onChange={(event) => this.onEmploymentChange('income', event.target.rawValue)} />
 
             </div>
 

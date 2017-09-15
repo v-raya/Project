@@ -38,10 +38,10 @@ export default class Rfa01EditView extends React.Component {
     let params = this.state.application
     fetchRequest(url, 'PUT', this.state.application).then(
       response => response.json()).then((response) => {
-      return this.setState({
-        formData: response
+        return this.setState({
+          formData: response
+        })
       })
-    })
       .catch(error => {
         return this.setState({
           data: error
@@ -88,7 +88,7 @@ export default class Rfa01EditView extends React.Component {
                   Resource Family Approval by a County. Please type or print clearly</p>
               </div>
               <div className='col-xs-2 col-sm-2 col-md-2 col-lg-2'>
-                <button disabled={this.state.disableSave} id='saveProgress' className="btn btn-default" onClick={this.submitForm}>Save Progress</button>
+                <button disabled={this.state.disableSave} id='saveProgress' className='btn btn-default' onClick={this.submitForm}>Save Progress</button>
               </div>
             </div>
 
@@ -134,6 +134,7 @@ export default class Rfa01EditView extends React.Component {
                 setFocusState={this.setFocusState}
                 stateTypes={this.props.stateTypes}
                 relationshipTypes={this.props.relationshipTypes}
+                validator={this.validator}
                 applicants={this.state.application.applicants || []} />
             </div>
 
@@ -145,6 +146,7 @@ export default class Rfa01EditView extends React.Component {
                 focusComponentName={this.state.focusComponentName}
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
+                validator={this.validator}
                 applicants={this.state.application.applicants || []}
                 minorChildren={this.state.application.minorChildren || undefined} />
             </div>
@@ -156,6 +158,7 @@ export default class Rfa01EditView extends React.Component {
                 focusComponentName={this.state.focusComponentName}
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
+                validator={this.validator}
                 applicants={this.state.application.applicants || []}
                 otherAdults={this.state.application.otherAdults}
                 relationship_types={this.props.relationshipToApplicantTypes} />

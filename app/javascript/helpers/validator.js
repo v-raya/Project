@@ -10,7 +10,8 @@ export default class Validator {
       isRequired: this.isRequired,
       isNotInTheFuture: this.isNotInTheFuture,
       isBeforeOtherDate: this.isBeforeOtherDate,
-      is10digits: this.is10digits
+      is10digits: this.is10digits,
+      isValidDate: this.isValidDate
     }
   }
 
@@ -38,7 +39,7 @@ export default class Validator {
     return Immutable.Set(this.errors[fieldName] || [])
   }
 
-  isRequired (value) { // TODO: Rename to isNotEmpty
+  isRequired (value) {
     return !(_.isEmpty(value) || _.isEmpty(value.trim()))
   }
 
@@ -52,6 +53,10 @@ export default class Validator {
 
   is10digits (value) {
     return (value.length === 10) || (value.length === 0)
+  }
+
+  isValidDate (value) {
+    return (moment(value, 'MM/DD/YYYY', true).isValid() || (_.isEmpty(value) || _.isEmpty(value.trim())))
   }
 
   validateField (fieldName, value) {

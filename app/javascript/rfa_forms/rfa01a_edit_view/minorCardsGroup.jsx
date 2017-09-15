@@ -7,15 +7,16 @@ import {addCardAsJS, removeCardAsJS, handleRelationshipTypeToApplicant, getFocus
 
 export const minorDefaults = Object.freeze({
   gender: {
-    'id': 0,
-    'value': ''
+    id: 0,
+    value: ''
   },
+  date_of_birth: '',
   relationship_to_applicants: [
     {
       applicant_id: '',
       relationship_to_applicant: {
-        'id': 0,
-        'value': ''
+        id: 0,
+        value: ''
       }
     }
   ]
@@ -71,12 +72,14 @@ export default class MinorCardsGroup extends React.Component {
                     </div>
                     <MinorCardField
                       index={index}
+                      idPrefix={'minor ' + index}
                       genderTypes={this.props.genderTypes}
                       relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
                       minorChild={minor}
                       handleRelationshipTypeToApplicant={this.handleRelationshipTypeToApplicant}
                       applicants={this.props.applicants}
-                      onFieldChange={this.onFieldChange} />
+                      onFieldChange={this.onFieldChange}
+                      validator={this.props.validator} />
                   </div>
 
                 )

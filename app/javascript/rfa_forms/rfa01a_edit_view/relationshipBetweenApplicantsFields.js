@@ -1,14 +1,25 @@
 import React from 'react'
 import Immutable from 'immutable'
+import moment from 'moment'
+import momentLocalizer from 'react-widgets-moment'
 import {InputComponent} from 'components/common/inputFields'
 import {TextAreaComponent} from 'components/common/textArea'
 import {DropDownField} from 'components/common/dropDownField'
-import {dictionaryNilSelect, getDictionaryId} from 'helpers/commonHelper.jsx'
+import {getDictionaryId, dictionaryNilSelect, FormateDobForDisplay, FormatDoBForPersistance} from 'helpers/commonHelper.jsx'
+import {DateOfBirthField} from 'components/common/DateFields.jsx'
+import Validator from 'helpers/validator'
+
+moment.locale('en')
+momentLocalizer()
+
+const dateValidator = [{rule: 'isValidDate', message: 'date is invalid'}]
 
 export default class RelationshipBetweenApplicantsFields extends React.Component {
   constructor (props) {
     super(props)
     this.onChange = this.onChange.bind(this)
+
+    this.validator = this.props.validator.addFieldValidation(this.props.idPrefix + 'date_of_relationship', dateValidator)
   }
 
   onChange (key, value) {
@@ -29,6 +40,8 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
     const applicant2MiddleName = this.props.applicants[1] !== undefined && this.props.applicants[1].middle_name ? this.props.applicants[1].middle_name : ''
     const applicant2LastName = this.props.applicants[1] !== undefined && this.props.applicants[1].last_name ? this.props.applicants[1].last_name : ''
 
+    const relationshipId = this.props.idPrefix + 'date_of_relationship'
+
     return (
       <form>
         <div className='row'>
@@ -42,11 +55,17 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
         </div>
         <div className={'relationship-status ' + hideRelationshipDetails}>Status of relationship</div>
         <div className={'relationship-status-details ' + hideRelationshipDetails} >
-          <InputComponent gridClassName='col-md-4' id='date_of_relationship'
-            label='Date' placeholder='Enter Date'
-            value={relationship.date_of_relationship}
-            type='text'
-            onChange={(event) => this.props.setParentState('date_of_relationship', event.target.value)} />
+
+          <DateOfBirthField
+            gridClassName='col-md-4'
+            label='Date'
+            id={'date_of_relationship'}
+            value={FormateDobForDisplay(relationship.date_of_relationship || '')}
+            errors={this.props.validator.fieldErrors(relationshipId)}
+            onChange={(event) => this.props.setParentState('date_of_relationship',
+             FormatDoBForPersistance(event.target.value || ''))}
+            onBlur={(event) => this.props.validator.validateField(relationshipId, event.target.value)} />
+
           <InputComponent gridClassName='col-md-4' id='place_of_relationship_city'
             value={relationship.place_of_relationship_city}
             label='City' placeholder='Enter City'

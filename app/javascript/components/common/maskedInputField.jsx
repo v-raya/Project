@@ -2,7 +2,6 @@ import FormField from 'components/common/formField'
 import MaskedInput from 'react-maskedinput'
 import PropTypes from 'prop-types'
 import React from 'react'
-import _ from 'lodash'
 
 const MaskedInputField = ({
   blurPlaceholder,
@@ -31,12 +30,16 @@ const MaskedInputField = ({
 
   return (
     <FormField {...formFieldProps}>
-      <MaskedInput id={id} type={type} value={value} mask={mask}
-        placeholder={placeholder} required={required} aria-required={required}
+      <MaskedInput
+        id={id}
+        type={type}
+        value={value}
+        mask={mask}
+        placeholder={placeholder}
+        required={required}
+        aria-required={required}
         onBlur={onBlur}
-        onFocus={(event) => {
-          event.target.placeholder = focusPlaceholder
-        }}
+        onFocus={(event) => { event.target.placeholder = focusPlaceholder }}
         onChange={onChange}
       />
     </FormField>

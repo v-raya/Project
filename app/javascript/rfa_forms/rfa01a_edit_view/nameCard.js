@@ -54,7 +54,7 @@ export default class NameCard extends React.Component {
             onChange={this.props.setParentState}
             suffixTypes={this.props.suffixTypes}
             prefixTypes={this.props.prefixTypes}
-            hideNameType={true}
+            hideNameType
             validator={this.props.validator} />
         </div>
         {

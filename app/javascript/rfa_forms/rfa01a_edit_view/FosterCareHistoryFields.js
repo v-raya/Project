@@ -8,51 +8,51 @@ import {addCardAsJS, removeCardAsJS} from 'helpers/cardsHelper.jsx'
 
 export const blankFosterCareFields = Object.freeze(
   {
-    'foster_care_licenses_q1': {
-      'was_previously_licensed': '',
-      'agencies': [
+    foster_care_licenses_q1: {
+      was_previously_licensed: '',
+      agencies: [
         {
           name: '',
           type: {}
         }
       ]
     },
-    'applications_for_adoption_q2': {
-      'have_applied_for_adoption': '',
-      'facilities': ['']
+    applications_for_adoption_q2: {
+      have_applied_for_adoption: '',
+      facilities: ['']
     },
-    'facility_operation_licenses_q3': {
-      'was_previously_licensed': '',
-      'agencies': [
+    facility_operation_licenses_q3: {
+      was_previously_licensed: '',
+      agencies: [
         {
           name: '',
           type: {}
         }
       ]
     },
-    'employment_in_facilities_q4': {
-      'was_employed_or_volunteered': '',
-      'facilities': ['']
+    employment_in_facilities_q4: {
+      was_employed_or_volunteered: '',
+      facilities: ['']
     },
-    'denial_history_q5': {
-      'had_denials': '',
-      'agencies': [
+    denial_history_q5: {
+      had_denials: '',
+      agencies: [
         {
           name: '',
           type: {}
         }
       ]
     },
-    'suspension_revocation_history_q6': {
-      'had_suspensions_revocations': '',
-      'agencies': [
+    suspension_revocation_history_q6: {
+      had_suspensions_revocations: '',
+      agencies: [
         {
           name: '',
           type: {}
         }
       ]
     },
-    'was_subject_for_exclusion_order_q7': ''
+    was_subject_for_exclusion_order_q7: ''
   }
 
 )

@@ -45,6 +45,7 @@ export default class RelationshipBetweenApplicantsCard extends React.Component {
                 applicants={this.props.applicants}
                 stateTypes={this.props.stateTypes}
                 setParentState={this.setState}
+                validator={this.props.validator}
               />
             </div>
           </div>

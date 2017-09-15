@@ -2,21 +2,22 @@ import Immutable from 'immutable'
 import React from 'react'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import {OtherAdultsCardField} from 'components/common/OtherAdultsCardField'
-import {setToWhomOptionList, handleRelationshipTypeToApplicant, getFocusClassName} from 'helpers/cardsHelper.jsx'
+import {handleRelationshipTypeToApplicant, getFocusClassName} from 'helpers/cardsHelper.jsx'
 
 const relationshipToAdultsDefaults = Object.freeze({
   applicant_id: '',
-  'relationship_to_applicant': {
-    'id': '',
-    'value': ''
+  relationship_to_applicant: {
+    id: '',
+    value: ''
   }
 })
 const otherAdultsDefaults = Object.freeze({
   index: 0,
-  'first_name': '',
-  'middle_name': '',
-  'last_name': '',
-  'relationship_to_applicants': [
+  first_name: '',
+  middle_name: '',
+  last_name: '',
+  date_of_birth: '',
+  relationship_to_applicants: [
     relationshipToAdultsDefaults
   ],
   relationship_types: {
@@ -84,12 +85,14 @@ export default class OtherAdultsCardsGroup extends React.Component {
                     </div>
                     <OtherAdultsCardField
                       index={index}
+                      idPrefix={'otherAdults' + index}
                       relationship_types={this.props.relationship_types}
                       otherAdults={otherAdultsFields}
                       applicants={this.props.applicants}
                       handleRelationshipTypeToApplicant={this.handleRelationshipTypeToApplicant}
                       clickClose={this.clickClose}
-                      onFieldChange={this.onFieldChange} />
+                      onFieldChange={this.onFieldChange}
+                      validator={this.props.validator} />
                   </div>
 
                 )

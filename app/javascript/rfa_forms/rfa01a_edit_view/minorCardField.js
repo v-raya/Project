@@ -1,14 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
-import {dictionaryNilSelect} from 'helpers/commonHelper.jsx'
+import {DateOfBirthField} from '../../components/common/DateFields.jsx'
+import {dictionaryNilSelect, FormateDobForDisplay, FormatDoBForPersistance} from 'helpers/commonHelper.jsx'
 import {yesNo} from 'constants/constants'
 import {setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
+import Validator from 'helpers/validator'
+
+const dateValidator = [{rule: 'isValidDate', message: 'date is invalid'}]
 
 export class MinorCardField extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'date_of_birth', dateValidator)
+  }
+
   render () {
     const minor = this.props.minorChild
+    const minorRuleId = this.props.idPrefix + 'date_of_birth'
     return (
       <form>
         <DropDownField gridClassName='col-md-4' id='relationship_to_applicant'
@@ -22,10 +32,12 @@ export class MinorCardField extends React.Component {
           label='To whom'
           value={handleToWhomValue(minor.relationship_to_applicants[0].applicant_id, this.props.applicants).id}
           onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, event.target.value, 'applicant_id')} />
-        <InputComponent gridClassName='col-md-4' id='date_of_birth'
-          value={minor.date_of_birth}
-          label='Date of Birth' placeholder='Enter Date of Birth'
-          type='text' onChange={(event) => this.props.onFieldChange(this.props.index, event.target.value, 'date_of_birth')} />
+        <DateOfBirthField gridClassName='col-md-4' label='Date of Birth' id={this.props.idPrefix + 'date_of_birth'}
+          value={FormateDobForDisplay(minor.date_of_birth)}
+          errors={this.props.validator.fieldErrors(minorRuleId)}
+          onChange={(event) => this.props.onFieldChange(this.props.index,
+                FormatDoBForPersistance(event.target.value), 'date_of_birth')}
+          onBlur={(event) => this.props.validator.validateField(minorRuleId, event.target.value)} />
         <DropDownField gridClassName='col-md-4' id='gender'
           selectClassName='reusable-select'
           optionList={this.props.genderTypes}

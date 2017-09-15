@@ -5,7 +5,6 @@ import {DropDownField} from './dropDownField'
 import {CheckboxField} from './checkboxField'
 import {dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 import {maskedPhoneRaw} from 'helpers/maskedFieldValue'
-import {validateOnBlur} from 'helpers/validationHelper.jsx'
 
 const phoneNumberRule = [{rule: 'is10digits', message: 'Invalid Phone Number'}]
 
@@ -39,7 +38,7 @@ export class PhoneNumberField extends React.Component {
             this.props.index,
             maskedPhoneRaw(event.target.value),
             'number')}
-          onBlur={(event) => validateOnBlur(this, phoneNumberId, maskedPhoneRaw(event.target.value))}
+          onBlur={(event) => this.props.validator.validateField(phoneNumberId, maskedPhoneRaw(event.target.value))}
         />
         <DropDownField gridClassName='col-md-4' id='phone_type'
           selectClassName='reusable-select'
