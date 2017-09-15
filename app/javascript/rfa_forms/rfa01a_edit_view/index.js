@@ -53,14 +53,16 @@ export default class Rfa01EditView extends React.Component {
     let newState = Immutable.fromJS(this.state)
     newState = newState.setIn(['application', key], value)
     this.setState(newState.toJS())
-    if (key === 'applicants' && checkForNameValidation(value)) {
-      this.setState({
-        disableSave: false
-      })
-    } else {
-      this.setState({
-        disableSave: true
-      })
+    if (key === 'applicants') {
+      if (checkForNameValidation(value)) {
+        this.setState({
+          disableSave: false
+        })
+      } else {
+        this.setState({
+          disableSave: true
+        })
+      }
     }
   }
 

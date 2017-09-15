@@ -33,7 +33,7 @@ class Rfa::A01Controller < CalsBaseController
     @application_response[:fosterCareHistory] = process_items_for_persistance(adoption_history_params, rfa_adoption_history_helper, params[:id]) if params[:fosterCareHistory].present?
     @application_response[:relationshipBetweenApplicants] = process_items_for_persistance(relationship_between_applicants_params, rfa_relation_between_applicants_helper, params[:id]) if params[:relationshipBetweenApplicants].present?
     @application_response[:references] = process_items_for_persistance(references_params, rfa_references_helper,
-                                                                       params[:id]) if params[:references][0].present?
+                                                                       params[:id]) if params[:references].present?
 
   end
 
