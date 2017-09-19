@@ -87,7 +87,7 @@ export default class AboutThisResidenceCard extends React.Component {
             <TextAreaComponent gridClassName='col-md-12' id='directions'
               optionList={this.props.directions}
               value={aboutResidence.directions_to_home}
-              label='Please provide directions, including major cross-street information, to your residence.' placeholder=''
+              label='Please provide directions, including major cross-street information, to your physical adress.' placeholder=''
               onChange={(event) => this.props.setParentState('directions_to_home', event.target.value)} />
 
             <DropDownField id='languagesSpoken' gridClassName='col-md-12'
