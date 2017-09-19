@@ -2,6 +2,7 @@ import React from 'react'
 import {mount} from 'enzyme'
 import ReferenceMain from 'rfa_forms/rfa01a_edit_view/referencesMain.jsx'
 import {stateTypes, nameTypes, suffixTypes, prefixTypes} from '../../helpers/constants'
+import Validator from 'helpers/validator'
 
 describe('Verify References Main', () => {
   let referenceMainComp, setParentStateSpy,
@@ -28,7 +29,10 @@ describe('Verify References Main', () => {
     setApplicationStateSpy = jasmine.createSpy('setResidenceState')
     getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
+    let validator = new Validator({})
+
     referenceMainComp = mount(<ReferenceMain
+      index={0}
       focusComponentName={getFocusClassNameSpy}
       references={[fieldRefValues]}
       setParentState={setApplicationStateSpy}
@@ -37,7 +41,9 @@ describe('Verify References Main', () => {
       stateTypes={stateTypes.items}
       suffixTypes={suffixTypes.items}
       prefixTypes={prefixTypes.items}
-      nameTypes={nameTypes.items}/>)
+      nameTypes={nameTypes.items}
+      idPrefix={'reference' + 1}
+      validator={validator} />)
   })
   it('verify component load', () => {
     expect(referenceMainComp.length).toEqual(1)
@@ -46,7 +52,7 @@ describe('Verify References Main', () => {
     let firstNameFieldChange = referenceMainComp.find('#firstname')
     fieldRefValues.first_name = 'First Name'
     firstNameFieldChange.simulate('change', {target: {value: 'First Name'}})
-    expect(setApplicationStateSpy).toHaveBeenCalledWith('references',[fieldRefValues])
+    expect(setApplicationStateSpy).toHaveBeenCalledWith('references', [fieldRefValues])
   })
   it('verify reference card to check focus', () => {
     let firstNameFieldChange = referenceMainComp.find('#firstname')

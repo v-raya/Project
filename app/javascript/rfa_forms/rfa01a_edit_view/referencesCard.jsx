@@ -4,11 +4,16 @@ import {InputComponent} from 'components/common/inputFields'
 import CompleteNameFields from './completeNameField'
 import CommonAddressFields from 'components/rfa_forms/commonAddressField'
 import PropTypes from 'prop-types'
+import CleaveInputField from 'components/common/cleaveInputField.jsx'
+
+const phoneNumberRule = [{rule: 'is10digits', message: 'Invalid Phone Number'}]
 
 export default class ReferencesCard extends React.Component {
   constructor (props) {
     super(props)
     this.handleAddressChange = this.handleAddressChange.bind(this)
+
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'phone_number', phoneNumberRule)
   }
   handleAddressChange (key, value, referencesIndex) {
     let mailingAddressObj = Immutable.fromJS(this.props.reference.mailing_address)
@@ -16,6 +21,8 @@ export default class ReferencesCard extends React.Component {
     this.props.setParentState('mailing_address', mailingAddressObj.toJS(), referencesIndex)
   }
   render () {
+    const phoneNumberId = this.props.idPrefix + 'phone_number'
+
     return (
       <div>
         <CompleteNameFields
@@ -23,20 +30,33 @@ export default class ReferencesCard extends React.Component {
           fieldValues={this.props.reference}
           suffixTypes={this.props.suffixTypes}
           prefixTypes={this.props.prefixTypes}
-          onChange={this.props.setParentState}/>
+          onChange={this.props.setParentState} />
         <CommonAddressFields
           index={this.props.index}
           stateTypes={this.props.stateTypes}
           addressFields={this.props.reference}
-          onChange={this.handleAddressChange}/>
-        <InputComponent gridClassName='col-md-4' id='phone'
+          onChange={this.handleAddressChange} />
+        <CleaveInputField
+          gridClassName='col-md-4'
+          id={phoneNumberId}
           value={this.props.reference.phone_number}
-          label='Phone' placeholder=''
-          type='text' onChange={(event) => this.props.setParentState('phone_number', event.target.value, this.props.index)} />
+          label='Phone Number'
+          placeholder=''
+          blurPlaceholder=''
+          focusPlaceholder='(___)___-____'
+          options={{
+            delimiters: ['(', ')', '-'],
+            blocks: [0, 3, 3, 4],
+            numericOnly: true}}
+          type='text'
+          errors={this.props.validator.fieldErrors(phoneNumberId)}
+          onChange={(event) => this.props.setParentState('phone_number', event.target.rawValue, this.props.index)}
+          onBlur={(event) => this.props.validator.validateField(phoneNumberId, event.target.rawValue)} />
         <InputComponent gridClassName='col-md-4' id='email'
           value={this.props.reference.email}
           label='Email (optional)' placeholder=''
-          type='text' onChange={(event) => this.props.setParentState('email', event.target.value, this.props.index)} />
+          type='text' onChange={(event) => this.props.setParentState('email',
+            event.target.value, this.props.index)} />
       </div>
     )
   }

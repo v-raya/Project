@@ -35,7 +35,7 @@ export default class ReferenceMain extends React.Component {
   render () {
     const references = this.props.references
     return (
-      <div className="reference_main">
+      <div className='reference_main'>
         <div>Please list the name, telephone number(s), and address of three individuals who have knowledge of your home environment, lifestyle, and
           ability to be a Resource Family. <b>*Must include 3 references</b></div>
         {
@@ -43,20 +43,23 @@ export default class ReferenceMain extends React.Component {
             return (
               <div key={index} id={'referenceMain_' + index} onClick={() => this.props.setFocusState('referenceMain_' + index)}
                 className={this.props.getFocusClassName('referenceMain_' + index) + ' ' + 'card reference-section double-gap-top'}>
-                <div className="card-header">
+                <div className='card-header'>
                   <span>Reference -{index + 1}</span>
                 </div>
-                <div className="card-body">
-                  <div className="row">
+                <div className='card-body'>
+                  <div className='row'>
                     <ReferencesCard
                       index={index}
+                      idPrefix={'reference ' + (index + 1)}
                       reference={referencesId}
                       stateTypes={this.props.stateTypes}
                       suffixTypes={this.props.suffixTypes}
                       prefixTypes={this.props.prefixTypes}
                       nameTypes={this.props.nameTypes}
                       setParentState={this.setReferencesState}
-                      hideNameType={true} />
+                      validator={this.props.validator}
+                      hideNameType
+                     />
                   </div>
                 </div>
               </div>

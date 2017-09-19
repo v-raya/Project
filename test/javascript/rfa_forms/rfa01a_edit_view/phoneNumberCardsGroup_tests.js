@@ -148,23 +148,17 @@ describe('Preferred logic', () => {
 
     expect(setParentStateSpy).toHaveBeenCalledWith('phones', tmpData)
   })
-  // fit('allows to change number', () => {
-  //   const newNumber = '888-444-2323'
-  //   // why do I have to update this?
-  //   console.log(component.html())
-  //   component.update()
-  //   component.find('#number').simulate('change', {target: {value: newNumber}})
+  it('allows to change number', () => {
+    const newNumber = '8884442323'
+    // why do I have to update this?
+    component.update()
+    component.find('#phones0number').simulate('change', {target: {value: newNumber}})
+    expect(component.instance().onPhoneFieldChange).toHaveBeenCalledWith(0, newNumber, 'number')
 
-  //   expect(component.instance().onPhoneFieldChange).toHaveBeenCalledWith(0, newNumber, 'number')
-  //   expect(component.instance().onChange).toHaveBeenCalledWith(0, newNumber, 'number')
-
-  //   let tmpData = [phoneNumber]
-  //   tmpData[0].number = newNumber
-
-  //   expect(setParentStateSpy).toHaveBeenCalledWith('phones', tmpData)
-  //   // component.update()
-  //   console.log(component.html())
-  // })
+    let tmpData = [phoneNumber]
+    tmpData[0].number = newNumber
+    expect(setParentStateSpy).toHaveBeenCalledWith('phones', tmpData)
+  })
 
   // it('allows to change type', () => {
   //   const newType = {id: '2', value: 'Mobile'}

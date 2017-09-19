@@ -4,7 +4,7 @@ import MaskedInputField from './maskedInputField.jsx'
 import {DropDownField} from './dropDownField'
 import {CheckboxField} from './checkboxField'
 import {dictionaryNilSelect} from 'helpers/commonHelper.jsx'
-import {maskedPhoneRaw} from 'helpers/maskedFieldValue'
+import CleaveInputField from './cleaveInputField.jsx'
 
 const phoneNumberRule = [{rule: 'is10digits', message: 'Invalid Phone Number'}]
 
@@ -23,22 +23,26 @@ export class PhoneNumberField extends React.Component {
 
     return (
       <div>
-        <MaskedInputField
+
+        <CleaveInputField
           gridClassName='col-md-4'
           id={phoneNumberId}
-          value={maskedPhoneRaw(phoneFields.number)}
+          value={phoneFields.number}
           label='Phone Number'
           placeholder=''
           blurPlaceholder=''
           focusPlaceholder='(___)___-____'
-          mask='(111)111-1111'
+          options={{
+            delimiters: ['(', ') ', '-'],
+            blocks: [0, 3, 3, 4],
+            numericOnly: true}}
           type='text'
           errors={this.props.validator.fieldErrors(phoneNumberId)}
           onChange={(event) => this.props.onPhoneFieldChange(
             this.props.index,
-            maskedPhoneRaw(event.target.value),
+            event.target.rawValue,
             'number')}
-          onBlur={(event) => this.props.validator.validateField(phoneNumberId, maskedPhoneRaw(event.target.value))}
+          onBlur={(event) => this.props.validator.validateField(phoneNumberId, event.target.rawValue)}
         />
         <DropDownField gridClassName='col-md-4' id='phone_type'
           selectClassName='reusable-select'

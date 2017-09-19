@@ -53,12 +53,12 @@ describe('Verify More About Applican', () => {
     expect(setCardState).toHaveBeenCalledWith('highest_education_level', {id: '2', value: 'GED'})
   })
   it('Date Of Birth Change', () => {
-    console.log(aboutApplicantComp.html())
+    // console.log(aboutApplicantComp.html())
     let dobField = aboutApplicantComp.find('#applicant0date_of_birth')
   //  aboutApplicantComp.update()
     // dobField.simulate('change', {target: {value: '2011-12-10'}})
   //  expect(aboutApplicantComp.find(DateOfBirthField)).to.equal(true)
-//    expect(setCardState).toHaveBeenCalledWith('date_of_relationship', '2011-12-10')
+    //    expect(setCardState).toHaveBeenCalledWith('date_of_relationship', '2011-12-10')
   })
   it('Gender DropDown Change', () => {
     let genderField = aboutApplicantComp.find('#gender')
