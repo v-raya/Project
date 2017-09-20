@@ -7,6 +7,7 @@ import OtherAdultsCard from './OtherAdultsCardsGroup'
 import MinorCardsGroup from './minorCardsGroup'
 import ReferencesMain from './referencesMain'
 import RelationshipBetweenApplicantsCardMain from './relationshipBetweenApplicantsCard'
+import ChildDesiredMain from './childDesiredMain'
 
 import './stylesheets/cards-main.scss'
 import {fetchRequest} from 'helpers/http'
@@ -164,6 +165,18 @@ export default class Rfa01EditView extends React.Component {
                 applicants={this.state.application.applicants || []}
                 otherAdults={this.state.application.otherAdults}
                 relationship_types={this.props.relationshipToApplicantTypes} />
+            </div>
+            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+              <h3>VII.<span>Child Desired </span></h3>
+              <ChildDesiredMain
+                focusComponentName={this.state.focusComponentName}
+                childDesired={this.state.application.childDesired || undefined}
+                getFocusClassName={this.getFocusClassName}
+                setFocusState={this.setFocusState}
+                setParentState={this.setApplicationState}
+                siblingGroups ={this.props.siblingGroups}
+                ageGroups={this.props.ageGroups}
+              />
             </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>

@@ -36,9 +36,17 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     Dictionaries::PhoneNumberType.all(auth_header)
   end
 
+  def  sibling_groups
+    Dictionaries::SiblingGroup.all(auth_header)
+  end
+
+  def  age_groups
+    Dictionaries::AgeGroup.all(auth_header)
+  end
   def  gender_types
     Dictionaries::Gender.all(auth_header)
   end
+
   def  name_suffix_types
     Dictionaries::NameSuffixType.all(auth_header)
   end
@@ -79,6 +87,8 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     dictionaries[:language_types] =  language_types
     dictionaries[:state_types] = state_types
     dictionaries[:salary_types] = salary_types
+    dictionaries[:age_groups] = age_groups
+    dictionaries[:sibling_groups] = sibling_groups
     return dictionaries
   end
 end

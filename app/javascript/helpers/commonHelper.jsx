@@ -39,3 +39,13 @@ export const FormateDobForDisplay = (dateString) => {
   }
   return persistantDateString || dateString.replace(/-/gi, '/')
 }
+export const findArrayValueByMethod = (arrayToBeFiltered, method, findByType, comparedWith) => {
+  return arrayToBeFiltered[method](obj => {
+    return obj.get(findByType.toString()) === comparedWith
+  })
+}
+// export const filterArrayValueByMethod = (arrayToBeFiltered, method, id) => {
+//   return arrayToBeFiltered[method](obj => {
+//     return obj.get('id') !== id
+//   })
+// }

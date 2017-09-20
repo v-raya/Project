@@ -78,3 +78,46 @@
 .relationship-status-details {
   margin-top: -15px;
 }
+
+.sibling {
+  p {
+    color: #000;
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  div {
+    padding-left: 0px;
+  }
+  label {
+    margin-top: 2rem;
+  }
+}
+
+.age {
+  display: block;
+
+  label {
+    font-weight: bold;
+    max-width: 100%;
+  }
+  p {
+    color: #000000;
+    margin-top: 4rem;
+    margin-bottom: 0px;
+  }
+  input[type='checkbox'] + label {
+    margin-top: 2rem;
+    float: left;
+  }
+  div {
+    padding-left: 0px;
+  }
+}
+
+.preferred-age-desc {
+  color: #767676;
+  margin-top: 4rem;
+  font-size: 1.5rem;
+  margin-bottom: -15px;
+}

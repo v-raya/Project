@@ -10,7 +10,6 @@ import Cleave from 'cleave.js/react'
 const dateRule = [{rule: 'isValidDate', message: 'date is invalid'}]
 
 export default class AboutApplicant extends React.Component {
-
   constructor (props) {
     super(props)
 
@@ -38,7 +37,7 @@ export default class AboutApplicant extends React.Component {
                 value={FormateDobForDisplay(this.props.applicantFields.date_of_birth)}
                 errors={this.props.validator.fieldErrors(dateRuleId)}
                 onChange={(event) =>
-                this.props.setParentState('date_of_birth', FormatDoBForPersistance(event.target.value))}
+                  this.props.setParentState('date_of_birth', FormatDoBForPersistance(event.target.value))}
                 onBlur={(event) => this.props.validator.validateField(dateRuleId, event.target.value)} />
 
               <DropDownField gridClassName='col-md-4' id='gender'

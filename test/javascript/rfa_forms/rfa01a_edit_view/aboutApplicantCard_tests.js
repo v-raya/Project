@@ -53,7 +53,6 @@ describe('Verify More About Applican', () => {
     expect(setCardState).toHaveBeenCalledWith('highest_education_level', {id: '2', value: 'GED'})
   })
   it('Date Of Birth Change', () => {
-    // console.log(aboutApplicantComp.html())
     let dobField = aboutApplicantComp.find('#applicant0date_of_birth')
   //  aboutApplicantComp.update()
     // dobField.simulate('change', {target: {value: '2011-12-10'}})

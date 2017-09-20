@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {DropDownField} from 'components/common/dropDownField'
 import {DateOfBirthField} from '../../components/common/DateFields.jsx'
-import {dictionaryNilSelect, FormateDobForDisplay, FormatDoBForPersistance} from 'helpers/commonHelper.jsx'
+import {getDictionaryId, dictionaryNilSelect, FormateDobForDisplay, FormatDoBForPersistance} from 'helpers/commonHelper.jsx'
 import {yesNo} from 'constants/constants'
 import {setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
@@ -41,7 +41,7 @@ export class MinorCardField extends React.Component {
         <DropDownField gridClassName='col-md-4' id='gender'
           selectClassName='reusable-select'
           optionList={this.props.genderTypes}
-          value={minor.gender.id}
+          value={getDictionaryId(minor.gender)}
           label='Gender'
           onChange={(event) => this.props.onFieldChange(this.props.index, dictionaryNilSelect(event.target.selectedOptions[0]), 'gender')} />
         <DropDownField id='child_financially_supported' gridClassName='col-md-4' value={minor.child_financially_supported}

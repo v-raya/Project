@@ -20,8 +20,8 @@ class Rfa::A01Controller < CalsBaseController
     @application.otherAdults = rfa_other_adults_helper.find_items_by_application_id(params[:id])
     @application.fosterCareHistory = rfa_adoption_history_helper.find_by_application_id(params[:id])
     @application.relationshipBetweenApplicants = rfa_relation_between_applicants_helper.find_by_application_id(params[:id])
+    @application.childDesired = rfa_child_desired_helper.find_by_application_id(params[:id])
     @application.references = rfa_references_helper.find_items_by_application_id(params[:id])
-
   end
 
   def update
@@ -32,9 +32,10 @@ class Rfa::A01Controller < CalsBaseController
     @application_response[:otherAdults] = process_items_for_persistance(other_adults_params, rfa_other_adults_helper, params[:id]) if params[:otherAdults].present?
     @application_response[:fosterCareHistory] = process_items_for_persistance(adoption_history_params, rfa_adoption_history_helper, params[:id]) if params[:fosterCareHistory].present?
     @application_response[:relationshipBetweenApplicants] = process_items_for_persistance(relationship_between_applicants_params, rfa_relation_between_applicants_helper, params[:id]) if params[:relationshipBetweenApplicants].present?
+    @application_response[:childDesired] = process_items_for_persistance(child_desired_params, rfa_child_desired_helper, params[:id]) if params[:childDesired].present?
+
     @application_response[:references] = process_items_for_persistance(references_params, rfa_references_helper,
                                                                        params[:id]) if params[:references].present?
-
   end
 
   private
@@ -90,6 +91,12 @@ class Rfa::A01Controller < CalsBaseController
     params.require(:relationshipBetweenApplicants).permit(:other_relationship, :place_of_relationship_city,
                                                           :date_of_relationship, relationship_type: %i[id value],
                                                           place_of_relationship_state: %i[id value])
+  end
+
+
+  def child_desired_params
+    params.require(:childDesired).permit(:child_identified, :child_in_home, preferred_ages: %i[id value],
+                                         preferred_sibling_group_up_to: %i[id value])
   end
 
   def adoption_history_params
@@ -163,6 +170,10 @@ class Rfa::A01Controller < CalsBaseController
     Helpers::Rfa::ApplicationRelationApplicantsHelper.new(auth_header: get_session_token)
   end
 
+  def rfa_child_desired_helper
+    Helpers::Rfa::ApplicationChildDesiredHelper.new(auth_header: get_session_token)
+  end
+  
   def rfa_references_helper
     Helpers::Rfa::ApplicationReferencessHelper.new(auth_header: get_session_token)
   end

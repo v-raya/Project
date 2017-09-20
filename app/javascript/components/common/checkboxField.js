@@ -1,8 +1,9 @@
 import React from 'react'
 
-const CheckboxField = ({gridClassName, label, id, value, checked, disabled, onChange}) => (
+const CheckboxField = ({gridClassName, type, label, id, value, checked, disabled, onChange}) => (
   <div className={gridClassName}>
-    <input type='checkbox'
+    <input
+      type={type}
       id={id}
       value={value}
       checked={checked}
@@ -13,4 +14,7 @@ const CheckboxField = ({gridClassName, label, id, value, checked, disabled, onCh
   </div>
 )
 
+CheckboxField.defaultProps = {
+  type: 'checkbox'
+}
 export {CheckboxField}

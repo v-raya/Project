@@ -6,11 +6,6 @@ import {MinorCardField} from './minorCardField'
 import {addCardAsJS, removeCardAsJS, handleRelationshipTypeToApplicant, getFocusClassName} from 'helpers/cardsHelper.jsx'
 
 export const minorDefaults = Object.freeze({
-  gender: {
-    id: 0,
-    value: ''
-  },
-  date_of_birth: '',
   relationship_to_applicants: [
     {
       applicant_id: '',

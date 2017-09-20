@@ -52,7 +52,8 @@ export class PhoneNumberField extends React.Component {
           onChange={(event) => this.props.onPhoneFieldChange(this.props.index,
             dictionaryNilSelect(event.target.selectedOptions[0]), 'phone_type')} />
 
-        <CheckboxField gridClassName='col-md-4' id={this.props.index + 'applicant id ' + this.props.applicant_id} type='checkbox'
+        <CheckboxField gridClassName='col-md-4' id={this.props.index + 'applicant id ' + this.props.applicant_id}
+          type={'checkbox'}
           checked={phoneFields.preferred}
           value={phoneFields.preferred}
           label='Preferred Contact Number'
