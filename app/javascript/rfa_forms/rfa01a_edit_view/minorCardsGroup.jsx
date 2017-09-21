@@ -61,13 +61,15 @@ export default class MinorCardsGroup extends React.Component {
           <div className='card-body'>
             {
               minorChildrenList.map((minor, index) => {
+                const idPrefix = 'minorChildren[' + index + '].'
+
                 return (
                   <div key={index} className='row list-item' >
                     <div> <span onClick={() => this.clickClose(index)} className='pull-right glyphicon glyphicon-remove' />
                     </div>
                     <MinorCardField
                       index={index}
-                      idPrefix={'minor ' + index}
+                      idPrefix={idPrefix}
                       genderTypes={this.props.genderTypes}
                       relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
                       minorChild={minor}

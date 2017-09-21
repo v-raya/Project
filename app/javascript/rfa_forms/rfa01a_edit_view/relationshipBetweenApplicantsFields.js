@@ -12,7 +12,7 @@ import Validator from 'helpers/validator'
 moment.locale('en')
 momentLocalizer()
 
-const dateValidator = [{rule: 'isValidDate', message: 'date is invalid'}]
+const dateValidator = {rule: 'isValidDate', message: 'date is invalid'}
 
 export default class RelationshipBetweenApplicantsFields extends React.Component {
   constructor (props) {
@@ -63,7 +63,7 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
             value={FormateDobForDisplay(relationship.date_of_relationship || '')}
             errors={this.props.validator.fieldErrors(relationshipId)}
             onChange={(event) => this.props.setParentState('date_of_relationship',
-             FormatDoBForPersistance(event.target.value || ''))}
+              FormatDoBForPersistance(event.target.value || ''))}
             onBlur={(event) => this.props.validator.validateField(relationshipId, event.target.value)} />
 
           <InputComponent gridClassName='col-md-4' id='place_of_relationship_city'
@@ -87,4 +87,8 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
       </form>
     )
   }
+}
+
+RelationshipBetweenApplicantsFields.defaultProps = {
+  idPrefix: ''
 }

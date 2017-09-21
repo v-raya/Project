@@ -1,3 +1,7 @@
+export const valuePresent = (val) => {
+  return (val !== null) && (val !== undefined)
+}
+
 export const getDictionaryId = (object) => {
   return (object && object.id) || ''
 }

@@ -24,25 +24,31 @@ export default class Rfa01EditView extends React.Component {
     this.setApplicationState = this.setApplicationState.bind(this)
     this.setFocusState = this.setFocusState.bind(this)
     this.validator = new Validator({})
+    // this.validator.getData = this.getValidationData.bind(this)
     this.state = {
       focusComponentName: '',
       application: this.props.application,
       disableSave: !(checkForNameValidation(this.props.application.applicants))
+
     }
   }
   componentDidMount () {
     // set Dictionaty Here
   }
 
+  // getValidationData () {
+  //   return Immutable.fromJS(this.state.application)
+  // }
+
   submitForm () {
     var url = urlPrefixHelper('/rfa/a01/' + this.props.application_id)
     let params = this.state.application
     fetchRequest(url, 'PUT', this.state.application).then(
       response => response.json()).then((response) => {
-        return this.setState({
-          formData: response
-        })
+      return this.setState({
+        formData: response
       })
+    })
       .catch(error => {
         return this.setState({
           data: error
@@ -54,16 +60,19 @@ export default class Rfa01EditView extends React.Component {
     let newState = Immutable.fromJS(this.state)
     newState = newState.setIn(['application', key], value)
     this.setState(newState.toJS())
-    if (key === 'applicants') {
-      if (checkForNameValidation(value)) {
-        this.setState({
-          disableSave: false
-        })
-      } else {
-        this.setState({
-          disableSave: true
-        })
-      }
+
+    // TODO: need a method in validator to get errors filtered out where field = isRequired
+    // No need to validate here again, the data change at component level should validate the fields
+    // const requiredFieldsErrors = this.validator.allFieldErrorsByRule('isRequired')
+    // this.setState({disableSave: requiredFieldsErrors.size > 0})
+    if (key === 'applicants' && checkForNameValidation(value)) {
+      this.setState({
+        disableSave: false
+      })
+    } else {
+      this.setState({
+        disableSave: true
+      })
     }
   }
 

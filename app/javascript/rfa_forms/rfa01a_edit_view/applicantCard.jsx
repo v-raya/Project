@@ -20,6 +20,8 @@ export default class ApplicantCard extends React.Component {
   }
 
   render () {
+    const idPrefix = 'applicants' + '[' + this.props.index + '].'
+
     return (
       <div className='cards'>
 
@@ -30,7 +32,7 @@ export default class ApplicantCard extends React.Component {
             <span>Name</span>
           </div>
           <NameCard
-            idPrefix={'applicant' + this.props.index}
+            idPrefix={idPrefix}
             nameTypes={this.props.nameTypes}
             suffixTypes={this.props.suffixTypes}
             prefixTypes={this.props.prefixTypes}
@@ -47,7 +49,7 @@ export default class ApplicantCard extends React.Component {
             <span>More about Applicant</span>
           </div>
           <AboutApplicant
-            idPrefix={'applicant' + this.props.index}
+            idPrefix={idPrefix}
             stateTypes={this.props.stateTypes}
             educationLevels={this.props.educationLevels}
             genderTypes={this.props.genderTypes}
@@ -79,7 +81,7 @@ export default class ApplicantCard extends React.Component {
             <span>Phone Number</span>
           </div>
           <PhoneComponent
-            idPrefix={'applicant' + this.props.index}
+            idPrefix={idPrefix}
             phoneTypes={this.props.phoneTypes}
             applicant_id={this.props.index}
             phones={this.props.applicantFields.phones}
@@ -101,7 +103,7 @@ ApplicantCard.propTypes = {
   // raceTypes: PropTypes.array.isRequired,
   ethnicityTypes: PropTypes.array.isRequired,
   languageTypes: PropTypes.array.isRequired,
-//  focusComponentName: PropTypes.string.isRequired,
+  //  focusComponentName: PropTypes.string.isRequired,
   applicantFields: PropTypes.object.isRequired,
   setParentState: PropTypes.func.isRequired
 //  setFocusState: PropTypes.func.isRequired

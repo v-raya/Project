@@ -6,7 +6,7 @@ import CommonAddressFields from 'components/rfa_forms/commonAddressField'
 import PropTypes from 'prop-types'
 import CleaveInputField from 'components/common/cleaveInputField.jsx'
 
-const phoneNumberRule = [{rule: 'is10digits', message: 'Invalid Phone Number'}]
+const phoneNumberRule = {rule: 'is10digits', message: 'Invalid Phone Number'}
 
 export default class ReferencesCard extends React.Component {
   constructor (props) {

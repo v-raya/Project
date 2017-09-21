@@ -40,17 +40,19 @@ export default class PhoneComponent extends React.Component {
 
   render () {
     let phonesList = this.props.phones
+
     return (
       <div className='card-body'>
         {
           phonesList.map((numberFields, index) => {
+            const idPrefix = this.props.idPrefix + 'phones[' + index + '].'
             return (
               <div key={index + 'app_id: ' + this.props.applicant_id} className='row list-item'>
                 <span onClick={(event) => this.onPhoneClickClose(index)}
                   className='pull-right glyphicon glyphicon-remove' />
                 <PhoneNumberField
                   index={index}
-                  idPrefix={this.props.idPrefix + 'phones' + index}
+                  idPrefix={idPrefix}
                   phoneFields={numberFields}
                   phoneTypes={this.props.phoneTypes}
                   onPhoneFieldChange={this.onPhoneFieldChange}

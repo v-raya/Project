@@ -30,6 +30,7 @@ export default class RelationshipBetweenApplicantsCard extends React.Component {
 
   render () {
     let data = this.props.relationshipBetweenApplicants || blankValues
+    const idPrefix = 'relationshipBetweenApplicants.'
 
     return (
       <div className='relationship_between_applicants_card'>
@@ -39,6 +40,7 @@ export default class RelationshipBetweenApplicantsCard extends React.Component {
           <div className='card-body'>
             <div className='row'>
               <RelationshipBetweenApplicantsFields
+                idPrefix={idPrefix}
                 relationshipBetweenApplicants={this.props.relationshipBetweenApplicants}
                 relationshipTypes={this.props.relationshipTypes}
                 RelationshipBetweenApplicantsCardSection={data}

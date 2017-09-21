@@ -79,13 +79,14 @@ export default class OtherAdultsCardsGroup extends React.Component {
           <div className='card-body'>
             {
               otherAdultsList.map((otherAdultsFields, index) => {
+                const idPrefix = 'otherAdults[' + index + '].'
                 return (
                   <div key={index} className='row list-item' >
                     <div > <span onClick={() => this.clickClose(index)} className='pull-right glyphicon glyphicon-remove' />
                     </div>
                     <OtherAdultsCardField
                       index={index}
-                      idPrefix={'otherAdults' + index}
+                      idPrefix={idPrefix}
                       relationship_types={this.props.relationship_types}
                       otherAdults={otherAdultsFields}
                       applicants={this.props.applicants}

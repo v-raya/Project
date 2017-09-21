@@ -70,12 +70,12 @@ describe('Verify More About Applican', () => {
     expect(setCardState).toHaveBeenCalledWith('ethnicity', {id: '2', value: 'Hispanic'})
   })
   it('Driver License Number Change', () => {
-    let dlNumberField = aboutApplicantComp.find('#driver_license_number')
+    let dlNumberField = aboutApplicantComp.find('#applicant0driver_license_number')
     dlNumberField.simulate('change', {target: {value: '234567876534'}})
     expect(setCardState).toHaveBeenCalledWith('driver_license_number', '234567876534')
   })
   it('Driver License Sate DropDown Change', () => {
-    let DLStateField = aboutApplicantComp.find('#driver_license_state')
+    let DLStateField = aboutApplicantComp.find('#applicant0driver_license_state')
     DLStateField.simulate('change', {target: {selectedOptions: [{value: '17', text: 'Illinois'}]}})
     expect(setCardState).toHaveBeenCalledWith('driver_license_state', {id: '17', value: 'Illinois'})
   })

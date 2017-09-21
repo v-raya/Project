@@ -6,10 +6,9 @@ import {dictionaryNilSelect, FormateDobForDisplay, FormatDoBForPersistance} from
 import {setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
 
-const dateValidator = [{rule: 'isValidDate', message: 'date is invalid'}]
+const dateValidator = {rule: 'isValidDate', message: 'date is invalid'}
 
 export class OtherAdultsCardField extends React.Component {
-
   constructor (props) {
     super(props)
 
@@ -39,7 +38,7 @@ export class OtherAdultsCardField extends React.Component {
           value={FormateDobForDisplay(adult.date_of_birth)}
           errors={this.props.validator.fieldErrors(otherAdultsRuleId)}
           onChange={(event) => this.props.onFieldChange(this.props.index,
-              FormatDoBForPersistance(event.target.value), 'date_of_birth')}
+            FormatDoBForPersistance(event.target.value), 'date_of_birth')}
           onBlur={(event) => this.props.validator.validateField(otherAdultsRuleId, event.target.value)} />
         <InputComponent gridClassName='col-md-4' id='firstName' value={adult.first_name}
           label='First Name' placeholder='Enter First Name'

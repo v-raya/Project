@@ -16,7 +16,7 @@ const blankNameFields = Object.freeze({
   name_type: null
 })
 
-const requiredNameRule = [{rule: 'isRequired', message: 'Required'}]
+const requiredNameRule = {rule: 'isRequired', message: 'Required'}
 
 export default class NameCard extends React.Component {
   constructor (props) {
@@ -28,6 +28,7 @@ export default class NameCard extends React.Component {
     this.props.validator.addFieldValidation(this.props.idPrefix + 'first_name', requiredNameRule)
     this.props.validator.addFieldValidation(this.props.idPrefix + 'last_name', requiredNameRule)
   }
+
   removeCard (indexValue) {
     let nameCardsList = Immutable.fromJS(this.props.nameFields.other_names)
     nameCardsList = nameCardsList.delete(indexValue)

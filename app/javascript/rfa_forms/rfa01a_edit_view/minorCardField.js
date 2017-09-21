@@ -7,7 +7,7 @@ import {yesNo} from 'constants/constants'
 import {setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
 
-const dateValidator = [{rule: 'isValidDate', message: 'date is invalid'}]
+const dateValidator = {rule: 'isValidDate', message: 'date is invalid'}
 
 export class MinorCardField extends React.Component {
   constructor (props) {
@@ -36,7 +36,7 @@ export class MinorCardField extends React.Component {
           value={FormateDobForDisplay(minor.date_of_birth)}
           errors={this.props.validator.fieldErrors(minorRuleId)}
           onChange={(event) => this.props.onFieldChange(this.props.index,
-                FormatDoBForPersistance(event.target.value), 'date_of_birth')}
+            FormatDoBForPersistance(event.target.value), 'date_of_birth')}
           onBlur={(event) => this.props.validator.validateField(minorRuleId, event.target.value)} />
         <DropDownField gridClassName='col-md-4' id='gender'
           selectClassName='reusable-select'

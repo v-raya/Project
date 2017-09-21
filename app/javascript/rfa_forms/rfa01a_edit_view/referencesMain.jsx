@@ -50,7 +50,7 @@ export default class ReferenceMain extends React.Component {
                   <div className='row'>
                     <ReferencesCard
                       index={index}
-                      idPrefix={'reference ' + (index + 1)}
+                      idPrefix={'reference[' + index + '].'}
                       reference={referencesId}
                       stateTypes={this.props.stateTypes}
                       suffixTypes={this.props.suffixTypes}
@@ -59,7 +59,7 @@ export default class ReferenceMain extends React.Component {
                       setParentState={this.setReferencesState}
                       validator={this.props.validator}
                       hideNameType
-                     />
+                    />
                   </div>
                 </div>
               </div>

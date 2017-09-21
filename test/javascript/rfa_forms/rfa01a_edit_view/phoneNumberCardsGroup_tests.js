@@ -152,7 +152,7 @@ describe('Preferred logic', () => {
     const newNumber = '8884442323'
     // why do I have to update this?
     component.update()
-    component.find('#phones0number').simulate('change', {target: {value: newNumber}})
+    component.find('input[type="text"]').simulate('change', {target: {value: newNumber}})
     expect(component.instance().onPhoneFieldChange).toHaveBeenCalledWith(0, newNumber, 'number')
 
     let tmpData = [phoneNumber]

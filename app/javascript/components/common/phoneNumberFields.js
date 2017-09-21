@@ -6,7 +6,7 @@ import {CheckboxField} from './checkboxField'
 import {dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 import CleaveInputField from './cleaveInputField.jsx'
 
-const phoneNumberRule = [{rule: 'is10digits', message: 'Invalid Phone Number'}]
+const phoneNumberRule = {rule: 'is10digits', message: 'Invalid Phone Number'}
 
 export class PhoneNumberField extends React.Component {
   constructor (props) {
