@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CheckboxField = ({gridClassName, type, label, id, value, checked, disabled, onChange}) => (
+const BinarySelectorField = ({gridClassName, type, label, id, value, checked, disabled, onChange}) => (
   <div className={gridClassName}>
     <input
       type={type}
@@ -13,8 +13,7 @@ const CheckboxField = ({gridClassName, type, label, id, value, checked, disabled
     <label htmlFor={id}>{label}</label>
   </div>
 )
-
-CheckboxField.defaultProps = {
+BinarySelectorField.defaultProps = {
   type: 'checkbox'
 }
-export {CheckboxField}
+export {BinarySelectorField}

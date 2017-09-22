@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import MaskedInputField from './maskedInputField.jsx'
 import {DropDownField} from './dropDownField'
-import {CheckboxField} from './checkboxField'
+import {BinarySelectorField} from './binarySelectorField'
 import {dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 import CleaveInputField from './cleaveInputField.jsx'
 
@@ -52,7 +52,7 @@ export class PhoneNumberField extends React.Component {
           onChange={(event) => this.props.onPhoneFieldChange(this.props.index,
             dictionaryNilSelect(event.target.selectedOptions[0]), 'phone_type')} />
 
-        <CheckboxField gridClassName='col-md-4' id={this.props.index + 'applicant id ' + this.props.applicant_id}
+        <BinarySelectorField gridClassName='col-md-4' id={this.props.index + 'applicant id ' + this.props.applicant_id}
           type={'checkbox'}
           checked={phoneFields.preferred}
           value={phoneFields.preferred}

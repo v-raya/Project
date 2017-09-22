@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Immutable from 'immutable'
-import {CheckboxField} from './checkboxField.js'
+import {BinarySelectorField} from './binarySelectorField.js'
 import {findArrayValueByMethod} from 'helpers/commonHelper.jsx'
 
 let agePreferenceText = 'No preference'
@@ -39,7 +39,7 @@ export default class CheckboxGroup extends React.Component {
           this.props.optionList.map((item, index) => {
             const checkboxValue = findArrayValueByMethod(agePreferences, 'find', 'id', item.id) !== undefined
             return (
-              <CheckboxField
+              <BinarySelectorField
                 type={'checkbox'}
                 id={'age-' + index}
                 gridClassName={item.value === agePreferenceText ? 'col-xs-12' : 'col-xs-4'}

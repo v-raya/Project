@@ -8,7 +8,7 @@ import CheckboxGroup from 'components/common/checkboxGroup'
 import {dictionaryNilSelect, getDictionaryId} from 'helpers/commonHelper.jsx'
 import {arrayLastToFirst} from 'helpers/cardsHelper.jsx'
 import {yesNo} from 'constants/constants'
-import {CheckboxField} from 'components/common/checkboxField'
+import {BinarySelectorField} from 'components/common/binarySelectorField'
 
 export default class ChildDesiredCard extends React.Component {
   constructor (props) {
@@ -54,7 +54,7 @@ export default class ChildDesiredCard extends React.Component {
           {
             this.props.siblingGroups.map((sibling, index) => {
               return (
-                <CheckboxField gridClassName={'col-md-4'}
+                <BinarySelectorField gridClassName={'col-md-4'}
                   key={index}
                   id={'sibling-' + index}
                   label={sibling.value}
