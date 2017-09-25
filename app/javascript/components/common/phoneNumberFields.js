@@ -51,8 +51,7 @@ export class PhoneNumberField extends React.Component {
           disableNullVal
           onChange={(event) => this.props.onPhoneFieldChange(this.props.index,
             dictionaryNilSelect(event.target.selectedOptions[0]), 'phone_type')} />
-
-        <BinarySelectorField gridClassName='col-md-4' id={this.props.index + 'applicant id ' + this.props.applicant_id}
+        <BinarySelectorField gridClassName='col-md-4' id={this.props.idPrefix + 'preferred'}
           type={'checkbox'}
           checked={phoneFields.preferred}
           value={phoneFields.preferred}

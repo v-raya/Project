@@ -25,7 +25,7 @@ export default class ApplicantCard extends React.Component {
     return (
       <div className='cards'>
 
-        <div id='nameSection' onClick={() => this.props.setFocusState('NameCard')}
+        <div id={idPrefix + 'nameSection'} onClick={() => this.props.setFocusState('NameCard')}
           className={this.props.getFocusClassName('NameCard') + ' ' + 'card name-section double-gap-top'}>
 
           <div className='card-header'>
@@ -42,7 +42,7 @@ export default class ApplicantCard extends React.Component {
             hasValidName={this.props.hasValidName} />
         </div>
 
-        <div id='aboutAppSection' onClick={() => this.props.setFocusState('AboutApplicantCard')}
+        <div id={idPrefix + 'aboutAppSection'} onClick={() => this.props.setFocusState('AboutApplicantCard')}
           className={this.props.getFocusClassName('AboutApplicantCard') + ' ' + 'card aboutApp-section double-gap-top'}>
 
           <div className='card-header'>
@@ -61,7 +61,7 @@ export default class ApplicantCard extends React.Component {
             validator={this.props.validator} />
         </div>
 
-        <div id='employmentSection' onClick={() => this.props.setFocusState('EmploymentCard')}
+        <div id={idPrefix + 'employmentSection'} onClick={() => this.props.setFocusState('EmploymentCard')}
           className={this.props.getFocusClassName('EmploymentCard') + ' ' + 'card employment-section double-gap-top'}>
 
           <div className='card-header'>
@@ -74,8 +74,8 @@ export default class ApplicantCard extends React.Component {
             setParentState={this.setApplicantState} />
         </div>
 
-        <div id='phoneSection' onClick={() => this.props.setFocusState('PhoneNumbersCard')}
-          className={this.props.getFocusClassName('PhoneNumbersCard') + ' ' + 'card phone-section double-gap-top'}>
+        <div id={idPrefix + 'phoneSection'} onClick={() => this.props.setFocusState(idPrefix + 'PhoneNumbersCard')}
+          className={this.props.getFocusClassName(idPrefix + 'PhoneNumbersCard') + ' ' + 'card phone-section double-gap-top'}>
 
           <div className='card-header'>
             <span>Phone Number</span>
