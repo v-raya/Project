@@ -1,5 +1,6 @@
 import React from 'react'
 import Immutable from 'immutable'
+import _ from 'lodash'
 import ApplicantCardsGroup from './applicantCardsGroup.jsx'
 import ResidenceCards from './residenceCardsMain'
 import FosterCareHistoryCardMain from './FosterCareHistoryCard.jsx'
@@ -24,21 +25,31 @@ export default class Rfa01EditView extends React.Component {
     this.setApplicationState = this.setApplicationState.bind(this)
     this.setFocusState = this.setFocusState.bind(this)
     this.validator = new Validator({})
-    // this.validator.getData = this.getValidationData.bind(this)
+    this.validator.validateFieldSetErrorState = this.validateFieldSetErrorState.bind(this)
+
     this.state = {
       focusComponentName: '',
       application: this.props.application,
-      disableSave: !(checkForNameValidation(this.props.application.applicants))
-
+      disableSave: !(checkForNameValidation(this.props.application.applicants)),
+      errors: {}
     }
   }
+
+  validateFieldSetErrorState (fieldName, value) {
+    const error = this.validator.validateFieldAndGetError(fieldName, value)
+
+    let currentErrors = this.state.errors
+    if (error === undefined) {
+      _.unset(currentErrors, fieldName)
+    } else {
+      _.set(currentErrors, fieldName, error)
+    }
+    this.setState({errors: currentErrors})
+  }
+
   componentDidMount () {
     // set Dictionaty Here
   }
-
-  // getValidationData () {
-  //   return Immutable.fromJS(this.state.application)
-  // }
 
   submitForm () {
     var url = urlPrefixHelper('/rfa/a01/' + this.props.application_id)
@@ -122,7 +133,9 @@ export default class Rfa01EditView extends React.Component {
               setFocusState={this.setFocusState}
               getFocusClassName={this.getFocusClassName}
               hasValidName={this.state.disableSave}
-              validator={this.validator} />
+              validator={this.validator}
+              errors={this.state.errors.applicants}
+            />
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h3>II. Applicant (S) - <span>Residence</span></h3>
@@ -147,6 +160,7 @@ export default class Rfa01EditView extends React.Component {
                 stateTypes={this.props.stateTypes}
                 relationshipTypes={this.props.relationshipTypes}
                 validator={this.validator}
+                errors={this.state.errors.relationshipBetweenApplicants}
                 applicants={this.state.application.applicants || []} />
             </div>
 
@@ -159,6 +173,7 @@ export default class Rfa01EditView extends React.Component {
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
                 validator={this.validator}
+                errors={this.state.errors.minorChildren}
                 applicants={this.state.application.applicants || []}
                 minorChildren={this.state.application.minorChildren || undefined} />
             </div>
@@ -171,6 +186,7 @@ export default class Rfa01EditView extends React.Component {
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
                 validator={this.validator}
+                errors={this.state.errors.otherAdults}
                 applicants={this.state.application.applicants || []}
                 otherAdults={this.state.application.otherAdults}
                 relationship_types={this.props.relationshipToApplicantTypes} />
@@ -213,6 +229,7 @@ export default class Rfa01EditView extends React.Component {
                   prefixTypes={this.props.prefixTypes}
                   nameTypes={this.props.nameTypes}
                   validator={this.validator}
+                  errors={this.state.errors.reference}
                 />
               </div>
             </div>

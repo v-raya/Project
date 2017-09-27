@@ -57,6 +57,7 @@ export default class PhoneComponent extends React.Component {
                   phoneTypes={this.props.phoneTypes}
                   onPhoneFieldChange={this.onPhoneFieldChange}
                   validator={this.props.validator}
+                  errors={this.props.errors[index]}
                 />
               </div>
             )
@@ -79,5 +80,6 @@ PhoneComponent.propTypes = {
 
 PhoneComponent.defaultProps = {
   idPrefix: '',
-  phones: [blankPhoneNumberFields]
+  phones: [blankPhoneNumberFields],
+  errors: []
 }

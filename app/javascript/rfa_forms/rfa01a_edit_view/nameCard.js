@@ -56,7 +56,8 @@ export default class NameCard extends React.Component {
             suffixTypes={this.props.suffixTypes}
             prefixTypes={this.props.prefixTypes}
             hideNameType
-            validator={this.props.validator} />
+            validator={this.props.validator}
+            errors={this.props.errors} />
         </div>
         {
           nameCardsList && this.props.nameFields.other_names.map((nameCardFields, index) => {
@@ -71,8 +72,7 @@ export default class NameCard extends React.Component {
                   nameTypes={removeLegalNameType(this.props.nameTypes)}
                   suffixTypes={this.props.suffixTypes}
                   prefixTypes={this.props.prefixTypes}
-                  hideNameType={false}
-                  validator={this.props.validator} />
+                  hideNameType={false} />
               </div>
             )
           })

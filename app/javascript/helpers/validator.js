@@ -129,6 +129,29 @@ export default class Validator {
     })
   }
 
+  validateFieldAndGetError (fieldName, value) {
+    let error
+    const fieldValidations = this.validations.get(fieldName)
+    if (fieldValidations) {
+      fieldValidations.map((ruleOptions) => {
+        const opts = {
+          value: value,
+          ruleName: ruleOptions.get('rule'),
+          errorMessage: ruleOptions.get('message'),
+          condition: ruleOptions.get('condition'),
+          otherValue: ruleOptions.get('otherValue')
+        }
+
+        if (this.rules[opts.ruleName](opts)) {
+          // return undefined
+        } else {
+          error = opts.errorMessage
+        }
+      })
+    }
+    return error
+  }
+
   validateField (fieldName, value) {
     const fieldValidations = this.validations.get(fieldName)
     if (fieldValidations) {

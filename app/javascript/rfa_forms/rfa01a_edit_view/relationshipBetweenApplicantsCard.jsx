@@ -48,6 +48,7 @@ export default class RelationshipBetweenApplicantsCard extends React.Component {
                 stateTypes={this.props.stateTypes}
                 setParentState={this.setState}
                 validator={this.props.validator}
+                errors={this.props.errors}
               />
             </div>
           </div>
@@ -55,4 +56,8 @@ export default class RelationshipBetweenApplicantsCard extends React.Component {
       </div>
     )
   }
+}
+
+RelationshipBetweenApplicantsCard.defaultProps = {
+  errors: {}
 }

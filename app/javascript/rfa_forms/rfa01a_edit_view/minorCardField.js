@@ -6,6 +6,7 @@ import {getDictionaryId, dictionaryNilSelect, FormateDobForDisplay, FormatDoBFor
 import {yesNo} from 'constants/constants'
 import {setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
+import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 
 const dateValidator = {rule: 'isValidDate', message: 'date is invalid'}
 
@@ -34,10 +35,10 @@ export class MinorCardField extends React.Component {
           onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, event.target.value, 'applicant_id')} />
         <DateOfBirthField gridClassName='col-md-4' label='Date of Birth' id={this.props.idPrefix + 'date_of_birth'}
           value={FormateDobForDisplay(minor.date_of_birth)}
-          errors={this.props.validator.fieldErrors(minorRuleId)}
+          errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}
           onChange={(event) => this.props.onFieldChange(this.props.index,
             FormatDoBForPersistance(event.target.value), 'date_of_birth')}
-          onBlur={(event) => this.props.validator.validateField(minorRuleId, event.target.value)} />
+          onBlur={(event) => this.props.validator.validateFieldSetErrorState(minorRuleId, event.target.value)} />
         <DropDownField gridClassName='col-md-4' id='gender'
           selectClassName='reusable-select'
           optionList={this.props.genderTypes}
@@ -67,4 +68,9 @@ MinorCardField.propTypes = {
   genderTypes: PropTypes.array,
   handleRelationshipTypeToApplicant: PropTypes.func,
   onFieldChange: PropTypes.func
+}
+
+MinorCardField.defaultProps = {
+  idPrefix: '',
+  errors: {}
 }

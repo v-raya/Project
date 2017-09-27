@@ -39,6 +39,7 @@ export default class ApplicantCard extends React.Component {
             nameFields={this.props.applicantFields}
             setParentState={this.setApplicantState}
             validator={this.props.validator}
+            errors={this.props.errors}
             hasValidName={this.props.hasValidName} />
         </div>
 
@@ -58,7 +59,8 @@ export default class ApplicantCard extends React.Component {
             languageTypes={this.props.languageTypes}
             applicantFields={this.props.applicantFields}
             setParentState={this.setApplicantState}
-            validator={this.props.validator} />
+            validator={this.props.validator}
+            errors={this.props.errors} />
         </div>
 
         <div id={idPrefix + 'employmentSection'} onClick={() => this.props.setFocusState('EmploymentCard')}
@@ -86,7 +88,9 @@ export default class ApplicantCard extends React.Component {
             applicant_id={this.props.index}
             phones={this.props.applicantFields.phones}
             setParentState={this.setApplicantState}
-            validator={this.props.validator} />
+            validator={this.props.validator}
+            errors={this.props.errors.phones} />
+
         </div>
       </div>
     )
@@ -107,4 +111,8 @@ ApplicantCard.propTypes = {
   applicantFields: PropTypes.object.isRequired,
   setParentState: PropTypes.func.isRequired
 //  setFocusState: PropTypes.func.isRequired
+}
+
+ApplicantCard.defaultProps = {
+  errors: {}
 }

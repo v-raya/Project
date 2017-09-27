@@ -93,7 +93,8 @@ export default class OtherAdultsCardsGroup extends React.Component {
                       handleRelationshipTypeToApplicant={this.handleRelationshipTypeToApplicant}
                       clickClose={this.clickClose}
                       onFieldChange={this.onFieldChange}
-                      validator={this.props.validator} />
+                      validator={this.props.validator}
+                      errors={this.props.errors[index]} />
                   </div>
 
                 )
@@ -111,5 +112,6 @@ export default class OtherAdultsCardsGroup extends React.Component {
 }
 
 OtherAdultsCardsGroup.defaultProps = {
-  applicants: []
+  applicants: [],
+  errors: []
 }

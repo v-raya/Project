@@ -5,6 +5,7 @@ import {DropDownField} from './dropDownField'
 import {BinarySelectorField} from './binarySelectorField'
 import {dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 import CleaveInputField from './cleaveInputField.jsx'
+import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 
 const phoneNumberRule = {rule: 'is10digits', message: 'Invalid Phone Number'}
 
@@ -12,6 +13,7 @@ export class PhoneNumberField extends React.Component {
   constructor (props) {
     super(props)
 
+    this.phoneNumberId = this.props.idPrefix + 'number'
     this.props.validator.addFieldValidation(this.props.idPrefix + 'number', phoneNumberRule)
   }
 
@@ -19,30 +21,28 @@ export class PhoneNumberField extends React.Component {
     const phoneFields = this.props.phoneFields
     const phoneTypes = this.props.phoneTypes
 
-    const phoneNumberId = this.props.idPrefix + 'number'
-
     return (
       <div>
 
         <CleaveInputField
           gridClassName='col-md-4'
-          id={phoneNumberId}
+          id={this.phoneNumberId}
           value={phoneFields.number}
           label='Phone Number'
           placeholder=''
           blurPlaceholder=''
           focusPlaceholder='(___)___-____'
           options={{
-            delimiters: ['(', ') ', '-'],
-            blocks: [0, 3, 3, 4],
+            delimiters: ['(', ')', ' ', '-'],
+            blocks: [0, 3, 0, 3, 4],
             numericOnly: true}}
           type='text'
-          errors={this.props.validator.fieldErrors(phoneNumberId)}
+          errors={fieldErrorsAsImmutableSet(this.props.errors.number)}
           onChange={(event) => this.props.onPhoneFieldChange(
             this.props.index,
             event.target.rawValue,
             'number')}
-          onBlur={(event) => this.props.validator.validateField(phoneNumberId, event.target.rawValue)}
+          onBlur={(event) => this.props.validator.validateFieldSetErrorState(this.phoneNumberId, event.target.rawValue)}
         />
         <DropDownField gridClassName='col-md-4' id='phone_type'
           selectClassName='reusable-select'
@@ -73,9 +73,11 @@ PhoneNumberField.propTypes = {
   }).isRequired,
   phoneTypes: PropTypes.array.isRequired,
   onPhoneFieldChange: PropTypes.func.isRequired,
-  validator: PropTypes.object
+  validator: PropTypes.object,
+  errors: PropTypes.shape()
 }
 
 PhoneNumberField.defaultProps = {
-  idPrefix: ''
+  idPrefix: '',
+  errors: {}
 }

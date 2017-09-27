@@ -77,6 +77,7 @@ export default class ApplicantCardsGroup extends React.Component {
                     getFocusClassName={this.props.getFocusClassName}
                     validator={this.props.validator}
                     hasValidName={this.props.hasValidName}
+                    errors={this.props.errors[index]}
                   />
                 </div>
               )
@@ -105,9 +106,11 @@ ApplicantCardsGroup.propTypes = {
   applicantFields: PropTypes.object,
   setParentState: PropTypes.func.isRequired,
   setFocusState: PropTypes.func,
-  validator: PropTypes.object
+  validator: PropTypes.object,
+  errors: PropTypes.array
 }
 
 ApplicantCardsGroup.defaultProps = {
-  phones: [blankApplicantFields]
+  phones: [blankApplicantFields],
+  errors: []
 }

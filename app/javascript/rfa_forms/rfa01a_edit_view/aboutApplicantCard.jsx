@@ -6,6 +6,7 @@ import {DropDownField} from 'components/common/dropDownField'
 import {DateOfBirthField} from 'components/common/DateFields.jsx'
 import {valuePresent, getDictionaryId, dictionaryNilSelect, FormateDobForDisplay, FormatDoBForPersistance} from 'helpers/commonHelper.jsx'
 import Validator from 'helpers/validator'
+import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 import Cleave from 'cleave.js/react'
 
 export default class AboutApplicant extends React.Component {
@@ -44,10 +45,10 @@ export default class AboutApplicant extends React.Component {
 
   validateDLcombo (currentField, currentFieldValue, otherField, otherFieldPropName) {
     // validate current field
-    this.props.validator.validateField(currentField, currentFieldValue)
+    this.props.validator.validateFieldSetErrorState(currentField, currentFieldValue)
 
     // validate other field
-    this.props.validator.validateField(otherField, this.props.applicantFields[otherFieldPropName])
+    this.props.validator.validateFieldSetErrorState(otherField, this.props.applicantFields[otherFieldPropName])
   }
 
   render () {
@@ -66,10 +67,10 @@ export default class AboutApplicant extends React.Component {
               <DateOfBirthField
                 gridClassName='col-md-4' label='Date of Birth' id={this.dateOfBirthId}
                 value={FormateDobForDisplay(this.props.applicantFields.date_of_birth)}
-                errors={this.props.validator.fieldErrors(this.dateOfBirthId)}
+                errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}
                 onChange={(event) =>
                   this.props.setParentState('date_of_birth', FormatDoBForPersistance(event.target.value))}
-                onBlur={(event) => this.props.validator.validateField(this.dateOfBirthId, event.target.value)} />
+                onBlur={(event) => this.props.validator.validateFieldSetErrorState(this.dateOfBirthId, event.target.value)} />
 
               <DropDownField gridClassName='col-md-4' id='gender'
                 selectClassName='reusable-select'
@@ -90,7 +91,7 @@ export default class AboutApplicant extends React.Component {
                 value={this.props.applicantFields.driver_license_number}
                 label='Driver License number' placeholder=''
                 type='text' onChange={(event) => this.props.setParentState('driver_license_number', event.target.value)}
-                errors={this.props.validator.fieldErrors(this.driversLicenseNumberId)}
+                errors={fieldErrorsAsImmutableSet(this.props.errors.driver_license_number)}
                 onBlur={(event) => this.validateDLcombo(this.driversLicenseNumberId, event.target.value, this.driversLicenseStateId, 'driver_license_state')} />
 
               <DropDownFormField gridClassName='col-md-4' id={this.driversLicenseStateId}
@@ -99,7 +100,7 @@ export default class AboutApplicant extends React.Component {
                 optionList={this.props.stateTypes}
                 label='Driver License State'
                 onChange={(event) => this.props.setParentState('driver_license_state', dictionaryNilSelect(event.target.selectedOptions[0]))}
-                errors={this.props.validator.fieldErrors(this.driversLicenseStateId)}
+                errors={fieldErrorsAsImmutableSet(this.props.errors.driver_license_state)}
                 onBlur={(event) => this.validateDLcombo(this.driversLicenseStateId, event.target.value, this.driversLicenseNumberId, 'driver_license_number')} />
 
             </div>
@@ -127,5 +128,6 @@ AboutApplicant.propTypes = {
 }
 
 AboutApplicant.defaultProps = {
-  idPrefix: ''
+  idPrefix: '',
+  errors: {}
 }

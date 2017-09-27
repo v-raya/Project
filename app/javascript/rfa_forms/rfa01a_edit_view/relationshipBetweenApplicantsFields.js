@@ -8,6 +8,7 @@ import {DropDownField} from 'components/common/dropDownField'
 import {getDictionaryId, dictionaryNilSelect, FormateDobForDisplay, FormatDoBForPersistance} from 'helpers/commonHelper.jsx'
 import {DateOfBirthField} from 'components/common/DateFields.jsx'
 import Validator from 'helpers/validator'
+import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 
 moment.locale('en')
 momentLocalizer()
@@ -61,10 +62,10 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
             label='Date'
             id={'date_of_relationship'}
             value={FormateDobForDisplay(relationship.date_of_relationship || '')}
-            errors={this.props.validator.fieldErrors(relationshipId)}
+            errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_relationship)}
             onChange={(event) => this.props.setParentState('date_of_relationship',
               FormatDoBForPersistance(event.target.value || ''))}
-            onBlur={(event) => this.props.validator.validateField(relationshipId, event.target.value)} />
+            onBlur={(event) => this.props.validator.validateFieldSetErrorState(relationshipId, event.target.value)} />
 
           <InputComponent gridClassName='col-md-4' id='place_of_relationship_city'
             value={relationship.place_of_relationship_city}
@@ -90,5 +91,6 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
 }
 
 RelationshipBetweenApplicantsFields.defaultProps = {
-  idPrefix: ''
+  idPrefix: '',
+  errors: {}
 }

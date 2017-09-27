@@ -58,6 +58,7 @@ export default class ReferenceMain extends React.Component {
                       nameTypes={this.props.nameTypes}
                       setParentState={this.setReferencesState}
                       validator={this.props.validator}
+                      errors={this.props.errors[index]}
                       hideNameType
                     />
                   </div>
@@ -77,9 +78,11 @@ ReferenceMain.propTypes = {
   prefixTypes: PropTypes.array.isRequired,
   nameTypes: PropTypes.array.isRequired,
   stateTypes: PropTypes.array.isRequired,
-  setParentState: PropTypes.func.isRequired
+  setParentState: PropTypes.func.isRequired,
+  errors: PropTypes.array
 }
 
 ReferenceMain.defaultProps = {
-  references: [blankReferenceFields, blankReferenceFields, blankReferenceFields]
+  references: [blankReferenceFields, blankReferenceFields, blankReferenceFields],
+  errors: []
 }

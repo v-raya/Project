@@ -5,6 +5,7 @@ import {DateOfBirthField} from './DateFields.jsx'
 import {dictionaryNilSelect, FormateDobForDisplay, FormatDoBForPersistance} from 'helpers/commonHelper.jsx'
 import {setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
+import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 
 const dateValidator = {rule: 'isValidDate', message: 'date is invalid'}
 
@@ -36,10 +37,10 @@ export class OtherAdultsCardField extends React.Component {
           onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, event.target.value, 'applicant_id')} />
         <DateOfBirthField gridClassName='col-md-4' label='Date of Birth' id={this.props.idPrefix + 'date_of_birth'}
           value={FormateDobForDisplay(adult.date_of_birth)}
-          errors={this.props.validator.fieldErrors(otherAdultsRuleId)}
+          errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}
           onChange={(event) => this.props.onFieldChange(this.props.index,
             FormatDoBForPersistance(event.target.value), 'date_of_birth')}
-          onBlur={(event) => this.props.validator.validateField(otherAdultsRuleId, event.target.value)} />
+          onBlur={(event) => this.props.validator.validateFieldSetErrorState(otherAdultsRuleId, event.target.value)} />
         <InputComponent gridClassName='col-md-4' id='firstName' value={adult.first_name}
           label='First Name' placeholder='Enter First Name'
           type='text' onChange={(event) => this.props.onFieldChange(this.props.index, event.target.value, ('first_name'))} />
@@ -52,4 +53,9 @@ export class OtherAdultsCardField extends React.Component {
       </form>
     )
   }
+}
+
+OtherAdultsCardField.defaultProps = {
+  idPrefix: '',
+  errors: {}
 }

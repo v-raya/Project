@@ -5,6 +5,7 @@ import CompleteNameFields from './completeNameField'
 import CommonAddressFields from 'components/rfa_forms/commonAddressField'
 import PropTypes from 'prop-types'
 import CleaveInputField from 'components/common/cleaveInputField.jsx'
+import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 
 const phoneNumberRule = {rule: 'is10digits', message: 'Invalid Phone Number'}
 
@@ -49,9 +50,9 @@ export default class ReferencesCard extends React.Component {
             blocks: [0, 3, 3, 4],
             numericOnly: true}}
           type='text'
-          errors={this.props.validator.fieldErrors(phoneNumberId)}
+          errors={fieldErrorsAsImmutableSet(this.props.errors.phone_number)}
           onChange={(event) => this.props.setParentState('phone_number', event.target.rawValue, this.props.index)}
-          onBlur={(event) => this.props.validator.validateField(phoneNumberId, event.target.rawValue)} />
+          onBlur={(event) => this.props.validator.validateFieldSetErrorState(phoneNumberId, event.target.rawValue)} />
         <InputComponent gridClassName='col-md-4' id='email'
           value={this.props.reference.email}
           label='Email (optional)' placeholder=''
@@ -69,4 +70,9 @@ ReferencesCard.propTypes = {
   nameTypes: PropTypes.array.isRequired,
   stateTypes: PropTypes.array.isRequired,
   setParentState: PropTypes.func.isRequired
+}
+
+ReferencesCard.defaultProps = {
+  idPrefix: '',
+  errors: {}
 }

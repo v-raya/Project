@@ -76,7 +76,8 @@ export default class MinorCardsGroup extends React.Component {
                       handleRelationshipTypeToApplicant={this.handleRelationshipTypeToApplicant}
                       applicants={this.props.applicants}
                       onFieldChange={this.onFieldChange}
-                      validator={this.props.validator} />
+                      validator={this.props.validator}
+                      errors={this.props.errors[index]} />
                   </div>
 
                 )
@@ -101,5 +102,6 @@ MinorCardsGroup.propTypes = {
 
 MinorCardsGroup.defaultProps = {
   minorChildren: [minorDefaults],
-  applicants: []
+  applicants: [],
+  errors: []
 }
