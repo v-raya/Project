@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import {shallow, mount} from 'enzyme'
 import {salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes} from './../../helpers/constants'
 import AboutApplicant from 'rfa_forms/rfa01a_edit_view/aboutApplicantCard.jsx'
-import {DateOfBirthField} from 'components/common/DateFields.jsx'
 import Validator from 'helpers/validator.js'
 
 var TestUtils = require('react-dom/test-utils')
@@ -56,7 +55,7 @@ describe('Verify More About Applican', () => {
     let dobField = aboutApplicantComp.find('#applicant0date_of_birth')
   //  aboutApplicantComp.update()
     // dobField.simulate('change', {target: {value: '2011-12-10'}})
-  //  expect(aboutApplicantComp.find(DateOfBirthField)).to.equal(true)
+  //  expect(aboutApplicantComp.find(DateField)).to.equal(true)
     //    expect(setCardState).toHaveBeenCalledWith('date_of_relationship', '2011-12-10')
   })
   it('Gender DropDown Change', () => {

@@ -15,7 +15,7 @@ momentLocalizer()
 let formatter = 'mm/dd/yyyy'
 let placeholder = 'mm/dd/yyyy'
 
-const DateOfBirthField = ({
+const DateField = ({
   value,
   errors,
   onBlur,
@@ -97,7 +97,7 @@ const DatePickerField = ({
     </FormField>
   )
 }
-DateOfBirthField.propTypes = {
+DateField.propTypes = {
   onChange: PropTypes.func.isRequired
 }
 
@@ -113,4 +113,4 @@ DatePickerField.propTypes = {
   onChange: PropTypes.func.isRequired
 }
 
-export {DateOfBirthField, DatePickerField}
+export {DateField, DatePickerField}

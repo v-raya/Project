@@ -14,7 +14,7 @@ const FormField = ({children, errors, gridClassName, labelClassName, id, label, 
         {label}
       </label>
       {children}
-      <ErrorMessages id={id} errors={errors}/>
+      <ErrorMessages id={id} errors={errors} />
     </div>
   )
 }

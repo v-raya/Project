@@ -19,7 +19,7 @@ export const removeLegalNameType = (nameTypes) => {
   return nameTypes
 }
 
-export const FormatDoBForPersistance = (dateString) => {
+export const FormatDateForPersistance = (dateString) => {
   dateString = dateString.replace(/_/gi, '')
   let persistantDateString
   if (dateString && dateString.length === 10) {
@@ -32,7 +32,7 @@ export const FormatDoBForPersistance = (dateString) => {
   return persistantDateString || dateString.replace(/\//gi, '-')
 }
 
-export const FormateDobForDisplay = (dateString) => {
+export const FormatDateForDisplay = (dateString) => {
   let persistantDateString
   if (dateString && dateString.length === 10) {
     const dateStringArray = dateString ? dateString.split('-', 3) : []

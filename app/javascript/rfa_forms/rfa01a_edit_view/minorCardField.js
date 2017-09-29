@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {DropDownField} from 'components/common/dropDownField'
-import {DateOfBirthField} from '../../components/common/DateFields.jsx'
-import {getDictionaryId, dictionaryNilSelect, FormateDobForDisplay, FormatDoBForPersistance} from 'helpers/commonHelper.jsx'
+import {DateField} from '../../components/common/dateFields'
+import {getDictionaryId, dictionaryNilSelect, FormatDateForDisplay, FormatDateForPersistance} from 'helpers/commonHelper.jsx'
 import {yesNo} from 'constants/constants'
 import {setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
@@ -33,11 +33,11 @@ export class MinorCardField extends React.Component {
           label='To whom'
           value={handleToWhomValue(minor.relationship_to_applicants[0].applicant_id, this.props.applicants).id}
           onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, event.target.value, 'applicant_id')} />
-        <DateOfBirthField gridClassName='col-md-4' label='Date of Birth' id={this.props.idPrefix + 'date_of_birth'}
-          value={FormateDobForDisplay(minor.date_of_birth)}
+        <DateField gridClassName='col-md-4' label='Date of Birth' id={this.props.idPrefix + 'date_of_birth'}
+          value={FormatDateForDisplay(minor.date_of_birth)}
           errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}
           onChange={(event) => this.props.onFieldChange(this.props.index,
-            FormatDoBForPersistance(event.target.value), 'date_of_birth')}
+            FormatDateForPersistance(event.target.value), 'date_of_birth')}
           onBlur={(event) => this.props.validator.validateFieldSetErrorState(minorRuleId, event.target.value)} />
         <DropDownField gridClassName='col-md-4' id='gender'
           selectClassName='reusable-select'

@@ -3,7 +3,9 @@ class Rfa::Application < CalsBase
   attr_accessor :id, :application_type, :county, :progress_state
 
   attr_accessor :applicants, :residence, :minorChildren, :otherAdults, :fosterCareHistory,
-                :relationshipBetweenApplicants, :childDesired, :references
+                :relationshipBetweenApplicants, :references, :applicantsHistory, :childDesired,
+                :references
+
 
   def initialize(id=nil)
     @id = id

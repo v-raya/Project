@@ -16,6 +16,7 @@ class Rfa::A01Controller < CalsBaseController
     @application = rfa_application_helper.find_by_id(params[:id])
     @application.applicants = rfa_applicant_helper.find_items_by_application_id(params[:id])
     @application.residence = rfa_residence_helper.find_by_application_id(params[:id])
+    @application.applicantsHistory = rfa_applicant_history_helper.find_by_application_id(params[:id])
     @application.minorChildren = rfa_minor_children_helper.find_items_by_application_id(params[:id])
     @application.otherAdults = rfa_other_adults_helper.find_items_by_application_id(params[:id])
     @application.fosterCareHistory = rfa_adoption_history_helper.find_by_application_id(params[:id])
@@ -28,14 +29,14 @@ class Rfa::A01Controller < CalsBaseController
     @application_response = {}
     @application_response[:applicants] = process_items_for_persistance(applicant_params, rfa_applicant_helper, params[:id]) if params[:applicants].present?
     @application_response[:residence] = process_items_for_persistance(residence_params, rfa_residence_helper, params[:id]) if params[:residence].present?
+    @application_response[:applicantsHistory] = process_items_for_persistance(applicants_history_params, rfa_applicant_history_helper, params[:id]) if params[:applicantsHistory].present?
     @application_response[:minorChildren] = process_items_for_persistance(minor_children_params, rfa_minor_children_helper, params[:id]) if params[:minorChildren].present?
     @application_response[:otherAdults] = process_items_for_persistance(other_adults_params, rfa_other_adults_helper, params[:id]) if params[:otherAdults].present?
     @application_response[:fosterCareHistory] = process_items_for_persistance(adoption_history_params, rfa_adoption_history_helper, params[:id]) if params[:fosterCareHistory].present?
     @application_response[:relationshipBetweenApplicants] = process_items_for_persistance(relationship_between_applicants_params, rfa_relation_between_applicants_helper, params[:id]) if params[:relationshipBetweenApplicants].present?
+    @application_response[:references] = process_items_for_persistance(references_params, rfa_references_helper, params[:id]) if params[:references].present?
     @application_response[:childDesired] = process_items_for_persistance(child_desired_params, rfa_child_desired_helper, params[:id]) if params[:childDesired].present?
 
-    @application_response[:references] = process_items_for_persistance(references_params, rfa_references_helper,
-                                                                       params[:id]) if params[:references].present?
   end
 
   private
@@ -45,14 +46,14 @@ class Rfa::A01Controller < CalsBaseController
       applicant.permit!
       ActionController::Parameters.new(applicant.to_h).permit(:id, :email,
                                                               :date_of_birth, :first_name, :middle_name, :last_name, :driver_license_number,
-                                                              {name_suffix: %i[id value]},{ name_prefix: %i[id value]},
+                                                              { name_suffix: %i[id value] }, { name_prefix: %i[id value] },
                                                               { employment: [:employer_name, :occupation, :income, income_type: %i[id value],
-                                                                             physical_address: [:street_address, :city, :zip, state: %i[id value]]] },
+                                                                                                                   physical_address: [:street_address, :city, :zip, state: %i[id value]]] },
                                                               { highest_education_level: %i[id value] }, { gender: %i[id value] },
                                                               { ethnicity: %i[id value] }, { driver_license_state: %i[id value] },
                                                               phones: [:number, :preferred, phone_type: %i[id value]],
                                                               other_names: [:first_name, :middle_name, :last_name, name_type: %i[id value],
-                                                                            name_suffix: %i[id value], name_prefix: %i[id value]])
+                                                                                                                   name_suffix: %i[id value], name_prefix: %i[id value]])
     end
   end
 
@@ -60,9 +61,24 @@ class Rfa::A01Controller < CalsBaseController
     params.require(:residence).permit(:id, :physical_mailing_similar, :weapon_in_home,
                                       :body_of_water_exist, :body_of_water_description, :others_using_residence_as_mailing,
                                       :directions_to_home, residence_ownership: %i[id value], home_languages: %i[id value],
-                                      other_people_using_residence_as_mailing: %i[first_name middle_name last_name],
-                                      physical_address: [:street_address, :zip, :city, state: %i[id value]],
-                                      addresses: [:street_address, :zip, :city, state: %i[id value], type: %i[id value]])
+                                                           other_people_using_residence_as_mailing: %i[first_name middle_name last_name],
+                                                           physical_address: [:street_address, :zip, :city, state: %i[id value]],
+                                                           addresses: [:street_address, :zip, :city, state: %i[id value], type: %i[id value]])
+  end
+
+  def applicants_history_params
+    params.require(:applicantsHistory).permit(former_spouses: [:first_name, :middle_name, :last_name,
+                                                               :applicant_id, :date_of_marriage, :place_of_marriage_city,
+                                                               :date_of_marriage_end, :place_of_marriage_end_city,
+                                                               relationship_type:  %i[id value],
+                                                               name_prefix:  %i[id value], name_suffix:  %i[id value],
+                                                               place_of_marriage_state:  %i[id value],
+                                                               marriage_termination_reason:  %i[id value],
+                                                               place_of_marriage_end_state:  %i[id value]],
+                                              adult_children: [:first_name, :middle_name, :last_name, :lives_in_home,
+                                                               name_prefix: %i[id value], name_suffix: %i[id value],
+                                                               address: [:street_address, :zip, :city, state: %i[id value], type: %i[id value]],
+                                                               relationship_to_applicants: [:applicant_id, relationship_to_applicant: %i[id value]]])
   end
 
   def minor_children_params
@@ -71,7 +87,7 @@ class Rfa::A01Controller < CalsBaseController
       minor = set_relationship_to_applicants(minor, @application_response[:applicants])
       ActionController::Parameters.new(minor.to_h).permit(
         :id, :child_financially_supported, :date_of_birth, :child_adopted, gender: %i[id value],
-        relationship_to_applicants: [:applicant_id, relationship_to_applicant: %i[id value]]
+                                                                           relationship_to_applicants: [:applicant_id, relationship_to_applicant: %i[id value]]
       )
     end
   end
@@ -90,7 +106,7 @@ class Rfa::A01Controller < CalsBaseController
   def relationship_between_applicants_params
     params.require(:relationshipBetweenApplicants).permit(:other_relationship, :place_of_relationship_city,
                                                           :date_of_relationship, relationship_type: %i[id value],
-                                                          place_of_relationship_state: %i[id value])
+                                                                                 place_of_relationship_state: %i[id value])
   end
 
 
@@ -110,9 +126,9 @@ class Rfa::A01Controller < CalsBaseController
   end
 
   def references_params
-    permitted_params = params.permit(references: [:first_name, :middle_name, :last_name, :phone_number,:email,
-                                                :phone_number, :email,
-                               mailing_address: [:street_address, :zip, :city, state: %i[id value]],name_prefix: %i[id value], name_suffix: %i[id value]])
+    permitted_params = params.permit(references: [:first_name, :middle_name, :last_name, :phone_number, :email,
+                                                  mailing_address: [:street_address, :zip, :city, state: %i[id value]],
+                                                   name_prefix: %i[id value], name_suffix: %i[id value]])
 
     permitted_params[:items] = permitted_params.delete(:references)
     permitted_params
@@ -148,6 +164,10 @@ class Rfa::A01Controller < CalsBaseController
 
   def rfa_applicant_helper
     Helpers::Rfa::ApplicantHelper.new(auth_header: get_session_token)
+  end
+
+  def rfa_applicant_history_helper
+    Helpers::Rfa::ApplicantHistoryHelper.new(auth_header: get_session_token)
   end
 
   def rfa_residence_helper

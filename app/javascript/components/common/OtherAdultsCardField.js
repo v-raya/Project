@@ -1,8 +1,8 @@
 import React from 'react'
 import {InputComponent} from './inputFields'
 import {DropDownField} from './dropDownField'
-import {DateOfBirthField} from './DateFields.jsx'
-import {dictionaryNilSelect, FormateDobForDisplay, FormatDoBForPersistance} from 'helpers/commonHelper.jsx'
+import {DateField} from './dateFields'
+import {dictionaryNilSelect, FormatDateForDisplay, FormatDateForPersistance} from 'helpers/commonHelper.jsx'
 import {setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
@@ -35,11 +35,11 @@ export class OtherAdultsCardField extends React.Component {
           value={handleToWhomValue(adult.relationship_to_applicants[0].applicant_id, this.props.applicants).id}
           label='To Whom'
           onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, event.target.value, 'applicant_id')} />
-        <DateOfBirthField gridClassName='col-md-4' label='Date of Birth' id={this.props.idPrefix + 'date_of_birth'}
-          value={FormateDobForDisplay(adult.date_of_birth)}
+        <DateField gridClassName='col-md-4' label='Date of Birth' id={this.props.idPrefix + 'date_of_birth'}
+          value={FormatDateForDisplay(adult.date_of_birth)}
           errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}
           onChange={(event) => this.props.onFieldChange(this.props.index,
-            FormatDoBForPersistance(event.target.value), 'date_of_birth')}
+            FormatDateForPersistance(event.target.value), 'date_of_birth')}
           onBlur={(event) => this.props.validator.validateFieldSetErrorState(otherAdultsRuleId, event.target.value)} />
         <InputComponent gridClassName='col-md-4' id='firstName' value={adult.first_name}
           label='First Name' placeholder='Enter First Name'

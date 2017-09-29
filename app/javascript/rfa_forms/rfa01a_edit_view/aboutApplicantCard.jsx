@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import InputField from 'components/common/inputField.jsx'
 import {DropDownFormField} from 'components/common/dropDownFormField.jsx'
 import {DropDownField} from 'components/common/dropDownField'
-import {DateOfBirthField} from 'components/common/DateFields.jsx'
-import {valuePresent, getDictionaryId, dictionaryNilSelect, FormateDobForDisplay, FormatDoBForPersistance} from 'helpers/commonHelper.jsx'
+import {DateField} from 'components/common/dateFields'
+import {valuePresent, getDictionaryId, dictionaryNilSelect, FormatDateForDisplay, FormatDateForPersistance} from 'helpers/commonHelper.jsx'
 import Validator from 'helpers/validator'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 import Cleave from 'cleave.js/react'
@@ -64,12 +64,11 @@ export default class AboutApplicant extends React.Component {
                 label='Highest Level of Education'
                 onChange={(event) => this.props.setParentState('highest_education_level', dictionaryNilSelect(event.target.selectedOptions[0]))} />
 
-              <DateOfBirthField
+              <DateField
                 gridClassName='col-md-4' label='Date of Birth' id={this.dateOfBirthId}
-                value={FormateDobForDisplay(this.props.applicantFields.date_of_birth)}
+                value={FormatDateForDisplay(this.props.applicantFields.date_of_birth)}
                 errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}
-                onChange={(event) =>
-                  this.props.setParentState('date_of_birth', FormatDoBForPersistance(event.target.value))}
+                onChange={(event) => this.props.setParentState('date_of_birth', FormatDateForPersistance(event.target.value))}
                 onBlur={(event) => this.props.validator.validateFieldSetErrorState(this.dateOfBirthId, event.target.value)} />
 
               <DropDownField gridClassName='col-md-4' id='gender'

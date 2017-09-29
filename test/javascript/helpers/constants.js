@@ -388,66 +388,59 @@ const prefixTypes = Object.freeze({
 const ageGroups = Object.freeze({
   'items': [
     {
-      "id": 1,
-      "value": "0-3 years"
+      'id': 1,
+      'value': '0-3 years'
     },
     {
-      "id": 2,
-      "value": "4-8 years"
+      'id': 2,
+      'value': '4-8 years'
     },
     {
-      "id": 3,
-      "value": "9-12 years"
+      'id': 3,
+      'value': '9-12 years'
     },
     {
-      "id": 4,
-      "value": "13-15 years"
+      'id': 4,
+      'value': '13-15 years'
     },
     {
-      "id": 5,
-      "value": "16-18 years"
+      'id': 5,
+      'value': '16-18 years'
     },
     {
-      "id": 6,
-      "value": "18-21 years"
+      'id': 6,
+      'value': '18-21 years'
     },
     {
-      "id": 7,
-      "value": "No preference"
+      'id': 7,
+      'value': 'No preference'
     }
   ]
 })
 const siblingGroups = Object.freeze({
   'items': [
     {
-      "id": 1,
-      "value": "0"
+      'id': 1,
+      'value': '0'
     },
     {
-      "id": 2,
-      "value": "2"
+      'id': 2,
+      'value': '2'
     },
     {
-      "id": 3,
-      "value": "3"
+      'id': 3,
+      'value': '3'
     },
     {
-      "id": 4,
-      "value": "4"
+      'id': 4,
+      'value': '4'
     },
     {
-      "id": 5,
-      "value": "5+"
+      'id': 5,
+      'value': '5+'
     }
   ]
 })
-
-export { nameTypes, suffixTypes, prefixTypes,
-  salaryTypes, relationshipTypes, applicantrelationTypes,
-  educationLevels, ethnicityTypes, genderTypes, stateTypes,
-  languageTypes, residenceTypes,
-  siblingGroups, ageGroups
-}
 
 export const licenseTypes = Object.freeze({
   'items': [
@@ -482,3 +475,45 @@ export const phoneTypes = Object.freeze(
     }
   ]
 )
+
+const marriageTerminationReasons = Object.freeze({
+  'items': [
+    {
+      'id': 1,
+      'value': 'Marriage Dissolution (Divorce)'
+    },
+    {
+      'id': 2,
+      'value': 'Spouse Died'
+    }
+  ]
+})
+
+const relationshipToApplicantTypes = Object.freeze({
+  'items': [
+    {
+      'id': 1,
+      'value': 'Child'
+    },
+    {
+      'id': 2,
+      'value': 'Sibling'
+    },
+    {
+      'id': 3,
+      'value': 'Cousin'
+    },
+    {
+      'id': 4,
+      'value': 'Niece'
+    },
+    {
+      'id': 5,
+      'value': 'Nephew'
+    }
+  ]
+})
+
+export {siblingGroups, ageGroups, marriageTerminationReasons, relationshipToApplicantTypes,
+   nameTypes, suffixTypes, prefixTypes, salaryTypes, relationshipTypes, applicantrelationTypes,
+    educationLevels, ethnicityTypes, genderTypes, stateTypes, languageTypes, residenceTypes }

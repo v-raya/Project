@@ -15,22 +15,22 @@ const CompleteNameFields = ({
   validator}) => {
   return (
     <div>
-      <div className="col-md-12 remove-padding">
-        <DropDownField gridClassName="col-md-4" id='name_prefix'
+      <div className='col-md-12 remove-padding'>
+        <DropDownField gridClassName='col-md-4' id='name_prefix'
           value={getDictionaryId(fieldValues.name_prefix)}
           selectClassName={'reusable-select'}
           optionList={prefixTypes}
           label={'Prefix'}
           onChange={(event, id) => onChange('name_prefix', dictionaryNilSelect(event.target.selectedOptions[0]), index)} />
       </div>
-      <div className="col-md-12 remove-padding">
+      <div className='col-md-12 remove-padding'>
         <NameCommonFields
           index={index}
           fieldValues={fieldValues}
           onChange={onChange}
           validator={validator} />
       </div>
-      <div className="col-md-4 remove-padding">
+      <div className='col-md-4 remove-padding'>
         <DropDownField gridClassName='col-md-12' id='name_suffix'
           value={getDictionaryId(fieldValues.name_suffix)}
           selectClassName={'reusable-select'}
@@ -38,7 +38,7 @@ const CompleteNameFields = ({
           label={'Suffix'}
           onChange={(event, id) => onChange('name_suffix', dictionaryNilSelect(event.target.selectedOptions[0]), index)} />
       </div>
-      {nameTypes && <div className="col-md-4 remove-padding">
+      {nameTypes && <div className='col-md-4 remove-padding'>
         <DropDownField gridClassName='col-md-12' id='name_type'
           value={getDictionaryId(fieldValues.name_type)}
           selectClassName={'reusable-select'}

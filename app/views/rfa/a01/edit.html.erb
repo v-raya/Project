@@ -1,5 +1,4 @@
 <div id="edit_page">
-  <%#byebug%>
   <%= react_component('rfa_forms/rfa01a_edit', {
     application_id: params[:id],
     suffixTypes: @dictionaries[:name_suffix_types],
@@ -19,7 +18,8 @@
     salaryTypes: @dictionaries[:salary_types],
     residenceTypes: @dictionaries[:residence_types],
     application: @application,
-    relationshipTypes: @dictionaries[:relationship_types]},
+    relationshipTypes: @dictionaries[:relationship_types],
+    marriageTerminationReasons:@dictionaries[:marriage_termination_reasons]},
     {prerender: false}) %>
 
     <%= javascript_pack_tag 'rfa_forms/rfa01a_edit' %>

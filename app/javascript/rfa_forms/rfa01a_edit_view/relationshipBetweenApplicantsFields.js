@@ -5,8 +5,8 @@ import momentLocalizer from 'react-widgets-moment'
 import {InputComponent} from 'components/common/inputFields'
 import {TextAreaComponent} from 'components/common/textArea'
 import {DropDownField} from 'components/common/dropDownField'
-import {getDictionaryId, dictionaryNilSelect, FormateDobForDisplay, FormatDoBForPersistance} from 'helpers/commonHelper.jsx'
-import {DateOfBirthField} from 'components/common/DateFields.jsx'
+import {getDictionaryId, dictionaryNilSelect, FormatDateForDisplay, FormatDateForPersistance} from 'helpers/commonHelper.jsx'
+import {DateField} from '../../components/common/dateFields'
 import Validator from 'helpers/validator'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 
@@ -57,16 +57,15 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
         <div className={'relationship-status ' + hideRelationshipDetails}>Status of relationship</div>
         <div className={'relationship-status-details ' + hideRelationshipDetails} >
 
-          <DateOfBirthField
+          <DateField
             gridClassName='col-md-4'
             label='Date'
             id={'date_of_relationship'}
-            value={FormateDobForDisplay(relationship.date_of_relationship || '')}
+            value={FormatDateForDisplay(relationship.date_of_relationship || '')}
             errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_relationship)}
             onChange={(event) => this.props.setParentState('date_of_relationship',
-              FormatDoBForPersistance(event.target.value || ''))}
-            onBlur={(event) => this.props.validator.validateFieldSetErrorState(relationshipId, event.target.value)} />
-
+             FormatDateForPersistance(event.target.value || ''))}
+            onBlur={(event) => this.props.validator.validateField(relationshipId, event.target.value)} />
           <InputComponent gridClassName='col-md-4' id='place_of_relationship_city'
             value={relationship.place_of_relationship_city}
             label='City' placeholder='Enter City'
