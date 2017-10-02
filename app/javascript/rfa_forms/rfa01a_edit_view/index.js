@@ -77,14 +77,16 @@ export default class Rfa01EditView extends React.Component {
     // No need to validate here again, the data change at component level should validate the fields
     // const requiredFieldsErrors = this.validator.allFieldErrorsByRule('isRequired')
     // this.setState({disableSave: requiredFieldsErrors.size > 0})
-    if (key === 'applicants' && checkForNameValidation(value)) {
-      this.setState({
-        disableSave: false
-      })
-    } else {
-      this.setState({
-        disableSave: true
-      })
+    if (key === 'applicants') {
+      if (checkForNameValidation(value)) {
+        this.setState({
+          disableSave: false
+        })
+      } else {
+        this.setState({
+          disableSave: true
+        })
+      }
     }
   }
 
