@@ -4,7 +4,7 @@ RUN gem install rails \
   && gem install puma
 
 # Get latest nodejs PPA and other repos
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash - \
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
   && apt-get install -y nodejs \
   && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
   && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
@@ -57,7 +57,7 @@ ENV BASE_CALS_API_URL=http://calsmockapi:3001/v1 \
   RAILS_RELATIVE_URL_ROOT=/cals
 
 # compile assets
-RUN rails assets:precompile RAILS_ENV=aws_dev
+RUN rails assets:precompile RAILS_ENV=development
 
 # run rails server
-CMD rails server -e aws_dev -b 0.0.0.0 -p 3000
+CMD rails server -e development -b 0.0.0.0 -p 3000
