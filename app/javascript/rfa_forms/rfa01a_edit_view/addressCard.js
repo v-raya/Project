@@ -2,6 +2,7 @@ import React from 'react'
 import Immutable from 'immutable'
 import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
+import AutoCompleter from 'components/common/autoCompleter.jsx'
 import {yesNo} from 'constants/constants'
 import {getDictionaryId, dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 
@@ -44,6 +45,9 @@ export default class AddressCard extends React.Component {
     data = data.update(index, x => x.set(key, value))
     this.props.setParentState('addresses', data.toJS())
   }
+  onSelection (autoFillData) {
+    this.onAddressChange(physicalAddressType, 'city', autoFillData.city)
+  }
   render () {
     const hasPhysicalAddressFields = this.props.addresses !== undefined && this.props.addresses.find(o => o.type.value === physicalAddressType)
     const physicalAddressFields = hasPhysicalAddressFields ? this.props.addresses.find(o => o.type.value === physicalAddressType) : blankPhysicalAddress
@@ -55,11 +59,22 @@ export default class AddressCard extends React.Component {
       <div className='card-body'>
         <div className='row'>
           <form>
-            <InputComponent gridClassName='col-md-12' id='street_address'
-              value = {physicalAddressFields.street_address}
-              label='Physical Address:' placeholder=''
-              onChange={(event) => this.onAddressChange(physicalAddressType, 'street_address', event.target.value)} />
-
+            <div className="col-md-12">
+              <label>Physical Address:</label>
+              <AutoCompleter gridClassName='col-md-12'
+                url='/geoservice/'
+                id='physicalAddress'
+                fieldName='street_address'
+                addressType={physicalAddressType}
+                value = {physicalAddressFields.street_address}
+                onSelection={this.onSelection.bind(this)}
+                placeholder=''
+                onChange={this.onAddressChange.bind(this)}/>
+            </div>
+            {/* <InputComponent gridClassName='col-md-12' id='street_address' */}
+            {/* value = {physicalAddressFields.street_address} */}
+            {/* label='Physical Address:' placeholder='' */}
+            {/* onChange={(event) => this.onAddressChange(physicalAddressType, 'street_address', event.target.value)} /> */}
             <InputComponent gridClassName='col-md-4' id='zip'
               value = {physicalAddressFields.zip}
               label='Zip Code:' placeholder=''
@@ -106,7 +121,6 @@ export default class AddressCard extends React.Component {
                 optionList={this.props.stateTypes}
                 label='State'
                 onChange={(event) => this.onAddressChange(mailingAddressType, 'state', dictionaryNilSelect(event.target.selectedOptions[0]))} />
-
             </div>
 
           </form>

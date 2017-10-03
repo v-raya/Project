@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://geo.preint.cwds.io/address/suggest/1%20gateway
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Mon, 02 Oct 2017 19:00:31 GMT
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '184'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        [ {
+          "street_address" : "1 Gateway Dr",
+          "city" : "Atwater",
+          "state" : "CA"
+        }, {
+          "street_address" : "1 Gateway Dr",
+          "city" : "Anderson",
+          "state" : "CA"
+        }, {
+          "street_address" : "1 Gateway Ct",
+          "city" : "American Canyon",
+          "state" : "CA"
+        }, {
+          "street_address" : "1 Gateway Dr",
+          "city" : "American Canyon",
+          "state" : "CA"
+        }, {
+          "street_address" : "1 Gateway",
+          "city" : "Abilene",
+          "state" : "TX"
+        }, {
+          "street_address" : "1 Gateway Dr",
+          "city" : "Akers",
+          "state" : "LA"
+        }, {
+          "street_address" : "1 Gateway Dr",
+          "city" : "Aiken",
+          "state" : "SC"
+        }, {
+          "street_address" : "1 Gateway Dr",
+          "city" : "Akeley",
+          "state" : "MN"
+        }, {
+          "street_address" : "1 Gateway Ln",
+          "city" : "Akeley",
+          "state" : "MN"
+        }, {
+          "street_address" : "1 Gateway Ave",
+          "city" : "Albany",
+          "state" : "GA"
+        } ]
+    http_version: 
+  recorded_at: Mon, 02 Oct 2017 19:00:32 GMT
+recorded_with: VCR 3.0.3

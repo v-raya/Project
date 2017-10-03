@@ -53,7 +53,7 @@ export default class Rfa01EditView extends React.Component {
   }
 
   submitForm () {
-    var url = urlPrefixHelper('/rfa/a01/' + this.props.application_id)
+    let url = '/rfa/a01/' + this.props.application_id
     let params = this.state.application
     fetchRequest(url, 'PUT', this.state.application).then(
       response => response.json()).then((response) => {

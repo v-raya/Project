@@ -14,14 +14,12 @@ Rails.application.routes.draw do
 
   namespace :rfa do
     resources :a01 do
-
       resources :applicant, only: [:index, :create, :edit]
       resource :residence, only: [:show, :create, :edit]
-
     end
 
   end
-
-
-
+  #get 'geoservice', to: 'geoservice#show'
+  resources :geoservice, only: [:create] do
+  end
 end
