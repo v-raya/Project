@@ -1,0 +1,36 @@
+version: '2.1'
+# 6/23/2017 - version 3.x does not support extends yet.
+# - https://docs.docker.com/compose/extends/#extending-services
+services:
+  cals:
+    build: .
+    command: bash -c "bundle check || bundle install && yarn && bundle exec puma"
+    ports:
+      - "3000:3000"
+      - "4857:4857"
+    environment:
+      RAILS_ENV: ${RAILS_ENV:-development}
+      NODE_ENV: development
+      BASE_CALS_API_URL: "http://localhost:3001/v1"
+      CALS_API_URL: "https://cals-api.preint.cwds.io"
+      AUTHENTICATION_API_BASE_URL: "https://perry.preint.cwds.io/perry"
+      SANDBOX_LANDING_URL: "http://localhost:3000"
+      REDIS_HOST: 'redis'
+      REDIS_PORT: 6379
+      CHROME: 'true'
+      USE_XVFB: 'true'
+    volumes:
+      - .:/cals
+      - cals_rubygems:/ruby_gems
+      - cals_node_modules:/cals/node_modules
+    links:
+      - redis
+    tty: true
+    stdin_open: true
+  redis:
+    image: 'redis:3.0'
+    ports:
+      - "6379:6379"
+volumes:
+  cals_rubygems:
+  cals_node_modules:
