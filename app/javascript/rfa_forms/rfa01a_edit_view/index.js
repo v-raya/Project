@@ -102,9 +102,6 @@ export default class Rfa01EditView extends React.Component {
     const hideRelationshipBetweenApplicants = this.state.application.applicants !== null && this.state.application.applicants.length === 2 ? 'cards-section' + 'col-xs-12 col-sm-12 col-md-12 col-lg-12' : 'hidden'
     return (
       <div className='main_page'>
-        <div className='header_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <div className='header-logo' />
-        </div>
         <div className='form-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <div className='left-content col-xs-9 col-sm-9 col-md-9 col-lg-9'>
             <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
