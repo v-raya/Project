@@ -9,7 +9,21 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
   && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
   && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
   && apt-get update \
-  && apt-get install -y nodejs yarn build-essential chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
+  && apt-get install -y nodejs yarn build-essential chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev \
+    iceweasel \
+    chromium \
+    chromedriver \
+    xvfb \
+    bzip2 \
+    qt5-default \
+    libqt5webkit5-dev \
+    gstreamer1.0-plugins-base \
+    gstreamer1.0-tools \
+    gstreamer1.0-x
+
+RUN apt-get install -y gconf2
+
+RUN ln -s /usr/lib/chromium/chromedriver /usr/bin/chromedriver
 
 #### ENV variables
 ENV PHANTOM_JS=phantomjs-2.1.1-linux-x86_64
