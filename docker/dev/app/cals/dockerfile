@@ -41,7 +41,8 @@ RUN cd /var/www/cals \
 # ENV variables
 ENV BASE_CALS_API_URL=http://localhost:3001/v1 \
   CALS_API_URL=https://cals-api.preint.cwds.io \
-  GEO_SERVICE_URL=https://geo.preint.cwds.io
+  GEO_SERVICE_URL=https://geo.preint.cwds.io \
+  CHROME=true
 
 
 # RUN tests
