@@ -93,7 +93,7 @@ export default class AddressCard extends React.Component {
               label='State'
               onChange={(event) => this.onAddressChange(physicalAddressType, 'state', dictionaryNilSelect(event.target.selectedOptions[0]))} />
 
-            <DropDownField gridClassName='col-md-6' selectClassName='reusable-select'
+            <DropDownField gridClassName='col-md-6' selectClassName='reusable-select' id='mailing_similar'
               value = {mailingAddress}
               text={this.props.physicalMailingSimilar}
               optionList={yesNo.items}

@@ -4,6 +4,12 @@ def host_env_string
   'REDIS_HOST=$(docker-machine ip cals) REDIS_PORT=6379'
 end
 
+namespace :build_rails do
+  task :bundle_yarn do
+    system "bundle check || bundle install && yarn"
+  end
+end
+
 namespace :spec do # rubocop:disable BlockLength
   def file_list
     # first ARGV is task name
@@ -19,7 +25,7 @@ namespace :spec do # rubocop:disable BlockLength
   desc 'Run specs in cals container'
   task :cals do
     command = "RAILS_ENV=test bundle exec rspec #{file_list}"
-    system "#{webpack_command} docker-compose exec cals bash -c '#{command}'"
+    system "#{webpack_command} docker-compose exec -T cals bash -c '#{command}'"
   end
 
   namespace :cals do

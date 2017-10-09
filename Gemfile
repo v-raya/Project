@@ -56,6 +56,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rails-controller-testing'
   gem 'poltergeist'
+  gem 'chromedriver-helper'
 end
 
 group :test do

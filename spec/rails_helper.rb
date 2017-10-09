@@ -9,6 +9,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
+require "selenium/webdriver"
 
 # Add additional requires below this line. Rails is not loaded until this point!
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
@@ -16,11 +17,24 @@ require 'capybara/poltergeist'
 
 Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f }
 
-Capybara.register_driver :accessible_selenium do |app|
-  Capybara::Selenium::Driver.new(app)
+
+if ENV['CHROME']
+
+  Capybara.register_driver :headless_chrome do |app|
+    capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+      chromeOptions: { args: %w[headless disable-gpu no-sandbox] }
+    )
+
+    Capybara::Selenium::Driver.new app,
+      browser: :chrome,
+      desired_capabilities: capabilities
+  end
+
+  Capybara.javascript_driver = :headless_chrome
+else
+  Capybara.javascript_driver = :poltergeist
 end
 
-Capybara.javascript_driver = :poltergeist
 # Capybara.app = eval("Rack::Builder.new {( " + File.read(File.dirname(__FILE__) + '/../config.ru') + "\n )}")
 Capybara.app = Rack::Builder.parse_file(File.expand_path('../../config.ru', __FILE__)).first
 
@@ -28,6 +42,12 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+
+  config.before(:each, type: :feature, :set_auth_header => true) do
+    allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
+    allow_any_instance_of(CalsBaseController).to receive(:get_session_token).and_return(ENV['TOKEN'])
+  end
+
 
   # VCR Config
   unless ENV['DISABLE_VCR']

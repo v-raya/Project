@@ -65,7 +65,7 @@ describe('Verify MinorCardFields', function () {
   })
 
   it('verify Gender', () => {
-    let relationShipField = minorChildCardComp.find('#gender')
+    let relationShipField = minorChildCardComp.find('#minor_gender')
     // spyOn(minorChildCardComp.instance(), 'onFieldChange').and.callThrough()
     relationShipField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'Female'}]}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, Object({ id: '2', value: 'Female' }), 'gender')

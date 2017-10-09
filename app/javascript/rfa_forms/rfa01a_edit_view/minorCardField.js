@@ -39,7 +39,7 @@ export class MinorCardField extends React.Component {
           onChange={(event) => this.props.onFieldChange(this.props.index,
             FormatDateForPersistance(event.target.value), 'date_of_birth')}
           onBlur={(event) => this.props.validator.validateFieldSetErrorState(minorRuleId, event.target.value)} />
-        <DropDownField gridClassName='col-md-4' id='gender'
+        <DropDownField gridClassName='col-md-4' id='minor_gender'
           selectClassName='reusable-select'
           optionList={this.props.genderTypes}
           value={getDictionaryId(minor.gender)}
