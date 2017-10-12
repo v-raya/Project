@@ -1,4 +1,4 @@
-FROM ratneshraval/cals-base:0.2
+FROM ratneshraval/cals-base:0.3
 
 ENV APP_HOME /cals
 RUN mkdir $APP_HOME
