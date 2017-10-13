@@ -1,74 +1,42 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson>
-  <disabledAdministrativeMonitors>
-    <string>OldData</string>
-  </disabledAdministrativeMonitors>
-  <version>2.46.3</version>
+  <disabledAdministrativeMonitors/>
+  <version>2.84</version>
   <numExecutors>2</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
   <authorizationStrategy class="hudson.security.ProjectMatrixAuthorizationStrategy">
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:dtalwar</permission>
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:rraval</permission>
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:dtalwar</permission>
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:rraval</permission>
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:dtalwar</permission>
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:rraval</permission>
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:dtalwar</permission>
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:rraval</permission>
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:dtalwar</permission>
-    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:rraval</permission>
-    <permission>hudson.model.Computer.Build:dtalwar</permission>
-    <permission>hudson.model.Computer.Build:rraval</permission>
-    <permission>hudson.model.Computer.Configure:dtalwar</permission>
-    <permission>hudson.model.Computer.Configure:rraval</permission>
-    <permission>hudson.model.Computer.Connect:dtalwar</permission>
-    <permission>hudson.model.Computer.Connect:rraval</permission>
-    <permission>hudson.model.Computer.Create:dtalwar</permission>
-    <permission>hudson.model.Computer.Create:rraval</permission>
-    <permission>hudson.model.Computer.Delete:dtalwar</permission>
-    <permission>hudson.model.Computer.Delete:rraval</permission>
-    <permission>hudson.model.Computer.Disconnect:dtalwar</permission>
-    <permission>hudson.model.Computer.Disconnect:rraval</permission>
-    <permission>hudson.model.Hudson.Administer:dtalwar</permission>
-    <permission>hudson.model.Hudson.Administer:rraval</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:authenticated</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:authenticated</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:authenticated</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:authenticated</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:authenticated</permission>
+    <permission>hudson.model.Computer.Build:authenticated</permission>
+    <permission>hudson.model.Computer.Configure:authenticated</permission>
+    <permission>hudson.model.Computer.Connect:authenticated</permission>
+    <permission>hudson.model.Computer.Create:authenticated</permission>
+    <permission>hudson.model.Computer.Delete:authenticated</permission>
+    <permission>hudson.model.Computer.Disconnect:authenticated</permission>
+    <permission>hudson.model.Hudson.Administer:authenticated</permission>
     <permission>hudson.model.Hudson.Read:anonymous</permission>
-    <permission>hudson.model.Hudson.Read:dtalwar</permission>
-    <permission>hudson.model.Hudson.Read:rraval</permission>
-    <permission>hudson.model.Item.Build:dtalwar</permission>
-    <permission>hudson.model.Item.Build:rraval</permission>
-    <permission>hudson.model.Item.Cancel:dtalwar</permission>
-    <permission>hudson.model.Item.Cancel:rraval</permission>
-    <permission>hudson.model.Item.Configure:dtalwar</permission>
-    <permission>hudson.model.Item.Configure:rraval</permission>
-    <permission>hudson.model.Item.Create:dtalwar</permission>
-    <permission>hudson.model.Item.Create:rraval</permission>
-    <permission>hudson.model.Item.Delete:dtalwar</permission>
-    <permission>hudson.model.Item.Delete:rraval</permission>
-    <permission>hudson.model.Item.Discover:dtalwar</permission>
-    <permission>hudson.model.Item.Discover:rraval</permission>
-    <permission>hudson.model.Item.Move:dtalwar</permission>
-    <permission>hudson.model.Item.Move:rraval</permission>
-    <permission>hudson.model.Item.Read:dtalwar</permission>
-    <permission>hudson.model.Item.Read:rraval</permission>
-    <permission>hudson.model.Item.Workspace:dtalwar</permission>
-    <permission>hudson.model.Item.Workspace:rraval</permission>
-    <permission>hudson.model.Run.Delete:dtalwar</permission>
-    <permission>hudson.model.Run.Delete:rraval</permission>
-    <permission>hudson.model.Run.Replay:dtalwar</permission>
-    <permission>hudson.model.Run.Replay:rraval</permission>
-    <permission>hudson.model.Run.Update:dtalwar</permission>
-    <permission>hudson.model.Run.Update:rraval</permission>
-    <permission>hudson.model.View.Configure:dtalwar</permission>
-    <permission>hudson.model.View.Configure:rraval</permission>
-    <permission>hudson.model.View.Create:dtalwar</permission>
-    <permission>hudson.model.View.Create:rraval</permission>
-    <permission>hudson.model.View.Delete:dtalwar</permission>
-    <permission>hudson.model.View.Delete:rraval</permission>
-    <permission>hudson.model.View.Read:dtalwar</permission>
-    <permission>hudson.model.View.Read:rraval</permission>
-    <permission>hudson.scm.SCM.Tag:dtalwar</permission>
-    <permission>hudson.scm.SCM.Tag:rraval</permission>
+    <permission>hudson.model.Hudson.Read:authenticated</permission>
+    <permission>hudson.model.Item.Build:authenticated</permission>
+    <permission>hudson.model.Item.Cancel:authenticated</permission>
+    <permission>hudson.model.Item.Configure:authenticated</permission>
+    <permission>hudson.model.Item.Create:authenticated</permission>
+    <permission>hudson.model.Item.Delete:authenticated</permission>
+    <permission>hudson.model.Item.Discover:authenticated</permission>
+    <permission>hudson.model.Item.Move:authenticated</permission>
+    <permission>hudson.model.Item.Read:authenticated</permission>
+    <permission>hudson.model.Item.Workspace:authenticated</permission>
+    <permission>hudson.model.Run.Delete:authenticated</permission>
+    <permission>hudson.model.Run.Replay:authenticated</permission>
+    <permission>hudson.model.Run.Update:authenticated</permission>
+    <permission>hudson.model.View.Configure:authenticated</permission>
+    <permission>hudson.model.View.Create:authenticated</permission>
+    <permission>hudson.model.View.Delete:authenticated</permission>
+    <permission>hudson.model.View.Read:authenticated</permission>
+    <permission>hudson.scm.SCM.Tag:authenticated</permission>
   </authorizationStrategy>
   <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
     <disableSignup>true</disableSignup>
@@ -93,31 +61,13 @@
       <filterQueue>false</filterQueue>
       <properties class="hudson.model.View$PropertyList"/>
     </hudson.model.AllView>
-    <listView>
-      <owner class="hudson" reference="../../.."/>
-      <name>Anonymous</name>
-      <filterExecutors>false</filterExecutors>
-      <filterQueue>false</filterQueue>
-      <properties class="hudson.model.View$PropertyList"/>
-      <jobNames>
-        <comparator class="hudson.util.CaseInsensitiveComparator"/>
-        <string>CALS-Dev-Build</string>
-      </jobNames>
-      <jobFilters/>
-      <columns>
-        <hudson.views.StatusColumn/>
-        <hudson.views.WeatherColumn/>
-        <hudson.views.JobColumn/>
-        <hudson.views.LastSuccessColumn/>
-        <hudson.views.LastFailureColumn/>
-        <hudson.views.LastDurationColumn/>
-        <hudson.views.BuildButtonColumn/>
-      </columns>
-      <recurse>false</recurse>
-    </listView>
   </views>
   <primaryView>all</primaryView>
   <slaveAgentPort>-1</slaveAgentPort>
+  <disabledAgentProtocols>
+    <string>JNLP-connect</string>
+    <string>JNLP2-connect</string>
+  </disabledAgentProtocols>
   <label></label>
   <crumbIssuer class="hudson.security.csrf.DefaultCrumbIssuer">
     <excludeClientIPFromCrumb>false</excludeClientIPFromCrumb>

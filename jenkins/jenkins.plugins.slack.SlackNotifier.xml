@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<jenkins.plugins.slack.SlackNotifier_-DescriptorImpl plugin="slack@2.2">
+<jenkins.plugins.slack.SlackNotifier_-DescriptorImpl plugin="slack@2.3">
   <baseUrl></baseUrl>
-  <teamDomain>ccwds</teamDomain>
+  <teamDomain></teamDomain>
   <token></token>
-  <tokenCredentialId>017e6bea-21ab-4b5c-8cc6-db11cf112ba5</tokenCredentialId>
+  <tokenCredentialId></tokenCredentialId>
   <botUser>false</botUser>
-  <room>tech-cals-updates</room>
+  <room></room>
 </jenkins.plugins.slack.SlackNotifier_-DescriptorImpl>

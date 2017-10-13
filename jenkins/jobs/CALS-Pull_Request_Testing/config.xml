@@ -5,6 +5,7 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <hudson.security.AuthorizationMatrixProperty>
+      <inheritanceStrategy class="org.jenkinsci.plugins.matrixauth.inheritance.InheritParentStrategy"/>
       <permission>hudson.model.Item.Read:anonymous</permission>
     </hudson.security.AuthorizationMatrixProperty>
     <hudson.plugins.buildblocker.BuildBlockerProperty plugin="build-blocker-plugin@1.7.3">
@@ -13,7 +14,7 @@
       <scanQueueFor>DISABLED</scanQueueFor>
       <blockingJobs></blockingJobs>
     </hudson.plugins.buildblocker.BuildBlockerProperty>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.27.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.28.0">
       <projectUrl>https://github.com/ca-cwds/CALS/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
@@ -22,18 +23,18 @@
         <hudson.model.StringParameterDefinition>
           <name>sha1</name>
           <description></description>
-          <defaultValue>97bae1e45c452aa6b50ca9083af882b620e06f1c</defaultValue>
+          <defaultValue>af0cd0abdd603eb0b5231a737dd8b135c7431bd0</defaultValue>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.3.2">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.6.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
         <refspec>+refs/pull/${ghprbPullId}/*:refs/remotes/origin/pr/${ghprbPullId}/*</refspec>
         <url>https://github.com/ca-cwds/CALS.git</url>
-        <credentialsId>909a4e0d-e4d1-4556-8b6c-4a17213e53ca</credentialsId>
+        <credentialsId>ratneshraval</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -74,7 +75,7 @@
           <branch></branch>
         </org.jenkinsci.plugins.ghprb.GhprbBranch>
       </blackListTargetBranches>
-      <gitHubAuthId>c2510512-84cb-44aa-b646-d0e0d38e1ee6</gitHubAuthId>
+      <gitHubAuthId>e7c5cff7-7fa0-478f-85cd-2bb7177ea3e5</gitHubAuthId>
       <triggerPhrase></triggerPhrase>
       <skipBuildPhrase>.*\[skip\W+ci\].*</skipBuildPhrase>
       <blackListCommitAuthor></blackListCommitAuthor>
@@ -99,32 +100,63 @@
       <command>#!/bin/bash
 
 # export PATH=$PATH:/usr/local/share
-export PATH=/var/lib/jenkins/.rvm/gems/ruby-2.3.3/bin:/var/lib/jenkins/.rvm/gems/ruby-2.3.3@global/bin:/var/lib/jenkins/.rvm/rubies/ruby-2.3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/aws/bin:/var/lib/jenkins/.rvm/bin:/var/lib/jenkins/.rvm/bin
+# export PATH=/var/lib/jenkins/.rvm/gems/ruby-2.3.3/bin:/var/lib/jenkins/.rvm/gems/ruby-2.3.3@global/bin:/var/lib/jenkins/.rvm/rubies/ruby-2.3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/aws/bin:/var/lib/jenkins/.rvm/bin:/var/lib/jenkins/.rvm/bin
 
 export BASE_CALS_API_URL=&quot;http://localhost:3001/v1&quot;
 export CALS_API_URL=&quot;https://cals-api.preint.cwds.io&quot;
+export GEO_SERVICE_URL=&quot;https://geo.preint.cwds.io&quot;
+export BASE_SEARCH_API_URL=&quot;https://dora.preint.cwds.io&quot;
 # export RAILS_RELATIVE_URL_ROOT=&quot;/&quot;
 export DISABLE_SPRING=1
 
 env
 
-source &quot;$HOME/.rvm/scripts/rvm&quot;
+source /etc/profile.d/rvm.sh
+rvm use default
 
 set -e
 
-rvm use &quot;ruby-2.3.3&quot;
+ruby -v 
+echo -----------------------------------------------------
+gem install bundler
 
-bundle install
+bundle install 
 yarn install
 
 # rake tmp:cache:clear; rm -rf public/assets public/packs public/packs-test; rails assets:precompile RAILS_ENV=test
 
-bundle exec rake tmp:cache:clear
+# bundle exec rake tmp:cache:clear
 rm -rf public/assets public/packs public/packs-test
-rails assets:precompile RAILS_ENV=test
+# rails assets:precompile RAILS_ENV=test
 
+export CHROME=true
+
+# run rspec inside container
+docker-compose down
+docker-compose up --build -d
+
+sleep 5
+# bin/webpack &amp;&amp; docker-compose exec -T cals bash -c &apos;RAILS_ENV=test bundle exec rspec&apos;
+bundle exec rake build_rails:bundle_yarn
+bundle exec rake spec:cals
+
+docker-compose down
+
+
+#change reports folder permission 
+sudo chown -R jenkins:jenkins reports
+
+#docker-compose up -d --force-recreate
+#echo &quot;-------------------------&quot;
+#echo &quot;-------------------------&quot;
+#echo &quot;container up&quot;
+#echo &quot;sleep&quot;
+#sleep 5
+#bundle exec rake build_rails:bundle_yarn
+#bundle exec rake spec:cals
+
+# run karma normally
 npm run karma-ci
-npm run spec-ci
 
 sleep 5</command>
     </hudson.tasks.Shell>
@@ -134,7 +166,7 @@ sleep 5</command>
       <reportTargets>
         <htmlpublisher.HtmlPublisherTarget>
           <reportName>JS Code Coverage</reportName>
-          <reportDir>/var/lib/jenkins/workspace/CALS-Pull_Request_Testing/reports/coverage/karma</reportDir>
+          <reportDir>reports/coverage/karma</reportDir>
           <reportFiles>index.html</reportFiles>
           <alwaysLinkToLastBuild>false</alwaysLinkToLastBuild>
           <reportTitles></reportTitles>
@@ -144,17 +176,17 @@ sleep 5</command>
         </htmlpublisher.HtmlPublisherTarget>
         <htmlpublisher.HtmlPublisherTarget>
           <reportName>Ruby Code Coverage</reportName>
-          <reportDir>/var/lib/jenkins/workspace/CALS-Pull_Request_Testing/reports/coverage/rspec</reportDir>
+          <reportDir>reports/coverage/rspec</reportDir>
           <reportFiles>index.html</reportFiles>
           <alwaysLinkToLastBuild>false</alwaysLinkToLastBuild>
           <reportTitles></reportTitles>
           <keepAll>true</keepAll>
-          <allowMissing>false</allowMissing>
+          <allowMissing>true</allowMissing>
           <includes>**/*</includes>
         </htmlpublisher.HtmlPublisherTarget>
       </reportTargets>
     </htmlpublisher.HtmlPublisher>
-    <jenkins.plugins.slack.SlackNotifier plugin="slack@2.2">
+    <jenkins.plugins.slack.SlackNotifier plugin="slack@2.3">
       <baseUrl></baseUrl>
       <teamDomain></teamDomain>
       <authToken></authToken>
@@ -178,7 +210,7 @@ sleep 5</command>
     </jenkins.plugins.slack.SlackNotifier>
   </publishers>
   <buildWrappers>
-    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.33">
+    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.34">
       <deleteDirs>false</deleteDirs>
       <cleanupParameter></cleanupParameter>
       <externalDelete></externalDelete>

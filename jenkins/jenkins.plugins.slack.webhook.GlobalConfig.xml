@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<jenkins.plugins.slack.webhook.GlobalConfig plugin="slack@2.2">
+<jenkins.plugins.slack.webhook.GlobalConfig plugin="slack@2.3">
   <slackOutgoingWebhookToken>UlSu7amFYYo8z0vehENPcVRL</slackOutgoingWebhookToken>
   <slackOutgoingWebhookURL>https://ccwds.slack.com/hooks</slackOutgoingWebhookURL>
 </jenkins.plugins.slack.webhook.GlobalConfig>

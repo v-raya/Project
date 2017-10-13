@@ -18,10 +18,10 @@
   <githubAuth>
     <org.jenkinsci.plugins.ghprb.GhprbGitHubAuth>
       <serverAPIUrl>https://api.github.com</serverAPIUrl>
-      <credentialsId>909a4e0d-e4d1-4556-8b6c-4a17213e53ca</credentialsId>
-      <id>c2510512-84cb-44aa-b646-d0e0d38e1ee6</id>
+      <credentialsId>ratneshraval</credentialsId>
+      <id>e7c5cff7-7fa0-478f-85cd-2bb7177ea3e5</id>
       <description>Anonymous connection</description>
-      <secret>{AQAAABAAAAAQqoyJpg01c7IbFVzIDZTIp09Tbqz41RICa51ew5P64Hw=}</secret>
+      <secret>{AQAAABAAAAAQbbcEZp+hHafCDbt0zVt+Gh3+ZU0vsCahooeDErbl4eA=}</secret>
     </org.jenkinsci.plugins.ghprb.GhprbGitHubAuth>
   </githubAuth>
   <adminlist></adminlist>
@@ -29,9 +29,10 @@
   <extensions>
     <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
       <commitStatusContext></commitStatusContext>
-      <showMatrixStatus>false</showMatrixStatus>
+      <triggeredStatus></triggeredStatus>
+      <startedStatus></startedStatus>
+      <statusUrl></statusUrl>
       <addTestResults>false</addTestResults>
-      <completedStatus/>
     </org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
   </extensions>
 </org.jenkinsci.plugins.ghprb.GhprbTrigger_-DescriptorImpl>
