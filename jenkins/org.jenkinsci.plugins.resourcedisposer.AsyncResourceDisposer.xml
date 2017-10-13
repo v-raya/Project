@@ -71,6 +71,18 @@
               <disposer reference="../../../../../../.."/>
               <disposable class="hudson.plugins.ws_cleanup.Wipeout$DisposableImpl" plugin="ws-cleanup@0.34">
                 <node></node>
+                <path>/var/lib/jenkins/workspace/CALS-Pull_Request_Testing_ws-cleanup_1507936323651</path>
+              </disposable>
+              <registered>2017-10-13 23:12:03.651 UTC</registered>
+              <disposableInfo>hudson.plugins.ws_cleanup.Wipeout$DisposableImpl:Workspace master:/var/lib/jenkins/workspace/CALS-Pull_Request_Testing_ws-cleanup_1507936323651</disposableInfo>
+            </org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
+              <disposer reference="../../../../../../.."/>
+              <disposable class="hudson.plugins.ws_cleanup.Wipeout$DisposableImpl" plugin="ws-cleanup@0.34">
+                <node></node>
                 <path>/var/lib/jenkins/workspace/CALS-Pull_Request_Testing_ws-cleanup_1507849290580</path>
               </disposable>
               <registered>2017-10-12 23:01:30.580 UTC</registered>
@@ -183,6 +195,18 @@
               </disposable>
               <registered>2017-10-12 20:08:14.994 UTC</registered>
               <disposableInfo>hudson.plugins.ws_cleanup.Wipeout$DisposableImpl:Workspace master:/var/lib/jenkins/workspace/CALS-Pull_Request_Testing_ws-cleanup_1507838894994</disposableInfo>
+            </org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
+              <disposer reference="../../../../../../.."/>
+              <disposable class="hudson.plugins.ws_cleanup.Wipeout$DisposableImpl" plugin="ws-cleanup@0.34">
+                <node></node>
+                <path>/var/lib/jenkins/workspace/CALS-Pull_Request_Testing_ws-cleanup_1507928058270</path>
+              </disposable>
+              <registered>2017-10-13 20:54:18.270 UTC</registered>
+              <disposableInfo>hudson.plugins.ws_cleanup.Wipeout$DisposableImpl:Workspace master:/var/lib/jenkins/workspace/CALS-Pull_Request_Testing_ws-cleanup_1507928058270</disposableInfo>
             </org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
             <boolean>true</boolean>
           </entry>

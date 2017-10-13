@@ -137,14 +137,14 @@ docker-compose up --build -d
 
 sleep 5
 # bin/webpack &amp;&amp; docker-compose exec -T cals bash -c &apos;RAILS_ENV=test bundle exec rspec&apos;
-bundle exec rake build_rails:bundle_yarn
+# bundle exec rake build_rails:bundle_yarn
 bundle exec rake spec:cals
 
 docker-compose down
 
 
 #change reports folder permission 
-sudo chown -R jenkins:jenkins reports
+# sudo chown -R jenkins:jenkins reports
 
 #docker-compose up -d --force-recreate
 #echo &quot;-------------------------&quot;
