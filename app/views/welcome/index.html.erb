@@ -9,8 +9,7 @@
   </div>
   <div class="col-xs-12 col-md-8 col-sm-8 col-lg-8">
     <%= react_component('rfa_forms/rfa01a_list', {
-        applications: @applications},
-                        {prerender: false}) %>
+        applications: @applications, user: @user}, {prerender: false}) %>
     <%= javascript_pack_tag 'rfa_forms/rfa01a_list' %>
     <%= stylesheet_pack_tag 'rfa_forms/rfa01a_list' %>
   </div>

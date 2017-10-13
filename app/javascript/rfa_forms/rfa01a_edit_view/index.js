@@ -10,10 +10,10 @@ import ReferencesMain from './referencesMain'
 import RelationshipBetweenApplicantsCardMain from './relationshipBetweenApplicantsCard'
 import ApplicantMaritalHistoryCardGroup from './applicantMaritalHistoryCardGroup'
 import ChildDesiredMain from './childDesiredMain'
-
+import {CountyUseOnlyCard} from 'components/rfa_forms/countyUseOnlyCard.js'
 import './stylesheets/cards-main.scss'
 import {fetchRequest} from 'helpers/http'
-import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
+import {getDictionaryId, dictionaryNilSelect, checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import {checkForNameValidation} from 'helpers/cardsHelper.jsx'
 import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 import Validator from 'helpers/validator'
@@ -100,6 +100,8 @@ export default class Rfa01EditView extends React.Component {
 
   render () {
     const hideRelationshipBetweenApplicants = this.state.application.applicants !== null && this.state.application.applicants.length === 2 ? 'cards-section' + 'col-xs-12 col-sm-12 col-md-12 col-lg-12' : 'hidden'
+    const countyValue = getDictionaryId(this.state.application.application_county) || (this.props.user && this.props.user.county_code)
+
     return (
       <div className='main_page'>
         <div className='form-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -114,6 +116,15 @@ export default class Rfa01EditView extends React.Component {
                 <button disabled={this.state.disableSave} id='saveProgress' className='btn btn-default' onClick={this.submitForm}>Save Progress</button>
               </div>
             </div>
+
+            <CountyUseOnlyCard
+              countyUseOnlyCardId='county_use_only'
+              setFocusState={this.setFocusState}
+              getFocusClassName={this.getFocusClassName}
+              county={countyValue}
+              CountyList={this.props.countyTypes}
+              onFieldChange={(event) => this.setApplicationState('application_county',
+                dictionaryNilSelect(event.target.selectedOptions[0]))} />
 
             <ApplicantCardsGroup
               suffixTypes={this.props.suffixTypes}

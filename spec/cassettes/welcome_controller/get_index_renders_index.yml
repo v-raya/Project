@@ -10,21 +10,29 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..akOzGDwe1ilFwWe8.LLCnrWDGHmueeeQGMb8BhZfV_ZvvIeqx93ktjS2wmeePLq_SE7CUHnlgX4y0KM1kGLUA2N1SLOmqjwlJCaLrv3N0mRaWHOWs4dXq7tysNzeUocg4-AcT14OTROfgr2ArLRJ-6KhGtE_XSgVA3k80vwgznKJvrePDvf8Rf-TAAH6aDC1r49CsmEJvXBg-M4bKWsAsKXJd4vjGO9ne1QS372R1xufNt6Z-QzySxp-tpwHvlMn95scPuFlpF6-g4E8qdFLS37PpYQEi57PYHThd99ycb-Eqlp21_aGvHdaabE8mrywR45kyhftFqT4pMb5f7kh-6-MCSZq0l_qC3tefgxBiuJKf7KSMi_F6OXS-ZBNGUNX3nTPUUw6L9uJ_fCdm6L_zRrLQg9aVmTPbP-eY2P6jwyNx6legZY7GctD3G3vfwYzK-NYTMpIiqMBR-68dCvuwaizR7valkGMhXl32IGIITX39a5Qcl0ityekdN2ThkwvYxXADq-TNV8j8JUWSsmKzwJlNwbIbXtcxnGrT7x79TR4lmKhEZm1z8ufpI4jf3qpyNoxBu1AaMn8czQmvQdgYGrjJd3BRhhfNbLQ9mk8-tTz15Nm_hUATVkykcQb0HdLiyvN12_vL8Y1GK-bVHsblvWfgPcNefSCAOO-M.UFTRcPo0_1rA4er_fHW5DA"
+      - "..PHYXON7wdP3DK33l.jxx1kJiLRonSxmZmbm6XUqfAogPfx731JfsCSo1uRhkZBnH9HMoqTZPljrADYE4l1g_yWPuw8ETt5lpHCTnpeS3HavQSb03OV7GqslVhLQIkOq-xrDAHshPEJ-oC4E1ApVG9F3t5cpQEQ2z3WLxNgI2JoqxSljAGuD_0d3ujtuLFq55PGPjYaDTASEa4BUUNErjb9nodCGrDuZ8kz2wwnEyCH4y_xv78Q1Q6UE4WdAxPxiqYWgvDlCitP-vTzS_0deysYxkWaWmXjqFpuEmL6Tgnc9qz38C6cc42W7uIGnBAinY_w52Fxh8J7j06jjUYaGAEqF1GGW3lzkQcwwyIOjvwHQdExscLdR5stO5bXCZNukxjKS3ZJZ1GZ28ZDoxffgKBXHVJ26ULngdRHvuGfBhBKdbyJBD3i7WDFlhtubOKyR-6aqje3BqheHr6JVcUrUGkKjdc34EiYwiuYMSIn4EJDMYSTFaLqsZQlHCfY6CxcFR9dyMuE0m0O_XvsxTkclERAxVmzv-IzAu-WORbOZemceH51kxvKR4vS42joxQcc0Mvv9udDp2Psyq7jomIKT4FbrcDv2R96Fmu3ysgf8I0OzaID7_n8TQZm69gwDpXE4lU5Do4pFFkG2DMUsH9LnMtK73f40JszVlqErQi6fd9R-jN1VK16y5RzeTgc1gAlfx3YRYGfHBGvzJRyGavx7oxOgqCcY982jTsVdi2H0J-kpp34qTRSY1YMT2ooDmIOIf4P2n2vQXjc45qWA3A45C_6nNZRlunpJge3yr8nvLsGJ6uSPmpwek43BBWmjCYcFIrcMD9ipSKM8mINBm3V5xlaevMNshhv_KTXYJTpISPWSAWiLvlbAWLExb-KL05nDjUKwHRucYD6zAkTJvNFrKr8oqKI4aL1assi5rFjA5BLwIZvbTC5LootE18PNg92b6WD7Jo0e4NWRbnvSEyRaHtCpv6sC_BFvkUH2iIyADy_3WnJYygHcA-9eWRNTjG7zDXNXABtaBowewbEh3vdu-zPJ6ElElASWqNOcP9MczZDvgk8R-mYGrDTTK0mEiqmS6hvPuRKNQf2JcijTGeml0oBQ.WYy9DWDCSp-OJalnaJpQ7Q"
   response:
     status:
       code: 200
       message: 
     headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
       content-type:
       - application/json
       date:
-      - Tue, 08 Aug 2017 20:27:01 GMT
+      - Tue, 10 Oct 2017 22:03:15 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 07-Aug-2017 20:27:01
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 09-Oct-2017 22:03:15
         GMT
       vary:
       - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
       transfer-encoding:
       - chunked
       connection:
@@ -34,367 +42,2136 @@ http_interactions:
       string: |-
         {
           "items" : [ {
-            "id" : 37,
-            "applicants" : [ ],
+            "id" : 113,
+            "applicants" : [ {
+              "id" : 99,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
             "minor_children" : [ ],
-            "other_adults" : [ ],
-            "rfa1b_forms" : [ ],
+            "other_adults" : [ {
+              "id" : 10,
+              "first_name" : "",
+              "middle_name" : "",
+              "last_name" : "",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            } ],
             "rfa1c_forms" : [ ],
             "is_initial_application" : false,
             "is_other_type" : false
           }, {
-            "id" : 36,
-            "applicants" : [ ],
-            "minor_children" : [ ],
-            "other_adults" : [ ],
-            "rfa1b_forms" : [ ],
-            "rfa1c_forms" : [ ],
-            "is_initial_application" : false,
-            "is_other_type" : false
-          }, {
-            "id" : 35,
-            "applicants" : [ ],
-            "minor_children" : [ ],
-            "other_adults" : [ ],
-            "rfa1b_forms" : [ ],
-            "rfa1c_forms" : [ ],
-            "is_initial_application" : false,
-            "is_other_type" : false
-          }, {
-            "id" : 34,
-            "applicants" : [ ],
-            "minor_children" : [ ],
-            "other_adults" : [ ],
-            "rfa1b_forms" : [ ],
-            "rfa1c_forms" : [ ],
-            "is_initial_application" : false,
-            "is_other_type" : false
-          }, {
-            "id" : 2,
-            "other_type_description" : "Description",
-            "application_county" : {
-              "id" : 39,
-              "value" : "Sacramento"
-            },
+            "id" : 112,
             "residence" : {
               "addresses" : [ {
-                "street_address" : "1703 Redoak Ct.",
-                "zip" : "98123",
-                "city" : "Rocklin",
+                "street_address" : "maing address here",
+                "zip" : "12345",
+                "city" : "secondary city",
                 "state" : {
-                  "id" : 6,
-                  "value" : "California"
+                  "value" : "Alaska",
+                  "id" : "AK"
                 },
                 "type" : {
-                  "id" : 1,
-                  "value" : "Residential"
+                  "value" : "Mailing",
+                  "id" : 3
                 }
               } ],
-              "physical_mailing_similar" : true,
+              "physical_mailing_similar" : false,
               "residence_ownership" : {
-                "id" : 0,
-                "value" : "string"
+                "value" : "Own",
+                "id" : 1
               },
-              "weapon_in_home" : false,
+              "weapon_in_home" : true,
               "body_of_water_exist" : true,
-              "body_of_water_description" : "Description here",
+              "body_of_water_description" : "body of water goes here",
               "others_using_residence_as_mailing" : true,
-              "other_people_using_residence_as_mailing" : [ {
-                "first_name" : "string",
-                "middle_name" : "string",
-                "last_name" : "string"
-              } ],
-              "directions_to_home" : "Directions here",
+              "directions_to_home" : "directions goes here",
               "home_languages" : [ {
-                "id" : 0,
-                "value" : "string"
-              } ]
-            },
-            "applicants_relationship" : {
-              "relationship_type" : {
-                "id" : 1,
-                "value" : "Married"
-              },
-              "other_relationship" : "string",
-              "date_of_relationship" : "2015-03-25",
-              "place_of_relationship_city" : "Sacramento",
-              "place_of_relationship_state" : {
-                "id" : 6,
-                "value" : "California"
-              }
-            },
-            "applicants_history" : {
-              "former_spouses" : [ {
-                "relationship_type" : {
-                  "id" : 0,
-                  "value" : "string"
-                },
-                "applicant_id" : 1234567,
-                "first_name" : "Anna",
-                "middle_name" : "L.",
-                "last_name" : "Pollen",
-                "date_of_marriage" : "2016-12-26",
-                "place_of_marriage_city" : "Sacramento",
-                "place_of_marriage_state" : {
-                  "id" : 6,
-                  "value" : "California"
-                },
-                "marriage_termination_reason" : {
-                  "id" : 1,
-                  "value" : "Marriage Dissolution (Divorce)"
-                },
-                "date_of_marriage_end" : "2016-12-26",
-                "place_of_marriage_end_city" : "Sacramento",
-                "place_of_marriage_end_state" : {
-                  "id" : 6,
-                  "value" : "California"
-                }
-              } ],
-              "adult_children" : [ {
-                "first_name" : "Andrew",
-                "middle_name" : "",
-                "last_name" : "Pollen",
-                "relationship_to_applicant" : {
-                  "id" : 1,
-                  "value" : "Child"
-                },
-                "adult_child_related_to" : [ 12345678 ]
+                "value" : "Arabic",
+                "id" : 2
               } ]
             },
             "applicants" : [ {
-              "id" : 0,
-              "first_name" : "Jane",
-              "middle_name" : "J",
-              "last_name" : "Smith",
-              "other_names" : [ {
-                "first_name" : "string",
-                "middle_name" : "string",
-                "last_name" : "string",
-                "name_type" : {
-                  "id" : 0,
-                  "value" : "string"
-                }
-              } ],
-              "highest_education_level" : {
-                "id" : 3,
-                "value" : "Some College"
-              },
-              "date_of_birth" : "1999-08-10",
-              "gender" : {
-                "id" : 2,
-                "value" : "Female"
-              },
-              "race" : {
-                "id" : 6,
-                "value" : "White"
-              },
-              "ethnicity" : {
-                "id" : 33,
-                "value" : "White"
-              },
-              "driver_license_number" : "F-2233222322",
-              "driver_license_state" : {
-                "id" : 0,
-                "value" : "AK"
-              },
-              "email" : "jhi@jkl.net",
+              "id" : 98,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
               "employment" : {
-                "employer_name" : "string",
-                "occupation" : "string",
-                "income" : 0.0,
+                "employer_name" : "",
+                "occupation" : "",
                 "income_type" : {
-                  "id" : 0,
-                  "value" : "string"
+                  "value" : "yearly",
+                  "id" : 1
                 },
                 "physical_address" : {
-                  "street_address" : "string",
-                  "city" : "string",
-                  "state" : {
-                    "id" : 0,
-                    "value" : "string"
-                  },
-                  "zip" : "string"
+                  "street_address" : "2870 something else",
+                  "city" : "",
+                  "zip" : "12345"
+                }
+              },
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 111,
+            "applicants" : [ {
+              "id" : 97,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "adoption_history" : {
+              "foster_care_licenses_q1" : {
+                "was_previously_licensed" : false,
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "applications_for_adoption_q2" : {
+                "facilities" : [ "" ]
+              },
+              "facility_operation_licenses_q3" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "employment_in_facilities_q4" : {
+                "facilities" : [ "" ]
+              },
+              "denial_history_q5" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "suspension_revocation_history_q6" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              }
+            },
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 110,
+            "applicants" : [ {
+              "id" : 96,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 109,
+            "applicants" : [ {
+              "id" : 95,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "highest_education_level" : {
+                "value" : "Some High School",
+                "id" : 2
+              },
+              "ethnicity" : {
+                "value" : "Black",
+                "id" : 4
+              },
+              "driver_license_number" : "ABC123",
+              "driver_license_state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "email" : "test@test.com",
+              "employment" : {
+                "employer_name" : "Employer Name",
+                "occupation" : "Front End Developer",
+                "income" : 10.0,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 Gateway",
+                  "city" : "Sacremento",
+                  "zip" : "94403"
                 }
               },
               "phones" : [ {
                 "phone_type" : {
-                  "id" : 1,
-                  "value" : "Cell"
+                  "value" : "Home",
+                  "id" : 2
                 },
-                "number" : "(534) 758-3303",
-                "preferred" : true
+                "number" : "2012222345",
+                "preferred" : false
               } ]
             } ],
             "minor_children" : [ ],
             "other_adults" : [ ],
-            "rfa1b_forms" : [ ],
             "rfa1c_forms" : [ ],
-            "is_initial_application" : true,
+            "is_initial_application" : false,
             "is_other_type" : false
           }, {
-            "id" : 1,
-            "other_type_description" : "Description",
-            "application_county" : {
-              "id" : 39,
-              "value" : "Sacramento"
-            },
-            "residence" : {
-              "addresses" : [ {
-                "street_address" : "1702 Redoak Ct.",
-                "zip" : "98123",
-                "city" : "Rocklin",
-                "state" : {
-                  "id" : 6,
-                  "value" : "California"
-                },
-                "type" : {
-                  "id" : 1,
-                  "value" : "Residential"
+            "id" : 108,
+            "applicants" : [ {
+              "id" : 94,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ {
+              "id" : 12,
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
                 }
               } ],
-              "physical_mailing_similar" : true,
-              "residence_ownership" : {
-                "id" : 0,
-                "value" : "string"
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
               },
-              "weapon_in_home" : false,
-              "body_of_water_exist" : true,
-              "body_of_water_description" : "Description here",
-              "others_using_residence_as_mailing" : true,
-              "other_people_using_residence_as_mailing" : [ {
-                "first_name" : "string",
-                "middle_name" : "string",
-                "last_name" : "string"
-              } ],
-              "directions_to_home" : "Directions here",
-              "home_languages" : [ {
-                "id" : 0,
-                "value" : "string"
-              } ]
-            },
-            "applicants_relationship" : {
-              "relationship_type" : {
-                "id" : 1,
-                "value" : "Married"
+              "child_financially_supported" : true,
+              "child_adopted" : true
+            } ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 107,
+            "applicants" : [ {
+              "id" : 93,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 106,
+            "applicants" : [ {
+              "id" : 92,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "adoption_history" : {
+              "foster_care_licenses_q1" : {
+                "was_previously_licensed" : false,
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
               },
-              "other_relationship" : "string",
-              "date_of_relationship" : "2015-03-25",
-              "place_of_relationship_city" : "Sacramento",
-              "place_of_relationship_state" : {
-                "id" : 6,
-                "value" : "California"
+              "applications_for_adoption_q2" : {
+                "facilities" : [ "" ]
+              },
+              "facility_operation_licenses_q3" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "employment_in_facilities_q4" : {
+                "facilities" : [ "" ]
+              },
+              "denial_history_q5" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "suspension_revocation_history_q6" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
               }
             },
-            "applicants_history" : {
-              "former_spouses" : [ {
-                "relationship_type" : {
-                  "id" : 1,
-                  "value" : "Child"
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 105,
+            "applicants" : [ {
+              "id" : 91,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ {
+              "id" : 9,
+              "first_name" : "",
+              "middle_name" : "",
+              "last_name" : "",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            } ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 103,
+            "residence" : {
+              "addresses" : [ {
+                "street_address" : "maing address here",
+                "zip" : "12345",
+                "city" : "secondary city",
+                "state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
                 },
-                "applicant_id" : 1234567,
-                "first_name" : "Anna",
-                "middle_name" : "L.",
-                "last_name" : "Pollen",
-                "date_of_marriage" : "2016-12-26",
-                "place_of_marriage_city" : "Sacramento",
-                "place_of_marriage_state" : {
-                  "id" : 6,
-                  "value" : "California"
-                },
-                "marriage_termination_reason" : {
-                  "id" : 1,
-                  "value" : "Marriage Dissolution (Divorce)"
-                },
-                "date_of_marriage_end" : "2016-12-26",
-                "place_of_marriage_end_city" : "Sacramento",
-                "place_of_marriage_end_state" : {
-                  "id" : 6,
-                  "value" : "California"
+                "type" : {
+                  "value" : "Mailing",
+                  "id" : 3
                 }
               } ],
-              "adult_children" : [ {
-                "first_name" : "Andrew",
-                "middle_name" : "",
-                "last_name" : "Pollen",
-                "relationship_to_applicant" : {
-                  "id" : 1,
-                  "value" : "Child"
-                },
-                "adult_child_related_to" : [ 12345678 ]
+              "physical_mailing_similar" : false,
+              "residence_ownership" : {
+                "value" : "Own",
+                "id" : 1
+              },
+              "weapon_in_home" : true,
+              "body_of_water_exist" : true,
+              "body_of_water_description" : "body of water goes here",
+              "others_using_residence_as_mailing" : true,
+              "directions_to_home" : "directions goes here",
+              "home_languages" : [ {
+                "value" : "Arabic",
+                "id" : 2
               } ]
             },
             "applicants" : [ {
-              "id" : 0,
-              "first_name" : "John",
-              "middle_name" : "J",
-              "last_name" : "Smith",
-              "other_names" : [ {
-                "first_name" : "string",
-                "middle_name" : "string",
-                "last_name" : "string",
-                "name_type" : {
-                  "id" : 0,
-                  "value" : "string"
-                }
-              } ],
-              "highest_education_level" : {
-                "id" : 3,
-                "value" : "Some College"
-              },
-              "date_of_birth" : "1998-07-10",
-              "gender" : {
-                "id" : 1,
-                "value" : "Male"
-              },
-              "race" : {
-                "id" : 6,
-                "value" : "White"
-              },
-              "ethnicity" : {
-                "id" : 33,
-                "value" : "White"
-              },
-              "driver_license_number" : "X-2233222322",
-              "driver_license_state" : {
-                "id" : 0,
-                "value" : "AK"
-              },
-              "email" : "abc@def.net",
+              "id" : 90,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
               "employment" : {
-                "employer_name" : "string",
-                "occupation" : "string",
-                "income" : 0.0,
+                "employer_name" : "",
+                "occupation" : "",
                 "income_type" : {
-                  "id" : 0,
-                  "value" : "string"
+                  "value" : "yearly",
+                  "id" : 1
                 },
                 "physical_address" : {
-                  "street_address" : "string",
-                  "city" : "string",
-                  "state" : {
-                    "id" : 0,
-                    "value" : "string"
-                  },
-                  "zip" : "string"
+                  "street_address" : "2870 something else",
+                  "city" : "",
+                  "zip" : "12345"
+                }
+              },
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 102,
+            "applicants" : [ {
+              "id" : 89,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ {
+              "id" : 11,
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ],
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              },
+              "child_financially_supported" : true,
+              "child_adopted" : true
+            } ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 101,
+            "applicants" : [ {
+              "id" : 88,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "highest_education_level" : {
+                "value" : "Some High School",
+                "id" : 2
+              },
+              "ethnicity" : {
+                "value" : "Black",
+                "id" : 4
+              },
+              "driver_license_number" : "ABC123",
+              "driver_license_state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "email" : "test@test.com",
+              "employment" : {
+                "employer_name" : "Employer Name",
+                "occupation" : "Front End Developer",
+                "income" : 10.0,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 Gateway",
+                  "city" : "Sacremento",
+                  "zip" : "94403"
                 }
               },
               "phones" : [ {
                 "phone_type" : {
-                  "id" : 1,
-                  "value" : "Cell"
+                  "value" : "Home",
+                  "id" : 2
                 },
-                "number" : "(534) 758-3302",
-                "preferred" : true
+                "number" : "2012222345",
+                "preferred" : false
               } ]
             } ],
             "minor_children" : [ ],
             "other_adults" : [ ],
-            "rfa1b_forms" : [ ],
             "rfa1c_forms" : [ ],
-            "is_initial_application" : true,
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 100,
+            "applicants" : [ {
+              "id" : 87,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "adoption_history" : {
+              "foster_care_licenses_q1" : {
+                "was_previously_licensed" : false,
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "applications_for_adoption_q2" : {
+                "facilities" : [ "" ]
+              },
+              "facility_operation_licenses_q3" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "employment_in_facilities_q4" : {
+                "facilities" : [ "" ]
+              },
+              "denial_history_q5" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "suspension_revocation_history_q6" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              }
+            },
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 98,
+            "applicants" : [ {
+              "id" : 86,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 97,
+            "applicants" : [ {
+              "id" : 85,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ {
+              "id" : 8,
+              "first_name" : "",
+              "middle_name" : "",
+              "last_name" : "",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            } ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 96,
+            "applicants" : [ {
+              "id" : 84,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "highest_education_level" : {
+                "value" : "Some High School",
+                "id" : 2
+              },
+              "ethnicity" : {
+                "value" : "Black",
+                "id" : 4
+              },
+              "driver_license_number" : "ABC123",
+              "driver_license_state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "email" : "test@test.com",
+              "employment" : {
+                "employer_name" : "Employer Name",
+                "occupation" : "Front End Developer",
+                "income" : 10.0,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 Gateway",
+                  "city" : "Sacremento",
+                  "zip" : "94403"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Home",
+                  "id" : 2
+                },
+                "number" : "2012222345",
+                "preferred" : false
+              } ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 95,
+            "residence" : {
+              "addresses" : [ {
+                "street_address" : "maing address here",
+                "zip" : "12345",
+                "city" : "secondary city",
+                "state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                },
+                "type" : {
+                  "value" : "Mailing",
+                  "id" : 3
+                }
+              } ],
+              "physical_mailing_similar" : false,
+              "residence_ownership" : {
+                "value" : "Own",
+                "id" : 1
+              },
+              "weapon_in_home" : true,
+              "body_of_water_exist" : true,
+              "body_of_water_description" : "body of water goes here",
+              "others_using_residence_as_mailing" : true,
+              "directions_to_home" : "directions goes here",
+              "home_languages" : [ {
+                "value" : "Arabic",
+                "id" : 2
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 83,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "employment" : {
+                "employer_name" : "",
+                "occupation" : "",
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 something else",
+                  "city" : "",
+                  "zip" : "12345"
+                }
+              },
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 94,
+            "applicants" : [ {
+              "id" : 82,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ {
+              "id" : 10,
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ],
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              },
+              "child_financially_supported" : true,
+              "child_adopted" : true
+            } ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 93,
+            "applicants" : [ {
+              "id" : 81,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ {
+              "id" : 9,
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ],
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              },
+              "child_financially_supported" : true,
+              "child_adopted" : true
+            } ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 89,
+            "applicants" : [ {
+              "id" : 80,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ {
+              "id" : 7,
+              "first_name" : "",
+              "middle_name" : "",
+              "last_name" : "",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            } ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 88,
+            "applicants" : [ {
+              "id" : 79,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 87,
+            "applicants" : [ {
+              "id" : 78,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "adoption_history" : {
+              "foster_care_licenses_q1" : {
+                "was_previously_licensed" : false,
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "applications_for_adoption_q2" : {
+                "facilities" : [ "" ]
+              },
+              "facility_operation_licenses_q3" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "employment_in_facilities_q4" : {
+                "facilities" : [ "" ]
+              },
+              "denial_history_q5" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "suspension_revocation_history_q6" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              }
+            },
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 86,
+            "applicants" : [ {
+              "id" : 77,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ {
+              "id" : 8,
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ],
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              },
+              "child_financially_supported" : true,
+              "child_adopted" : true
+            } ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 85,
+            "applicants" : [ {
+              "id" : 76,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "highest_education_level" : {
+                "value" : "Some High School",
+                "id" : 2
+              },
+              "ethnicity" : {
+                "value" : "Black",
+                "id" : 4
+              },
+              "driver_license_number" : "ABC123",
+              "driver_license_state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "email" : "test@test.com",
+              "employment" : {
+                "employer_name" : "Employer Name",
+                "occupation" : "Front End Developer",
+                "income" : 10.0,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 Gateway",
+                  "city" : "Sacremento",
+                  "zip" : "94403"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Home",
+                  "id" : 2
+                },
+                "number" : "2012222345",
+                "preferred" : false
+              } ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 84,
+            "residence" : {
+              "addresses" : [ {
+                "street_address" : "maing address here",
+                "zip" : "12345",
+                "city" : "secondary city",
+                "state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                },
+                "type" : {
+                  "value" : "Mailing",
+                  "id" : 3
+                }
+              } ],
+              "physical_mailing_similar" : false,
+              "residence_ownership" : {
+                "value" : "Own",
+                "id" : 1
+              },
+              "weapon_in_home" : true,
+              "body_of_water_exist" : true,
+              "body_of_water_description" : "body of water goes here",
+              "others_using_residence_as_mailing" : true,
+              "directions_to_home" : "directions goes here",
+              "home_languages" : [ {
+                "value" : "Arabic",
+                "id" : 2
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 75,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "employment" : {
+                "employer_name" : "",
+                "occupation" : "",
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 something else",
+                  "city" : "",
+                  "zip" : "12345"
+                }
+              },
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 82,
+            "applicants" : [ {
+              "id" : 74,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "adoption_history" : {
+              "foster_care_licenses_q1" : {
+                "was_previously_licensed" : false,
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "applications_for_adoption_q2" : {
+                "facilities" : [ "" ]
+              },
+              "facility_operation_licenses_q3" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "employment_in_facilities_q4" : {
+                "facilities" : [ "" ]
+              },
+              "denial_history_q5" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "suspension_revocation_history_q6" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              }
+            },
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 81,
+            "applicants" : [ {
+              "id" : 73,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ {
+              "id" : 7,
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ],
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              },
+              "child_financially_supported" : true,
+              "child_adopted" : true
+            } ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 80,
+            "applicants" : [ {
+              "id" : 72,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "highest_education_level" : {
+                "value" : "Some High School",
+                "id" : 2
+              },
+              "ethnicity" : {
+                "value" : "Black",
+                "id" : 4
+              },
+              "driver_license_number" : "ABC123",
+              "driver_license_state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "email" : "test@test.com",
+              "employment" : {
+                "employer_name" : "Employer Name",
+                "occupation" : "Front End Developer",
+                "income" : 10.0,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 Gateway",
+                  "city" : "Sacremento",
+                  "zip" : "94403"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Home",
+                  "id" : 2
+                },
+                "number" : "2012222345",
+                "preferred" : false
+              } ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 79,
+            "residence" : {
+              "addresses" : [ {
+                "street_address" : "maing address here",
+                "zip" : "12345",
+                "city" : "secondary city",
+                "state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                },
+                "type" : {
+                  "value" : "Mailing",
+                  "id" : 3
+                }
+              } ],
+              "physical_mailing_similar" : false,
+              "residence_ownership" : {
+                "value" : "Own",
+                "id" : 1
+              },
+              "weapon_in_home" : true,
+              "body_of_water_exist" : true,
+              "body_of_water_description" : "body of water goes here",
+              "others_using_residence_as_mailing" : true,
+              "directions_to_home" : "directions goes here",
+              "home_languages" : [ {
+                "value" : "Arabic",
+                "id" : 2
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 71,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "employment" : {
+                "employer_name" : "",
+                "occupation" : "",
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 something else",
+                  "city" : "",
+                  "zip" : "12345"
+                }
+              },
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 78,
+            "applicants" : [ {
+              "id" : 70,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ {
+              "id" : 6,
+              "first_name" : "",
+              "middle_name" : "",
+              "last_name" : "",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            } ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 77,
+            "applicants" : [ {
+              "id" : 69,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 76,
+            "applicants" : [ {
+              "id" : 68,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 75,
+            "residence" : {
+              "addresses" : [ {
+                "street_address" : "maing address here",
+                "zip" : "12345",
+                "city" : "secondary city",
+                "state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                },
+                "type" : {
+                  "value" : "Mailing",
+                  "id" : 3
+                }
+              } ],
+              "physical_mailing_similar" : false,
+              "residence_ownership" : {
+                "value" : "Own",
+                "id" : 1
+              },
+              "weapon_in_home" : true,
+              "body_of_water_exist" : true,
+              "body_of_water_description" : "body of water goes here",
+              "others_using_residence_as_mailing" : true,
+              "directions_to_home" : "directions goes here",
+              "home_languages" : [ {
+                "value" : "Arabic",
+                "id" : 2
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 67,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "employment" : {
+                "employer_name" : "",
+                "occupation" : "",
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 something else",
+                  "city" : "",
+                  "zip" : "12345"
+                }
+              },
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 74,
+            "applicants" : [ {
+              "id" : 66,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ {
+              "id" : 6,
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ],
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              },
+              "child_financially_supported" : true,
+              "child_adopted" : true
+            } ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 73,
+            "applicants" : [ {
+              "id" : 65,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "highest_education_level" : {
+                "value" : "Some High School",
+                "id" : 2
+              },
+              "ethnicity" : {
+                "value" : "Black",
+                "id" : 4
+              },
+              "driver_license_number" : "ABC123",
+              "driver_license_state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "email" : "test@test.com",
+              "employment" : {
+                "employer_name" : "Employer Name",
+                "occupation" : "Front End Developer",
+                "income" : 10.0,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 Gateway",
+                  "city" : "Sacremento",
+                  "zip" : "94403"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Home",
+                  "id" : 2
+                },
+                "number" : "2012222345",
+                "preferred" : false
+              } ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 71,
+            "applicants" : [ {
+              "id" : 64,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ {
+              "id" : 5,
+              "first_name" : "",
+              "middle_name" : "",
+              "last_name" : "",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            } ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 70,
+            "applicants" : [ {
+              "id" : 63,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "adoption_history" : {
+              "foster_care_licenses_q1" : {
+                "was_previously_licensed" : false,
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "applications_for_adoption_q2" : {
+                "facilities" : [ "" ]
+              },
+              "facility_operation_licenses_q3" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "employment_in_facilities_q4" : {
+                "facilities" : [ "" ]
+              },
+              "denial_history_q5" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "suspension_revocation_history_q6" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              }
+            },
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 69,
+            "applicants" : [ {
+              "id" : 62,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 68,
+            "applicants" : [ {
+              "id" : 61,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "adoption_history" : {
+              "foster_care_licenses_q1" : {
+                "was_previously_licensed" : false,
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "applications_for_adoption_q2" : {
+                "facilities" : [ "" ]
+              },
+              "facility_operation_licenses_q3" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "employment_in_facilities_q4" : {
+                "facilities" : [ "" ]
+              },
+              "denial_history_q5" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "suspension_revocation_history_q6" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              }
+            },
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 67,
+            "applicants" : [ {
+              "id" : 60,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "highest_education_level" : {
+                "value" : "Some High School",
+                "id" : 2
+              },
+              "ethnicity" : {
+                "value" : "Black",
+                "id" : 4
+              },
+              "driver_license_number" : "ABC123",
+              "driver_license_state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "email" : "test@test.com",
+              "employment" : {
+                "employer_name" : "Employer Name",
+                "occupation" : "Front End Developer",
+                "income" : 10.0,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 Gateway",
+                  "city" : "Sacremento",
+                  "zip" : "94403"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Home",
+                  "id" : 2
+                },
+                "number" : "2012222345",
+                "preferred" : false
+              } ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 66,
+            "residence" : {
+              "addresses" : [ {
+                "street_address" : "maing address here",
+                "zip" : "12345",
+                "city" : "secondary city",
+                "state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                },
+                "type" : {
+                  "value" : "Mailing",
+                  "id" : 3
+                }
+              } ],
+              "physical_mailing_similar" : false,
+              "residence_ownership" : {
+                "value" : "Own",
+                "id" : 1
+              },
+              "weapon_in_home" : true,
+              "body_of_water_exist" : true,
+              "body_of_water_description" : "body of water goes here",
+              "others_using_residence_as_mailing" : true,
+              "directions_to_home" : "directions goes here",
+              "home_languages" : [ {
+                "value" : "Arabic",
+                "id" : 2
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 59,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "employment" : {
+                "employer_name" : "",
+                "occupation" : "",
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 something else",
+                  "city" : "",
+                  "zip" : "12345"
+                }
+              },
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 64,
+            "applicants" : [ {
+              "id" : 58,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ {
+              "id" : 5,
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ],
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              },
+              "child_financially_supported" : true,
+              "child_adopted" : true
+            } ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 63,
+            "applicants" : [ {
+              "id" : 57,
+              "first_name" : "Taylor",
+              "middle_name" : "k",
+              "last_name" : "Swift",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ {
+              "id" : 4,
+              "first_name" : "",
+              "middle_name" : "",
+              "last_name" : "",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            } ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 62,
+            "applicants" : [ {
+              "id" : 56,
+              "first_name" : "Piggerella",
+              "middle_name" : "Theodolphsi",
+              "last_name" : "Muppet",
+              "other_names" : [ {
+                "name_prefix" : {
+                  "value" : "Miss",
+                  "id" : 5
+                },
+                "first_name" : "Piggy",
+                "middle_name" : "",
+                "last_name" : "",
+                "name_type" : {
+                  "value" : "AKA",
+                  "id" : 1
+                }
+              } ],
+              "highest_education_level" : {
+                "value" : "Post-Graduate Education",
+                "id" : 7
+              },
+              "date_of_birth" : "1976-12-13",
+              "ethnicity" : {
+                "value" : "Unable to Determine",
+                "id" : 26
+              },
+              "driver_license_number" : "",
+              "email" : "",
+              "employment" : {
+                "employer_name" : "Jim Henson Productions",
+                "occupation" : "",
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "",
+                  "city" : "",
+                  "zip" : ""
+                }
+              },
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 61,
+            "applicants" : [ {
+              "id" : 55,
+              "first_name" : "Carrie",
+              "middle_name" : "",
+              "last_name" : "Bradshaw",
+              "other_names" : [ ],
+              "highest_education_level" : {
+                "value" : "College Graduate",
+                "id" : 6
+              },
+              "date_of_birth" : "1975-11-18",
+              "gender" : {
+                "value" : "Female",
+                "id" : 2
+              },
+              "ethnicity" : {
+                "value" : "White",
+                "id" : 33
+              },
+              "driver_license_number" : "C4446677",
+              "driver_license_state" : {
+                "value" : "California",
+                "id" : "CA"
+              },
+              "email" : "bradshawinca@comcast.net",
+              "employment" : {
+                "employer_name" : "Some Company",
+                "occupation" : "Fashionista",
+                "income" : 100000.0,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "",
+                  "city" : "",
+                  "zip" : ""
+                }
+              },
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 57,
+            "residence" : {
+              "addresses" : [ {
+                "street_address" : "5444 South Turtle Run Ln.",
+                "zip" : "92222",
+                "city" : "Turtle Bay",
+                "state" : {
+                  "value" : "California",
+                  "id" : "CA"
+                },
+                "type" : {
+                  "value" : "Residential",
+                  "id" : 1
+                }
+              } ],
+              "physical_mailing_similar" : true,
+              "residence_ownership" : {
+                "value" : "Own",
+                "id" : 1
+              },
+              "weapon_in_home" : false,
+              "body_of_water_exist" : true,
+              "body_of_water_description" : "Small turtle pond in the backyard and small fish fountain in the front yard.",
+              "others_using_residence_as_mailing" : false,
+              "directions_to_home" : "Turn left off of Turtle Bay Cove Dr. onto Turtle Run.",
+              "home_languages" : [ {
+                "value" : "English",
+                "id" : 6
+              } ]
+            },
+            "applicants_relationship" : {
+              "relationship_type" : {
+                "value" : "Married",
+                "id" : 1
+              },
+              "date_of_relationship" : "2000-12-15",
+              "place_of_relationship_city" : "Turtle Bay",
+              "place_of_relationship_state" : {
+                "value" : "California",
+                "id" : "CA"
+              }
+            },
+            "applicants_history" : {
+              "former_spouses" : [ {
+                "first_name" : "",
+                "middle_name" : "",
+                "last_name" : "",
+                "place_of_marriage_city" : "",
+                "place_of_marriage_end_city" : ""
+              } ],
+              "adult_children" : [ {
+                "first_name" : "",
+                "middle_name" : "",
+                "last_name" : "",
+                "relationship_to_applicants" : [ { } ],
+                "address" : {
+                  "street_address" : "",
+                  "zip" : "",
+                  "city" : ""
+                }
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 53,
+              "name_prefix" : {
+                "value" : "Mr.",
+                "id" : 1
+              },
+              "first_name" : "Brian",
+              "middle_name" : "Anthony",
+              "last_name" : "Turtle",
+              "other_names" : [ {
+                "name_prefix" : {
+                  "value" : "Mr.",
+                  "id" : 1
+                },
+                "first_name" : "Anthony",
+                "middle_name" : "",
+                "last_name" : "Turtle",
+                "name_type" : {
+                  "value" : "AKA",
+                  "id" : 1
+                }
+              } ],
+              "highest_education_level" : {
+                "value" : "High School or Equivalent",
+                "id" : 3
+              },
+              "date_of_birth" : "1965-10-10",
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              },
+              "ethnicity" : {
+                "value" : "Caribbean",
+                "id" : 6
+              },
+              "driver_license_number" : "B2525256",
+              "driver_license_state" : {
+                "value" : "California",
+                "id" : "CA"
+              },
+              "email" : "slowasaturtle@gmail.com",
+              "employment" : {
+                "employer_name" : "Turtle Rescuers of America",
+                "occupation" : "Turtle Rescuer",
+                "income" : 45000.0,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2222 Turtle Savers Bay Rd.",
+                  "city" : "Turtle Bay",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "zip" : "92222"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Cell",
+                  "id" : 1
+                },
+                "number" : "9097775555",
+                "preferred" : true
+              }, {
+                "phone_type" : {
+                  "value" : "Work",
+                  "id" : 3
+                },
+                "number" : "9097778888",
+                "preferred" : false
+              } ]
+            }, {
+              "id" : 54,
+              "name_prefix" : {
+                "value" : "Mrs.",
+                "id" : 3
+              },
+              "first_name" : "Catherine",
+              "middle_name" : "Bunny",
+              "last_name" : "Turtle",
+              "other_names" : [ {
+                "name_prefix" : {
+                  "value" : "Miss",
+                  "id" : 5
+                },
+                "first_name" : "Bunny",
+                "middle_name" : "",
+                "last_name" : "Smith",
+                "name_type" : {
+                  "value" : "Maiden",
+                  "id" : 4
+                }
+              }, {
+                "name_prefix" : {
+                  "value" : "Mrs.",
+                  "id" : 3
+                },
+                "first_name" : "Bunny",
+                "middle_name" : "",
+                "last_name" : "Turtle",
+                "name_type" : {
+                  "value" : "AKA",
+                  "id" : 1
+                }
+              } ],
+              "highest_education_level" : {
+                "value" : "College Graduate",
+                "id" : 6
+              },
+              "date_of_birth" : "1968-08-09",
+              "gender" : {
+                "value" : "Female",
+                "id" : 2
+              },
+              "ethnicity" : {
+                "value" : "Declines to State",
+                "id" : 9
+              },
+              "driver_license_number" : "B2727278",
+              "driver_license_state" : {
+                "value" : "California",
+                "id" : "CA"
+              },
+              "email" : "hoplikeabunny@comcast.net",
+              "employment" : {
+                "employer_name" : "Turtle Rescuers of America",
+                "occupation" : "Turtle Rescuer",
+                "income" : 45000.0,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2222 Turtle Bay Cove Dr.",
+                  "city" : "Turtle Bay",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "zip" : "92222"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Cell",
+                  "id" : 1
+                },
+                "number" : "9095559999",
+                "preferred" : true
+              }, {
+                "phone_type" : {
+                  "value" : "Work",
+                  "id" : 3
+                },
+                "number" : "9093338888",
+                "preferred" : false
+              } ]
+            } ],
+            "minor_children" : [ {
+              "id" : 4,
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ],
+              "date_of_birth" : "2002-03-03",
+              "gender" : {
+                "value" : "Female",
+                "id" : 2
+              },
+              "child_financially_supported" : true,
+              "child_adopted" : false
+            } ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "adoption_history" : {
+              "foster_care_licenses_q1" : {
+                "was_previously_licensed" : true,
+                "agencies" : [ {
+                  "name" : "Questionable Agency",
+                  "type" : {
+                    "value" : "License",
+                    "id" : 1
+                  }
+                } ]
+              },
+              "applications_for_adoption_q2" : {
+                "have_applied_for_adoption" : false,
+                "facilities" : [ "" ]
+              },
+              "facility_operation_licenses_q3" : {
+                "was_previously_licensed" : false,
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "employment_in_facilities_q4" : {
+                "was_employed_or_volunteered" : false,
+                "facilities" : [ "" ]
+              },
+              "denial_history_q5" : {
+                "had_denials" : false,
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "suspension_revocation_history_q6" : {
+                "had_suspensions_revocations" : false,
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "was_subject_for_exclusion_order_q7" : false
+            },
+            "child_desired" : {
+              "child_identified" : true,
+              "child_in_home" : false,
+              "preferred_ages" : [ {
+                "value" : "0-3 years",
+                "id" : 1
+              } ],
+              "preferred_sibling_group_up_to" : {
+                "value" : "1 child only",
+                "id" : 1
+              }
+            },
+            "references" : {
+              "items" : [ {
+                "name_prefix" : {
+                  "value" : "Mr.",
+                  "id" : 1
+                },
+                "first_name" : "William",
+                "middle_name" : "H",
+                "last_name" : "Turtle",
+                "mailing_address" : {
+                  "street_address" : "4244 Snapping Turtle Rd.",
+                  "zip" : "92222",
+                  "city" : "Turtle Bay",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  }
+                },
+                "phone_number" : "9094449999",
+                "email" : "willyturtle@gmail.com"
+              }, {
+                "name_prefix" : {
+                  "value" : "Mrs.",
+                  "id" : 3
+                },
+                "first_name" : "Sarah",
+                "middle_name" : "Sinister",
+                "last_name" : "Silverfox",
+                "mailing_address" : {
+                  "street_address" : "8888 Molasses Ct.",
+                  "zip" : "92222",
+                  "city" : "Turtle Bay",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  }
+                },
+                "phone_number" : "9095777788",
+                "email" : "sinsterfox@comcast.net"
+              }, {
+                "first_name" : "Callie",
+                "middle_name" : "",
+                "last_name" : "Merriweather",
+                "mailing_address" : {
+                  "street_address" : "9922 Sunflower St.",
+                  "zip" : "92222",
+                  "city" : "Turtle Bay",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  }
+                },
+                "phone_number" : "9097666699",
+                "email" : "callalilym@hotmail.com"
+              } ]
+            },
+            "is_initial_application" : false,
             "is_other_type" : false
           } ]
         }
     http_version: 
-  recorded_at: Tue, 08 Aug 2017 20:27:02 GMT
+  recorded_at: Tue, 10 Oct 2017 22:03:15 GMT
 recorded_with: VCR 3.0.3

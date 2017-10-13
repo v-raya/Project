@@ -1,5 +1,5 @@
 class WelcomeController < CalsBaseController
-
+#  include AuthenticationProvider
   def index
     @applications = rfa_application_helper.all_expanded
   end

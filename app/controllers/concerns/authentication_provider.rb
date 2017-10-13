@@ -1,4 +1,4 @@
-
+require 'json'
 module AuthenticationProvider
   extend ActiveSupport::Concern
 
@@ -8,5 +8,15 @@ module AuthenticationProvider
 
   def get_session_token
     session[:token]
+  end
+
+  def get_user_from_session
+    user_details = JSON.parse(session[:user_details])
+    User.new(user_details['user'],
+             user_details['staffId'],
+             user_details['roles'],
+             user_details['county_code'],
+             user_details['county_name'],
+             user_details['privilege'])
   end
 end

@@ -5,28 +5,25 @@ var TestUtils = require('react-dom/test-utils')
 describe('Verify Application List View', () => {
   let applications = [
     {
-      id: {
-        applicants : [],
-        id: 43,
-        is_initial_application: false,
-        is_other_type: false,
-        minor_children: [],
-        other_adults: [],
-        rfa1b_forms : [],
-        rfa1c_forms: []
-      }
+      applicants: [],
+      id: 43,
+      is_initial_application: false,
+      is_other_type: false,
+      minor_children: [],
+      other_adults: [],
+      rfa1b_forms: [],
+      rfa1c_forms: []
     },
     {
-      id: {
-        applicants : [],
-        id: 44,
-        is_initial_application: false,
-        is_other_type: false,
-        minor_children: [],
-        other_adults: [],
-        rfa1b_forms : [],
-        rfa1c_forms: []
-      }
+
+      applicants: [],
+      id: 44,
+      is_initial_application: false,
+      is_other_type: false,
+      minor_children: [],
+      other_adults: [],
+      rfa1b_forms: [],
+      rfa1c_forms: []
     }
   ]
   const AppListViewCard = TestUtils.createRenderer()

@@ -513,7 +513,28 @@ const relationshipToApplicantTypes = Object.freeze({
     }
   ]
 })
-
+const countyTypes = Object.freeze({
+  'items': [
+    {
+      'value': 'Alameda',
+      'id': 1
+    },
+    {
+      'value': 'Alpine',
+      'id': 2
+    },
+    {
+      'value': 'Amador',
+      'id': 3
+    },
+    {
+      'value': 'Butte',
+      'id': 4
+    },
+    {
+      'value': 'Calaveras',
+      'id': 5
+    }]})
 export {siblingGroups, ageGroups, marriageTerminationReasons, relationshipToApplicantTypes,
    nameTypes, suffixTypes, prefixTypes, salaryTypes, relationshipTypes, applicantrelationTypes,
-    educationLevels, ethnicityTypes, genderTypes, stateTypes, languageTypes, residenceTypes }
+    educationLevels, ethnicityTypes, genderTypes, stateTypes, languageTypes, residenceTypes, countyTypes }

@@ -20,12 +20,11 @@ export default class ApplicationsTable extends React.Component {
           </div>
           {
             applicationList && applicationList.map((application, index) => {
-              let applicantsList = application.id
               return (
-                <a href={urlPrefixHelper('/rfa/a01/' + applicantsList.id + '/edit')} className='table-row' key={index}>
-                  <div className='table-cell'>{applicantsList.id}</div>
-                  <div className='table-cell'>{(applicantsList.applicants.length > 0) && applicantsList.applicants[0].first_name}</div>
-                  <div className='table-cell'>{(applicantsList.applicants.length > 0) && applicantsList.applicants[0].last_name}</div>
+                <a href={urlPrefixHelper('/rfa/a01/' + application.id + '/edit')} className='table-row' key={index}>
+                  <div className='table-cell'>{application.id}</div>
+                  <div className='table-cell'>{(application.applicants.length > 0) && application.applicants[0].first_name}</div>
+                  <div className='table-cell'>{(application.applicants.length > 0) && application.applicants[0].last_name}</div>
                 </a>
               )
             })

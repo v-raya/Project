@@ -7,7 +7,7 @@ VCR.configure do |c|
   c.allow_http_connections_when_no_cassette = true
   c.ignore_localhost = false
   c.ignore_request do |request|
-    !(request.uri.starts_with?(CALS_API_BASE_URL) || request.uri.starts_with?(CALS_API_URL) || request.uri.starts_with?(GEO_SERVICE_URL))
+    !(request.uri.starts_with?(CALS_API_BASE_URL) || request.uri.starts_with?(CALS_API_URL) || request.uri.starts_with?(AUTHENTICATION_API_BASE_URL) || request.uri.starts_with?(GEO_SERVICE_URL))
   end
 
   # c.register_request_matcher :ignore_port_matcher do |request_1, request_2|

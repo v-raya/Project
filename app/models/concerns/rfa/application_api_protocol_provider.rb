@@ -13,5 +13,10 @@ module Concerns::Rfa::ApplicationApiProtocolProvider
       response = FaradayCals.post('/rfa-1a-forms', auth_header,'{}')
       JSON.parse(response.body)
     end
+
+    def update(auth_header, parent_id, _id, body)
+      response = FaradayCals.put("/rfa-1a-forms/#{parent_id}", auth_header, body)
+      new(JSON.parse(response.body))
+    end
   end
 end

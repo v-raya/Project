@@ -1,15 +1,13 @@
 class Rfa::Application < CalsBase
   include Concerns::Rfa::ApplicationApiProtocolProvider
-  attr_accessor :id, :application_type, :county, :progress_state
+  attr_accessor :id, :is_initial_application, :is_other_type, :application_county,
+                :minor_children, :adoption_history, :applicants_relationship, :applicants_history,
+                :residence, :references, :foster_care_history, :child_desired, :other_adults,
+                :relationship_between_applicants, :rfa1c_forms
 
-  attr_accessor :applicants, :residence, :minorChildren, :otherAdults, :fosterCareHistory,
-                :relationshipBetweenApplicants, :references, :applicantsHistory, :childDesired,
-                :references
+  attr_accessor :applicants, :minorChildren, :otherAdults, :fosterCareHistory,
+                :relationshipBetweenApplicants, :applicantsHistory, :childDesired
 
-
-  def initialize(id=nil)
-    @id = id
-  end
   # has_many :applicants
   # has_many :signatories
   # has_many :references
@@ -20,5 +18,4 @@ class Rfa::Application < CalsBase
   def self.api_resource_path
     'rfa-1a-forms'
   end
-
 end

@@ -74,6 +74,10 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     Dictionaries::MarriageTerminationReason.all(auth_header)
   end
 
+  def county_types
+    Dictionaries::County.all(auth_header)
+  end
+
   def rfa_a01_dictioniaries
     dictionaries = {}
     dictionaries[:residence_types] = residence_ownership_types
@@ -94,6 +98,8 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     dictionaries[:marriage_termination_reasons] = marriage_termination_reasons
     dictionaries[:age_groups] = age_groups
     dictionaries[:sibling_groups] = sibling_groups
+    dictionaries[:county_types] = county_types
     return dictionaries
   end
+
 end

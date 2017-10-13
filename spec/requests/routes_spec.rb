@@ -16,10 +16,6 @@ RSpec.describe 'routes scope', :type => :request do
       ENV['RAILS_RELATIVE_URL_ROOT']='/cals'
     end
 
-    before(:each) do
-      allow(controller).to receive_messages(:authenticate_with_cwds => true)
-    end
-
     it 'redirects requests' do
       get '/cals/facilities'
       expect(response).to have_http_status(:redirect)
