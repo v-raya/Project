@@ -2,99 +2,92 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3001/v1/facilities/search
+    uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
     body:
       encoding: UTF-8
-      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"match":{"fac_name":"home"}}]}}]}}}'
+      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"match":{"name":"home"}}]}}]}}}'
     headers:
       Content-type:
       - application/json
+      Authorization:
+      - "..d2998bGJj4-PU_BM.zFBgGVUa3a5o30voOf_WeWh2oetUXKI1og6ba9VUfKSv76BqkLqQi_-kyLpg4WPiVukxUoA4_wTyD9fiU6rkp-JrsXCs1kAuG4P6jZxZuzCowLbaX1RzuQ6VTKn3kDb7rdy3uxnKzZ_mX3H-vA7rcWns_MFTlJ2dRESdq5b7OJenY3RwKyazmydAaqpXDg_2iJrygLZQgNtzT1Oa5lQgdope6jYTXE7KOdo7lfI15CPvHyPuN_g8aK9oDLL453ph4n1-k9ctoGE7MZkOx414cz21qUGLjTfNZh5dLU4AjnDOedYBev2JrrLM4KeZ4-UmVedS-T1_90rF7dhJu5XqiJjSIWeJC26_fDqB7qRqneS1Z7zjWebjTLqV86U9hu31zJRu6CDthhadg5blGDfXnYZERN_v6T3x23DDpoY-V8Zh3tksx1lBBF1Imw9KGQDUebEIg21qYuoeTNbOqcr3hFDUDiiQ8bwu9hcXSGqoScxETeIh7rgiS764Uw4xnThG7LQDxnQ4ZvV6MvIEP87o2de0lzdMp7JgDj1V_YXEigUUcZTAvYJQyNZRPUh_BsTV7PHDOz6Q3BK1zr18brlAR_v1Cl8EvstL-humE95lBdGXhr2-MCvOiXO402g_QAllIfHhpSWquydMHpBHKv0nGzDF7LFissE-vRacRl4K4u_BvvR9o7h7e9N-sHdedXh3GrLlrw.wu5aPqZUXO7WB7-Vo9wLUQ"
   response:
     status:
       code: 200
       message: 
     headers:
-      x-frame-options:
-      - SAMEORIGIN
-      x-xss-protection:
-      - 1; mode=block
-      x-content-type-options:
-      - nosniff
       content-type:
-      - application/json; charset=utf-8
-      etag:
-      - W/"8094a30d92defe3024239aa4d80936fe"
-      cache-control:
-      - max-age=0, private, must-revalidate
-      x-request-id:
-      - 7cdcd791-f118-43d5-aa13-7b4d10f22232
-      x-runtime:
-      - '0.166540'
+      - application/json
+      date:
+      - Fri, 13 Oct 2017 18:26:52 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Oct-2017 18:26:52
+        GMT
       transfer-encoding:
       - chunked
+      connection:
+      - keep-alive
     body:
       encoding: UTF-8
-      string: '{"facilities":[{"fac_name":"DEPUTY DOG''S GROUP HOME","fac_nbr":193600008,"type":"GH
-        - Enhanced Behavioral Supports Home","fac_licensee_name":"TERRIER PROGRAMS,
-        INC.","fac_mail_street_addr":"767 GLEN EAGLES DRIVE","fac_mail_city":"MODESTO","fac_mail_state":"CA","fac_mail_zip_code":"95350","fac_res_street_addr":"767
-        GLEN EAGLES DRIVE","fac_res_city":"MODESTO","fac_res_state":"CA","fac_res_zip_code":"95350","county":"Marin","facility_telephone":"8183366556","district_office":"NO.
-        CAL SC/RES","status":"Licensed","assigned_worker":"Kari Gutierrez","fac_licensee_type":"C","fac_lic_eff_date":"1992-02-22","fac_last_visit_date":"1991-12-10","last_visit_reason":"Renewal
-        (Fac.''s w/Expir.)","fac_email_address":null,"fac_capacity":7,"fac_orig_appl_rec_date":"1983-02-02","fac_addr":"767
-        GLEN EAGLES DRIVE MODESTO CA 95350"},{"fac_name":"STRAWBERRY SHORT CAKE FOSTER
-        FAMILY HOME","fac_nbr":193600013,"type":"Foster Family Home (Confidential
-        - Do not release)","fac_licensee_name":"SHORT CAKE, STRAWBERRY","fac_mail_street_addr":"569
-        OAK LANE","fac_mail_city":"VAN NUYS","fac_mail_state":"CA","fac_mail_zip_code":"91406","fac_res_street_addr":"569
-        OAK LANE","fac_res_city":"VAN NUYS","fac_res_state":"CA","fac_res_zip_code":"91406","county":"Sonoma","facility_telephone":"9513022317","district_office":"NO.
-        CAL SC/RES","status":"Licensed","assigned_worker":"Denise Tugade","fac_licensee_type":"A","fac_lic_eff_date":"1993-04-18","fac_last_visit_date":"2015-12-16","last_visit_reason":"Caseload
-        Management","fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":null,"fac_addr":"569
-        OAK LANE VAN NUYS CA 91406"},{"fac_name":"TWEEDLE DEE \u0026 TWEEDLE DUM GROUP
-        HOME","fac_nbr":193600020,"type":"GH - Enhanced Behavioral Supports Home","fac_licensee_name":"FULL
-        TEACUPS, INC.","fac_mail_street_addr":"7726 CARPENTER ST.","fac_mail_city":"EL
-        CAJON","fac_mail_state":"CA","fac_mail_zip_code":"92020","fac_res_street_addr":"7726
-        CARPENTER ST.","fac_res_city":"EL CAJON","fac_res_state":"CA","fac_res_zip_code":"92020","county":"Marin","facility_telephone":"9095991227","district_office":"NO.
-        CAL SC/RES","status":"Provisional License","assigned_worker":"Alexis Hollon","fac_licensee_type":"D","fac_lic_eff_date":"1993-07-02","fac_last_visit_date":"2004-05-17","last_visit_reason":"Caseload
-        Management","fac_email_address":null,"fac_capacity":5,"fac_orig_appl_rec_date":"1987-04-28","fac_addr":"7726
-        CARPENTER ST. EL CAJON CA 92020"},{"fac_name":"SHREK FOSTER FAMILY HOME","fac_nbr":193600035,"type":"Foster
-        Family Home (Confidential - Do not release)","fac_licensee_name":"ORGE, SHREK
-        AND FIONA","fac_mail_street_addr":"52 UNION ST.","fac_mail_city":"SAN DIEGO","fac_mail_state":"CA","fac_mail_zip_code":"92117","fac_res_street_addr":"52
-        UNION ST.","fac_res_city":"SAN DIEGO","fac_res_state":"CA","fac_res_zip_code":"92117","county":"Sonoma","facility_telephone":"9097970114","district_office":"NO.
-        CAL SC/RES","status":"Application Withdrawn","assigned_worker":"Denise Tugade","fac_licensee_type":"B","fac_lic_eff_date":"1993-07-18","fac_last_visit_date":"2015-07-06","last_visit_reason":"Complaint","fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":null,"fac_addr":"52
-        UNION ST. SAN DIEGO CA 92117"},{"fac_name":"ALICE''S WONDERLAND GROUP HOME","fac_nbr":193600043,"type":"GH
-        - Enhanced Behavioral Supports Home","fac_licensee_name":"WHITE RABBIT, INC.","fac_mail_street_addr":"469
-        WILLIAM ST.","fac_mail_city":"MORENO VALLEY","fac_mail_state":"CA","fac_mail_zip_code":"92553","fac_res_street_addr":"469
-        WILLIAM ST.","fac_res_city":"MORENO VALLEY","fac_res_state":"CA","fac_res_zip_code":"92553","county":"Marin","facility_telephone":"9096281217","district_office":"NO.
-        CAL SC/RES","status":"Closed, Agency Initiated","assigned_worker":"Kari Gutierrez","fac_licensee_type":"C","fac_lic_eff_date":null,"fac_last_visit_date":null,"last_visit_reason":null,"fac_email_address":null,"fac_capacity":10,"fac_orig_appl_rec_date":"1985-04-23","fac_addr":"469
-        WILLIAM ST. MORENO VALLEY CA 92553"},{"fac_name":"TARZAN''S GROUP HOME FOR
-        BOYS","fac_nbr":193600048,"type":"Group Home","fac_licensee_name":"SWINGING
-        VINES, INC.","fac_mail_street_addr":"487 SOUTH GREEN ST.","fac_mail_city":"SAN
-        DIEGO","fac_mail_state":"CA","fac_mail_zip_code":"92115","fac_res_street_addr":"487
-        SOUTH GREEN ST.","fac_res_city":"SAN DIEGO","fac_res_state":"CA","fac_res_zip_code":"92115","county":"Napa","facility_telephone":"5302335200","district_office":"NO.
-        CAL SC/RES","status":"Closed, License Initiated","assigned_worker":"Alexis
-        Hollon","fac_licensee_type":"C","fac_lic_eff_date":"1993-07-25","fac_last_visit_date":"2003-11-13","last_visit_reason":"Complaint","fac_email_address":null,"fac_capacity":20,"fac_orig_appl_rec_date":"1983-07-27","fac_addr":"487
-        SOUTH GREEN ST. SAN DIEGO CA 92115"},{"fac_name":"QUASIMODO''S GROUP HOME
-        FOR YOUTH","fac_nbr":193600126,"type":"Group Home","fac_licensee_name":"NOTRE
-        DAME, INC.","fac_mail_street_addr":"723 RIDGE LANE","fac_mail_city":"PALMDALE","fac_mail_state":"CA","fac_mail_zip_code":"93550","fac_res_street_addr":"723
-        RIDGE LANE","fac_res_city":"PALMDALE","fac_res_state":"CA","fac_res_zip_code":"93550","county":"Imperial","facility_telephone":"9516729690","district_office":"SO.
-        CAL SC/RES","status":"Closed, Agency Initiated","assigned_worker":"Zach Ulhaq","fac_licensee_type":"C","fac_lic_eff_date":"1999-12-10","fac_last_visit_date":"2003-12-09","last_visit_reason":"CCC
-        Annaul (All Fac.''s)","fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":"1999-04-05","fac_addr":"723
-        RIDGE LANE PALMDALE CA 93550"},{"fac_name":"LILO \u0026 STITCH''S HOME","fac_nbr":193600129,"type":"Transitional
-        Shelter Care","fac_licensee_name":"SURFING, INC.","fac_mail_street_addr":"7566
-        HILL FIELD DRIVE","fac_mail_city":"WILMINGTON","fac_mail_state":"CA","fac_mail_zip_code":"90744","fac_res_street_addr":"7566
-        HILL FIELD DRIVE","fac_res_city":"WILMINGTON","fac_res_state":"CA","fac_res_zip_code":"90744","county":"Napa","facility_telephone":"7073998927","district_office":"NO.
-        CAL SC/RES","status":"Probationary License","assigned_worker":"Kari Gutierrez","fac_licensee_type":"C","fac_lic_eff_date":"1993-02-01","fac_last_visit_date":"1992-11-18","last_visit_reason":"Renewal
-        (Fac.''s w/Expir.)","fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":"1984-01-17","fac_addr":"7566
-        HILL FIELD DRIVE WILMINGTON CA 90744"},{"fac_name":"SPONGE BOB FOSTER FAMILY
-        HOME","fac_nbr":193600142,"type":"Foster Family Home (Confidential - Do not
-        release)","fac_licensee_name":"SQUAREPANTS, SPONGEBOB","fac_mail_street_addr":"537
-        BAY MEADOWS ST.","fac_mail_city":"OCEANSIDE","fac_mail_state":"CA","fac_mail_zip_code":"92056","fac_res_street_addr":"537
-        BAY MEADOWS ST.","fac_res_city":"OCEANSIDE","fac_res_state":"CA","fac_res_zip_code":"92056","county":"Lassen","facility_telephone":"6619472251","district_office":"CHICO
-        - RESIDENTIAL","status":"Licensed","assigned_worker":"Henk Keukenkamp","fac_licensee_type":"A","fac_lic_eff_date":null,"fac_last_visit_date":"1991-01-10","last_visit_reason":"Pre-Licensing","fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":"1991-01-02","fac_addr":"537
-        BAY MEADOWS ST. OCEANSIDE CA 92056"},{"fac_name":"JETSON''S HOME","fac_nbr":193600025,"type":"Short
-        Term Res Therapeutic Program","fac_licensee_name":"ASTRO, INC.","fac_mail_street_addr":"69
-        LINDA ST.","fac_mail_city":"SAN DIEGO","fac_mail_state":"CA","fac_mail_zip_code":"92115","fac_res_street_addr":"69
-        LINDA ST.","fac_res_city":"SAN DIEGO","fac_res_state":"CA","fac_res_zip_code":"92115","county":"Napa","facility_telephone":"3233562534","district_office":"NO.
-        CAL SC/RES","status":"Licensed","assigned_worker":"Kari Gutierrez","fac_licensee_type":"C","fac_lic_eff_date":"1992-06-15","fac_last_visit_date":"1992-03-24","last_visit_reason":"Complaint","fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":"1987-05-26","fac_addr":"69
-        LINDA ST. SAN DIEGO CA 92115"}],"meta":{"total":10}}'
+      string: '{"took":1,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":38,"max_score":1.115982,"hits":[{"_index":"facilities","_type":"facility","_id":"193600151","_score":1.115982,"_source":{"href":null,"id":"193600151","type":{"id":"810","value":"FAMILY
+        DAY CARE"},"name":"CINDERELLA GROUP HOME","licensee_name":"DAVIS, THURZA M.","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"30","name":"L.A.
+        DAYCARE-NO.WEST"},"license_number":"193600151","status":{"id":"7","value":"APPLICATION
+        WITHDRWN"},"capacity":8,"license_effective_date":null,"original_application_recieved_date":{"year":2004,"month":"JANUARY","era":"CE","dayOfYear":29,"dayOfWeek":"THURSDAY","leapYear":true,"dayOfMonth":29,"monthValue":1,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"19","value":"LOS
+        ANGELES","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"3103754732"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"9
+        SAN JUAN ST.","city":"PACOIMA","state":"CA","zip_code":"91331","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"9
+        SAN JUAN ST.","city":"PACOIMA","state":"CA","zip_code":"91331","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"children":[],"inspections":[],"complaints":[]}},{"_index":"facilities","_type":"facility","_id":"193600035","_score":1.115982,"_source":{"href":null,"id":"193600035","type":{"id":"740","value":"RESIDENTIAL-ELDERLY"},"name":"SHREK
+        FOSTER FAMILY HOME","licensee_name":"FRESH START YOUTH CENTER, INC.","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"14","name":"SF
+        COASTAL AC/SC"},"license_number":"193600035","status":{"id":"7","value":"APPLICATION
+        WITHDRWN"},"capacity":7,"license_effective_date":null,"original_application_recieved_date":{"year":2005,"month":"MARCH","era":"CE","dayOfYear":60,"dayOfWeek":"TUESDAY","leapYear":false,"dayOfMonth":1,"monthValue":3,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"5104064211"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"52
+        UNION ST.","city":"SAN DIEGO","state":"CA","zip_code":"92117","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"52
+        UNION ST.","city":"SAN DIEGO","state":"CA","zip_code":"92117","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"children":[],"inspections":[],"complaints":[]}},{"_index":"facilities","_type":"facility","_id":"193600060","_score":1.115982,"_source":{"href":null,"id":"193600060","type":{"id":"810","value":"FAMILY
+        DAY CARE"},"name":"UGLY DUCKLING GROUP HOME","licensee_name":"WUEST, JASON
+        AND MARIA","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"2","name":"BAY
+        AREA-CC OAKLAND"},"license_number":"193600060","status":{"id":"21","value":"INACTIVE"},"capacity":8,"license_effective_date":{"year":2004,"month":"MARCH","era":"CE","dayOfYear":63,"dayOfWeek":"WEDNESDAY","leapYear":true,"dayOfMonth":3,"monthValue":3,"chronology":{"calendarType":"iso8601","id":"ISO"}},"original_application_recieved_date":{"year":2004,"month":"JANUARY","era":"CE","dayOfYear":28,"dayOfWeek":"WEDNESDAY","leapYear":true,"dayOfMonth":28,"monthValue":1,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"7","value":"CONTRA
+        COSTA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9255131770"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"P.O.
+        BOX 841","city":"NAPA","state":"CA","zip_code":"94559","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"P.O.
+        BOX 841","city":"NAPA","state":"CA","zip_code":"94559","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"children":[],"inspections":[],"complaints":[]}},{"_index":"facilities","_type":"facility","_id":"193600043","_score":1.115982,"_source":{"href":null,"id":"193600043","type":{"id":"810","value":"FAMILY
+        DAY CARE"},"name":"ALICE''S WONDERLAND GROUP HOME","licensee_name":"MCKINLEY
+        CHILDREN''S CENTER, INC.","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"2","name":"BAY
+        AREA-CC OAKLAND"},"license_number":"193600043","status":{"id":"7","value":"APPLICATION
+        WITHDRWN"},"capacity":8,"license_effective_date":null,"original_application_recieved_date":{"year":2004,"month":"MARCH","era":"CE","dayOfYear":71,"dayOfWeek":"THURSDAY","leapYear":true,"dayOfMonth":11,"monthValue":3,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"7","value":"CONTRA
+        COSTA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9257785448"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"469
+        WILLIAM ST.","city":"MORENO VALLEY","state":"CA","zip_code":"92553","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"469
+        WILLIAM ST.","city":"MORENO VALLEY","state":"CA","zip_code":"92553","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"children":[],"inspections":[],"complaints":[]}},{"_index":"facilities","_type":"facility","_id":"193600076","_score":1.1054103,"_source":{"href":null,"id":"193600076","type":{"id":"740","value":"RESIDENTIAL-ELDERLY"},"name":"FLINSTONE
+        RCFCI - BARNEY HOME","licensee_name":"BEYOND BASICS, INC.","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"14","name":"SF
+        COASTAL AC/SC"},"license_number":"193600076","status":{"id":"7","value":"APPLICATION
+        WITHDRWN"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":{"year":2004,"month":"JANUARY","era":"CE","dayOfYear":22,"dayOfWeek":"THURSDAY","leapYear":true,"dayOfMonth":22,"monthValue":1,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9252856745"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"8660
+        FREMONT ROAD","city":"FREMONT","state":"CA","zip_code":"94536","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"8660
+        FREMONT ROAD","city":"FREMONT","state":"CA","zip_code":"94536","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"children":[],"inspections":[],"complaints":[]}},{"_index":"facilities","_type":"facility","_id":"193600173","_score":1.1054103,"_source":{"href":null,"id":"193600173","type":{"id":"740","value":"RESIDENTIAL-ELDERLY"},"name":"PONTE
+        FOSTER FAMILY HOME","licensee_name":"ROBERTS, CURTEASEA","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"31","name":"N
+        LA & CEN COA AC/SC"},"license_number":"193600173","status":{"id":"7","value":"APPLICATION
+        WITHDRWN"},"capacity":1,"license_effective_date":null,"original_application_recieved_date":{"year":2004,"month":"JANUARY","era":"CE","dayOfYear":13,"dayOfWeek":"TUESDAY","leapYear":true,"dayOfMonth":13,"monthValue":1,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"19","value":"LOS
+        ANGELES","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"3235957917"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"984
+        TALBOT LANE","city":"VALLEJO","state":"CA","zip_code":"94591","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"984
+        TALBOT LANE","city":"VALLEJO","state":"CA","zip_code":"94591","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"children":[],"inspections":[],"complaints":[]}},{"_index":"facilities","_type":"facility","_id":"193600041","_score":1.1054103,"_source":{"href":null,"id":"193600041","type":{"id":"735","value":"ADULT
+        RESIDENTIAL"},"name":"RAPUNZEL''S HAIRY HOME","licensee_name":"VALLEY OAK
+        RESIDENTIAL TREATMENT PROGRAM, INC.","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"21","name":"NO.
+        CAL AC/SC"},"license_number":"193600041","status":{"id":"3","value":"LICENSED"},"capacity":6,"license_effective_date":{"year":2004,"month":"MAY","era":"CE","dayOfYear":131,"dayOfWeek":"MONDAY","leapYear":true,"dayOfMonth":10,"monthValue":5,"chronology":{"calendarType":"iso8601","id":"ISO"}},"original_application_recieved_date":{"year":2004,"month":"JANUARY","era":"CE","dayOfYear":29,"dayOfWeek":"THURSDAY","leapYear":true,"dayOfMonth":29,"monthValue":1,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":"PERL7826@COMCAST.NET","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"48","value":"SOLANO","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"7074163862"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"971
+        WEST ARCADIA STREET","city":"HESPERIA","state":"CA","zip_code":"92345","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"971
+        WEST ARCADIA STREET","city":"HESPERIA","state":"CA","zip_code":"92345","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"children":[],"inspections":[],"complaints":[]}},{"_index":"facilities","_type":"facility","_id":"193600142","_score":1.0866172,"_source":{"href":null,"id":"193600142","type":{"id":"740","value":"RESIDENTIAL-ELDERLY"},"name":"SPONGE
+        BOB FOSTER FAMILY HOME","licensee_name":"KYJO ENTERPRISES INC.","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"14","name":"SF
+        COASTAL AC/SC"},"license_number":"193600142","status":{"id":"7","value":"APPLICATION
+        WITHDRWN"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":{"year":2004,"month":"JANUARY","era":"CE","dayOfYear":27,"dayOfWeek":"TUESDAY","leapYear":true,"dayOfMonth":27,"monthValue":1,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"41","value":"SAN
+        MATEO","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"6502197192"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"537
+        BAY MEADOWS ST.","city":"OCEANSIDE","state":"CA","zip_code":"92056","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"537
+        BAY MEADOWS ST.","city":"OCEANSIDE","state":"CA","zip_code":"92056","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"children":[],"inspections":[],"complaints":[]}},{"_index":"facilities","_type":"facility","_id":"193600127","_score":1.0866172,"_source":{"href":null,"id":"193600127","type":{"id":"740","value":"RESIDENTIAL-ELDERLY"},"name":"JIMINY
+        CRICKET''S SMALL FAMILY HOME","licensee_name":"AVERY-GREGORY, DORIS","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"14","name":"SF
+        COASTAL AC/SC"},"license_number":"193600127","status":{"id":"7","value":"APPLICATION
+        WITHDRWN"},"capacity":4,"license_effective_date":null,"original_application_recieved_date":{"year":2004,"month":"JANUARY","era":"CE","dayOfYear":23,"dayOfWeek":"FRIDAY","leapYear":true,"dayOfMonth":23,"monthValue":1,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"41","value":"SAN
+        MATEO","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"6503771973"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"32
+        PIERCE ST.","city":"SACRAMENTO","state":"CA","zip_code":"95828","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"32
+        PIERCE ST.","city":"SACRAMENTO","state":"CA","zip_code":"95828","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"children":[],"inspections":[],"complaints":[]}},{"_index":"facilities","_type":"facility","_id":"193600074","_score":1.0866172,"_source":{"href":null,"id":"193600074","type":{"id":"810","value":"FAMILY
+        DAY CARE"},"name":"SPIDER MAN FOSTER FAMILY HOME","licensee_name":"FOR THE
+        FUTURE, INC.","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"2","name":"BAY
+        AREA-CC OAKLAND"},"license_number":"193600074","status":{"id":"7","value":"APPLICATION
+        WITHDRWN"},"capacity":8,"license_effective_date":null,"original_application_recieved_date":{"year":2004,"month":"MARCH","era":"CE","dayOfYear":71,"dayOfWeek":"THURSDAY","leapYear":true,"dayOfMonth":11,"monthValue":3,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"5103527367"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"8605
+        WILSON AVE.","city":"PITTSBURG","state":"CA","zip_code":"94565","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"8605
+        WILSON AVE.","city":"PITTSBURG","state":"CA","zip_code":"94565","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"children":[],"inspections":[],"complaints":[]}}]}}'
     http_version: 
-  recorded_at: Tue, 10 Oct 2017 22:00:26 GMT
+  recorded_at: Fri, 13 Oct 2017 18:26:48 GMT
 recorded_with: VCR 3.0.3

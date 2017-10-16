@@ -4,8 +4,9 @@ require 'rails_helper'
 include RSpec
 
 describe FacilitiesController do
-  before(:each) do
-    allow(controller).to receive_messages(:authenticate_with_cwds => true)
+  before do
+    allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
+    allow_any_instance_of(CalsBaseController).to receive(:get_session_token).and_return(ENV['TOKEN'])
   end
 
   describe 'GET index' do
@@ -25,7 +26,7 @@ describe FacilitiesController do
       request.headers['Content-Type'] = 'application/json'
       request.headers['Accept'] = 'application/json'
 
-      post :search, {:params => {:fac_name => ['home']}}
+      post :search, {:params => {:name => ['home']}}
       expect(response.status).to eq(200)
       expect(response.body.include?('TWEEDLE'))
     end

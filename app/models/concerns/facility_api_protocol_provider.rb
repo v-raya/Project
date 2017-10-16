@@ -4,7 +4,8 @@ module Concerns::FacilityApiProtocolProvider
 
   class_methods do
     def search(query, auth_header)
-      response = FaradayCalsmock.post("/#{class_name_downcase_pluralized}/search",
+
+      response = FaradaySearch.post("/dora/#{class_name_downcase_pluralized}/#{class_name_downcase_pluralized.singularize}/_search",
                                   auth_header,
                                   query)
       JSON.parse(response.body)

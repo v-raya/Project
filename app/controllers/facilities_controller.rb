@@ -25,6 +25,7 @@ class FacilitiesController < CalsBaseController
     es_query_json = Elastic::QueryBuilder.match_boolean(query_hash).to_json
     logger.info "es query: #{es_query_json}"
     @facilities = facility_helper.search es_query_json
+    @facilities = @facilities['hits']['hits'].collect { |facility| facility['_source']}
     json_response @facilities
   end
 

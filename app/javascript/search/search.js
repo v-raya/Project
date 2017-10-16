@@ -49,11 +49,11 @@ export default class Search extends React.Component {
     var addressData = this.addressQuery(query)
 
     var params = {
-      fac_co_nbr: [query[0]],
-      fac_type: [query[1]],
-      fac_nbr: [query[2]],
-      fac_name: [query[3]],
-      fac_addr: addressData
+      'county.id': [query[0]],
+      'type.id': [query[1]],
+      id: [query[2]],
+      name: [query[3]],
+      'addresses.address.street_address': addressData
     }
 
     this.state.inputData = DataSearch
@@ -64,7 +64,8 @@ export default class Search extends React.Component {
       response => response.json())
     .then((response) => {
       return this.setState({
-        searchData: response.facilities
+
+        searchData: response
       })
     })
     .catch(error => {

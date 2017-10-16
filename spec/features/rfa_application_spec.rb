@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'vcr'
+require 'faker'
 
 RSpec.feature 'RFA', js: true do
 
@@ -12,9 +13,9 @@ RSpec.feature 'RFA', js: true do
     visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('firstname', with: 'Taylor', :match => :prefer_exact)
+    fill_in('firstname', with: Faker::Name.name, :match => :prefer_exact)
     fill_in('middleName', with: 'k', :match => :prefer_exact)
-    fill_in('lastName', with: 'Swift', :match => :prefer_exact)
+    fill_in('lastName', with: Faker::Name.name, :match => :prefer_exact)
     fill_in 'applicants[0].driver_license_number', with: 'ABC123'
     expect(page).to have_content 'More about Applicant'
     find(:select, 'highest_education_level').first(:option, 'Some High School').select_option
@@ -49,9 +50,9 @@ RSpec.feature 'RFA', js: true do
     visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('firstname', with: 'Taylor', :match => :prefer_exact)
+    fill_in('firstname', with: Faker::Name.name, :match => :prefer_exact)
     fill_in('middleName', with: 'k', :match => :prefer_exact)
-    fill_in('lastName', with: 'Swift', :match => :prefer_exact)
+    fill_in('lastName', with: Faker::Name.name, :match => :prefer_exact)
     expect(page).to have_content 'IV. Minor Children Residing in the home'
     fill_in('street_address', with: '2870 something else', :match => :prefer_exact)
     fill_in('Zip', with: '12345', :match => :prefer_exact)
@@ -68,7 +69,7 @@ RSpec.feature 'RFA', js: true do
     find(:select, 'others_using_residence_as_mailing').first(:option, 'Yes').select_option
     fill_in('directions', with: 'directions goes here', :match => :prefer_exact)
     find(:select, 'languagesSpoken').first(:option, 'Arabic').select_option
-    fill_in('firstname', with: 'Taylor', :match => :prefer_exact)
+    fill_in('firstname', with: Faker::Name.name, :match => :prefer_exact)
 
     click_button('Save Progress')
     visit page.driver.current_url
@@ -80,15 +81,15 @@ RSpec.feature 'RFA', js: true do
     visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('firstname', with: 'Taylor', :match => :prefer_exact)
+    fill_in('firstname', with: Faker::Name.name, :match => :prefer_exact)
     fill_in('middleName', with: 'k', :match => :prefer_exact)
-    fill_in('lastName', with: 'Swift', :match => :prefer_exact)
+    fill_in('lastName', with: Faker::Name.name, :match => :prefer_exact)
     expect(page).to have_content 'IV. Minor Children Residing in the home'
     find(:select, 'relationship_to_applicant').first(:option, 'Child').select_option
     find(:select, 'child_financially_supported').first(:option, 'Yes').select_option
     find(:select, 'child_adopted').first(:option, 'Yes').select_option
     find(:select, 'minor_gender').first(:option, 'Male').select_option
-    fill_in('firstname', with: 'Taylor', :match => :prefer_exact)
+    fill_in('firstname', with: Faker::Name.name, :match => :prefer_exact)
 
     click_button('Save Progress')
     visit page.driver.current_url
@@ -99,12 +100,12 @@ RSpec.feature 'RFA', js: true do
     visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('firstname', with: 'Taylor', :match => :prefer_exact)
+    fill_in('firstname', with: Faker::Name.name, :match => :prefer_exact)
     fill_in('middleName', with: 'k', :match => :prefer_exact)
-    fill_in('lastName', with: 'Swift', :match => :prefer_exact)
+    fill_in('lastName', with: Faker::Name.name, :match => :prefer_exact)
     expect(page).to have_content 'V.Other adults residing or Regularly present in the home'
     find(:select, 'relationshipType').first(:option, 'Child').select_option
-    fill_in('firstname', with: 'Taylor', :match => :prefer_exact)
+    fill_in('firstname', with: Faker::Name.name, :match => :prefer_exact)
 
     click_button('Save Progress')
     visit page.driver.current_url
@@ -117,12 +118,12 @@ RSpec.feature 'RFA', js: true do
     visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('firstname', with: 'Taylor', :match => :prefer_exact)
+    fill_in('firstname', with: Faker::Name.name, :match => :prefer_exact)
     fill_in('middleName', with: 'k', :match => :prefer_exact)
-    fill_in('lastName', with: 'Swift', :match => :prefer_exact)
+    fill_in('lastName', with: Faker::Name.name, :match => :prefer_exact)
     expect(page).to have_content 'VIII. Foster Care / Adoption / Licensure History'
     find(:select, 'q1-select-dropdown').first(:option, 'No').select_option
-    fill_in('firstname', with: 'Taylor', :match => :prefer_exact)
+    fill_in('firstname', with: Faker::Name.name, :match => :prefer_exact)
 
     click_button('Save Progress')
     visit page.driver.current_url
@@ -134,17 +135,17 @@ RSpec.feature 'RFA', js: true do
     visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('firstname', with: 'Taylor', :match => :prefer_exact)
+    fill_in('firstname', with: Faker::Name.name, :match => :prefer_exact)
     fill_in('middleName', with: 'k', :match => :prefer_exact)
-    fill_in('lastName', with: 'Swift', :match => :prefer_exact)
+    fill_in('lastName', with: Faker::Name.name, :match => :prefer_exact)
     expect(page).to have_content 'IX. References'
-    fill_in('firstname', with: 'Taylor', :match => :prefer_exact)
+    fill_in('firstname', with: 'Sam', :match => :prefer_exact)
 
     click_button('Save Progress')
     visit page.driver.current_url
   end
 
-  scenario 'Show RFA page dictionaries', set_auth_header: true do
+  scenario 'RFA page dictionaries', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_select('minor_gender', :with_options => ['', 'Male', 'Female'])

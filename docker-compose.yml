@@ -15,6 +15,7 @@ services:
       CALS_API_URL: "https://cals-api.preint.cwds.io"
       GEO_SERVICE_URL: "https://geo.preint.cwds.io"
       AUTHENTICATION_API_BASE_URL: "https://web.preint.cwds.io/perry"
+      BASE_SEARCH_API_URL: "https://dora.preint.cwds.io"
       SANDBOX_LANDING_URL: "http://localhost:3000"
       REDIS_HOST: 'redis'
       REDIS_PORT: 6379
