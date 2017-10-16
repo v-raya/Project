@@ -14,7 +14,6 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './../node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js',
       {pattern: './../test/javascript/tests.webpack.js', watched: true}
     ],
 
@@ -68,7 +67,6 @@ module.exports = function (config) {
       'karma-jasmine',
       'karma-coverage',
       'karma-chrome-launcher',
-      'karma-phantomjs-launcher',
       'karma-webpack',
       'istanbul-instrumenter-loader'
     ],
@@ -87,19 +85,24 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['ChromeHeadless'],
+    customLaunchers: {
+      ChromeHeadless: {
+        base: 'Chrome',
+        flags: [
+          '--disable-gpu',
+          '--headless',
+          '--no-sandbox',
+          '--remote-debugging-port=9222'
+        ]
+      }
+    },
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true,
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity,
-
-    phantomjsLauncher: {
-      // Have phantomjs exit if a ResourceError is encountered
-      //  (useful if karma exits without killing phantom)
-      exitOnResourceError: true
-    }
+    concurrency: Infinity
   })
 }

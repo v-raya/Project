@@ -1,5 +1,5 @@
 
-# version 0.3
+# version 0.4
 
 FROM ruby:latest
 
@@ -17,8 +17,6 @@ RUN apt-get upgrade -y
 
 RUN apt-get install -y nodejs yarn build-essential chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev \
     iceweasel \
-    chromium \
-    chromedriver \
     xvfb \
     bzip2 \
     qt5-default \
@@ -29,19 +27,10 @@ RUN apt-get install -y nodejs yarn build-essential chrpath libssl-dev libxft-dev
 
 RUN apt-get install -y gconf2
 
-RUN ln -s /usr/lib/chromium/chromedriver /usr/bin/chromedriver
+# install chrome binary
+RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+RUN echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list
 
-#### ENV variables
-ENV PHANTOM_JS=phantomjs-2.1.1-linux-x86_64
+RUN apt-get update && apt-get install --no-install-recommends -y google-chrome-stable
 
-# RUN wget --user-agent="Mozilla" https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2
-# RUN wget 'https://cambriasolutionsinc-my.sharepoint.com/personal/dtalwar_cambriasolutions_com/_layouts/15/guestaccess.aspx?docid=07376a6ae3f3c45dea8a9135781a0bbfc&authkey=AaSPiMF0Aza3iH9SWKPDBsg' -O $PHANTOM_JS.tar.bz2
-RUN wget 'https://drive.google.com/uc?export=download&id=0B8styZ_fXfKEQkFPTldZWkRYV3M' -O /usr/local/share/$PHANTOM_JS.tar.bz2
-
-WORKDIR /usr/local/share/
-
-RUN cd /usr/local/share/ \
-  && tar xvjf $PHANTOM_JS.tar.bz2 \
-  && ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/share/phantomjs \
-  && ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin/phantomjs \
-  && ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/bin/phantomjs
+RUN export CHROME_BIN=/usr/bin/google-chrome
