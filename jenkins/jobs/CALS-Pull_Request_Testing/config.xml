@@ -14,6 +14,14 @@
       <scanQueueFor>DISABLED</scanQueueFor>
       <blockingJobs></blockingJobs>
     </hudson.plugins.buildblocker.BuildBlockerProperty>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>120</daysToKeep>
+        <numToKeep>50</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
     <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.28.0">
       <projectUrl>https://github.com/ca-cwds/CALS/</projectUrl>
       <displayName></displayName>
@@ -23,7 +31,7 @@
         <hudson.model.StringParameterDefinition>
           <name>sha1</name>
           <description></description>
-          <defaultValue>af0cd0abdd603eb0b5231a737dd8b135c7431bd0</defaultValue>
+          <defaultValue>7860603f431f706871f430cb602071df25f8dfd8</defaultValue>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
