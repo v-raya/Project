@@ -1,10 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "shared/headers.scss";
-@import "woodduck-rails";
+//@import "shared/headers.scss";
+//@import "woodduck-rails";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import 'react-wood-duck/dist/styles/application.scss'
+@import 'react-wood-duck/dist/styles/application.scss';
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

@@ -39,7 +39,7 @@ gem 'webpacker', github: 'rails/webpacker', :ref => "48ef089"
 gem 'jbuilder', '~> 2.5'
 
 gem 'cwds-authentication', github: 'ca-cwds/cwds-authentication', :ref => "a32f309"
-gem 'woodduck-rails', github: "ca-cwds/woodduck-rails", branch: 'development'
+#gem 'woodduck-rails', github: "ca-cwds/woodduck-rails", branch: 'development'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
