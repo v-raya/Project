@@ -1,4 +1,4 @@
-FROM ratneshraval/cals-base:0.3
+FROM ratneshraval/cals-base:0.4
 
 RUN mkdir /var/www \
   && cd /var/www
@@ -15,6 +15,7 @@ RUN cd /var/www/cals \
 # ENV variables
 ENV BASE_CALS_API_URL=http://localhost:3001/v1 \
   CALS_API_URL=https://cals-api.preint.cwds.io \
+  BASE_SEARCH_API_URL=https://dora.preint.cwds.io \
   GEO_SERVICE_URL=https://geo.preint.cwds.io \
   AUTHENTICATION_API_BASE_URL=https://web.preint.cwds.io/perry \
   CHROME=true \
