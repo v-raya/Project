@@ -106,6 +106,7 @@ export BASE_CALS_API_URL=&quot;http://localhost:3001/v1&quot;
 export CALS_API_URL=&quot;https://cals-api.preint.cwds.io&quot;
 export GEO_SERVICE_URL=&quot;https://geo.preint.cwds.io&quot;
 export BASE_SEARCH_API_URL=&quot;https://dora.preint.cwds.io&quot;
+export AUTHENTICATION_API_BASE_URL=&quot;https://web.preint.cwds.io/perry&quot;
 # export RAILS_RELATIVE_URL_ROOT=&quot;/&quot;
 export DISABLE_SPRING=1
 
@@ -115,8 +116,15 @@ source /etc/profile.d/rvm.sh
 rvm use default
 
 set -e
-
-ruby -v 
+echo -----------------------------------------------------
+echo which ruby
+which ruby
+echo -----------------------------------------------------
+echo which bundler
+which bundler
+echo -----------------------------------------------------
+echo which bundle
+which bundle
 echo -----------------------------------------------------
 gem install bundler
 
@@ -136,15 +144,42 @@ docker-compose down
 docker-compose up --build -d
 
 sleep 5
-# bin/webpack &amp;&amp; docker-compose exec -T cals bash -c &apos;RAILS_ENV=test bundle exec rspec&apos;
+
+echo -----------------------------------------------------
+echo which ruby
+docker-compose exec -T cals bash -c &apos;which ruby&apos;
+echo -----------------------------------------------------
+echo  ruby version
+docker-compose exec -T cals bash -c &apos;ruby -v&apos;
+echo -----------------------------------------------------
+echo which bundler
+docker-compose exec -T cals bash -c &apos;which bundler&apos;
+echo -----------------------------------------------------
+echo which bundle
+docker-compose exec -T cals bash -c &apos;which bundle&apos;
+echo -----------------------------------------------------
+echo bundle path
+docker-compose exec -T cals bash -c &apos;echo $BUNDLE_PATH&apos;
+echo -----------------------------------------------------
+echo bundle check
+docker-compose exec -T cals bash -c &apos;bundle check&apos;
+echo -----------------------------------------------------
+
+# bundle exec rspec spec
+docker-compose exec -T cals bash -c &apos;bundle exec rails assets:precompile RAILS_ENV=test&apos;
+echo -----------------------------------------------------
+bin/webpack &amp;&amp; docker-compose exec -T cals bash -c &apos;RAILS_ENV=test bundle exec rspec&apos;
 # bundle exec rake build_rails:bundle_yarn
-bundle exec rake spec:cals
+# bundle exec rake spec:cals
+
+echo -----------------------------------------------------
+docker-compose exec -T cals bash -c &apos;npm run karma-ci&apos;
 
 docker-compose down
 
 
 #change reports folder permission 
-# sudo chown -R jenkins:jenkins reports
+sudo chown -R jenkins:jenkins reports
 
 #docker-compose up -d --force-recreate
 #echo &quot;-------------------------&quot;
@@ -156,7 +191,7 @@ docker-compose down
 #bundle exec rake spec:cals
 
 # run karma normally
-npm run karma-ci
+# npm run karma-ci
 
 sleep 5</command>
     </hudson.tasks.Shell>
