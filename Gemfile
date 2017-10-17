@@ -19,6 +19,9 @@ gem 'bootstrap'
 gem 'react-rails', '~> 2.2'
 
 gem 'redis-rails', '~> 5.0'
+gem 'redis-namespace'
+gem 'redis'
+gem 'redis-rack-cache'
 gem 'faraday'
 gem 'faraday_middleware'
 
@@ -62,6 +65,7 @@ end
 group :test do
   gem 'simplecov', require: false
   gem 'codeclimate-test-reporter', '~> 1.0.0'
+  gem 'mock_redis'
 end
 
 group :development do

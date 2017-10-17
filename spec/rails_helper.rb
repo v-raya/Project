@@ -1,5 +1,6 @@
 ENV['RAILS_ENV'] = 'test'
 require 'simplecov'
+require 'mock_redis'
 SimpleCov.start 'rails'
 puts "required simplecov"
 
@@ -46,6 +47,8 @@ RSpec.configure do |config|
   config.before(:each, type: :feature, :set_auth_header => true) do
     allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
     allow_any_instance_of(CalsBaseController).to receive(:get_session_token).and_return(ENV['TOKEN'])
+    allow_any_instance_of(CalsBaseController).to receive(:store_token_in_redis).and_return(ENV['TOKEN'])
+   $redis.flushdb
   end
 
 

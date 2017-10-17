@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe 'routes scope', :type => :request do
 
   before(:each) do
-    allow(controller).to receive_messages(:authenticate_with_cwds => true)
+    #allow(controller).to receive_messages(:authenticate_with_cwds => true)
+    allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
+
   end
 
   context 'with custom relative url' do
@@ -11,14 +13,17 @@ RSpec.describe 'routes scope', :type => :request do
       Rack::Builder.parse_file(File.expand_path('../../../config.ru', __FILE__)).first
     }
 
+    #let!(:redis) { MockRedis.new }
+
     before(:context) do
       @tmp_env_var = ENV['RAILS_RELATIVE_URL_ROOT']
       ENV['RAILS_RELATIVE_URL_ROOT']='/cals'
+      $redis.flushdb
     end
 
     it 'redirects requests' do
       get '/cals/facilities'
-      expect(response).to have_http_status(:redirect)
+      expect(response).to have_http_status(200)
     end
 
     it 'does not raise error' do
@@ -34,12 +39,13 @@ RSpec.describe 'routes scope', :type => :request do
 
   context 'without custom relative url' do
     before(:each) do
-      allow(controller).to receive_messages(:authenticate_with_cwds => true)
+      allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
+      $redis.flushdb
     end
 
     it 'redirects requests' do
       get '/facilities'
-      expect(response).to have_http_status(:redirect)
+      expect(response).to have_http_status(200)
     end
   end
 end
