@@ -3,8 +3,23 @@ import SearchInput from '../../../app/javascript/search/search_input'
 var TestUtils = require('react-dom/lib/ReactTestUtils')
 
 describe('Render Search Inputs', function () {
+  const props = {
+    facilityTypes: [
+       {
+          id: '',
+          value: '' 
+       }
+     ],
+    countyList: [
+       {
+          id: '',
+          value: '' 
+       }
+     ],
+ 
+   }
   const renderedComp = TestUtils.createRenderer()
-  const compRendered = renderedComp.render(<SearchInput />)
+  const compRendered = renderedComp.render(<SearchInput {...props} />)
   const result_tag = renderedComp.getRenderOutput()
 
   // it('Rendered A React Component or Not', function () {

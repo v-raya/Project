@@ -59,21 +59,21 @@ export default class Search extends React.Component {
     this.state.inputData = DataSearch
 
     // call http request function with arguments
-    fetchRequest('/facilities/search', 'POST', params).then(
+    let url = '/facilities/search'
+    fetchRequest(url, 'POST', params).then(
       response => response.json())
-      .then((response) => {
-        return this.setState({
-
-          searchData: response
-        })
+    .then((response) => {
+      return this.setState({
+        searchData: response
       })
-      .catch(error => {
-        console.log(error)
-        return this.setState({
-          searchData: [],
-          fromResponse: true
-        })
+    })
+    .catch(error => {
+      console.log(error)
+      return this.setState({
+        searchData: [],
+        fromResponse: true
       })
+    })
   }
 
   render () {
@@ -85,7 +85,11 @@ export default class Search extends React.Component {
           <a href={this.state.landingPageUrl} className='btn btn-default btn-lg active pull-right back-button' role='button'>Back</a>
         </div>
         <div className='search-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <SearchInput sendSearchInput={this.addSearchInput.bind(this)} />
+          <SearchInput
+            sendSearchInput={this.addSearchInput.bind(this)}
+            countyList={this.props.countyTypes}
+            facilityTypes={this.props.facilityTypes}
+          />
         </div>
         {searchArray && <SearchDetails sendSearchInput={this.addSearchInput.bind(this)} {...this} />}
         <div className='result-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>

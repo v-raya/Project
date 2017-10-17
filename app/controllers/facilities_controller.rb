@@ -26,6 +26,7 @@ class FacilitiesController < CalsBaseController
     logger.info "es query: #{es_query_json}"
     @facilities = facility_helper.search es_query_json
     @facilities = @facilities['hits']['hits'].collect { |facility| facility['_source']}
+    @facilities.sort_by! {|facility_name| facility_name['name']}
     json_response @facilities
   end
 

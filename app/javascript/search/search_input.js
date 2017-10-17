@@ -1,38 +1,42 @@
 import React from 'react'
-import { FacilityTypes, CountyList } from '../constants/constants'
+// import { FacilityTypes, CountyList } from '../constants/constants'
 
 export default class SearchInput extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      county: '',
-      facility: ''
+      countyId: '',
+      facilityTypeId: ''
     }
     this.handleCountyChange = this.handleCountyChange.bind(this)
     this.handleTypeChange = this.handleTypeChange.bind(this)
   }
   handleCountyChange (event) {
+    let selectedCounty = event.target.selectedOptions[0]
     this.setState({
-      county: event.target.value
+      countyId: selectedCounty.id
     })
   }
   handleTypeChange (event) {
+    let selectedFacilityType = event.target.selectedOptions[0]
     this.setState({
-      facility: event.target.value
+      facilityTypeId: selectedFacilityType.id
     }
     )
   }
   sendSearchInput (event) {
     event.preventDefault()
-    const finalQuery = (this.state.county + ',' + this.state.facility + ',' + this.refs.facilityId.value + ',' + this.refs.facilityHome.value + ',' + this.refs.facilityAddress.value)
+    const finalQuery = (this.state.countyId + ',' + this.state.facilityTypeId + ',' + this.refs.facilityId.value + ',' + this.refs.facilityHome.value + ',' + this.refs.facilityAddress.value)
     this.props.sendSearchInput(finalQuery)
   }
   render () {
-    const facilityIterate = (Object.keys(FacilityTypes).sort()).map((facility) =>
-      <option key={Number(facility)} value={facility}>{FacilityTypes[facility]}</option>
+    const facilityTypes = this.props.facilityTypes
+    const countyList = this.props.countyList
+    const facilityIterate = facilityTypes.map((facilityType) =>
+      <option key={facilityType.id} id={facilityType.id} value={facilityType.value}>{facilityType.value}</option>
     )
-    const countyIterate = (Object.keys(CountyList).sort()).map((county) =>
-      <option key={Number(county)} value={county}>{CountyList[county]}</option>
+    const countyIterate = countyList.map((county) =>
+      <option key={county.id} id={county.id} value={county.value}>{county.value}</option>
     )
     return (
       <div className='search_input col-xs-12 col-sm-12 col-md-12 col-lg-12'>

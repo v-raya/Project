@@ -78,6 +78,17 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     Dictionaries::County.all(auth_header)
   end
 
+  def facility_types
+    Dictionaries::FacilityType.all(auth_header)
+  end
+
+  def facilities_dictionaries
+    dictionaries = {}
+    dictionaries[:county_types] = county_types
+    dictionaries[:facility_types] = facility_types
+    return dictionaries
+  end
+
   def rfa_a01_dictioniaries
     dictionaries = {}
     dictionaries[:residence_types] = residence_ownership_types
