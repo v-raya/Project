@@ -11,8 +11,8 @@ class Helpers::GeoserviceHelper < Helpers::ModelHelperBase
   def lookup
     Geoservice.lookup(auth_header)
   end
-  def validate
-    Geoservice.validate(auth_header)
+  def validate(body)
+    Geoservice.validate(auth_header, body)
   end
 
 end

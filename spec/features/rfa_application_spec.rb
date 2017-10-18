@@ -57,10 +57,10 @@ RSpec.feature 'RFA', js: true do
     fill_in('street_address', with: '2870 something else', :match => :prefer_exact)
     fill_in('Zip', with: '12345', :match => :prefer_exact)
     find(:select, 'mailing_similar').first(:option, 'No').select_option
-    fill_in('secondary_street_address', with: 'maing address here', :match => :prefer_exact)
-    fill_in('secondary_zip', with: '12345', :match => :prefer_exact)
-    fill_in('secondary_city', with: 'secondary city', :match => :prefer_exact)
-    find(:select, 'secondary_state').first(:option, 'Alaska').select_option
+    fill_in('street_address', with: 'maing address here', :match => :prefer_exact)
+    fill_in('zip', with: '12345', :match => :prefer_exact)
+    fill_in('city', with: 'secondary city', :match => :prefer_exact)
+    #find(:select, 'Residentialstate_type').first(:option, 'Alaska').select_option
     expect(page).to have_content 'About This Residence'
     find(:select, 'residenceTypes').first(:option, 'Own').select_option
     find(:select, 'weapons').first(:option, 'Yes').select_option

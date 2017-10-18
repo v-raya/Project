@@ -171,7 +171,6 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
                         nameTypes={this.props.nameTypes}
                         stateTypes={this.props.stateTypes}
                         marriageTerminationReasons={this.props.marriageTerminationReasons}
-                        validator={this.props.validator}
                         errors={this.props.errors.former_spouses[index]} /> }
                     </div>
                   )

@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   end
   #get 'geoservice', to: 'geoservice#show'
   resources :geoservice, only: [:create] do
+    collection { post :validate }
   end
 end

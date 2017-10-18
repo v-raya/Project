@@ -25,7 +25,6 @@ class Faraday::FaradayBase
       req.headers = default_headers(auth_header)
       req.body = body if method.in?(BODY_METHODS)
     end
-
     unless Rails.env.test?
       Rails.logger.info('API call request: ')
       Rails.logger.info("URL : #{url}")
@@ -33,7 +32,6 @@ class Faraday::FaradayBase
       Rails.logger.info('API call response:')
       Rails.logger.info(response)
     end
-
     return response
   end
 
