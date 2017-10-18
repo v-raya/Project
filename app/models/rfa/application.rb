@@ -3,7 +3,7 @@ class Rfa::Application < CalsBase
   attr_accessor :id, :is_initial_application, :is_other_type, :application_county,
                 :minor_children, :adoption_history, :applicants_relationship, :applicants_history,
                 :residence, :references, :foster_care_history, :child_desired, :other_adults,
-                :relationship_between_applicants, :rfa1c_forms
+                :relationship_between_applicants, :rfa1c_forms, :other_type_description, :applicants_declaration
 
   attr_accessor :applicants, :minorChildren, :otherAdults, :fosterCareHistory,
                 :relationshipBetweenApplicants, :applicantsHistory, :childDesired
