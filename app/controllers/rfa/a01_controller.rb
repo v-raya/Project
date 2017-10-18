@@ -39,7 +39,7 @@ class Rfa::A01Controller < CalsBaseController
     @application_response[:relationshipBetweenApplicants] = process_items_for_persistance(relationship_between_applicants_params, rfa_relation_between_applicants_helper, params[:id]) if params[:relationshipBetweenApplicants].present?
     @application_response[:references] = process_items_for_persistance(references_params, rfa_references_helper, params[:id]) if params[:references].present?
     @application_response[:childDesired] = process_items_for_persistance(child_desired_params, rfa_child_desired_helper, params[:id]) if params[:childDesired].present?
-
+    @application_response[:references] = process_items_for_persistance(references_params, rfa_references_helper, params[:id]) if params[:references].present?
   end
 
   private
@@ -139,30 +139,6 @@ class Rfa::A01Controller < CalsBaseController
 
     permitted_params[:items] = permitted_params.delete(:references)
     permitted_params
-  end
-
-  def process_items_for_persistance(items, helper, parent_id)
-    result = []
-    if items.is_a?(Array)
-      items.each do |item|
-        result << create_or_update(item, helper, parent_id)
-      end
-    else
-      result = create_or_update(items, helper, parent_id)
-    end
-    result
-  end
-
-  def create_or_update(item, helper, parent_id)
-    item[:id] ? helper.update(parent_id, item[:id], item.to_json) : helper.create(parent_id, item.to_json)
-  end
-
-  def set_relationship_to_applicants(parameters, response)
-    applicant_names = response.map { |app| [app.id, "#{app.first_name} #{app.middle_name} #{app.last_name}".squish] }.to_h
-    if 0.eql?(parameters['relationship_to_applicants'][0]['applicant_id'].to_i)
-      parameters['relationship_to_applicants'][0].merge!(ActionController::Parameters.new('applicant_id' => applicant_names.key(parameters['relationship_to_applicants'][0]['applicant_id'])).permit!)
-    end
-    parameters
   end
 
   def rfa_application_helper

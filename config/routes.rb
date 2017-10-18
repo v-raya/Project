@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       resources :applicant, only: [:index, :create, :edit]
       resource :residence, only: [:show, :create, :edit]
     end
-
+    resources :b01
   end
   #get 'geoservice', to: 'geoservice#show'
   resources :geoservice, only: [:create] do

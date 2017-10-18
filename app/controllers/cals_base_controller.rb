@@ -1,8 +1,33 @@
 class CalsBaseController < ApplicationController
   include AuthenticationProvider
+  include RedisHelper
   before_action :authenticate_with_cwds # , unless: 'Rails.env.development?'
 
   protected
+
+  def process_items_for_persistance(items, helper, parent_id)
+    result = []
+    if items.is_a?(Array)
+      items.each do |item|
+        result << create_or_update(item, helper, parent_id)
+      end
+    else
+      result = create_or_update(items, helper, parent_id)
+    end
+    result
+  end
+
+  def create_or_update(item, helper, parent_id)
+    item[:id] ? helper.update(parent_id, item[:id], item.to_json) : helper.create(parent_id, item.to_json)
+  end
+
+  def set_relationship_to_applicants(parameters, response)
+    applicant_names = response.map { |app| [app.id, "#{app.first_name} #{app.middle_name} #{app.last_name}".squish] }.to_h
+    if 0.eql?(parameters['relationship_to_applicants'][0]['applicant_id'].to_i)
+      parameters['relationship_to_applicants'][0].merge!(ActionController::Parameters.new('applicant_id' => applicant_names.key(parameters['relationship_to_applicants'][0]['applicant_id'])).permit!)
+    end
+    parameters
+  end
 
   def authenticate_with_cwds
     session.delete(:token) if params[:token].present?

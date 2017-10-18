@@ -113,4 +113,13 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     return dictionaries
   end
 
+  def rfa_b01_dictioniaries
+    dictionaries = {}
+    dictionaries[:county_types] = county_types
+    dictionaries[:name_suffix_types] = name_suffix_types
+    dictionaries[:name_prefix_types] = name_prefix_types
+    dictionaries[:state_types] = state_types
+    return dictionaries
+  end
+
 end
