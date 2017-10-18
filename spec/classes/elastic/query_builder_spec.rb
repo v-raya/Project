@@ -9,8 +9,8 @@ describe FacilitiesController do
       expected_output = {
         bool: {
           must: [
-            { match: {'fac_co_nbr':'28'} },
-            { match:{'fac_name':'home'} }
+            { match_phrase: {'fac_co_nbr':'28'} },
+            { match_phrase:{'fac_name':'home'} }
           ]
       }}
 
@@ -28,14 +28,14 @@ describe FacilitiesController do
             should: [
               {bool:
                {must: [
-                  {match:{'fac_co_nbr':'28'}},
-                  {match:{'fac_name':'home'}}
+                  {match_phrase:{'fac_co_nbr':'28'}},
+                  {match_phrase:{'fac_name':'home'}}
                 ]
                 }
                },
               {bool:
                {must: [
-                  {match:{'fac_co_nbr':'18'}}
+                  {match_phrase:{'fac_co_nbr':'18'}}
                 ]
                 }
                }]

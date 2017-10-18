@@ -5,7 +5,7 @@ http_interactions:
     uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
     body:
       encoding: UTF-8
-      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"match":{"name":"home"}}]}}]}}}'
+      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"match_phrase":{"name":"home"}}]}}]}}}'
     headers:
       Content-type:
       - application/json

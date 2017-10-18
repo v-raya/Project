@@ -1,23 +1,23 @@
 class Elastic::QueryBuilder
-    include ActiveModel::Model
+  include ActiveModel::Model
 
-    def self.match_and(query_hash)
-        # read more about match query here
-        # https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html
+  def self.match_and(query_hash)
+    # read more about match query here
+    # https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html
 
-        # prepare array of match queries.
-        a = []
+    # prepare array of match queries.
+    a = []
 
-        # each key is an attribute to query on
-        query_hash.each{ |k,v|   a << {match: { k.to_sym => v }} }
+    # each key is an attribute to query on
+    query_hash.each {|k, v| a << {match_phrase: {k.to_sym => v}}}
 
-        # wrap array in a bool AND(must)
-        return {
-            bool: {
-                must: a
-            }
+    # wrap array in a bool AND(must)
+    return {
+        bool: {
+            must: a
         }
-    end
+    }
+  end
 
     # query_array : array of hash - attributes and values to query
     # all keys of a hash will be combined with   AND
@@ -28,24 +28,52 @@ class Elastic::QueryBuilder
     # returns:
     # {"query":{"bool":{"should":[{"bool":{"must":[{"match":{"fac_co_nbr":"28"}},{"match":{"fac_name":"home"}}]}},{"bool":{"must":[{"match":{"fac_co_nbr":"18"}}]}}]}}}
     #
-    def self.match_boolean(query_array)
+  def self.match_boolean(query_array)
 
-        # prepare array of match queries.
-        combined_query_array = []
+    # prepare array of match queries.
+    combined_query_array = []
 
-        # loop through each array item to create piece of query
-        query_array.each do |itm|
-            combined_query_array << match_and(itm)
-        end
+    # loop through each array item to create piece of query
+    query_array.each do |itm|
+      # combined_query_array << address_query(itm.delete('addresses.address.street_address')) if itm['addresses.address.street_address'].present?
+      combined_query_array << match_and(itm)
+    end
 
-        # wrap array in a bool OR query
-        return {
+    # wrap array in a bool OR query
+    return {
+        query: {
+            bool: {
+                should: combined_query_array
+            }
+        }
+    }
+  end
+
+  def self.facility_search_v1(query_array)
+    address_params = query_array.map {|param| param['addresses.address.street_address']}.first
+
+    if address_params
+      query_array_without_address = [query_array.first.except('addresses.address.street_address')]
+      search_query = match_boolean(query_array_without_address)
+      search_query[:query][:bool][:should].first[:bool][:must] << address_query(address_params)
+      return search_query
+    else
+      match_boolean(query_array)
+    end
+  end
+
+  def self.address_query(address_params)
+    return {
+        nested: {
+            path: 'addresses',
+            score_mode: 'avg',
             query: {
-                bool: {
-                    should: combined_query_array
+                match_phrase: {
+                    'addresses.address.street_address': address_params
                 }
             }
         }
-    end
 
+    }
+  end
 end
