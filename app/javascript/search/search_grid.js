@@ -29,11 +29,11 @@ export default class SearchGrid extends React.Component {
               </div>
               <div>
                 <p className='block_label'>Facility Type </p>
-                <p className='block_text'>{result.type.value}</p>
+                <p className='block_text'>{result.type && result.type.value ? result.type.value : 'N/A'}</p>
               </div>
               <div>
                 <p className='block_label'>Status </p>
-                <p className='block_text'>{result.status.value}</p>
+                <p className='block_text'>{result.status && result.status.value ? result.status.value : 'N/A'}</p>
               </div>
               <div>
                 <p className='block_label'>Licensee Name </p>
@@ -47,7 +47,7 @@ export default class SearchGrid extends React.Component {
               </div>
               <div>
                 <p className='block_label'>County </p>
-                <p className='block_text'>{result.county.value}</p>
+                <p className='block_text'>{result.county && result.county.value ? result.county.value : 'N/A'}</p>
               </div>
               <div>
                 <p className='block_label'>Facility Phone Number </p>

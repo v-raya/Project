@@ -13,14 +13,14 @@ export default class SearchList extends React.Component {
         <tr key={result.license_number}>
           <td><a href={'/facilities/' + result.license_number}>{result.name}</a></td>
           <td>{result.license_number}</td>
-          <td>{result.type.value}</td>
-          <td>{result.status.value}</td>
+          <td>{result.type && result.type.value ? result.type.value : 'N/A'}</td>
+          <td>{result.status && result.status.value ? result.status.value : 'N/A'}</td>
           <td>{result.name}</td>
           <td>{address}</td>
-          <td>{result.county.value}</td>
+          <td>{result.county && result.county.value ? result.county.value : 'N/A'}</td>
           <td>{phone}</td>
           <td>{result.email_address ? result.email_address : 'N/A'}</td>
-          <td>{result.assigned_worker.value ? result.assigned_worker.value : 'N/A'
+          <td>{'N/A'
           }<p>Phone: <span>{phone}</span></p></td>
         </tr>
       )

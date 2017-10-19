@@ -13,21 +13,21 @@ class Elastic::QueryBuilder
 
     # wrap array in a bool AND(must)
     return {
-        bool: {
-            must: a
-        }
+      bool: {
+        must: a
+      }
     }
   end
 
-    # query_array : array of hash - attributes and values to query
-    # all keys of a hash will be combined with   AND
-    #  each array item will be combined with  OR
-    #
-    # input [ {fac_co_nbr: '23', fac_name: 'home'}, {fac_co_nbr: '45'} ]
-    # translates to  (fac_co_nbr: 23 AND fac_name: home) OR (fac_co_nbr: 45)
-    # returns:
-    # {"query":{"bool":{"should":[{"bool":{"must":[{"match":{"fac_co_nbr":"28"}},{"match":{"fac_name":"home"}}]}},{"bool":{"must":[{"match":{"fac_co_nbr":"18"}}]}}]}}}
-    #
+  # query_array : array of hash - attributes and values to query
+  # all keys of a hash will be combined with   AND
+  #  each array item will be combined with  OR
+  #
+  # input [ {fac_co_nbr: '23', fac_name: 'home'}, {fac_co_nbr: '45'} ]
+  # translates to  (fac_co_nbr: 23 AND fac_name: home) OR (fac_co_nbr: 45)
+  # returns:
+  # {"query":{"bool":{"should":[{"bool":{"must":[{"match":{"fac_co_nbr":"28"}},{"match":{"fac_name":"home"}}]}},{"bool":{"must":[{"match":{"fac_co_nbr":"18"}}]}}]}}}
+  #
   def self.match_boolean(query_array)
 
     # prepare array of match queries.
@@ -41,11 +41,11 @@ class Elastic::QueryBuilder
 
     # wrap array in a bool OR query
     return {
-        query: {
-            bool: {
-                should: combined_query_array
-            }
+      query: {
+        bool: {
+          should: combined_query_array
         }
+      }
     }
   end
 
@@ -64,16 +64,17 @@ class Elastic::QueryBuilder
 
   def self.address_query(address_params)
     return {
-        nested: {
-            path: 'addresses',
-            score_mode: 'avg',
-            query: {
-                match_phrase: {
-                    'addresses.address.street_address': address_params
-                }
-            }
+      nested: {
+        path: 'addresses',
+        score_mode: 'avg',
+        query: {
+          multi_match: {
+            query: address_params,
+            type: 'phrase',
+            fields: ['addresses.address.street_address', 'addresses.address.state', 'addresses.address.city', 'addresses.address.zip_code']
+          }
         }
-
+      }
     }
   end
 end
