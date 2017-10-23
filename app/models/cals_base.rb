@@ -15,5 +15,8 @@ class CalsBase
     ''
   end
 
-
+  def self.new(*attributes)
+    attributes.first.reject!{|k| !self.instance_methods.include?(k.to_sym) } if attributes.first.present?
+    super
+  end
 end

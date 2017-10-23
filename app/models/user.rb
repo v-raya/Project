@@ -1,6 +1,7 @@
 class User < CalsBase
   attr_accessor :user, :staffId, :roles, :county_code, :county_name, :privilege
 
+=begin
   def initialize(user, staffId, roles, county_code, county_name, privilege)
      @user = user
      @staffId = staffId
@@ -9,4 +10,5 @@ class User < CalsBase
      @county_name = county_name
      @privilege = privilege
   end
+=end
 end
