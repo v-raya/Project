@@ -6,7 +6,10 @@ import {stateTypes} from '../../helpers/constants'
 describe('Verify placeDateFields Component', () => {
   let placeDateFieldsComp,
     placeDateFieldsCompFields,
-    previousRelationshipPrefixId
+    previousRelationshipPrefixId,
+    onDateChangeSpy,
+    onCityChangeSpy,
+    onStateChangeSpy
   beforeEach(() => {
     previousRelationshipPrefixId = 'prefix'
     placeDateFieldsCompFields = {
@@ -17,7 +20,9 @@ describe('Verify placeDateFields Component', () => {
         value: ''
       }
     }
-
+    onDateChangeSpy = jasmine.createSpy('onDateChange')
+    onCityChangeSpy = jasmine.createSpy('onCityChange')
+    onStateChangeSpy= jasmine.createSpy('onStateChange')
     placeDateFieldsComp = mount(<PlaceDateField
       dateId={previousRelationshipPrefixId + 'date'}
       cityId={previousRelationshipPrefixId + 'city'}
@@ -25,7 +30,11 @@ describe('Verify placeDateFields Component', () => {
       dateValue={placeDateFieldsCompFields.dateValue}
       stateValue={placeDateFieldsCompFields.stateValue}
       cityValue={placeDateFieldsCompFields.cityValue}
-      stateTypes={stateTypes.items} />)
+      stateTypes={stateTypes.items}
+      onDateChange={onDateChangeSpy}
+      onCityChange={onCityChangeSpy}
+      onStateChange={onStateChangeSpy} />)
+
   })
 
   it('Load placeDateFields ', () => {

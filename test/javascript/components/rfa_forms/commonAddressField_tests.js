@@ -17,6 +17,7 @@ describe('Verify Common Address Fields Component', () => {
       index={0}
       suggestions={[]}
       stateTypes={stateTypes.items}
+      addressTitle={''}
       addressFields={addressFields}
       onChange={onChangeSpy}/>)
   })

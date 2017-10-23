@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {shallow, mount} from 'enzyme'
-import {salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes} from './../../helpers/constants'
+import {salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes, languageTypes} from './../../helpers/constants'
 import AboutApplicant from 'rfa_forms/rfa01a_edit_view/aboutApplicantCard.jsx'
 import Validator from 'helpers/validator.js'
 
@@ -42,6 +42,7 @@ describe('Verify More About Applican', () => {
       ethnicityTypes={ethnicityTypes.items}
       educationLevels={educationLevels.items}
       stateTypes={stateTypes.items}
+      languageTypes={languageTypes.items}
       setParentState={setCardState}
       validator={validator} />)
   })

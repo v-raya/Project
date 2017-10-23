@@ -22,7 +22,7 @@ describe('Verify CountyUseOnlyCard Component', () => {
       setFocusState={setFocusStateSpy}
       getFocusClassName={getFocusClassNameSpy}
       county={CountyUseOnlyCardFields.county}
-      CountyList={countyTypes}
+      CountyList={countyTypes.items}
       onFieldChange={onFieldChangeSpy} />)
   })
 
