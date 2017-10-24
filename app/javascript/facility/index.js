@@ -17,7 +17,7 @@ export default class Facility extends React.Component {
     let propsData = this.state.facility
     let childrenData = this.state.children
     let complaintsData = this.state.complaints
-     // items.each do |item| <Link to facility/fac_nbr compononet facilities params = item>
+    // items.each do |item| <Link to facility/fac_nbr compononet facilities params = item>
     return (
       <div className='main_page'>
         <div className='header_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>

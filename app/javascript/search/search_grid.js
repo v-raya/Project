@@ -6,9 +6,9 @@ export default class SearchGrid extends React.Component {
     const searchResults = this.props.searchResults
     const gridResult = searchResults.map((result) => {
       let displayAddress = result.addresses[0] !== undefined && result.addresses[0].address.street_address !== undefined
-      let address = displayAddress ? result.addresses[0].address.street_address + ',' + result.addresses[0].address.city
-        + ',' + result.addresses[0].address.state + ' ' + result.addresses[0].address.zip_code : 'N/A'
-      let phone = (result.phones[0] !== undefined &&  result.phones[0].number !== undefined) ? result.phones[0].number : 'N/A'
+      let address = displayAddress ? result.addresses[0].address.street_address + ',' + result.addresses[0].address.city +
+        ',' + result.addresses[0].address.state + ' ' + result.addresses[0].address.zip_code : 'N/A'
+      let phone = (result.phones[0] !== undefined && result.phones[0].number !== undefined) ? result.phones[0].number : 'N/A'
 
       return (
         <div key={result.license_number} className='grid_view_inner col-xs-12 col-sm-12 col-md-12 col-lg-12' >

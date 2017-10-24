@@ -27,7 +27,7 @@ describe('Verify Child Desired Component', () => {
       getFocusClassName={getFocusClassNameSpy}
       setFocusState={setFocusStateSpy}
       setParentState={setParentStateSpy}
-      siblingGroups ={siblingGroups.items}
+      siblingGroups={siblingGroups.items}
       ageGroups={ageGroups.items}
     />)
   })

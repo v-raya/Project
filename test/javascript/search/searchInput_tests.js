@@ -5,19 +5,19 @@ var TestUtils = require('react-dom/lib/ReactTestUtils')
 describe('Render Search Inputs', function () {
   const props = {
     facilityTypes: [
-       {
-          id: '',
-          value: '' 
-       }
-     ],
+      {
+        id: '',
+        value: ''
+      }
+    ],
     countyList: [
-       {
-          id: '',
-          value: '' 
-       }
-     ],
- 
-   }
+      {
+        id: '',
+        value: ''
+      }
+    ]
+
+  }
   const renderedComp = TestUtils.createRenderer()
   const compRendered = renderedComp.render(<SearchInput {...props} />)
   const result_tag = renderedComp.getRenderOutput()

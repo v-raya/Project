@@ -114,7 +114,7 @@ export default class AddressCard extends React.Component {
             <CommonAddressFields
               suggestions={this.state.suggestions}
               addressTitle='Physical Address'
-              id="street_address"
+              id='street_address'
               addressType={physicalAddressType}
               addressFields={physicalAddressFields}
               stateTypes={this.props.stateTypes}
@@ -123,7 +123,7 @@ export default class AddressCard extends React.Component {
               onSuggestionSelected={(event, object) => this.onSuggestionSelected(event, object, physicalAddressType)} />
 
             <DropDownField gridClassName='col-md-6' selectClassName='reusable-select' id='mailing_similar'
-              value = {mailingAddress}
+              value={mailingAddress}
               text={this.props.physicalMailingSimilar}
               optionList={yesNo.items}
               label='Mailing address the same as Physical Address?'
@@ -132,7 +132,7 @@ export default class AddressCard extends React.Component {
               <CommonAddressFields
                 suggestions={this.state.suggestions}
                 addressTitle='Mailing Address'
-                id="street_address"
+                id='street_address'
                 addressType={mailingAddressType}
                 addressFields={mailingAddressFields}
                 onSelection={this.onSelection.bind(this)}

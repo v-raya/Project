@@ -43,7 +43,7 @@ describe('Name Card Component', () => {
       setParentState={setCardState}
       removeCard={isNameCardRemoved}
       handleNameChange={handleNameChangeFun}
-      validator={new Validator({})}/>)
+      validator={new Validator({})} />)
     renderedDOM = (domTobeRendered) => ReactDOM.findDOMNode(domTobeRendered)
     renderedDom = renderedDOM(renderedCard)
   })
@@ -67,7 +67,7 @@ describe('Name Card Component', () => {
       setParentState={setCardState}
       removeCard={isNameCardRemoved}
       validator={new Validator({})}
-      handleNameChange={handleNameChangeFun}/>)
+      handleNameChange={handleNameChangeFun} />)
     expect(renderedDOM(newRenderedCard).children.length).toEqual(3)
     let otherNameField = renderedDOM(newRenderedCard).children[1].children[1].children[1].children[0].children[0].children[0].children[1]
     TestUtils.Simulate.change(otherNameField, {target: {value: 'othername'}})

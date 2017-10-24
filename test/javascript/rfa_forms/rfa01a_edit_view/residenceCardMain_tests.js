@@ -5,9 +5,9 @@ import {stateTypes, languageTypes, residenceTypes} from '../../helpers/constants
 
 describe('Verify Residence main', function () {
   const blankResidenceFields = Object.freeze({
-    residence_ownership:  {
-      "id": 0,
-      "value": "Own"
+    residence_ownership: {
+      'id': 0,
+      'value': 'Own'
     },
     physical_mailing_similar: true,
     weapon_in_home: '',
@@ -18,7 +18,7 @@ describe('Verify Residence main', function () {
     home_languages: ''
   })
 
-  let setParentStateSpy,componentMount, setFocusStateSpy
+  let setParentStateSpy, componentMount, setFocusStateSpy
 
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
@@ -26,33 +26,25 @@ describe('Verify Residence main', function () {
     let getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
 
-
-
     componentMount = mount(<ResidenceCards residence={blankResidenceFields}
-                                           stateTypes={stateTypes.items}
-                                           languageTypes={languageTypes.items}
-                                           setFocusState={setFocusStateSpy}
-                                           getFocusClassName={getFocusClassNameSpy}
-                                           residenceTypes={residenceTypes.items}
+      stateTypes={stateTypes.items}
+      languageTypes={languageTypes.items}
+      setFocusState={setFocusStateSpy}
+      getFocusClassName={getFocusClassNameSpy}
+      residenceTypes={residenceTypes.items}
     />)
   })
   describe('Verify minor card Component View', () => {
-
     it('verify on click address card', () => {
-
       let relationShipField = componentMount.find('#residentAddress')
       relationShipField.simulate('click')
       expect(setFocusStateSpy).toHaveBeenCalledWith('residentAddress')
     })
 
     it('verify on about the residence card', () => {
-
       let relationShipField = componentMount.find('#aboutResidence')
       relationShipField.simulate('click')
       expect(setFocusStateSpy).toHaveBeenCalledWith('aboutResidence')
     })
   })
-
-  })
-
-
+})

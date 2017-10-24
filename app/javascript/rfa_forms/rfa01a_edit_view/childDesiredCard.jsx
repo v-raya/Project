@@ -49,7 +49,7 @@ export default class ChildDesiredCard extends React.Component {
           additional children, please indicate your preferences:'
           onChange={this.onChange}
         />
-        <div className="col-md-12 sibling">
+        <div className='col-md-12 sibling'>
           <p>Sibiling (Group of)</p>
           {
             this.props.siblingGroups.map((sibling, index) => {

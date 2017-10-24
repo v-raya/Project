@@ -12,7 +12,7 @@ export default class FacilityDetails extends React.Component {
             <div className='header_right'>
               <h3 className='header_bold'>
                       FACILITY TYPE :
-                  </h3>
+              </h3>
               <h3 className='header_light'>
                 {' ' + this.props.facilityData.type}
               </h3>

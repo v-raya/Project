@@ -10,13 +10,13 @@ describe('Verify Check Box Group', () => {
       child_identified: '',
       child_in_home: '',
       preferred_ages: [{
-        "id": 1,
-        "value": "0-3 years"
+        'id': 1,
+        'value': '0-3 years'
       },
-        {
-          "id": 2,
-          "value": "4-8 years"
-        }],
+      {
+        'id': 2,
+        'value': '4-8 years'
+      }],
       preferred_sibling_group_up_to: {
         id: '',
         value: ''
@@ -41,8 +41,8 @@ describe('Verify Check Box Group', () => {
     preferredField.simulate('change', {target: {checked: true}})
     childDesired.preferred_ages = []
     childDesired.preferred_ages.push({
-      "id": 7,
-      "value": "No preference"
+      'id': 7,
+      'value': 'No preference'
     })
     expect(setParentStateSpy).toHaveBeenCalledWith('preferred_ages', childDesired.preferred_ages)
   })

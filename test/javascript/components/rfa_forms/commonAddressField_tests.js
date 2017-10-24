@@ -19,10 +19,10 @@ describe('Verify Common Address Fields Component', () => {
       stateTypes={stateTypes.items}
       addressTitle={''}
       addressFields={addressFields}
-      onChange={onChangeSpy}/>)
+      onChange={onChangeSpy} />)
   })
   it('Load Address Fields', () => {
-    expect(commonAddressComp.length).toEqual(1 )
+    expect(commonAddressComp.length).toEqual(1)
   })
   it('verify mailing address zip change', () => {
     let zipCodeField = commonAddressComp.find('#zip')

@@ -4,7 +4,6 @@ import {DropDownField} from 'components/common/dropDownField'
 import {yesNo} from 'constants/constants'
 
 export default class CaliforniaCriminalBackground extends React.Component {
-
   addCard () {
     console.log('add card')
   }

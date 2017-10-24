@@ -5,14 +5,14 @@ import {shallow, mount} from 'enzyme'
 
 describe('Verify relation between applicant', function () {
   const childDesired = {
-      child_identified: '',
-      child_in_home: '',
-      preferred_ages: [],
-      preferred_sibling_group_up_to: {
-        id: '',
-        value: ''
-      }
+    child_identified: '',
+    child_in_home: '',
+    preferred_ages: [],
+    preferred_sibling_group_up_to: {
+      id: '',
+      value: ''
     }
+  }
 
   let setParentStateSpy, childCardComp, onChangeSpy
   beforeEach(() => {
@@ -21,7 +21,7 @@ describe('Verify relation between applicant', function () {
     childCardComp = shallow(<ChildDesiredCard
       desiredChildSection={childDesired}
       setParentState={setParentStateSpy}
-      siblingGroups ={siblingGroups.items}
+      siblingGroups={siblingGroups.items}
       ageGroups={ageGroups.items}
     />)
   })
@@ -32,8 +32,8 @@ describe('Verify relation between applicant', function () {
   })
   it('test Sibling onChange event', () => {
     let siblingCheckBoxField = childCardComp.find('#sibling-0')
-    siblingCheckBoxField.simulate('change', {target : {value: 'true'}})
-    childDesired.preferred_sibling_group_up_to = { id: 1, value: '0' };
+    siblingCheckBoxField.simulate('change', {target: {value: 'true'}})
+    childDesired.preferred_sibling_group_up_to = { id: 1, value: '0' }
     expect(setParentStateSpy).toHaveBeenCalledWith('preferred_sibling_group_up_to', childDesired.preferred_sibling_group_up_to)
   })
   it('test child in Home Dropdown feature', () => {
@@ -42,7 +42,7 @@ describe('Verify relation between applicant', function () {
     let newchildCardComp = mount(<ChildDesiredCard
       desiredChildSection={newChildDesired}
       setParentState={setParentStateSpy}
-      siblingGroups ={siblingGroups.items}
+      siblingGroups={siblingGroups.items}
       ageGroups={ageGroups.items}
     />)
     let childInHomeField = newchildCardComp.find('#child_in_home')

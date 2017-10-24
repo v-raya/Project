@@ -63,7 +63,7 @@ export const arrayLastToFirst = (arraytoSort) => {
     let lastValue = Immutable.fromJS(arraytoSort).slice(-1).toJS()
     finalArray = lastValue.concat(finalArray)
     return finalArray
-  }else {
+  } else {
     return arraytoSort
   }
 }

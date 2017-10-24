@@ -21,8 +21,8 @@ describe('Verify relation card', function () {
   const applicants = Object.freeze({
     applicants: [{
       first_name: 'thing'},
-      {
-        first_name: 'thing'}
+    {
+      first_name: 'thing'}
     ]})
 
   let setParentStateSpy, componentMount, setFocusStateSpy
@@ -52,4 +52,3 @@ describe('Verify relation card', function () {
     })
   })
 })
-

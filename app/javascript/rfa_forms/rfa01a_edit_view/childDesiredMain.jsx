@@ -38,7 +38,7 @@ export default class ChildDesiredMain extends React.Component {
               <ChildDesiredCard
                 desiredChildSection={child}
                 ageGroups={this.props.ageGroups}
-                siblingGroups ={this.props.siblingGroups}
+                siblingGroups={this.props.siblingGroups}
                 setParentState={this.setState}
               />
             </div>

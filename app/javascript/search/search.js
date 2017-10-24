@@ -62,18 +62,18 @@ export default class Search extends React.Component {
     let url = '/facilities/search'
     fetchRequest(url, 'POST', params).then(
       response => response.json())
-    .then((response) => {
-      return this.setState({
-        searchData: response
+      .then((response) => {
+        return this.setState({
+          searchData: response
+        })
       })
-    })
-    .catch(error => {
-      console.log(error)
-      return this.setState({
-        searchData: [],
-        fromResponse: true
+      .catch(error => {
+        console.log(error)
+        return this.setState({
+          searchData: [],
+          fromResponse: true
+        })
       })
-    })
   }
 
   render () {

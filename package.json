@@ -51,6 +51,8 @@
   },
   "scripts": {
     "lint": "eslint --ext .jsx --ext .js app/;exit 0;",
+    "fix-lint": "eslint --ext .jsx --ext .js --fix app/;exit 0;",
+
     "compile-webpack": "rails -g webpacker:compile",
     "dev-build": "./bin/server",
     "dev": "foreman start -f Procfile.dev;",

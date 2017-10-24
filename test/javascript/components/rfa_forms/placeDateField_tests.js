@@ -22,7 +22,7 @@ describe('Verify placeDateFields Component', () => {
     }
     onDateChangeSpy = jasmine.createSpy('onDateChange')
     onCityChangeSpy = jasmine.createSpy('onCityChange')
-    onStateChangeSpy= jasmine.createSpy('onStateChange')
+    onStateChangeSpy = jasmine.createSpy('onStateChange')
     placeDateFieldsComp = mount(<PlaceDateField
       dateId={previousRelationshipPrefixId + 'date'}
       cityId={previousRelationshipPrefixId + 'city'}
@@ -34,7 +34,6 @@ describe('Verify placeDateFields Component', () => {
       onDateChange={onDateChangeSpy}
       onCityChange={onCityChangeSpy}
       onStateChange={onStateChangeSpy} />)
-
   })
 
   it('Load placeDateFields ', () => {

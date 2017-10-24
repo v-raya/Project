@@ -41,7 +41,7 @@ export default class ApplicantMaritalHistoryCard extends React.Component {
             optionList={setToWhomOptionList(this.props.applicants)}
             value={maritalHistory.applicant_id}
             onChange={(event) => this.props.changeMaritalHistory('applicant_id',
-                dictionaryNilSelect(event.target.selectedOptions[0]).id, this.props.index)} />
+              dictionaryNilSelect(event.target.selectedOptions[0]).id, this.props.index)} />
 
           <DropDownField
             gridClassName='col-md-4'
@@ -51,7 +51,7 @@ export default class ApplicantMaritalHistoryCard extends React.Component {
             optionList={this.props.relationshipTypes}
             value={getDictionaryId(maritalHistory.relationship_type)}
             onChange={(event) => this.props.changeMaritalHistory('relationship_type',
-             dictionaryNilSelect(event.target.selectedOptions[0]), this.props.index)} />
+              dictionaryNilSelect(event.target.selectedOptions[0]), this.props.index)} />
         </div>
         <div className='col-md-12'>
           <CompleteNameFields

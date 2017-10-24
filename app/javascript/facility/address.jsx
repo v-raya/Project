@@ -12,7 +12,7 @@ export default class FacilityAddress extends React.Component {
                 <p>PHYSICAL ADDRESS</p>
                 <p className='address_street'>{this.props.facilityData.fac_res_street_addr}</p>
                 <p>{this.props.facilityData.fac_res_city},
-                    {' ' + this.props.facilityData.fac_res_state}
+                  {' ' + this.props.facilityData.fac_res_state}
                   {' ' + this.props.facilityData.fac_res_zip_code}
                 </p>
               </div>
@@ -38,7 +38,7 @@ export default class FacilityAddress extends React.Component {
                 <p>POSTAL ADDRESS</p>
                 <p className='address_street'>{this.props.facilityData.fac_mail_street_addr}</p>
                 <p>{this.props.facilityData.fac_mail_city},
-                    {' ' + this.props.facilityData.fac_mail_state }
+                  {' ' + this.props.facilityData.fac_mail_state }
                   {' ' + this.props.facilityData.fac_mail_zip_code}
                 </p>
               </div>

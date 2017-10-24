@@ -11,7 +11,7 @@ describe('Verify Auto Completer', () => {
       url={''}
       addressType={''}
       id={'street_address'}
-      value = {''}
+      value={''}
       autoFillAddress={autoFillAddressSpy}
       onChange={onChangeSpy}
     />)

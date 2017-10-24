@@ -77,7 +77,7 @@ export default class ReferencesCard extends React.Component {
         <CommonAddressFields
           suggestions={this.state.suggestions || []}
           addressTitle='Physical Address'
-          id="street_address"
+          id='street_address'
           index={this.props.index}
           stateTypes={this.props.stateTypes}
           addressFields={this.props.reference.mailing_address}

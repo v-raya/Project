@@ -45,7 +45,7 @@ export default class CommonAddressFields extends React.Component {
     }
     return (
       <div>
-        <div className="col-md-12">
+        <div className='col-md-12'>
           <label>{this.props.addressTitle}</label>
           <ReactAutosuggest
             suggestions={this.props.suggestions}

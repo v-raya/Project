@@ -5,19 +5,19 @@ var TestUtils = require('react-dom/lib/ReactTestUtils')
 describe('Verify Search component Fields', function () {
   const props = {
     facilityTypes: [
-       {
-          id: '',
-          value: '' 
-       }
-     ],
+      {
+        id: '',
+        value: ''
+      }
+    ],
     countyTypes: [
-       {
-          id: '',
-          value: '' 
-       }
-     ],
- 
-   }
+      {
+        id: '',
+        value: ''
+      }
+    ]
+
+  }
   const searchComp = TestUtils.renderIntoDocument(<SearchApp {...props} />)
   it('Verify Search Address fields', function () {
     // let searchResults = renderIntoDocument(<SearchApp />);

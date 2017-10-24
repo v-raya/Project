@@ -4,7 +4,6 @@ import {languageTypes, residenceTypes} from './../../helpers/constants'
 var TestUtils = require('react-dom/test-utils')
 import {shallow, mount} from 'enzyme'
 
-
 describe('Verify Physical Address', function () {
   const blankAboutThisResidenceFields = Object.freeze({
     residence_ownership_type: {
@@ -52,25 +51,25 @@ describe('Verify Physical Address', function () {
   it('verify directions to home', () => {
     let relationShipField = residenceCardComp.find('#directions')
     relationShipField.simulate('change', {target: {value: 'gate way oaks'}})
-    expect(setParentStateSpy).toHaveBeenCalledWith('directions_to_home', 'gate way oaks' )
+    expect(setParentStateSpy).toHaveBeenCalledWith('directions_to_home', 'gate way oaks')
   })
 
   it('verify directions to home', () => {
     let relationShipField = residenceCardComp.find('#body_of_water_exist')
     relationShipField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'yes'}]}})
-    expect(setParentStateSpy).toHaveBeenCalledWith('body_of_water_exist', '2' )
+    expect(setParentStateSpy).toHaveBeenCalledWith('body_of_water_exist', '2')
   })
 
   it('verify directions to home', () => {
     let relationShipField = residenceCardComp.find('#body_of_water_description')
     relationShipField.simulate('change', {target: {value: 'gate way oaks'}})
-    expect(setParentStateSpy).toHaveBeenCalledWith('body_of_water_description', 'gate way oaks' )
+    expect(setParentStateSpy).toHaveBeenCalledWith('body_of_water_description', 'gate way oaks')
   })
 
   it('verify directions to home', () => {
     let relationShipField = residenceCardComp.find('#others_using_residence_as_mailing')
     relationShipField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'yes'}]}})
-    expect(setParentStateSpy).toHaveBeenCalledWith('others_using_residence_as_mailing', '2' )
+    expect(setParentStateSpy).toHaveBeenCalledWith('others_using_residence_as_mailing', '2')
   })
 
   it('verify street address', () => {
@@ -80,28 +79,28 @@ describe('Verify Physical Address', function () {
   })
   it('verify street address', () => {
     let relationShipField = residenceCardComp.find('#weapons')
-    relationShipField.simulate('change',  {target: {selectedOptions: [{value: '2', text: 'yes'}]}})
+    relationShipField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'yes'}]}})
     expect(setParentStateSpy).toHaveBeenCalledWith('weapon_in_home', '2')
   })
   it('verify first name', () => {
     let relationShipField = residenceCardComp.find('#firstName')
     spyOn(residenceCardComp.instance(), 'onChange').and.callThrough()
-    relationShipField.simulate('change',  {target: {value: 'Text'}})
-    //expect(onChangeSpy).toHaveBeenCalledWith('firstName', 'Text')
+    relationShipField.simulate('change', {target: {value: 'Text'}})
+    // expect(onChangeSpy).toHaveBeenCalledWith('firstName', 'Text')
     expect(residenceCardComp.instance().onChange).toHaveBeenCalledWith('first_name', 'Text')
   })
   it('verify middle name', () => {
     let relationShipField = residenceCardComp.find('#middleName')
     spyOn(residenceCardComp.instance(), 'onChange').and.callThrough()
-    relationShipField.simulate('change',  {target: {value: 'Text'}})
-    //expect(onChangeSpy).toHaveBeenCalledWith('firstName', 'Text')
+    relationShipField.simulate('change', {target: {value: 'Text'}})
+    // expect(onChangeSpy).toHaveBeenCalledWith('firstName', 'Text')
     expect(residenceCardComp.instance().onChange).toHaveBeenCalledWith('middle_name', 'Text')
   })
   it('verify last name', () => {
     let relationShipField = residenceCardComp.find('#lastName')
     spyOn(residenceCardComp.instance(), 'onChange').and.callThrough()
-    relationShipField.simulate('change',  {target: {value: 'Text'}})
-    //expect(onChangeSpy).toHaveBeenCalledWith('firstName', 'Text')
+    relationShipField.simulate('change', {target: {value: 'Text'}})
+    // expect(onChangeSpy).toHaveBeenCalledWith('firstName', 'Text')
     expect(residenceCardComp.instance().onChange).toHaveBeenCalledWith('last_name', 'Text')
   })
 })

@@ -4,7 +4,6 @@ import {CriminalFields} from './criminalFields'
 import {yesNo} from 'constants/constants'
 
 export default class OutsideCACriminalBackground extends React.Component {
-
   addCard () {
     console.log('add card')
   }
