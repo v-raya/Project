@@ -57,10 +57,10 @@ export default class Rfa01EditView extends React.Component {
     let params = this.state.application
     fetchRequest(url, 'PUT', this.state.application).then(
       response => response.json()).then((response) => {
-        return this.setState({
-          formData: response
-        })
+      return this.setState({
+        formData: response
       })
+    })
       .catch(error => {
         return this.setState({
           data: error

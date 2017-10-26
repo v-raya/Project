@@ -48,7 +48,7 @@ RSpec.configure do |config|
     allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
     allow_any_instance_of(CalsBaseController).to receive(:get_session_token).and_return(ENV['TOKEN'])
     allow_any_instance_of(CalsBaseController).to receive(:store_token_in_redis).and_return(ENV['TOKEN'])
-   $redis.flushdb
+   Redis.current.flushdb
   end
 
 

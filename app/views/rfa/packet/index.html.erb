@@ -1,0 +1,5 @@
+<div id="index_page">
+  <%= react_component('rfa_forms/rfa_packet_list',
+    {application_id: @application_id,  user: @user }, {prerender: false}) %>
+  <%= javascript_pack_tag 'rfa_forms/rfa_packet_list' %>
+</div>

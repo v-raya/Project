@@ -9,7 +9,7 @@ class Rfa::A01Controller < CalsBaseController
     rfa_app_response = rfa_application_helper.create_application
     rfa_application = Rfa::Application.new
     rfa_application.id = rfa_app_response['id']
-    redirect_to edit_rfa_a01_path(rfa_application.id)
+    redirect_to rfa_a01_packet_index_path(rfa_application.id)
   end
 
   def edit

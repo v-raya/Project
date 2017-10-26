@@ -4,47 +4,45 @@ engines:
   bundler-audit:
     enabled: true
   duplication:
-    enabled: true
     config:
       languages:
-      - ruby
-      - javascript
-      - python
-      - php
-  eslint:
+       - javascript
+       - ruby
     enabled: true
+  eslint:
     config:
       extensions:
         - .js
         - .jsx
-  fixme:
     enabled: true
+  fixme:
     checks:
-        TODO:
-          enabled: false
+      TODO:
+        enabled: false
+    enabled: true
   rubocop:
     enabled: true
+exclude_paths:
+  - config/
+  - spec/
+  - test/
+  - vendor/
+  - public/
+  - docker/
+  - coverage/
+  - node_modules/
+  - lib/
 ratings:
   paths:
-  - Gemfile.lock
-  - "**.erb"
-  - "**.haml"
-  - "**.rb"
-  - "**.rhtml"
-  - "**.slim"
-  - "**.inc"
-  - "**.js"
-  - "**.jsx"
-  - "**.module"
-  - "**.php"
-  - "**.py"
-exclude_paths:
-- config/
-- spec/
-- test/
-- vendor/
-- public/
-- docker/
-- coverage/
-- node_modules/
-- lib/
+    - Gemfile.lock
+    - "**.erb"
+    - "**.haml"
+    - "**.rb"
+    - "**.rhtml"
+    - "**.slim"
+    - "**.inc"
+    - "**.js"
+    - "**.jsx"
+    - "**.module"
+    - "**.php"
+    - "**.py"

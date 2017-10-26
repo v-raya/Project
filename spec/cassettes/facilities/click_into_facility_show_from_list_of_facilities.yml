@@ -27,9 +27,9 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 852b054a-bb72-4c88-9aad-9f107fb742e0
+      - 39cedd56-a308-455e-8fb2-14880185434f
       x-runtime:
-      - '0.267341'
+      - '0.146914'
       transfer-encoding:
       - chunked
     body:
@@ -361,7 +361,7 @@ http_interactions:
         (Fac.''s w/Expir.)","fac_email_address":null,"fac_capacity":6,"fac_orig_appl_rec_date":null,"fac_addr":"7389
         W. GRANDROSE AVE. LOS ANGELES CA 90063"}]'
     http_version: 
-  recorded_at: Mon, 16 Oct 2017 20:30:21 GMT
+  recorded_at: Wed, 25 Oct 2017 15:36:46 GMT
 - request:
     method: get
     uri: http://localhost:3001/v1/facilities/909453695
@@ -389,9 +389,9 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 17b6c080-9c2c-4adf-9430-918cf7389605
+      - 5a3166a3-6b48-467c-8807-f1ca1c0814c7
       x-runtime:
-      - '0.039407'
+      - '0.010874'
       transfer-encoding:
       - chunked
     body:
@@ -404,7 +404,7 @@ http_interactions:
         Schmitz","fac_licensee_type":null,"fac_lic_eff_date":"2010-01-01","fac_last_visit_date":null,"last_visit_reason":null,"fac_email_address":null,"fac_capacity":4,"fac_orig_appl_rec_date":null,"fac_addr":"2366
         WATERCOLOR DR. TOONTOWN CA 95800"}'
     http_version: 
-  recorded_at: Mon, 16 Oct 2017 20:30:22 GMT
+  recorded_at: Wed, 25 Oct 2017 15:36:47 GMT
 - request:
     method: get
     uri: http://localhost:3001/v1/facilities/909453695/children
@@ -432,9 +432,9 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - b0dc931e-703b-48bb-bc67-05159c37ee0d
+      - 5d596108-f2e5-495a-b9d6-05f302363315
       x-runtime:
-      - '0.010051'
+      - '0.013060'
       transfer-encoding:
       - chunked
     body:
@@ -442,7 +442,7 @@ http_interactions:
       string: '{"children":[{"id":13,"first_name":"Rob","last_name":"Herdin","sex":null,"date_of_birth":"2007-05-15","date_of_placement":"2017-02-14","assigned_worker":"Tim","county_of_origin":"San
         Mateo","age":10}],"meta":{"total":1}}'
     http_version: 
-  recorded_at: Mon, 16 Oct 2017 20:30:22 GMT
+  recorded_at: Wed, 25 Oct 2017 15:36:47 GMT
 - request:
     method: get
     uri: http://localhost:3001/v1/facilities/909453695/complaints
@@ -470,9 +470,9 @@ http_interactions:
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - e07e551e-252c-4f58-a255-cd7314979ac6
+      - 89286ce1-8f2f-4d65-bbfd-f52b45a7065e
       x-runtime:
-      - '0.027612'
+      - '0.011879'
       transfer-encoding:
       - chunked
     body:
@@ -480,5 +480,5 @@ http_interactions:
       string: '{"complaints":[{"id":7,"complaint_date":"2007-05-15","assigned_worker":"Tim
         Cook","control_number":"23-CR-201704240234567","priority_level":3,"approval_date":"2017-02-14","status":"Pending"}],"meta":{"total":1}}'
     http_version: 
-  recorded_at: Mon, 16 Oct 2017 20:30:22 GMT
+  recorded_at: Wed, 25 Oct 2017 15:36:47 GMT
 recorded_with: VCR 3.0.3
