@@ -18,7 +18,7 @@ RSpec.describe 'routes scope', :type => :request do
     before(:context) do
       @tmp_env_var = ENV['RAILS_RELATIVE_URL_ROOT']
       ENV['RAILS_RELATIVE_URL_ROOT']='/cals'
-      Redis.current.flushdb
+      $redis.flushdb
     end
 
     it 'redirects requests' do
@@ -40,7 +40,7 @@ RSpec.describe 'routes scope', :type => :request do
   context 'without custom relative url' do
     before(:each) do
       allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
-      Redis.current.flushdb
+      $redis.flushdb
     end
 
     it 'redirects requests' do
