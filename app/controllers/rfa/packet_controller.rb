@@ -2,10 +2,7 @@ class Rfa::PacketController < CalsBaseController
 
 def index
   @application_id = params[:a01_id]
-  @rfa_01a
- #@rfa_01b_forms
- #@rfa_01c_forms
- #@lic198b_forms
+  @rfa_01a_application = rfa_application_packet_helper.rfa_01a_application(@application_id)
 end
 
   def rfa_application_packet_helper

@@ -1,8 +1,8 @@
-<div id="index_page">
-  <%= react_component('rfa_forms/rfa01b_list', {  user: @user,
+<div id="edit_page">
+  <%= react_component('rfa_forms/rfa01b_edit', {  user: @user,
     countyTypes: @dictionaries[:county_types],
     nameSuffixTypes: @dictionaries[:name_suffix_types],
     namePrefixTypes: @dictionaries[:name_prefix_types],
     stateTypes:  @dictionaries[:state_types]}, {prerender: false}) %>
- <%= javascript_pack_tag 'rfa_forms/rfa01b_list' %>
+ <%= javascript_pack_tag 'rfa_forms/rfa01b_edit' %>
 </div>

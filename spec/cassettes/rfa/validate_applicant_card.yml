@@ -10,7 +10,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..s6Q9ttPlg_L6Q0Ab.DZ3NyrPsjqnArJxmQ682X3vRoVTxtvJxZ07AWQuSXlWjtz6CPuX6RftAEZ1E9zxbfHinWpKg5-0DH0ugXesnssmkfnVa9ziBsojrDqZ2YQ6c98OBhwPVHp5UoYeB5sHzSFplKosHJU5DW69ztbEaw7hysg1ldCqGYs8vndbMFCZ7jvWZiG8oIa1UDSZP5cdlerHc_YWeCB_oUaEKy7kz6TrhnbtJ9fHS1iFONkeQqAX1nt3rY_65JhhmYyBT27oR6uDBgo1qbzBhe1_9rasrmaiDiFe3RdfdzgeRlIFeb1jJFwPsGvYfGue67ZHrUqYha_LKYUSCALI6ECHBmLLTTX9YOTnulvT5Vb14vG7KrGp1g0XR31jmlz6U2-qrQJ2WrkAHGNW2J9WmnF6JjlaJEtKZe5q-uTXhqL_glZPjOC51Drb9lWYkQQ9HPlZCDNCAOEYvB5PU-9gGOtPd8sF5WZDNiPnYz70re3yWORF013lOfqvkCSUuKxv81DL6DlIprcU53MeJ3UZcRqhJwDszl92K8REqRfDDsdl7YC7zOEVptxFiRDs9Cv3C02qkCCagAtSZH2b7Xu0nH7MRkMEziTa_htij6r7Hi1znhUQT1yjM8KJPET8JAN-_f5Z7BymphcMDpjaNeSzNmLe_QdxRiZZ8nJtIRmmncvJjFEe68roB0rTCiBnUPjw2xO-UByLYVbj43au4A6Cp7cGKEne1EEfcAA4Im2Ndyaf3hKTBJ9M46kjJZupC2ncMHbSPwh8AyqBnYSrbafJZFM2L9bJxEtI94xpyONe-o7LGpgI1NG3wMh3QdscbCRrfIa3YVx-8CkK_E_m2SD1_72dzwPh5D9ySpXk-CKOJILwEOSfnxLMJBqhiJThWD6Mquqf5AhUWv1VaZcWLZjibG0-OBw_9sXD16ZeOA4x9brK7VrSbuTERvYxaxzCnSl9i_f1awYJclThxKc2NvJPi6EW3BXMpRCdQD8ku44IIHmzlcoW17pfMP7_p1HH2567NkR-Kv-JvBh1fMh2MSu7wvhkhvGdzCVrmowxDUjN_f3C9voQarjnZxfvhWZmGZKdxLT5h4ehPPteZkQ.l9W6FQ-xI3vObRP4zzGy8w"
+      - "..FgHJyRo0rtGc5etJ.QiirL-PxjgRPAP_1bUcmHXb_D9-m62j96sAhePzFo567J2ATnqRKrXR4R4KSYXO3U_PragkmhEzmGS4koBlvHqKmuiJHkkIF-c2dIRMTsDETMOGMwbeUAOdoRRLIAAAgEV0N8Hmu_bgqxFZZrGOwINxF3MQaj24Iv7vT5ZGmoupFZPKZhd8HPMUVw3AXIvsawzRNVLP6SZoVrRb-5bZNvlIOp0igWDnitmUNtrBJmmnnIvSU2sHnvuEiHvhRLlYUYK7aYoDhUznQdmeC3EpyO3t3K99OXXq-J153ViwADCitrXsaE33wPGGY5Sr_aju7NsmyNRqVbhNnUGbMmvrS4zLSRs9lCbgDnSWZLexNEYPmHNZFWQPRP_udFv7UPuIi1HUFSqo5rKBQsOO6ALJQtJxmEdWonKRO2mFx8DiHIt8Pr4Bf6WbeHLbhJbIdoyUUBNTS-SSjZY2sxAc9-5wdRGDB7FTjk2PKibGmG2USfKMq9ItfCaGpxXMQjI0SIC7TujhON5Rc6Llj023rh45uxgJL7hwxPXI_f-3Qbt9yDluQZxP9cMiV0Tt4rEej-ZkpmS2-To6JZGFy3x5uqbT0MP9oRSnGX6oLN88icinpwQqqym5xn7KVJduxJn1jahWccpe_0T169kEGoQnT1DxIbd1LgKRLq-JrVXARFR0xRWmoY8ifuKnxeZeHEpYoxQOlYUUo_a-_mfJo55eujkTU2EiMuzMO7AaWhbl3FsodTuJipoiQyuU5ctdb7y86NTgVGB8xwpfdr682vEFSOoV08ve3XaMm5Xfn0IFLenj2jUOIEKhFHi3UoahQs3fVUTn4CydCMYE_8ysJNypgsqz9aZSgg90y5jo44ktFJn8-bjs-0fb7Mde6kgHRvUQ52rWtCvjptWrnguqVZZLGvfBxsfkisKkf9z1w1Kb4ToQMi2xzTx35WHWwLHARualiKWfb6cK2FLrJzUR5ROI2PjFX1JQGOa_b6RdHsNxBL9X2IMHfBXC_V6C8TPBHVHitjRPpR65wZasBNyTufflYhtat0s86HxIQvvtvl33g_2swPDj3I9b4PaTJXaT45f5ZlG7mCJT36Q.q8JjzZRputkQWLM45DQv_Q"
   response:
     status:
       code: 200
@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 25 Oct 2017 15:35:21 GMT
+      - Thu, 26 Oct 2017 19:23:23 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 24-Oct-2017 15:35:21
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 25-Oct-2017 19:23:23
         GMT
       vary:
       - Accept-Encoding
@@ -42,7 +42,57 @@ http_interactions:
       string: |-
         {
           "items" : [ {
-            "id" : 59,
+            "id" : 57,
+            "applicants" : [ {
+              "id" : 48,
+              "first_name" : "Lorena Dare",
+              "middle_name" : "k",
+              "last_name" : "Jaquan Ledner",
+              "other_names" : [ ],
+              "highest_education_level" : {
+                "value" : "Some High School",
+                "id" : 2
+              },
+              "ethnicity" : {
+                "value" : "Black",
+                "id" : 4
+              },
+              "driver_license_number" : "ABC123",
+              "driver_license_state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "email" : "test@test.com",
+              "employment" : {
+                "employer_name" : "Employer Name",
+                "occupation" : "Front End Developer",
+                "income" : 10.0,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 Gateway",
+                  "city" : "Sacremento",
+                  "zip" : "94403"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Home",
+                  "id" : 2
+                },
+                "number" : "2012222345",
+                "preferred" : false
+              } ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 53,
             "residence" : {
               "addresses" : [ ],
               "physical_mailing_similar" : false,
@@ -61,10 +111,10 @@ http_interactions:
               } ]
             },
             "applicants" : [ {
-              "id" : 48,
-              "first_name" : "Willie Hermann",
+              "id" : 47,
+              "first_name" : "Aric Wisozk",
               "middle_name" : "k",
-              "last_name" : "Mark Balistreri",
+              "last_name" : "Kirstin Cremin",
               "other_names" : [ ],
               "driver_license_number" : "",
               "email" : "",
@@ -84,118 +134,6 @@ http_interactions:
               "phones" : [ ]
             } ],
             "minor_children" : [ ],
-            "other_adults" : [ ],
-            "rfa1c_forms" : [ ],
-            "is_initial_application" : false,
-            "is_other_type" : false
-          }, {
-            "id" : 58,
-            "applicants" : [ {
-              "id" : 47,
-              "first_name" : "Lilly Block",
-              "middle_name" : "k",
-              "last_name" : "Alberto Gulgowski",
-              "other_names" : [ ],
-              "driver_license_number" : "",
-              "email" : "",
-              "phones" : [ ]
-            } ],
-            "minor_children" : [ ],
-            "other_adults" : [ ],
-            "rfa1c_forms" : [ ],
-            "adoption_history" : {
-              "foster_care_licenses_q1" : {
-                "was_previously_licensed" : false,
-                "agencies" : [ {
-                  "name" : "",
-                  "type" : { }
-                } ]
-              },
-              "applications_for_adoption_q2" : {
-                "facilities" : [ "" ]
-              },
-              "facility_operation_licenses_q3" : {
-                "agencies" : [ {
-                  "name" : "",
-                  "type" : { }
-                } ]
-              },
-              "employment_in_facilities_q4" : {
-                "facilities" : [ "" ]
-              },
-              "denial_history_q5" : {
-                "agencies" : [ {
-                  "name" : "",
-                  "type" : { }
-                } ]
-              },
-              "suspension_revocation_history_q6" : {
-                "agencies" : [ {
-                  "name" : "",
-                  "type" : { }
-                } ]
-              }
-            },
-            "is_initial_application" : false,
-            "is_other_type" : false
-          }, {
-            "id" : 56,
-            "applicants" : [ {
-              "id" : 46,
-              "first_name" : "Margaretta Schuster",
-              "middle_name" : "k",
-              "last_name" : "Lavinia Senger",
-              "other_names" : [ ],
-              "driver_license_number" : "",
-              "email" : "",
-              "phones" : [ ]
-            } ],
-            "minor_children" : [ {
-              "id" : 4,
-              "relationship_to_applicants" : [ {
-                "relationship_to_applicant" : {
-                  "value" : "Child",
-                  "id" : 1
-                }
-              } ],
-              "gender" : {
-                "value" : "Male",
-                "id" : 1
-              },
-              "child_financially_supported" : true,
-              "child_adopted" : true
-            } ],
-            "other_adults" : [ ],
-            "rfa1c_forms" : [ ],
-            "is_initial_application" : false,
-            "is_other_type" : false
-          }, {
-            "id" : 54,
-            "applicants" : [ {
-              "id" : 45,
-              "first_name" : "Sherwood Mraz",
-              "middle_name" : "k",
-              "last_name" : "Jennings Hyatt",
-              "other_names" : [ ],
-              "driver_license_number" : "",
-              "email" : "",
-              "phones" : [ ]
-            } ],
-            "minor_children" : [ {
-              "id" : 3,
-              "relationship_to_applicants" : [ {
-                "relationship_to_applicant" : {
-                  "value" : "Child",
-                  "id" : 1
-                }
-              } ],
-              "gender" : {
-                "value" : "Male",
-                "id" : 1
-              },
-              "child_financially_supported" : true,
-              "child_adopted" : true
-            } ],
             "other_adults" : [ ],
             "rfa1c_forms" : [ ],
             "is_initial_application" : false,
@@ -203,77 +141,10 @@ http_interactions:
           }, {
             "id" : 52,
             "applicants" : [ {
-              "id" : 44,
-              "first_name" : "Sam",
+              "id" : 46,
+              "first_name" : "Leila Senger",
               "middle_name" : "k",
-              "last_name" : "Eliseo Carroll",
-              "other_names" : [ ],
-              "driver_license_number" : "",
-              "email" : "",
-              "phones" : [ ]
-            } ],
-            "minor_children" : [ ],
-            "other_adults" : [ ],
-            "rfa1c_forms" : [ ],
-            "is_initial_application" : false,
-            "is_other_type" : false
-          }, {
-            "id" : 49,
-            "applicants" : [ {
-              "id" : 43,
-              "first_name" : "Raphael Watsica",
-              "middle_name" : "k",
-              "last_name" : "Aurelie Krajcik",
-              "other_names" : [ ],
-              "driver_license_number" : "",
-              "email" : "",
-              "phones" : [ ]
-            } ],
-            "minor_children" : [ ],
-            "other_adults" : [ ],
-            "rfa1c_forms" : [ ],
-            "adoption_history" : {
-              "foster_care_licenses_q1" : {
-                "was_previously_licensed" : false,
-                "agencies" : [ {
-                  "name" : "",
-                  "type" : { }
-                } ]
-              },
-              "applications_for_adoption_q2" : {
-                "facilities" : [ "" ]
-              },
-              "facility_operation_licenses_q3" : {
-                "agencies" : [ {
-                  "name" : "",
-                  "type" : { }
-                } ]
-              },
-              "employment_in_facilities_q4" : {
-                "facilities" : [ "" ]
-              },
-              "denial_history_q5" : {
-                "agencies" : [ {
-                  "name" : "",
-                  "type" : { }
-                } ]
-              },
-              "suspension_revocation_history_q6" : {
-                "agencies" : [ {
-                  "name" : "",
-                  "type" : { }
-                } ]
-              }
-            },
-            "is_initial_application" : false,
-            "is_other_type" : false
-          }, {
-            "id" : 47,
-            "applicants" : [ {
-              "id" : 42,
-              "first_name" : "Raquel Schamberger",
-              "middle_name" : "k",
-              "last_name" : "Alize MacGyver",
+              "last_name" : "Otis Hagenes",
               "other_names" : [ ],
               "driver_license_number" : "",
               "email" : "",
@@ -299,126 +170,12 @@ http_interactions:
             "is_initial_application" : false,
             "is_other_type" : false
           }, {
-            "id" : 46,
-            "residence" : {
-              "addresses" : [ ],
-              "physical_mailing_similar" : false,
-              "residence_ownership" : {
-                "value" : "Own",
-                "id" : 1
-              },
-              "weapon_in_home" : true,
-              "body_of_water_exist" : true,
-              "body_of_water_description" : "body of water goes here",
-              "others_using_residence_as_mailing" : true,
-              "directions_to_home" : "directions goes here",
-              "home_languages" : [ {
-                "value" : "Arabic",
-                "id" : 2
-              } ]
-            },
+            "id" : 51,
             "applicants" : [ {
-              "id" : 41,
-              "first_name" : "Janick Zemlak V",
+              "id" : 45,
+              "first_name" : "Claudine Fay",
               "middle_name" : "k",
-              "last_name" : "Aaron Schneider",
-              "other_names" : [ ],
-              "driver_license_number" : "",
-              "email" : "",
-              "employment" : {
-                "employer_name" : "",
-                "occupation" : "",
-                "income_type" : {
-                  "value" : "yearly",
-                  "id" : 1
-                },
-                "physical_address" : {
-                  "street_address" : "maing address here",
-                  "city" : "secondary city",
-                  "zip" : "12345"
-                }
-              },
-              "phones" : [ ]
-            } ],
-            "minor_children" : [ ],
-            "other_adults" : [ ],
-            "rfa1c_forms" : [ ],
-            "is_initial_application" : false,
-            "is_other_type" : false
-          }, {
-            "id" : 44,
-            "applicants" : [ {
-              "id" : 40,
-              "first_name" : "Harley Ledner",
-              "middle_name" : "k",
-              "last_name" : "Kane Wiza",
-              "other_names" : [ ],
-              "driver_license_number" : "",
-              "email" : "",
-              "phones" : [ ]
-            } ],
-            "minor_children" : [ ],
-            "other_adults" : [ ],
-            "rfa1c_forms" : [ ],
-            "adoption_history" : {
-              "foster_care_licenses_q1" : {
-                "was_previously_licensed" : false,
-                "agencies" : [ {
-                  "name" : "",
-                  "type" : { }
-                } ]
-              },
-              "applications_for_adoption_q2" : {
-                "facilities" : [ "" ]
-              },
-              "facility_operation_licenses_q3" : {
-                "agencies" : [ {
-                  "name" : "",
-                  "type" : { }
-                } ]
-              },
-              "employment_in_facilities_q4" : {
-                "facilities" : [ "" ]
-              },
-              "denial_history_q5" : {
-                "agencies" : [ {
-                  "name" : "",
-                  "type" : { }
-                } ]
-              },
-              "suspension_revocation_history_q6" : {
-                "agencies" : [ {
-                  "name" : "",
-                  "type" : { }
-                } ]
-              }
-            },
-            "is_initial_application" : false,
-            "is_other_type" : false
-          }, {
-            "id" : 43,
-            "applicants" : [ {
-              "id" : 39,
-              "first_name" : "Sam",
-              "middle_name" : "k",
-              "last_name" : "Miss Dayne Jerde",
-              "other_names" : [ ],
-              "driver_license_number" : "",
-              "email" : "",
-              "phones" : [ ]
-            } ],
-            "minor_children" : [ ],
-            "other_adults" : [ ],
-            "rfa1c_forms" : [ ],
-            "is_initial_application" : false,
-            "is_other_type" : false
-          }, {
-            "id" : 42,
-            "applicants" : [ {
-              "id" : 38,
-              "first_name" : "Cordell Bogisich",
-              "middle_name" : "k",
-              "last_name" : "Meda Turcotte",
+              "last_name" : "Keshaun Powlowski",
               "other_names" : [ ],
               "driver_license_number" : "",
               "email" : "",
@@ -426,7 +183,7 @@ http_interactions:
             } ],
             "minor_children" : [ ],
             "other_adults" : [ {
-              "id" : 2,
+              "id" : 12,
               "first_name" : "",
               "middle_name" : "",
               "last_name" : "",
@@ -441,29 +198,12 @@ http_interactions:
             "is_initial_application" : false,
             "is_other_type" : false
           }, {
-            "id" : 40,
+            "id" : 50,
             "applicants" : [ {
-              "id" : 37,
-              "first_name" : "Sam",
+              "id" : 44,
+              "first_name" : "Laverna Satterfield ",
               "middle_name" : "k",
-              "last_name" : "Dave Muller",
-              "other_names" : [ ],
-              "driver_license_number" : "",
-              "email" : "",
-              "phones" : [ ]
-            } ],
-            "minor_children" : [ ],
-            "other_adults" : [ ],
-            "rfa1c_forms" : [ ],
-            "is_initial_application" : false,
-            "is_other_type" : false
-          }, {
-            "id" : 38,
-            "applicants" : [ {
-              "id" : 36,
-              "first_name" : "Felipa Koch",
-              "middle_name" : "k",
-              "last_name" : "Branson Batz",
+              "last_name" : "Nelda Becker",
               "other_names" : [ ],
               "driver_license_number" : "",
               "email" : "",
@@ -489,12 +229,12 @@ http_interactions:
             "is_initial_application" : false,
             "is_other_type" : false
           }, {
-            "id" : 37,
+            "id" : 47,
             "applicants" : [ {
-              "id" : 35,
-              "first_name" : "Willa Breitenberg",
+              "id" : 43,
+              "first_name" : "Krystal Brown",
               "middle_name" : "k",
-              "last_name" : "Keanu Murphy V",
+              "last_name" : "Luis Krajcik",
               "other_names" : [ ],
               "driver_license_number" : "",
               "email" : "",
@@ -539,46 +279,269 @@ http_interactions:
             "is_initial_application" : false,
             "is_other_type" : false
           }, {
-            "id" : 35,
-            "residence" : {
-              "addresses" : [ ],
-              "physical_mailing_similar" : false,
-              "residence_ownership" : {
-                "value" : "Own",
-                "id" : 1
-              },
-              "weapon_in_home" : true,
-              "body_of_water_exist" : true,
-              "body_of_water_description" : "body of water goes here",
-              "others_using_residence_as_mailing" : true,
-              "directions_to_home" : "directions goes here",
-              "home_languages" : [ {
-                "value" : "Arabic",
-                "id" : 2
-              } ]
-            },
+            "id" : 44,
             "applicants" : [ {
-              "id" : 34,
-              "first_name" : "Norma Nader",
+              "id" : 42,
+              "first_name" : "Lottie Kub II",
               "middle_name" : "k",
-              "last_name" : "Tessie Kerluke",
+              "last_name" : "Miss Aletha King",
               "other_names" : [ ],
               "driver_license_number" : "",
               "email" : "",
-              "employment" : {
-                "employer_name" : "",
-                "occupation" : "",
-                "income_type" : {
-                  "value" : "yearly",
-                  "id" : 1
-                },
-                "physical_address" : {
-                  "street_address" : "maing address here",
-                  "city" : "secondary city",
-                  "zip" : "12345"
-                }
-              },
               "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ {
+              "id" : 11,
+              "first_name" : "",
+              "middle_name" : "",
+              "last_name" : "",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            } ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 43,
+            "applicants" : [ {
+              "id" : 41,
+              "first_name" : "spongebob",
+              "middle_name" : "",
+              "last_name" : "sq",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            }, {
+              "id" : 40,
+              "first_name" : "keith ",
+              "middle_name" : "",
+              "last_name" : "lauher",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ],
+              "rfa1b_form" : {
+                "id" : 5,
+                "disclosures" : [ ]
+              }
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ {
+              "id" : 9,
+              "first_name" : "fooo",
+              "middle_name" : "",
+              "last_name" : "bar",
+              "date_of_birth" : "2000-11-11",
+              "relationship_to_applicants" : [ {
+                "applicant_id" : 40,
+                "relationship_to_applicant" : {
+                  "value" : "Sibling",
+                  "id" : 2
+                }
+              } ]
+            }, {
+              "id" : 10,
+              "first_name" : "bar",
+              "middle_name" : "",
+              "last_name" : "foo",
+              "date_of_birth" : "2000-11-11",
+              "relationship_to_applicants" : [ {
+                "applicant_id" : 41,
+                "relationship_to_applicant" : {
+                  "value" : "Cousin",
+                  "id" : 3
+                }
+              } ]
+            } ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 42,
+            "applicants" : [ {
+              "id" : 39,
+              "first_name" : "applicant two",
+              "middle_name" : "",
+              "last_name" : "test",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            }, {
+              "id" : 38,
+              "first_name" : "applicant one ",
+              "middle_name" : "",
+              "last_name" : "test",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ {
+              "id" : 3,
+              "first_name" : "other adult one",
+              "middle_name" : "",
+              "last_name" : "test",
+              "date_of_birth" : "2000-11-11",
+              "relationship_to_applicants" : [ {
+                "applicant_id" : 38,
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            }, {
+              "id" : 4,
+              "first_name" : "other adult two",
+              "middle_name" : "",
+              "last_name" : "test",
+              "date_of_birth" : "2000-11-11",
+              "relationship_to_applicants" : [ {
+                "applicant_id" : 39,
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            }, {
+              "id" : 5,
+              "first_name" : "other adult one",
+              "middle_name" : "",
+              "last_name" : "test",
+              "date_of_birth" : "2000-11-11",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            }, {
+              "id" : 6,
+              "first_name" : "other adult two",
+              "middle_name" : "",
+              "last_name" : "test",
+              "date_of_birth" : "2000-11-11",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            }, {
+              "id" : 7,
+              "first_name" : "other adult one",
+              "middle_name" : "",
+              "last_name" : "test",
+              "date_of_birth" : "2000-11-11",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            }, {
+              "id" : 8,
+              "first_name" : "other adult two",
+              "middle_name" : "",
+              "last_name" : "test",
+              "date_of_birth" : "2000-11-11",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            } ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 41,
+            "applicants" : [ {
+              "id" : 36,
+              "first_name" : "applicant one",
+              "middle_name" : "",
+              "last_name" : "one",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            }, {
+              "id" : 37,
+              "first_name" : "applicant two",
+              "middle_name" : "",
+              "last_name" : "two",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ {
+              "id" : 1,
+              "first_name" : "other adult one",
+              "middle_name" : "",
+              "last_name" : "one",
+              "date_of_birth" : "2000-11-11",
+              "relationship_to_applicants" : [ {
+                "applicant_id" : 36,
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ]
+            }, {
+              "id" : 2,
+              "first_name" : "other adult two",
+              "middle_name" : "",
+              "last_name" : "two",
+              "date_of_birth" : "2000-02-22",
+              "relationship_to_applicants" : [ {
+                "applicant_id" : 37,
+                "relationship_to_applicant" : {
+                  "value" : "Sibling",
+                  "id" : 2
+                }
+              } ]
+            } ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false,
+            "is_other_type" : false
+          }, {
+            "id" : 40,
+            "applicants" : [ {
+              "id" : 34,
+              "first_name" : "test",
+              "middle_name" : "",
+              "last_name" : "test",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ],
+              "rfa1b_form" : {
+                "id" : 3,
+                "disclosures" : [ ]
+              }
+            }, {
+              "id" : 35,
+              "first_name" : "testz",
+              "middle_name" : "",
+              "last_name" : "testz",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ],
+              "rfa1b_form" : {
+                "id" : 2,
+                "disclosures" : [ ]
+              }
             } ],
             "minor_children" : [ ],
             "other_adults" : [ ],
@@ -588,7 +551,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 15:35:17 GMT
+  recorded_at: Thu, 26 Oct 2017 19:23:23 GMT
 - request:
     method: post
     uri: https://cals-api.preint.cwds.io/rfa-1a-forms
@@ -599,7 +562,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..s6Q9ttPlg_L6Q0Ab.DZ3NyrPsjqnArJxmQ682X3vRoVTxtvJxZ07AWQuSXlWjtz6CPuX6RftAEZ1E9zxbfHinWpKg5-0DH0ugXesnssmkfnVa9ziBsojrDqZ2YQ6c98OBhwPVHp5UoYeB5sHzSFplKosHJU5DW69ztbEaw7hysg1ldCqGYs8vndbMFCZ7jvWZiG8oIa1UDSZP5cdlerHc_YWeCB_oUaEKy7kz6TrhnbtJ9fHS1iFONkeQqAX1nt3rY_65JhhmYyBT27oR6uDBgo1qbzBhe1_9rasrmaiDiFe3RdfdzgeRlIFeb1jJFwPsGvYfGue67ZHrUqYha_LKYUSCALI6ECHBmLLTTX9YOTnulvT5Vb14vG7KrGp1g0XR31jmlz6U2-qrQJ2WrkAHGNW2J9WmnF6JjlaJEtKZe5q-uTXhqL_glZPjOC51Drb9lWYkQQ9HPlZCDNCAOEYvB5PU-9gGOtPd8sF5WZDNiPnYz70re3yWORF013lOfqvkCSUuKxv81DL6DlIprcU53MeJ3UZcRqhJwDszl92K8REqRfDDsdl7YC7zOEVptxFiRDs9Cv3C02qkCCagAtSZH2b7Xu0nH7MRkMEziTa_htij6r7Hi1znhUQT1yjM8KJPET8JAN-_f5Z7BymphcMDpjaNeSzNmLe_QdxRiZZ8nJtIRmmncvJjFEe68roB0rTCiBnUPjw2xO-UByLYVbj43au4A6Cp7cGKEne1EEfcAA4Im2Ndyaf3hKTBJ9M46kjJZupC2ncMHbSPwh8AyqBnYSrbafJZFM2L9bJxEtI94xpyONe-o7LGpgI1NG3wMh3QdscbCRrfIa3YVx-8CkK_E_m2SD1_72dzwPh5D9ySpXk-CKOJILwEOSfnxLMJBqhiJThWD6Mquqf5AhUWv1VaZcWLZjibG0-OBw_9sXD16ZeOA4x9brK7VrSbuTERvYxaxzCnSl9i_f1awYJclThxKc2NvJPi6EW3BXMpRCdQD8ku44IIHmzlcoW17pfMP7_p1HH2567NkR-Kv-JvBh1fMh2MSu7wvhkhvGdzCVrmowxDUjN_f3C9voQarjnZxfvhWZmGZKdxLT5h4ehPPteZkQ.l9W6FQ-xI3vObRP4zzGy8w"
+      - "..FgHJyRo0rtGc5etJ.QiirL-PxjgRPAP_1bUcmHXb_D9-m62j96sAhePzFo567J2ATnqRKrXR4R4KSYXO3U_PragkmhEzmGS4koBlvHqKmuiJHkkIF-c2dIRMTsDETMOGMwbeUAOdoRRLIAAAgEV0N8Hmu_bgqxFZZrGOwINxF3MQaj24Iv7vT5ZGmoupFZPKZhd8HPMUVw3AXIvsawzRNVLP6SZoVrRb-5bZNvlIOp0igWDnitmUNtrBJmmnnIvSU2sHnvuEiHvhRLlYUYK7aYoDhUznQdmeC3EpyO3t3K99OXXq-J153ViwADCitrXsaE33wPGGY5Sr_aju7NsmyNRqVbhNnUGbMmvrS4zLSRs9lCbgDnSWZLexNEYPmHNZFWQPRP_udFv7UPuIi1HUFSqo5rKBQsOO6ALJQtJxmEdWonKRO2mFx8DiHIt8Pr4Bf6WbeHLbhJbIdoyUUBNTS-SSjZY2sxAc9-5wdRGDB7FTjk2PKibGmG2USfKMq9ItfCaGpxXMQjI0SIC7TujhON5Rc6Llj023rh45uxgJL7hwxPXI_f-3Qbt9yDluQZxP9cMiV0Tt4rEej-ZkpmS2-To6JZGFy3x5uqbT0MP9oRSnGX6oLN88icinpwQqqym5xn7KVJduxJn1jahWccpe_0T169kEGoQnT1DxIbd1LgKRLq-JrVXARFR0xRWmoY8ifuKnxeZeHEpYoxQOlYUUo_a-_mfJo55eujkTU2EiMuzMO7AaWhbl3FsodTuJipoiQyuU5ctdb7y86NTgVGB8xwpfdr682vEFSOoV08ve3XaMm5Xfn0IFLenj2jUOIEKhFHi3UoahQs3fVUTn4CydCMYE_8ysJNypgsqz9aZSgg90y5jo44ktFJn8-bjs-0fb7Mde6kgHRvUQ52rWtCvjptWrnguqVZZLGvfBxsfkisKkf9z1w1Kb4ToQMi2xzTx35WHWwLHARualiKWfb6cK2FLrJzUR5ROI2PjFX1JQGOa_b6RdHsNxBL9X2IMHfBXC_V6C8TPBHVHitjRPpR65wZasBNyTufflYhtat0s86HxIQvvtvl33g_2swPDj3I9b4PaTJXaT45f5ZlG7mCJT36Q.q8JjzZRputkQWLM45DQv_Q"
   response:
     status:
       code: 201
@@ -610,9 +573,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 25 Oct 2017 15:35:22 GMT
+      - Thu, 26 Oct 2017 19:23:24 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 24-Oct-2017 15:35:22
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 25-Oct-2017 19:23:24
         GMT
       x-content-type-options:
       - nosniff
@@ -628,10 +591,61 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "id" : 60,
+          "id" : 58,
           "is_initial_application" : false,
           "is_other_type" : false
         }
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 15:35:18 GMT
+  recorded_at: Thu, 26 Oct 2017 19:23:24 GMT
+- request:
+    method: get
+    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/58?expanded=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..FgHJyRo0rtGc5etJ.QiirL-PxjgRPAP_1bUcmHXb_D9-m62j96sAhePzFo567J2ATnqRKrXR4R4KSYXO3U_PragkmhEzmGS4koBlvHqKmuiJHkkIF-c2dIRMTsDETMOGMwbeUAOdoRRLIAAAgEV0N8Hmu_bgqxFZZrGOwINxF3MQaj24Iv7vT5ZGmoupFZPKZhd8HPMUVw3AXIvsawzRNVLP6SZoVrRb-5bZNvlIOp0igWDnitmUNtrBJmmnnIvSU2sHnvuEiHvhRLlYUYK7aYoDhUznQdmeC3EpyO3t3K99OXXq-J153ViwADCitrXsaE33wPGGY5Sr_aju7NsmyNRqVbhNnUGbMmvrS4zLSRs9lCbgDnSWZLexNEYPmHNZFWQPRP_udFv7UPuIi1HUFSqo5rKBQsOO6ALJQtJxmEdWonKRO2mFx8DiHIt8Pr4Bf6WbeHLbhJbIdoyUUBNTS-SSjZY2sxAc9-5wdRGDB7FTjk2PKibGmG2USfKMq9ItfCaGpxXMQjI0SIC7TujhON5Rc6Llj023rh45uxgJL7hwxPXI_f-3Qbt9yDluQZxP9cMiV0Tt4rEej-ZkpmS2-To6JZGFy3x5uqbT0MP9oRSnGX6oLN88icinpwQqqym5xn7KVJduxJn1jahWccpe_0T169kEGoQnT1DxIbd1LgKRLq-JrVXARFR0xRWmoY8ifuKnxeZeHEpYoxQOlYUUo_a-_mfJo55eujkTU2EiMuzMO7AaWhbl3FsodTuJipoiQyuU5ctdb7y86NTgVGB8xwpfdr682vEFSOoV08ve3XaMm5Xfn0IFLenj2jUOIEKhFHi3UoahQs3fVUTn4CydCMYE_8ysJNypgsqz9aZSgg90y5jo44ktFJn8-bjs-0fb7Mde6kgHRvUQ52rWtCvjptWrnguqVZZLGvfBxsfkisKkf9z1w1Kb4ToQMi2xzTx35WHWwLHARualiKWfb6cK2FLrJzUR5ROI2PjFX1JQGOa_b6RdHsNxBL9X2IMHfBXC_V6C8TPBHVHitjRPpR65wZasBNyTufflYhtat0s86HxIQvvtvl33g_2swPDj3I9b4PaTJXaT45f5ZlG7mCJT36Q.q8JjzZRputkQWLM45DQv_Q"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Thu, 26 Oct 2017 19:23:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 25-Oct-2017 19:23:24
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '173'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 58,
+          "applicants" : [ ],
+          "minor_children" : [ ],
+          "other_adults" : [ ],
+          "rfa1c_forms" : [ ],
+          "is_initial_application" : false,
+          "is_other_type" : false
+        }
+    http_version: 
+  recorded_at: Thu, 26 Oct 2017 19:23:24 GMT
 recorded_with: VCR 3.0.3

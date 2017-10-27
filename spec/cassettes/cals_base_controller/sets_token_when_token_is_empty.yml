@@ -19,7 +19,7 @@ http_interactions:
       content-type:
       - application/json;charset=utf-8
       date:
-      - Wed, 25 Oct 2017 15:36:50 GMT
+      - Thu, 26 Oct 2017 19:23:25 GMT
       expires:
       - '0'
       pragma:
@@ -44,7 +44,7 @@ http_interactions:
       encoding: UTF-8
       string: Unauthorized
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 15:36:46 GMT
+  recorded_at: Thu, 26 Oct 2017 19:23:25 GMT
 - request:
     method: get
     uri: https://web.preint.cwds.io/perry/authn/validate?token=abcd
@@ -64,7 +64,7 @@ http_interactions:
       content-type:
       - application/json;charset=utf-8
       date:
-      - Wed, 25 Oct 2017 15:36:51 GMT
+      - Thu, 26 Oct 2017 19:23:26 GMT
       expires:
       - '0'
       pragma:
@@ -89,5 +89,5 @@ http_interactions:
       encoding: UTF-8
       string: Unauthorized
     http_version: 
-  recorded_at: Wed, 25 Oct 2017 15:36:46 GMT
+  recorded_at: Thu, 26 Oct 2017 19:23:26 GMT
 recorded_with: VCR 3.0.3

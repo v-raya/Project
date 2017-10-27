@@ -40,11 +40,11 @@ export default class ApplicantDetailsCard extends React.Component {
                 suffixTypes={this.props.nameSuffixTypes || []}
                 prefixTypes={this.props.namePrefixTypes || []}
                 onChange={(event) => this.props.onFieldChange()} />
-              <CommonAddressFields
+              {/* <CommonAddressFields
                 index={0}
                 stateTypes={[]}
                 addressFields={{mailing_address: {}}}
-                onChange={(event) => this.props.onFieldChange()} />
+                onChange={(event) => this.props.onFieldChange()} /> */}
               <InputField
                 gridClassName='col-md-4'
                 id={driversLicenseNumberId}

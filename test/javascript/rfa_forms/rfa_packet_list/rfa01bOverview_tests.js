@@ -7,11 +7,15 @@ describe('Verify Application List View', () => {
 
   const setFocusStateSpy = jasmine.createSpy('setFocusState')
   const getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
-
+  let rfa01A = {
+    applicants: [],
+    other_adults: []
+  }
   const rfaPacketRenderedView = rfa01BOverviewCard.render(
     <Rfa01BOverview
       focusComponentName={'Rfa01BOverview'}
       applicationId={'10'}
+      rfa01A={rfa01A}
       setFocusState={setFocusStateSpy}
       getFocusClassName={getFocusClassNameSpy}
    />)

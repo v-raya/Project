@@ -18,5 +18,10 @@ module Concerns::Rfa::ApplicationApiProtocolProvider
       response = FaradayCals.put("/rfa-1a-forms/#{parent_id}", auth_header, body)
       new(JSON.parse(response.body))
     end
+
+    def find_by_application_id(auth_header, application_id)
+      response = FaradayCals.get("/#{api_resource_path}/#{application_id}?expanded=true", auth_header)
+      response.status == 200 ? JSON.parse(response.body) : nil
+    end
   end
 end

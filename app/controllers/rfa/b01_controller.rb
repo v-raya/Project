@@ -1,14 +1,10 @@
 class Rfa::B01Controller < CalsBaseController
-  def create
-    # make api call to create application
-    # rfa_app_response = rfa_b01_application_helper.create_rfa_b01_application
-    # rfa_b01_application = Rfa::ApplicationB01.new(rfa_app_response['id'])
-    # redirect_to edit_rfa_b01_path(rfa_b01_application.id)
-  end
 
   def index
-    @hi = 'hi'
-    @dictionaries = dictionaries_helper.rfa_b01_dictioniaries
+      rfa_b01_response = rfa_b01_application_helper.create_application(params[:application_id], params[:adult_id], params[:api_url_path])
+      rfa_b01_application = Rfa::B01::Application.new
+      rfa_b01_application.id = rfa_b01_response['id']
+      redirect_to edit_rfa_b01_path(rfa_b01_application.id)
   end
 
   def edit

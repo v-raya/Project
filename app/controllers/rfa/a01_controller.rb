@@ -40,6 +40,12 @@ class Rfa::A01Controller < CalsBaseController
     @application_response[:references] = process_items_for_persistance(references_params, rfa_references_helper, params[:id]) if params[:references].present?
     @application_response[:childDesired] = process_items_for_persistance(child_desired_params, rfa_child_desired_helper, params[:id]) if params[:childDesired].present?
     @application_response[:references] = process_items_for_persistance(references_params, rfa_references_helper, params[:id]) if params[:references].present?
+  #redirect_to rfa_a01_packet_index_path params[:id], status: :see_other
+
+    #TODO:MAYBE on update we need to create the relevant rfa 01b forms for all
+    # applicatns, other adults, and minorchildren IF generation is to be automatic
+    # create_rfa_01b_forms(@application_response[:applicants], params[:id])  if @application_response[:applicants].present?
+    # create_rfa_01b_forms(@application_response[:otherAdults], params[:id]) if @application_response[:otherAdults].present?
   end
 
   private
@@ -143,6 +149,10 @@ class Rfa::A01Controller < CalsBaseController
 
   def rfa_application_helper
     Helpers::Rfa::ApplicationHelper.new(auth_header: get_session_token)
+  end
+
+  def rfa_b01_application_helper
+      Helpers::Rfa::B01::ApplicationHelper.new(auth_header: get_session_token)
   end
 
   def rfa_applicant_helper
