@@ -2,10 +2,9 @@ import React from 'react'
 import Immutable from 'immutable'
 import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
-import AutoCompleter from 'components/common/autoCompleter.jsx'
 import {yesNo} from 'constants/constants'
 import {getDictionaryId, dictionaryNilSelect, findArrayValueByMethod} from 'helpers/commonHelper.jsx'
-import CommonAddressFields from 'components/rfa_forms/commonAddressField.jsx'
+import CommonAddressComponent from 'components/rfa_forms/commonAddressComponent.js'
 
 import {fetchRequest} from 'helpers/http'
 
@@ -39,67 +38,37 @@ export default class AddressCard extends React.Component {
     this.state = {
       suggestions: []
     }
+    this.checkAddressType = this.checkAddressType.bind(this)
+  }
+  checkAddressType (addressType) {
+    const blankAddressFields = (addressType === physicalAddressType) ? blankPhysicalAddress : blankMailingAddress
+    let data = Immutable.fromJS(this.props.addresses || [blankAddressFields])
+    let indexValue = data.findIndex(x => x.get('type').get('value') === addressType)
+    if(addressType === -1) {
+      data = data.push(Immutable.fromJS(blankAddressFields))
+      indexValue = data.size - 1
+    }
+    return {
+      data: data,
+      index: indexValue,
+      blankAddressFields: blankAddressFields}
   }
   onAddressChange (typeString, key, value) {
-    // find index of address with type.id=physical
-    const blankAddressFields = (typeString === physicalAddressType) ? blankPhysicalAddress : blankMailingAddress
-    let data = Immutable.fromJS(this.props.addresses || [blankAddressFields])
-    let index = data.findIndex(x => x.get('type').get('value') === typeString)
-    if (index === -1) {
-      // data is immutable list, important to push blankaddress as immutable
-      data = data.push(Immutable.fromJS(blankAddressFields))
-      index = data.size - 1
-    }
-    if (key === 'fromSelection') {
-      let selectedAddress = Immutable.fromJS(value)
-      selectedAddress.keySeq().forEach(k => {
-        if (k === 'state') {
-          let stateTypes = Immutable.fromJS(this.props.stateTypes)
-          value[k] = findArrayValueByMethod(stateTypes, 'find', 'id', value[k]).toJS()
-        }
-        // data = data.update(index, x => x.set(k, value[k]))
-        data = data.toJS()
-        data[index][k] = value[k]
-        data = Immutable.fromJS(data)
-      })
-    } else {
-      data = data.update(index, x => x.set(key, value))
-    }
+    let addressData = this.checkAddressType(typeString)
+    let data = addressData.data
+    data = data.update(addressData.index, x => x.set(key, value))
     this.props.setParentState('addresses', data.toJS())
   }
-  onSelection (autoFillData, addressType) {
-    this.onAddressChange(addressType, 'fromSelection', autoFillData)
+  onSelection (autoFillData, typeString) {
+    let addressData = this.checkAddressType(typeString)
+    autoFillData.type = addressData.blankAddressFields.type
+    autoFillData.state = this.props.stateTypes.find(x => x.id === autoFillData.state)
+
+    let data = addressData.data
+    data = data.update(addressData.index, x => autoFillData)
+    this.props.setParentState('addresses', data.toJS())
   }
 
-  onSuggestionSelected (event, {suggestion, suggestionValue, suggestionIndex, sectionIndex, method}, addressType) {
-    let url = '/geoservice/validate'
-    let params = suggestion
-    let updateSuggetions
-    fetchRequest(url, 'POST', params).then(
-      response => response.json()).then((response) => {
-      updateSuggetions = response[0]
-      this.onSelection(updateSuggetions, addressType)
-    }).catch(() => {
-      updateSuggetions = suggestion
-      this.onSelection(updateSuggetions, addressType)
-    })
-  }
-
-  // onSuggestionsFetchRequested (value, reason) {
-  onSuggestionsFetchRequested ({value, reason}) {
-    let url = '/geoservice/'
-    let params = encodeURIComponent(value)
-    fetchRequest(url, 'POST', params).then(
-      response => response.json()).then((response) => {
-      return this.setState({
-        suggestions: response
-      })
-    }).catch(() => {
-      return this.setState({
-        suggestions: []
-      })
-    })
-  }
   render () {
     const hasPhysicalAddressFields = this.props.addresses !== undefined && this.props.addresses.find(o => o.type.value === physicalAddressType)
     const physicalAddressFields = hasPhysicalAddressFields ? this.props.addresses.find(o => o.type.value === physicalAddressType) : blankPhysicalAddress
@@ -111,17 +80,15 @@ export default class AddressCard extends React.Component {
       <div className='card-body'>
         <div className='row'>
           <form>
-            <CommonAddressFields
-              suggestions={this.state.suggestions}
+            <CommonAddressComponent
+              stateTypes={this.props.stateTypes}
               addressTitle='Physical Address'
               id='street_address'
               addressType={physicalAddressType}
               addressFields={physicalAddressFields}
-              stateTypes={this.props.stateTypes}
+              onSelection={(suggestionData) => this.onSelection(suggestionData, physicalAddressType)}
               onChange={(fieldId, event) => this.onAddressChange(physicalAddressType, fieldId, event)}
-              onSuggestionsFetchRequested={this.onSuggestionsFetchRequested.bind(this)}
-              onSuggestionSelected={(event, object) => this.onSuggestionSelected(event, object, physicalAddressType)} />
-
+            />
             <DropDownField gridClassName='col-md-6' selectClassName='reusable-select' id='mailing_similar'
               value={mailingAddress}
               text={this.props.physicalMailingSimilar}
@@ -129,18 +96,16 @@ export default class AddressCard extends React.Component {
               label='Mailing address the same as Physical Address?'
               onChange={(event) => this.props.setParentState('physical_mailing_similar', event.target.selectedOptions[0].value)} />
             <div className={hiddenMailingSameAsPhysical}>
-              <CommonAddressFields
-                suggestions={this.state.suggestions}
+              <CommonAddressComponent
+                stateTypes={this.props.stateTypes}
                 addressTitle='Mailing Address'
                 id='street_address'
                 addressType={mailingAddressType}
                 addressFields={mailingAddressFields}
-                onSelection={this.onSelection.bind(this)}
-                stateTypes={this.props.stateTypes}
+                onSelection={(suggestionData) => this.onSelection(suggestionData, mailingAddressType)}
                 onChange={(fieldId, event) => this.onAddressChange(mailingAddressType, fieldId, event)}
-                onSuggestionsFetchRequested={this.onSuggestionsFetchRequested.bind(this)}
-                onSuggestionSelected={(event, object) => this.onSuggestionSelected(event, object, mailingAddressType)} />
-            </div>
+              />
+             </div>
           </form>
         </div>
       </div>
