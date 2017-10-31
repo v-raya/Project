@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import CommonAddressFields from './commonAddressField.jsx'
+import {CommonAddressComponent} from 'react-wood-duck'
 import {fetchRequest} from 'helpers/http'
 
-export default class CommonAddressComponent extends React.Component {
+export default class AddressComponent extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -41,8 +41,8 @@ export default class CommonAddressComponent extends React.Component {
   }
   render () {
     return (
-      <CommonAddressFields
-        addressTitle='Physical Address'
+      <CommonAddressComponent
+        addressTitle={this.props.addressTitle}
         addressType={this.props.addressType}
         id={this.props.id}
         suggestions={this.state.suggestions}
@@ -56,17 +56,16 @@ export default class CommonAddressComponent extends React.Component {
   }
 }
 
-CommonAddressFields.propTypes = {
+AddressComponent.propTypes = {
   addressType: PropTypes.string,
   id: PropTypes.string,
-  // index: PropTypes.number,
   addressTitle: PropTypes.string.isRequired,
   addressFields: PropTypes.object.isRequired,
   stateTypes: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired
 }
 
-CommonAddressFields.defaultProps = {
+AddressComponent.defaultProps = {
   addressType: '',
   placeholder: '',
   addressTitle: 'Physical Address'

@@ -70,13 +70,13 @@ describe('Verify Address card fields', function () {
     expect(addressCardMount.instance().onAddressChange).toHaveBeenCalledWith('Residential', 'city', 'sacremento')
   })
 
-  it('verify state', () => {
-    let relationShipField = addressCardMount.find('#Residentialstate_type')
-    spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
-    addressCardMount.update()
-    relationShipField.simulate('change', {target: {selectedOptions: [{value: '17', text: 'Illinois'}]}})
-    expect(addressCardMount.instance().onAddressChange).toHaveBeenCalledWith('Residential', 'state', {id: '17', value: 'Illinois'})
-  })
+  // it('verify state', () => {
+  //   let relationShipField = addressCardMount.find('#Residentialstate_type')
+  //   spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
+  //   addressCardMount.update()
+  //   relationShipField.simulate('change', {target: {selectedOptions: [{value: '17', text: 'Illinois'}]}})
+  //   expect(addressCardMount.instance().onAddressChange).toHaveBeenCalledWith('Residential', 'state', {id: '17', value: 'Illinois'})
+  // })
   it('verify on mailing street address ', () => {
     let relationShipField = addressCardMount.find('#Mailingstreet_address')
     spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
@@ -100,11 +100,11 @@ describe('Verify Address card fields', function () {
     expect(addressCardMount.instance().onAddressChange).toHaveBeenCalledWith('Mailing', 'city', 'sacremento')
   })
 
-  it('verify mailing state', () => {
-    let relationShipField = addressCardMount.find('#Mailingstate_type')
-    spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
-    addressCardMount.update()
-    relationShipField.simulate('change', {target: {selectedOptions: [{value: '17', text: 'Illinois'}]}})
-    expect(addressCardMount.instance().onAddressChange).toHaveBeenCalledWith('Mailing', 'state', {id: '17', value: 'Illinois'})
-  })
+  // it('verify mailing state', () => {
+  //   let relationShipField = addressCardMount.find('#Mailingstate_type')
+  //   spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
+  //   addressCardMount.update()
+  //   relationShipField.simulate('change', {target: {selectedOptions: [{value: '17', text: 'Illinois'}]}})
+  //   expect(addressCardMount.instance().onAddressChange).toHaveBeenCalledWith('Mailing', 'state', {id: '17', value: 'Illinois'})
+  // })
 })

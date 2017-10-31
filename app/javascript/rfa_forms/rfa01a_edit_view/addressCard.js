@@ -4,7 +4,7 @@ import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
 import {yesNo} from 'constants/constants'
 import {getDictionaryId, dictionaryNilSelect, findArrayValueByMethod} from 'helpers/commonHelper.jsx'
-import CommonAddressComponent from 'components/rfa_forms/commonAddressComponent.js'
+import AddressComponent from 'components/rfa_forms/addressComponent.js'
 
 import {fetchRequest} from 'helpers/http'
 
@@ -44,7 +44,7 @@ export default class AddressCard extends React.Component {
     const blankAddressFields = (addressType === physicalAddressType) ? blankPhysicalAddress : blankMailingAddress
     let data = Immutable.fromJS(this.props.addresses || [blankAddressFields])
     let indexValue = data.findIndex(x => x.get('type').get('value') === addressType)
-    if(addressType === -1) {
+    if (indexValue === -1) {
       data = data.push(Immutable.fromJS(blankAddressFields))
       indexValue = data.size - 1
     }
@@ -80,7 +80,7 @@ export default class AddressCard extends React.Component {
       <div className='card-body'>
         <div className='row'>
           <form>
-            <CommonAddressComponent
+            <AddressComponent
               stateTypes={this.props.stateTypes}
               addressTitle='Physical Address'
               id='street_address'
@@ -96,7 +96,7 @@ export default class AddressCard extends React.Component {
               label='Mailing address the same as Physical Address?'
               onChange={(event) => this.props.setParentState('physical_mailing_similar', event.target.selectedOptions[0].value)} />
             <div className={hiddenMailingSameAsPhysical}>
-              <CommonAddressComponent
+              <AddressComponent
                 stateTypes={this.props.stateTypes}
                 addressTitle='Mailing Address'
                 id='street_address'
@@ -105,7 +105,7 @@ export default class AddressCard extends React.Component {
                 onSelection={(suggestionData) => this.onSelection(suggestionData, mailingAddressType)}
                 onChange={(fieldId, event) => this.onAddressChange(mailingAddressType, fieldId, event)}
               />
-             </div>
+            </div>
           </form>
         </div>
       </div>

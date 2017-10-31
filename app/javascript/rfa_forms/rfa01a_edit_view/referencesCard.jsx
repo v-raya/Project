@@ -2,11 +2,10 @@ import React from 'react'
 import Immutable from 'immutable'
 import {InputComponent} from 'components/common/inputFields'
 import CompleteNameFields from './completeNameField'
-import CommonAddressFields from 'components/rfa_forms/commonAddressField'
 import PropTypes from 'prop-types'
 import CleaveInputField from 'components/common/cleaveInputField.jsx'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
-import CommonAddressComponent from 'components/rfa_forms/commonAddressComponent.js'
+import AddressComponent from 'components/rfa_forms/addressComponent.js'
 import {fetchRequest} from 'helpers/http'
 
 const phoneNumberRule = {rule: 'is10digits', message: 'Invalid Phone Number'}
@@ -33,7 +32,6 @@ export default class ReferencesCard extends React.Component {
     this.props.setParentState('mailing_address', mailingAddressObj, referencesIndex)
   }
 
-
   render () {
     const phoneNumberId = this.props.idPrefix + 'phone_number'
 
@@ -45,7 +43,7 @@ export default class ReferencesCard extends React.Component {
           suffixTypes={this.props.suffixTypes}
           prefixTypes={this.props.prefixTypes}
           onChange={this.props.setParentState} />
-        <CommonAddressComponent
+        <AddressComponent
           index={this.props.index}
           stateTypes={this.props.stateTypes}
           addressTitle='Physical Address'
