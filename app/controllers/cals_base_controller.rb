@@ -9,7 +9,7 @@ class CalsBaseController < ApplicationController
     result = []
     if items.is_a?(Array)
       items.each do |item|
-        result << create_update_or_delete(item, helper, parent_id).reject(&:blank?)
+        result << create_update_or_delete(item, helper, parent_id)
       end
     else
       result = create_update_or_delete(items, helper, parent_id)

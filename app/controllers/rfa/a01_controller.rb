@@ -30,7 +30,7 @@ class Rfa::A01Controller < CalsBaseController
   def update
     @application_response = {}
     @application_response[:application_county] = process_items_for_persistance(application_county_params, rfa_application_helper, params[:id]) if params[:application_county].present?
-    @application_response[:applicants] = process_items_for_persistance(applicant_params, rfa_applicant_helper, params[:id]) if params[:applicants].present?
+    @application_response[:applicants] = process_items_for_persistance(applicant_params, rfa_applicant_helper, params[:id]).reject(&:blank?) if params[:applicants].present?
     @application_response[:residence] = process_items_for_persistance(residence_params, rfa_residence_helper, params[:id]) if params[:residence].present?
     @application_response[:applicantsHistory] = process_items_for_persistance(applicants_history_params, rfa_applicant_history_helper, params[:id]) if params[:applicantsHistory].present?
     @application_response[:minorChildren] = process_items_for_persistance(minor_children_params, rfa_minor_children_helper, params[:id]) if params[:minorChildren].present?
