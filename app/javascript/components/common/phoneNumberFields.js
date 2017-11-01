@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import MaskedInputField from './maskedInputField.jsx'
 import {DropDownField} from './dropDownField'
 import {BinarySelectorField} from './binarySelectorField'
-import {dictionaryNilSelect} from 'helpers/commonHelper.jsx'
+import {dictionaryNilSelect, getDictionaryId} from 'helpers/commonHelper.jsx'
 import CleaveInputField from './cleaveInputField.jsx'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 
@@ -46,7 +46,8 @@ export class PhoneNumberField extends React.Component {
         />
         <DropDownField gridClassName='col-md-4' id='phone_type'
           selectClassName='reusable-select'
-          optionList={phoneTypes} value={phoneFields.phone_type.id}
+          optionList={phoneTypes}
+          value={getDictionaryId(phoneFields.phone_type)}
           label='Phone Type'
           disableNullVal
           onChange={(event) => this.props.onPhoneFieldChange(this.props.index,

@@ -4,7 +4,7 @@ import {DropDownField} from 'components/common/dropDownField'
 import {AgencyComponent} from 'components/rfa_forms/agencyComponentFields'
 import {FacilityComponent} from 'components/rfa_forms/fosterFacilityComponent'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
-import {addCardAsJS, removeCardAsJS} from 'helpers/cardsHelper.jsx'
+import {addCardAsJS, removeCard} from 'helpers/cardsHelper.jsx'
 
 export const blankFosterCareFields = Object.freeze(
   {
@@ -107,7 +107,7 @@ export class FosterCareHistoryFields extends React.Component {
 
   removeAgencyCard (event, agency, indexValue, key, subKey) {
     event.preventDefault()
-    this.setFosterCareNestedState(key, subKey, removeCardAsJS(agency, indexValue, blankAgencyFields))
+    this.setFosterCareNestedState(key, subKey, removeCard(agency, indexValue, blankAgencyFields))
   }
 
   addFacilityCard (event, facility, key, subKey) {
@@ -126,7 +126,7 @@ export class FosterCareHistoryFields extends React.Component {
 
   removeFacilityCard (event, facility, indexValue, key, subKey) {
     event.preventDefault()
-    this.setFosterCareNestedState(key, subKey, removeCardAsJS(facility, indexValue, ''))
+    this.setFosterCareNestedState(key, subKey, removeCard(facility, indexValue, ''))
   }
 
   onAgencyChange (event, agency, index, type, key, subKey, value) {

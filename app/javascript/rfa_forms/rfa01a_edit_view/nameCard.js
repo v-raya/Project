@@ -6,6 +6,7 @@ import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
 import CompleteNameFields from './completeNameField.jsx'
 import {checkArrayObjectPresence, removeLegalNameType} from 'helpers/commonHelper.jsx'
+import {addCardAsJS, removeCard} from 'helpers/cardsHelper.jsx'
 
 const blankNameFields = Object.freeze({
   name_suffix: null,
@@ -29,24 +30,25 @@ export default class NameCard extends React.Component {
     this.props.validator.addFieldValidation(this.props.idPrefix + 'last_name', requiredNameRule)
   }
 
+  addCard (event) {
+    this.props.setParentState('other_names', addCardAsJS(this.props.nameFields.other_names, blankNameFields))
+  }
+
   removeCard (indexValue) {
     let nameCardsList = Immutable.fromJS(this.props.nameFields.other_names)
     nameCardsList = nameCardsList.delete(indexValue)
     this.props.setParentState('other_names', nameCardsList.toJS())
   }
+
   handleNameChange (key, value, nameIndex) {
     let otherNameList = Immutable.fromJS(this.props.nameFields.other_names)
 
     otherNameList = otherNameList.update(nameIndex, x => x.set(key, value))
     this.props.setParentState('other_names', otherNameList.toJS())
   }
-  addCard () {
-    let nameCardsList = checkArrayObjectPresence(this.props.nameFields.other_names) || []
-    nameCardsList.push(blankNameFields)
-    this.props.setParentState('other_names', nameCardsList)
-  }
+
   render () {
-    let nameCardsList = checkArrayObjectPresence(this.props.nameFields.other_names)
+    let nameCardsList = this.props.nameFields.other_names
     return (
       <div className='card-body'>
         <div className='row'>
@@ -90,4 +92,8 @@ NameCard.propTypes = {
   nameTypes: PropTypes.array.isRequired,
   nameFields: PropTypes.object,
   setParentState: PropTypes.func.isRequired
+}
+
+NameCard.defaultProps = {
+  nameFields: blankNameFields
 }

@@ -25,13 +25,13 @@ export class MinorCardField extends React.Component {
         <DropDownField gridClassName='col-md-4' id='relationship_to_applicant'
           selectClassName='reusable-select'
           optionList={this.props.relationshipToApplicantTypes}
-          value={minor.relationship_to_applicants[0].relationship_to_applicant.id}
+          value={getDictionaryId(minor.relationship_to_applicants[0].relationship_to_applicant)}
           label='Relationship Type' onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, dictionaryNilSelect(event.target.selectedOptions[0]), 'relationship_to_applicant')} />
         <DropDownField gridClassName='col-md-4' id='applicant_id'
           selectClassName='reusable-select'
           optionList={setToWhomOptionList(this.props.applicants)}
           label='To whom'
-          value={handleToWhomValue(minor.relationship_to_applicants[0].applicant_id, this.props.applicants).id}
+          value={getDictionaryId(handleToWhomValue(minor.relationship_to_applicants[0].applicant_id, this.props.applicants))}
           onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, event.target.value, 'applicant_id')} />
         <DateField gridClassName='col-md-4' label='Date of Birth' id={this.props.idPrefix + 'date_of_birth'}
           value={FormatDateForDisplay(minor.date_of_birth)}

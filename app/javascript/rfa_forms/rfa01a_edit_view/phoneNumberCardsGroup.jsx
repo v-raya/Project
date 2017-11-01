@@ -2,7 +2,7 @@ import Immutable from 'immutable'
 import React from 'react'
 import PropTypes from 'prop-types'
 import {PhoneNumberField} from 'components/common/phoneNumberFields'
-import {addCardAsJS, removeCardAsJS} from 'helpers/cardsHelper.jsx'
+import {addCardAsJS, removeCard} from 'helpers/cardsHelper.jsx'
 
 export const blankPhoneNumberFields = Object.freeze({
   number: '',
@@ -20,7 +20,7 @@ export default class PhoneComponent extends React.Component {
 
   onPhoneClickClose (phoneCardIndex) {
     this.props.setParentState('phones',
-      removeCardAsJS(this.props.phones, phoneCardIndex, blankPhoneNumberFields))
+      removeCard(this.props.phones, phoneCardIndex, blankPhoneNumberFields))
   }
 
   onPhoneFieldChange (phoneCardIndex, value, type) {

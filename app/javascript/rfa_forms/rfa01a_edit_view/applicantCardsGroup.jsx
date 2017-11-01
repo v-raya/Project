@@ -3,6 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ApplicantCard from './applicantCard.jsx'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
+import {addCardAsJS, removeCardWithId} from 'helpers/cardsHelper.jsx'
 
 const blankApplicantFields = Object.freeze({
   first_name: '',
@@ -11,7 +12,8 @@ const blankApplicantFields = Object.freeze({
   other_names: [],
   date_of_birth: '',
   driver_license_number: '',
-  email: ''
+  email: '',
+  phones: null
 })
 
 export default class ApplicantCardsGroup extends React.Component {
@@ -19,24 +21,16 @@ export default class ApplicantCardsGroup extends React.Component {
     super(props)
     this.addCard = this.addCard.bind(this)
     this.onApplicantClickClose = this.onApplicantClickClose.bind(this)
-
     this.setApplicantsState = this.setApplicantsState.bind(this)
   }
 
-  onApplicantClickClose (applicantCardIndex) {
-    let applicantsList = Immutable.fromJS(this.props.applicants)
-
-    applicantsList = applicantsList.delete(applicantCardIndex)
-
-    // convert to regular js array
-    this.props.setParentState('applicants', applicantsList.toJS())
+  addCard (event) {
+    this.props.setParentState('applicants', addCardAsJS(this.props.applicants, blankApplicantFields))
   }
 
-  addCard (event) {
-    let applicantsList = checkArrayObjectPresence(this.props.applicants) || [blankApplicantFields]
-    applicantsList.push(blankApplicantFields)
-
-    this.props.setParentState('applicants', applicantsList)
+  onApplicantClickClose (cardIndex) {
+    this.props.setParentState('applicants',
+      removeCardWithId(this.props.applicants, cardIndex, blankApplicantFields))
   }
 
   setApplicantsState (applicantIndex, data) {
@@ -53,34 +47,36 @@ export default class ApplicantCardsGroup extends React.Component {
         <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           {
             applicantsList.map((applicantFields, index) => {
-              return (
-                <div key={index}>
-                  <h3>I. Applicant {String(index + 1)} - <span>Information</span></h3>
-                  {(index > 0) && <span onClick={() => this.onApplicantClickClose(index)} className='pull-right glyphicon glyphicon-remove' />}
-                  <ApplicantCard
-                    index={index}
-                    nameTypes={this.props.nameTypes}
-                    prefixTypes={this.props.prefixTypes}
-                    suffixTypes={this.props.suffixTypes}
-                    phoneTypes={this.props.phoneTypes}
-                    salaryTypes={this.props.salaryTypes}
-                    stateTypes={this.props.stateTypes}
-                    educationLevels={this.props.educationLevels}
-                    genderTypes={this.props.genderTypes}
-                    // raceTypes={this.props.raceTypes}
-                    ethnicityTypes={this.props.ethnicityTypes}
-                    languageTypes={this.props.languageTypes}
-                    focusComponentName={this.props.focusComponentName}
-                    applicantFields={applicantFields}
-                    setParentState={this.setApplicantsState}
-                    setFocusState={this.props.setFocusState}
-                    getFocusClassName={this.props.getFocusClassName}
-                    validator={this.props.validator}
-                    hasValidName={this.props.hasValidName}
-                    errors={this.props.errors[index]}
-                  />
-                </div>
-              )
+              if (!applicantFields.to_delete) {
+                return (
+                  <div key={index}>
+                    <h3>I. Applicant {String(index + 1)} - <span>Information</span></h3>
+                    {(index > 0) && <span onClick={() => this.onApplicantClickClose(index)} className='pull-right glyphicon glyphicon-remove' />}
+                    <ApplicantCard
+                      index={index}
+                      nameTypes={this.props.nameTypes}
+                      prefixTypes={this.props.prefixTypes}
+                      suffixTypes={this.props.suffixTypes}
+                      phoneTypes={this.props.phoneTypes}
+                      salaryTypes={this.props.salaryTypes}
+                      stateTypes={this.props.stateTypes}
+                      educationLevels={this.props.educationLevels}
+                      genderTypes={this.props.genderTypes}
+                      // raceTypes={this.props.raceTypes}
+                      ethnicityTypes={this.props.ethnicityTypes}
+                      languageTypes={this.props.languageTypes}
+                      focusComponentName={this.props.focusComponentName}
+                      applicantFields={applicantFields}
+                      setParentState={this.setApplicantsState}
+                      setFocusState={this.props.setFocusState}
+                      getFocusClassName={this.props.getFocusClassName}
+                      validator={this.props.validator}
+                      hasValidName={this.props.hasValidName}
+                      errors={this.props.errors[index]}
+                    />
+                  </div>
+                )
+              }
             })
           }
         </div>
@@ -111,6 +107,6 @@ ApplicantCardsGroup.propTypes = {
 }
 
 ApplicantCardsGroup.defaultProps = {
-  phones: [blankApplicantFields],
+  applicants: [blankApplicantFields],
   errors: []
 }

@@ -1,5 +1,5 @@
 class Rfa::A01Controller < CalsBaseController
-    #include AuthenticationProvider
+  #include AuthenticationProvider
   def index
     @applications = rfa_application_helper.all
   end
@@ -40,7 +40,6 @@ class Rfa::A01Controller < CalsBaseController
     @application_response[:references] = process_items_for_persistance(references_params, rfa_references_helper, params[:id]) if params[:references].present?
     @application_response[:childDesired] = process_items_for_persistance(child_desired_params, rfa_child_desired_helper, params[:id]) if params[:childDesired].present?
     @application_response[:references] = process_items_for_persistance(references_params, rfa_references_helper, params[:id]) if params[:references].present?
-  #redirect_to rfa_a01_packet_index_path params[:id], status: :see_other
 
     #TODO:MAYBE on update we need to create the relevant rfa 01b forms for all
     # applicatns, other adults, and minorchildren IF generation is to be automatic
@@ -51,43 +50,43 @@ class Rfa::A01Controller < CalsBaseController
   private
 
   def application_county_params
-    params.permit(:id, {application_county: %i[value id]})
+    params.permit(:id, :to_delete, {application_county: %i[value id]})
   end
 
   def applicant_params
     params.require(:applicants).map do |applicant|
       applicant.permit!
-      ActionController::Parameters.new(applicant.to_h).permit(:id, :email,
+      ActionController::Parameters.new(applicant.to_h).permit(:id, :to_delete, :email,
                                                               :date_of_birth, :first_name, :middle_name, :last_name, :driver_license_number,
                                                               { name_suffix: %i[id value] }, { name_prefix: %i[id value] },
                                                               { employment: [:employer_name, :occupation, :income, income_type: %i[id value],
-                                                                                                                   physical_address: [:street_address, :city, :zip, state: %i[id value]]] },
+                                                                             physical_address: [:street_address, :city, :zip, state: %i[id value]]] },
                                                               { highest_education_level: %i[id value] }, { gender: %i[id value] },
                                                               { ethnicity: %i[id value] }, { driver_license_state: %i[id value] },
-                                                              phones: [:number, :preferred, phone_type: %i[id value]],
+                                                              phones: [:to_delete, :number, :preferred, phone_type: %i[id value]],
                                                               other_names: [:first_name, :middle_name, :last_name, name_type: %i[id value],
-                                                                                                                   name_suffix: %i[id value], name_prefix: %i[id value]])
+                                                                            name_suffix: %i[id value], name_prefix: %i[id value]])
     end
   end
 
   def residence_params
-    params.require(:residence).permit(:id, :physical_mailing_similar, :weapon_in_home,
+    params.require(:residence).permit(:id, :to_delete, :physical_mailing_similar, :weapon_in_home,
                                       :body_of_water_exist, :body_of_water_description, :others_using_residence_as_mailing,
                                       :directions_to_home, residence_ownership: %i[id value], home_languages: %i[id value],
-                                                           other_people_using_residence_as_mailing: %i[first_name middle_name last_name],
-                                                           physical_address: [:street_address, :zip, :city, state: %i[id value]],
-                                                           addresses: [:street_address, :zip, :city, state: %i[id value], type: %i[id value]])
+                                      other_people_using_residence_as_mailing: %i[first_name middle_name last_name],
+                                      physical_address: [:street_address, :zip, :city, state: %i[id value]],
+                                      addresses: [:street_address, :zip, :city, state: %i[id value], type: %i[id value]])
   end
 
   def applicants_history_params
-    params.require(:applicantsHistory).permit(former_spouses: [:first_name, :middle_name, :last_name,
-                                                               :applicant_id, :date_of_marriage, :place_of_marriage_city,
-                                                               :date_of_marriage_end, :place_of_marriage_end_city,
-                                                               relationship_type:  %i[id value],
-                                                               name_prefix:  %i[id value], name_suffix:  %i[id value],
-                                                               place_of_marriage_state:  %i[id value],
-                                                               marriage_termination_reason:  %i[id value],
-                                                               place_of_marriage_end_state:  %i[id value]],
+    params.require(:applicantsHistory).permit(:to_delete, former_spouses: [:first_name, :middle_name, :last_name,
+                                                                           :applicant_id, :date_of_marriage, :place_of_marriage_city,
+                                                                           :date_of_marriage_end, :place_of_marriage_end_city,
+                                                                           relationship_type:  %i[id value],
+                                                                           name_prefix:  %i[id value], name_suffix:  %i[id value],
+                                                                           place_of_marriage_state:  %i[id value],
+                                                                           marriage_termination_reason:  %i[id value],
+                                                                           place_of_marriage_end_state:  %i[id value]],
                                               adult_children: [:first_name, :middle_name, :last_name, :lives_in_home,
                                                                name_prefix: %i[id value], name_suffix: %i[id value],
                                                                address: [:street_address, :zip, :city, state: %i[id value], type: %i[id value]],
@@ -99,8 +98,8 @@ class Rfa::A01Controller < CalsBaseController
       minor.permit!
       minor = set_relationship_to_applicants(minor, @application_response[:applicants])
       ActionController::Parameters.new(minor.to_h).permit(
-        :id, :child_financially_supported, :date_of_birth, :child_adopted, gender: %i[id value],
-                                                                           relationship_to_applicants: [:applicant_id, relationship_to_applicant: %i[id value]]
+        :id, :to_delete, :child_financially_supported, :date_of_birth, :child_adopted, gender: %i[id value],
+        relationship_to_applicants: [:applicant_id, relationship_to_applicant: %i[id value]]
       )
     end
   end
@@ -110,26 +109,26 @@ class Rfa::A01Controller < CalsBaseController
       adult.permit!
       adult = set_relationship_to_applicants(adult, @application_response[:applicants])
       ActionController::Parameters.new(adult.to_h).permit(
-        :id, :first_name, :middle_name, :last_name, :date_of_birth,
+        :id, :to_delete, :first_name, :middle_name, :last_name, :date_of_birth,
         relationship_to_applicants: [:applicant_id, relationship_to_applicant: %i[id value]]
       )
     end
   end
 
   def relationship_between_applicants_params
-    params.require(:relationshipBetweenApplicants).permit(:other_relationship, :place_of_relationship_city,
+    params.require(:relationshipBetweenApplicants).permit(:to_delete, :other_relationship, :place_of_relationship_city,
                                                           :date_of_relationship, relationship_type: %i[id value],
-                                                                                 place_of_relationship_state: %i[id value])
+                                                          place_of_relationship_state: %i[id value])
   end
 
 
   def child_desired_params
-    params.require(:childDesired).permit(:child_identified, :child_in_home, preferred_ages: %i[id value],
+    params.require(:childDesired).permit(:to_delete, :child_identified, :child_in_home, preferred_ages: %i[id value],
                                          preferred_sibling_group_up_to: %i[id value])
   end
 
   def adoption_history_params
-    params.require(:fosterCareHistory).permit(:id, :was_subject_for_exclusion_order_q7,
+    params.require(:fosterCareHistory).permit(:id, :to_delete, :was_subject_for_exclusion_order_q7,
                                               foster_care_licenses_q1: [:was_previously_licensed, agencies: [:name, type: %i[id value]]],
                                               applications_for_adoption_q2: [:have_applied_for_adoption, facilities: []],
                                               facility_operation_licenses_q3: [:was_previously_licensed, agencies: [:name, type: %i[id value]]],
@@ -139,9 +138,9 @@ class Rfa::A01Controller < CalsBaseController
   end
 
   def references_params
-    permitted_params = params.permit(references: [:first_name, :middle_name, :last_name, :phone_number, :email,
-                                                  mailing_address: [:street_address, :zip, :city, state: %i[id value]],
-                                                   name_prefix: %i[id value], name_suffix: %i[id value]])
+    permitted_params = params.permit(:to_delete, references: [:first_name, :middle_name, :last_name, :phone_number, :email,
+                                                              mailing_address: [:street_address, :zip, :city, state: %i[id value]],
+                                                              name_prefix: %i[id value], name_suffix: %i[id value]])
 
     permitted_params[:items] = permitted_params.delete(:references)
     permitted_params
@@ -152,7 +151,7 @@ class Rfa::A01Controller < CalsBaseController
   end
 
   def rfa_b01_application_helper
-      Helpers::Rfa::B01::ApplicationHelper.new(auth_header: get_session_token)
+    Helpers::Rfa::B01::ApplicationHelper.new(auth_header: get_session_token)
   end
 
   def rfa_applicant_helper

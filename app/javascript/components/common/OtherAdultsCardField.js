@@ -2,7 +2,7 @@ import React from 'react'
 import {InputComponent} from './inputFields'
 import {DropDownField} from './dropDownField'
 import {DateField} from './dateFields'
-import {dictionaryNilSelect, FormatDateForDisplay, FormatDateForPersistance} from 'helpers/commonHelper.jsx'
+import {dictionaryNilSelect, getDictionaryId, FormatDateForDisplay, FormatDateForPersistance} from 'helpers/commonHelper.jsx'
 import {setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
@@ -27,12 +27,12 @@ export class OtherAdultsCardField extends React.Component {
           selectClassName='reusable-select'
           optionList={this.props.relationship_types}
           label='Relationship Type'
-          value={adult.relationship_to_applicants[0].relationship_to_applicant.id}
+          value={getDictionaryId(adult.relationship_to_applicants[0].relationship_to_applicant)}
           onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, dictionaryNilSelect(event.target.selectedOptions[0]), 'relationship_to_applicant')} />
         <DropDownField gridClassName='col-md-4' id='availableApplicants'
           selectClassName='reusable-select'
           optionList={setToWhomOptionList(this.props.applicants)}
-          value={handleToWhomValue(adult.relationship_to_applicants[0].applicant_id, this.props.applicants).id}
+          value={getDictionaryId(handleToWhomValue(adult.relationship_to_applicants[0].applicant_id, this.props.applicants))}
           label='To Whom'
           onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, event.target.value, 'applicant_id')} />
         <DateField gridClassName='col-md-4' label='Date of Birth' id={this.props.idPrefix + 'date_of_birth'}

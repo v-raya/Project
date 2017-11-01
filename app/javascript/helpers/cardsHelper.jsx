@@ -6,11 +6,31 @@ export const addCardAsJS = (inputArray, newCardFields) => {
   return inputList.push(newCardFields).toJS()
 }
 
-export const removeCardAsJS = (inputArray, index, newCardFields) => {
+export const removeCard = (inputArray, index, newCardFields) => {
   let inputList = Immutable.fromJS(inputArray)
   inputList = inputList.delete(index)
-  // TODO: add a delete bit to inputList element if id is present
   if (inputList.size === 0) {
+    inputList = inputList.push(newCardFields)
+  }
+  return inputList.toJS()
+}
+
+export const removeCardWithId = (inputArray, index, newCardFields) => {
+  let inputList = Immutable.fromJS(inputArray)
+  let itemForDeletion = inputList.get(index)
+  let visibleCount = inputArray.length
+ // the item marked for deletion has already been saved once,
+ // so we need to add a flag for deletion to make a delete api call
+ // rather than an update api call.
+  if (itemForDeletion.get('id')) {
+    itemForDeletion = itemForDeletion.set('to_delete', true)
+    inputList = inputList.set(index, itemForDeletion)
+    visibleCount--
+  } else {
+    inputList = inputList.delete(index)
+    visibleCount--
+  }
+  if (visibleCount === 0) {
     inputList = inputList.push(newCardFields)
   }
   return inputList.toJS()
@@ -42,9 +62,6 @@ export const handleToWhomValue = (applicantId, applicants) => {
     if (!isNaN(Number(applicantId))) {
       newApplicants = newApplicants.find(x => x.id === Number(applicantId))
     }
-    // if (newApplicants.id == null) {
-    //   newApplicants.id = 0
-    // }
   }
   return newApplicants
 }

@@ -3,7 +3,7 @@ import {yesNo} from 'constants/constants'
 import Immutable from 'immutable'
 import ApplicantMaritalHistoryCard from './applicantMaritalHistoryCard'
 import AdultChildrenFields from './adultChildrenFields'
-import {addCardAsJS, removeCardAsJS} from 'helpers/cardsHelper.jsx'
+import {addCardAsJS, removeCard} from 'helpers/cardsHelper.jsx'
 
 export const relationshipToAdultsDefaults = Object.freeze({
   applicant_id: '',
@@ -88,12 +88,12 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
   }
 
   onMaritalHistoryClickClose (index) {
-    let formerSpousesList = removeCardAsJS(this.props.applicantsHistory.former_spouses, index, formerSpousesDefaults)
+    let formerSpousesList = removeCard(this.props.applicantsHistory.former_spouses, index, formerSpousesDefaults)
     this.updateNestedCards(formerSpousesList, 'former_spouses')
   }
 
   onAdultChildClickClose (index) {
-    let adultChildrenList = removeCardAsJS(this.props.applicantsHistory.adult_children, index, adultChildrenDefaults)
+    let adultChildrenList = removeCard(this.props.applicantsHistory.adult_children, index, adultChildrenDefaults)
     this.updateNestedCards(adultChildrenList, 'adult_children')
   }
 
@@ -138,9 +138,9 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
   }
 
   render () {
-    let applicantsHistory = this.props.applicantsHistory || applicantsHistoryDefaults
-    let applicantMaritalHistories = applicantsHistory && applicantsHistory.former_spouses || [formerSpousesDefaults]
-    let adultChildrenList = applicantsHistory && applicantsHistory.adult_children || [adultChildrenDefaults]
+    let applicantsHistory = this.props.applicantsHistory
+    let applicantMaritalHistories = applicantsHistory && applicantsHistory.former_spouses
+    let adultChildrenList = applicantsHistory && applicantsHistory.adult_children
 
     return (
       <div className='applicant_marital_history_cards'>

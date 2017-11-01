@@ -3,16 +3,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import {MinorCardField} from './minorCardField'
-import {addCardAsJS, removeCardAsJS, handleRelationshipTypeToApplicant, getFocusClassName} from 'helpers/cardsHelper.jsx'
+import {addCardAsJS, removeCardWithId, handleRelationshipTypeToApplicant, getFocusClassName} from 'helpers/cardsHelper.jsx'
 
 export const minorDefaults = Object.freeze({
   relationship_to_applicants: [
     {
       applicant_id: '',
-      relationship_to_applicant: {
-        id: 0,
-        value: ''
-      }
+      relationship_to_applicant: null
     }
   ]
 })
@@ -33,7 +30,7 @@ export default class MinorCardsGroup extends React.Component {
 
   clickClose (cardIndex) {
     this.props.setParentState('minorChildren',
-      removeCardAsJS(this.props.minorChildren, cardIndex, minorDefaults))
+      removeCardWithId(this.props.minorChildren, cardIndex, minorDefaults))
   }
 
   onFieldChange (cardIndex, value, type) {
@@ -51,10 +48,8 @@ export default class MinorCardsGroup extends React.Component {
 
     return (
       <div className='minor_card'>
-
         <div id='minorsSection' onClick={() => this.props.setFocusState('minorsSection')}
           className={getFocusClassName('minorsSection') + ' ' + 'card minors-section double-gap-top'}>
-
           <div className='card-header'>
             <span>Other Information</span>
           </div>
@@ -62,25 +57,25 @@ export default class MinorCardsGroup extends React.Component {
             {
               minorChildrenList.map((minor, index) => {
                 const idPrefix = 'minorChildren[' + index + '].'
-
-                return (
-                  <div key={index} className='row list-item' >
-                    <div> <span onClick={() => this.clickClose(index)} className='pull-right glyphicon glyphicon-remove' />
+                if (!minor.to_delete) {
+                  return (
+                    <div key={index} className='row list-item' >
+                      <div> <span onClick={() => this.clickClose(index)} className='pull-right glyphicon glyphicon-remove' />
+                      </div>
+                      <MinorCardField
+                        index={index}
+                        idPrefix={idPrefix}
+                        genderTypes={this.props.genderTypes}
+                        relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
+                        minorChild={minor}
+                        handleRelationshipTypeToApplicant={this.handleRelationshipTypeToApplicant}
+                        applicants={this.props.applicants}
+                        onFieldChange={this.onFieldChange}
+                        validator={this.props.validator}
+                        errors={this.props.errors[index]} />
                     </div>
-                    <MinorCardField
-                      index={index}
-                      idPrefix={idPrefix}
-                      genderTypes={this.props.genderTypes}
-                      relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
-                      minorChild={minor}
-                      handleRelationshipTypeToApplicant={this.handleRelationshipTypeToApplicant}
-                      applicants={this.props.applicants}
-                      onFieldChange={this.onFieldChange}
-                      validator={this.props.validator}
-                      errors={this.props.errors[index]} />
-                  </div>
-
-                )
+                  )
+                }
               })
             }
             <div className='text-center'>
@@ -88,7 +83,6 @@ export default class MinorCardsGroup extends React.Component {
             </div>
           </div>
         </div>
-
       </div>
     )
   }

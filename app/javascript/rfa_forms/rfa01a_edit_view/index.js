@@ -199,7 +199,7 @@ export default class Rfa01EditView extends React.Component {
                 validator={this.validator}
                 errors={this.state.errors.otherAdults}
                 applicants={this.state.application.applicants || []}
-                otherAdults={this.state.application.otherAdults}
+                otherAdults={this.state.application.otherAdults || undefined}
                 relationship_types={this.props.relationshipToApplicantTypes} />
             </div>
 

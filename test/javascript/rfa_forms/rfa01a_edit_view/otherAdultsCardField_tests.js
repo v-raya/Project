@@ -23,6 +23,7 @@ describe('Verify other adultsFields', function () {
       }
     ],
     index: 0,
+    to_delete: false,
     'firstName': '',
     'middleName': '',
     'lastName': '',

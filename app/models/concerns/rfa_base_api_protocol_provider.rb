@@ -13,6 +13,11 @@ module Concerns::RfaBaseApiProtocolProvider
       new(JSON.parse(response.body))
     end
 
+    def delete(auth_header, parent_id, id)
+      response = FaradayCals.delete("/#{parent_path}/#{parent_id}/#{api_resource_path}/#{id}", auth_header)
+      response.body
+    end
+
     def find_by_application_id(auth_header, parent_id)
       response = FaradayCals.get("/#{parent_path}/#{parent_id}/#{api_resource_path}", auth_header)
       response.status == 200 ? JSON.parse(response.body) : nil

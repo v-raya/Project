@@ -9,16 +9,20 @@ class CalsBaseController < ApplicationController
     result = []
     if items.is_a?(Array)
       items.each do |item|
-        result << create_or_update(item, helper, parent_id)
+        result << create_update_or_delete(item, helper, parent_id).reject(&:blank?)
       end
     else
-      result = create_or_update(items, helper, parent_id)
+      result = create_update_or_delete(items, helper, parent_id)
     end
     result
   end
 
-  def create_or_update(item, helper, parent_id)
-    item[:id] ? helper.update(parent_id, item[:id], item.to_json) : helper.create(parent_id, item.to_json)
+  def create_update_or_delete(item, helper, parent_id)
+    if item[:to_delete]
+      helper.delete(parent_id, item[:id])
+    else
+      item[:id] ? helper.update(parent_id, item[:id], item.to_json) : helper.create(parent_id, item.to_json)
+    end
   end
 
   def set_relationship_to_applicants(parameters, response)

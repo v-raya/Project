@@ -16,6 +16,10 @@ class Faraday::FaradayBase
     faraday_shared(:put, "#{self.base_url}#{url}", auth_header, body)
   end
 
+  def self.delete(url, auth_header)
+    faraday_shared(:delete,  "#{self.base_url}#{url}", auth_header)
+  end
+
   # private
 
   def self.faraday_shared(method, url, auth_header, body = nil)

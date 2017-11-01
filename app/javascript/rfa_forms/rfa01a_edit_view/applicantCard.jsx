@@ -86,7 +86,7 @@ export default class ApplicantCard extends React.Component {
             idPrefix={idPrefix}
             phoneTypes={this.props.phoneTypes}
             applicant_id={this.props.index}
-            phones={this.props.applicantFields.phones}
+            phones={this.props.applicantFields.phones || undefined}
             setParentState={this.setApplicantState}
             validator={this.props.validator}
             errors={this.props.errors.phones} />

@@ -5,8 +5,8 @@ import {relationshipTypes} from '../../helpers/constants'
 import Validator from 'helpers/validator'
 
 describe('Verify other adults Component View', function () {
-  let component, componentMount
-  let props
+  let component, componentMount, props, setParentStateSpy
+
   const OtherAdultsCard = {
     relationship_types: {
       items: []
@@ -26,8 +26,6 @@ describe('Verify other adults Component View', function () {
     'lastName': '',
     date_of_birth: '2017-01-01'
   }
-
-  let setParentStateSpy = jasmine.createSpy()
 
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
@@ -79,21 +77,30 @@ describe('Verify other adults Component View', function () {
       spyOn(component.instance(), 'addCard').and.callThrough()
       component.instance().addCard()
       expect(component.instance().addCard).toHaveBeenCalled()
-      expect(props.otherAdults.length).toEqual(2)
+
+  // build data that parent should be called with
+      let newData = []
+      newData[0] = OtherAdultsCard
+      newData[1] = otherAdultsDefaults
+
+      expect(setParentStateSpy).toHaveBeenCalledWith('otherAdults', newData)
     })
   })
 
-  describe('when close minor card is clicked', () => {
-    it('Clears data when 1 phone number is present', () => {
+  describe('when close other adult card is clicked', () => {
+    it('Clears data when 1 adult is present', () => {
       spyOn(component.instance(), 'clickClose').and.callThrough()
       component.find('.glyphicon-remove').simulate('click')
-      expect(component.instance().clickClose).toHaveBeenCalledWith(0)
+
+      expect(component.instance().clickClose).toHaveBeenCalled()
+
       expect(props.otherAdults.length).toEqual(1)
+      expect(setParentStateSpy).toHaveBeenCalled()
     })
 
-    it('Deletes minor children when 2 cards are present', () => {
+    it('Deletes other adult when 2 cards are present', () => {
       let newData = []
-      newData[0] = OtherAdultsCardsGroup
+      newData[0] = OtherAdultsCard
       newData[1] = otherAdultsDefaults
       component.setProps({otherAdults: newData})
       spyOn(component.instance(), 'clickClose').and.callThrough()

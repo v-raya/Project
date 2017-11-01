@@ -73,8 +73,6 @@ describe('Verify minor children Component View', function () {
 
   describe('when "Add new minor card" is clicked', () => {
     it('expect minor card to be button', function () {
-      const x = component.find('button[className="btn btn-default"]')
-
       expect(component.find('button[className="btn btn-default"]').type()).toEqual('button')
     })
 
@@ -99,8 +97,7 @@ describe('Verify minor children Component View', function () {
         let newData = []
         newData[0] = minorCardChild
         newData[1] = minorDefaults
-        expect(component.instance().clickClose).toHaveBeenCalledWith(0)
-
+        expect(component.instance().clickClose).toHaveBeenCalled()
         expect(props.minorChildren.length).toEqual(1)
         expect(setParentStateSpy).toHaveBeenCalledWith('minorChildren', [minorDefaults])
       })

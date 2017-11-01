@@ -24,6 +24,10 @@ class Helpers::ModelHelperBase
     model_class.update(auth_header, parent_id, id, body)
   end
 
+  def delete(parent_id, id)
+    model_class.delete(auth_header, parent_id, id)
+  end
+
   def find_by_application_id(parent_id)
     model_class.find_by_application_id(auth_header, parent_id)
   end
