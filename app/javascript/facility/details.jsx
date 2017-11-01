@@ -1,20 +1,24 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import {SmallInnerBlockDetails} from './smallInnerBlockDetails.js'
 
 export default class FacilityDetails extends React.Component {
   render () {
+    const result = this.props.facilityData
     return (
-      <div className='facility-details col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+      <div className='grid_view col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+
         <div className='facility-details-block col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <div className='facility_header col-xs-12 col-sm-12 col-md-12 col-lg-12'>
             <h1 className='header_left'>
-              {this.props.facilityData.fac_name}
+              {result.name}
             </h1>
             <div className='header_right'>
               <h3 className='header_bold'>
                       FACILITY TYPE :
               </h3>
               <h3 className='header_light'>
-                {' ' + this.props.facilityData.type}
+                {' ' + result.type.value}
               </h3>
             </div>
           </div>
@@ -22,51 +26,60 @@ export default class FacilityDetails extends React.Component {
           <div className='facility_blocks col-xs-12 col-sm-12 col-md-12 col-lg-12'>
             <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
               <div className='inner_block yellow'>
-                <div className='small_inner_block'>
-                  <p className='licensee_name'>NAME OF LICENSEE/ PARENTS</p>
-                  <p>{this.props.facilityData.fac_licensee_name}</p>
-                </div>
-                <div className='small_inner_block'>
-                  <p>APPROVAL/LICENSING WORKER</p>
-                  <p>{this.props.facilityData.assigned_worker}</p>
-                </div>
-                <div className='small_inner_block'>
-                  <p>ASSIGNED OVERSIGHT AGENCY</p>
-                  <p>{this.props.facilityData.district_office}</p>
-                </div>
+                <SmallInnerBlockDetails
+                  classNameTitle={''}
+                  title={'NAME OF LICENSEE/ PARENTS'}
+                  value={result.licensee_name} />
+                <SmallInnerBlockDetails
+                  classNameTitle={''}
+                  title={'APPROVAL/LICENSING WORKER'}
+                  value={result.assigned_worker.value ? result.assigned_worker.value : 'N/A'} />
+                <SmallInnerBlockDetails
+                  classNameTitle={''}
+                  title={'ASSIGNED OVERSIGHT AGENCY'}
+                  value={result.district_office.name} />
               </div>
             </div>
             <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
               <div className='inner_block green'>
-                <div className='small_inner_block'>
-                  <p>FACILITY LICENSE NUMBER</p>
-                  <p>{this.props.facilityData.fac_nbr}</p>
-                </div>
-                <div className='small_inner_block'>
-                  <p>LICENSE STATUS</p>
-                  <p>{this.props.facilityData.status}</p>
-                </div>
-                <div className='small_inner_block'>
-                  <p>CAPACITY</p>
-                  <p>{this.props.facilityData.fac_capacity}</p>
-                </div>
+                <SmallInnerBlockDetails
+                  classNameTitle={''}
+                  title={'FACILITY LICENSE NUMBER'}
+                  value={result.license_number} />
+                <SmallInnerBlockDetails
+                  classNameTitle={''}
+                  title={'LICENSE STATUS'}
+                  value={result.status.value} />
+                <SmallInnerBlockDetails
+                  classNameTitle={''}
+                  title={'CAPACITY'}
+                  value={result.capacity} />
               </div>
             </div>
             <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
               <div className='inner_block orange'>
-                <div className='small_inner_block'>
-                  <p>LICENSE EFFECTIVE DATE</p>
-                  <p>{this.props.status === ('Pending' || 'Probationary License') ? 'N/A' : (this.props.facilityData.fac_lic_eff_date == null ? 'N/A' : this.props.facilityData.fac_lic_eff_date)}</p>
-                </div>
-                <div className='small_inner_block'>
-                  <p>APPLICATION RECEIVED DATE</p>
-                  <p>{this.props.facilityData.fac_orig_appl_rec_date == null ? 'N/A' : this.props.facilityData.fac_orig_appl_rec_date}</p>
-                </div>
+                <SmallInnerBlockDetails
+                  classNameTitle={''}
+                  title={'LICENSE EFFECTIVE DATE'}
+                  value={result.status.value === ('Pending' || 'Probationary License') ? 'N/A' : (result.license_effective_date == null ? 'N/A' : result.license_effective_date)} />
+                <SmallInnerBlockDetails
+                  classNameTitle={''}
+                  title={'APPLICATION RECEIVED DATE'}
+                  value={result.original_application_recieved_date == null ? 'N/A' : result.original_application_recieved_date} />
               </div>
             </div>
           </div>
         </div>
       </div>
+
     )
   }
+}
+
+FacilityDetails.propTypes = {
+  facilityData: PropTypes.object.isRequired
+}
+
+FacilityDetails.defaultProps = {
+  facilityData: {}
 }

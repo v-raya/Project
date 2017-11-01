@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :facility, class: 'Facility' do
-    sequence(:fac_name) { Faker::Lorem.sentence(1, true, 2) }
-    sequence(:fac_nbr) { Faker::Number.number(2) }
+    sequence(:name) { Faker::Lorem.sentence(1, true, 2) }
+    sequence(:id) { Faker::Number.number(2) }
   end
 
   factory :facilities, class: 'Facility' do

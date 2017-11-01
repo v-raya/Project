@@ -1,6 +1,6 @@
 module Concerns::FacilityApiProtocolProvider
   extend ActiveSupport::Concern
-  include Concerns::BaseApiProtocolProvider
+  include Concerns::BaseCalsApiProtocolProvider
 
   class_methods do
     def search(query, auth_header)

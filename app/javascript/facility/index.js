@@ -10,13 +10,13 @@ export default class Facility extends React.Component {
     super(props)
     this.state = { facility: props.facility,
       children: props.children,
-      complaints: props.complaints}
+      complaints: props.complaints
+    }
   }
-
   render () {
     let propsData = this.state.facility
-    let childrenData = this.state.children
-    let complaintsData = this.state.complaints
+    let childrenResults = this.state.children
+    let complaintsResults = this.state.complaints
     // items.each do |item| <Link to facility/fac_nbr compononet facilities params = item>
     return (
       <div className='main_page'>
@@ -26,8 +26,8 @@ export default class Facility extends React.Component {
         <div className='body_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <FacilityDetails facilityData={propsData} />
           <FacilityAddress facilityData={propsData} />
-          <FacilityChildren facilityData={childrenData} />
-          <FacilityComplaints facilityData={complaintsData} />
+          {childrenResults && <FacilityChildren facilityData={childrenResults} />}
+          {complaintsResults && <FacilityComplaints facilityData={complaintsResults} />}
         </div>
       </div>
     )

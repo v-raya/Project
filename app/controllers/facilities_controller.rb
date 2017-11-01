@@ -11,10 +11,9 @@ class FacilitiesController < CalsBaseController
 
   def show
     @facility = facility_helper.find_by_id(params[:id])
-    # @facility ||= Facility.find_by_id(params[:id])
-    @children ||= @facility.children
-    @complaints ||= @facility.complaints
-    @facility = @facility
+    @children = child_helper.find_by_facility(params[:id])
+    @complaints = complaint_helper.find_by_facility(params[:id])
+    #@facility = @facility
   end
 
   def search
@@ -34,5 +33,13 @@ class FacilitiesController < CalsBaseController
 
   def facility_helper
     Helpers::Facility.new(auth_header: get_session_token)
+  end
+
+  def child_helper
+    Helpers::Child.new(auth_header: get_session_token)
+  end
+
+  def complaint_helper
+    Helpers::Complaint.new(auth_header: get_session_token)
   end
 end

@@ -9,17 +9,17 @@ describe FacilitiesController do
     allow_any_instance_of(CalsBaseController).to receive(:get_session_token).and_return(ENV['TOKEN'])
   end
 
-  describe 'GET index' do
-    it 'assigns @facilities' do
-      get :index
-      expect(assigns(:facilities).size).to eq(53)
-    end
+  #describe 'GET index' do
+    #it 'assigns @facilities' do
+      #get :index
+      #expect(assigns(:facilities).size).to eq(53)
+    #end
 
-    it 'renders the index template' do
-      get :index
-      expect(response).to render_template('index')
-    end
-  end
+    #it 'renders the index template' do
+      #get :index
+      #expect(response).to render_template('index')
+    #end
+  #end
 
   describe 'POST search' do
     it 'renders search' do

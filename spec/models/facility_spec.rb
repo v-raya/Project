@@ -5,7 +5,7 @@ include RSpec
 
 describe Facility do
   it 'builds a default facility model' do
-    facility = FactoryGirl.build(:facility, fac_name: 'test')
-    expect(facility.fac_name).to eq('test')
+    facility = FactoryGirl.build(:facility, name: 'test')
+    expect(facility.name).to eq('test')
   end
 end

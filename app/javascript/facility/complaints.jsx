@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const title = 'Complaint History'
 
@@ -46,4 +47,12 @@ export default class Complaints extends React.Component {
       </div>
     )
   }
+}
+
+Complaints.propTypes = {
+  facilityData: PropTypes.object.isRequired
+}
+
+Complaints.defaultProps = {
+  facilityData: {}
 }

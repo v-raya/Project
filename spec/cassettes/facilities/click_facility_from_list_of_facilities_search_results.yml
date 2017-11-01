@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 31 Oct 2017 15:58:48 GMT
+      - Tue, 31 Oct 2017 15:58:45 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:48
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:45
         GMT
       vary:
       - Accept-Encoding
@@ -221,7 +221,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 31 Oct 2017 15:58:45 GMT
+  recorded_at: Tue, 31 Oct 2017 15:58:42 GMT
 - request:
     method: get
     uri: https://cals-api.preint.cwds.io/dictionaries/facility-types
@@ -243,9 +243,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 31 Oct 2017 15:58:48 GMT
+      - Tue, 31 Oct 2017 15:58:45 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:48
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:45
         GMT
       vary:
       - Accept-Encoding
@@ -302,7 +302,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 31 Oct 2017 15:58:45 GMT
+  recorded_at: Tue, 31 Oct 2017 15:58:42 GMT
 - request:
     method: post
     uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
@@ -323,9 +323,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 31 Oct 2017 15:58:49 GMT
+      - Tue, 31 Oct 2017 15:58:46 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:49
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:46
         GMT
       content-length:
       - '7013'
@@ -363,7 +363,7 @@ http_interactions:
         at GH. (name unknown) Staff did nothing to stop this.  Staff told Miguel not
         to say anything. Miguel called his mother and told her this.","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":"U"},{"complaint_code":"3","allegation":"","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":""}]}]}}]}}'
     http_version: 
-  recorded_at: Tue, 31 Oct 2017 15:58:46 GMT
+  recorded_at: Tue, 31 Oct 2017 15:58:43 GMT
 - request:
     method: get
     uri: https://cals-api.preint.cwds.io/facilities/300665437
@@ -385,9 +385,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 31 Oct 2017 15:58:50 GMT
+      - Tue, 31 Oct 2017 15:58:46 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:50
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:46
         GMT
       vary:
       - Accept-Encoding
@@ -476,7 +476,7 @@ http_interactions:
           "annual_visit_year" : 12
         }
     http_version: 
-  recorded_at: Tue, 31 Oct 2017 15:58:47 GMT
+  recorded_at: Tue, 31 Oct 2017 15:58:44 GMT
 - request:
     method: get
     uri: https://cals-api.preint.cwds.io/facilities/300665437/children
@@ -500,9 +500,9 @@ http_interactions:
       content-type:
       - text/html;charset=iso-8859-1
       date:
-      - Tue, 31 Oct 2017 15:58:50 GMT
+      - Tue, 31 Oct 2017 15:58:47 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:50
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:47
         GMT
       x-content-type-options:
       - nosniff
@@ -528,7 +528,7 @@ http_interactions:
         </body>
         </html>
     http_version: 
-  recorded_at: Tue, 31 Oct 2017 15:58:47 GMT
+  recorded_at: Tue, 31 Oct 2017 15:58:44 GMT
 - request:
     method: get
     uri: https://cals-api.preint.cwds.io/facilities/300665437/complaints
@@ -550,9 +550,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 31 Oct 2017 15:58:50 GMT
+      - Tue, 31 Oct 2017 15:58:47 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:50
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:47
         GMT
       vary:
       - Accept-Encoding
@@ -604,246 +604,5 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 31 Oct 2017 15:58:47 GMT
-- request:
-    method: get
-    uri: https://cals-api.preint.cwds.io/facilities/300665437
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - "..awvJfis6cmuve_1T.GbBbs85_5gklgLAMdlAQnBqR7hgp9bvdxapXwXDbh2t1gIgDBGXl9PVYD1wqkg4CUok3hC3QPWLauEDI9u7i19N0LTUQi67MM9_ursbdPobA5KaNl6dciqs_pcSEcUzO_zzc-vwNOqW2_eAwgOmX9GAAqa1wKg0fCuXXsO6WAcN0L7AgwItBysPd_2l9Ihv4-xk5B-MJe3nIfLEqzDjc-Kl3rz8wyhA_NHa7gwP7d33PV6FTucUyJAM88yeLBT_ltwdshndhlEkrbvMdZ8BbZlWrs6QYCaZRsPuPaKNyvwnlpm8p4F2LngKYRMgaUF1MZE3GPwlhVfE_u6sehN9zTv0_aE82nNl4Q3iNhx9YCn2YN-SmbsDDrjEjYnRjXokq4OxQVH5VTgmZucak-eDyDZJQvE7VGYyV2te7ChdX4ZmjLB9FjK8dBEJFoclPc_ci8h4oAuH7bRX0vIdqszr9Pi_JdWE9lMnOE9EgdVX2cJNPV_U8MWqdlwCAVXq-Qk2vTpMGCEnOZ53pTyWSIbBFSXROcS2Yv2gT9Mbh3Lqo41LK5zaejVQz6qK1GSSmBnpgOUBiliSR4KtOqYwPSKDVsiYUfTwNhjwOZmwLkGCknTTctR7Oh97FOkniulSp6CLt7wdDpIBlQkUAH8EDs9zp6n5MaSdlXNCE7klRH1fEdk_2lUNinExnf-fBmF2ChsLPrVGSBwdH08_WoLzLF14kfUnoxSer8e21_RW7GkSpOPN3f7pbM7tCXJmRDHrTf0ZQMxTdfErcMgkZo4v9zhn5uB6UoS0w2ZohGFkSIx099F_ZAAGyeSSysqVZckY2TYdk3X3rVmnGogP31PGJ11scNJz5tfiTrN_KzpH6Do_00JCbVy20hcIGMz3PcVbGE9OqcxM12afjjWvdMDX0ZOOAcXU1vA2vTMveWXjRfqKB_ZUyfeBAg0xO5ktKM9ssXPJlP3VkUormExkNBZZ0BiokOfzPSenxTew4Szu-7Oy4WDqEA5XhVuuvKBpAtpdJXRPYApkTrU-W_g.cK6OjZXfsuNB1AE4UbbEBg"
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - application/json
-      date:
-      - Tue, 31 Oct 2017 15:58:51 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:51
-        GMT
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '633'
-      connection:
-      - keep-alive
-    body:
-      encoding: ASCII-8BIT
-      string: |-
-        {
-          "href" : "facilities/300665437",
-          "id" : "300665437",
-          "type" : {
-            "id" : "726",
-            "value" : "TRANSITIONAL HOUSING PLACEMENT PROGRAM"
-          },
-          "name" : "Lederhouse Transitions",
-          "licensee_name" : "Lederhouse Transitions Inc.",
-          "license_type" : "A",
-          "assigned_worker" : { },
-          "district_office" : {
-            "number" : "19",
-            "name" : "PACIFIC INLAND CR"
-          },
-          "license_number" : "300665437",
-          "status" : {
-            "id" : "5",
-            "value" : "PROBATIONARY LICENSE"
-          },
-          "capacity" : 10,
-          "license_effective_date" : "2012-10-01",
-          "original_application_recieved_date" : "2012-07-18",
-          "last_visit_date" : "2017-04-14 00:00:00",
-          "last_visit_reason" : {
-            "id" : "10",
-            "value" : "CASELOAD MANAGEMENT"
-          },
-          "county" : {
-            "id" : "30",
-            "value" : "ORANGE"
-          },
-          "phones" : [ {
-            "relation" : "primary",
-            "type" : "Cell",
-            "number" : "9494480118"
-          } ],
-          "addresses" : [ {
-            "type" : "Residential",
-            "address" : {
-              "street_address" : "36 Sequoia Dr",
-              "city" : "Aliso Viejo",
-              "state" : "CA",
-              "zip_code" : "92656"
-            }
-          }, {
-            "type" : "Mailing",
-            "address" : {
-              "street_address" : "36 Sequoia Dr",
-              "city" : "Aliso Viejo",
-              "state" : "CA",
-              "zip_code" : "92656"
-            }
-          } ],
-          "visits" : [ {
-            "approval" : "",
-            "visit_type" : "Annual 10 month",
-            "visit_date" : "2011-10-28"
-          }, {
-            "approval" : "",
-            "visit_type" : "Annual 22 month"
-          }, {
-            "approval" : "",
-            "visit_type" : "Post Licensing",
-            "visit_deferred_date" : "1991-11-06"
-          }, {
-            "approval" : "",
-            "visit_type" : "Renewal"
-          } ],
-          "annual_visit_year" : 12
-        }
-    http_version: 
-  recorded_at: Tue, 31 Oct 2017 15:58:48 GMT
-- request:
-    method: get
-    uri: https://cals-api.preint.cwds.io/facilities/300665437/children
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - "..awvJfis6cmuve_1T.GbBbs85_5gklgLAMdlAQnBqR7hgp9bvdxapXwXDbh2t1gIgDBGXl9PVYD1wqkg4CUok3hC3QPWLauEDI9u7i19N0LTUQi67MM9_ursbdPobA5KaNl6dciqs_pcSEcUzO_zzc-vwNOqW2_eAwgOmX9GAAqa1wKg0fCuXXsO6WAcN0L7AgwItBysPd_2l9Ihv4-xk5B-MJe3nIfLEqzDjc-Kl3rz8wyhA_NHa7gwP7d33PV6FTucUyJAM88yeLBT_ltwdshndhlEkrbvMdZ8BbZlWrs6QYCaZRsPuPaKNyvwnlpm8p4F2LngKYRMgaUF1MZE3GPwlhVfE_u6sehN9zTv0_aE82nNl4Q3iNhx9YCn2YN-SmbsDDrjEjYnRjXokq4OxQVH5VTgmZucak-eDyDZJQvE7VGYyV2te7ChdX4ZmjLB9FjK8dBEJFoclPc_ci8h4oAuH7bRX0vIdqszr9Pi_JdWE9lMnOE9EgdVX2cJNPV_U8MWqdlwCAVXq-Qk2vTpMGCEnOZ53pTyWSIbBFSXROcS2Yv2gT9Mbh3Lqo41LK5zaejVQz6qK1GSSmBnpgOUBiliSR4KtOqYwPSKDVsiYUfTwNhjwOZmwLkGCknTTctR7Oh97FOkniulSp6CLt7wdDpIBlQkUAH8EDs9zp6n5MaSdlXNCE7klRH1fEdk_2lUNinExnf-fBmF2ChsLPrVGSBwdH08_WoLzLF14kfUnoxSer8e21_RW7GkSpOPN3f7pbM7tCXJmRDHrTf0ZQMxTdfErcMgkZo4v9zhn5uB6UoS0w2ZohGFkSIx099F_ZAAGyeSSysqVZckY2TYdk3X3rVmnGogP31PGJ11scNJz5tfiTrN_KzpH6Do_00JCbVy20hcIGMz3PcVbGE9OqcxM12afjjWvdMDX0ZOOAcXU1vA2vTMveWXjRfqKB_ZUyfeBAg0xO5ktKM9ssXPJlP3VkUormExkNBZZ0BiokOfzPSenxTew4Szu-7Oy4WDqEA5XhVuuvKBpAtpdJXRPYApkTrU-W_g.cK6OjZXfsuNB1AE4UbbEBg"
-  response:
-    status:
-      code: 404
-      message: 
-    headers:
-      cache-control:
-      - must-revalidate,no-cache,no-store
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - text/html;charset=iso-8859-1
-      date:
-      - Tue, 31 Oct 2017 15:58:51 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:51
-        GMT
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '261'
-      connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: |
-        <html>
-        <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-        <title>Error 404 Not Found</title>
-        </head>
-        <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /facilities/300665437/children. Reason:
-        <pre>    Not Found</pre></p>
-        </body>
-        </html>
-    http_version: 
-  recorded_at: Tue, 31 Oct 2017 15:58:48 GMT
-- request:
-    method: get
-    uri: https://cals-api.preint.cwds.io/facilities/300665437/complaints
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - "..awvJfis6cmuve_1T.GbBbs85_5gklgLAMdlAQnBqR7hgp9bvdxapXwXDbh2t1gIgDBGXl9PVYD1wqkg4CUok3hC3QPWLauEDI9u7i19N0LTUQi67MM9_ursbdPobA5KaNl6dciqs_pcSEcUzO_zzc-vwNOqW2_eAwgOmX9GAAqa1wKg0fCuXXsO6WAcN0L7AgwItBysPd_2l9Ihv4-xk5B-MJe3nIfLEqzDjc-Kl3rz8wyhA_NHa7gwP7d33PV6FTucUyJAM88yeLBT_ltwdshndhlEkrbvMdZ8BbZlWrs6QYCaZRsPuPaKNyvwnlpm8p4F2LngKYRMgaUF1MZE3GPwlhVfE_u6sehN9zTv0_aE82nNl4Q3iNhx9YCn2YN-SmbsDDrjEjYnRjXokq4OxQVH5VTgmZucak-eDyDZJQvE7VGYyV2te7ChdX4ZmjLB9FjK8dBEJFoclPc_ci8h4oAuH7bRX0vIdqszr9Pi_JdWE9lMnOE9EgdVX2cJNPV_U8MWqdlwCAVXq-Qk2vTpMGCEnOZ53pTyWSIbBFSXROcS2Yv2gT9Mbh3Lqo41LK5zaejVQz6qK1GSSmBnpgOUBiliSR4KtOqYwPSKDVsiYUfTwNhjwOZmwLkGCknTTctR7Oh97FOkniulSp6CLt7wdDpIBlQkUAH8EDs9zp6n5MaSdlXNCE7klRH1fEdk_2lUNinExnf-fBmF2ChsLPrVGSBwdH08_WoLzLF14kfUnoxSer8e21_RW7GkSpOPN3f7pbM7tCXJmRDHrTf0ZQMxTdfErcMgkZo4v9zhn5uB6UoS0w2ZohGFkSIx099F_ZAAGyeSSysqVZckY2TYdk3X3rVmnGogP31PGJ11scNJz5tfiTrN_KzpH6Do_00JCbVy20hcIGMz3PcVbGE9OqcxM12afjjWvdMDX0ZOOAcXU1vA2vTMveWXjRfqKB_ZUyfeBAg0xO5ktKM9ssXPJlP3VkUormExkNBZZ0BiokOfzPSenxTew4Szu-7Oy4WDqEA5XhVuuvKBpAtpdJXRPYApkTrU-W_g.cK6OjZXfsuNB1AE4UbbEBg"
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - application/json
-      date:
-      - Tue, 31 Oct 2017 15:58:51 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:51
-        GMT
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '525'
-      connection:
-      - keep-alive
-    body:
-      encoding: ASCII-8BIT
-      string: |-
-        {
-          "complaints" : [ {
-            "id" : "9112",
-            "complaint_date" : "2016-09-27 00:00:00",
-            "assigned_worker" : "Mullah Mahaboob",
-            "control_number" : "19-CR-20160927081411",
-            "priority_level" : "2",
-            "status" : "Approved",
-            "approval_date" : "2016-12-10 00:00:00",
-            "pre_investigation_comments" : "",
-            "post_investigation_comments" : "See Attached letter.  Reiser is a supervisor for Fresno County CPS.",
-            "contact_summary" : "LIC 9099 dated 11/23/04, 1/3/05&#13;&#10;LIC 812 date of visit 11/23/04, 1/3/05",
-            "followup_comments" : "",
-            "allegations" : [ {
-              "complaint_code" : "3",
-              "allegation" : "",
-              "resolution_code_sub" : "",
-              "resolution_code_insub" : "",
-              "resolution_code_unsub" : ""
-            }, {
-              "complaint_code" : "3",
-              "allegation" : "Client Miguel Delatorre (8-28-88)    Miguel was beat up by an older and bigger child at GH. (name unknown) Staff did nothing to stop this.  Staff told Miguel not to say anything. Miguel called his mother and told her this.",
-              "resolution_code_sub" : "",
-              "resolution_code_insub" : "",
-              "resolution_code_unsub" : "U"
-            }, {
-              "complaint_code" : "3",
-              "allegation" : "",
-              "resolution_code_sub" : "",
-              "resolution_code_insub" : "",
-              "resolution_code_unsub" : ""
-            } ]
-          } ]
-        }
-    http_version: 
-  recorded_at: Tue, 31 Oct 2017 15:58:48 GMT
+  recorded_at: Tue, 31 Oct 2017 15:58:44 GMT
 recorded_with: VCR 3.0.3

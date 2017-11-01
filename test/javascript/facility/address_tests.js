@@ -5,30 +5,85 @@ var TestUtils = require('react-dom/lib/ReactTestUtils')
 describe('Verify Facility Address', function () {
   const props = {
     facilityData: {
-      assigned_worker: 'Steve Schmitz',
-      county: 'Alameda',
-      district_office: 'PACIFIC INLAND CR',
-      fac_capacity: 2,
-      fac_email_address: null,
-      fac_last_visit_date: null,
-      fac_lic_eff_date: '2012-01-01',
-      fac_licensee_name: 'MARCH, MEG',
-      fac_licensee_type: null,
-      fac_mail_city: 'TOONTOWN',
-      fac_mail_state: 'CA',
-      fac_mail_street_addr: '2366 TWINS STREET',
-      fac_mail_zip_code: '95800',
-      fac_name: 'MARCH, MEG CFH',
-      fac_nbr: 909453699,
-      fac_orig_appl_rec_date: null,
-      fac_res_city: 'TOONTOWN',
-      fac_res_state: 'CA',
-      fac_res_street_addr: '2366 TWINS STREET',
-      fac_res_zip_code: '95800',
-      facility_telephone: '9515912001',
-      last_visit_reason: null,
-      status: 'Certified (CFH & OSGH)',
-      type: 'FFA-Certified Home'
+      "href": "facilities/300665437",
+      "id": "300665437",
+      "type": {
+        "id": "726",
+        "value": "TRANSITIONAL HOUSING PLACEMENT PROGRAM"
+      },
+      "name": "Lederhouse Transitions",
+      "licensee_name": "Lederhouse Transitions Inc.",
+      "license_type": "A",
+      "assigned_worker": {},
+      "district_office": {
+        "number": "19",
+        "name": "PACIFIC INLAND CR"
+      },
+      "license_number": "300665437",
+      "status": {
+        "id": "5",
+        "value": "PROBATIONARY LICENSE"
+      },
+      "capacity": 10,
+      "license_effective_date": "2012-10-01",
+      "original_application_recieved_date": "2012-07-18",
+      "last_visit_date": "2017-04-14 00:00:00",
+      "last_visit_reason": {
+        "id": "10",
+        "value": "CASELOAD MANAGEMENT"
+      },
+      "county": {
+        "id": "30",
+        "value": "ORANGE"
+      },
+      "phones": [
+        {
+          "relation": "primary",
+          "type": "Cell",
+          "number": "9494480118"
+        }
+      ],
+      "addresses": [
+        {
+          "type": "Residential",
+          "address": {
+            "street_address": "36 Sequoia Dr",
+            "city": "Aliso Viejo",
+            "state": "CA",
+            "zip_code": "92656"
+          }
+        },
+        {
+          "type": "Mailing",
+          "address": {
+            "street_address": "36 Sequoia Dr",
+            "city": "Aliso Viejo",
+            "state": "CA",
+            "zip_code": "92656"
+          }
+        }
+      ],
+      "visits": [
+        {
+          "approval": "",
+          "visit_type": "Annual 10 month",
+          "visit_date": "2011-10-28"
+        },
+        {
+          "approval": "",
+          "visit_type": "Annual 22 month"
+        },
+        {
+          "approval": "",
+          "visit_type": "Post Licensing",
+          "visit_deferred_date": "1991-11-06"
+        },
+        {
+          "approval": "",
+          "visit_type": "Renewal"
+        }
+      ],
+      "annual_visit_year": 12
     }
   }
   const renderAddress = TestUtils.createRenderer()

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const title = 'Children currently placed in facility'
 
@@ -52,4 +53,12 @@ export default class Children extends React.Component {
       </div>
     )
   }
+}
+
+Children.propTypes = {
+  facilityData: PropTypes.object.isRequired
+}
+
+Children.defaultProps = {
+  facilityData: {}
 }

@@ -8,10 +8,10 @@ module Concerns::BaseApiProtocolProvider
       JSON.parse(response.body).map { |itm| new(itm) }
     end
 
-    def find_by_id(id, auth_header)
-      response = FaradayCalsmock.get("/#{class_name_downcase_pluralized}/#{id}", auth_header)
-      new(JSON.parse(response.body))
-    end
+    #def find_by_id(id, auth_header)
+    #  response = FaradayCals.get("/#{class_name_downcase_pluralized}/#{id}", auth_header)
+    #  new(JSON.parse(response.body))
+    #end
   end
 
   # instance methods
