@@ -14,7 +14,7 @@ class CalsBaseController < ApplicationController
     else
       result = create_update_or_delete(items, helper, parent_id)
     end
-    result
+    result.reject(&:blank?)
   end
 
   def create_update_or_delete(item, helper, parent_id)
