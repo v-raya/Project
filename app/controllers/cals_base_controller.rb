@@ -11,10 +11,11 @@ class CalsBaseController < ApplicationController
       items.each do |item|
         result << create_update_or_delete(item, helper, parent_id)
       end
+      result.reject(&:blank?)
     else
       result = create_update_or_delete(items, helper, parent_id)
     end
-    result.reject(&:blank?)
+    result
   end
 
   def create_update_or_delete(item, helper, parent_id)

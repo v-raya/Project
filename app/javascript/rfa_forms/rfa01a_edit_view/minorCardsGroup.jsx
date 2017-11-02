@@ -11,7 +11,9 @@ export const minorDefaults = Object.freeze({
       applicant_id: '',
       relationship_to_applicant: null
     }
-  ]
+  ],
+  child_adopted: '',
+  child_financially_supported: ''
 })
 
 export default class MinorCardsGroup extends React.Component {
