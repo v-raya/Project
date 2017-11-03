@@ -6,10 +6,10 @@ const SmallInnerBlockDetails = ({
   value
 }) => {
   return (
-  	<div className={'small_inner_block' + ' ' + classNameTitle}>
-  	  <p>{title}</p>
-  	  <p>{value}</p>
-  	</div>
+    <div className={'small_inner_block' + ' ' + classNameTitle}>
+      <p>{title}</p>
+      <p>{value}</p>
+    </div>
 
   )
 }

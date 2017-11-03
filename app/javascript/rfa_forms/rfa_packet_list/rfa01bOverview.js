@@ -22,7 +22,7 @@ export default class Rfa01BOverview extends React.Component {
             <Rfa01bLink
               index={index}
               adult={applicant}
-              api_url_path={'applicants'}
+              apiUrlPath={'applicants'}
               applicationId={applicationId} />)
         })}
         {otherAdults && otherAdults.map((otherAdult, index) => {
@@ -30,7 +30,7 @@ export default class Rfa01BOverview extends React.Component {
             <Rfa01bLink
               index={index}
               adult={otherAdult}
-              api_url_path={'other-adults'}
+              apiUrlPath={'other-adults'}
               applicationId={applicationId} />)
         })}
 

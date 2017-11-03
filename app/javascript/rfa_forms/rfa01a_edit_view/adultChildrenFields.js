@@ -5,12 +5,12 @@ import {DateField} from 'components/common/dateFields'
 import CompleteNameFields from './completeNameField.jsx'
 import {yesNo} from 'constants/constants'
 import {getDictionaryId, dictionaryNilSelect, FormatDateForDisplay, FormatDateForPersistance} from 'helpers/commonHelper.jsx'
-import {handleRelationshipTypeToApplicant, setToWhomOptionList, handleToWhomValue } from 'helpers/cardsHelper.jsx'
+import {handleRelationshipTypeToApplicant, setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
 
 export default class AdultChildrenFields extends React.Component {
   render () {
     const adultChild = this.props.adultChild
-    const livesInHome = adultChild.lives_in_home == 'true'
+    const livesInHome = adultChild.lives_in_home === 'true'
 
     let adultChildNameFieldValues = {
       first_name: adultChild.first_name,

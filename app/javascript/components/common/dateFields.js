@@ -83,7 +83,7 @@ const DatePickerField = ({
       <DateTimePicker
         aria-required={required}
         calendar={hasCalendar}
-        defaultValue={value && parseDate(value).toDate() || null}
+        defaultValue={(value && parseDate(value).toDate()) || null}
         hasTime={hasTime}
         format={format}
         id={id}

@@ -19,9 +19,9 @@ export const removeCardWithId = (inputArray, index, newCardFields) => {
   let inputList = Immutable.fromJS(inputArray)
   let itemForDeletion = inputList.get(index)
   let visibleCount = inputArray.length
- // the item marked for deletion has already been saved once,
- // so we need to add a flag for deletion to make a delete api call
- // rather than an update api call.
+  // the item marked for deletion has already been saved once,
+  // so we need to add a flag for deletion to make a delete api call
+  // rather than an update api call.
   if (itemForDeletion.get('id')) {
     itemForDeletion = itemForDeletion.set('to_delete', true)
     inputList = inputList.set(index, itemForDeletion)
