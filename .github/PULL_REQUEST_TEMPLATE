@@ -1,4 +1,4 @@
-#### What tests were added (if relevant), and do all tests (rspec, karma, and integration CALS tests) pass?
+#### What tests were added (if relevant)?
 -
 
 #### Which User story does this relate to?
@@ -14,7 +14,4 @@
 -
 
 #### Code coverage percent diff as a result of this PR?
--
-
-#### JS errors diff as a result of this PR?
 -
