@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms?expanded=true
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms?expanded=true
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -453,11 +453,11 @@ http_interactions:
             "is_other_type" : false
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:28 GMT
 - request:
     method: post
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms
     body:
       encoding: UTF-8
       string: "{}"
@@ -469,7 +469,7 @@ http_interactions:
   response:
     status:
       code: 201
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -498,11 +498,11 @@ http_interactions:
           "is_initial_application" : false,
           "is_other_type" : false
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:29 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53?expanded=true
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53?expanded=true
     body:
       encoding: US-ASCII
       string: ''
@@ -514,7 +514,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -549,11 +549,11 @@ http_interactions:
           "is_initial_application" : false,
           "is_other_type" : false
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:29 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/residence-ownership-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/residence-ownership-types
     body:
       encoding: US-ASCII
       string: ''
@@ -565,7 +565,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -603,11 +603,11 @@ http_interactions:
             "id" : 3
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:30 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/ethnicity-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/ethnicity-types
     body:
       encoding: US-ASCII
       string: ''
@@ -619,7 +619,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -747,11 +747,11 @@ http_interactions:
             "id" : 33
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:30 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/address-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/address-types
     body:
       encoding: US-ASCII
       string: ''
@@ -763,7 +763,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -801,11 +801,11 @@ http_interactions:
             "id" : 3
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:30 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/applicant-relationship-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/applicant-relationship-types
     body:
       encoding: US-ASCII
       string: ''
@@ -817,7 +817,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -861,11 +861,11 @@ http_interactions:
             "id" : 5
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:30 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/license-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/license-types
     body:
       encoding: US-ASCII
       string: ''
@@ -877,7 +877,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -915,11 +915,11 @@ http_interactions:
             "id" : 3
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:31 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/relationship-to-applicant-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/relationship-to-applicant-types
     body:
       encoding: US-ASCII
       string: ''
@@ -931,7 +931,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -975,11 +975,11 @@ http_interactions:
             "id" : 5
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:31 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/name-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-types
     body:
       encoding: US-ASCII
       string: ''
@@ -991,7 +991,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -1032,11 +1032,11 @@ http_interactions:
             "id" : 4
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:31 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/name-suffix-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
     body:
       encoding: US-ASCII
       string: ''
@@ -1048,7 +1048,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -1104,11 +1104,11 @@ http_interactions:
             "id" : 6
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:31 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/name-prefix-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-prefix-types
     body:
       encoding: US-ASCII
       string: ''
@@ -1120,7 +1120,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -1167,11 +1167,11 @@ http_interactions:
             "id" : 6
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:31 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/phone-number-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/phone-number-types
     body:
       encoding: US-ASCII
       string: ''
@@ -1183,7 +1183,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -1227,11 +1227,11 @@ http_interactions:
             "id" : 5
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:31 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/genders
+    uri: https://calsapi.preint.cwds.io/dictionaries/genders
     body:
       encoding: US-ASCII
       string: ''
@@ -1243,7 +1243,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -1278,11 +1278,11 @@ http_interactions:
             "id" : 2
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:31 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/education-level-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/education-level-types
     body:
       encoding: US-ASCII
       string: ''
@@ -1294,7 +1294,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -1344,11 +1344,11 @@ http_interactions:
             "id" : 7
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:31 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/languages
+    uri: https://calsapi.preint.cwds.io/dictionaries/languages
     body:
       encoding: US-ASCII
       string: ''
@@ -1360,7 +1360,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -1488,11 +1488,11 @@ http_interactions:
             "id" : 33
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:31 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/states
+    uri: https://calsapi.preint.cwds.io/dictionaries/states
     body:
       encoding: US-ASCII
       string: ''
@@ -1504,7 +1504,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -1707,11 +1707,11 @@ http_interactions:
             "id" : "WY"
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:32 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/income-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/income-types
     body:
       encoding: US-ASCII
       string: ''
@@ -1723,7 +1723,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -1758,11 +1758,11 @@ http_interactions:
             "id" : 2
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:32 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/marriage-termination-reasons
+    uri: https://calsapi.preint.cwds.io/dictionaries/marriage-termination-reasons
     body:
       encoding: US-ASCII
       string: ''
@@ -1774,7 +1774,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -1812,11 +1812,11 @@ http_interactions:
             "id" : 3
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:32 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/age-groups
+    uri: https://calsapi.preint.cwds.io/dictionaries/age-groups
     body:
       encoding: US-ASCII
       string: ''
@@ -1828,7 +1828,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -1878,11 +1878,11 @@ http_interactions:
             "id" : 7
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:32 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/sibling-groups
+    uri: https://calsapi.preint.cwds.io/dictionaries/sibling-groups
     body:
       encoding: US-ASCII
       string: ''
@@ -1894,7 +1894,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -1938,11 +1938,11 @@ http_interactions:
             "id" : 5
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:32 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/counties
+    uri: https://calsapi.preint.cwds.io/dictionaries/counties
     body:
       encoding: US-ASCII
       string: ''
@@ -1954,7 +1954,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -2160,11 +2160,11 @@ http_interactions:
             "id" : 59
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:32 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53
     body:
       encoding: US-ASCII
       string: ''
@@ -2176,7 +2176,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -2207,11 +2207,11 @@ http_interactions:
           "is_initial_application" : false,
           "is_other_type" : false
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:32 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/applicants
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/applicants
     body:
       encoding: US-ASCII
       string: ''
@@ -2223,7 +2223,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -2259,11 +2259,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:32 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/residence
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/residence
     body:
       encoding: US-ASCII
       string: ''
@@ -2275,7 +2275,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -2311,11 +2311,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:32 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/applicants-history
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/applicants-history
     body:
       encoding: US-ASCII
       string: ''
@@ -2327,7 +2327,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -2363,11 +2363,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:33 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/minor-children
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/minor-children
     body:
       encoding: US-ASCII
       string: ''
@@ -2379,7 +2379,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -2415,11 +2415,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:33 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/other-adults
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/other-adults
     body:
       encoding: US-ASCII
       string: ''
@@ -2431,7 +2431,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -2467,11 +2467,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:33 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/adoption-history
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/adoption-history
     body:
       encoding: US-ASCII
       string: ''
@@ -2483,7 +2483,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -2519,11 +2519,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:33 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/applicants-relationship
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/applicants-relationship
     body:
       encoding: US-ASCII
       string: ''
@@ -2535,7 +2535,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -2571,11 +2571,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:33 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/child-desired
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/child-desired
     body:
       encoding: US-ASCII
       string: ''
@@ -2587,7 +2587,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -2623,11 +2623,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:33 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/references
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/references
     body:
       encoding: US-ASCII
       string: ''
@@ -2639,7 +2639,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -2675,11 +2675,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:21:33 GMT
 - request:
     method: post
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/applicants
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/applicants
     body:
       encoding: UTF-8
       string: '{"email":"","date_of_birth":"","first_name":"Aric Wisozk","middle_name":"k","last_name":"Kirstin
@@ -2693,7 +2693,7 @@ http_interactions:
   response:
     status:
       code: 201
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -2740,11 +2740,11 @@ http_interactions:
           },
           "phones" : [ ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:00 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/residence-ownership-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/residence-ownership-types
     body:
       encoding: US-ASCII
       string: ''
@@ -2756,7 +2756,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -2794,11 +2794,11 @@ http_interactions:
             "id" : 3
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:00 GMT
 - request:
     method: put
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/residence
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/residence
     body:
       encoding: UTF-8
       string: '{"physical_mailing_similar":"false","weapon_in_home":"true","body_of_water_exist":"true","body_of_water_description":"body
@@ -2812,7 +2812,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -2853,11 +2853,11 @@ http_interactions:
             "id" : 2
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:00 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/ethnicity-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/ethnicity-types
     body:
       encoding: US-ASCII
       string: ''
@@ -3003,11 +3003,11 @@ http_interactions:
             "id" : 33
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:01 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/ethnicity-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/ethnicity-types
     body:
       encoding: US-ASCII
       string: ''
@@ -3019,7 +3019,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -3147,11 +3147,11 @@ http_interactions:
             "id" : 33
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:01 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/address-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/address-types
     body:
       encoding: US-ASCII
       string: ''
@@ -3163,7 +3163,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -3201,11 +3201,11 @@ http_interactions:
             "id" : 3
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:01 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/applicant-relationship-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/applicant-relationship-types
     body:
       encoding: US-ASCII
       string: ''
@@ -3217,7 +3217,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -3261,11 +3261,11 @@ http_interactions:
             "id" : 5
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:01 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/license-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/license-types
     body:
       encoding: US-ASCII
       string: ''
@@ -3277,7 +3277,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -3315,11 +3315,11 @@ http_interactions:
             "id" : 3
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:01 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/relationship-to-applicant-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/relationship-to-applicant-types
     body:
       encoding: US-ASCII
       string: ''
@@ -3331,7 +3331,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -3375,11 +3375,11 @@ http_interactions:
             "id" : 5
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:01 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/name-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-types
     body:
       encoding: US-ASCII
       string: ''
@@ -3391,7 +3391,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -3432,11 +3432,11 @@ http_interactions:
             "id" : 4
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:01 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/name-suffix-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
     body:
       encoding: US-ASCII
       string: ''
@@ -3448,7 +3448,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -3504,11 +3504,11 @@ http_interactions:
             "id" : 6
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:01 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/name-prefix-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-prefix-types
     body:
       encoding: US-ASCII
       string: ''
@@ -3520,7 +3520,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -3567,11 +3567,11 @@ http_interactions:
             "id" : 6
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:01 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/phone-number-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/phone-number-types
     body:
       encoding: US-ASCII
       string: ''
@@ -3583,7 +3583,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -3627,11 +3627,11 @@ http_interactions:
             "id" : 5
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:01 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/genders
+    uri: https://calsapi.preint.cwds.io/dictionaries/genders
     body:
       encoding: US-ASCII
       string: ''
@@ -3643,7 +3643,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -3678,11 +3678,11 @@ http_interactions:
             "id" : 2
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:01 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/education-level-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/education-level-types
     body:
       encoding: US-ASCII
       string: ''
@@ -3694,7 +3694,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -3744,11 +3744,11 @@ http_interactions:
             "id" : 7
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:02 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/languages
+    uri: https://calsapi.preint.cwds.io/dictionaries/languages
     body:
       encoding: US-ASCII
       string: ''
@@ -3760,7 +3760,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -3888,11 +3888,11 @@ http_interactions:
             "id" : 33
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:02 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/states
+    uri: https://calsapi.preint.cwds.io/dictionaries/states
     body:
       encoding: US-ASCII
       string: ''
@@ -3904,7 +3904,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -4107,11 +4107,11 @@ http_interactions:
             "id" : "WY"
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:02 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/income-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/income-types
     body:
       encoding: US-ASCII
       string: ''
@@ -4123,7 +4123,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -4158,11 +4158,11 @@ http_interactions:
             "id" : 2
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:02 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/marriage-termination-reasons
+    uri: https://calsapi.preint.cwds.io/dictionaries/marriage-termination-reasons
     body:
       encoding: US-ASCII
       string: ''
@@ -4174,7 +4174,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -4212,11 +4212,11 @@ http_interactions:
             "id" : 3
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:02 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/age-groups
+    uri: https://calsapi.preint.cwds.io/dictionaries/age-groups
     body:
       encoding: US-ASCII
       string: ''
@@ -4228,7 +4228,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -4278,11 +4278,11 @@ http_interactions:
             "id" : 7
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:02 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/sibling-groups
+    uri: https://calsapi.preint.cwds.io/dictionaries/sibling-groups
     body:
       encoding: US-ASCII
       string: ''
@@ -4294,7 +4294,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -4338,11 +4338,11 @@ http_interactions:
             "id" : 5
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:02 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/counties
+    uri: https://calsapi.preint.cwds.io/dictionaries/counties
     body:
       encoding: US-ASCII
       string: ''
@@ -4354,7 +4354,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -4560,11 +4560,11 @@ http_interactions:
             "id" : 59
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:02 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53
     body:
       encoding: US-ASCII
       string: ''
@@ -4576,7 +4576,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -4607,11 +4607,11 @@ http_interactions:
           "is_initial_application" : false,
           "is_other_type" : false
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:03 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/applicants
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/applicants
     body:
       encoding: US-ASCII
       string: ''
@@ -4623,7 +4623,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -4674,11 +4674,11 @@ http_interactions:
             "phones" : [ ]
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:03 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/residence
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/residence
     body:
       encoding: US-ASCII
       string: ''
@@ -4690,7 +4690,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -4733,11 +4733,11 @@ http_interactions:
             "id" : 2
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:03 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/applicants-history
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/applicants-history
     body:
       encoding: US-ASCII
       string: ''
@@ -4749,7 +4749,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -4785,11 +4785,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:03 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/minor-children
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/minor-children
     body:
       encoding: US-ASCII
       string: ''
@@ -4801,7 +4801,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -4837,11 +4837,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:03 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/other-adults
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/other-adults
     body:
       encoding: US-ASCII
       string: ''
@@ -4853,7 +4853,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -4889,11 +4889,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:03 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/adoption-history
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/adoption-history
     body:
       encoding: US-ASCII
       string: ''
@@ -4905,7 +4905,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -4941,11 +4941,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:03 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/applicants-relationship
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/applicants-relationship
     body:
       encoding: US-ASCII
       string: ''
@@ -4957,7 +4957,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -4993,11 +4993,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:03 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/child-desired
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/child-desired
     body:
       encoding: US-ASCII
       string: ''
@@ -5009,7 +5009,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -5045,11 +5045,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:03 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/53/references
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/53/references
     body:
       encoding: US-ASCII
       string: ''
@@ -5061,7 +5061,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -5097,6 +5097,6 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:22:03 GMT
 recorded_with: VCR 3.0.3

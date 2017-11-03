@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms?expanded=true
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms?expanded=true
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -550,11 +550,11 @@ http_interactions:
             "is_other_type" : false
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:23:23 GMT
 - request:
     method: post
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms
     body:
       encoding: UTF-8
       string: "{}"
@@ -566,7 +566,7 @@ http_interactions:
   response:
     status:
       code: 201
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -595,11 +595,11 @@ http_interactions:
           "is_initial_application" : false,
           "is_other_type" : false
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:23:24 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/rfa-1a-forms/58?expanded=true
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/58?expanded=true
     body:
       encoding: US-ASCII
       string: ''
@@ -611,7 +611,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -646,6 +646,6 @@ http_interactions:
           "is_initial_application" : false,
           "is_other_type" : false
         }
-    http_version: 
+    http_version:
   recorded_at: Thu, 26 Oct 2017 19:23:24 GMT
 recorded_with: VCR 3.0.3

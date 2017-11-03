@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/facilities/300665437
+    uri: https://calsapi.preint.cwds.io/facilities/300665437
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -111,11 +111,11 @@ http_interactions:
           } ],
           "annual_visit_year" : 12
         }
-    http_version: 
+    http_version:
   recorded_at: Wed, 01 Nov 2017 02:49:41 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/facilities/300665437/children
+    uri: https://calsapi.preint.cwds.io/facilities/300665437/children
     body:
       encoding: US-ASCII
       string: ''
@@ -127,7 +127,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -163,11 +163,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Wed, 01 Nov 2017 02:49:42 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/facilities/300665437/complaints
+    uri: https://calsapi.preint.cwds.io/facilities/300665437/complaints
     body:
       encoding: US-ASCII
       string: ''
@@ -179,7 +179,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -239,6 +239,6 @@ http_interactions:
             } ]
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Wed, 01 Nov 2017 02:49:42 GMT
 recorded_with: VCR 3.0.3

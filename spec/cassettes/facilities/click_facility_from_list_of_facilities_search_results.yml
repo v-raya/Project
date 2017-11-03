@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/counties
+    uri: https://calsapi.preint.cwds.io/dictionaries/counties
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -220,11 +220,11 @@ http_interactions:
             "id" : 59
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 31 Oct 2017 15:58:42 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/dictionaries/facility-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
     body:
       encoding: US-ASCII
       string: ''
@@ -236,7 +236,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -301,7 +301,7 @@ http_interactions:
             "id" : 12
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 31 Oct 2017 15:58:42 GMT
 - request:
     method: post
@@ -318,7 +318,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-type:
       - application/json
@@ -362,11 +362,11 @@ http_interactions:
         Miguel Delatorre (8-28-88)    Miguel was beat up by an older and bigger child
         at GH. (name unknown) Staff did nothing to stop this.  Staff told Miguel not
         to say anything. Miguel called his mother and told her this.","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":"U"},{"complaint_code":"3","allegation":"","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":""}]}]}}]}}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 31 Oct 2017 15:58:43 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/facilities/300665437
+    uri: https://calsapi.preint.cwds.io/facilities/300665437
     body:
       encoding: US-ASCII
       string: ''
@@ -378,7 +378,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -475,11 +475,11 @@ http_interactions:
           } ],
           "annual_visit_year" : 12
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 31 Oct 2017 15:58:44 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/facilities/300665437/children
+    uri: https://calsapi.preint.cwds.io/facilities/300665437/children
     body:
       encoding: US-ASCII
       string: ''
@@ -491,7 +491,7 @@ http_interactions:
   response:
     status:
       code: 404
-      message: 
+      message:
     headers:
       cache-control:
       - must-revalidate,no-cache,no-store
@@ -527,11 +527,11 @@ http_interactions:
         <pre>    Not Found</pre></p>
         </body>
         </html>
-    http_version: 
+    http_version:
   recorded_at: Tue, 31 Oct 2017 15:58:44 GMT
 - request:
     method: get
-    uri: https://cals-api.preint.cwds.io/facilities/300665437/complaints
+    uri: https://calsapi.preint.cwds.io/facilities/300665437/complaints
     body:
       encoding: US-ASCII
       string: ''
@@ -543,7 +543,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
@@ -603,6 +603,6 @@ http_interactions:
             } ]
           } ]
         }
-    http_version: 
+    http_version:
   recorded_at: Tue, 31 Oct 2017 15:58:44 GMT
 recorded_with: VCR 3.0.3
