@@ -1,4 +1,5 @@
 import React from 'react'
+import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 
 export default class SearchList extends React.Component {
   render () {
@@ -11,7 +12,7 @@ export default class SearchList extends React.Component {
 
       return (
         <tr key={result.license_number}>
-          <td><a href={'/facilities/' + result.license_number}>{result.name}</a></td>
+          <td><a href={urlPrefixHelper('/facilities/' + result.license_number)}>{result.name}</a></td>
           <td>{result.license_number}</td>
           <td>{result.type && result.type.value ? result.type.value : 'N/A'}</td>
           <td>{result.status && result.status.value ? result.status.value : 'N/A'}</td>
