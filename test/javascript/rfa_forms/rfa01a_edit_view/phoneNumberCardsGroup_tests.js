@@ -128,7 +128,7 @@ describe('Preferred logic', () => {
     component = mount(
       <PhoneComponent {...props} />
     )
-
+    
     spyOn(component.instance(), 'onPhoneFieldChange').and.callThrough()
   })
 
@@ -151,7 +151,9 @@ describe('Preferred logic', () => {
   it('allows to change number', () => {
     const newNumber = '8884442323'
     // why do I have to update this?
-    component.update()
+    component.setProps({
+      number: ''
+    })
     component.find('input[type="text"]').simulate('change', {target: {value: newNumber}})
     expect(component.instance().onPhoneFieldChange).toHaveBeenCalledWith(0, newNumber, 'number')
 

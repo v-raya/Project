@@ -144,7 +144,7 @@ describe('foster car card tests', function () {
 
         spyOn(wrapper.instance(), 'onAgencyChange').and.callThrough()
         expect(onAgencyChangeSpy.calls.count()).toEqual(1)
-        const input = wrapper.find('#agency-q1-name-0')
+        const input = wrapper.find('#agency-q1-name-0').hostNodes()
         expect(input.type()).toEqual('input')
       })
     })

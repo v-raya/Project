@@ -1,9 +1,9 @@
 import React from 'react'
 import FacilityList from '../../../app/javascript/facilities/facility_list.jsx'
-var TestUtils = require('react-dom/lib/ReactTestUtils')
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('check Facility List', function () {
-  const renderedComp = TestUtils.createRenderer()
+  const renderedComp = new ShallowRenderer()
   const compRendered = renderedComp.render(<FacilityList />)
   const result_tag = renderedComp.getRenderOutput()
 

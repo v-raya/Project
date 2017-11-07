@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchInput from '../../../app/javascript/search/search_input'
-var TestUtils = require('react-dom/lib/ReactTestUtils')
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('Render Search Inputs', function () {
   const props = {
@@ -18,7 +18,7 @@ describe('Render Search Inputs', function () {
     ]
 
   }
-  const renderedComp = TestUtils.createRenderer()
+  const renderedComp = new ShallowRenderer()
   const compRendered = renderedComp.render(<SearchInput {...props} />)
   const result_tag = renderedComp.getRenderOutput()
 

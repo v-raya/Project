@@ -1,6 +1,6 @@
 import React from 'react'
 import Children from '../../../app/javascript/facility/children.jsx'
-var TestUtils = require('react-dom/lib/ReactTestUtils')
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('Verify Children Component', function () {
   const props = {
@@ -18,7 +18,7 @@ describe('Verify Children Component', function () {
         county_of_origin: 'sacramento'
       }]}
   }
-  const renderChildComp = TestUtils.createRenderer()
+  const renderChildComp = new ShallowRenderer()
   const childComp = renderChildComp.render(<Children {...props} />)
   const result_tag = childComp.props
   it('check Children table', function () {

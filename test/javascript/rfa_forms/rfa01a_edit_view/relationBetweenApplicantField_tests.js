@@ -45,7 +45,7 @@ describe('Verify relation between applicant', function () {
     />)
   })
 
-  // const aboutResidenceCard = TestUtils.createRenderer()
+  // const aboutResidenceCard = new ShallowRenderer()
 
   it('verify relation ship state', () => {
     let relationField = relationCardComp.find('#place_of_relationship_state')

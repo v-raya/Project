@@ -2,13 +2,13 @@ import React from 'react'
 import AddressCard from 'rfa_forms/rfa01a_edit_view/addressCard.js'
 import {stateTypes, genderTypes} from './../../helpers/constants'
 import {shallow, mount} from 'enzyme'
-var TestUtils = require('react-dom/test-utils')
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('Verify Physical Address', function () {
   const props = {
     stateTypes: stateTypes.items
   }
-  const addressCard = TestUtils.createRenderer()
+  const addressCard = new ShallowRenderer()
   const cardRendered = addressCard.render(<AddressCard {...props} />)
 
   it('verify Resident Address fields', function () {
@@ -42,20 +42,20 @@ describe('Verify Address card fields', function () {
     />)
   })
   it('verify street address', () => {
-    let relationShipField = addressCardMount.find('#Residentialstreet_address')
+    let relationShipField = addressCardMount.find('#Residentialstreet_address').hostNodes()
     let autoFillField = relationShipField.find('input[type="text"]')
     relationShipField.simulate('change', {target: {value: 'gate way oaks'}})
     expect(setParentStateSpy).toHaveBeenCalledWith('addresses', [physicalAddressFields])
   })
 
   it('verify on change street address ', () => {
-    let relationShipField = addressCardMount.find('#Residentialstreet_address')
+    let relationShipField = addressCardMount.find('#Residentialstreet_address').hostNodes()
     let autoFillField = relationShipField.find('input[type="text"]')
     relationShipField.simulate('change', {target: {value: 'gate way oaks'}})
     expect(setParentStateSpy).toHaveBeenCalledWith('addresses', [physicalAddressFields])
   })
   it('verify zip', () => {
-    let relationShipField = addressCardMount.find('#Residentialzip')
+    let relationShipField = addressCardMount.find('#Residentialzip').hostNodes()
     spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
     addressCardMount.update()
     relationShipField.simulate('change', {target: {value: '12345'}})
@@ -63,29 +63,30 @@ describe('Verify Address card fields', function () {
   })
 
   it('verify city', () => {
-    let relationShipField = addressCardMount.find('#Residentialcity')
+    let relationShipField = addressCardMount.find('#Residentialcity').hostNodes()
     spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
     addressCardMount.update()
     relationShipField.simulate('change', {target: {value: 'sacremento'}})
     expect(addressCardMount.instance().onAddressChange).toHaveBeenCalledWith('Residential', 'city', 'sacremento')
   })
 
-  // it('verify state', () => {
-  //   let relationShipField = addressCardMount.find('#Residentialstate_type')
-  //   spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
-  //   addressCardMount.update()
-  //   relationShipField.simulate('change', {target: {selectedOptions: [{value: '17', text: 'Illinois'}]}})
-  //   expect(addressCardMount.instance().onAddressChange).toHaveBeenCalledWith('Residential', 'state', {id: '17', value: 'Illinois'})
-  // })
+  it('verify state', () => {
+    let relationShipField = addressCardMount.find('#Residentialstate_type').hostNodes()
+    spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
+    addressCardMount.update()
+    relationShipField.simulate('change', {target: {selectedOptions: [{value: '17', text: 'Illinois'}]}})
+    expect(addressCardMount.instance().onAddressChange).toHaveBeenCalledWith('Residential', 'state', {id: '17', value: 'Illinois'})
+  })
+
   it('verify on mailing street address ', () => {
-    let relationShipField = addressCardMount.find('#Mailingstreet_address')
+    let relationShipField = addressCardMount.find('#Mailingstreet_address').hostNodes()
     spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
     addressCardMount.update()
     relationShipField.simulate('change', {target: {value: 'gate way oaks'}})
     expect(addressCardMount.instance().onAddressChange).toHaveBeenCalledWith('Mailing', 'street_address', 'gate way oaks')
   })
   it('verify mailing zip', () => {
-    let relationShipField = addressCardMount.find('#Mailingzip')
+    let relationShipField = addressCardMount.find('#Mailingzip').hostNodes()
     spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
     addressCardMount.update()
     relationShipField.simulate('change', {target: {value: '12345'}})
@@ -93,18 +94,18 @@ describe('Verify Address card fields', function () {
   })
 
   it('verify mailing city', () => {
-    let relationShipField = addressCardMount.find('#Mailingcity')
+    let relationShipField = addressCardMount.find('#Mailingcity').hostNodes()
     spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
     addressCardMount.update()
     relationShipField.simulate('change', {target: {value: 'sacremento'}})
     expect(addressCardMount.instance().onAddressChange).toHaveBeenCalledWith('Mailing', 'city', 'sacremento')
   })
 
-  // it('verify mailing state', () => {
-  //   let relationShipField = addressCardMount.find('#Mailingstate_type')
-  //   spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
-  //   addressCardMount.update()
-  //   relationShipField.simulate('change', {target: {selectedOptions: [{value: '17', text: 'Illinois'}]}})
-  //   expect(addressCardMount.instance().onAddressChange).toHaveBeenCalledWith('Mailing', 'state', {id: '17', value: 'Illinois'})
-  // })
+  it('verify mailing state', () => {
+    let relationShipField = addressCardMount.find('#Mailingstate_type').hostNodes()
+    spyOn(addressCardMount.instance(), 'onAddressChange').and.callThrough()
+    addressCardMount.update()
+    relationShipField.simulate('change', {target: {selectedOptions: [{value: '17', text: 'Illinois'}]}})
+    expect(addressCardMount.instance().onAddressChange).toHaveBeenCalledWith('Mailing', 'state', {id: '17', value: 'Illinois'})
+  })
 })

@@ -40,19 +40,19 @@ describe('References Card', () => {
     expect(referencesComp.length).toEqual(1)
   })
   it('verify phone change in reference Card', () => {
-    let phoneField = referencesComp.find('#reference1phone_number')
+    let phoneField = referencesComp.find('#reference1phone_number').hostNodes()
     phoneField.simulate('change', {target: {value: '800-800-8000'}})
     fieldRefValues.phone_number = '800-800-8000'
     expect(setParentStateSpy).toHaveBeenCalledWith('phone_number', '8008008000', 0)
   })
   it('verify phone change in reference Card', () => {
-    let phoneField = referencesComp.find('#email')
+    let phoneField = referencesComp.find('#email').hostNodes()
     phoneField.simulate('change', {target: {value: 'test@test.com'}})
     fieldRefValues.email = 'test@test.com'
     expect(setParentStateSpy).toHaveBeenCalledWith('email', 'test@test.com', 0)
   })
   it('check Address field loaded and field change', () => {
-    let physicalAddress = referencesComp.find('#street_address')
+    let physicalAddress = referencesComp.find('#street_address').hostNodes()
     physicalAddress.simulate('change', {target: {value: '2870 Gateway Oaks Dr'}})
     expect(setParentStateSpy).toHaveBeenCalledWith('mailing_address', { 'street_address': '2870 Gateway Oaks Dr', 'zip': '', 'city': '', 'state': null }, 0)
   })

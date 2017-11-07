@@ -48,7 +48,7 @@ describe('Verify More About Applican', () => {
   })
   it('High Level Education DropDown Change', () => {
     // spyOn(aboutApplicantComp.instance().props.setParentState, setCardState).and.callThrough()
-    let higherEducationField = aboutApplicantComp.find('#highest_education_level')
+    let higherEducationField = aboutApplicantComp.find('#highest_education_level').hostNodes()
     higherEducationField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'GED'}]}})
     expect(setCardState).toHaveBeenCalledWith('highest_education_level', {id: '2', value: 'GED'})
   })
@@ -60,27 +60,27 @@ describe('Verify More About Applican', () => {
     //    expect(setCardState).toHaveBeenCalledWith('date_of_relationship', '2011-12-10')
   })
   it('Gender DropDown Change', () => {
-    let genderField = aboutApplicantComp.find('#gender')
+    let genderField = aboutApplicantComp.find('#gender').hostNodes()
     genderField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'Female'}]}})
     expect(setCardState).toHaveBeenCalledWith('gender', {id: '2', value: 'Female'})
   })
   it('Race/Ethnicity DropDown Change', () => {
-    let ethnicityField = aboutApplicantComp.find('#ethnicity')
+    let ethnicityField = aboutApplicantComp.find('#ethnicity').hostNodes()
     ethnicityField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'Hispanic'}]}})
     expect(setCardState).toHaveBeenCalledWith('ethnicity', {id: '2', value: 'Hispanic'})
   })
   it('Driver License Number Change', () => {
-    let dlNumberField = aboutApplicantComp.find('#applicant0driver_license_number')
+    let dlNumberField = aboutApplicantComp.find('#applicant0driver_license_number').hostNodes()
     dlNumberField.simulate('change', {target: {value: '234567876534'}})
     expect(setCardState).toHaveBeenCalledWith('driver_license_number', '234567876534')
   })
   it('Driver License Sate DropDown Change', () => {
-    let DLStateField = aboutApplicantComp.find('#applicant0driver_license_state')
+    let DLStateField = aboutApplicantComp.find('#applicant0driver_license_state').hostNodes()
     DLStateField.simulate('change', {target: {selectedOptions: [{value: '17', text: 'Illinois'}]}})
     expect(setCardState).toHaveBeenCalledWith('driver_license_state', {id: '17', value: 'Illinois'})
   })
   it('Email Address Change', () => {
-    let emailField = aboutApplicantComp.find('#email')
+    let emailField = aboutApplicantComp.find('#email').hostNodes()
     emailField.simulate('change', {target: {value: 'test2@gmail.com'}})
     expect(setCardState).toHaveBeenCalledWith('email', 'test2@gmail.com')
   })

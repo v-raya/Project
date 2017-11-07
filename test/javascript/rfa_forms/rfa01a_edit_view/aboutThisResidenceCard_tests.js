@@ -40,7 +40,7 @@ describe('Verify Physical Address', function () {
     />)
   })
 
-  // const aboutResidenceCard = TestUtils.createRenderer()
+  // const aboutResidenceCard = new ShallowRenderer()
 
   it('verify street address', () => {
     let relationShipField = residenceCardComp.find('#languagesSpoken')

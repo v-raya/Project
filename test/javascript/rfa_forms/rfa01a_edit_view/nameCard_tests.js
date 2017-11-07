@@ -81,8 +81,8 @@ describe('Name Card Component', () => {
     let firstName = 'myName'
     let firstNameField = renderedDom.children[0].children[0].children[1].children[0].children[0].children[0].children[1]
     ReactDOM.findDOMNode(firstNameField).value = firstName
-    TestUtils.Simulate.keyPress(firstNameField, {target: firstName})
-    expect(firstNameField.value).toEqual('myName')
+    TestUtils.Simulate.change(firstNameField, {target: {value: firstName}})
+    expect(renderedCard.props.setParentState.args[0]).toEqual(["first_name", "myName", undefined])
     TestUtils.Simulate.change(firstNameField, {target: {value: firstName}})
     expect(renderedCard.props.setParentState.called).toBe(true)
   })

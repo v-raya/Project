@@ -1,6 +1,6 @@
 import React from 'react'
 import ApplicationTable from 'rfa_forms/rfa01a_list/applicationsTable.jsx'
-var TestUtils = require('react-dom/test-utils')
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('Verify Application List View', () => {
   let applications = [
@@ -26,7 +26,7 @@ describe('Verify Application List View', () => {
       rfa1c_forms: []
     }
   ]
-  const AppListViewCard = TestUtils.createRenderer()
+  const AppListViewCard = new ShallowRenderer()
   const listRendered = AppListViewCard.render(<ApplicationTable applications={applications} />)
   it('To Load table', () => {
     expect(listRendered.props.children.props.className).toBe('table')

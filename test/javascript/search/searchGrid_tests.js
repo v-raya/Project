@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchGrid from '../../../app/javascript/search/search_grid'
-var TestUtils = require('react-dom/lib/ReactTestUtils')
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('Render Search results to Grid', function () {
   const prop = {
@@ -68,7 +68,7 @@ describe('Render Search results to Grid', function () {
       }
     ]
   }
-  let searchGridComp = TestUtils.createRenderer()
+  let searchGridComp = new ShallowRenderer()
   let searchGridRender = searchGridComp.render(<SearchGrid {...prop} />)
   let gridElement = searchGridRender.props.children
   it('Render Grid view block', function () {

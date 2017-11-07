@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchApp from '../../../app/javascript/search/search'
-var TestUtils = require('react-dom/lib/ReactTestUtils')
+var TestUtils = require('react-dom/test-utils')
 
 describe('Verify Search component Fields', function () {
   const props = {

@@ -1,6 +1,6 @@
 import React from 'react'
 import FacilityAddress from '../../../app/javascript/facility/address.jsx'
-var TestUtils = require('react-dom/lib/ReactTestUtils')
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('Verify Facility Address', function () {
   const props = {
@@ -86,7 +86,7 @@ describe('Verify Facility Address', function () {
       "annual_visit_year": 12
     }
   }
-  const renderAddress = TestUtils.createRenderer()
+  const renderAddress = new ShallowRenderer()
   const addressComp = renderAddress.render(<FacilityAddress {...props} />)
   const result_tag = addressComp.props
   it('verify Facility Address fields', function () {

@@ -1,6 +1,6 @@
 import React from 'react'
 import FacilityComplaints from '../../../app/javascript/facility/complaints.jsx'
-var TestUtils = require('react-dom/lib/ReactTestUtils')
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('Facility Complaints Section', function () {
   const props = {
@@ -14,7 +14,7 @@ describe('Facility Complaints Section', function () {
       status: 'Pending'
     }
   }
-  const renderComplaints = TestUtils.createRenderer()
+  const renderComplaints = new ShallowRenderer()
   const complaintsComp = renderComplaints.render(<FacilityComplaints {...props} />)
   const result_Comp = complaintsComp
   it('Verify Facility Complaints Table', function () {

@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchList from '../../../app/javascript/search/search_list'
-var TestUtils = require('react-dom/lib/ReactTestUtils')
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('Render search list', function () {
   const props = {
@@ -68,7 +68,7 @@ describe('Render search list', function () {
       }
     ]
   }
-  let searchListComp = TestUtils.createRenderer()
+  let searchListComp = new ShallowRenderer()
   let searchListRender = searchListComp.render(<SearchList {...props} />)
   let tableElement = searchListRender.props.children
   it('Create table view', function () {

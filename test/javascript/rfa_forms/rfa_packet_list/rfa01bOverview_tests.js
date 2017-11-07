@@ -1,9 +1,9 @@
 import React from 'react'
 import Rfa01BOverview from 'rfa_forms/rfa_packet_list/rfa01bOverview'
-var TestUtils = require('react-dom/test-utils')
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('Verify Application List View', () => {
-  const rfa01BOverviewCard = TestUtils.createRenderer()
+  const rfa01BOverviewCard = new ShallowRenderer()
 
   const setFocusStateSpy = jasmine.createSpy('setFocusState')
   const getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
@@ -18,7 +18,7 @@ describe('Verify Application List View', () => {
       rfa01A={rfa01A}
       setFocusState={setFocusStateSpy}
       getFocusClassName={getFocusClassNameSpy}
-   />)
+    />)
   it('To Load with the correct label', () => {
     expect(rfaPacketRenderedView.props.label).toBe('Rfa-01B Section Summary')
   })

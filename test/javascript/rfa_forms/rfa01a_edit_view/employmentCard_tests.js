@@ -3,7 +3,7 @@ import Employment from 'rfa_forms/rfa01a_edit_view/employmentCard.jsx'
 import ReactDOM from 'react-dom'
 import {shallow, mount} from 'enzyme'
 import {salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes} from './../../helpers/constants'
-var TestUtils = require('react-dom/test-utils')
+import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('Employment Card', function () {
   const props = {
@@ -33,7 +33,7 @@ describe('Employment Card', function () {
     }
   }
   let employmentCardComp, onEmploymentChange, setCardState
-  const employmentCard = TestUtils.createRenderer()
+  const employmentCard = new ShallowRenderer()
   const cardRendered = employmentCard.render(<Employment {...props} />)
   // debugger
 

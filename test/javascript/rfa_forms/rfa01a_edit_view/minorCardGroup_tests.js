@@ -51,7 +51,7 @@ describe('Verify minor children Component View', function () {
     it('has class name', function () {
       componentMount.update()
       spyOn(componentMount.instance(), 'handleRelationshipTypeToApplicant').and.callThrough()
-      let relationShipField = componentMount.find('#relationship_to_applicant')
+      let relationShipField = componentMount.find('#relationship_to_applicant').hostNodes()
       relationShipField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'Sibling'}]}})
       minorCardChild.relationship_to_applicants[0].relationship_to_applicant = { id: '2', value: 'Sibling' }
       expect(setParentStateSpy).toHaveBeenCalledWith('minorChildren', [minorCardChild])
