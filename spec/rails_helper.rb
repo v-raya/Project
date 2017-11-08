@@ -2,7 +2,6 @@ ENV['RAILS_ENV'] = 'test'
 require 'simplecov'
 require 'mock_redis'
 SimpleCov.start 'rails'
-puts "required simplecov"
 
 require File.expand_path('../../config/environment', __FILE__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
@@ -48,7 +47,7 @@ RSpec.configure do |config|
     allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
     allow_any_instance_of(CalsBaseController).to receive(:get_session_token).and_return(ENV['TOKEN'])
     allow_any_instance_of(CalsBaseController).to receive(:store_token_in_redis).and_return(ENV['TOKEN'])
-   $redis.flushdb
+    $redis.flushdb
   end
 
 

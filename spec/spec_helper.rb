@@ -3,7 +3,7 @@ require 'webmock/rspec'
 require 'selenium/webdriver'
 
 SimpleCov.start 'rails' do
- coverage_dir 'reports/coverage/rspec/'
+  coverage_dir 'reports/coverage/rspec/'
 
   add_filter '/test/'
   add_filter '/config/'
@@ -12,19 +12,18 @@ SimpleCov.start 'rails' do
   add_filter '/log/'
   add_filter '/spec/'
 
- add_filter 'app/controllers/pages_controller'
-
+  add_filter 'app/controllers/pages_controller'
 
   add_filter 'app/mailers/'
   add_filter 'app/jobs/'
   add_filter 'app/helpers/'
   add_filter 'app/channels/'
 
+  add_group 'Classes', 'app/classes'
   add_group 'Controllers', 'app/controllers'
   add_group 'Models', 'app/models'
-  #  add_group 'Helpers', 'app/helpers'
-  #  add_group 'Mailers', 'app/mailers'
 
+  minimum_coverage 82
 end
 
 RSpec.configure do |config|
