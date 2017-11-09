@@ -8,27 +8,25 @@ const CardLayout = ({
   handleOnClick,
   id,
   label
-}) => {
-  return (
-    <div className={idClassName}>
-      <div
-        className={focusClassName}
-        onClick={handleOnClick}
-        id={id}>
-        <div className='card-header'>
-          <span>{label}</span>
-        </div>
-        <div className='card-body'>
-          <div className='row list-item'>
-            <div className='text-center'>
-              {children}
-            </div>
+}) => (
+  <div className={idClassName}>
+    <div
+      className={focusClassName}
+      onClick={handleOnClick}
+      id={id}>
+      <div className='card-header'>
+        <span>{label}</span>
+      </div>
+      <div className='card-body'>
+        <div className='row list-item'>
+          <div className='text-center'>
+            {children}
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  </div>
+)
 
 CardLayout.propTypes = {
   id: PropTypes.string,

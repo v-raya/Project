@@ -54,7 +54,16 @@ module.exports = function (config) {
     },
     coverageReporter: {
       dir: '../reports/coverage/karma/',
-      subdir: '.'
+      subdir: '.',
+      check: {
+        global: {
+          statements: 67,
+          branches: 55,
+          functions: 56,
+          lines: 68,
+          excludes: []
+        }
+      }
       // Would output the results into: .'../reports/coverage/'
     },
 
