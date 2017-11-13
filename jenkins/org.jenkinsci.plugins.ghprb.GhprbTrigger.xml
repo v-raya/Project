@@ -28,11 +28,24 @@
   <requestForTestingPhrase>Can one of the admins verify this patch?</requestForTestingPhrase>
   <extensions>
     <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
-      <commitStatusContext></commitStatusContext>
+      <commitStatusContext>Pull Request Testing</commitStatusContext>
       <triggeredStatus></triggeredStatus>
       <startedStatus></startedStatus>
       <statusUrl></statusUrl>
       <addTestResults>false</addTestResults>
+      <completedStatus>
+        <org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
+          <message>Success</message>
+          <result>SUCCESS</result>
+        </org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
+        <org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
+          <message>Build Failed</message>
+          <result>FAILURE</result>
+        </org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
+      </completedStatus>
     </org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+    <org.jenkinsci.plugins.ghprb.extensions.build.GhprbCancelBuildsOnUpdate>
+      <overrideGlobal>false</overrideGlobal>
+    </org.jenkinsci.plugins.ghprb.extensions.build.GhprbCancelBuildsOnUpdate>
   </extensions>
 </org.jenkinsci.plugins.ghprb.GhprbTrigger_-DescriptorImpl>

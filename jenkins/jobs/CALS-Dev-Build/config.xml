@@ -72,7 +72,7 @@ echo Docker environment cleaned</command>
       <buildContext>docker/dev/app/cals</buildContext>
       <skipBuild>false</skipBuild>
       <skipDecorate>false</skipDecorate>
-      <repoTag>0.44-${BUILD_NUMBER}</repoTag>
+      <repoTag>0.46-${BUILD_NUMBER}</repoTag>
       <skipPush>false</skipPush>
       <createFingerprint>true</createFingerprint>
       <skipTagLatest>false</skipTagLatest>

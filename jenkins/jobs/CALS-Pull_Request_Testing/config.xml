@@ -99,6 +99,9 @@
           <statusUrl></statusUrl>
           <addTestResults>false</addTestResults>
         </org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+        <org.jenkinsci.plugins.ghprb.extensions.build.GhprbCancelBuildsOnUpdate>
+          <overrideGlobal>false</overrideGlobal>
+        </org.jenkinsci.plugins.ghprb.extensions.build.GhprbCancelBuildsOnUpdate>
       </extensions>
     </org.jenkinsci.plugins.ghprb.GhprbTrigger>
   </triggers>
@@ -111,7 +114,7 @@
 # export PATH=/var/lib/jenkins/.rvm/gems/ruby-2.3.3/bin:/var/lib/jenkins/.rvm/gems/ruby-2.3.3@global/bin:/var/lib/jenkins/.rvm/rubies/ruby-2.3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/aws/bin:/var/lib/jenkins/.rvm/bin:/var/lib/jenkins/.rvm/bin
 
 export BASE_CALS_API_URL=&quot;http://localhost:3001/v1&quot;
-export CALS_API_URL=&quot;https://cals-api.preint.cwds.io&quot;
+export CALS_API_URL=&quot;https://calsapi.preint.cwds.io&quot;
 export GEO_SERVICE_URL=&quot;https://geo.preint.cwds.io&quot;
 export BASE_SEARCH_API_URL=&quot;https://dora.preint.cwds.io&quot;
 export AUTHENTICATION_API_BASE_URL=&quot;https://web.preint.cwds.io/perry&quot;
@@ -147,61 +150,14 @@ rm -rf public/assets public/packs public/packs-test
 
 export CHROME=true
 
-# run rspec inside container
-docker-compose down
-docker-compose up --build -d
+# check lint errors
+npm run lint
 
-sleep 5
+bundle exec rails assets:precompile RAILS_ENV=test
+RAILS_ENV=test bundle exec rspec spec
+npm run karma-ci
 
-echo -----------------------------------------------------
-echo which ruby
-docker-compose exec -T cals bash -c &apos;which ruby&apos;
-echo -----------------------------------------------------
-echo  ruby version
-docker-compose exec -T cals bash -c &apos;ruby -v&apos;
-echo -----------------------------------------------------
-echo which bundler
-docker-compose exec -T cals bash -c &apos;which bundler&apos;
-echo -----------------------------------------------------
-echo which bundle
-docker-compose exec -T cals bash -c &apos;which bundle&apos;
-echo -----------------------------------------------------
-echo bundle path
-docker-compose exec -T cals bash -c &apos;echo $BUNDLE_PATH&apos;
-echo -----------------------------------------------------
-echo bundle check
-docker-compose exec -T cals bash -c &apos;bundle check&apos;
-echo -----------------------------------------------------
-
-# bundle exec rspec spec
-docker-compose exec -T cals bash -c &apos;bundle exec rails assets:precompile RAILS_ENV=test&apos;
-echo -----------------------------------------------------
-bin/webpack &amp;&amp; docker-compose exec -T cals bash -c &apos;RAILS_ENV=test bundle exec rspec&apos;
-# bundle exec rake build_rails:bundle_yarn
-# bundle exec rake spec:cals
-
-echo -----------------------------------------------------
-docker-compose exec -T cals bash -c &apos;npm run karma-ci&apos;
-
-docker-compose down
-
-
-#change reports folder permission 
-sudo chown -R jenkins:jenkins reports
-
-#docker-compose up -d --force-recreate
-#echo &quot;-------------------------&quot;
-#echo &quot;-------------------------&quot;
-#echo &quot;container up&quot;
-#echo &quot;sleep&quot;
-#sleep 5
-#bundle exec rake build_rails:bundle_yarn
-#bundle exec rake spec:cals
-
-# run karma normally
-# npm run karma-ci
-
-sleep 5</command>
+sleep 3</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
@@ -258,6 +214,7 @@ sleep 5</command>
       <cleanupParameter></cleanupParameter>
       <externalDelete></externalDelete>
     </hudson.plugins.ws__cleanup.PreBuildCleanup>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.8.8"/>
     <org.jenkinsci.plugins.ghprb.upstream.GhprbUpstreamStatus plugin="ghprb@1.39.0">
       <showMatrixStatus>false</showMatrixStatus>
       <commitStatusContext>Pull Request Testing</commitStatusContext>
@@ -267,11 +224,11 @@ sleep 5</command>
       <addTestResults>false</addTestResults>
       <completedStatus>
         <org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
-          <message>All Tests Passing</message>
+          <message>Success</message>
           <result>SUCCESS</result>
         </org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
         <org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
-          <message>Tests Failing</message>
+          <message>Build Failed</message>
           <result>FAILURE</result>
         </org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
       </completedStatus>

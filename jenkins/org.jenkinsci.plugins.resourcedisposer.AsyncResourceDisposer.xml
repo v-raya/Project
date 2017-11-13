@@ -5,20 +5,7 @@
     <unserializable-parents/>
     <java.util.Collections_-SetFromMap>
       <default>
-        <m class="concurrent-hash-map">
-          <entry>
-            <org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
-              <disposer reference="../../../../../../.."/>
-              <disposable class="hudson.plugins.ws_cleanup.Wipeout$DisposableImpl" plugin="ws-cleanup@0.34">
-                <node></node>
-                <path>/var/lib/jenkins/workspace/CALS-Pull_Request_Testing_ws-cleanup_1508261574007</path>
-              </disposable>
-              <registered>2017-10-17 17:32:54.7 UTC</registered>
-              <disposableInfo>hudson.plugins.ws_cleanup.Wipeout$DisposableImpl:Workspace master:/var/lib/jenkins/workspace/CALS-Pull_Request_Testing_ws-cleanup_1508261574007</disposableInfo>
-            </org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
-            <boolean>true</boolean>
-          </entry>
-        </m>
+        <m class="concurrent-hash-map"/>
       </default>
     </java.util.Collections_-SetFromMap>
   </backlog>
