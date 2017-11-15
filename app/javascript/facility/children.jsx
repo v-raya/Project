@@ -9,23 +9,21 @@ export default class Children extends React.Component {
     let children = facilityChildren.children
     let facilityChildrenTable = []
 
-    if (children) {
-      facilityChildrenTable = children.map((child) => {
-        return (
-          <tr key={child.id} >
-            <td data-label='id'> {child.id} </td>
-            <td data-label='first name'> {child.first_name} </td>
-            <td data-label='last name'> {child.last_name} </td>
-            <td data-label='sex'> {child.sex} </td>
-            <td data-label='age'> {child.age} </td>
-            <td data-label='date of birth'> {child.date_of_birth} </td>
-            <td data-label='date of placement'> {child.date_of_placement} </td>
-            <td data-label='assigned worker'> {child.assigned_worker} </td>
-            <td data-label='county of origin'> {child.county_of_origin} </td>
-          </tr>
-        )
-      })
-    }
+    facilityChildrenTable = children.map((child) => {
+      return (
+        <tr key={child.id} >
+          <td data-label='id'> {child.id} </td>
+          <td data-label='first name'> {child.first_name} </td>
+          <td data-label='last name'> {child.last_name} </td>
+          <td data-label='sex'> {child.sex} </td>
+          <td data-label='age'> {child.age} </td>
+          <td data-label='date of birth'> {child.date_of_birth} </td>
+          <td data-label='date of placement'> {child.date_of_placement} </td>
+          <td data-label='assigned worker'> {child.assigned_worker} </td>
+          <td data-label='county of origin'> {child.county_of_origin} </td>
+        </tr>
+      )
+    })
 
     return (
       <div className='facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12'>

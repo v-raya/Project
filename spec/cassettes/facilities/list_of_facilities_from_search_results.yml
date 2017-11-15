@@ -10,20 +10,20 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..awvJfis6cmuve_1T.GbBbs85_5gklgLAMdlAQnBqR7hgp9bvdxapXwXDbh2t1gIgDBGXl9PVYD1wqkg4CUok3hC3QPWLauEDI9u7i19N0LTUQi67MM9_ursbdPobA5KaNl6dciqs_pcSEcUzO_zzc-vwNOqW2_eAwgOmX9GAAqa1wKg0fCuXXsO6WAcN0L7AgwItBysPd_2l9Ihv4-xk5B-MJe3nIfLEqzDjc-Kl3rz8wyhA_NHa7gwP7d33PV6FTucUyJAM88yeLBT_ltwdshndhlEkrbvMdZ8BbZlWrs6QYCaZRsPuPaKNyvwnlpm8p4F2LngKYRMgaUF1MZE3GPwlhVfE_u6sehN9zTv0_aE82nNl4Q3iNhx9YCn2YN-SmbsDDrjEjYnRjXokq4OxQVH5VTgmZucak-eDyDZJQvE7VGYyV2te7ChdX4ZmjLB9FjK8dBEJFoclPc_ci8h4oAuH7bRX0vIdqszr9Pi_JdWE9lMnOE9EgdVX2cJNPV_U8MWqdlwCAVXq-Qk2vTpMGCEnOZ53pTyWSIbBFSXROcS2Yv2gT9Mbh3Lqo41LK5zaejVQz6qK1GSSmBnpgOUBiliSR4KtOqYwPSKDVsiYUfTwNhjwOZmwLkGCknTTctR7Oh97FOkniulSp6CLt7wdDpIBlQkUAH8EDs9zp6n5MaSdlXNCE7klRH1fEdk_2lUNinExnf-fBmF2ChsLPrVGSBwdH08_WoLzLF14kfUnoxSer8e21_RW7GkSpOPN3f7pbM7tCXJmRDHrTf0ZQMxTdfErcMgkZo4v9zhn5uB6UoS0w2ZohGFkSIx099F_ZAAGyeSSysqVZckY2TYdk3X3rVmnGogP31PGJ11scNJz5tfiTrN_KzpH6Do_00JCbVy20hcIGMz3PcVbGE9OqcxM12afjjWvdMDX0ZOOAcXU1vA2vTMveWXjRfqKB_ZUyfeBAg0xO5ktKM9ssXPJlP3VkUormExkNBZZ0BiokOfzPSenxTew4Szu-7Oy4WDqEA5XhVuuvKBpAtpdJXRPYApkTrU-W_g.cK6OjZXfsuNB1AE4UbbEBg"
+      - "..rzzG_oAdrQNbBH-t.t-q4Ol0Kb-9QnVK6hd3xQOgG_FEftbUYtrev-Gq--F84B0qu19jl2NCJOJ8TMfWPGjLD-mHj_Sp3LJMjls89DqJr5naM53u1VWOexTwbZrqFJ-XAq2mdcIY5optSr9sQWbEv79VESk4komskbNVecx18CaSx0r8t-PSs95CFenAysKlRoPcuLiubnExQW-Ujvl48juZ5APN-bpBzcuOZJrqHOi12L3hY84kW43ryXH--3_NqFQvW0VRUTnzcLa8QKGGiadxsusI1EEQtGpb9pQyrfR_dRDRrfIR1jjxIjBzAg4bLcSk5TpKVcdGWu53eN-7nUFlyU9PyWFfAISFmp2wL0xzKIfNSZpcotgZkHSg7w5LO2iQ9vl_RaPJXozl1V8mSzwA7b7ThngrvKTDOo9xYHBmC7lP7UYbUq0EahpRa5uudEmqghzZ3wHK-zjlhtCqUdWCzkN2HPz9Edp_omrg-cjKRyRs_HKwGy-mjr6Fz1IBvbf9w2FuQOfJSHMuNi9g2q63ceYo694Xtzxd3qBPuYdl22MZdwWBlrnX_2EZd0KGd2DKUtrr8Kv0tJR0Vcclqd6XHrnuR_YMTNNGYtZ7B7tAmrLBirKeOKzFnuYhVCOsQ3R2N9UBLR49g7ISmOH4ieG8DsbUnbHmvlC2KtB9RwHNWj2Tsp91hm4NPyZFVzZkghdcQIonDj0WY8jdMMLTXTbzwWXobJJp9aZHpxbaV8hk2fhVnJwxjv_ETw9AtzdKDejmx3Klh4xJXem7s4se7B2qBL6UUlitAHKFbRzY3hBh11RVAeeA6LMjYgcGg8Kz9Ex5ll8xkKDtlb_vX5mAgAgvTYVyAZQtr5WSszbMF8F55b0qfoDthTuBVm6ow0YzAq6ZQqPKkGLGxWuNuxxsWzw7WLaxVJiKznYMCRKVaJoaUuc8xZKm8ooFf2xXZAvS0sN1AhTzTNXlr4aUcEN0iZJXfTHuYOZiiFkX3IcDg6SwAL-evgqLJKu4n-g.wELgILBQfjiJ_a0l9Xpm2g"
   response:
     status:
       code: 200
-      message:
+      message: 
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
       content-type:
       - application/json
       date:
-      - Tue, 31 Oct 2017 15:58:43 GMT
+      - Wed, 08 Nov 2017 02:06:41 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:43
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 07-Nov-2017 02:06:41
         GMT
       vary:
       - Accept-Encoding
@@ -220,8 +220,8 @@ http_interactions:
             "id" : 59
           } ]
         }
-    http_version:
-  recorded_at: Tue, 31 Oct 2017 15:58:39 GMT
+    http_version: 
+  recorded_at: Wed, 08 Nov 2017 02:06:41 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
@@ -232,20 +232,20 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..awvJfis6cmuve_1T.GbBbs85_5gklgLAMdlAQnBqR7hgp9bvdxapXwXDbh2t1gIgDBGXl9PVYD1wqkg4CUok3hC3QPWLauEDI9u7i19N0LTUQi67MM9_ursbdPobA5KaNl6dciqs_pcSEcUzO_zzc-vwNOqW2_eAwgOmX9GAAqa1wKg0fCuXXsO6WAcN0L7AgwItBysPd_2l9Ihv4-xk5B-MJe3nIfLEqzDjc-Kl3rz8wyhA_NHa7gwP7d33PV6FTucUyJAM88yeLBT_ltwdshndhlEkrbvMdZ8BbZlWrs6QYCaZRsPuPaKNyvwnlpm8p4F2LngKYRMgaUF1MZE3GPwlhVfE_u6sehN9zTv0_aE82nNl4Q3iNhx9YCn2YN-SmbsDDrjEjYnRjXokq4OxQVH5VTgmZucak-eDyDZJQvE7VGYyV2te7ChdX4ZmjLB9FjK8dBEJFoclPc_ci8h4oAuH7bRX0vIdqszr9Pi_JdWE9lMnOE9EgdVX2cJNPV_U8MWqdlwCAVXq-Qk2vTpMGCEnOZ53pTyWSIbBFSXROcS2Yv2gT9Mbh3Lqo41LK5zaejVQz6qK1GSSmBnpgOUBiliSR4KtOqYwPSKDVsiYUfTwNhjwOZmwLkGCknTTctR7Oh97FOkniulSp6CLt7wdDpIBlQkUAH8EDs9zp6n5MaSdlXNCE7klRH1fEdk_2lUNinExnf-fBmF2ChsLPrVGSBwdH08_WoLzLF14kfUnoxSer8e21_RW7GkSpOPN3f7pbM7tCXJmRDHrTf0ZQMxTdfErcMgkZo4v9zhn5uB6UoS0w2ZohGFkSIx099F_ZAAGyeSSysqVZckY2TYdk3X3rVmnGogP31PGJ11scNJz5tfiTrN_KzpH6Do_00JCbVy20hcIGMz3PcVbGE9OqcxM12afjjWvdMDX0ZOOAcXU1vA2vTMveWXjRfqKB_ZUyfeBAg0xO5ktKM9ssXPJlP3VkUormExkNBZZ0BiokOfzPSenxTew4Szu-7Oy4WDqEA5XhVuuvKBpAtpdJXRPYApkTrU-W_g.cK6OjZXfsuNB1AE4UbbEBg"
+      - "..rzzG_oAdrQNbBH-t.t-q4Ol0Kb-9QnVK6hd3xQOgG_FEftbUYtrev-Gq--F84B0qu19jl2NCJOJ8TMfWPGjLD-mHj_Sp3LJMjls89DqJr5naM53u1VWOexTwbZrqFJ-XAq2mdcIY5optSr9sQWbEv79VESk4komskbNVecx18CaSx0r8t-PSs95CFenAysKlRoPcuLiubnExQW-Ujvl48juZ5APN-bpBzcuOZJrqHOi12L3hY84kW43ryXH--3_NqFQvW0VRUTnzcLa8QKGGiadxsusI1EEQtGpb9pQyrfR_dRDRrfIR1jjxIjBzAg4bLcSk5TpKVcdGWu53eN-7nUFlyU9PyWFfAISFmp2wL0xzKIfNSZpcotgZkHSg7w5LO2iQ9vl_RaPJXozl1V8mSzwA7b7ThngrvKTDOo9xYHBmC7lP7UYbUq0EahpRa5uudEmqghzZ3wHK-zjlhtCqUdWCzkN2HPz9Edp_omrg-cjKRyRs_HKwGy-mjr6Fz1IBvbf9w2FuQOfJSHMuNi9g2q63ceYo694Xtzxd3qBPuYdl22MZdwWBlrnX_2EZd0KGd2DKUtrr8Kv0tJR0Vcclqd6XHrnuR_YMTNNGYtZ7B7tAmrLBirKeOKzFnuYhVCOsQ3R2N9UBLR49g7ISmOH4ieG8DsbUnbHmvlC2KtB9RwHNWj2Tsp91hm4NPyZFVzZkghdcQIonDj0WY8jdMMLTXTbzwWXobJJp9aZHpxbaV8hk2fhVnJwxjv_ETw9AtzdKDejmx3Klh4xJXem7s4se7B2qBL6UUlitAHKFbRzY3hBh11RVAeeA6LMjYgcGg8Kz9Ex5ll8xkKDtlb_vX5mAgAgvTYVyAZQtr5WSszbMF8F55b0qfoDthTuBVm6ow0YzAq6ZQqPKkGLGxWuNuxxsWzw7WLaxVJiKznYMCRKVaJoaUuc8xZKm8ooFf2xXZAvS0sN1AhTzTNXlr4aUcEN0iZJXfTHuYOZiiFkX3IcDg6SwAL-evgqLJKu4n-g.wELgILBQfjiJ_a0l9Xpm2g"
   response:
     status:
       code: 200
-      message:
+      message: 
     headers:
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
       content-type:
       - application/json
       date:
-      - Tue, 31 Oct 2017 15:58:43 GMT
+      - Wed, 08 Nov 2017 02:06:41 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:43
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 07-Nov-2017 02:06:41
         GMT
       vary:
       - Accept-Encoding
@@ -256,7 +256,7 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '275'
+      - '686'
       connection:
       - keep-alive
     body:
@@ -264,45 +264,132 @@ http_interactions:
       string: |-
         {
           "items" : [ {
+            "value" : "Home Care Organization",
+            "id" : 300
+          }, {
+            "value" : "Adoption Agency",
+            "id" : 400
+          }, {
+            "value" : "Resource Family Home",
+            "id" : 403
+          }, {
             "value" : "Foster Family Agency",
-            "id" : 1
+            "id" : 430
+          }, {
+            "value" : "Foster Family AG-Sub",
+            "id" : 431
+          }, {
+            "value" : "FFA Certified Home",
+            "id" : 433
           }, {
             "value" : "Small Family Home",
-            "id" : 2
+            "id" : 710
           }, {
             "value" : "Foster Family Home",
-            "id" : 3
+            "id" : 711
+          }, {
+            "value" : "Crisis Nursery",
+            "id" : 720
+          }, {
+            "value" : "Temporary Shelter Care Facility",
+            "id" : 721
+          }, {
+            "value" : "Transitional Shelter Care",
+            "id" : 722
+          }, {
+            "value" : "Transitional Housing Placement Program",
+            "id" : 726
+          }, {
+            "value" : "Community Treatment Facility",
+            "id" : 728
+          }, {
+            "value" : "GH-Enhanced Behavioral Supports Home",
+            "id" : 729
           }, {
             "value" : "Group Home",
-            "id" : 4
+            "id" : 730
+          }, {
+            "value" : "Out Of State GH",
+            "id" : 731
+          }, {
+            "value" : "Runaway And Homeless Youth Shelter-GH",
+            "id" : 732
+          }, {
+            "value" : "Short Term Residential Therapeutic Program",
+            "id" : 733
+          }, {
+            "value" : "ARFPSHN",
+            "id" : 734
+          }, {
+            "value" : "Adult Residential",
+            "id" : 735
+          }, {
+            "value" : "Resid FAC Chron Ill",
+            "id" : 736
+          }, {
+            "value" : "ARF-Enhanced Behavioral Supports Home",
+            "id" : 737
+          }, {
+            "value" : "Community Crisis Home-ARF",
+            "id" : 738
+          }, {
+            "value" : "Residential-Elderly",
+            "id" : 740
+          }, {
+            "value" : "Residential Elderly-Continuing Care",
+            "id" : 741
+          }, {
+            "value" : "Rehab Facility",
+            "id" : 771
+          }, {
+            "value" : "Social Rehabilitation Facility",
+            "id" : 772
+          }, {
+            "value" : "Adult Day Care",
+            "id" : 775
           }, {
             "value" : "County Shelter/Recving Home(Non EA/AFDC)",
-            "id" : 5
+            "id" : 790
           }, {
             "value" : "Court Specified Home",
-            "id" : 6
+            "id" : 791
           }, {
             "value" : "Medical Facility",
-            "id" : 7
-          }, {
-            "value" : "Tribe Specified Home",
-            "id" : 8
-          }, {
-            "value" : "Foster Family Agency Certified Home",
-            "id" : 9
-          }, {
-            "value" : "Guardian Home",
-            "id" : 10
+            "id" : 792
           }, {
             "value" : "Relative/NREFM Home",
-            "id" : 11
+            "id" : 793
+          }, {
+            "value" : "Tribe Specified Home",
+            "id" : 795
+          }, {
+            "value" : "Guardian Home",
+            "id" : 796
           }, {
             "value" : "Supervised Independent Living Placement",
-            "id" : 12
+            "id" : 800
+          }, {
+            "value" : "Family Day Care",
+            "id" : 810
+          }, {
+            "value" : "Infant Center",
+            "id" : 830
+          }, {
+            "value" : "School-Age DC Center",
+            "id" : 840
+          }, {
+            "value" : "DC Center - Ill Child",
+            "id" : 845
+          }, {
+            "value" : "Day Care Center",
+            "id" : 850
+          }, {
+            "value" : "Dummy Facility",
+            "id" : 999
           } ]
         }
-    http_version:
-  recorded_at: Tue, 31 Oct 2017 15:58:40 GMT
+    http_version: 
+  recorded_at: Wed, 08 Nov 2017 02:06:41 GMT
 - request:
     method: post
     uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
@@ -314,18 +401,18 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..awvJfis6cmuve_1T.GbBbs85_5gklgLAMdlAQnBqR7hgp9bvdxapXwXDbh2t1gIgDBGXl9PVYD1wqkg4CUok3hC3QPWLauEDI9u7i19N0LTUQi67MM9_ursbdPobA5KaNl6dciqs_pcSEcUzO_zzc-vwNOqW2_eAwgOmX9GAAqa1wKg0fCuXXsO6WAcN0L7AgwItBysPd_2l9Ihv4-xk5B-MJe3nIfLEqzDjc-Kl3rz8wyhA_NHa7gwP7d33PV6FTucUyJAM88yeLBT_ltwdshndhlEkrbvMdZ8BbZlWrs6QYCaZRsPuPaKNyvwnlpm8p4F2LngKYRMgaUF1MZE3GPwlhVfE_u6sehN9zTv0_aE82nNl4Q3iNhx9YCn2YN-SmbsDDrjEjYnRjXokq4OxQVH5VTgmZucak-eDyDZJQvE7VGYyV2te7ChdX4ZmjLB9FjK8dBEJFoclPc_ci8h4oAuH7bRX0vIdqszr9Pi_JdWE9lMnOE9EgdVX2cJNPV_U8MWqdlwCAVXq-Qk2vTpMGCEnOZ53pTyWSIbBFSXROcS2Yv2gT9Mbh3Lqo41LK5zaejVQz6qK1GSSmBnpgOUBiliSR4KtOqYwPSKDVsiYUfTwNhjwOZmwLkGCknTTctR7Oh97FOkniulSp6CLt7wdDpIBlQkUAH8EDs9zp6n5MaSdlXNCE7klRH1fEdk_2lUNinExnf-fBmF2ChsLPrVGSBwdH08_WoLzLF14kfUnoxSer8e21_RW7GkSpOPN3f7pbM7tCXJmRDHrTf0ZQMxTdfErcMgkZo4v9zhn5uB6UoS0w2ZohGFkSIx099F_ZAAGyeSSysqVZckY2TYdk3X3rVmnGogP31PGJ11scNJz5tfiTrN_KzpH6Do_00JCbVy20hcIGMz3PcVbGE9OqcxM12afjjWvdMDX0ZOOAcXU1vA2vTMveWXjRfqKB_ZUyfeBAg0xO5ktKM9ssXPJlP3VkUormExkNBZZ0BiokOfzPSenxTew4Szu-7Oy4WDqEA5XhVuuvKBpAtpdJXRPYApkTrU-W_g.cK6OjZXfsuNB1AE4UbbEBg"
+      - "..rzzG_oAdrQNbBH-t.t-q4Ol0Kb-9QnVK6hd3xQOgG_FEftbUYtrev-Gq--F84B0qu19jl2NCJOJ8TMfWPGjLD-mHj_Sp3LJMjls89DqJr5naM53u1VWOexTwbZrqFJ-XAq2mdcIY5optSr9sQWbEv79VESk4komskbNVecx18CaSx0r8t-PSs95CFenAysKlRoPcuLiubnExQW-Ujvl48juZ5APN-bpBzcuOZJrqHOi12L3hY84kW43ryXH--3_NqFQvW0VRUTnzcLa8QKGGiadxsusI1EEQtGpb9pQyrfR_dRDRrfIR1jjxIjBzAg4bLcSk5TpKVcdGWu53eN-7nUFlyU9PyWFfAISFmp2wL0xzKIfNSZpcotgZkHSg7w5LO2iQ9vl_RaPJXozl1V8mSzwA7b7ThngrvKTDOo9xYHBmC7lP7UYbUq0EahpRa5uudEmqghzZ3wHK-zjlhtCqUdWCzkN2HPz9Edp_omrg-cjKRyRs_HKwGy-mjr6Fz1IBvbf9w2FuQOfJSHMuNi9g2q63ceYo694Xtzxd3qBPuYdl22MZdwWBlrnX_2EZd0KGd2DKUtrr8Kv0tJR0Vcclqd6XHrnuR_YMTNNGYtZ7B7tAmrLBirKeOKzFnuYhVCOsQ3R2N9UBLR49g7ISmOH4ieG8DsbUnbHmvlC2KtB9RwHNWj2Tsp91hm4NPyZFVzZkghdcQIonDj0WY8jdMMLTXTbzwWXobJJp9aZHpxbaV8hk2fhVnJwxjv_ETw9AtzdKDejmx3Klh4xJXem7s4se7B2qBL6UUlitAHKFbRzY3hBh11RVAeeA6LMjYgcGg8Kz9Ex5ll8xkKDtlb_vX5mAgAgvTYVyAZQtr5WSszbMF8F55b0qfoDthTuBVm6ow0YzAq6ZQqPKkGLGxWuNuxxsWzw7WLaxVJiKznYMCRKVaJoaUuc8xZKm8ooFf2xXZAvS0sN1AhTzTNXlr4aUcEN0iZJXfTHuYOZiiFkX3IcDg6SwAL-evgqLJKu4n-g.wELgILBQfjiJ_a0l9Xpm2g"
   response:
     status:
       code: 200
-      message:
+      message: 
     headers:
       content-type:
       - application/json
       date:
-      - Tue, 31 Oct 2017 15:58:44 GMT
+      - Wed, 08 Nov 2017 02:06:42 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 30-Oct-2017 15:58:44
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 07-Nov-2017 02:06:42
         GMT
       content-length:
       - '7013'
@@ -337,31 +424,31 @@ http_interactions:
         HOUSING PLACEMENT PROGRAM"},"name":"Lederhouse Transitions","licensee_name":"Lederhouse
         Transitions Inc.","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"19","name":"PACIFIC
         INLAND CR"},"license_number":"300665437","status":{"id":"5","value":"PROBATIONARY
-        LICENSE"},"capacity":10,"license_effective_date":{"year":2012,"month":"OCTOBER","era":"CE","dayOfYear":275,"dayOfWeek":"MONDAY","leapYear":true,"dayOfMonth":1,"monthValue":10,"chronology":{"calendarType":"iso8601","id":"ISO"}},"original_application_recieved_date":{"year":2012,"month":"JULY","era":"CE","dayOfYear":200,"dayOfWeek":"WEDNESDAY","leapYear":true,"dayOfMonth":18,"monthValue":7,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":{"year":2017,"month":"APRIL","hour":0,"minute":0,"second":0,"nano":0,"dayOfYear":104,"dayOfWeek":"FRIDAY","dayOfMonth":14,"monthValue":4,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":{"id":"10","value":"CASELOAD
+        LICENSE"},"capacity":10,"license_effective_date":{"year":2012,"month":"OCTOBER","era":"CE","dayOfMonth":1,"dayOfWeek":"MONDAY","dayOfYear":275,"leapYear":true,"monthValue":10,"chronology":{"calendarType":"iso8601","id":"ISO"}},"original_application_recieved_date":{"year":2012,"month":"JULY","era":"CE","dayOfMonth":18,"dayOfWeek":"WEDNESDAY","dayOfYear":200,"leapYear":true,"monthValue":7,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":{"month":"APRIL","year":2017,"dayOfMonth":14,"dayOfWeek":"FRIDAY","dayOfYear":104,"monthValue":4,"hour":0,"minute":0,"nano":0,"second":0,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":{"id":"10","value":"CASELOAD
         MANAGEMENT"},"last_deferred_visit_reason":null,"county":{"id":"30","value":"ORANGE","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9494480118"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"36
         Sequoia Dr","city":"Aliso Viejo","state":"CA","zip_code":"92656","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"36
         Sequoia Dr","city":"Aliso Viejo","state":"CA","zip_code":"92656","zip_suffix_code":null}}],"visits":[{"approval":"","visit_type":"Annual
-        10 month","visit_date":{"year":2011,"month":"OCTOBER","hour":0,"minute":0,"second":0,"nano":0,"dayOfYear":301,"dayOfWeek":"FRIDAY","dayOfMonth":28,"monthValue":10,"chronology":{"calendarType":"iso8601","id":"ISO"}},"visit_deferred_date":null},{"approval":"","visit_type":"Annual
+        10 month","visit_date":{"month":"OCTOBER","year":2011,"dayOfMonth":28,"dayOfWeek":"FRIDAY","dayOfYear":301,"monthValue":10,"hour":0,"minute":0,"nano":0,"second":0,"chronology":{"calendarType":"iso8601","id":"ISO"}},"visit_deferred_date":null},{"approval":"","visit_type":"Annual
         22 month","visit_date":null,"visit_deferred_date":null},{"approval":"","visit_type":"Post
-        Licensing","visit_date":null,"visit_deferred_date":{"year":1991,"month":"NOVEMBER","hour":0,"minute":0,"second":0,"nano":0,"dayOfYear":310,"dayOfWeek":"WEDNESDAY","dayOfMonth":6,"monthValue":11,"chronology":{"calendarType":"iso8601","id":"ISO"}}},{"approval":"","visit_type":"Renewal","visit_date":null,"visit_deferred_date":null}],"annual_visit_year":12,"prelicensing_visit_date":null,"children":[],"inspections":[],"complaints":[{"id":"9112","complaint_date":{"year":2016,"month":"SEPTEMBER","hour":0,"minute":0,"second":0,"nano":0,"dayOfYear":271,"dayOfWeek":"TUESDAY","dayOfMonth":27,"monthValue":9,"chronology":{"calendarType":"iso8601","id":"ISO"}},"assigned_worker":"Mullah
-        Mahaboob","control_number":"19-CR-20160927081411","priority_level":"2","status":"Approved","approval_date":{"year":2016,"month":"DECEMBER","hour":0,"minute":0,"second":0,"nano":0,"dayOfYear":345,"dayOfWeek":"SATURDAY","dayOfMonth":10,"monthValue":12,"chronology":{"calendarType":"iso8601","id":"ISO"}},"pre_investigation_comments":"","post_investigation_comments":"See
+        Licensing","visit_date":null,"visit_deferred_date":{"month":"NOVEMBER","year":1991,"dayOfMonth":6,"dayOfWeek":"WEDNESDAY","dayOfYear":310,"monthValue":11,"hour":0,"minute":0,"nano":0,"second":0,"chronology":{"calendarType":"iso8601","id":"ISO"}}},{"approval":"","visit_type":"Renewal","visit_date":null,"visit_deferred_date":null}],"annual_visit_year":12,"prelicensing_visit_date":null,"children":[],"inspections":[],"complaints":[{"id":"9112","complaint_date":{"month":"SEPTEMBER","year":2016,"dayOfMonth":27,"dayOfWeek":"TUESDAY","dayOfYear":271,"monthValue":9,"hour":0,"minute":0,"nano":0,"second":0,"chronology":{"calendarType":"iso8601","id":"ISO"}},"assigned_worker":"Mullah
+        Mahaboob","control_number":"19-CR-20160927081411","priority_level":"2","status":"Approved","approval_date":{"month":"DECEMBER","year":2016,"dayOfMonth":10,"dayOfWeek":"SATURDAY","dayOfYear":345,"monthValue":12,"hour":0,"minute":0,"nano":0,"second":0,"chronology":{"calendarType":"iso8601","id":"ISO"}},"pre_investigation_comments":"","post_investigation_comments":"See
         Attached letter.  Reiser is a supervisor for Fresno County CPS.","contact_summary":"LIC
         9099 dated 11/23/04, 1/3/05&#13;&#10;LIC 812 date of visit 11/23/04, 1/3/05","followup_comments":"","allegations":[{"complaint_code":"3","allegation":"","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":""},{"complaint_code":"3","allegation":"Client
         Miguel Delatorre (8-28-88)    Miguel was beat up by an older and bigger child
         at GH. (name unknown) Staff did nothing to stop this.  Staff told Miguel not
-        to say anything. Miguel called his mother and told her this.","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":"U"},{"complaint_code":"3","allegation":"","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":""}]},{"id":"9112","complaint_date":{"year":2016,"month":"SEPTEMBER","hour":0,"minute":0,"second":0,"nano":0,"dayOfYear":271,"dayOfWeek":"TUESDAY","dayOfMonth":27,"monthValue":9,"chronology":{"calendarType":"iso8601","id":"ISO"}},"assigned_worker":"Mullah
-        Mahaboob","control_number":"19-CR-20160927081411","priority_level":"2","status":"Approved","approval_date":{"year":2016,"month":"DECEMBER","hour":0,"minute":0,"second":0,"nano":0,"dayOfYear":345,"dayOfWeek":"SATURDAY","dayOfMonth":10,"monthValue":12,"chronology":{"calendarType":"iso8601","id":"ISO"}},"pre_investigation_comments":"","post_investigation_comments":"See
+        to say anything. Miguel called his mother and told her this.","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":"U"},{"complaint_code":"3","allegation":"","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":""}]},{"id":"9112","complaint_date":{"month":"SEPTEMBER","year":2016,"dayOfMonth":27,"dayOfWeek":"TUESDAY","dayOfYear":271,"monthValue":9,"hour":0,"minute":0,"nano":0,"second":0,"chronology":{"calendarType":"iso8601","id":"ISO"}},"assigned_worker":"Mullah
+        Mahaboob","control_number":"19-CR-20160927081411","priority_level":"2","status":"Approved","approval_date":{"month":"DECEMBER","year":2016,"dayOfMonth":10,"dayOfWeek":"SATURDAY","dayOfYear":345,"monthValue":12,"hour":0,"minute":0,"nano":0,"second":0,"chronology":{"calendarType":"iso8601","id":"ISO"}},"pre_investigation_comments":"","post_investigation_comments":"See
         Attached letter.  Reiser is a supervisor for Fresno County CPS.","contact_summary":"LIC
         9099 dated 11/23/04, 1/3/05&#13;&#10;LIC 812 date of visit 11/23/04, 1/3/05","followup_comments":"","allegations":[{"complaint_code":"3","allegation":"","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":""},{"complaint_code":"3","allegation":"Client
         Miguel Delatorre (8-28-88)    Miguel was beat up by an older and bigger child
         at GH. (name unknown) Staff did nothing to stop this.  Staff told Miguel not
-        to say anything. Miguel called his mother and told her this.","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":"U"},{"complaint_code":"3","allegation":"","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":""}]},{"id":"9112","complaint_date":{"year":2016,"month":"SEPTEMBER","hour":0,"minute":0,"second":0,"nano":0,"dayOfYear":271,"dayOfWeek":"TUESDAY","dayOfMonth":27,"monthValue":9,"chronology":{"calendarType":"iso8601","id":"ISO"}},"assigned_worker":"Mullah
-        Mahaboob","control_number":"19-CR-20160927081411","priority_level":"2","status":"Approved","approval_date":{"year":2016,"month":"DECEMBER","hour":0,"minute":0,"second":0,"nano":0,"dayOfYear":345,"dayOfWeek":"SATURDAY","dayOfMonth":10,"monthValue":12,"chronology":{"calendarType":"iso8601","id":"ISO"}},"pre_investigation_comments":"","post_investigation_comments":"See
+        to say anything. Miguel called his mother and told her this.","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":"U"},{"complaint_code":"3","allegation":"","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":""}]},{"id":"9112","complaint_date":{"month":"SEPTEMBER","year":2016,"dayOfMonth":27,"dayOfWeek":"TUESDAY","dayOfYear":271,"monthValue":9,"hour":0,"minute":0,"nano":0,"second":0,"chronology":{"calendarType":"iso8601","id":"ISO"}},"assigned_worker":"Mullah
+        Mahaboob","control_number":"19-CR-20160927081411","priority_level":"2","status":"Approved","approval_date":{"month":"DECEMBER","year":2016,"dayOfMonth":10,"dayOfWeek":"SATURDAY","dayOfYear":345,"monthValue":12,"hour":0,"minute":0,"nano":0,"second":0,"chronology":{"calendarType":"iso8601","id":"ISO"}},"pre_investigation_comments":"","post_investigation_comments":"See
         Attached letter.  Reiser is a supervisor for Fresno County CPS.","contact_summary":"LIC
         9099 dated 11/23/04, 1/3/05&#13;&#10;LIC 812 date of visit 11/23/04, 1/3/05","followup_comments":"","allegations":[{"complaint_code":"3","allegation":"","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":""},{"complaint_code":"3","allegation":"Client
         Miguel Delatorre (8-28-88)    Miguel was beat up by an older and bigger child
         at GH. (name unknown) Staff did nothing to stop this.  Staff told Miguel not
         to say anything. Miguel called his mother and told her this.","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":"U"},{"complaint_code":"3","allegation":"","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":""}]}]}}]}}'
-    http_version:
-  recorded_at: Tue, 31 Oct 2017 15:58:41 GMT
+    http_version: 
+  recorded_at: Wed, 08 Nov 2017 02:06:42 GMT
 recorded_with: VCR 3.0.3

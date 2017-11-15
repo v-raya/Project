@@ -8,21 +8,19 @@ export default class Complaints extends React.Component {
     let FacilityComplaints = this.props.facilityData
     let complaints = FacilityComplaints.complaints
     let facilityComplaintsTable = []
-    if (complaints) {
-      facilityComplaintsTable = complaints.map((complaint) => {
-        return (
-          <tr key={complaint.id} >
-            <td data-label='id'> {complaint.id} </td>
-            <td data-label='complaint date'> {complaint.complaint_date} </td>
-            <td data-label='assigned worker'> {complaint.assigned_worker} </td>
-            <td data-label='control number' > {complaint.control_number} </td>
-            <td data-label='priority level'> {complaint.priority_level} </td>
-            <td data-label='status'> {complaint.status} </td>
-            <td data-label='approval date'> {complaint.approval_date} </td>
-          </tr>
-        )
-      })
-    }
+    facilityComplaintsTable = complaints.map((complaint) => {
+      return (
+        <tr key={complaint.id} >
+          <td data-label='id'> {complaint.id} </td>
+          <td data-label='complaint date'> {complaint.complaint_date} </td>
+          <td data-label='assigned worker'> {complaint.assigned_worker} </td>
+          <td data-label='control number' > {complaint.control_number} </td>
+          <td data-label='priority level'> {complaint.priority_level} </td>
+          <td data-label='status'> {complaint.status} </td>
+          <td data-label='approval date'> {complaint.approval_date} </td>
+        </tr>
+      )
+    })
     return (
       <div className='facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12'>
         <div className='facility-children-block col-xs-12 col-sm-12 col-md-12 col-lg-12'>
