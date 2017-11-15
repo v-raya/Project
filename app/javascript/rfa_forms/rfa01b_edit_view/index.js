@@ -9,6 +9,7 @@ import CrimeBackgroundAgainstCohabitant from './crimeBackgroundAgainstCohabitant
 import PrivacyStatement from './privacyStatement'
 import {CountyUseOnlyCard} from 'components/rfa_forms/countyUseOnlyCard.js'
 import {getDictionaryId, dictionaryNilSelect, checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
+import CardsGroupLayout from 'components/common/cardsGroupLayout.js'
 
 import '../rfa01a_edit_view/stylesheets/cards-main.scss'
 
@@ -71,7 +72,7 @@ export default class Rfa01bList extends React.Component {
               </div>
             </div>
 
-            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+            <CardsGroupLayout>
               <CountyUseOnlyCard
                 countyUseOnlyCardId='county_use_only'
                 setFocusState={this.setFocusState}
@@ -80,52 +81,52 @@ export default class Rfa01bList extends React.Component {
                 CountyList={this.props.countyTypes}
                 onFieldChange={(event) => this.setApplicationState('application_county',
                   dictionaryNilSelect(event.target.selectedOptions[0]))} />
-            </div>
+            </CardsGroupLayout>
 
-            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+            <CardsGroupLayout>
               <h2>I.<span>Out of State Disclosure</span></h2>
               <OutOfStateDisclosureCard
                 focusComponentName={this.state.focusComponentName}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState} />
-            </div>
-            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+            </CardsGroupLayout>
+            <CardsGroupLayout>
               <h2>II.<span>Criminal Record Statement</span></h2>
               <DisclosureInstructions
                 focusComponentName={this.state.focusComponentName}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState} />
-            </div>
+            </CardsGroupLayout>
 
-            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+            <CardsGroupLayout>
               <CaliforniaCriminalBackground
                 focusComponentName={this.state.focusComponentName}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState} />
-            </div>
+            </CardsGroupLayout>
 
-            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+            <CardsGroupLayout>
               <OutsideCACriminalBackground
                 focusComponentName={this.state.focusComponentName}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState} />
-            </div>
+            </CardsGroupLayout>
 
-            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+            <CardsGroupLayout>
               <CrimeBackgroundAgainstCohabitant
                 focusComponentName={this.state.focusComponentName}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState} />
-            </div>
+            </CardsGroupLayout>
 
-            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+            <CardsGroupLayout>
               <PrivacyStatement
                 focusComponentName={this.state.focusComponentName}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState} />
-            </div>
+            </CardsGroupLayout>
 
-            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+            <CardsGroupLayout>
               <h2><span>Applicant or Other Adult </span></h2>
               <ApplicantDetailsCard
                 focusComponentName={this.state.focusComponentName}
@@ -135,7 +136,7 @@ export default class Rfa01bList extends React.Component {
                 stateTypes={this.props.stateTypes}
                 namePrefixTypes={this.props.namePrefixTypes}
                 nameSuffixTypes={this.props.nameSuffixTypes} />
-            </div>
+            </CardsGroupLayout>
 
           </div>
         </div>

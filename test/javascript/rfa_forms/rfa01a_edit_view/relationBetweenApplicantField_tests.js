@@ -18,12 +18,7 @@ describe('Verify relation between applicant', function () {
     }
   })
 
-  const applicants = Object.freeze({
-    applicants: [{
-      first_name: 'thing'},
-    {
-      first_name: 'thing'}
-    ]})
+  const applicants = [{first_name: 'thing'}, {first_name: 'thing'}]
 
   let setParentStateSpy, relationCardComp, onChange, validator
   beforeEach(() => {

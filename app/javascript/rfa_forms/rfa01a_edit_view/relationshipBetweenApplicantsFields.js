@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Immutable from 'immutable'
 import moment from 'moment'
 import momentLocalizer from 'react-widgets-moment'
@@ -31,15 +32,11 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
   }
   render () {
     const relationship = this.props.relationshipBetweenApplicants
+    const applicants = this.props.applicants
     const relationshipType = relationship !== undefined && relationship.relationship_type !== undefined ? relationship.relationship_type.value : false
     const hideRelationshipDetails = relationshipType === 'Married' || relationshipType === 'Domestic Partnership' ? 'row' : 'row hidden'
     const hideOtherRelationship = relationshipType === 'Other' ? 'row' : 'row hidden'
-    const applicant1FirstName = this.props.applicants[0] !== undefined && this.props.applicants[0].first_name ? this.props.applicants[0].first_name : false
-    const applicant1MiddleName = this.props.applicants[0] !== undefined && this.props.applicants[0].middle_name ? this.props.applicants[0].middle_name : ''
-    const applicant1LastName = this.props.applicants[0] !== undefined && this.props.applicants[0].last_name ? this.props.applicants[0].last_name : ''
-    const applicant2FirstName = this.props.applicants[1] !== undefined && this.props.applicants[1].first_name ? this.props.applicants[1].first_name : false
-    const applicant2MiddleName = this.props.applicants[1] !== undefined && this.props.applicants[1].middle_name ? this.props.applicants[1].middle_name : ''
-    const applicant2LastName = this.props.applicants[1] !== undefined && this.props.applicants[1].last_name ? this.props.applicants[1].last_name : ''
+    const applicantsFullNames = applicants.length > 1 ? applicants[0].first_name + ' ' + applicants[0].middle_name + ' ' + applicants[0].last_name + ' ' + ' and' + ' ' + applicants[1].first_name + ' ' + applicants[1].middle_name + ' ' + applicants[1].last_name : ''
 
     const relationshipId = this.props.idPrefix + 'date_of_relationship'
 
@@ -50,8 +47,7 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
             selectClassName='reusable-select'
             value={getDictionaryId(relationship.relationship_type)}
             optionList={this.props.relationshipTypes}
-            label={'Relationship between ' + applicant1FirstName + ' ' + applicant1MiddleName + ' ' + applicant1LastName + ' and' +
-            ' ' + applicant2FirstName + ' ' + applicant2MiddleName + ' ' + applicant2LastName}
+            label={'Relationship between ' + applicantsFullNames}
             onChange={(event) => this.props.setParentState('relationship_type', dictionaryNilSelect(event.target.selectedOptions[0]))} />
         </div>
         <div className={'relationship-status ' + hideRelationshipDetails}>Status of relationship</div>
@@ -87,6 +83,17 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
       </form>
     )
   }
+}
+
+RelationshipBetweenApplicantsFields.propTypes = {
+  idPrefix: PropTypes.string.isRequired,
+  relationshipBetweenApplicants: PropTypes.object.isRequired,
+  relationshipTypes: PropTypes.array.isRequired,
+  applicants: PropTypes.array.isRequired,
+  setParentState: PropTypes.func.isRequired,
+  validator: PropTypes.object.isRequired,
+  stateTypes: PropTypes.array.isRequired,
+  errors: PropTypes.object.isRequired
 }
 
 RelationshipBetweenApplicantsFields.defaultProps = {
