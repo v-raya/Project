@@ -30,7 +30,7 @@ export default class ChildDesiredCard extends React.Component {
           selectClassName='reusable-select col-md-4'
           value={(this.props.desiredChildSection.child_identified)}
           optionList={yesNo.items}
-          label={'Has the child been identified'}
+          label={'Has the child been identified?'}
           onChange={(event) => this.props.setParentState('child_identified', event.target.selectedOptions[0].value)} />
         {childCurrentlyInHomeVisible && <DropDownField id='child_in_home' gridClassName='col-md-12 '
           selectClassName='reusable-select col-md-4'
