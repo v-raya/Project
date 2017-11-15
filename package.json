@@ -55,6 +55,9 @@
     "spec-ci": "rspec spec;",
     "karma-ci": "./bin/karma",
     "karma": "./bin/karma; open ./reports/karma_test_results.html; open ./reports/coverage/karma/index.html;",
+    "karma-edge": "./bin/karma --browsers 'MSEdge - Win10'",
+    "karma-ie11": "./bin/karma --browsers 'IE11 - Win7'",
+    "karma-ie": "./bin/karma --browsers 'MSEdge - Win10','IE11 - Win7'",
     "all-tests": "./bin/karma;  npm run spec;",
     "postinstall": "npm rebuild node-sass"
   },
@@ -88,6 +91,7 @@
     "karma": "^1.5.0",
     "karma-chrome-launcher": "^2.1.1",
     "karma-htmlfile-reporter": "^0.3.5",
+    "karma-ievms": "git+https://github.com/ratneshraval/karma-ievms.git#browser-decorator",
     "karma-jasmine": "^1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-webpack": "^2.0.3",

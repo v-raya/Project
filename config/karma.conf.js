@@ -77,6 +77,7 @@ module.exports = function (config) {
       'karma-coverage',
       'karma-chrome-launcher',
       'karma-webpack',
+      'karma-ievms',
       'istanbul-instrumenter-loader'
     ],
     // web server port
