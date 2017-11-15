@@ -1,5 +1,5 @@
 <div id="edit_page">
-  <%= react_component('headerComponent', {headerProp: "helloHeader"},{prerender: false}) %>
+  <%= react_component('headerComponent', {headerProp: "helloHeader", logoutUrl: logout_path},{prerender: false}) %>
 
   <%= javascript_pack_tag 'headerComponent' %>
 </div>

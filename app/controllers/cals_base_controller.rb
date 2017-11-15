@@ -3,6 +3,13 @@ class CalsBaseController < ApplicationController
   include RedisHelper
   before_action :authenticate_with_cwds # , unless: 'Rails.env.development?'
 
+
+  def logout
+    delete_user_from_session
+    default_callback_url = ''
+    redirect_to Cwds::Authentication.logout_url(AUTHENTICATION_API_BASE_URL, default_callback_url)
+  end
+
   protected
 
   def process_items_for_persistance(items, helper, parent_id)

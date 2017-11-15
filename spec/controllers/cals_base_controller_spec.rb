@@ -24,4 +24,5 @@ describe CalsBaseController do
     process :custom, method: :get
     expect(response).to redirect_to 'www.google.com'
   end
+
 end

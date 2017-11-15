@@ -22,4 +22,8 @@ module AuthenticationProvider
              user_details['privilege'])
 =end
   end
+  
+  def delete_user_from_session
+    session.clear
+  end
 end

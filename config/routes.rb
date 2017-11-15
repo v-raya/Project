@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   # heartbeat page
   get 'heartbeat', to: 'heartbeat#show'
+  get 'logout',   to: 'cals_base#logout'
 
 
   namespace :rfa do

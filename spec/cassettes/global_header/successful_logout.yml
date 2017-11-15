@@ -1,0 +1,604 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms?expanded=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..TZtRjQDtTFWJ4iGt.The9pHFI7iDyjpVOvsAQcWdo6BLqY3vHAuHYOcUr5zPcyzRkiFD0znt9nns4dZJ4aSDitXkryoJ5OV5f3ZonpQ9V1hXTSZ98jdfkGDiOoNv9-QDliOGC-1ZrPSq2N85HBRbgV_yU9yA203PMZi423ROGhc6U5rlarj5zLWlIxAPF_61X7ExyuUqnDxlBZ0b-yN717uzbawrGg9dRbby6GEsRKbBey0rzmw_CDxA0wQSdy3F9FN4U3HRgu98gZiZTozsMZgMubVtDtx44GXxVI2Om7siB0tVm3eMleKejeLrTV98iOEIknbHWp7hfCV8tckYjh09HbJ4C_syyf4FruAaNtr01xCGshKvG-ceo9du2TBW8SkdlMyCnP-RwgsF4XyR3ZZgcQ6h5icaPCOXjlF-RqFbeOzcnzNrazevLBlVlocDYggID3Zyap3gBv9Bp2HsTIDhuW8-7bSl8jjxzSL52b6Lt4fHW3Jhew16de_y7LxA_rgPReneAmHoT8yaN2Kk-ZeN3sMFf5ORmOAHG-7GtPKUo-Rz9BeojiUnHYjJdkNo1KFYOiLu4tzHgM4nGBaozEuWBD0Y3tt56EDkDH7YgOmg7EgyAfXQROBWRlsUw1_ryfA_hoek3NdrduFAxIVps21vZKiwUwRtTPNIzlL7hoEKJINc357ofuI7k-h5Di6MF8W7z5BgcA6DoSGWcM5j38R5v42r6m1tXmcvxJgYJTRX5XYS6ed9AtSgEsjQbIY-4oVtpKE8zUNeKGytyrXK4a0UIzznpGL45tR_K4MYtHZouXrxjjrYDiJTSZWqW9qHqhtnV8GXbk8ggdewgllergd8SdkTDOYceMx91Yb2V0VNm8cg-cQ5Q_60oqIfdt54kSYDidQKBxcBoN4wctK73Ww_kJMwzPcxKagnXVbXnlIKNQCLACEW883D-hrsmis3P6gkw-JMGmw2-mWEU8Q1AKPCrWeN0tVm_Brxi0Ay0_rknBXxpzWeUWjXaeOFSK95ST9hb3PyEMvLpvjiIFG4tEe92yA.9MhfryQ3ucjw6aerzyoJKQ"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 15 Nov 2017 21:03:46 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 14-Nov-2017 21:03:46
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "id" : 181,
+            "applicants_history" : {
+              "former_spouses" : [ {
+                "first_name" : "",
+                "middle_name" : "",
+                "last_name" : "",
+                "date_of_marriage" : "3333-03-31",
+                "place_of_marriage_city" : "",
+                "place_of_marriage_end_city" : ""
+              } ],
+              "adult_children" : [ {
+                "first_name" : "",
+                "middle_name" : "",
+                "last_name" : "",
+                "relationship_to_applicants" : [ { } ],
+                "address" : {
+                  "street_address" : "",
+                  "zip" : "",
+                  "city" : ""
+                }
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 52,
+              "first_name" : "test",
+              "middle_name" : "",
+              "last_name" : "tester",
+              "other_names" : [ ],
+              "date_of_birth" : "2222-02-22",
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ {
+              "id" : 2,
+              "relationship_to_applicants" : [ {
+                "applicant_id" : 52,
+                "relationship_to_applicant" : {
+                  "value" : "Cousin",
+                  "id" : 3
+                }
+              } ],
+              "date_of_birth" : "1111-11-11"
+            } ],
+            "other_adults" : [ {
+              "id" : 2,
+              "date_of_birth" : "2222-02-22",
+              "relationship_to_applicants" : [ {
+                "applicant_id" : 52,
+                "relationship_to_applicant" : {
+                  "value" : "Niece",
+                  "id" : 4
+                }
+              } ]
+            } ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false
+          }, {
+            "id" : 168,
+            "applicants" : [ {
+              "id" : 51,
+              "first_name" : "Hello",
+              "middle_name" : "",
+              "last_name" : "Test",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ],
+              "rfa1b_form" : {
+                "id" : 14,
+                "disclosures" : [ ]
+              }
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ {
+              "id" : 1,
+              "first_name" : "Hello",
+              "last_name" : "Testing",
+              "relationship_to_applicants" : [ { } ]
+            } ],
+            "rfa1c_forms" : [ {
+              "id" : 102,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 103,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 104,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 105,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 106,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 107,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 109,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 108,
+              "child_identified" : false,
+              "identified_children" : [ {
+                "first_name" : "test",
+                "middle_name" : "",
+                "last_name" : "test",
+                "school_name" : "",
+                "school_address" : {
+                  "street_address" : "",
+                  "zip" : "",
+                  "city" : "",
+                  "type" : {
+                    "value" : "Mailing",
+                    "id" : 3
+                  }
+                },
+                "child_in_home" : false
+              } ]
+            }, {
+              "id" : 111,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 112,
+              "application_county" : {
+                "value" : "Placer",
+                "id" : 31
+              },
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 113,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 114,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 115,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 116,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            } ],
+            "child_desired" : {
+              "child_identified" : true,
+              "child_in_home" : true,
+              "preferred_ages" : [ ]
+            },
+            "is_initial_application" : false
+          }, {
+            "id" : 156,
+            "applicants" : [ {
+              "id" : 50,
+              "first_name" : "test",
+              "middle_name" : "",
+              "last_name" : "test",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ],
+              "rfa1b_form" : {
+                "id" : 6,
+                "disclosures" : [ ]
+              }
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ {
+              "id" : 98,
+              "child_identified" : false,
+              "identified_children" : [ {
+                "first_name" : "test",
+                "middle_name" : "",
+                "last_name" : "rfac",
+                "gender" : {
+                  "value" : "Male",
+                  "id" : 1
+                },
+                "county_of_jurisdiction" : {
+                  "value" : "El Dorado",
+                  "id" : 9
+                },
+                "school_grade" : {
+                  "value" : "2",
+                  "id" : 4
+                },
+                "school_name" : "weds",
+                "school_address" : {
+                  "street_address" : "",
+                  "zip" : "",
+                  "city" : "",
+                  "type" : {
+                    "value" : "Mailing",
+                    "id" : 3
+                  }
+                },
+                "child_in_home" : false
+              } ]
+            }, {
+              "id" : 99,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 100,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 101,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            } ],
+            "is_initial_application" : false
+          }, {
+            "id" : 120,
+            "residence" : {
+              "addresses" : [ {
+                "street_address" : "100",
+                "zip" : "",
+                "city" : "",
+                "type" : {
+                  "value" : "Residential",
+                  "id" : 1
+                }
+              } ],
+              "physical_mailing_similar" : false,
+              "weapon_in_home" : false,
+              "body_of_water_exist" : false,
+              "others_using_residence_as_mailing" : false
+            },
+            "applicants" : [ {
+              "id" : 49,
+              "first_name" : "Nesh",
+              "middle_name" : "",
+              "last_name" : "IE",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ {
+              "id" : 86,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 87,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 88,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 89,
+              "application_county" : {
+                "value" : "Napa",
+                "id" : 28
+              },
+              "child_identified" : false,
+              "identified_children" : [ {
+                "first_name" : "x",
+                "middle_name" : "",
+                "last_name" : "Y",
+                "school_name" : "",
+                "school_address" : {
+                  "street_address" : "",
+                  "zip" : "",
+                  "city" : "",
+                  "type" : {
+                    "value" : "Mailing",
+                    "id" : 3
+                  }
+                },
+                "child_in_home" : false
+              } ]
+            }, {
+              "id" : 90,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 95,
+              "application_county" : {
+                "value" : "Napa",
+                "id" : 28
+              },
+              "child_identified" : false,
+              "identified_children" : [ {
+                "first_name" : "X",
+                "middle_name" : "",
+                "last_name" : "Y",
+                "school_name" : "",
+                "school_address" : {
+                  "street_address" : "",
+                  "zip" : "",
+                  "city" : "",
+                  "type" : {
+                    "value" : "Mailing",
+                    "id" : 3
+                  }
+                },
+                "child_in_home" : false
+              }, {
+                "first_name" : "",
+                "middle_name" : "",
+                "last_name" : "XY",
+                "school_name" : "",
+                "school_address" : {
+                  "street_address" : "",
+                  "zip" : "",
+                  "city" : "",
+                  "type" : {
+                    "value" : "Mailing",
+                    "id" : 3
+                  }
+                },
+                "child_in_home" : false
+              } ]
+            }, {
+              "id" : 97,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 93,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            }, {
+              "id" : 110,
+              "child_identified" : false,
+              "identified_children" : [ ]
+            } ],
+            "child_desired" : {
+              "child_identified" : true,
+              "child_in_home" : false,
+              "preferred_ages" : [ ]
+            },
+            "is_initial_application" : false
+          }, {
+            "id" : 107,
+            "applicants" : [ {
+              "id" : 48,
+              "first_name" : "reading",
+              "middle_name" : "",
+              "last_name" : "yes",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ {
+              "id" : 1,
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant" : {
+                  "value" : "Cousin",
+                  "id" : 3
+                }
+              } ],
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              }
+            } ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false
+          }, {
+            "id" : 101,
+            "applicants" : [ {
+              "id" : 46,
+              "first_name" : "Testing",
+              "middle_name" : "",
+              "last_name" : "testing",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            }, {
+              "id" : 47,
+              "first_name" : "testing",
+              "middle_name" : "",
+              "last_name" : "testing 2",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false
+          }, {
+            "id" : 100,
+            "applicants" : [ {
+              "id" : 45,
+              "name_prefix" : {
+                "value" : "Miss",
+                "id" : 5
+              },
+              "first_name" : "Applicant",
+              "middle_name" : "",
+              "last_name" : "History",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false
+          }, {
+            "id" : 99,
+            "applicants" : [ {
+              "id" : 43,
+              "first_name" : "test",
+              "middle_name" : "",
+              "last_name" : "tests",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            }, {
+              "id" : 44,
+              "first_name" : "tests",
+              "middle_name" : "",
+              "last_name" : "tests 2",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false
+          }, {
+            "id" : 98,
+            "applicants" : [ {
+              "id" : 41,
+              "first_name" : "ipsum",
+              "middle_name" : "",
+              "last_name" : "lorem",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            }, {
+              "id" : 42,
+              "first_name" : "lorem",
+              "middle_name" : "",
+              "last_name" : "ipsum",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false
+          }, {
+            "id" : 95,
+            "applicants" : [ {
+              "id" : 39,
+              "first_name" : "lorem",
+              "middle_name" : "",
+              "last_name" : "ipsum",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            }, {
+              "id" : 40,
+              "first_name" : "Lorem",
+              "middle_name" : "",
+              "last_name" : "Ipsum 2",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false
+          }, {
+            "id" : 91,
+            "applicants" : [ {
+              "id" : 37,
+              "first_name" : "red",
+              "middle_name" : "",
+              "last_name" : "red",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            }, {
+              "id" : 38,
+              "first_name" : "test",
+              "middle_name" : "",
+              "last_name" : "test",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false
+          }, {
+            "id" : 71,
+            "applicants" : [ {
+              "id" : 36,
+              "first_name" : "test",
+              "middle_name" : "",
+              "last_name" : "test",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false
+          }, {
+            "id" : 34,
+            "applicants" : [ {
+              "id" : 35,
+              "first_name" : "sure",
+              "middle_name" : "",
+              "last_name" : "sure",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ ]
+            } ],
+            "minor_children" : [ ],
+            "other_adults" : [ ],
+            "rfa1c_forms" : [ ],
+            "is_initial_application" : false
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 15 Nov 2017 21:03:46 GMT
+recorded_with: VCR 3.0.3
