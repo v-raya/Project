@@ -176,7 +176,7 @@ export default class Rfa01EditView extends React.Component {
             </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-              <h3>IV. <span>Minor Children Residing in the home</span></h3>
+              <h3>IV. <span>Minor Children Residing in the Home</span></h3>
               <MinorCardsGroup
                 genderTypes={this.props.genderTypes}
                 relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
@@ -190,7 +190,7 @@ export default class Rfa01EditView extends React.Component {
             </div>
 
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-              <h3>V.<span>Other adults residing or Regularly present in the home</span></h3>
+              <h3>V.<span>Other Adults Residing or Regularly Present in the Home</span></h3>
               <p> Each adult residing or regularly present in the home must complete a Criminal Record Statement RFA 01B</p>
               <OtherAdultsCard
                 focusComponentName={this.state.focusComponentName}

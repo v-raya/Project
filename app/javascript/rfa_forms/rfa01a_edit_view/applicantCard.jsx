@@ -47,7 +47,7 @@ export default class ApplicantCard extends React.Component {
           className={this.props.getFocusClassName('AboutApplicantCard') + ' ' + 'card aboutApp-section double-gap-top'}>
 
           <div className='card-header'>
-            <span>More about Applicant</span>
+            <span>More About Applicant</span>
           </div>
           <AboutApplicant
             idPrefix={idPrefix}
