@@ -195,7 +195,7 @@ export class FosterCareHistoryFields extends React.Component {
                 selectClassName={'reusable-select'}
                 value={q1History.was_previously_licensed}
                 optionList={this.props.yesNo.items}
-                label='Have you been previously licensed, certified, or approved to provide forster care?'
+                label='Have you been previously licensed, certified, or approved to provide foster care?'
                 onChange={(event) => this.setFosterCareNestedState('foster_care_licenses_q1', 'was_previously_licensed', event.target.selectedOptions[0].value)} />
             </div>
             <div className={hiddenQ1}>
