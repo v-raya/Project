@@ -4,6 +4,7 @@ import Rfa01BOverview from './rfa01bOverview'
 import Rfa01COverview from './rfa01cOverview'
 import Lic198BOverview from './lic198bOverview'
 import CardsGroupLayout from 'components/common/cardsGroupLayout'
+import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 
 export default class Rfa01PacketList extends React.Component {
   constructor (props) {
@@ -29,6 +30,7 @@ export default class Rfa01PacketList extends React.Component {
     let applicationId = this.props.application_id
     let application = this.props.rfa_01a_application
     let rfa01BForms = this.props.rfa_01b_forms
+    let childDesired = application.child_desired
     return (
       <div>
         <CardsGroupLayout>
@@ -51,7 +53,7 @@ export default class Rfa01PacketList extends React.Component {
           <Rfa01COverview
             focusComponentName={this.state.focusComponentName}
             applicationId={applicationId}
-            application={application}
+            childDesired={childDesired}
             setFocusState={this.setFocusState}
             getFocusClassName={this.getFocusClassName} />
         </CardsGroupLayout>

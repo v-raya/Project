@@ -9,6 +9,6 @@ class Helpers::Rfa::ApplicationHelper < Helpers::ModelHelperBase
   end
 
   def all_expanded
-    Rfa::Application.all_expanded(auth_header)
+    ::Rfa::Application.all_expanded(auth_header)
   end
 end

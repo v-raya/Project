@@ -1,6 +1,6 @@
 import {urlPrefixHelper} from './url_prefix_helper.js.erb'
 
-const getCsrfToken = function getCsrfToken (value) {
+export const getCsrfToken = function getCsrfToken (value) {
   var metas = document.getElementsByTagName('meta')
   return metas[value] ? metas[value].content : ''
 }

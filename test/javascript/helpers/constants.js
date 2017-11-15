@@ -317,6 +317,17 @@ const genderTypes = Object.freeze({
   ]}
 )
 
+const schoolGrades = Object.freeze({
+  'items': [
+    {
+      'id': 1,
+      'value': 'TK'
+    }
+  ]}
+)
+
+
+
 const ethnicityTypes = Object.freeze({
   'items': [
     {
@@ -537,4 +548,4 @@ const countyTypes = Object.freeze({
     }]})
 export {siblingGroups, ageGroups, marriageTerminationReasons, relationshipToApplicantTypes,
    nameTypes, suffixTypes, prefixTypes, salaryTypes, relationshipTypes, applicantrelationTypes,
-    educationLevels, ethnicityTypes, genderTypes, stateTypes, languageTypes, residenceTypes, countyTypes }
+    educationLevels, ethnicityTypes, genderTypes, schoolGrades, stateTypes, languageTypes, residenceTypes, countyTypes }

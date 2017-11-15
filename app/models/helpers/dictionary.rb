@@ -82,6 +82,10 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     Dictionaries::FacilityType.all(auth_header)
   end
 
+  def school_grades
+    Dictionaries::SchoolGrade.all(auth_header)
+  end
+
   def facilities_dictionaries
     dictionaries = {}
     dictionaries[:county_types] = county_types
@@ -122,4 +126,13 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     return dictionaries
   end
 
+  def rfa_c01_dictioniaries
+    dictionaries = {}
+    dictionaries[:name_suffix_types] = name_suffix_types
+    dictionaries[:state_types] = state_types
+    dictionaries[:county_types] = county_types
+    dictionaries[:gender_types] = gender_types
+    dictionaries[:school_grades] = school_grades
+    return dictionaries
+  end
 end
