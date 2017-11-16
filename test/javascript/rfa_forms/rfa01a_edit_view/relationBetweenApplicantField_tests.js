@@ -24,7 +24,6 @@ describe('Verify relation between applicant', function () {
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     onChange = jasmine.createSpy('onChange')
-    // props.onChange = onChange
 
     validator = new Validator({})
 
@@ -40,8 +39,6 @@ describe('Verify relation between applicant', function () {
     />)
   })
 
-  // const aboutResidenceCard = new ShallowRenderer()
-
   it('verify relation ship state', () => {
     let relationField = relationCardComp.find('#place_of_relationship_state')
     relationField.simulate('change', {target: {selectedOptions: [{value: '1', text: 'Alabama'}]}})
@@ -55,7 +52,15 @@ describe('Verify relation between applicant', function () {
   })
 
   it('verify date_of_relationship', () => {
-    // figure out how to test, react widgets datepicker testing is broke
+    let dateOfRelationshipField = relationCardComp.find('#date_of_relationship')
+    dateOfRelationshipField.simulate('change', {target: {value: '01/01/2000'}})
+    expect(setParentStateSpy).toHaveBeenCalledWith('date_of_relationship', '2000-01-01')
+  })
+
+  it('verify date_of_relationship is not formatted for persistance when not fully entered', () => {
+    let dateOfRelationshipField = relationCardComp.find('#date_of_relationship')
+    dateOfRelationshipField.simulate('change', {target: {value: '01/01/20'}})
+    expect(setParentStateSpy).toHaveBeenCalledWith('date_of_relationship', '01-01-20')
   })
 
   it('verify place_of_relationship_city', () => {

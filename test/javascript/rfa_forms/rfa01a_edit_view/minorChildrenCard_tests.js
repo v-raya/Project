@@ -11,11 +11,6 @@ describe('Verify MinorCardFields', function () {
   }]
   const minorChildren = {
     index: 0,
-    // nameField: {
-    //   firstName: 'child1',
-    //   middleName: 'child2',
-    //   lastName: 'child 3'
-    // }
     gender: {
       'id': 0,
       'value': ''
@@ -52,36 +47,33 @@ describe('Verify MinorCardFields', function () {
   })
   it('verify Relationship field', () => {
     let relationShipField = minorChildCardComp.find('#relationship_to_applicant')
-    // spyOn(minorChildCardComp.instance(), 'onFieldChange').and.callThrough()
     relationShipField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'Sibling'}]}})
     expect(handleRelationshipTypeToApplicantSpy).toHaveBeenCalledWith(0, Object({ id: '2', value: 'Sibling' }), 'relationship_to_applicant')
   })
 
   it('verify applicantid field', () => {
     let relationShipField = minorChildCardComp.find('#applicant_id')
-    // spyOn(minorChildCardComp.instance(), 'onFieldChange').and.callThrough()
     relationShipField.simulate('change', {target: {value: '2'}})
     expect(handleRelationshipTypeToApplicantSpy).toHaveBeenCalledWith(0, '2', 'applicant_id')
   })
 
   it('verify Gender', () => {
     let relationShipField = minorChildCardComp.find('#minor_gender')
-    // spyOn(minorChildCardComp.instance(), 'onFieldChange').and.callThrough()
     relationShipField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'Female'}]}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, Object({ id: '2', value: 'Female' }), 'gender')
   })
   it('verify date of birth', () => {
-    // TODO will update when switching from react-maskedinput to cleave.js
+    let dateOfBirthField = minorChildCardComp.find('#date_of_birth')
+    dateOfBirthField.simulate('change', {target: {value: '01/01/2000'}})
+    expect(onFieldChangeSpy).toHaveBeenCalledWith(0, '2000-01-01', 'date_of_birth')
   })
   it('verify child_financially_supported field', () => {
     let relationShipField = minorChildCardComp.find('#child_financially_supported')
-    // spyOn(minorChildCardComp.instance(), 'onFieldChange').and.callThrough()
     relationShipField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'yes'}]}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, '2', 'child_financially_supported')
   })
   it('verify child adopted field', () => {
     let relationShipField = minorChildCardComp.find('#child_adopted')
-    // spyOn(minorChildCardComp.instance(), 'onFieldChange').and.callThrough()
     relationShipField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'yes'}]}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, '2', 'child_adopted')
   })

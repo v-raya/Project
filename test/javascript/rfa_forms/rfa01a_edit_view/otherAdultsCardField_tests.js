@@ -51,7 +51,9 @@ describe('Verify other adultsFields', function () {
     expect(handleRelationshipTypeToApplicantSpy).toHaveBeenCalledWith(0, '2', 'applicant_id')
   })
   it('verifies date of birth', () => {
-    // TODO will update when switching from react-maskedinput to cleave.js
+    let dateOfBirthField = otherAdultsCardComp.find('#date_of_birth')
+    dateOfBirthField.simulate('change', {target: {value: '01/01/2000'}})
+    expect(onFieldChangeSpy).toHaveBeenCalledWith(0, '2000-01-01', 'date_of_birth')
   })
   it('verifies first name field', () => {
     let firstNameField = otherAdultsCardComp.find('#firstName')

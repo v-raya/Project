@@ -55,10 +55,6 @@ describe('Verify other adults Component View', function () {
     })
   })
 
-  it('verify date of birth', () => {
-  // TODO will update when switching from react-maskedinput to cleave.js
-  })
-
   describe('Verify other adults Component View', () => {
     it('has class name', function () {
       expect(component.find('.card-body').length).toEqual(1)

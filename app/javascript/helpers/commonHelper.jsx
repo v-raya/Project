@@ -18,31 +18,35 @@ export const removeLegalNameType = (nameTypes) => {
   delete nameTypes[2]
   return nameTypes
 }
-
 export const FormatDateForPersistance = (dateString) => {
-  dateString = dateString.replace(/_/gi, '')
   let persistantDateString
-  if (dateString && dateString.length === 10) {
-    const dateStringArray = dateString ? dateString.split('/', 3) : []
-    // we need the user input order of mm-dd-yyy to  be yyyy-mm-dd
-    persistantDateString = ([dateStringArray[2], dateStringArray[0], dateStringArray[1]]).join('-')
+  if (dateString) {
+    persistantDateString = SplitDate(dateString, '/', '-')
   } else {
     dateString = ''
   }
   return persistantDateString || dateString.replace(/\//gi, '-')
 }
 
-export const FormatDateForDisplay = (dateString) => {
+export const FormatDateForDisplay = (dateStringDisplay) => {
   let persistantDateString
-  if (dateString && dateString.length === 10) {
-    const dateStringArray = dateString ? dateString.split('-', 3) : []
-    // we need the user input order of mm-dd-yyy to  be yyyy-mm-dd
-    persistantDateString = ([dateStringArray[1], dateStringArray[2], dateStringArray[0]]).join('/')
+  if (dateStringDisplay) {
+    persistantDateString = SplitDate(dateStringDisplay, '-', '/')
   } else {
-    dateString = ''
+    dateStringDisplay = ''
   }
-  return persistantDateString || dateString.replace(/-/gi, '/')
+  return persistantDateString || dateStringDisplay.replace(/-/gi, '/')
 }
+
+export const SplitDate = (dateStringToSplit, splitChar, joinChar) => {
+  let persistantDateString
+  if (dateStringToSplit.length === 10) {
+    const dateStringArray = dateStringToSplit ? dateStringToSplit.split(splitChar, 3) : []
+    persistantDateString = ([dateStringArray[2], dateStringArray[1], dateStringArray[0]]).join(joinChar)
+  }
+  return persistantDateString
+}
+
 export const findArrayValueByMethod = (arrayToBeFiltered, method, findByType, comparedWith) => {
   return arrayToBeFiltered[method](obj => {
     return obj.get(findByType.toString()) === comparedWith
