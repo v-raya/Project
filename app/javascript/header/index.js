@@ -5,7 +5,7 @@ export default class HeaderComponent extends React.Component {
   render () {
     return (
       <div>
-        <GlobalHeader />
+        <GlobalHeader logoutUrl={this.props.logoutUrl}/>
       </div>
     )
   }
