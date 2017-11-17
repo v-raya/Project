@@ -45,7 +45,13 @@ describe('foster car card tests', function () {
     fosterCareCardComponent = shallow(<FosterCareHistoryCard {...props} />)
     fosterCareFieldsComponent = shallow(<FosterCareHistoryFields {...props} />)
   })
-
+  describe('Verify Foster Care Card Selection', () => {
+    it('select foster care card', () => {
+      let fosterCareCardComponentDiv = fosterCareCardComponent.find('#FosterCareHistorySection')
+      fosterCareCardComponentDiv.simulate('click')
+      expect(setFocusStateSpy).toHaveBeenCalledWith('FosterCareHistoryCard')
+    })
+  })
   describe('Verify all foster card Component fields', () => {
     it('verify defaults', () => {
       // main card has three div sections

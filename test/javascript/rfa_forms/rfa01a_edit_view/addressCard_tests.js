@@ -28,18 +28,44 @@ describe('Verify Address card fields', function () {
       value: 'Residential'
     }
   }
+  const mailingAddressFields = {
+    street_address: 'gate way oaks',
+    zip: '',
+    city: '',
+    state: null,
+    type: {
+      id: '2',
+      value: 'Mailing'
+    }
+  }
 
-  let setParentStateSpy, addressCardMount, setonAddressChangeSpy, addresses
+  let setParentStateSpy, addressCardMount, setonAddressChangeSpy, addresses, props
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     setonAddressChangeSpy = jasmine.createSpy('')
-    addressCardMount = mount(<AddressCard
-      setParentState={setParentStateSpy}
-      genderTypes={genderTypes.items}
-      stateTypes={stateTypes.items}
-      addresses={addresses}
-      physicalAddressFields={physicalAddressFields}
-    />)
+    props = {
+      setParentState: setParentStateSpy,
+      genderTypes: genderTypes.items,
+      stateTypes: stateTypes.items,
+      addresses: undefined,
+      physicalMailingSimilar: 'false',
+      physicalAddressFields: physicalAddressFields
+    }
+    addressCardMount = mount(<AddressCard {...props}/>)
+  })
+  it('verify Physical address card props', () => {
+    props.addresses = [physicalAddressFields]
+    addressCardMount.setProps({
+      props: props
+    })
+    expect(addressCardMount.find('.show').length).toBe(1)
+  })
+  it('verify Physical address card props', () => {
+    props.addresses = [physicalAddressFields, mailingAddressFields]
+    addressCardMount.setProps({
+      props: props
+    })
+    expect(addressCardMount.length).toBe(1)
   })
   it('verify street address', () => {
     let relationShipField = addressCardMount.find('#Residentialstreet_address').hostNodes()

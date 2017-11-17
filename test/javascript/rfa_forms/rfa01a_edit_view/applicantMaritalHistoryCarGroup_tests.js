@@ -26,7 +26,7 @@ describe('foster car card tests', function () {
   let handleRelationshipTypeToApplicantFormerSpouseSpy
   let handleRelationshipTypeToApplicantAdultChildSpy
 
-  let maritalUpdateFields
+  let maritalUpdateFields, formerSpousesDefaults 
 
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
@@ -55,7 +55,22 @@ describe('foster car card tests', function () {
         value: ''
       }
     }
-
+    formerSpousesDefaults = Object.freeze({
+      relationship_type: null,
+      applicant_id: '',
+      name_prefix: null,
+      first_name: '',
+      middle_name: '',
+      last_name: '',
+      name_suffix: null,
+      date_of_marriage: '',
+      place_of_marriage_city: '',
+      place_of_marriage_state: null,
+      marriage_termination_reason: null,
+      date_of_marriage_end: '',
+      place_of_marriage_end_city: '',
+      place_of_marriage_end_state: null
+    })
     applicantMaritalHistoryCardGroupComponent = shallow(
       <ApplicantMaritalHistoryCardGroup
         getFocusClassName={getFocusClassNameSpy}
@@ -72,11 +87,17 @@ describe('foster car card tests', function () {
     />)
   })
 
-  describe('Verify all  Component fields', () => {
+  describe('Verify all Component fields', () => {
     it('verify default layout', () => {
       expect(applicantMaritalHistoryCardGroupComponent.findWhere(n => n.type() === 'div').length).toEqual(12)
       expect(applicantMaritalHistoryCardGroupComponent.find('#applicant_marital_history_cards').children.length).toEqual(1)
       expect(applicantMaritalHistoryCardGroupComponent.find('button').length).toEqual(2)
+    })
+    it('verify add another Card', () => {
+      let addCardButton = applicantMaritalHistoryCardGroupComponent.find('button.btn').at(0)
+      spyOn(applicantMaritalHistoryCardGroupComponent.instance(), 'addMaritalHistoryCard').and.callThrough()
+      addCardButton.simulate('click', { preventDefault() {} })
+      expect(applicantMaritalHistoryCardGroupComponent.instance().addMaritalHistoryCard).toHaveBeenCalledWith([formerSpousesDefaults])
     })
   })
 })

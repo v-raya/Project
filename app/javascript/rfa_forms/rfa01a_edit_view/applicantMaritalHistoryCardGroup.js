@@ -75,8 +75,7 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
     this.props.setParentState('applicantsHistory', updatedMaritalHistory.toJS())
   }
 
-  addMaritalHistoryCard (event, formerSpouses) {
-    event.preventDefault()
+  addMaritalHistoryCard (formerSpouses) {
     let newSpouseFields = addCardAsJS(formerSpouses, formerSpousesDefaults)
     this.updateNestedCards(newSpouseFields, 'former_spouses')
   }
@@ -177,7 +176,7 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
               })
             }
             <div className='text-center'>
-              <button onClick={(event) => this.addMaritalHistoryCard(event, applicantMaritalHistories)} className='btn btn-default'>Add another Marital History +</button>
+              <button onClick={(event) => { this.addMaritalHistoryCard(applicantMaritalHistories) }} className='btn btn-default'>Add another Marital History +</button>
             </div>
           </div>
           <div className='card-header'>

@@ -15,6 +15,10 @@ describe('Verify Application List View', () => {
       setFocusState={setFocusStateSpy}
       getFocusClassName={getFocusClassNameSpy}
     />)
+  it('Verify card selection', () => {
+    rfaPacketRenderedView.props.handleOnClick()
+    expect(setFocusStateSpy).toHaveBeenCalledWith('Rfa01COverview')
+  })
   it('To Load with the correct label', () => {
     expect(rfaPacketRenderedView.props.label).toBe('Rfa-01C Section Summary')
   })

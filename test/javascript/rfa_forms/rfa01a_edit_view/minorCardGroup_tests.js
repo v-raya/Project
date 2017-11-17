@@ -4,7 +4,7 @@ import {shallow, mount} from 'enzyme'
 import {genderTypes, relationshipTypes} from '../../helpers/constants'
 import Validator from 'helpers/validator'
 describe('Verify minor children Component View', function () {
-  let component, componentMount
+  let component, componentMount, setFocusStateSpy
   let props
   const minorCardChild = {
     gender: {
@@ -26,6 +26,7 @@ describe('Verify minor children Component View', function () {
   }
 
   let setParentStateSpy = jasmine.createSpy()
+  setFocusStateSpy = jasmine.createSpy('setFocusState')
 
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
@@ -38,6 +39,7 @@ describe('Verify minor children Component View', function () {
       relationshipTypes: relationshipTypes,
       relationshipToApplicantTypes: relationshipTypes,
       setParentState: setParentStateSpy,
+      setFocusState: setFocusStateSpy,
       validator: validator
     }
 
@@ -46,6 +48,13 @@ describe('Verify minor children Component View', function () {
     )
 
     componentMount = mount(<MinorCardsGroup {...props} />)
+  })
+  describe('Verify Foster Care Card Selection', () => {
+    it('select foster care card', () => {
+      let minorsSectionDiv = component.find('#minorsSection')
+      minorsSectionDiv.simulate('click')
+      expect(setFocusStateSpy).toHaveBeenCalledWith('minorsSection')
+    })
   })
   describe('Verify minor card Component View', () => {
     it('has class name', function () {

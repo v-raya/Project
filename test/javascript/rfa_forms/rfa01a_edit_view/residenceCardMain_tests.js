@@ -18,23 +18,32 @@ describe('Verify Residence main', function () {
     home_languages: ''
   })
 
-  let setParentStateSpy, componentMount, setFocusStateSpy
+  let setParentStateSpy, componentMount, setFocusStateSpy, props
+  setParentStateSpy = jasmine.createSpy('setParentState')
+  let setResidenceStateSpy = jasmine.createSpy('setResidenceState')
+  let getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
+  setFocusStateSpy = jasmine.createSpy('setFocusState')
+  props = {
+    residence: blankResidenceFields,
+    stateTypes: stateTypes.items,
+    languageTypes: languageTypes.items,
+    setFocusState: setFocusStateSpy,
+    getFocusClassName: getFocusClassNameSpy,
+    residenceTypes: residenceTypes.items
+  }
 
   beforeEach(() => {
-    setParentStateSpy = jasmine.createSpy('setParentState')
-    let setResidenceStateSpy = jasmine.createSpy('setResidenceState')
-    let getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
-    setFocusStateSpy = jasmine.createSpy('setFocusState')
-
-    componentMount = mount(<ResidenceCards residence={blankResidenceFields}
-      stateTypes={stateTypes.items}
-      languageTypes={languageTypes.items}
-      setFocusState={setFocusStateSpy}
-      getFocusClassName={getFocusClassNameSpy}
-      residenceTypes={residenceTypes.items}
-    />)
+    componentMount = mount(<ResidenceCards {...props} />)
+  })
+  describe('verify default props', () => {
+    props.residence = undefined
+    componentMount = mount(<ResidenceCards {...props} />)
+    it('load the component', () => {
+      expect(componentMount.length).toBe(1)
+    })
   })
   describe('Verify minor card Component View', () => {
+    props.residence = blankResidenceFields
     it('verify on click address card', () => {
       let relationShipField = componentMount.find('#residentAddress')
       relationShipField.simulate('click')
