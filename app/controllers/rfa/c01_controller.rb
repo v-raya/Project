@@ -1,13 +1,8 @@
 class Rfa::C01Controller < CalsBaseController
 
-  def create
-    # TODO: GET /rfa-1a-forms/{applicationId}/rfa-1c-forms and create C01 below only if there are no existing applications
+  def index
     rfa_c01_app_response = rfa_c01_application_helper.create(params[:a01_id], '{}')
     redirect_to edit_rfa_a01_c01_path(id: rfa_c01_app_response.id, a01_id: params[:a01_id])
-  end
-
-  def index
-    @dictionaries = dictionaries_helper.rfa_c01_dictioniaries
   end
 
   def edit

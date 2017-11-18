@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..RAR4e5Djwt9LGlm6.6L-Kz1mAjW5JD0oXThR093b38N6BBaJ9vNeTxi1uInZb3QW-za55PhLY_SkApZ7wCYKSyf8QPo_A_Chn3s3C4ZxaiI2LPu4SPMszVcNb-5cEpt8vgpOJAJOXKPAuxtVBFMJSZvpAu9Zng8N4YAbEgMtvK8YyyjtK6WO8GDDFvnVTnZnfxwR1S4pcBku3_9jeOklenIlNEKlRGXD7uu89p_prPxRXByMbPp4Nh9W1Ng384WEwWwhGTaaekaYiFG5XX9oKXz4IUfNy5yM84x69Yfc2CzyDLzpBLuc-1x53Ogf8cD7G8HNJRCZtX5mc2MH86SMFwSJHdDon1vjdWFDEEdIQJTzlsHILhEeu2AOzxcDgdVspYzK9hZdR1gqUtdrmW1r1J0BlRnA-4I0rieEDtbQFbebns9g5VPkx1FniFYTRKyy9onMA3EvtpUv2bkrirH7-aRWuRvSECleuziPwnQuC1hBcf028Qns9P205FWIYW2bBZ3SnbqjWli_7IwfLjbjtQ-2xImZWMOdXVWAuQ5ur2O56rggbRWd2hMEjp8A-w__1c4ys0wfB33iAqpKn5RXCebsh-wwZ8vTIYm-qoUv2LsRfWL0zWp8Em2tl9ucdni_t65zDEV6TiGJtYyhyFa1DcJvpzaSP32HmbmQcfQhodCF8DTdCxJ26VA638dc1gO3S1Ou47Q7vWm-c1t8QQ-y9hj5SkB-Mqnp4Ukiv7r7xwJqLSml1Y84-roM1wNL-LiiK260e9aPcu0CWRWd-IG3fzKdycwHzNewY6MD_be0KETQXCXOfXXYDicN6a3XN9vqf0fj6cYJknaI1dp5WGeA-uwOeD4iXsQGdjSviryBPLarxcFQ6468vasS_LvmfXEtDm6n-rlJGtBHT81WIdZhfKltkMDw4OyQ7AFP8zvLEKectiYndhkPGxqyIV0Sbe3rr-3ODOlJrEksJV8TuAVtnVt_pwPn4ur6TwxMOr7tqfc2lnQciKYXrQh9yCA.DvcRCMNHPNV4RGopNkDiqQ"
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 17 Nov 2017 03:11:01 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 16-Nov-2017 03:11:01
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '52'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 214,
+          "is_initial_application" : false
+        }
+    http_version: 
+  recorded_at: Fri, 17 Nov 2017 03:11:02 GMT
+- request:
+    method: post
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/214/rfa-1c-forms
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..RAR4e5Djwt9LGlm6.6L-Kz1mAjW5JD0oXThR093b38N6BBaJ9vNeTxi1uInZb3QW-za55PhLY_SkApZ7wCYKSyf8QPo_A_Chn3s3C4ZxaiI2LPu4SPMszVcNb-5cEpt8vgpOJAJOXKPAuxtVBFMJSZvpAu9Zng8N4YAbEgMtvK8YyyjtK6WO8GDDFvnVTnZnfxwR1S4pcBku3_9jeOklenIlNEKlRGXD7uu89p_prPxRXByMbPp4Nh9W1Ng384WEwWwhGTaaekaYiFG5XX9oKXz4IUfNy5yM84x69Yfc2CzyDLzpBLuc-1x53Ogf8cD7G8HNJRCZtX5mc2MH86SMFwSJHdDon1vjdWFDEEdIQJTzlsHILhEeu2AOzxcDgdVspYzK9hZdR1gqUtdrmW1r1J0BlRnA-4I0rieEDtbQFbebns9g5VPkx1FniFYTRKyy9onMA3EvtpUv2bkrirH7-aRWuRvSECleuziPwnQuC1hBcf028Qns9P205FWIYW2bBZ3SnbqjWli_7IwfLjbjtQ-2xImZWMOdXVWAuQ5ur2O56rggbRWd2hMEjp8A-w__1c4ys0wfB33iAqpKn5RXCebsh-wwZ8vTIYm-qoUv2LsRfWL0zWp8Em2tl9ucdni_t65zDEV6TiGJtYyhyFa1DcJvpzaSP32HmbmQcfQhodCF8DTdCxJ26VA638dc1gO3S1Ou47Q7vWm-c1t8QQ-y9hj5SkB-Mqnp4Ukiv7r7xwJqLSml1Y84-roM1wNL-LiiK260e9aPcu0CWRWd-IG3fzKdycwHzNewY6MD_be0KETQXCXOfXXYDicN6a3XN9vqf0fj6cYJknaI1dp5WGeA-uwOeD4iXsQGdjSviryBPLarxcFQ6468vasS_LvmfXEtDm6n-rlJGtBHT81WIdZhfKltkMDw4OyQ7AFP8zvLEKectiYndhkPGxqyIV0Sbe3rr-3ODOlJrEksJV8TuAVtnVt_pwPn4ur6TwxMOr7tqfc2lnQciKYXrQh9yCA.DvcRCMNHPNV4RGopNkDiqQ"
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 17 Nov 2017 03:11:02 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 16-Nov-2017 03:11:02
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '77'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 129,
+          "child_identified" : false,
+          "identified_children" : [ ]
+        }
+    http_version: 
+  recorded_at: Fri, 17 Nov 2017 03:11:02 GMT
+recorded_with: VCR 3.0.3

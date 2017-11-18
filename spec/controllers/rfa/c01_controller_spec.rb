@@ -8,13 +8,13 @@ describe  Rfa::C01Controller, set_auth_header: true do
     allow(controller).to receive_messages(:authenticate_with_cwds => true)
   end
 
-  describe '#create' do
+  describe '#index' do
     it 'redirects to edit' do
       application_helper = Helpers::Rfa::ApplicationHelper.new(auth_header: ENV['TOKEN'])
       rfa_application_response = application_helper.create_application
 
 
-      post :create, params: {a01_id: rfa_application_response['id']}
+      post :index, params: {a01_id: rfa_application_response['id']}
       expect(response.status).to eq(302)
     end
   end
