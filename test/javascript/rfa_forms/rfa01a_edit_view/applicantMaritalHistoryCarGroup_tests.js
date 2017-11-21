@@ -26,7 +26,7 @@ describe('foster car card tests', function () {
   let handleRelationshipTypeToApplicantFormerSpouseSpy
   let handleRelationshipTypeToApplicantAdultChildSpy
 
-  let maritalUpdateFields, formerSpousesDefaults 
+  let maritalUpdateFields, formerSpousesDefaults
 
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
@@ -84,7 +84,7 @@ describe('foster car card tests', function () {
         nameTypes={nameTypes}
         stateTypes={stateTypes}
         marriageTerminationReasons={marriageTerminationReasons}
-    />)
+      />)
   })
 
   describe('Verify all Component fields', () => {
@@ -96,7 +96,7 @@ describe('foster car card tests', function () {
     it('verify add another Card', () => {
       let addCardButton = applicantMaritalHistoryCardGroupComponent.find('button.btn').at(0)
       spyOn(applicantMaritalHistoryCardGroupComponent.instance(), 'addMaritalHistoryCard').and.callThrough()
-      addCardButton.simulate('click', { preventDefault() {} })
+      addCardButton.simulate('click', { preventDefault () {} })
       expect(applicantMaritalHistoryCardGroupComponent.instance().addMaritalHistoryCard).toHaveBeenCalledWith([formerSpousesDefaults])
     })
   })

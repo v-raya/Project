@@ -20,16 +20,16 @@ describe('Render Search Inputs', function () {
   }
   const renderedComp = new ShallowRenderer()
   const compRendered = renderedComp.render(<SearchInput {...props} />)
-  const result_tag = renderedComp.getRenderOutput()
+  const resultTag = renderedComp.getRenderOutput()
 
   // it('Rendered A React Component or Not', function () {
   //     expect(TestUtils.isDOMComponent(compRendered)).toBe(true)
   // });
 
   it('render Input block', function () {
-    expect(result_tag.type).toBe('div')
+    expect(resultTag.type).toBe('div')
   })
   it('verify class name', function () {
-    expect(result_tag.props.className).toBe('search_input col-xs-12 col-sm-12 col-md-12 col-lg-12')
+    expect(resultTag.props.className).toBe('search_input col-xs-12 col-sm-12 col-md-12 col-lg-12')
   })
 })

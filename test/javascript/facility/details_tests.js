@@ -15,7 +15,7 @@ describe('Verify Facility Details', function () {
       'licensee_name': 'Lederhouse Transitions Inc.',
       'license_type': 'A',
       'assigned_worker': {
-      	value: 'Something'
+        'value': 'Something'
       },
       'district_office': {
         'number': '19',

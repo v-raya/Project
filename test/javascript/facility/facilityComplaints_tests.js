@@ -20,8 +20,8 @@ describe('Facility Complaints Section', function () {
   }
   const renderComplaints = new ShallowRenderer()
   const complaintsComp = renderComplaints.render(<FacilityComplaints {...props} />)
-  const result_Comp = complaintsComp
+  const resultComp = complaintsComp
   it('Verify Facility Complaints Table', function () {
-    expect(result_Comp.props.className).toBe('facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12')
+    expect(resultComp.props.className).toBe('facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12')
   })
 })

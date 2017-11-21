@@ -74,7 +74,7 @@ describe('Verify other adults Component View', function () {
       component.instance().addCard()
       expect(component.instance().addCard).toHaveBeenCalled()
 
-  // build data that parent should be called with
+      // build data that parent should be called with
       let newData = []
       newData[0] = OtherAdultsCard
       newData[1] = otherAdultsDefaults

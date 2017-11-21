@@ -88,7 +88,7 @@ describe('Adult Children Component', () => {
     it('Lives in Home set to true', () => {
       expect(selectLivesInHome.props().value).toBe('true')
       expect(adultChildComponent.find('select').length).toEqual(5)
-    }) 
+    })
     it('set lives in Home to No', () => {
       selectLivesInHome.simulate('change', {target: {value: false}})
       expect(onChangeSpy).toHaveBeenCalledWith('lives_in_home', false, 0)

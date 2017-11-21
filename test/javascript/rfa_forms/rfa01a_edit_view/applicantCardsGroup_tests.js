@@ -5,8 +5,8 @@ import {nameTypes, suffixTypes, prefixTypes, stateTypes, genderTypes, educationL
 import ApplicantCardsGroup from 'rfa_forms/rfa01a_edit_view/applicantCardsGroup.jsx'
 import ReactDOM from 'react-dom'
 import {shallow, mount} from 'enzyme'
-var TestUtils = require('react-dom/test-utils')
 import Validator from 'helpers/validator.js'
+var TestUtils = require('react-dom/test-utils')
 
 describe('Verify Applicant Card Group', () => {
   const isApplicantAdded = sinon.spy()
@@ -28,7 +28,7 @@ describe('Verify Applicant Card Group', () => {
     prefixTypes: prefixTypes.items,
     phoneTypes: nameTypes.items,
     salaryTypes: salaryTypes.items,
-    //applicants: applicants,
+    // applicants: applicants,
     stateTypes: stateTypes.items,
     educationLevels: educationLevels.items,
     genderTypes: genderTypes.items,
@@ -40,7 +40,7 @@ describe('Verify Applicant Card Group', () => {
   }
   let applicantRender = TestUtils.renderIntoDocument(<ApplicantCardsGroup {...props}/>)
   let renderedDOM = (componentToRender) => ReactDOM.findDOMNode(componentToRender)
-  
+
   it('Spy on Button Click doesnot call', () => {
     const addCardButton = renderedDOM(applicantRender)
     const addCardBtn = addCardButton.children[1].children[0].children[0]

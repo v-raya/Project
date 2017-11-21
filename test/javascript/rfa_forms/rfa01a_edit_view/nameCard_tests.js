@@ -3,8 +3,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {nameTypes, suffixTypes, prefixTypes} from './../../helpers/constants'
 import NameCard from 'rfa_forms/rfa01a_edit_view/nameCard'
-var TestUtils = require('react-dom/test-utils')
 import Validator from 'helpers/validator.js'
+var TestUtils = require('react-dom/test-utils')
 
 describe('Name Card Component', () => {
   let setCardState, isNameCardRemoved,
@@ -82,7 +82,7 @@ describe('Name Card Component', () => {
     let firstNameField = renderedDom.children[0].children[0].children[1].children[0].children[0].children[0].children[1]
     ReactDOM.findDOMNode(firstNameField).value = firstName
     TestUtils.Simulate.change(firstNameField, {target: {value: firstName}})
-    expect(renderedCard.props.setParentState.args[0]).toEqual(["first_name", "myName", undefined])
+    expect(renderedCard.props.setParentState.args[0]).toEqual(['first_name', 'myName', undefined])
     TestUtils.Simulate.change(firstNameField, {target: {value: firstName}})
     expect(renderedCard.props.setParentState.called).toBe(true)
   })

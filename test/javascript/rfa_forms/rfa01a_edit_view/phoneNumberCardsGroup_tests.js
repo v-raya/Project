@@ -3,8 +3,8 @@ import PhoneComponent, {blankPhoneNumberFields} from 'rfa_forms/rfa01a_edit_view
 import {PhoneNumberField} from 'components/common/phoneNumberFields'
 import {shallow, mount} from 'enzyme'
 import {phoneTypes} from './../../helpers/constants'
-var TestUtils = require('react-dom/test-utils')
 import Validator from 'helpers/validator.js'
+var TestUtils = require('react-dom/test-utils')
 
 describe('Verify Phone Card Component View', function () {
   let component
@@ -128,7 +128,7 @@ describe('Preferred logic', () => {
     component = mount(
       <PhoneComponent {...props} />
     )
-    
+
     spyOn(component.instance(), 'onPhoneFieldChange').and.callThrough()
   })
 

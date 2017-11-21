@@ -69,7 +69,7 @@ describe('foster car card tests', function () {
     it('expect set foster care nested state to be called', function () {
       const onChangeSpy = jasmine.createSpy('setFosterCareNestedState')
       const wrapper = shallow(<FosterCareHistoryFields {...props} onChange={onChangeSpy('foster_care_licenses_q1', 'was_previously_licensed', true)} />)
-      wrapper.find('#q1-select-dropdown').simulate('change', { target: { selectedOptions: [{'value': true}]}})
+      wrapper.find('#q1-select-dropdown').simulate('change', {target: {selectedOptions: [{'value': true}]}})
       wrapper.instance().setFosterCareNestedState('foster_care_licenses_q1', 'was_previously_licensed', true)
 
       spyOn(wrapper.instance(), 'setFosterCareNestedState').and.callThrough()

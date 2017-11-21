@@ -1,7 +1,6 @@
 import React from 'react'
 import AboutThisResidenceCard from 'rfa_forms/rfa01a_edit_view/aboutThisResidenceCard.jsx'
 import {languageTypes, residenceTypes} from './../../helpers/constants'
-var TestUtils = require('react-dom/test-utils')
 import {shallow, mount} from 'enzyme'
 
 describe('Verify Physical Address', function () {

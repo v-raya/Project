@@ -20,8 +20,8 @@ describe('Verify Children Component', function () {
   }
   const renderChildComp = new ShallowRenderer()
   const childComp = renderChildComp.render(<Children {...props} />)
-  const result_tag = childComp.props
+  const resultTag = childComp.props
   it('check Children table', function () {
-    expect(result_tag.className).toBe('facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12')
+    expect(resultTag.className).toBe('facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12')
   })
 })
