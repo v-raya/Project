@@ -1,12 +1,7 @@
 require 'rails_helper'
 require 'vcr'
 
-RSpec.feature 'Facilities', js: true do
-  before(:each) do
-    allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
-    allow_any_instance_of(CalsBaseController).to receive(:get_session_token).and_return(ENV['TOKEN'])
-  end
-
+RSpec.feature 'Facilities', js: true, set_auth_header: true  do
   scenario 'List of facilities from search results' do
     facilities_list
   end

@@ -17,24 +17,19 @@ require "selenium/webdriver"
 
 Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f }
 
+if ENV['SELENIUM_BROWSER'] == 'CHROME' || 'HEADLESS_CHROME'
+  js_driver = ENV['SELENIUM_BROWSER'].downcase.to_sym
+  capability_options = ENV['SELENIUM_BROWSER'] == 'HEADLESS_CHROME' ? %w[headless disable-gpu no-sandbox] : []
 
-if ENV['CHROME']
-  Capybara.register_driver :headless_chrome do |app|
+  Capybara.register_driver js_driver do |app|
     capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-      chromeOptions: { args: %w[headless disable-gpu no-sandbox] }
+        chromeOptions: {args: capability_options}
     )
     Capybara::Selenium::Driver.new app,
-      browser: :chrome,
-      desired_capabilities: capabilities
+                                   browser: :chrome,
+                                   desired_capabilities: capabilities
   end
-
-  Capybara.javascript_driver = :headless_chrome
-elsif ENV['FULL_ON_CHROME']
-  Capybara.register_driver :chrome do |app|
-    Capybara::Selenium::Driver.new app, browser: :chrome
-  end
-
-  Capybara.javascript_driver = :chrome
+  Capybara.javascript_driver = js_driver
 else
   Capybara.javascript_driver = :poltergeist
 end
@@ -48,15 +43,31 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
 
   config.before(:each, :set_auth_header => true) do
-    allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
-    allow_any_instance_of(CalsBaseController).to receive(:get_session_token).and_return(ENV['TOKEN'])
-    allow_any_instance_of(CalsBaseController).to receive(:store_token_in_redis).and_return(ENV['TOKEN'])
+    if ENV['TEST_END_TO_END']
+      visit root_path
+      authenticate_user_by_filling_in_form
+    else
+      stub_auth_tokens
+    end
     $redis.flushdb
   end
 
+  def authenticate_user_by_filling_in_form
+    if page.has_content?('Sign In')
+      fill_in('username', with: USERNAME)
+      fill_in('password', with: PASSWORD)
+      click_button 'Sign In'
+    end
+  end
+
+  def stub_auth_tokens
+    allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
+    allow_any_instance_of(CalsBaseController).to receive(:get_session_token).and_return(ENV['TOKEN'])
+    allow_any_instance_of(CalsBaseController).to receive(:store_token_in_redis).and_return(ENV['TOKEN'])
+  end
 
   # VCR Config
-  unless ENV['DISABLE_VCR']
+  unless ENV['TEST_END_TO_END'] || ENV['DISABLE_VCR']
     config.around(:each) do |example|
       options = example.metadata[:vcr] || {}
       if options[:record] == :skip
