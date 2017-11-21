@@ -18,7 +18,6 @@ ENV BASE_CALS_API_URL=http://localhost:3001/v1 \
   BASE_SEARCH_API_URL=https://dora.preint.cwds.io \
   GEO_SERVICE_URL=https://geo.preint.cwds.io \
   AUTHENTICATION_API_BASE_URL=https://web.preint.cwds.io/perry \
-  CHROME=true \
   USE_XVFB=true
 
 

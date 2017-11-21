@@ -52,7 +52,7 @@
     "dev-build": "./bin/server",
     "dev": "foreman start -f Procfile.dev;",
     "spec": "rspec spec; open reports/coverage/rspec/index.html;",
-    "spec-ci": "rspec spec;",
+    "spec-ci": "SELENIUM_BROWSER=HEADLESS_CHROME bundle exec rspec spec;",
     "karma-ci": "./bin/karma",
     "karma": "./bin/karma; open ./reports/karma_test_results.html; open ./reports/coverage/karma/index.html;",
     "karma-edge": "./bin/karma --browsers 'MSEdge - Win10'",
