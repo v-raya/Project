@@ -16,6 +16,6 @@ VCR.configure do |c|
   # end
 
   # :host, :headers
-  c.default_cassette_options = {match_requests_on: [:path, :method, :body]}
+  c.default_cassette_options = {match_requests_on: [:path, :method]}
 
 end
