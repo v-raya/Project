@@ -1,11 +1,30 @@
-// import React from 'react'
-// import {fetchRequest} from 'helpers/http'
-// var TestUtils = require('react-dom/test-utils')
+import React from 'react'
+import {fetchRequest} from 'helpers/http'
+import fetchMock from 'fetch-mock'
 
-// describe('http helper', () => {
-//   fit('validate fetchRequest', () => {
-//     const outputData = fetchRequest('http://cwds.ca.gov', 'get', {}, {})
-//     console.log(outputData)
-//     expect(outputData).toEqual('')
-//   })
-// })
+describe('test real API', () => {
+  let mockParams = {
+    data: 'home'
+  }
+  let fetchCall, url
+  beforeEach(() => {
+    url = 'http://cwds.ca.gov/geoservice/'
+    fetchMock.mock(url, {
+      body: JSON.stringify({ suggestions: [{}, {}] }),
+      status: 200,
+      headers: { 'content-type': 'application/json' }
+    })
+  })
+  afterEach(() => {
+    fetchMock.restore()
+  })
+  it('verify fetchRequest to be called with headers and body', () => {
+    fetchCall = fetchRequest('http://cwds.ca.gov/geoservice/', 'POST', mockParams)
+    expect(fetchMock.called(url)).toBe(true)
+    expect(fetchMock._matchedCalls[0][0]).toEqual(url)
+  })
+  it('verify GET Method to be called', () => {
+    fetchCall = fetchRequest('http://cwds.ca.gov/geoservice/', 'GET')
+    expect(fetchMock._matchedCalls[0][1].method).toEqual('GET')
+  })
+})

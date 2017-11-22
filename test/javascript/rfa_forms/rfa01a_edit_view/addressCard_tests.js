@@ -41,6 +41,7 @@ describe('Verify Address card fields', function () {
 
   let setParentStateSpy, addressCardMount, setonAddressChangeSpy, addresses, props
   beforeEach(() => {
+    spyOn(window, 'fetch').and.callThrough()
     setParentStateSpy = jasmine.createSpy('setParentState')
     setonAddressChangeSpy = jasmine.createSpy('')
     props = {

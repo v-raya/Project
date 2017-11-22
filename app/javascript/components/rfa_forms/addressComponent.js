@@ -62,11 +62,13 @@ AddressComponent.propTypes = {
   addressTitle: PropTypes.string.isRequired,
   addressFields: PropTypes.object.isRequired,
   stateTypes: PropTypes.array.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  suggestions: PropTypes.array.isRequired
 }
 
 AddressComponent.defaultProps = {
   addressType: '',
   placeholder: '',
-  addressTitle: 'Physical Address'
+  addressTitle: 'Physical Address',
+  suggestions: []
 }
