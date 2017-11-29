@@ -15,7 +15,10 @@ describe('Verify Residence main', function () {
     body_of_water_description: '',
     others_using_residence_as_mailing: '',
     directions_to_home: '',
-    home_languages: ''
+    home_languages: [{
+      id: '',
+      value: ''
+    }]
   })
 
   let setParentStateSpy, componentMount, setFocusStateSpy, props

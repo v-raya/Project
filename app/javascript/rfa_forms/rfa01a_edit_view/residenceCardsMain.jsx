@@ -2,6 +2,7 @@ import React from 'react'
 import Immutable from 'immutable'
 import AddressCard from './addressCard'
 import AboutThisResidenceCard from './aboutThisResidenceCard.jsx'
+import PropTypes from 'prop-types'
 
 const blankResidenceFields = Object.freeze({
   residence_ownership: '',
@@ -32,7 +33,7 @@ export default class ResidenceCards extends React.Component {
   }
 
   render () {
-    let residenceData = this.props.residence || blankResidenceFields
+    let residenceData = this.props.residence
     return (
       <div className='residence_cards'>
         <div id='residentAddress' onClick={() => this.props.setFocusState('residentAddress')}
@@ -63,4 +64,12 @@ export default class ResidenceCards extends React.Component {
       </div>
     )
   }
+}
+
+ResidenceCards.propTypes = {
+  residence: PropTypes.object.isRequired
+}
+
+ResidenceCards.defaultProps = {
+  residence: blankResidenceFields
 }

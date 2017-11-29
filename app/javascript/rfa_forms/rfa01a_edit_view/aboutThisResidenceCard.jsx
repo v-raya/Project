@@ -5,6 +5,8 @@ import {TextAreaComponent} from 'components/common/textArea'
 import {yesNo} from 'constants/constants'
 import {InputComponent} from 'components/common/inputFields'
 import {getDictionaryId, dictionaryNilSelect} from 'helpers/commonHelper.jsx'
+import MultiSelect from 'components/common/multiSelect'
+import PropTypes from 'prop-types'
 
 const othersUsingAddressMailing = Object.freeze({
   first_name: '',
@@ -90,15 +92,23 @@ export default class AboutThisResidenceCard extends React.Component {
               label='Please provide directions, including major cross-street information, to your physical adress.' placeholder=''
               onChange={(event) => this.props.setParentState('directions_to_home', event.target.value)} />
 
-            <DropDownField id='languagesSpoken' gridClassName='col-md-12'
-              selectClassName={'reusable-select'}
-              value={getDictionaryId(aboutResidence.home_languages !== undefined && aboutResidence.home_languages[0] ? aboutResidence.home_languages[0] : '')}
-              optionList={this.props.languageTypes}
-              label={'Language(s) spoken in the home'}
-              onChange={(event) => this.props.setParentState('home_languages', [dictionaryNilSelect(event.target.selectedOptions[0])])} />
+            <MultiSelect
+              label="Language(s) spoken in the home"
+              value={aboutResidence.home_languages.map((hl) => hl.value)}
+              className="languages"
+              optionList={this.props.languageTypes.map((type) => ({label: type.value, value: type.value, id: type.id}))}
+              onChange={(event) => this.props.setParentState('home_languages', event.map((e) => ({id: e.id, value: e.value})))}/>
           </form>
         </div>
       </div>
     )
   }
+}
+
+AboutThisResidenceCard.propTypes = {
+  aboutResidence: PropTypes.object.isRequired
+}
+
+AboutThisResidenceCard.defaultProps = {
+  aboutResidence: [othersUsingAddressMailing]
 }

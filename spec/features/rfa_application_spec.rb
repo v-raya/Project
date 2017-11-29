@@ -76,7 +76,13 @@ RSpec.feature 'RFA', js: true do
     fill_in('body_of_water_description', with: 'body of water goes here', :match => :prefer_exact)
     find(:select, 'others_using_residence_as_mailing').first(:option, 'Yes').select_option
     fill_in('directions', with: 'directions goes here', :match => :prefer_exact)
-    find(:select, 'languagesSpoken').first(:option, 'Arabic').select_option
+    page.find(:css, '.languages').click
+    page.find(:css, "#react-select-2--option-0").click
+    page.find(:css, '.languages').click
+    page.find(:css, "#react-select-2--option-1").click
+    expect(page).to have_css(:span, text: 'American Sign Language')
+    expect(page).to have_css(:span, text: 'Armenian')
+    #find(:select, 'languagesSpoken').first(:option, 'Arabic').select_option
     fill_in('firstname', with: Faker::Name.name, :match => :prefer_exact)
 
     click_button('Save Progress')
