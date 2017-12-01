@@ -63,7 +63,7 @@ describe('Verify Physical Address', function () {
 
   it('verify residence types address change', () => {
     let relationShipField = residenceCardComp.find('#residenceTypes')
-    relationShipField.simulate('change', {target: {selectedOptions: [{value: '1', text: 'Own'}]}})
+    relationShipField.simulate('change', {target: {options: {'1': {value: '1', text: 'Own'}, selectedIndex: 1}}})
     expect(setParentStateSpy).toHaveBeenCalledWith('residence_ownership', {id: '1', value: 'Own'})
   })
   it('verify weapons address change', () => {

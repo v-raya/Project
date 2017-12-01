@@ -10,6 +10,10 @@ export const dictionaryNilSelect = (object) => {
   return object.value !== '' ? {id: object.value, value: object.text} : null
 }
 
+export const dictionaryNilSelect2 = (object) => {
+  return object[object.selectedIndex].value !== '' ? {id: object[object.selectedIndex].value, value: object[object.selectedIndex].text} : null
+}
+
 export const checkArrayObjectPresence = (obj) => {
   return (obj && obj.length > 0) ? obj : null
 }
