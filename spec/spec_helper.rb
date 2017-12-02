@@ -23,7 +23,7 @@ SimpleCov.start 'rails' do
   add_group 'Controllers', 'app/controllers'
   add_group 'Models', 'app/models'
 
-  minimum_coverage 87
+  minimum_coverage 88
 end
 
 RSpec.configure do |config|
