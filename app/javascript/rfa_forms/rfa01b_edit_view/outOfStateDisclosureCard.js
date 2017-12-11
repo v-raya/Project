@@ -40,7 +40,7 @@ export default class OutOfStateDisclosureCard extends React.Component {
               label={Rfa01bOutOfStateDisclosureCardText.identifyStates}
               values={this.props.otherStatesOfLiving}
               optionList={this.props.stateTypes}
-              classNameId='outOfStateDisclosureCard'
+              className='outOfStateDisclosureCard'
               onChange={(event) => this.props.setParentState('other_states_of_living', event.map((e) => ({id: e.id, value: e.value})))} />
           </div>
           : null

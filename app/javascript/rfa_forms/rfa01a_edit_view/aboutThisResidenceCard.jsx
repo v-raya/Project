@@ -96,7 +96,7 @@ export default class AboutThisResidenceCard extends React.Component {
             <MultiSelect
               label='Language(s) spoken in the home'
               values={aboutResidence.home_languages}
-              classNameId='languages'
+              className='languages'
               optionList={this.props.languageTypes}
               onChange={(event) => this.props.setParentState('home_languages', event.map((e) => ({id: e.id, value: e.value})))} />
           </form>

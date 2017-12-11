@@ -6,7 +6,7 @@ const MultiSelect = ({
   label,
   values,
   optionList,
-  classNameId,
+  className,
   placeholder,
   onChange
 }) => {
@@ -14,7 +14,7 @@ const MultiSelect = ({
     <div className='col-md-12'>
       <label>{label}</label>
       <Select
-        className={classNameId}
+        className={className}
         tabSelectsValue={false}
         multi
         searchable={false}
@@ -32,7 +32,7 @@ MultiSelect.propTypes = {
   label: PropTypes.string,
   values: PropTypes.array,
   optionList: PropTypes.array,
-  classNameId: PropTypes.string,
+  className: PropTypes.string,
   onChange: PropTypes.func
 }
 
