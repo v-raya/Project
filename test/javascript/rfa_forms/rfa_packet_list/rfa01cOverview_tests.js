@@ -13,9 +13,9 @@ describe('verify Rfa01COverview with no child rendering', () => {
 
   const rfaPacketRenderedView = mount(
     <Rfa01COverview
-      focusComponentName={'Rfa01BOverview'}
-      applicationId={'10'}
-      rfa01CForm={[]}
+      focusComponentName='Rfa01BOverview'
+      applicationId='10'
+      rfa01CForm={null}
       childDesired={falseChildIdentified}
       setFocusState={setFocusStateSpy}
       getFocusClassName={getFocusClassNameSpy}
@@ -48,9 +48,9 @@ describe('verify Rfa01COverview with Create Link', () => {
   const getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
   const rfaPacketRenderedView = mount(
     <Rfa01COverview
-      focusComponentName={'Rfa01BOverview'}
-      applicationId={'10'}
-      rfa01CForm={[]}
+      focusComponentName='Rfa01BOverview'
+      applicationId='10'
+      rfa01CForm={null}
       childDesired={trueChildIdentified}
       setFocusState={setFocusStateSpy}
       getFocusClassName={getFocusClassNameSpy}
@@ -75,9 +75,9 @@ describe('verify Rfa01COverview with Edit Link', () => {
 
   const rfaPacketRenderedView = mount(
     <Rfa01COverview
-      focusComponentName={'Rfa01BOverview'}
-      applicationId={'10'}
-      rfa01CForm={[rfa01CFormId]}
+      focusComponentName='Rfa01BOverview'
+      applicationId='10'
+      rfa01CForm={rfa01CFormId}
       childDesired={trueChildIdentified}
       setFocusState={setFocusStateSpy}
       getFocusClassName={getFocusClassNameSpy}

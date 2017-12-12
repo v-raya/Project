@@ -8,7 +8,7 @@ describe('Verify RfaO1cCreateLink', () => {
     RfaO1cCreateLinkShallow = shallow(
       <Rfa01cCreateLink
         applicationId={'10'}
-        rfa01CForm={[]}
+        rfa01CForm={{}}
       />)
   })
   it('test render', () => {

@@ -8,7 +8,7 @@ const Rfa01cEditLink = ({
 }) => {
   return (
     <div id={'rfa01cEdit'}>
-      <a href={urlPrefixHelper('/rfa/a01/' + applicationId + '/c01/' + rfa01CForm[0].id + '/edit')} className='btn btn-default'>
+      <a href={urlPrefixHelper('/rfa/a01/' + applicationId + '/c01/' + rfa01CForm.id + '/edit')} className='btn btn-default'>
         <p>Edit RFA 01 C </p>
       </a>
     </div>
@@ -17,7 +17,7 @@ const Rfa01cEditLink = ({
 
 Rfa01cEditLink.propTypes = {
   applicationId: PropTypes.string,
-  rfa01CForm: PropTypes.array
+  rfa01CForm: PropTypes.object
 }
 
 export default Rfa01cEditLink

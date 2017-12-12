@@ -17,6 +17,6 @@ class Helpers::Rfa::ApplicationPacketHelper < Helpers::ModelHelperBase
   end
 
   def rfa_01c_application(application_id)
-  	return Rfa::C01::Application.find_items_by_application_id(auth_header, application_id)
+  	return Rfa::C01::Application.find_by_application_id(auth_header, application_id)
   end
 end

@@ -77,7 +77,7 @@ export default class DesiredChildCard extends React.Component {
 
         <div className='col-md-12'>
           <DateField gridClassName='col-md-4' label='Date of Placement' id={this.props.idPrefix + 'date_of_placement'}
-            value={getDictionaryId(child.date_of_placement)}
+            value={FormatDateForDisplay(child.date_of_placement)}
             onChange={(event) => this.props.setParentState('date_of_placement', FormatDateForPersistance(event.target.value), this.props.index)}
             onBlur={(event) => this.props.setParentState('date_of_placement', FormatDateForPersistance(event.target.value), this.props.index)} />
         </div>

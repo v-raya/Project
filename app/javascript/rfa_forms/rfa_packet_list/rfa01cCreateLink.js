@@ -17,7 +17,7 @@ const Rfa01cCreateLink = ({
 
 Rfa01cCreateLink.propTypes = {
   applicationId: PropTypes.string,
-  rfa01CForm: PropTypes.array
+  rfa01CForm: PropTypes.object
 }
 
 export default Rfa01cCreateLink

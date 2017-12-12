@@ -7,14 +7,12 @@ describe('Verify RfaO1cEditLink', () => {
     id: 10
   })
 
-  const rfa01CForm = [rfa01CFormId]
-
   let RfaO1cEditLinkShallow
   beforeEach(() => {
     RfaO1cEditLinkShallow = shallow(
       <Rfa01cEditLink
         applicationId={'10'}
-        rfa01CForm={rfa01CForm}
+        rfa01CForm={rfa01CFormId}
       />)
   })
   it('test render', () => {
