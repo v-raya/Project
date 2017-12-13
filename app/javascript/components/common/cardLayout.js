@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {toggleInstructionStyle} from 'constants/rfaText'
 
 const CardLayout = ({
   children,
@@ -8,6 +9,10 @@ const CardLayout = ({
   handleOnClick,
   textAlignment,
   id,
+  showHeaderLink,
+  headerToggleId,
+  headerDisplayLink,
+  onHeaderToggleClick,
   label
 }) => (
   <div className={idClassName}>
@@ -17,6 +22,14 @@ const CardLayout = ({
       id={id}>
       <div className='card-header'>
         <span>{label}</span>
+        { showHeaderLink
+          ? <div id={headerToggleId}
+            style={toggleInstructionStyle}
+            className='text-right'
+            onClick={onHeaderToggleClick}>
+            {headerDisplayLink ? 'hide' : 'view'}
+          </div>
+          : null}
       </div>
       <div className='card-body'>
         <div className='row'>

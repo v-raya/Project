@@ -4,7 +4,8 @@ import {shallow, mount} from 'enzyme'
 import {stateTypes} from '../../helpers/constants'
 
 describe('Verify out Of state disclosure card card', function () {
-  let setParentStateSpy, setDisplayStateSpy, componentMountinState, componentMountOtherState, componentShallowInState,
+  let setParentStateSpy, setDisplayStateSpy, componentMountinState, componentMountOtherState,
+    componentMountLivedOutOfState, componentShallowInState,
     setFocusStateSpy, setApplicationStateSpy, getFocusClassNameSpy
 
   beforeEach(() => {
@@ -21,7 +22,7 @@ describe('Verify out Of state disclosure card card', function () {
       getFocusClassName={getFocusClassNameSpy}
       setFocusState={setFocusStateSpy}
       setParentState={setParentStateSpy} />)
-    componentMountOtherState = mount(<OutOfStateDisclosureCard
+    componentMountLivedOutOfState = mount(<OutOfStateDisclosureCard
       livedInOtherState={false}
       otherStatesOfLiving={[]}
       stateTypes={stateTypes.items}
@@ -43,7 +44,9 @@ describe('Verify out Of state disclosure card card', function () {
     it('verify component did mount', () => {
       expect(componentMountinState.length).toEqual(1)
     })
-
+    it('verify component did mount', () => {
+      expect(componentMountLivedOutOfState.length).toEqual(1)
+    })
     it('verify set Focus State', () => {
       let cardComponent = componentMountinState.find('#outOfStateDisclosureCard').hostNodes()
       cardComponent.simulate('click')

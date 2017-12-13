@@ -17,14 +17,14 @@ describe('Verify privacyStatement card', function () {
     let getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
     onHideClickSpy = jasmine.createSpy('onHideClick')
-    componentMount = shallow(<PrivacyStatement
+    componentMount = mount(<PrivacyStatement
       privacyStatementDisplay={false}
       setDisplayState={setDisplayStateSpy}
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
       setFocusState={setFocusStateSpy}
     />)
-    componentMountShowPrivacy = shallow(<PrivacyStatement
+    componentMountShowPrivacy = mount(<PrivacyStatement
       privacyStatementDisplay
       setDisplayState={setDisplayStateSpy}
       focusComponentName={'CACriminalBackgroundCard'}

@@ -12,7 +12,7 @@ describe('Verify disclosure Instructions card', function () {
     let getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
     handleOnClickSpy = jasmine.createSpy('handleOnClick')
-    componentMount = shallow(<DisclosureInstructions
+    componentMount = mount(<DisclosureInstructions
       disclosureInstructionsDisplay={false}
       setDisplayState={setDisplayStateSpy}
       focusComponentName={'DisclosureInstructionsCard'}
@@ -20,7 +20,7 @@ describe('Verify disclosure Instructions card', function () {
       setFocusState={setFocusStateSpy}
       handleOnClick={handleOnClickSpy}
     />)
-    componentMountShowDisplay = shallow(<DisclosureInstructions
+    componentMountShowDisplay = mount(<DisclosureInstructions
       disclosureInstructionsDisplay
       setDisplayState={setDisplayStateSpy}
       focusComponentName={'DisclosureInstructionsCard'}

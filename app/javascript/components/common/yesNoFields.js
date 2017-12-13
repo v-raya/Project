@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {BinarySelectorField} from 'components/common/binarySelectorField'
+import {yesNoMarginStyle} from 'constants/rfaText'
 const YesNoRadioComponent = ({
   idPrefix,
   value,
   onFieldChange
 }) => (
-  <div className='col-md-12'>
+  <div className='col-md-12' style={yesNoMarginStyle}>
     <BinarySelectorField
       gridClassName='col-md-4'
       id={idPrefix + 'true'}

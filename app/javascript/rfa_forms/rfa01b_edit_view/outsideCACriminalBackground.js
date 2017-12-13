@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Immutable from 'immutable'
 
 import {DropDownField} from 'components/common/dropDownField'
 import CriminalFields from './criminalFields'
@@ -8,16 +9,9 @@ import CardLayout from 'components/common/cardLayout'
 import Button from 'components/common/button'
 import YesNoRadioComponent from 'components/common/yesNoFields'
 import {Rfa01bOutsideCACriminalBackgroundCardText} from 'constants/rfaText'
+import {disclosureDefaults} from 'constants/defaultFields'
 import {addCardAsJS, removeCard} from 'helpers/cardsHelper.jsx'
 
-const disclosureDefaults = Object.freeze({
-  'offense': '',
-  'offense_city': '',
-  'offense_state': {},
-  'offense_date': '',
-  'when_offense_happen': '',
-  'offense_details': ''
-})
 export default class OutsideCACriminalBackground extends React.Component {
   constructor (props) {
     super(props)
@@ -27,19 +21,20 @@ export default class OutsideCACriminalBackground extends React.Component {
   }
 
   addCard (event) {
-    this.props.setParentState('disclosures', addCardAsJS(this.props.disclosures, disclosureDefaults))
+    this.props.setParentState('convicted_in_another_state_disclosures', addCardAsJS(this.props.disclosures, disclosureDefaults))
   }
   clickClose (cardIndex) {
-    this.props.setParentState('disclosures', removeCard(this.props.disclosures, cardIndex, disclosureDefaults))
+    this.props.setParentState('convicted_in_another_state_disclosures', removeCard(this.props.disclosures, cardIndex, disclosureDefaults))
   }
-  onFieldChange (key, value) {
-    this.props.setParentState(key, value)
-    // TODO: when api is fixed we need this method to set disclosures properply -
-    // TODO: depending on the api contract layout i may be able to refactor this method to index.
+
+  onFieldChange (cardIndex, key, value) {
+    let disclosures = Immutable.fromJS(this.props.disclosures)
+    disclosures = disclosures.update(cardIndex, x => x.set(key, value))
+    this.props.setParentState('convicted_in_another_state_disclosures', disclosures.toJS())
   }
 
   render () {
-    const convictedInAnotherState = this.props.convicted_in_another_state
+    const convictedInAnotherState = this.props.convictedInAnotherState
     const disclosures = this.props.disclosures
     return (
       <CardLayout
@@ -67,7 +62,7 @@ export default class OutsideCACriminalBackground extends React.Component {
                   index={index}
                   crime={crime}
                   idPrefix='outsideCaliforniaCriminalBackground'
-                  clickClose={this.props.removeCard}
+                  clickClose={this.clickClose}
                   onFieldChange={this.onFieldChange} />
               </div>
             )
@@ -79,7 +74,7 @@ export default class OutsideCACriminalBackground extends React.Component {
             <Button
               id='outsideCACrimeAdd'
               label='Add Another Offense - Outside of California +'
-              onClick={this.props.addCard} />
+              onClick={this.addCard} />
           </div>
           : null }
       </CardLayout>

@@ -57,12 +57,11 @@ export default class ApplicantDetailsCard extends React.Component {
     residenceAddress = residenceAddress.set(key, value)
     this.props.setParentState('residence_address', residenceAddress.toJS())
   }
-  //
+
   onSelection (autofillData) {
     let residenceAddress = Immutable.fromJS(this.props.application.residence_address || residenceAddressValueDefaults)
     autofillData.state = this.props.stateTypes.find(x => x.id === autofillData.state)
-    autofillData.type = residenceAddressValueDefaults.type
-    residenceAddress = residenceAddress.update(autofillData)
+    residenceAddress = residenceAddress.update(x => autofillData)
     this.props.setParentState('residence_address', residenceAddress)
   }
 
@@ -87,13 +86,15 @@ export default class ApplicantDetailsCard extends React.Component {
         handleOnClick={() => this.props.setFocusState('applicantDetailsCard')}
         focusClassName={this.props.getFocusClassName('applicantDetailsCard') + ' ' + 'card phone-section double-gap-top'}>
         <div><p>{Rfa01bApplicantDetailsCardText.perjury}</p></div>
-        <InputComponent
-          gridClassName='col-md-12'
-          id='NameOfResourceFamily'
-          value={application.resource_family_name}
-          label='Name of Resource Family'
-          type='text'
-          onChange={(event) => this.props.setParentState('resource_family_name', event.target.value)} />
+        <div className='col-lg-12'>
+          <InputComponent
+            gridClassName='col-md-12'
+            id='NameOfResourceFamily'
+            value={application.resource_family_name}
+            label='Name of Resource Family'
+            type='text'
+            onChange={(event) => this.props.setParentState('resource_family_name', event.target.value)} />
+        </div>
         <CompleteNameFields
           index={0}
           namePrefixId='applicant_name_prefix'
@@ -109,15 +110,16 @@ export default class ApplicantDetailsCard extends React.Component {
           suffixTypes={this.props.nameSuffixTypes}
           prefixTypes={this.props.namePrefixTypes}
           onChange={this.props.setParentState} />
-        <AddressComponent
-          index={0}
-          stateTypes={this.props.stateTypes}
-          addressTitle='Residence Address'
-          id='street_address'
-          addressFields={residenceAddressValues}
-          onSelection={(suggestionData) => this.onSelection(suggestionData)}
-          onChange={(key, value) => this.onAddressChange(key, value)}
-        />
+        <div className='col-lg-12'>
+          <AddressComponent
+            index={0}
+            stateTypes={this.props.stateTypes}
+            addressTitle='Residence Address'
+            id='street_address'
+            addressFields={residenceAddressValues}
+            onSelection={(suggestionData) => this.onSelection(suggestionData)}
+            onChange={(key, value) => this.onAddressChange(key, value)}
+          /></div>
         <div className='col-lg-12'>
           <InputComponent
             gridClassName='col-md-4'

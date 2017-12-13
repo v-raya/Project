@@ -4,7 +4,7 @@ import {shallow, mount} from 'enzyme'
 
 describe('Verify californiaCriminalBackground card', function () {
   let setStateSpy, setParentStateSpy, setDisplayStateSpy,
-    componentMount, setFocusStateSpy, onHideClickSpy, componentMountWitoutDisclosures,
+    componentMount, setFocusStateSpy, onHideClickSpy, componentMountWithoutDisclosures,
     getFocusClassNameSpy, addCardSpy, clickCloseSpy, onFieldChangeSpy
 
   let disclosures = [{
@@ -40,7 +40,7 @@ describe('Verify californiaCriminalBackground card', function () {
       setFocusState={setFocusStateSpy}
       setParentState={setParentStateSpy} />)
 
-    componentMountWitoutDisclosures = mount(<CaliforniaCriminalBackground
+    componentMountWithoutDisclosures = mount(<CaliforniaCriminalBackground
       convictedInCalifornia
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
@@ -71,10 +71,15 @@ describe('Verify californiaCriminalBackground card', function () {
     })
 
     it('onClick event shows lived in other state multi select', () => {
-      let cardComponent = componentMountWitoutDisclosures.find('input[type="radio"]')
+      let cardComponent = componentMountWithoutDisclosures.find('input[type="radio"]')
       let trueComponent = cardComponent.find('#californiaCriminalBackgroundRadiotrue')
       trueComponent.simulate('change', {target: {checked: false}})
       expect(setParentStateSpy).toHaveBeenCalledWith('convicted_in_california', false)
+    })
+    it('onchange sets disclosures ', () => {
+      let cardComponent = componentMountWithoutDisclosures.find('#californiaCriminalBackgroundoffenseReason').hostNodes()
+      cardComponent.simulate('change', {target: {value: 'testing'}})
+      expect(setParentStateSpy).toHaveBeenCalledWith('convicted_in_california_disclosures', [ Object({ offense: 'testing', offense_city: '', offense_state: Object({ value: 'California', id: 'CA' }), offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
   })
 })

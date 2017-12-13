@@ -17,15 +17,13 @@ export default class DisclosureInstructions extends React.Component {
         textAlignment='left'
         label='Disclosure Instructions (Must read before section II is completed)'
         handleOnClick={() => this.props.setFocusState('DisclosureInstructionsCard')}
-        focusClassName={this.props.getFocusClassName('DisclosureInstructionsCard') + ' ' + 'card phone-section double-gap-top'}>
+        focusClassName={this.props.getFocusClassName('DisclosureInstructionsCard') + ' ' + 'card phone-section double-gap-top'}
+        showHeaderLink
+        headerToggleId='disclosureInstructionsToggle'
+        headerDisplayLink={this.props.disclosureInstructionsDisplay}
+        onHeaderToggleClick={() => this.props.setDisplayState('disclosureInstructionsDisplay',
+          !this.props.disclosureInstructionsDisplay)}>
         <div>
-          <div id='disclosureInstructionsToggle'
-            style={toggleInstructionStyle}
-            className='text-right'
-            onClick={() => this.props.setDisplayState('disclosureInstructionsDisplay',
-              !this.props.disclosureInstructionsDisplay)}>
-            {this.props.disclosureInstructionsDisplay ? 'hide' : 'view'}
-          </div>
           {
             this.props.disclosureInstructionsDisplay
               ? <div className='row list-item'>

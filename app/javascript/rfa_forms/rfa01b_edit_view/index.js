@@ -18,15 +18,6 @@ import Validator from 'helpers/validator'
 
 // import '../rfa01a_edit_view/stylesheets/cards-main.scss'
 
-export const DisclosureDefaults = Object.freeze({
-  'offense': '',
-  'offense_city': '',
-  'offense_state': {},
-  'offense_date': '',
-  'when_offense_happen': '',
-  'offense_details': ''
-})
-
 export default class Rfa01bList extends React.Component {
   constructor (props) {
     super(props)
@@ -35,6 +26,7 @@ export default class Rfa01bList extends React.Component {
     this.setFocusState = this.setFocusState.bind(this)
     this.setApplicationState = this.setApplicationState.bind(this)
     this.setDisplayState = this.setDisplayState.bind(this)
+
     this.validator = new Validator({})
     this.validator.validateFieldSetErrorState = this.validateFieldSetErrorState.bind(this)
 
@@ -126,7 +118,7 @@ export default class Rfa01bList extends React.Component {
                 county={countyValue}
                 CountyList={this.props.countyTypes}
                 onFieldChange={(event) => this.setApplicationState('application_county',
-                  dictionaryNilSelect(event.target.selectedOptions[0]))} />
+                  dictionaryNilSelect(event.target.options))} />
             </CardsGroupLayout>
 
             <CardsGroupLayout>
@@ -155,18 +147,16 @@ export default class Rfa01bList extends React.Component {
               <CaliforniaCriminalBackground
                 convictedInCalifornia={this.state.application.convicted_in_california}
                 disclosures={this.state.application.convicted_in_california_disclosures}
-                onDisclosureChange={this.onDisclosureChange}
                 focusComponentName={this.state.focusComponentName}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState} />
             </CardsGroupLayout>
 
-            {/* <CardsGroupLayout>
+            <CardsGroupLayout>
               <OutsideCACriminalBackground
                 convictedInAnotherState={this.state.application.convicted_in_another_state}
-                disclosures={this.state.application.disclosures}
-                onDisclosureChange= {this.onDisclosureChange}
+                disclosures={this.state.application.convicted_in_another_state_disclosures}
                 focusComponentName={this.state.focusComponentName}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState}
@@ -176,13 +166,12 @@ export default class Rfa01bList extends React.Component {
             <CardsGroupLayout>
               <CrimeBackgroundAgainstCohabitant
                 arrestedForCrime={this.state.application.arrested_for_crime}
-                disclosures={this.state.application.disclosures}
-                onDisclosureChange= {this.onDisclosureChange}
+                disclosures={this.state.application.arrested_for_crime_disclosures}
                 focusComponentName={this.state.focusComponentName}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState} />
-            </CardsGroupLayout> */}
+            </CardsGroupLayout>
 
             <CardsGroupLayout>
               <PrivacyStatement

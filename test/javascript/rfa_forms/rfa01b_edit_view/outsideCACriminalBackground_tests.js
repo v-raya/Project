@@ -3,7 +3,8 @@ import OutsideCACriminalBackground from 'rfa_forms/rfa01b_edit_view/outsideCACri
 import {shallow, mount} from 'enzyme'
 
 describe('Verify OutsideCACriminalBackground card', function () {
-  let setParentStateSpy, setDisplayStateSpy, componentMount, setFocusStateSpy
+  let setParentStateSpy, setDisplayStateSpy, componentMount,
+    componentMountWithoutDisclosures, setFocusStateSpy
 
   let disclosures = [{
     'offense': 'test',
@@ -20,6 +21,14 @@ describe('Verify OutsideCACriminalBackground card', function () {
 
     componentMount = mount(<OutsideCACriminalBackground
       convictedInAnotherState={false}
+      disclosures={disclosures}
+      focusComponentName={'CACriminalBackgroundCard'}
+      getFocusClassName={getFocusClassNameSpy}
+      setFocusState={setFocusStateSpy}
+      setParentState={setParentStateSpy} />)
+
+    componentMountWithoutDisclosures = mount(<OutsideCACriminalBackground
+      convictedInAnotherState
       disclosures={disclosures}
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
@@ -46,6 +55,19 @@ describe('Verify OutsideCACriminalBackground card', function () {
       let trueComponent = cardComponent.find('#outsideCACriminalBackgroundtrue')
       trueComponent.simulate('change', {target: {checked: true}})
       expect(setParentStateSpy).toHaveBeenCalledWith('convicted_in_another_state', true)
+    })
+
+    it('onClick event shows lived in other state multi select', () => {
+      let cardComponent = componentMountWithoutDisclosures.find('input[type="radio"]')
+      let trueComponent = cardComponent.find('#outsideCACriminalBackgroundtrue')
+      trueComponent.simulate('change', {target: {checked: false}})
+      expect(setParentStateSpy).toHaveBeenCalledWith('convicted_in_another_state', false)
+    })
+
+    it('onchange sets disclosures ', () => {
+      let cardComponent = componentMountWithoutDisclosures.find('#outsideCaliforniaCriminalBackgroundoffenseReason').hostNodes()
+      cardComponent.simulate('change', {target: {value: 'testing'}})
+      expect(setParentStateSpy).toHaveBeenCalledWith('convicted_in_another_state_disclosures', [ Object({ offense: 'testing', offense_city: 'test', offense_state: Object({ }), when_offense_happen: 'test', offense_details: 'test' }) ])
     })
   })
 })

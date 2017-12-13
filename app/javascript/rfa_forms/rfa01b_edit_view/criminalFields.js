@@ -10,8 +10,10 @@ import Button from 'components/common/button'
 export default class CriminalFields extends React.Component {
   render () {
     const crime = this.props.crime
+
     return (
-      <div>
+      <div className='row'>
+        <hr />
         <div>
           <span onClick={() => this.props.clickClose(this.props.index)} className='pull-right glyphicon glyphicon-remove' />
         </div>

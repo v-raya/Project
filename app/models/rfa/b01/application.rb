@@ -6,7 +6,7 @@ class Rfa::B01::Application < CalsBase
     :ssn, :date_of_birth, :driver_license, :signature, :application_date,
     :applicant_name_prefix, :applicant_name_suffix, :application_county,
     :residence_address, :other_states_of_living, :convicted_in_california_disclosures,
-    :driver_license_state
+    :driver_license_state, :arrested_for_crime_disclosures, :convicted_in_another_state_disclosures
 
 
   def self.api_resource_path

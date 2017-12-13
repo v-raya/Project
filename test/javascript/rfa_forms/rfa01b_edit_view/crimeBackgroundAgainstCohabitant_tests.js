@@ -3,7 +3,7 @@ import CrimeBackgroundAgainstCohabitant from 'rfa_forms/rfa01b_edit_view/crimeBa
 import {shallow, mount} from 'enzyme'
 
 describe('Verify crimeBackgroundAgainstCohabitant card', function () {
-  let setParentStateSpy, getFocusClassNameSpy, setDisplayStateSpy, componentMount, setFocusStateSpy, componentMountWitoutDisclosures
+  let setParentStateSpy, getFocusClassNameSpy, setDisplayStateSpy, componentMount, setFocusStateSpy, componentMountWithoutDisclosures
 
   let disclosures = [{
     'offense': 'test',
@@ -26,7 +26,7 @@ describe('Verify crimeBackgroundAgainstCohabitant card', function () {
       setFocusState={setFocusStateSpy}
       setParentState={setParentStateSpy} />)
 
-    componentMountWitoutDisclosures = mount(<CrimeBackgroundAgainstCohabitant
+    componentMountWithoutDisclosures = mount(<CrimeBackgroundAgainstCohabitant
       arrestedForCrime
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
@@ -49,10 +49,15 @@ describe('Verify crimeBackgroundAgainstCohabitant card', function () {
     })
 
     it('onClick event shows lived in other state multi select', () => {
-      let cardComponent = componentMountWitoutDisclosures.find('input[type="radio"]')
+      let cardComponent = componentMountWithoutDisclosures.find('input[type="radio"]')
       let trueComponent = cardComponent.find('#crimeBackgroundAgainstCohabitantRadiotrue')
       trueComponent.simulate('change', {target: {checked: false}})
       expect(setParentStateSpy).toHaveBeenCalledWith('arrested_for_crime', false)
+    })
+    it('onchange sets disclosures ', () => {
+      let cardComponent = componentMountWithoutDisclosures.find('#crimeBackgroundAgainstCohabitantoffenseReason').hostNodes()
+      cardComponent.simulate('change', {target: {value: 'testing'}})
+      expect(setParentStateSpy).toHaveBeenCalledWith('arrested_for_crime_disclosures', [ Object({ offense: 'testing', offense_city: '', offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
   })
 })

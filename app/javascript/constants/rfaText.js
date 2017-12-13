@@ -44,9 +44,14 @@ const toggleInstructionStyle = Object.freeze({
   textDecoration: 'underline'
 })
 
+const yesNoMarginStyle = Object.freeze({
+  marginBottom: '20px'
+})
+
 export {Rfa01bDisclosureInstructions,
   Rfa01bPrivacyStatement,
   toggleInstructionStyle,
+  yesNoMarginStyle,
   Rfa01bOutOfStateDisclosureCardText,
   Rfa01bApplicantDetailsCardText,
   Rfa01bCaliforniaCriminalBackGroundCardText,
