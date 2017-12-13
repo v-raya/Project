@@ -16,21 +16,23 @@ class Rfa::B01Controller < CalsBaseController
 
   def update
     rfa_b01_application_helper.update(params[:application][:id],
-       params[:application_id], params[:application].to_json)
+       params[:application_id], b01_params.to_json)
   end
 
   private
 
   def b01_params
-    params.require(:b01).permit(:id, :lived_in_other_state, :convicted_in_california,
+    params.require(:application).permit(:id, :lived_in_other_state, :convicted_in_california,
                                 :convicted_in_another_state, :arrested_for_crime, :resource_family_name,
                                 :applicant_first_name, :applicant_middle_name, :applicant_last_name,
                                 :ssn, :date_of_birth, :driver_license, :signature, :application_date,
                                 applicant_name_prefix:  %i[id value], applicant_name_suffix: %i[id value],
                                 application_county:  %i[id value], driver_license_state:  %i[id value],
-                                residence_address: %i[street_address zip city state: %i[id value] type: %i[id value]],
+                                residence_address: [:street_address, :zip, :city, state: %i[id value]],
                                 other_states_of_living: [%i[id value]],
-                                disclosures: [%i[offense offense_city offense_date when_offense_happen offense_details signature application_date offense_state: %i[id value]]])
+                                convicted_in_california_disclosures: [%i[offense offense_city offense_date when_offense_happen offense_details]],
+                                arrested_for_crime_disclosures: [%i[offense offense_city offense_date when_offense_happen offense_details ]],
+                                convicted_in_another_state_disclosures: [%i[offense offense_city offense_date when_offense_happen offense_details ]])
   end
 
   def rfa_b01_application_helper
