@@ -8,7 +8,7 @@ const InputDataBlock = ({
 }) => {
   return (
     <div className={'input_data col-xs-12' + ' ' + 'col-sm-' + columnWidth + ' ' + 'col-md-' + columnWidth + ' ' + 'col-lg-' + columnWidth}>
-      <div className='input_lable'>
+      <div>
         <span>{title}</span>
       </div>
       {children}

@@ -7,6 +7,7 @@ class QueryPreprocessor
     values = params.values
     keys = params.keys
     # if more than 1 field selected, we need to generate combinations
+    # if empty, it should get out & return no val
     combinations = values[0].product(*values[1..-1])
     # map combinations of values to keys and create hashes
     combinations.map { |p| Hash[keys.zip p] }

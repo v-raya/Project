@@ -79,10 +79,6 @@ export default class Search extends React.Component {
     let searchArray = this.state.searchData[0] ? this.state.searchData : false
     return (
       <div className='search_page'>
-        <div className='header_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <div className='header-logo' />
-          <a href={this.state.landingPageUrl} className='btn btn-default btn-lg active pull-right back-button' role='button'>Back</a>
-        </div>
         <div className='search-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <SearchInput
             sendSearchInput={this.addSearchInput.bind(this)}

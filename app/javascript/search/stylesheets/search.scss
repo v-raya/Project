@@ -98,7 +98,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: 17px;
 }
 .field_search .search_block button {
-  padding: 0px;
+  padding: 15px;
   width: 100%;
 }
 .field_search .search_block button img {
@@ -224,4 +224,9 @@ input[type=number]::-webkit-outer-spin-button {
   height: 20px;
   width: 50px;
   margin-left: 20px;
+}
+.searchSelect
+{
+  background-color: white !important;
+  padding: 0.5rem 0.7rem;
 }
