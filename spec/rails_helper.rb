@@ -7,35 +7,12 @@ require File.expand_path('../../config/environment', __FILE__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
-require 'capybara/rspec'
-require 'capybara/poltergeist'
-require "selenium/webdriver"
 
 # Add additional requires below this line. Rails is not loaded until this point!
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # ActiveRecord::Migration.maintain_test_schema!
 
 Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f }
-
-if ENV['SELENIUM_BROWSER'] == 'CHROME' || 'HEADLESS_CHROME'
-  js_driver = ENV['SELENIUM_BROWSER'].downcase.to_sym
-  capability_options = ENV['SELENIUM_BROWSER'] == 'HEADLESS_CHROME' ? %w[headless disable-gpu no-sandbox] : []
-
-  Capybara.register_driver js_driver do |app|
-    capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-        chromeOptions: {args: capability_options}
-    )
-    Capybara::Selenium::Driver.new app,
-                                   browser: :chrome,
-                                   desired_capabilities: capabilities
-  end
-  Capybara.javascript_driver = js_driver
-else
-  Capybara.javascript_driver = :poltergeist
-end
-
-# Capybara.app = eval("Rack::Builder.new {( " + File.read(File.dirname(__FILE__) + '/../config.ru') + "\n )}")
-Capybara.app = Rack::Builder.parse_file(File.expand_path('../../config.ru', __FILE__)).first
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
@@ -55,7 +32,7 @@ RSpec.configure do |config|
   def authenticate_user_by_filling_in_form
     if page.has_content?('Sign In')
       fill_in('username', with: USERNAME)
-      fill_in('password', with: PASSWORD)
+      # fill_in('password', with: PASSWORD)
       click_button 'Sign In'
     end
   end
@@ -78,7 +55,5 @@ RSpec.configure do |config|
       end
     end
   end
-
-  ## WebMock.allow_net_connect!
 
 end

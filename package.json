@@ -54,6 +54,7 @@
     "dev": "foreman start -f Procfile.dev;",
     "spec": "rspec spec; open reports/coverage/rspec/index.html;",
     "spec-ci": "SELENIUM_BROWSER=HEADLESS_CHROME bundle exec rspec spec;",
+    "spec-ie": "SELENIUM_BROWSER=INTERNET_EXPLORER bundle exec rspec spec;",
     "karma-ci": "./bin/karma",
     "karma": "./bin/karma; open ./reports/karma_test_results.html; open ./reports/coverage/karma/index.html;",
     "karma-edge": "./bin/karma --browsers 'MSEdge - Win10'",
@@ -62,6 +63,7 @@
     "all-tests": "./bin/karma;  npm run spec;",
     "spec-end2end-features": "TEST_END_TO_END=true SELENIUM_BROWSER=HEADLESS_CHROME rspec spec/features",
     "spec-end2end-features-chrome": "TEST_END_TO_END=true SELENIUM_BROWSER=CHROME rspec spec/features",
+    "spec-end2end-features-ie": "TEST_END_TO_END=true SELENIUM_BROWSER=INTERNET_EXPLORER rspec spec/features",
     "postinstall": "npm rebuild node-sass",
     "rebuild-assets": "rake tmp:cache:clear; rm -rf public/assets public/packs public/packs-test; rails assets:precompile RAILS_ENV=test"
   },
