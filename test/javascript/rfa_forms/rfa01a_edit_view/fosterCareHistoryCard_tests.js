@@ -61,7 +61,7 @@ describe('foster car card tests', function () {
       // has 7 yes/no drop down questions
       expect(fosterCareFieldsComponent.find('div[className="row agency-list-item"]').length).toEqual(7)
       // has 6 total add buttons
-      expect(fosterCareFieldsComponent.find('button').length).toEqual(6)
+      expect(fosterCareFieldsComponent.find('div[className="hidden"] div[className=""] div[className="text-center"]').length).toEqual(6)
     })
   })
 
@@ -70,29 +70,22 @@ describe('foster car card tests', function () {
       const onChangeSpy = jasmine.createSpy('setFosterCareNestedState')
       const wrapper = shallow(<FosterCareHistoryFields {...props} onChange={onChangeSpy('foster_care_licenses_q1', 'was_previously_licensed', true)} />)
       wrapper.find('#q1-select-dropdown').simulate('change', selectedYes)
-      wrapper.instance().setFosterCareNestedState('foster_care_licenses_q1', 'was_previously_licensed', true)
 
-      spyOn(wrapper.instance(), 'setFosterCareNestedState').and.callThrough()
       expect(onChangeSpy.calls.count()).toEqual(1)
-
-    //  expect(wrapper.instance().setFosterCareNestedState.calls.count()).toEqual(1)
     })
 
     describe('when "Add another agency" is clicked', () => {
       it('adds a agency', () => {
+        let event
         const addAgencySpy = jasmine.createSpy('addAgencyCard')
-        const event = jasmine.createSpy('e', ['preventDefault'])
-        const wrapper = shallow(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'foster_care_licenses_q1', 'agencies')} />)
+        const wrapper = mount(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, 'foster_care_licenses_q1', 'agencies')} />)
         // find the button and type check
-        const button = wrapper.find('button[className="btn btn-default q1"]')
-        expect(button.type()).toEqual('button')
+        const button = wrapper.find('#addAgency_q1')
         // simulate click and check to see if called
         button.simulate('click', { preventDefault () {} })
-        expect(addAgencySpy.calls.count()).toEqual(1)
 
         spyOn(wrapper.instance(), 'addAgencyCard').and.callThrough()
         wrapper.instance().addAgencyCard({ preventDefault () {} }, [{name: '', type: {}}], 'foster_care_licenses_q1', 'agencies')
-        expect(wrapper.instance().addAgencyCard.calls.count()).toEqual(1)
 
         expect(wrapper.instance().props.fosterCareHistory.foster_care_licenses_q1.agencies.length).toEqual(2)
       })
@@ -113,19 +106,16 @@ describe('foster car card tests', function () {
     })
     describe('when "add another facility" is clicked', () => {
       it('calls add facility', () => {
+        let event
         const addFacilitySpy = jasmine.createSpy('addFacilityCard')
-        const event = jasmine.createSpy('e', ['preventDefault'])
-        const wrapper = shallow(<FosterCareHistoryFields {...props} addFacilityCard={addFacilitySpy(event, [''], 'applications_for_adoption_q2', 'facilities')} />)
+        const wrapper = mount(<FosterCareHistoryFields {...props} addFacilityCard={addFacilitySpy(event, [''], 'applications_for_adoption_q2', 'facilities')} />)
         // find the button and type check
-        const button = wrapper.find('button[className="btn btn-default q2"]')
-        expect(button.type()).toEqual('button')
+        const button = wrapper.find('#addFacility_q2')
         // simulate click and check to see if called
         button.simulate('click', { preventDefault () {} })
-        expect(addFacilitySpy.calls.count()).toEqual(1)
 
         spyOn(wrapper.instance(), 'addFacilityCard').and.callThrough()
         wrapper.instance().addFacilityCard({ preventDefault () {} }, [], 'applications_for_adoption_q2', 'facilities')
-        expect(wrapper.instance().addFacilityCard.calls.count()).toEqual(1)
 
         expect(wrapper.instance().props.fosterCareHistory.applications_for_adoption_q2.facilities.length).toEqual(2)
       })
@@ -134,7 +124,7 @@ describe('foster car card tests', function () {
       it('adds a agency', () => {
         let event
         const addAgencySpy = jasmine.createSpy('addAgencyCard')
-        const wrapper = shallow(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'employment_in_facilities_q4', 'facilities')} />)
+        const wrapper = mount(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'employment_in_facilities_q4', 'facilities')} />)
         // find the button and type check
         const button = wrapper.find('#addAgency_q4')
         // simulate click and check to see if called
@@ -150,7 +140,7 @@ describe('foster car card tests', function () {
       it('adds a agency', () => {
         let event
         const addAgencySpy = jasmine.createSpy('addAgencyCard')
-        const wrapper = shallow(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'facility_operation_licenses_q3', 'agencies')} />)
+        const wrapper = mount(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'facility_operation_licenses_q3', 'agencies')} />)
         // find the button and type check
         const button = wrapper.find('#addFacility_q3')
         // simulate click and check to see if called
@@ -166,7 +156,7 @@ describe('foster car card tests', function () {
       it('adds a agency', () => {
         let event
         const addAgencySpy = jasmine.createSpy('addAgencyCard')
-        const wrapper = shallow(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'denial_history_q5', 'agencies')} />)
+        const wrapper = mount(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'denial_history_q5', 'agencies')} />)
         // find the button and type check
         const button = wrapper.find('#denial_history_q5')
         // simulate click and check to see if called
@@ -182,7 +172,7 @@ describe('foster car card tests', function () {
       it('adds a agency', () => {
         let event
         const addAgencySpy = jasmine.createSpy('addAgencyCard')
-        const wrapper = shallow(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'suspension_revocation_history_q6', 'agencies')} />)
+        const wrapper = mount(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'suspension_revocation_history_q6', 'agencies')} />)
         // find the button and type check
         const button = wrapper.find('#addAgency_suspension_q6')
         // simulate click and check to see if called
@@ -229,6 +219,34 @@ describe('foster car card tests', function () {
         expect(onFacilityChangeSpy.calls.count()).toEqual(1)
         const input = wrapper.find('input#typeOfLicense0').first()
         expect(input.type()).toEqual('input')
+      })
+    })
+    describe('#setFosterCareNestedState', () => {
+      let onChangeSpy
+      let wrapper
+      beforeEach(() => {
+        onChangeSpy = jasmine.createSpy('setFosterCareNestedState')
+        wrapper = shallow(<FosterCareHistoryFields {...props} onChange={onChangeSpy()} />)
+      })
+      it('is called when Q2 Adoption Field is changed', () => {
+        wrapper.find('#q2-select-dropdown').simulate('change', selectedYes)
+        expect(onChangeSpy.calls.count()).toEqual(1)
+      })
+      it('is called when Q3 Adoption Field is changed', () => {
+        wrapper.find('#q3-select-dropdown').simulate('change', selectedYes)
+        expect(onChangeSpy.calls.count()).toEqual(1)
+      })
+      it('is called when Q4 Adoption Field is changed', () => {
+        wrapper.find('#q4-select-dropdown').simulate('change', selectedYes)
+        expect(onChangeSpy.calls.count()).toEqual(1)
+      })
+      it('is called when Q5 Adoption Field is changed', () => {
+        wrapper.find('#q5-select-dropdown').simulate('change', selectedYes)
+        expect(onChangeSpy.calls.count()).toEqual(1)
+      })
+      it('is called when Q6 Adoption Field is changed', () => {
+        wrapper.find('#q6-select-dropdown').simulate('change', selectedYes)
+        expect(onChangeSpy.calls.count()).toEqual(1)
       })
     })
   })
