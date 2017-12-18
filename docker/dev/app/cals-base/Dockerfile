@@ -1,7 +1,7 @@
 
-# version 0.4
+# version 0.5
 
-FROM ruby:latest
+FROM ruby:2.4.2
 
 RUN gem install rails \
   && gem install puma
