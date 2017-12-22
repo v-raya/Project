@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 22 Dec 2017 18:21:16 GMT
+      - Fri, 22 Dec 2017 18:21:10 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:16
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:10
         GMT
       vary:
       - Accept-Encoding
@@ -221,7 +221,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 18:21:16 GMT
+  recorded_at: Fri, 22 Dec 2017 18:21:10 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
@@ -243,9 +243,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 22 Dec 2017 18:21:16 GMT
+      - Fri, 22 Dec 2017 18:21:10 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:16
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:10
         GMT
       vary:
       - Accept-Encoding
@@ -389,7 +389,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 18:21:16 GMT
+  recorded_at: Fri, 22 Dec 2017 18:21:10 GMT
 - request:
     method: post
     uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
@@ -410,9 +410,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 22 Dec 2017 18:21:17 GMT
+      - Fri, 22 Dec 2017 18:21:11 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:11
         GMT
       content-length:
       - '7013'
@@ -450,7 +450,7 @@ http_interactions:
         at GH. (name unknown) Staff did nothing to stop this.  Staff told Miguel not
         to say anything. Miguel called his mother and told her this.","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":"U"},{"complaint_code":"3","allegation":"","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":""}]}]}}]}}'
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 18:21:17 GMT
+  recorded_at: Fri, 22 Dec 2017 18:21:11 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/300665437
@@ -472,9 +472,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 22 Dec 2017 18:21:17 GMT
+      - Fri, 22 Dec 2017 18:21:11 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:11
         GMT
       vary:
       - Accept-Encoding
@@ -563,7 +563,7 @@ http_interactions:
           "annual_visit_year" : 12
         }
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 18:21:17 GMT
+  recorded_at: Fri, 22 Dec 2017 18:21:11 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/300665437/children
@@ -585,9 +585,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 22 Dec 2017 18:21:17 GMT
+      - Fri, 22 Dec 2017 18:21:11 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:11
         GMT
       vary:
       - Accept-Encoding
@@ -663,7 +663,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 18:21:17 GMT
+  recorded_at: Fri, 22 Dec 2017 18:21:11 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/300665437/complaints
@@ -685,9 +685,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 22 Dec 2017 18:21:17 GMT
+      - Fri, 22 Dec 2017 18:21:11 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:11
         GMT
       vary:
       - Accept-Encoding
@@ -739,5 +739,5 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 18:21:17 GMT
+  recorded_at: Fri, 22 Dec 2017 18:21:11 GMT
 recorded_with: VCR 3.0.3

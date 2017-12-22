@@ -25,6 +25,12 @@ RSpec.feature 'Facilities', js: true, set_auth_header: true  do
     expect(page).to have_text('Approved')
   end
 
+  scenario 'click into facility and show children' do
+    facilities_list
+    click_link('Lederhouse Transitions')
+    expect(page).to have_text('Takahashi')
+  end
+
   def facilities_list
     visit search_index_path
     fill_in 'Enter Facility Name', with: 'Lederhouse Transitions'
