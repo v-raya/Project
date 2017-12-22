@@ -56,6 +56,7 @@ describe('Verify Child Desired Comp', () => {
       validator={validator}
     />)
   })
+
   it('verify component load', () => {
     let componentId = childDesiredComp.find('#DesiredChildSection')
     expect(componentId.length).toBe(1)
@@ -65,5 +66,16 @@ describe('Verify Child Desired Comp', () => {
     let componentId = childDesiredComp.find('#DesiredChildSection')
     componentId.simulate('click')
     expect(setFocusStateSpy).toHaveBeenCalledWith('ChildDesiredMain')
+  })
+
+  it('adds a card', () => {
+    spyOn(childDesiredComp.instance(), 'addCard').and.callThrough()
+    childDesiredComp.instance().addCard()
+    expect(childDesiredComp.instance().addCard).toHaveBeenCalled()
+  })
+  it('removes a card', () => {
+    spyOn(childDesiredComp.instance(), 'clickClose').and.callThrough()
+    childDesiredComp.instance().clickClose()
+    expect(childDesiredComp.instance().clickClose).toHaveBeenCalled()
   })
 })

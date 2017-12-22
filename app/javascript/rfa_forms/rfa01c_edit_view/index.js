@@ -93,7 +93,7 @@ export default class Rfa01cList extends React.Component {
                 county={countyValue}
                 CountyList={this.props.countyTypes}
                 onFieldChange={(event) => this.setApplicationState('application_county',
-                  dictionaryNilSelect(event.target.selectedOptions[0]))}/>
+                  dictionaryNilSelect(event.target.options))}/>
             </div>
             <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <h2>VII.<span>Desired Child</span></h2>

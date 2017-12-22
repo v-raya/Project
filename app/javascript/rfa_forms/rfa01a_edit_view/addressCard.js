@@ -62,8 +62,6 @@ export default class AddressCard extends React.Component {
   onSelection (autoFillData, typeString) {
     let addressData = this.checkAddressType(typeString)
     autoFillData.type = addressData.blankAddressFields.type
-    autoFillData.state = this.props.stateTypes.find(x => x.id === autoFillData.state)
-
     let data = addressData.data
     data = data.update(addressData.index, x => autoFillData)
     this.props.setParentState('addresses', data.toJS())
@@ -86,7 +84,7 @@ export default class AddressCard extends React.Component {
               id='street_address'
               addressType={physicalAddressType}
               addressFields={physicalAddressFields}
-              onSelection={(suggestionData) => this.onSelection(suggestionData, physicalAddressType)}
+              onSelection={(autoFillData) => this.onSelection(autoFillData, physicalAddressType)}
               onChange={(fieldId, event) => this.onAddressChange(physicalAddressType, fieldId, event)}
             />
             <DropDownField gridClassName='col-md-6' selectClassName='reusable-select' id='mailing_similar'
@@ -102,7 +100,7 @@ export default class AddressCard extends React.Component {
                 id='street_address'
                 addressType={mailingAddressType}
                 addressFields={mailingAddressFields}
-                onSelection={(suggestionData) => this.onSelection(suggestionData, mailingAddressType)}
+                onSelection={(autoFillData) => this.onSelection(autoFillData, mailingAddressType)}
                 onChange={(fieldId, event) => this.onAddressChange(mailingAddressType, fieldId, event)}
               />
             </div>

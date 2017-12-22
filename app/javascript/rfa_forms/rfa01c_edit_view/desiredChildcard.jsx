@@ -5,7 +5,7 @@ import {TextAreaComponent} from 'components/common/textArea'
 import {DropDownField} from 'components/common/dropDownField'
 import {DateField} from 'components/common/dateFields'
 import CompleteNameFields from './../rfa01a_edit_view/completeNameField'
-import CommonAddressFields from 'components/rfa_forms/commonAddressField'
+import AddressComponent from 'components/rfa_forms/addressComponent'
 import {dictionaryNilSelect, getDictionaryId, FormatDateForPersistance, FormatDateForDisplay} from 'helpers/commonHelper.jsx'
 import {arrayLastToFirst, checkForNameValidation} from 'helpers/cardsHelper.jsx'
 import {yesNo} from 'constants/constants'
@@ -55,7 +55,7 @@ export default class DesiredChildCard extends React.Component {
           lastName={child.last_name}
           nameSuffix={child.name_suffix}
           namePrefix={child.name_prefix}
-          suffixTypes={this.props.suffixTypes || []}
+          suffixTypes={this.props.suffixTypes}
           onChange={(key, event) => this.props.setParentState(key, event, this.props.index)} />
         <div className='col-md-12'>
           <DateField gridClassName='col-md-4' label='Date of Birth' id={this.props.idPrefix + 'date_of_birth'}
@@ -107,13 +107,15 @@ export default class DesiredChildCard extends React.Component {
             type='text'
             onChange={(event) => this.props.setParentState('school_name',
               event.target.value, this.props.index)} />
-          <CommonAddressFields
-            id='street_address'
-            index={0}
-            addressTitle='Address'
+          <AddressComponent
+            index={this.props.index}
             stateTypes={this.props.stateTypes}
+            addressTitle='Address'
+            id='street_address'
             addressFields={child.school_address}
-            onChange={(fieldId, event) => this.handleAddressChange(fieldId, event, this.props.index)} />
+            onSelection={(autofillData) => this.props.setParentState('school_address', autofillData, this.props.index)}
+            onChange={(fieldId, event) => this.handleAddressChange(fieldId, event, this.props.index)}
+          />
         </div>
       </form>
     )
