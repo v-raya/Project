@@ -5,6 +5,24 @@ export const disclosureDefaults = Object.freeze({
   'when_offense_happen': '',
   'offense_details': ''
 })
+export const addressDefaults = Object.freeze({
+  street_address: '',
+  zip: '',
+  city: '',
+  state: null,
+  type: null
+})
+
+export const phoneDefaults = Object.freeze({
+  relation: '',
+  type: '',
+  number: ''
+})
+
+export const facilityDataDefaults = Object.freeze({
+  addresses: [addressDefaults],
+  phones: [phoneDefaults]
+})
 
 export const blankIdentifiedChild = Object.freeze({
   first_name: '',

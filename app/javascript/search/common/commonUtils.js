@@ -8,22 +8,30 @@ export const addressStringValueOrNa = (addresses) => {
   }
 }
 
-export const fullAddressString = (addressObject) => {
-  return addressObject.street_address + ',' + addressObject.city + ',' + addressObject.state + ' ' + addressObject.zip_code
+export const fullAddressString = (address) => {
+  return address.street_address + ',' + address.city + ',' + address.state + ' ' + address.zip_code
+}
+
+export const stringForCityStateZip = (address) => {
+  return address.address.city + ',' + ' ' + address.address.state + ' ' + address.address.zip_code
 }
 
 export const phoneNumberOrNa = (phone) => {
   if (phone.length > 0) {
-    return createPhoneNumber(phone[0])
+    return formatPhoneNumberForDashes(phone[0])
   } else {
     return 'N/A'
   }
 }
 
-export const createPhoneNumber = (phoneObject) => {
-  return phoneObject.number.replace(/(\d{3})(\d{3})(\d{4})/, '($1)-$2-$3')
+export const formatPhoneNumberForDashes = (phone) => {
+  return phone.number.replace(/(\d{3})(\d{3})(\d{4})/, '($1)-$2-$3')
 }
 
 export const checkForNA = (object) => {
-  return object ? object.value : 'N/A'
+  return (object && object.value) ? object.value : 'N/A'
+}
+
+export const checkValueForNull = (value) => {
+  return value == null ? 'N/A' : value
 }
