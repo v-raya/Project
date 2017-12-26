@@ -81,6 +81,7 @@ export default class NameCard extends React.Component {
                   index={index}
                   namePrefixId='name_prefix'
                   nameSuffixId='name_suffix'
+                  nameTypeId='name_type'
                   firstNameId='first_name'
                   middleNameId='middle_name'
                   lastNameId='last_name'
@@ -89,6 +90,7 @@ export default class NameCard extends React.Component {
                   lastName={nameCardFields.last_name}
                   nameSuffix={nameCardFields.name_suffix}
                   namePrefix={nameCardFields.name_prefix}
+                  nameType={nameCardFields.name_type}
                   onChange={this.handleNameChange}
                   nameTypes={removeLegalNameType(this.props.nameTypes)}
                   suffixTypes={this.props.suffixTypes}
