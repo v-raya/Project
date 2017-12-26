@@ -18,10 +18,11 @@ RSpec.feature 'RFA01C', js: true do
     find(:select, 'child_identified').first(:option, 'Yes').select_option
     find(:select, 'child_in_home').first(:option, 'Yes').select_option
     click_button('Save Progress')
-    url = URI.parse(current_url)
-    packet_url = url.path.gsub('/edit', '') + '/packet'
-    visit page.driver.current_url
+
+    packet_url = current_url.gsub('/edit', '') + '/packet'
+    visit current_url
     visit packet_url
+
     page.find('#Rfa01COverview').find('a.btn.btn-default').click
     fill_in('first_name', with: first_name, :match => :prefer_exact)
     fill_in('middle_name', with: 'k', :match => :prefer_exact)
