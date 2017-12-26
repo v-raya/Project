@@ -57,8 +57,7 @@ export const findArrayValueByMethod = (arrayToBeFiltered, method, findByType, co
     return obj.get(findByType.toString()) === comparedWith
   })
 }
-// export const filterArrayValueByMethod = (arrayToBeFiltered, method, id) => {
-//   return arrayToBeFiltered[method](obj => {
-//     return obj.get('id') !== id
-//   })
-// }
+
+export const getCountyValue = (application, user) => {
+  return getDictionaryId(application.application_county) || (user && user.county_code)
+}
