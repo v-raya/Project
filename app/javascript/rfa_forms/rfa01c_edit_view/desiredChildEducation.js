@@ -1,7 +1,7 @@
 import React from 'react'
 import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
-import CommonAddressFields from 'components/rfa_forms/commonAddressField'
+import AddressComponent from 'components/rfa_forms/addressComponent'
 import {dictionaryNilSelect, getDictionaryId} from 'helpers/commonHelper.jsx'
 import PropTypes from 'prop-types'
 
@@ -30,13 +30,15 @@ const DesiredChildEducation = ({
       label='Name of School'
       type='text'
       onChange={(event) => setParentState(index, 'school_name', event.target.value)} />
-    <CommonAddressFields
-      id='street_address'
-      index={0}
-      addressTitle='Address'
+    <AddressComponent
+      index={index}
       stateTypes={stateTypes}
+      addressTitle='Address'
+      id='street_address'
       addressFields={child.school_address}
-      onChange={(fieldId, event) => handleAddressChange(fieldId, event, index)} />
+      onSelection={(autofillData) => setParentState(index, 'school_address', autofillData)}
+      onChange={(fieldId, event) => handleAddressChange(fieldId, event, index)}
+    />
   </div>
 )
 
