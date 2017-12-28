@@ -2,6 +2,7 @@ import React from 'react'
 import Immutable from 'immutable'
 import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
+import YesNoRadioComponent from 'components/common/yesNoFields'
 import {yesNo} from 'constants/constants'
 import {getDictionaryId, dictionaryNilSelect, dictionaryNilSelectValue, findArrayValueByMethod} from 'helpers/commonHelper.jsx'
 import AddressComponent from 'components/rfa_forms/addressComponent.js'
@@ -87,12 +88,13 @@ export default class AddressCard extends React.Component {
               onSelection={(autoFillData) => this.onSelection(autoFillData, physicalAddressType)}
               onChange={(fieldId, event) => this.onAddressChange(physicalAddressType, fieldId, event)}
             />
-            <DropDownField gridClassName='col-md-6' selectClassName='reusable-select' id='mailing_similar'
-              value={mailingAddress}
-              text={this.props.physicalMailingSimilar}
-              optionList={yesNo.items}
-              label='Mailing address the same as Physical Address?'
-              onChange={(event) => this.props.setParentState('physical_mailing_similar', dictionaryNilSelectValue(event.target.options))} />
+            <div>
+              <YesNoRadioComponent
+                label='Mailing address the same as Physical Address?'
+                idPrefix='mailing_similar'
+                value={mailingAddress}
+                onFieldChange={(event) => this.props.setParentState('physical_mailing_similar', event.target.value)} />
+            </div>
             <div className={hiddenMailingSameAsPhysical}>
               <AddressComponent
                 stateTypes={this.props.stateTypes}

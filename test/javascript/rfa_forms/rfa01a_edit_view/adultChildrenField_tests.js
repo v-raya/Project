@@ -113,12 +113,12 @@ describe('Adult Children Component', () => {
   describe('verify lives in Home logic', () => {
     let selectLivesInHome, selectLivesInHomeForNotInHomeChild
     beforeEach(() => {
-      selectLivesInHome = adultChildComponent.find('select').at(4)
-      selectLivesInHomeForNotInHomeChild = adultChildNotInHomeComponent.find('select').at(4)
+      selectLivesInHome = adultChildComponent.find('input[type="radio"]').at(0)
+      selectLivesInHomeForNotInHomeChild = adultChildNotInHomeComponent.find('input[type="radio"]').at(0)
     })
     it('Lives in Home set to true', () => {
       expect(selectLivesInHome.props().value).toBe('true')
-      expect(adultChildComponent.find('select').length).toEqual(5)
+      expect(adultChildComponent.find('select').length).toEqual(4)
     })
 
     it('set lives in Home to No', () => {
@@ -127,8 +127,8 @@ describe('Adult Children Component', () => {
     })
 
     it('Lives in Home set to false as props', () => {
-      expect(selectLivesInHomeForNotInHomeChild.props().value).toBe('false')
-      expect(adultChildNotInHomeComponent.find('select').length).toEqual(6)
+      expect(selectLivesInHomeForNotInHomeChild.props().value).toBe('true')
+      expect(adultChildNotInHomeComponent.find('select').length).toEqual(5)
     })
 
     it('set lives in Home to true', () => {
@@ -137,7 +137,7 @@ describe('Adult Children Component', () => {
     })
     it('Lives in Home set to true', () => {
       expect(selectLivesInHome.props().value).toBe('true')
-      expect(adultChildNotInHomeComponent.find('select').length).toEqual(6)
+      expect(adultChildNotInHomeComponent.find('select').length).toEqual(5)
     })
   })
 })

@@ -3,6 +3,7 @@ import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
 import {DateField} from 'components/common/dateFields'
 import CompleteNameFields from './completeNameField.jsx'
+import YesNoRadioComponent from 'components/common/yesNoFields'
 import {yesNo} from 'constants/constants'
 import {getDictionaryId, dictionaryNilSelect, FormatDateForDisplay, FormatDateForPersistance} from 'helpers/commonHelper.jsx'
 import {handleRelationshipTypeToApplicant, setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
@@ -52,15 +53,11 @@ export default class AdultChildrenFields extends React.Component {
               prefixTypes={this.props.prefixTypes} />
           </div>
         </div>
-        <DropDownField
-          gridClassName='col-md-4'
-          selectClassName='reusable-select'
-          label={'Lives in home?'}
-          id={this.props.idPrefix + 'lives_in_home'}
-          optionList={yesNo.items}
+        <YesNoRadioComponent
+          label='Lives in home?'
+          idPrefix={this.props.idPrefix + 'lives_in_home'}
           value={adultChild.lives_in_home}
-          onChange={(event) => this.props.changeAdultChild('lives_in_home',
-            event.target.value, this.props.index)} />
+          onFieldChange={(event) => this.props.changeAdultChild('lives_in_home', event.target.value, this.props.index)} />
 
         { livesInHome ? (<div />)
           : (<div>

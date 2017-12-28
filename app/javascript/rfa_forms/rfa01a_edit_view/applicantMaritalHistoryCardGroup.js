@@ -152,7 +152,7 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
               applicantMaritalHistories.map((applicantMaritalHistory, index) => {
                 return (
                   <div key={'formerSpouse' + '[' + index + ']'} className='row list-item' >
-                    <div> <span onClick={(event) => this.onMaritalHistoryClickClose(index)} className='pull-right glyphicon glyphicon-remove' />
+                    <div> <a onClick={(event) => this.onMaritalHistoryClickClose(index)} className='pull-right remove-btn'>Remove</a>
                     </div>
                     { <ApplicantMaritalHistoryCard
                       index={index}
@@ -187,8 +187,8 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
                 return (
 
                   <div key={'adultChild' + '[' + index + ']'} className='row list-item' >
-                    <div> <span onClick={() => this.onAdultChildClickClose(index)} className='pull-right glyphicon glyphicon-remove' />
-                    </div>
+                    <a onClick={() => this.onAdultChildClickClose(index)} className='pull-right remove-btn'>Remove</a>
+
                     { <AdultChildrenFields
                       index={index}
                       idPrefix={'applicantsHistory.adult_children' + '[' + index + '].'}

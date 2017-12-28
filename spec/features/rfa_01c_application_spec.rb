@@ -15,8 +15,8 @@ RSpec.feature 'RFA01C', js: true do
     fill_in('first_name', with: first_name, :match => :prefer_exact)
     fill_in('middle_name', with: 'k', :match => :prefer_exact)
     fill_in('last_name', with: last_name, :match => :prefer_exact)
-    find(:select, 'child_identified').first(:option, 'Yes').select_option
-    find(:select, 'child_in_home').first(:option, 'Yes').select_option
+    find('#child_identifiedYes').click
+    find('#child_in_homeYes').click
     click_button('Save Progress')
 
     packet_url = current_url.gsub('/edit', '') + '/packet'

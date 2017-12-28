@@ -75,8 +75,8 @@ export default class NameCard extends React.Component {
           nameCardsList && this.props.nameFields.other_names.map((nameCardFields, index) => {
             return (
               <div key={index} className='row list-item'>
-                <span onClick={(event) => this.removeCard(index)}
-                  className='pull-right glyphicon glyphicon-remove' />
+                <a onClick={(event) => this.removeCard(index)}
+                  className='pull-right remove-btn'>Remove</a>
                 <CompleteNameFields
                   index={index}
                   namePrefixId='name_prefix'

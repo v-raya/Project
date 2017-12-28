@@ -10,7 +10,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..mNFA_drxU0e06_l0.o55hir7QsdyByrNWs9MO4Wr2R-YspsMOQSRSwLOrHSBTaAcZHbm1oz7vKk7Y5skWolyFlBvcXdL6ruvR8NaqSPhJ_kLyi1fMuFeehuIuY2U9BOnie67_LxiqctKmXb0b2z8EOv4HIf23bVn8bTj68EZcbtW7zbAs8JXfj0XbIr-LE6oJVPn3d9F6b3bg39RhnOqz4cfUiNPSmd-Q0GQ-LjSrz1aTaDKV0Gb4GWIhgRn_9nN3AUnpRMS8X00O-KfSWghlRq9MwspktrJ36VTxkccDTBgE3_b6hgjK3CMp9yAYgllPlbkcfgJ1QC-FzYBmpEK-kFWpmO8MouMuzQbjY9RKE75Qb0SSM2thOq8GJ5HsNsOjBR6xV-k_mNNjOgVWhNFrv75W_DNrY4dm6XJwPqWEZ70v9HAcVrrm3oLhznIwkDlEQlC4UNsvclaceY4ZLahYENzCC-EagRuuXVbLjfeVVV2Py72bnwgzkgekHBwJ3nkxuavRnUEZGfTycc0rUn850r3kfJpyWXInJ5s65cP4Zzfuc2f8JM0LEBei7bhXxivDEinnlp35BWcJYYr7vW41TzOXdIygZNFlxakbQthjSItOqQVTE3H1WgZx0XVvx8sfhsIOtJDcu5h08WaJlGZ918oJXNAguhSecq4T1qpdZbptmfxYgcyc1fQ6DVusg1dovB2k8IM4mq2TnTiJhY2UzXK8GDFv-qEsKL9BXPsZxLTx_adOLc70kwJxSeeo0jhaXZwnX1FARznyImc9K7MHB3599M4T2vUWuTPhiLMnnJWx8DA1ZAQ9PAJxdwQnrz2UKLJnxcE4W-pvl3GKQTYJhBAZ9NUObiVHKd6MSfrG5udhcgifkMCU7BJWLOabcxRry895fPAhB5Z__q-ndgrvvV6X5rpvuQYuZ4G3hbRAzOFQ7e3cRSDa_lFieHgZKsI9Xg-2muDTRjEAMapuGV3erSbMVeB8cMhDMm-Aiuf_XJzy5ANA8y5X2hdxiA.BUsezYm3cQdkMkZVFzj33g"
+      - "..idFiTkLOJH8zbRim.rbzUJw3e0EEOnrF67_E7vByPkN2RJNCZTXFfEEad8npUnarcnMu4TjcH_UhTKtvvG6RIYle13OBUx1f6lv-rOsie27YmrVYWIbgwnbbjxlgcwW0yOYQaBgnJrFTRIJCj5308YrP97EFhJK-My0qlXabPAjLKkNCg17G6ExjRIDbpGSDUcgFTo69mv34Wc7Kxhiw9zBbthO2DGPxfq4IwsrLV6303RnywoubU3-TNbp7rXvJUwdiIDC5BkYmwvlQkZ0HvgjGJFklHU_61NUyCbGL_a4CPSYbHyNDiuvgpF3qczC5q-cVqGlMAvIKsNDE39GJXslt-uLbNaBNqzQbCIHIYfUg3s3xrI3kS6exePA1kvC2-4mOmZNDNp5NrdjO2XTTW3LXkpMIOUWOTWHC4CMwDKQI_rsw-kCAI2eIabR73FWIJ5kM6kwdbibNdo5GW1_oIh5Ru1C6vzP4HKKzp8YoXXmE_EYvVnpuazy78iypyZQ8LF-fWoMZBtkPwaAy5vO4icooOa3EbE2N8qRgZcITwHDa_7osWcFnI9Vu9vwxC3RKmseIrGpBnQ4yzfz4m1IvF9gnVUWbriohCJc6V89yhzC9C_EcdY-XQyiB8JdW8nm7UPXUCDCtSv87MTiSuYy2mpU_Jt5scqQody1qEaXj0VzY_iTDRhzPq4j4sKvPwqL6Yjz7hK-4aNvihGVnR1EhX0gYz7CY5arLUKLj5nR5nc-H91wHIl6GUfTuPNv_4nn-itRmbBOwnmMbjK3oA3JA0EK1WFnj9rnekx49hGmzAqCJx_r7YolGFtHkJwfItTNk7a37CsUzCnVaARv8lMnBL0Ygjg1sK7psFo5fwgVsChuj61x7wOb7UpOXO7a0tu7XaPRs45BVUkjDND2fNG1n-h9HpsTPDzKhNPD1X9Z-5Gx_kFf5wfUmzzfLyFw7OoS7BJ7pXqk20M9Y3gqGd4yd4l4bMpnQQSnpqlztD_Or-6M3-5prrLtuD23uI7w.1GiUon_173Ze3w2KUEimkQ"
   response:
     status:
       code: 200
@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 22 Dec 2017 18:21:10 GMT
+      - Tue, 26 Dec 2017 17:17:33 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:10
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 25-Dec-2017 17:17:33
         GMT
       vary:
       - Accept-Encoding
@@ -221,7 +221,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 18:21:10 GMT
+  recorded_at: Tue, 26 Dec 2017 17:17:34 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
@@ -232,7 +232,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..mNFA_drxU0e06_l0.o55hir7QsdyByrNWs9MO4Wr2R-YspsMOQSRSwLOrHSBTaAcZHbm1oz7vKk7Y5skWolyFlBvcXdL6ruvR8NaqSPhJ_kLyi1fMuFeehuIuY2U9BOnie67_LxiqctKmXb0b2z8EOv4HIf23bVn8bTj68EZcbtW7zbAs8JXfj0XbIr-LE6oJVPn3d9F6b3bg39RhnOqz4cfUiNPSmd-Q0GQ-LjSrz1aTaDKV0Gb4GWIhgRn_9nN3AUnpRMS8X00O-KfSWghlRq9MwspktrJ36VTxkccDTBgE3_b6hgjK3CMp9yAYgllPlbkcfgJ1QC-FzYBmpEK-kFWpmO8MouMuzQbjY9RKE75Qb0SSM2thOq8GJ5HsNsOjBR6xV-k_mNNjOgVWhNFrv75W_DNrY4dm6XJwPqWEZ70v9HAcVrrm3oLhznIwkDlEQlC4UNsvclaceY4ZLahYENzCC-EagRuuXVbLjfeVVV2Py72bnwgzkgekHBwJ3nkxuavRnUEZGfTycc0rUn850r3kfJpyWXInJ5s65cP4Zzfuc2f8JM0LEBei7bhXxivDEinnlp35BWcJYYr7vW41TzOXdIygZNFlxakbQthjSItOqQVTE3H1WgZx0XVvx8sfhsIOtJDcu5h08WaJlGZ918oJXNAguhSecq4T1qpdZbptmfxYgcyc1fQ6DVusg1dovB2k8IM4mq2TnTiJhY2UzXK8GDFv-qEsKL9BXPsZxLTx_adOLc70kwJxSeeo0jhaXZwnX1FARznyImc9K7MHB3599M4T2vUWuTPhiLMnnJWx8DA1ZAQ9PAJxdwQnrz2UKLJnxcE4W-pvl3GKQTYJhBAZ9NUObiVHKd6MSfrG5udhcgifkMCU7BJWLOabcxRry895fPAhB5Z__q-ndgrvvV6X5rpvuQYuZ4G3hbRAzOFQ7e3cRSDa_lFieHgZKsI9Xg-2muDTRjEAMapuGV3erSbMVeB8cMhDMm-Aiuf_XJzy5ANA8y5X2hdxiA.BUsezYm3cQdkMkZVFzj33g"
+      - "..idFiTkLOJH8zbRim.rbzUJw3e0EEOnrF67_E7vByPkN2RJNCZTXFfEEad8npUnarcnMu4TjcH_UhTKtvvG6RIYle13OBUx1f6lv-rOsie27YmrVYWIbgwnbbjxlgcwW0yOYQaBgnJrFTRIJCj5308YrP97EFhJK-My0qlXabPAjLKkNCg17G6ExjRIDbpGSDUcgFTo69mv34Wc7Kxhiw9zBbthO2DGPxfq4IwsrLV6303RnywoubU3-TNbp7rXvJUwdiIDC5BkYmwvlQkZ0HvgjGJFklHU_61NUyCbGL_a4CPSYbHyNDiuvgpF3qczC5q-cVqGlMAvIKsNDE39GJXslt-uLbNaBNqzQbCIHIYfUg3s3xrI3kS6exePA1kvC2-4mOmZNDNp5NrdjO2XTTW3LXkpMIOUWOTWHC4CMwDKQI_rsw-kCAI2eIabR73FWIJ5kM6kwdbibNdo5GW1_oIh5Ru1C6vzP4HKKzp8YoXXmE_EYvVnpuazy78iypyZQ8LF-fWoMZBtkPwaAy5vO4icooOa3EbE2N8qRgZcITwHDa_7osWcFnI9Vu9vwxC3RKmseIrGpBnQ4yzfz4m1IvF9gnVUWbriohCJc6V89yhzC9C_EcdY-XQyiB8JdW8nm7UPXUCDCtSv87MTiSuYy2mpU_Jt5scqQody1qEaXj0VzY_iTDRhzPq4j4sKvPwqL6Yjz7hK-4aNvihGVnR1EhX0gYz7CY5arLUKLj5nR5nc-H91wHIl6GUfTuPNv_4nn-itRmbBOwnmMbjK3oA3JA0EK1WFnj9rnekx49hGmzAqCJx_r7YolGFtHkJwfItTNk7a37CsUzCnVaARv8lMnBL0Ygjg1sK7psFo5fwgVsChuj61x7wOb7UpOXO7a0tu7XaPRs45BVUkjDND2fNG1n-h9HpsTPDzKhNPD1X9Z-5Gx_kFf5wfUmzzfLyFw7OoS7BJ7pXqk20M9Y3gqGd4yd4l4bMpnQQSnpqlztD_Or-6M3-5prrLtuD23uI7w.1GiUon_173Ze3w2KUEimkQ"
   response:
     status:
       code: 200
@@ -243,9 +243,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 22 Dec 2017 18:21:10 GMT
+      - Tue, 26 Dec 2017 17:17:34 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:10
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 25-Dec-2017 17:17:34
         GMT
       vary:
       - Accept-Encoding
@@ -389,7 +389,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 18:21:10 GMT
+  recorded_at: Tue, 26 Dec 2017 17:17:34 GMT
 - request:
     method: post
     uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
@@ -401,7 +401,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..mNFA_drxU0e06_l0.o55hir7QsdyByrNWs9MO4Wr2R-YspsMOQSRSwLOrHSBTaAcZHbm1oz7vKk7Y5skWolyFlBvcXdL6ruvR8NaqSPhJ_kLyi1fMuFeehuIuY2U9BOnie67_LxiqctKmXb0b2z8EOv4HIf23bVn8bTj68EZcbtW7zbAs8JXfj0XbIr-LE6oJVPn3d9F6b3bg39RhnOqz4cfUiNPSmd-Q0GQ-LjSrz1aTaDKV0Gb4GWIhgRn_9nN3AUnpRMS8X00O-KfSWghlRq9MwspktrJ36VTxkccDTBgE3_b6hgjK3CMp9yAYgllPlbkcfgJ1QC-FzYBmpEK-kFWpmO8MouMuzQbjY9RKE75Qb0SSM2thOq8GJ5HsNsOjBR6xV-k_mNNjOgVWhNFrv75W_DNrY4dm6XJwPqWEZ70v9HAcVrrm3oLhznIwkDlEQlC4UNsvclaceY4ZLahYENzCC-EagRuuXVbLjfeVVV2Py72bnwgzkgekHBwJ3nkxuavRnUEZGfTycc0rUn850r3kfJpyWXInJ5s65cP4Zzfuc2f8JM0LEBei7bhXxivDEinnlp35BWcJYYr7vW41TzOXdIygZNFlxakbQthjSItOqQVTE3H1WgZx0XVvx8sfhsIOtJDcu5h08WaJlGZ918oJXNAguhSecq4T1qpdZbptmfxYgcyc1fQ6DVusg1dovB2k8IM4mq2TnTiJhY2UzXK8GDFv-qEsKL9BXPsZxLTx_adOLc70kwJxSeeo0jhaXZwnX1FARznyImc9K7MHB3599M4T2vUWuTPhiLMnnJWx8DA1ZAQ9PAJxdwQnrz2UKLJnxcE4W-pvl3GKQTYJhBAZ9NUObiVHKd6MSfrG5udhcgifkMCU7BJWLOabcxRry895fPAhB5Z__q-ndgrvvV6X5rpvuQYuZ4G3hbRAzOFQ7e3cRSDa_lFieHgZKsI9Xg-2muDTRjEAMapuGV3erSbMVeB8cMhDMm-Aiuf_XJzy5ANA8y5X2hdxiA.BUsezYm3cQdkMkZVFzj33g"
+      - "..idFiTkLOJH8zbRim.rbzUJw3e0EEOnrF67_E7vByPkN2RJNCZTXFfEEad8npUnarcnMu4TjcH_UhTKtvvG6RIYle13OBUx1f6lv-rOsie27YmrVYWIbgwnbbjxlgcwW0yOYQaBgnJrFTRIJCj5308YrP97EFhJK-My0qlXabPAjLKkNCg17G6ExjRIDbpGSDUcgFTo69mv34Wc7Kxhiw9zBbthO2DGPxfq4IwsrLV6303RnywoubU3-TNbp7rXvJUwdiIDC5BkYmwvlQkZ0HvgjGJFklHU_61NUyCbGL_a4CPSYbHyNDiuvgpF3qczC5q-cVqGlMAvIKsNDE39GJXslt-uLbNaBNqzQbCIHIYfUg3s3xrI3kS6exePA1kvC2-4mOmZNDNp5NrdjO2XTTW3LXkpMIOUWOTWHC4CMwDKQI_rsw-kCAI2eIabR73FWIJ5kM6kwdbibNdo5GW1_oIh5Ru1C6vzP4HKKzp8YoXXmE_EYvVnpuazy78iypyZQ8LF-fWoMZBtkPwaAy5vO4icooOa3EbE2N8qRgZcITwHDa_7osWcFnI9Vu9vwxC3RKmseIrGpBnQ4yzfz4m1IvF9gnVUWbriohCJc6V89yhzC9C_EcdY-XQyiB8JdW8nm7UPXUCDCtSv87MTiSuYy2mpU_Jt5scqQody1qEaXj0VzY_iTDRhzPq4j4sKvPwqL6Yjz7hK-4aNvihGVnR1EhX0gYz7CY5arLUKLj5nR5nc-H91wHIl6GUfTuPNv_4nn-itRmbBOwnmMbjK3oA3JA0EK1WFnj9rnekx49hGmzAqCJx_r7YolGFtHkJwfItTNk7a37CsUzCnVaARv8lMnBL0Ygjg1sK7psFo5fwgVsChuj61x7wOb7UpOXO7a0tu7XaPRs45BVUkjDND2fNG1n-h9HpsTPDzKhNPD1X9Z-5Gx_kFf5wfUmzzfLyFw7OoS7BJ7pXqk20M9Y3gqGd4yd4l4bMpnQQSnpqlztD_Or-6M3-5prrLtuD23uI7w.1GiUon_173Ze3w2KUEimkQ"
   response:
     status:
       code: 200
@@ -410,9 +410,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 22 Dec 2017 18:21:11 GMT
+      - Tue, 26 Dec 2017 17:17:35 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:11
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 25-Dec-2017 17:17:35
         GMT
       content-length:
       - '7013'
@@ -450,7 +450,7 @@ http_interactions:
         at GH. (name unknown) Staff did nothing to stop this.  Staff told Miguel not
         to say anything. Miguel called his mother and told her this.","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":"U"},{"complaint_code":"3","allegation":"","resolution_code_sub":"","resolution_code_insub":"","resolution_code_unsub":""}]}]}}]}}'
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 18:21:11 GMT
+  recorded_at: Tue, 26 Dec 2017 17:17:35 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/300665437
@@ -461,7 +461,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..mNFA_drxU0e06_l0.o55hir7QsdyByrNWs9MO4Wr2R-YspsMOQSRSwLOrHSBTaAcZHbm1oz7vKk7Y5skWolyFlBvcXdL6ruvR8NaqSPhJ_kLyi1fMuFeehuIuY2U9BOnie67_LxiqctKmXb0b2z8EOv4HIf23bVn8bTj68EZcbtW7zbAs8JXfj0XbIr-LE6oJVPn3d9F6b3bg39RhnOqz4cfUiNPSmd-Q0GQ-LjSrz1aTaDKV0Gb4GWIhgRn_9nN3AUnpRMS8X00O-KfSWghlRq9MwspktrJ36VTxkccDTBgE3_b6hgjK3CMp9yAYgllPlbkcfgJ1QC-FzYBmpEK-kFWpmO8MouMuzQbjY9RKE75Qb0SSM2thOq8GJ5HsNsOjBR6xV-k_mNNjOgVWhNFrv75W_DNrY4dm6XJwPqWEZ70v9HAcVrrm3oLhznIwkDlEQlC4UNsvclaceY4ZLahYENzCC-EagRuuXVbLjfeVVV2Py72bnwgzkgekHBwJ3nkxuavRnUEZGfTycc0rUn850r3kfJpyWXInJ5s65cP4Zzfuc2f8JM0LEBei7bhXxivDEinnlp35BWcJYYr7vW41TzOXdIygZNFlxakbQthjSItOqQVTE3H1WgZx0XVvx8sfhsIOtJDcu5h08WaJlGZ918oJXNAguhSecq4T1qpdZbptmfxYgcyc1fQ6DVusg1dovB2k8IM4mq2TnTiJhY2UzXK8GDFv-qEsKL9BXPsZxLTx_adOLc70kwJxSeeo0jhaXZwnX1FARznyImc9K7MHB3599M4T2vUWuTPhiLMnnJWx8DA1ZAQ9PAJxdwQnrz2UKLJnxcE4W-pvl3GKQTYJhBAZ9NUObiVHKd6MSfrG5udhcgifkMCU7BJWLOabcxRry895fPAhB5Z__q-ndgrvvV6X5rpvuQYuZ4G3hbRAzOFQ7e3cRSDa_lFieHgZKsI9Xg-2muDTRjEAMapuGV3erSbMVeB8cMhDMm-Aiuf_XJzy5ANA8y5X2hdxiA.BUsezYm3cQdkMkZVFzj33g"
+      - "..idFiTkLOJH8zbRim.rbzUJw3e0EEOnrF67_E7vByPkN2RJNCZTXFfEEad8npUnarcnMu4TjcH_UhTKtvvG6RIYle13OBUx1f6lv-rOsie27YmrVYWIbgwnbbjxlgcwW0yOYQaBgnJrFTRIJCj5308YrP97EFhJK-My0qlXabPAjLKkNCg17G6ExjRIDbpGSDUcgFTo69mv34Wc7Kxhiw9zBbthO2DGPxfq4IwsrLV6303RnywoubU3-TNbp7rXvJUwdiIDC5BkYmwvlQkZ0HvgjGJFklHU_61NUyCbGL_a4CPSYbHyNDiuvgpF3qczC5q-cVqGlMAvIKsNDE39GJXslt-uLbNaBNqzQbCIHIYfUg3s3xrI3kS6exePA1kvC2-4mOmZNDNp5NrdjO2XTTW3LXkpMIOUWOTWHC4CMwDKQI_rsw-kCAI2eIabR73FWIJ5kM6kwdbibNdo5GW1_oIh5Ru1C6vzP4HKKzp8YoXXmE_EYvVnpuazy78iypyZQ8LF-fWoMZBtkPwaAy5vO4icooOa3EbE2N8qRgZcITwHDa_7osWcFnI9Vu9vwxC3RKmseIrGpBnQ4yzfz4m1IvF9gnVUWbriohCJc6V89yhzC9C_EcdY-XQyiB8JdW8nm7UPXUCDCtSv87MTiSuYy2mpU_Jt5scqQody1qEaXj0VzY_iTDRhzPq4j4sKvPwqL6Yjz7hK-4aNvihGVnR1EhX0gYz7CY5arLUKLj5nR5nc-H91wHIl6GUfTuPNv_4nn-itRmbBOwnmMbjK3oA3JA0EK1WFnj9rnekx49hGmzAqCJx_r7YolGFtHkJwfItTNk7a37CsUzCnVaARv8lMnBL0Ygjg1sK7psFo5fwgVsChuj61x7wOb7UpOXO7a0tu7XaPRs45BVUkjDND2fNG1n-h9HpsTPDzKhNPD1X9Z-5Gx_kFf5wfUmzzfLyFw7OoS7BJ7pXqk20M9Y3gqGd4yd4l4bMpnQQSnpqlztD_Or-6M3-5prrLtuD23uI7w.1GiUon_173Ze3w2KUEimkQ"
   response:
     status:
       code: 200
@@ -472,9 +472,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 22 Dec 2017 18:21:11 GMT
+      - Tue, 26 Dec 2017 17:17:35 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:11
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 25-Dec-2017 17:17:35
         GMT
       vary:
       - Accept-Encoding
@@ -563,7 +563,7 @@ http_interactions:
           "annual_visit_year" : 12
         }
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 18:21:11 GMT
+  recorded_at: Tue, 26 Dec 2017 17:17:35 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/300665437/children
@@ -574,7 +574,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..mNFA_drxU0e06_l0.o55hir7QsdyByrNWs9MO4Wr2R-YspsMOQSRSwLOrHSBTaAcZHbm1oz7vKk7Y5skWolyFlBvcXdL6ruvR8NaqSPhJ_kLyi1fMuFeehuIuY2U9BOnie67_LxiqctKmXb0b2z8EOv4HIf23bVn8bTj68EZcbtW7zbAs8JXfj0XbIr-LE6oJVPn3d9F6b3bg39RhnOqz4cfUiNPSmd-Q0GQ-LjSrz1aTaDKV0Gb4GWIhgRn_9nN3AUnpRMS8X00O-KfSWghlRq9MwspktrJ36VTxkccDTBgE3_b6hgjK3CMp9yAYgllPlbkcfgJ1QC-FzYBmpEK-kFWpmO8MouMuzQbjY9RKE75Qb0SSM2thOq8GJ5HsNsOjBR6xV-k_mNNjOgVWhNFrv75W_DNrY4dm6XJwPqWEZ70v9HAcVrrm3oLhznIwkDlEQlC4UNsvclaceY4ZLahYENzCC-EagRuuXVbLjfeVVV2Py72bnwgzkgekHBwJ3nkxuavRnUEZGfTycc0rUn850r3kfJpyWXInJ5s65cP4Zzfuc2f8JM0LEBei7bhXxivDEinnlp35BWcJYYr7vW41TzOXdIygZNFlxakbQthjSItOqQVTE3H1WgZx0XVvx8sfhsIOtJDcu5h08WaJlGZ918oJXNAguhSecq4T1qpdZbptmfxYgcyc1fQ6DVusg1dovB2k8IM4mq2TnTiJhY2UzXK8GDFv-qEsKL9BXPsZxLTx_adOLc70kwJxSeeo0jhaXZwnX1FARznyImc9K7MHB3599M4T2vUWuTPhiLMnnJWx8DA1ZAQ9PAJxdwQnrz2UKLJnxcE4W-pvl3GKQTYJhBAZ9NUObiVHKd6MSfrG5udhcgifkMCU7BJWLOabcxRry895fPAhB5Z__q-ndgrvvV6X5rpvuQYuZ4G3hbRAzOFQ7e3cRSDa_lFieHgZKsI9Xg-2muDTRjEAMapuGV3erSbMVeB8cMhDMm-Aiuf_XJzy5ANA8y5X2hdxiA.BUsezYm3cQdkMkZVFzj33g"
+      - "..idFiTkLOJH8zbRim.rbzUJw3e0EEOnrF67_E7vByPkN2RJNCZTXFfEEad8npUnarcnMu4TjcH_UhTKtvvG6RIYle13OBUx1f6lv-rOsie27YmrVYWIbgwnbbjxlgcwW0yOYQaBgnJrFTRIJCj5308YrP97EFhJK-My0qlXabPAjLKkNCg17G6ExjRIDbpGSDUcgFTo69mv34Wc7Kxhiw9zBbthO2DGPxfq4IwsrLV6303RnywoubU3-TNbp7rXvJUwdiIDC5BkYmwvlQkZ0HvgjGJFklHU_61NUyCbGL_a4CPSYbHyNDiuvgpF3qczC5q-cVqGlMAvIKsNDE39GJXslt-uLbNaBNqzQbCIHIYfUg3s3xrI3kS6exePA1kvC2-4mOmZNDNp5NrdjO2XTTW3LXkpMIOUWOTWHC4CMwDKQI_rsw-kCAI2eIabR73FWIJ5kM6kwdbibNdo5GW1_oIh5Ru1C6vzP4HKKzp8YoXXmE_EYvVnpuazy78iypyZQ8LF-fWoMZBtkPwaAy5vO4icooOa3EbE2N8qRgZcITwHDa_7osWcFnI9Vu9vwxC3RKmseIrGpBnQ4yzfz4m1IvF9gnVUWbriohCJc6V89yhzC9C_EcdY-XQyiB8JdW8nm7UPXUCDCtSv87MTiSuYy2mpU_Jt5scqQody1qEaXj0VzY_iTDRhzPq4j4sKvPwqL6Yjz7hK-4aNvihGVnR1EhX0gYz7CY5arLUKLj5nR5nc-H91wHIl6GUfTuPNv_4nn-itRmbBOwnmMbjK3oA3JA0EK1WFnj9rnekx49hGmzAqCJx_r7YolGFtHkJwfItTNk7a37CsUzCnVaARv8lMnBL0Ygjg1sK7psFo5fwgVsChuj61x7wOb7UpOXO7a0tu7XaPRs45BVUkjDND2fNG1n-h9HpsTPDzKhNPD1X9Z-5Gx_kFf5wfUmzzfLyFw7OoS7BJ7pXqk20M9Y3gqGd4yd4l4bMpnQQSnpqlztD_Or-6M3-5prrLtuD23uI7w.1GiUon_173Ze3w2KUEimkQ"
   response:
     status:
       code: 200
@@ -585,9 +585,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 22 Dec 2017 18:21:11 GMT
+      - Tue, 26 Dec 2017 17:17:35 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:11
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 25-Dec-2017 17:17:35
         GMT
       vary:
       - Accept-Encoding
@@ -663,7 +663,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 18:21:11 GMT
+  recorded_at: Tue, 26 Dec 2017 17:17:35 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/300665437/complaints
@@ -674,7 +674,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..mNFA_drxU0e06_l0.o55hir7QsdyByrNWs9MO4Wr2R-YspsMOQSRSwLOrHSBTaAcZHbm1oz7vKk7Y5skWolyFlBvcXdL6ruvR8NaqSPhJ_kLyi1fMuFeehuIuY2U9BOnie67_LxiqctKmXb0b2z8EOv4HIf23bVn8bTj68EZcbtW7zbAs8JXfj0XbIr-LE6oJVPn3d9F6b3bg39RhnOqz4cfUiNPSmd-Q0GQ-LjSrz1aTaDKV0Gb4GWIhgRn_9nN3AUnpRMS8X00O-KfSWghlRq9MwspktrJ36VTxkccDTBgE3_b6hgjK3CMp9yAYgllPlbkcfgJ1QC-FzYBmpEK-kFWpmO8MouMuzQbjY9RKE75Qb0SSM2thOq8GJ5HsNsOjBR6xV-k_mNNjOgVWhNFrv75W_DNrY4dm6XJwPqWEZ70v9HAcVrrm3oLhznIwkDlEQlC4UNsvclaceY4ZLahYENzCC-EagRuuXVbLjfeVVV2Py72bnwgzkgekHBwJ3nkxuavRnUEZGfTycc0rUn850r3kfJpyWXInJ5s65cP4Zzfuc2f8JM0LEBei7bhXxivDEinnlp35BWcJYYr7vW41TzOXdIygZNFlxakbQthjSItOqQVTE3H1WgZx0XVvx8sfhsIOtJDcu5h08WaJlGZ918oJXNAguhSecq4T1qpdZbptmfxYgcyc1fQ6DVusg1dovB2k8IM4mq2TnTiJhY2UzXK8GDFv-qEsKL9BXPsZxLTx_adOLc70kwJxSeeo0jhaXZwnX1FARznyImc9K7MHB3599M4T2vUWuTPhiLMnnJWx8DA1ZAQ9PAJxdwQnrz2UKLJnxcE4W-pvl3GKQTYJhBAZ9NUObiVHKd6MSfrG5udhcgifkMCU7BJWLOabcxRry895fPAhB5Z__q-ndgrvvV6X5rpvuQYuZ4G3hbRAzOFQ7e3cRSDa_lFieHgZKsI9Xg-2muDTRjEAMapuGV3erSbMVeB8cMhDMm-Aiuf_XJzy5ANA8y5X2hdxiA.BUsezYm3cQdkMkZVFzj33g"
+      - "..idFiTkLOJH8zbRim.rbzUJw3e0EEOnrF67_E7vByPkN2RJNCZTXFfEEad8npUnarcnMu4TjcH_UhTKtvvG6RIYle13OBUx1f6lv-rOsie27YmrVYWIbgwnbbjxlgcwW0yOYQaBgnJrFTRIJCj5308YrP97EFhJK-My0qlXabPAjLKkNCg17G6ExjRIDbpGSDUcgFTo69mv34Wc7Kxhiw9zBbthO2DGPxfq4IwsrLV6303RnywoubU3-TNbp7rXvJUwdiIDC5BkYmwvlQkZ0HvgjGJFklHU_61NUyCbGL_a4CPSYbHyNDiuvgpF3qczC5q-cVqGlMAvIKsNDE39GJXslt-uLbNaBNqzQbCIHIYfUg3s3xrI3kS6exePA1kvC2-4mOmZNDNp5NrdjO2XTTW3LXkpMIOUWOTWHC4CMwDKQI_rsw-kCAI2eIabR73FWIJ5kM6kwdbibNdo5GW1_oIh5Ru1C6vzP4HKKzp8YoXXmE_EYvVnpuazy78iypyZQ8LF-fWoMZBtkPwaAy5vO4icooOa3EbE2N8qRgZcITwHDa_7osWcFnI9Vu9vwxC3RKmseIrGpBnQ4yzfz4m1IvF9gnVUWbriohCJc6V89yhzC9C_EcdY-XQyiB8JdW8nm7UPXUCDCtSv87MTiSuYy2mpU_Jt5scqQody1qEaXj0VzY_iTDRhzPq4j4sKvPwqL6Yjz7hK-4aNvihGVnR1EhX0gYz7CY5arLUKLj5nR5nc-H91wHIl6GUfTuPNv_4nn-itRmbBOwnmMbjK3oA3JA0EK1WFnj9rnekx49hGmzAqCJx_r7YolGFtHkJwfItTNk7a37CsUzCnVaARv8lMnBL0Ygjg1sK7psFo5fwgVsChuj61x7wOb7UpOXO7a0tu7XaPRs45BVUkjDND2fNG1n-h9HpsTPDzKhNPD1X9Z-5Gx_kFf5wfUmzzfLyFw7OoS7BJ7pXqk20M9Y3gqGd4yd4l4bMpnQQSnpqlztD_Or-6M3-5prrLtuD23uI7w.1GiUon_173Ze3w2KUEimkQ"
   response:
     status:
       code: 200
@@ -685,9 +685,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 22 Dec 2017 18:21:11 GMT
+      - Tue, 26 Dec 2017 17:17:35 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 21-Dec-2017 18:21:11
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 25-Dec-2017 17:17:35
         GMT
       vary:
       - Accept-Encoding
@@ -739,5 +739,5 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Fri, 22 Dec 2017 18:21:11 GMT
+  recorded_at: Tue, 26 Dec 2017 17:17:35 GMT
 recorded_with: VCR 3.0.3
