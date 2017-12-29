@@ -25,6 +25,7 @@ export default class Rfa01cList extends React.Component {
     this.state = {
       focusComponentName: '',
       application: this.props.rfa_c1_application,
+      applicants: this.props.applicants,
       errors: {}
     }
   }
@@ -95,6 +96,7 @@ export default class Rfa01cList extends React.Component {
             getFocusClassName={this.getFocusClassName}
             setParentState={this.setApplicationState}
             identifiedChildren={checkArrayObjectPresence(this.state.application.identified_children) || undefined}
+            applicants={this.state.applicants}
             setFocusState={this.setFocusState}
             stateTypes={this.props.stateTypes}
             suffixTypes={this.props.suffixTypes}

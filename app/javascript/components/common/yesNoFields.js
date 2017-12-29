@@ -9,7 +9,7 @@ const YesNoRadioComponent = ({
   label
 }) => (
   <div className='col-md-12' style={yesNoMarginStyle}>
-    <div className='field-label'>{label}</div>
+    <label className='col-md-12'>{label}</label>
     <BinarySelectorField
       gridClassName='col-md-4'
       id={idPrefix + 'true'}

@@ -6,16 +6,26 @@ const DesiredChildRelationships = ({
   index,
   child,
   applicants,
-  setParentState
+  handleRelationshipChange
 }) => (
-  <div className='col-md-12'>
+  <div className='row'>
     <div className='card-header'>Child's Relationship to Applicant</div>
-    {/*
-    <InputComponent gridClassName='col-md-4' id='relationship_to_applicant'
-      label='Realtionship to Applicant' placeholder=''
-      type='text' onChange={(event) => this.props.setParentState('relationship_to_applicant',
-        event.target.value, this.props.index)} />
-    */}
+    <div className='col-md-12'>
+      {
+        applicants && applicants.map((applicant, index) => {
+          return (
+            <div className='row' key={'desiredChildRelationships_' + index} >
+              <InputComponent
+                gridClassName='col-md-4'
+                id={'relationship_to_applicant ' + index}
+                label={'Relationship to Applicant ' + applicant.first_name + ' ' + applicant.last_name}
+                placeholder=''
+                onChange={(event) => handleRelationshipChange(applicant, event.target.value, index)} />
+            </div>
+          )
+        })
+      }
+    </div>
   </div>
 )
 
@@ -23,7 +33,7 @@ DesiredChildRelationships.propTypes = {
   index: PropTypes.number,
   applicants: PropTypes.array,
   child: PropTypes.object,
-  setParentState: PropTypes.func
+  handleRelationshipChange: PropTypes.func
 }
 
 DesiredChildRelationships.defaultProps = {

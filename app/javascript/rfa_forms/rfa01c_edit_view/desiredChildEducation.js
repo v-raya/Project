@@ -13,32 +13,33 @@ const DesiredChildEducation = ({
   setParentState,
   handleAddressChange
 }) => (
-  <div className='col-md-12'>
-    <div className='card-header'><span>Child's Education</span></div>
-    <DropDownField
-      id='grade'
-      gridClassName='col-md-4'
-      selectClassName='reusable-select'
-      value={getDictionaryId(child.school_grade)}
-      optionList={schoolGrades}
-      label='Grade'
-      onChange={(event) => setParentState(index, 'school_grade', dictionaryNilSelect(event.target.options))} />
-    <InputComponent
-      gridClassName='col-md-8'
-      id='name_of_school'
-      value={child.school_name}
-      label='Name of School'
-      type='text'
-      onChange={(event) => setParentState(index, 'school_name', event.target.value)} />
-    <AddressComponent
-      index={index}
-      stateTypes={stateTypes}
-      addressTitle='Address'
-      id='street_address'
-      addressFields={child.school_address}
-      onSelection={(autofillData) => setParentState(index, 'school_address', autofillData)}
-      onChange={(fieldId, event) => handleAddressChange(fieldId, event, index)}
-    />
+  <div className='row'>
+    <div className='card-header'>Child's Education</div>
+    <div className='col-md-12'>
+      <DropDownField
+        id='grade'
+        gridClassName='col-md-4'
+        selectClassName='reusable-select'
+        value={getDictionaryId(child.school_grade)}
+        optionList={schoolGrades}
+        label='Grade'
+        onChange={(event) => setParentState(index, 'school_grade', dictionaryNilSelect(event.target.options))} />
+      <InputComponent
+        gridClassName='col-md-8'
+        id='name_of_school'
+        value={child.school_name}
+        label='Name of School'
+        type='text'
+        onChange={(event) => setParentState(index, 'school_name', event.target.value)} />
+      <AddressComponent
+        index={index}
+        stateTypes={stateTypes}
+        addressTitle='Address'
+        id='street_address'
+        addressFields={child.school_address}
+        onSelection={(autofillData) => setParentState(index, 'school_address', autofillData)}
+        onChange={(fieldId, event) => handleAddressChange(fieldId, event, index)} />
+    </div>
   </div>
 )
 

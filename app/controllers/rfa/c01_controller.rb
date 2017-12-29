@@ -8,6 +8,7 @@ class Rfa::C01Controller < CalsBaseController
     @dictionaries = dictionaries_helper.rfa_c01_dictioniaries
     @rfa_c1_application = rfa_c01_application_helper.find_by_id(params[:a01_id], params[:id])
     @application = rfa_application_helper.find_by_id(params[:a01_id])
+    @application.applicants = rfa_applicant_helper.find_items_by_application_id(params[:a01_id])
   end
 
   def update
@@ -32,6 +33,10 @@ class Rfa::C01Controller < CalsBaseController
 
   def rfa_application_helper
     Helpers::Rfa::ApplicationHelper.new(auth_header: get_session_token)
+  end
+
+  def rfa_applicant_helper
+    Helpers::Rfa::ApplicantHelper.new(auth_header: get_session_token)
   end
 
   def dictionaries_helper

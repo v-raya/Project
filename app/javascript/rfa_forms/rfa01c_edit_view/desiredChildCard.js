@@ -14,6 +14,7 @@ export default class DesiredChildCard extends React.Component {
   constructor (props) {
     super(props)
     this.handleAddressChange = this.handleAddressChange.bind(this)
+    this.handleRelationshipChange = this.handleRelationshipChange.bind(this)
     this.props.validator.addFieldValidation(this.props.idPrefix + 'date_of_birth', dateValidator)
   }
 
@@ -23,12 +24,21 @@ export default class DesiredChildCard extends React.Component {
     this.props.setParentState(index, 'school_address', schoolAddressObj.toJS())
   }
 
+  handleRelationshipChange (applicant, value, index) {
+    console.log('to implement upon relationship card final design')
+  }
+
   render () {
     const child = this.props.desiredChild
     const index = this.props.index
     return (
       <div className='row'>
         <div key={'desiredChildRemoveLink' + index} className='row'>
+          {index > 0
+            ? <div>
+              <hr style={{padding: '1rem', marginBottom: '0px', marginTop: '10px'}} />
+            </div>
+            : null }
           <a onClick={(event) => this.props.clickClose(index)} className='pull-right remove-btn'>Remove</a>
         </div>
         <YesNoRadioComponent
@@ -47,8 +57,8 @@ export default class DesiredChildCard extends React.Component {
         <DesiredChildRelationships
           index={index}
           child={child}
-          applicants={null}
-          setParentState={this.props.setParentState} />
+          applicants={this.props.applicants}
+          handleRelationshipChange={this.handleRelationshipChange} />
         <DesiredChildEducation
           index={index}
           child={child}

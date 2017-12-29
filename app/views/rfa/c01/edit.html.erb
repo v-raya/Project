@@ -7,6 +7,7 @@
                                                 rfa_c1_application: @rfa_c1_application,
                                                 rfa_c1_application_id: @rfa_c1_application['id'],
                                                 application_id: @application.id,
+                                                applicants: @application.applicants,
                                                 stateTypes: @dictionaries[:state_types]}, {prerender: false}) %>
   <%= javascript_pack_tag 'rfa_forms/rfa01c_list' %>
 </div>
