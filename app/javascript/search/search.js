@@ -43,8 +43,8 @@ export default class Search extends React.Component {
     var addressData = this.addressQuery(query)
 
     var params = {
-      'county.id': [query[0]],
-      'type.id': [query[1]],
+      'county.value': [query[0]],
+      'type.value': [query[1]],
       id: [query[2]],
       name: [query[3]],
       'addresses.address.street_address': addressData
