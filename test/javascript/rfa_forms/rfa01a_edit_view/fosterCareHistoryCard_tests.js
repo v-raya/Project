@@ -14,6 +14,7 @@ describe('foster car card tests', function () {
   let getFocusClassNameSpy
   let setFosterCareNestedStateSpy
   let setFosterCareHistoryStateSpy
+  let handleClearOnConditionalChangeSpy
   let addFacilityCardSpy
   let removeFacilityCardSpy
   let addAgencyCardSpy
@@ -27,6 +28,7 @@ describe('foster car card tests', function () {
     getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFosterCareNestedStateSpy = jasmine.createSpy('setFosterCareNestedState')
     setFosterCareHistoryStateSpy = jasmine.createSpy('setFosterCareHistoryState')
+    handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
     addFacilityCardSpy = jasmine.createSpy('addFacilityCard')
     removeFacilityCardSpy = jasmine.createSpy('removeFacilityCard')
     addAgencyCardSpy = jasmine.createSpy('addAgencyCard')
@@ -40,7 +42,8 @@ describe('foster car card tests', function () {
       fosterCareHistory: blankFosterCareFields,
       setParentState: setParentStateSpy,
       setFocusState: setFocusStateSpy,
-      getFocusClassName: getFocusClassNameSpy
+      getFocusClassName: getFocusClassNameSpy,
+      handleClearOnConditionalChange: handleClearOnConditionalChangeSpy
     }
     fosterCareCardComponent = shallow(<FosterCareHistoryCard {...props} />)
     fosterCareFieldsComponent = shallow(<FosterCareHistoryFields {...props} />)
@@ -68,7 +71,9 @@ describe('foster car card tests', function () {
   describe('when "radio button is changed', () => {
     it('expect set foster care nested state to be called', function () {
       const onChangeSpy = jasmine.createSpy('setFosterCareNestedState')
-      const wrapper = mount(<FosterCareHistoryFields {...props} onChange={onChangeSpy('foster_care_licenses_q1', 'was_previously_licensed', true)} />)
+      handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
+
+      const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} onChange={onChangeSpy('foster_care_licenses_q1', 'was_previously_licensed', true)} />)
       wrapper.find('#q1-select-dropdowntrue').hostNodes()
       wrapper.simulate('change')
       expect(onChangeSpy.calls.count()).toEqual(1)
@@ -78,7 +83,9 @@ describe('foster car card tests', function () {
       it('adds a agency', () => {
         let event
         const addAgencySpy = jasmine.createSpy('addAgencyCard')
-        const wrapper = mount(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, 'foster_care_licenses_q1', 'agencies')} />)
+        handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
+
+        const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} addAgencyCard={addAgencySpy(event, 'foster_care_licenses_q1', 'agencies')} />)
         // find the button and type check
         const button = wrapper.find('#addAgency_q1')
         // simulate click and check to see if called
@@ -94,7 +101,9 @@ describe('foster car card tests', function () {
       it('calls remove agency', () => {
         const removeAgencySpy = jasmine.createSpy('removeAgencyCard')
         const event = jasmine.createSpy('e', ['preventDefault'])
-        const wrapper = mount(<FosterCareHistoryFields {...props} removeAgencyCard={removeAgencySpy(event, [{name: 'test 1', type: {}}, {name: 'test 2', type: {}}], 0, 'foster_care_licenses_q1', 'agencies')} />)
+        handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
+
+        const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} removeAgencyCard={removeAgencySpy(event, [{name: 'test 1', type: {}}, {name: 'test 2', type: {}}], 0, 'foster_care_licenses_q1', 'agencies')} />)
 
         expect(wrapper.instance().props.fosterCareHistory.foster_care_licenses_q1.agencies.length).toEqual(2)
 
@@ -108,7 +117,9 @@ describe('foster car card tests', function () {
       it('calls add facility', () => {
         let event
         const addFacilitySpy = jasmine.createSpy('addFacilityCard')
-        const wrapper = mount(<FosterCareHistoryFields {...props} addFacilityCard={addFacilitySpy(event, [''], 'applications_for_adoption_q2', 'facilities')} />)
+        handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
+
+        const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} addFacilityCard={addFacilitySpy(event, [''], 'applications_for_adoption_q2', 'facilities')} />)
         // find the button and type check
         const button = wrapper.find('#addFacility_q2')
         // simulate click and check to see if called
@@ -124,7 +135,9 @@ describe('foster car card tests', function () {
       it('adds a agency', () => {
         let event
         const addAgencySpy = jasmine.createSpy('addAgencyCard')
-        const wrapper = mount(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'employment_in_facilities_q4', 'facilities')} />)
+        handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
+
+        const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'employment_in_facilities_q4', 'facilities')} />)
         // find the button and type check
         const button = wrapper.find('#addAgency_q4')
         // simulate click and check to see if called
@@ -140,7 +153,9 @@ describe('foster car card tests', function () {
       it('adds a agency', () => {
         let event
         const addAgencySpy = jasmine.createSpy('addAgencyCard')
-        const wrapper = mount(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'facility_operation_licenses_q3', 'agencies')} />)
+        handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
+
+        const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'facility_operation_licenses_q3', 'agencies')} />)
         // find the button and type check
         const button = wrapper.find('#addFacility_q3')
         // simulate click and check to see if called
@@ -156,7 +171,9 @@ describe('foster car card tests', function () {
       it('adds a agency', () => {
         let event
         const addAgencySpy = jasmine.createSpy('addAgencyCard')
-        const wrapper = mount(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'denial_history_q5', 'agencies')} />)
+        handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
+
+        const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'denial_history_q5', 'agencies')} />)
         // find the button and type check
         const button = wrapper.find('#denial_history_q5')
         // simulate click and check to see if called
@@ -172,7 +189,9 @@ describe('foster car card tests', function () {
       it('adds a agency', () => {
         let event
         const addAgencySpy = jasmine.createSpy('addAgencyCard')
-        const wrapper = mount(<FosterCareHistoryFields {...props} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'suspension_revocation_history_q6', 'agencies')} />)
+        handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
+
+        const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} addAgencyCard={addAgencySpy(event, [{name: '', type: {}}], 'suspension_revocation_history_q6', 'agencies')} />)
         // find the button and type check
         const button = wrapper.find('#addAgency_suspension_q6')
         // simulate click and check to see if called
@@ -187,8 +206,9 @@ describe('foster car card tests', function () {
     describe('when "Remove facility" is clicked', () => {
       it('calls remove facility', () => {
         const removeFacilitySpy = jasmine.createSpy('removeFacilityCard')
+        handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
         const event = jasmine.createSpy('e', ['preventDefault'])
-        const wrapper = mount(<FosterCareHistoryFields {...props} removeAgencyCard={removeFacilitySpy(event, ['test', 'test2'], 1, 'applications_for_adoption_q2', 'facilities')} />)
+        const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} removeAgencyCard={removeFacilitySpy(event, ['test', 'test2'], 1, 'applications_for_adoption_q2', 'facilities')} />)
 
         spyOn(wrapper.instance(), 'removeFacilityCard').and.callThrough()
         wrapper.instance().removeFacilityCard({ preventDefault () {} }, ['test', 'test2'], 1, 'applications_for_adoption_q2', 'facilities')
@@ -199,8 +219,9 @@ describe('foster car card tests', function () {
     describe('when "On agency change" is called', () => {
       it('registers a name change', () => {
         const onAgencyChangeSpy = jasmine.createSpy('onAgencyChange')
+        handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
         const event = jasmine.createSpy('e', ['preventDefault'])
-        const wrapper = mount(<FosterCareHistoryFields {...props} onAgencyChange={onAgencyChangeSpy(event, [{name: 'ted', type: {}}, {name: 'test 2', type: {}}], 0, 'name', 'foster_care_licenses_q1', 'agencies', 'theodore')} />)
+        const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} onAgencyChange={onAgencyChangeSpy(event, [{name: 'ted', type: {}}, {name: 'test 2', type: {}}], 0, 'name', 'foster_care_licenses_q1', 'agencies', 'theodore')} />)
 
         spyOn(wrapper.instance(), 'onAgencyChange').and.callThrough()
         expect(onAgencyChangeSpy.calls.count()).toEqual(1)
@@ -211,22 +232,25 @@ describe('foster car card tests', function () {
     describe('when "on facility change" is called', () => {
       it('registers a name change', () => {
         const onFacilityChangeSpy = jasmine.createSpy('onFacilityChange')
+        handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
         const event = jasmine.createSpy('e', ['preventDefault'])
-        const wrapper = mount(<FosterCareHistoryFields {...props} onFacilityChange={onFacilityChangeSpy(event, ['test', 'test 2'], 0, 'applications_for_adoption_q2', 'facilities', 'theodore')} />)
+        const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} onFacilityChange={onFacilityChangeSpy(event, ['test', 'test 2'], 0, 'applications_for_adoption_q2', 'facilities', 'theodore')} />)
 
         spyOn(wrapper.instance(), 'onFacilityChange').and.callThrough()
 
         expect(onFacilityChangeSpy.calls.count()).toEqual(1)
+
         const input = wrapper.find('input#typeOfLicense0').first()
         expect(input.type()).toEqual('input')
       })
     })
     describe('#setFosterCareNestedState', () => {
-      let onChangeSpy
+      let onChangeSpy, handleClearOnConditionalChangeSpy
       let wrapper
       beforeEach(() => {
         onChangeSpy = jasmine.createSpy('setFosterCareNestedState')
-        wrapper = shallow(<FosterCareHistoryFields {...props} onChange={onChangeSpy()} />)
+        handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
+        wrapper = shallow(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} onChange={onChangeSpy()} />)
       })
       it('is called when Q2 Adoption Field is changed', () => {
         wrapper.find('#q2-select-dropdowntrue').hostNodes()

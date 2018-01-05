@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
 import {DateField} from 'components/common/dateFields'
@@ -8,7 +9,7 @@ import {yesNo} from 'constants/constants'
 import {getDictionaryId, dictionaryNilSelect, FormatDateForDisplay, FormatDateForPersistance} from 'helpers/commonHelper.jsx'
 import {handleRelationshipTypeToApplicant, setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
 import AddressComponent from 'components/rfa_forms/addressComponent.js'
-
+import {addressDefaults} from 'constants/defaultFields'
 export default class AdultChildrenFields extends React.Component {
   render () {
     const adultChild = this.props.adultChild
@@ -57,7 +58,7 @@ export default class AdultChildrenFields extends React.Component {
           label='Lives in home?'
           idPrefix={this.props.idPrefix + 'lives_in_home'}
           value={adultChild.lives_in_home}
-          onFieldChange={(event) => this.props.changeAdultChild('lives_in_home', event.target.value, this.props.index)} />
+          onFieldChange={(event) => this.props.handleClearOnConditionalChange('lives_in_home', 'address', event.target.value, addressDefaults, this.props.index)} />
 
         { livesInHome ? (<div />)
           : (<div>
@@ -65,7 +66,7 @@ export default class AdultChildrenFields extends React.Component {
               index={this.props.index}
               stateTypes={this.props.stateTypes}
               addressTitle='Physical Address'
-              id="street_address"
+              id='street_address'
               addressFields={adultChild.address}
               onSelection={(autofillData) => this.props.changeAdultChild('address', autofillData, this.props.index)}
               onChange={(fieldId, event) => this.props.changeAdultHistoryAddress(fieldId, event, this.props.index)}
@@ -75,4 +76,8 @@ export default class AdultChildrenFields extends React.Component {
       </form>
     )
   }
+}
+
+AdultChildrenFields.propTypes = {
+  handleClearOnConditionalChange: PropTypes.func
 }

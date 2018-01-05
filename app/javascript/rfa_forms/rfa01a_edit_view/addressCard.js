@@ -1,5 +1,6 @@
 import React from 'react'
 import Immutable from 'immutable'
+import PropTypes from 'prop-types'
 import {InputComponent} from 'components/common/inputFields'
 import {DropDownField} from 'components/common/dropDownField'
 import YesNoRadioComponent from 'components/common/yesNoFields'
@@ -60,6 +61,7 @@ export default class AddressCard extends React.Component {
     data = data.update(addressData.index, x => x.set(key, value))
     this.props.setParentState('addresses', data.toJS())
   }
+
   onSelection (autoFillData, typeString) {
     let addressData = this.checkAddressType(typeString)
     autoFillData.type = addressData.blankAddressFields.type
@@ -93,7 +95,7 @@ export default class AddressCard extends React.Component {
                 label='Mailing address the same as Physical Address?'
                 idPrefix='mailing_similar'
                 value={mailingAddress}
-                onFieldChange={(event) => this.props.setParentState('physical_mailing_similar', event.target.value)} />
+                onFieldChange={(event) => this.props.handleClearOnConditionalChange('physical_mailing_similar', 'addresses', event.target.value, [blankMailingAddress])} />
             </div>
             <div className={hiddenMailingSameAsPhysical}>
               <AddressComponent
@@ -111,4 +113,8 @@ export default class AddressCard extends React.Component {
       </div>
     )
   }
+}
+
+AddressCard.propTypes = {
+  handleClearOnConditionalChange: PropTypes.func
 }

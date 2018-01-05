@@ -7,7 +7,7 @@ import Validator from 'helpers/validator.js'
 
 describe('applicant Marital History Card', () => {
   let applicantHistoryComponent, setParentStateSpy,
-    applicantMaritalHistory
+    applicantMaritalHistory, applicantHistoryComponentMount
   let applicants = [
     {
       first_name: 'My',
@@ -16,6 +16,7 @@ describe('applicant Marital History Card', () => {
       applicant_id: '1'
     }
   ]
+
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     applicantHistoryComponent = shallow(<ApplicantMaritalHistoryCard
@@ -40,5 +41,16 @@ describe('applicant Marital History Card', () => {
     let applicantSelected = applicantHistoryComponent.find('#applicant_id')
     applicantSelected.simulate('change', {target: {options: {'1': {id: '1', value: 'My Middle Name'}, selectedIndex: 1}}})
     expect(setParentStateSpy).toHaveBeenCalledWith('applicant_id', 'My Middle Name', 0)
+  })
+  it('change relationship type dropdown', () => {
+    let applicantSelected = applicantHistoryComponent.find('#relationship_type')
+    applicantSelected.simulate('change', {target: {options: {'1': {id: '1', value: 'My Middle Name'}, selectedIndex: 1}}})
+    expect(setParentStateSpy).toHaveBeenCalledWith('relationship_type', Object({ id: 'My Middle Name', value: undefined }), 0)
+  })
+
+  it('change relationship termination dropdown', () => {
+    let applicantSelected = applicantHistoryComponent.find('#relationship_termination')
+    applicantSelected.simulate('change', {target: {options: {'1': {id: '1', value: 'My Middle Name'}, selectedIndex: 1}}})
+    expect(setParentStateSpy).toHaveBeenCalledWith('marriage_termination_reason', Object({ id: 'My Middle Name', value: undefined }), 0)
   })
 })

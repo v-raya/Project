@@ -5,7 +5,8 @@ import {mount} from 'enzyme'
 import Validator from 'helpers/validator.js'
 
 describe('Adult Children Component', () => {
-  let adultChildComponent, setParentStateSpy, onChangeSpy, adultChildNotInHomeComponent
+  let adultChildComponent, setParentStateSpy, onChangeSpy, adultChildNotInHomeComponent,
+    handleClearOnConditionalChangeSpy
   let relationshipToAdultsDefaults = Object.freeze({
     applicant_id: '34',
     relationship_to_applicant: null
@@ -59,6 +60,7 @@ describe('Adult Children Component', () => {
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     onChangeSpy = jasmine.createSpy('onChange')
+    handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
     let validator = new Validator({})
     adultChildComponent = mount(<AdultChildrenFields
       index={0}
@@ -74,6 +76,7 @@ describe('Adult Children Component', () => {
       stateTypes={stateTypes.items}
       nameTypes={nameTypes.items}
       relationshipToApplicantTypes={relationshipToApplicantTypes.items}
+      handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setParentState={setParentStateSpy}
       validator={validator}
     />)
@@ -90,6 +93,7 @@ describe('Adult Children Component', () => {
       prefixTypes={prefixTypes.items}
       stateTypes={stateTypes.items}
       nameTypes={nameTypes.items}
+      handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       relationshipToApplicantTypes={relationshipToApplicantTypes.items}
       setParentState={setParentStateSpy}
       validator={validator}
@@ -123,7 +127,7 @@ describe('Adult Children Component', () => {
 
     it('set lives in Home to No', () => {
       selectLivesInHome.simulate('change', {target: {value: false}})
-      expect(onChangeSpy).toHaveBeenCalledWith('lives_in_home', false, 0)
+      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('lives_in_home', 'address', false, Object({ street_address: '', zip: '', city: '', state: null, type: null }), 0)
     })
 
     it('Lives in Home set to false as props', () => {
@@ -133,7 +137,7 @@ describe('Adult Children Component', () => {
 
     it('set lives in Home to true', () => {
       selectLivesInHome.simulate('change', {target: {value: true}})
-      expect(onChangeSpy).toHaveBeenCalledWith('lives_in_home', true, 0)
+      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('lives_in_home', 'address', true, Object({ street_address: '', zip: '', city: '', state: null, type: null }), 0)
     })
     it('Lives in Home set to true', () => {
       expect(selectLivesInHome.props().value).toBe('true')

@@ -1,9 +1,12 @@
 import React from 'react'
-import ApplicantMaritalHistoryCardGroup, {formerSpousesDefaults, adultChildrenDefaults, applicantsHistoryDefaults} from 'rfa_forms/rfa01a_edit_view/applicantMaritalHistoryCardGroup'
+import ApplicantMaritalHistoryCardGroup from 'rfa_forms/rfa01a_edit_view/applicantMaritalHistoryCardGroup'
+import {formerSpousesDefaults, adultChildrenDefaults, applicantsHistoryDefaults} from 'constants/defaultFields'
 import applicantMaritalHistoryCard from 'rfa_forms/rfa01a_edit_view/applicantMaritalHistoryCard'
 import AdultChildrenFields from 'rfa_forms/rfa01a_edit_view/adultChildrenFields'
 import {shallow, mount} from 'enzyme'
 import {relationshipTypes, suffixTypes, prefixTypes, nameTypes, stateTypes, marriageTerminationReasons, relationshipToApplicantTypes} from '../../helpers/constants'
+import Validator from 'helpers/validator'
+
 var TestUtils = require('react-dom/test-utils')
 
 describe('foster car card tests', function () {
@@ -71,6 +74,33 @@ describe('foster car card tests', function () {
       place_of_marriage_end_city: '',
       place_of_marriage_end_state: null
     })
+
+    const relationshipToAdultsDefaults = Object.freeze({
+      applicant_id: '',
+      relationship_to_applicant: null
+    })
+
+    const addressDefaults = Object.freeze({
+      street_address: '',
+      zip: '',
+      city: '',
+      state: null,
+      type: null
+    })
+
+    const adultChildrenDefaults = Object.freeze({
+      name_prefix: null,
+      first_name: '',
+      middle_name: '',
+      last_name: '',
+      name_suffix: null,
+      relationship_to_applicants: [
+        relationshipToAdultsDefaults
+      ],
+      lives_in_home: '',
+      address: addressDefaults
+    })
+
     applicantMaritalHistoryCardGroupComponent = shallow(
       <ApplicantMaritalHistoryCardGroup
         getFocusClassName={getFocusClassNameSpy}
@@ -79,11 +109,13 @@ describe('foster car card tests', function () {
         setParentState={setParentStateSpy}
         relationshipToApplicantTypes={relationshipToApplicantTypes}
         relationshipTypes={relationshipTypes}
-        suffixTypes={suffixTypes}
-        prefixTypes={prefixTypes}
+        suffixTypes={suffixTypes.items}
+        prefixTypes={prefixTypes.items}
         nameTypes={nameTypes}
-        stateTypes={stateTypes}
+        stateTypes={stateTypes.items}
         marriageTerminationReasons={marriageTerminationReasons}
+        validator={new Validator({})}
+
       />)
   })
 
@@ -96,8 +128,27 @@ describe('foster car card tests', function () {
     it('verify add another Card', () => {
       let addCardButton = applicantMaritalHistoryCardGroupComponent.find('button.btn').at(0)
       spyOn(applicantMaritalHistoryCardGroupComponent.instance(), 'addMaritalHistoryCard').and.callThrough()
-      addCardButton.simulate('click', { preventDefault () {} })
+      addCardButton.simulate('click')
       expect(applicantMaritalHistoryCardGroupComponent.instance().addMaritalHistoryCard).toHaveBeenCalledWith([formerSpousesDefaults])
+    })
+    it('verify add another Card', () => {
+      let addCardButton = applicantMaritalHistoryCardGroupComponent.find('button.btn').at(1)
+      spyOn(applicantMaritalHistoryCardGroupComponent.instance(), 'addAdultChildCard').and.callThrough()
+      addCardButton.simulate('click')
+      expect(applicantMaritalHistoryCardGroupComponent.instance().addAdultChildCard).toHaveBeenCalledWith([adultChildrenDefaults])
+    })
+
+    it('verify remove another Card', () => {
+      let removeCardBtn = applicantMaritalHistoryCardGroupComponent.find('a.remove-btn').at(0)
+      spyOn(applicantMaritalHistoryCardGroupComponent.instance(), 'onMaritalHistoryClickClose').and.callThrough()
+      removeCardBtn.simulate('click')
+      expect(applicantMaritalHistoryCardGroupComponent.instance().onMaritalHistoryClickClose).toHaveBeenCalledWith(0)
+    })
+    it('verify remove another Card', () => {
+      let removeCardBtn = applicantMaritalHistoryCardGroupComponent.find('a.remove-btn').at(1)
+      spyOn(applicantMaritalHistoryCardGroupComponent.instance(), 'onAdultChildClickClose').and.callThrough()
+      removeCardBtn.simulate('click')
+      expect(applicantMaritalHistoryCardGroupComponent.instance().onAdultChildClickClose).toHaveBeenCalledWith(0)
     })
   })
 })

@@ -3,7 +3,8 @@ import CrimeBackgroundAgainstCohabitant from 'rfa_forms/rfa01b_edit_view/crimeBa
 import {shallow, mount} from 'enzyme'
 
 describe('Verify crimeBackgroundAgainstCohabitant card', function () {
-  let setParentStateSpy, getFocusClassNameSpy, setDisplayStateSpy, componentMount, setFocusStateSpy, componentMountWithoutDisclosures
+  let setParentStateSpy, getFocusClassNameSpy, setDisplayStateSpy, componentMount,
+    setFocusStateSpy, componentMountWithoutDisclosures, handleClearOnConditionalChangeSpy
 
   let disclosures = [{
     'offense': 'test',
@@ -17,12 +18,14 @@ describe('Verify crimeBackgroundAgainstCohabitant card', function () {
     setDisplayStateSpy = jasmine.createSpy('setDisplayState')
     getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
+    handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
 
     componentMount = mount(<CrimeBackgroundAgainstCohabitant
       arrestedForCrime={false}
       disclosures={disclosures}
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
+      handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
       setParentState={setParentStateSpy} />)
 
@@ -30,6 +33,7 @@ describe('Verify crimeBackgroundAgainstCohabitant card', function () {
       arrestedForCrime
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
+      handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
       setParentState={setParentStateSpy} />)
   })
@@ -51,8 +55,8 @@ describe('Verify crimeBackgroundAgainstCohabitant card', function () {
     it('onClick event shows lived in other state multi select', () => {
       let cardComponent = componentMountWithoutDisclosures.find('input[type="radio"]')
       let trueComponent = cardComponent.find('#crimeBackgroundAgainstCohabitantRadiotrue')
-      trueComponent.simulate('change', {target: {checked: false}})
-      expect(setParentStateSpy).toHaveBeenCalledWith('arrested_for_crime', false)
+      trueComponent.simulate('change', {target: {value: 'false'}})
+      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('arrested_for_crime', 'false', 'arrested_for_crime_disclosures', [ Object({ offense: '', offense_city: '', offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
     it('onchange sets disclosures ', () => {
       let cardComponent = componentMountWithoutDisclosures.find('#crimeBackgroundAgainstCohabitantoffenseReason').hostNodes()

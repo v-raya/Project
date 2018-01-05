@@ -26,7 +26,7 @@ export default class Rfa01bList extends React.Component {
     this.setFocusState = this.setFocusState.bind(this)
     this.setApplicationState = this.setApplicationState.bind(this)
     this.setDisplayState = this.setDisplayState.bind(this)
-
+    this.handleClearOnConditionalChange = this.handleClearOnConditionalChange.bind(this)
     this.validator = new Validator({})
     this.validator.validateFieldSetErrorState = this.validateFieldSetErrorState.bind(this)
 
@@ -87,6 +87,17 @@ export default class Rfa01bList extends React.Component {
     this.setState(newState.toJS())
   }
 
+  handleClearOnConditionalChange (key, value, hiddenKey, hiddenDefaultValue) {
+    if (value === 'false') {
+      let newState = Immutable.fromJS(this.state)
+      newState = newState.setIn(['application', key], value)
+      newState = newState.setIn(['application', hiddenKey], hiddenDefaultValue)
+      this.setState(newState.toJS())
+    } else {
+      this.setApplicationState(key, value)
+    }
+  }
+
   render () {
     const countyValue = getDictionaryId(this.state.application.application_county) || (this.props.user && this.props.user.county_code)
 
@@ -130,6 +141,7 @@ export default class Rfa01bList extends React.Component {
                 focusComponentName={this.state.focusComponentName}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState}
+                handleClearOnConditionalChange={this.handleClearOnConditionalChange}
                 setParentState={this.setApplicationState} />
             </CardsGroupLayout>
             <CardsGroupLayout>
@@ -150,6 +162,7 @@ export default class Rfa01bList extends React.Component {
                 focusComponentName={this.state.focusComponentName}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState}
+                handleClearOnConditionalChange={this.handleClearOnConditionalChange}
                 setParentState={this.setApplicationState} />
             </CardsGroupLayout>
 
@@ -160,6 +173,7 @@ export default class Rfa01bList extends React.Component {
                 focusComponentName={this.state.focusComponentName}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState}
+                handleClearOnConditionalChange={this.handleClearOnConditionalChange}
                 setParentState={this.setApplicationState} />
             </CardsGroupLayout>
 
@@ -170,6 +184,7 @@ export default class Rfa01bList extends React.Component {
                 focusComponentName={this.state.focusComponentName}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState}
+                handleClearOnConditionalChange={this.handleClearOnConditionalChange}
                 setParentState={this.setApplicationState} />
             </CardsGroupLayout>
 

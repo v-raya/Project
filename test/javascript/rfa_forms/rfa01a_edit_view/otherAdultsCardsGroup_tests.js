@@ -5,7 +5,7 @@ import {relationshipTypes} from '../../helpers/constants'
 import Validator from 'helpers/validator'
 
 describe('Verify other adults Component View', function () {
-  let component, componentMount, props, setParentStateSpy
+  let component, componentMount, props, setParentStateSpy, otherAdultsCardCompWithoutOtherAdults
 
   const OtherAdultsCard = {
     relationship_types: {
@@ -45,7 +45,17 @@ describe('Verify other adults Component View', function () {
       <OtherAdultsCardsGroup {...props} />
     )
     componentMount = mount(<OtherAdultsCardsGroup {...props} />)
+
+    otherAdultsCardCompWithoutOtherAdults = shallow(<OtherAdultsCardsGroup
+      otherAdults={[]}
+      relationship_types={relationshipTypes}
+      relationshipToApplicantTypes={relationshipTypes}
+      setParentState={setParentStateSpy}
+      onFieldChange={onFieldChangeSpy}
+      handleRelationshipTypeToApplicant={handleRelationshipTypeToApplicantSpy}
+      validator={validator} />)
   })
+
   describe('Verify other adult card Component View', () => {
     it('has simulates relationship field change', function () {
       componentMount.update()
@@ -63,6 +73,10 @@ describe('Verify other adults Component View', function () {
     })
     it('expect children to be array', function () {
       expect(component.children.length).toEqual(1)
+    })
+
+    it('expect default props to be used', function () {
+      expect(otherAdultsCardCompWithoutOtherAdults.find('.card-body').length).toEqual(1)
     })
   })
 

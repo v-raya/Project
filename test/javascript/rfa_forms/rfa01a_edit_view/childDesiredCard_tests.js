@@ -17,7 +17,7 @@ describe('Verify relation between applicant', function () {
   let setParentStateSpy, childCardComp, onChangeSpy
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
-    onChangeSpy = jasmine.createSpy('')
+    onChangeSpy = jasmine.createSpy('onChange')
     childCardComp = shallow(<ChildDesiredCard
       desiredChildSection={childDesired}
       setParentState={setParentStateSpy}

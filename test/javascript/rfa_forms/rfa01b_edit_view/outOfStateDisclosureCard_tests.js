@@ -6,13 +6,14 @@ import {stateTypes} from '../../helpers/constants'
 describe('Verify out Of state disclosure card card', function () {
   let setParentStateSpy, setDisplayStateSpy, componentMountinState, componentMountOtherState,
     componentMountLivedOutOfState, componentShallowInState,
-    setFocusStateSpy, setApplicationStateSpy, getFocusClassNameSpy
+    setFocusStateSpy, setApplicationStateSpy, getFocusClassNameSpy, handleClearOnConditionalChangeSpy
 
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     setDisplayStateSpy = jasmine.createSpy('setDisplayState')
     getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
+    handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
 
     componentMountinState = mount(<OutOfStateDisclosureCard
       livedInOtherState
@@ -20,6 +21,7 @@ describe('Verify out Of state disclosure card card', function () {
       stateTypes={stateTypes.items}
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
+      handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
       setParentState={setParentStateSpy} />)
     componentMountLivedOutOfState = mount(<OutOfStateDisclosureCard
@@ -28,6 +30,7 @@ describe('Verify out Of state disclosure card card', function () {
       stateTypes={stateTypes.items}
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
+      handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
       setParentState={setParentStateSpy} />)
     componentShallowInState = shallow(<OutOfStateDisclosureCard
@@ -56,8 +59,8 @@ describe('Verify out Of state disclosure card card', function () {
     it('onClick event shows lived in other state multi select', () => {
       let cardComponent = componentMountinState.find('input[type="radio"]')
       let trueComponent = cardComponent.find('#outOfStateDisclosureCardtrue')
-      trueComponent.simulate('change', {target: {checked: true}})
-      expect(setParentStateSpy).toHaveBeenCalledWith('lived_in_other_state', false)
+      trueComponent.simulate('change', {target: {value: 'true'}})
+      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('lived_in_other_state', 'true', 'other_states_of_living', [ ])
     })
 
     it('State multi select', () => {

@@ -25,11 +25,12 @@ describe('Verify Physical Address', function () {
     }]
   })
 
-  let setParentStateSpy, residenceCardComp
+  let setParentStateSpy, residenceCardComp, handleClearOnConditionalChangeSpy
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
+    handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
     residenceCardComp = shallow(<AboutThisResidenceCard
-
+      handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       languageTypes={languageTypes.items}
       residenceTypes={residenceTypes.items}
       aboutResidence={blankAboutThisResidenceFields}
@@ -43,11 +44,12 @@ describe('Verify Physical Address', function () {
     expect(setParentStateSpy).toHaveBeenCalledWith('directions_to_home', 'gate way oaks')
   })
   describe('#YesNoRadioComponent', () => {
-    let setParentStateSpy
+    let setParentStateSpy, residenceCardComp, handleClearOnConditionalChangeSpy
     beforeEach(() => {
       setParentStateSpy = jasmine.createSpy('setParentState')
+      handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
       residenceCardComp = mount(<AboutThisResidenceCard
-
+        handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
         languageTypes={languageTypes.items}
         residenceTypes={residenceTypes.items}
         aboutResidence={blankAboutThisResidenceFields}
@@ -57,7 +59,7 @@ describe('Verify Physical Address', function () {
     it('verify body of water exists change', () => {
       let relationShipField = residenceCardComp.find('#body_of_water_existtrue').hostNodes()
       relationShipField.simulate('change', {target: {value: 'false'}})
-      expect(setParentStateSpy).toHaveBeenCalledWith('body_of_water_exist', 'false')
+      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('body_of_water_exist', 'body_of_water_description', 'false', '')
     })
     it('verify weapons address change', () => {
       let relationShipField = residenceCardComp.find('#weaponstrue').hostNodes()
@@ -67,7 +69,12 @@ describe('Verify Physical Address', function () {
     it('verify other using residence as mailing change', () => {
       let relationShipField = residenceCardComp.find('#others_using_residence_as_mailingtrue').hostNodes()
       relationShipField.simulate('change', {target: {value: 'false'}})
-      expect(setParentStateSpy).toHaveBeenCalledWith('others_using_residence_as_mailing', 'false')
+      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('others_using_residence_as_mailing', 'other_people_using_residence_as_mailing', 'false', [ Object({ first_name: '', middle_name: '', last_name: '' }) ])
+    })
+    it('verify other using residence as mailing change', () => {
+      let relationShipField = residenceCardComp.find('#others_using_residence_as_mailingtrue').hostNodes()
+      relationShipField.simulate('change', {target: {value: 'true'}})
+      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('others_using_residence_as_mailing', 'other_people_using_residence_as_mailing', 'true', [ Object({ first_name: '', middle_name: '', last_name: '' }) ])
     })
   })
   it('verify body of water description', () => {
@@ -120,11 +127,12 @@ describe('Verify Physical Address first name, middle name and last name', functi
     others_using_residence_as_mailing: 'true'
   })
 
-  let setParentStateSpy, residenceCardComp
+  let setParentStateSpy, residenceCardComp, handleClearOnConditionalChangeSpy
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
+    handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
     residenceCardComp = shallow(<AboutThisResidenceCard
-
+      handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       languageTypes={languageTypes.items}
       residenceTypes={residenceTypes.items}
       aboutResidence={blankAboutThisResidenceFields}

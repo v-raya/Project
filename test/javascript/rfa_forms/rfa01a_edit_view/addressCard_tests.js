@@ -39,20 +39,22 @@ describe('Verify Address card fields', function () {
     }
   }
 
-  let setParentStateSpy, addressCardMount, setonAddressChangeSpy, addresses, props
+  let setParentStateSpy, addressCardMount, setonAddressChangeSpy, handleClearOnConditionalChangeSpy, addresses, props
   beforeEach(() => {
     spyOn(window, 'fetch').and.callThrough()
     setParentStateSpy = jasmine.createSpy('setParentState')
+    handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
     setonAddressChangeSpy = jasmine.createSpy('')
     props = {
       setParentState: setParentStateSpy,
+      handleClearOnConditionalChange: handleClearOnConditionalChangeSpy,
       genderTypes: genderTypes.items,
       stateTypes: stateTypes.items,
       addresses: undefined,
       physicalMailingSimilar: 'false',
       physicalAddressFields: physicalAddressFields
     }
-    addressCardMount = mount(<AddressCard {...props}/>)
+    addressCardMount = mount(<AddressCard {...props} />)
   })
   it('verify Physical address card props', () => {
     props.addresses = [physicalAddressFields]
@@ -138,6 +140,6 @@ describe('Verify Address card fields', function () {
   it('verify mailing address', () => {
     let relationShipField = addressCardMount.find('#mailing_similartrue').hostNodes()
     relationShipField.simulate('change', {target: {value: 'false'}})
-    expect(setParentStateSpy).toHaveBeenCalledWith('physical_mailing_similar', 'false')
+    expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('physical_mailing_similar', 'addresses', 'false', [ Object({ street_address: '', zip: '', city: '', state: null, type: Object({ id: '3', value: 'Mailing' }) }) ])
   })
 })

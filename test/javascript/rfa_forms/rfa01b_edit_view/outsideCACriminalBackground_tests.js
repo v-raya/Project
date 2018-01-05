@@ -4,7 +4,7 @@ import {shallow, mount} from 'enzyme'
 
 describe('Verify OutsideCACriminalBackground card', function () {
   let setParentStateSpy, setDisplayStateSpy, componentMount,
-    componentMountWithoutDisclosures, setFocusStateSpy
+    componentMountWithoutDisclosures, setFocusStateSpy, handleClearOnConditionalChangeSpy
 
   let disclosures = [{
     'offense': 'test',
@@ -18,12 +18,14 @@ describe('Verify OutsideCACriminalBackground card', function () {
     setDisplayStateSpy = jasmine.createSpy('setDisplayState')
     let getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
+    handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
 
     componentMount = mount(<OutsideCACriminalBackground
       convictedInAnotherState={false}
       disclosures={disclosures}
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
+      handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
       setParentState={setParentStateSpy} />)
 
@@ -32,6 +34,7 @@ describe('Verify OutsideCACriminalBackground card', function () {
       disclosures={disclosures}
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
+      handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
       setParentState={setParentStateSpy} />)
   })
@@ -53,15 +56,15 @@ describe('Verify OutsideCACriminalBackground card', function () {
     it('onClick event shows lived in other state multi select', () => {
       let cardComponent = componentMount.find('input[type="radio"]')
       let trueComponent = cardComponent.find('#outsideCACriminalBackgroundtrue')
-      trueComponent.simulate('change', {target: {checked: true}})
-      expect(setParentStateSpy).toHaveBeenCalledWith('convicted_in_another_state', true)
+      trueComponent.simulate('change', {target: {value: 'true'}})
+      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('convicted_in_another_state', 'true', 'convicted_in_another_state_disclosures', [ Object({ offense: '', offense_city: '', offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
 
     it('onClick event shows lived in other state multi select', () => {
       let cardComponent = componentMountWithoutDisclosures.find('input[type="radio"]')
       let trueComponent = cardComponent.find('#outsideCACriminalBackgroundtrue')
-      trueComponent.simulate('change', {target: {checked: false}})
-      expect(setParentStateSpy).toHaveBeenCalledWith('convicted_in_another_state', false)
+      trueComponent.simulate('change', {target: {value: 'false'}})
+      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('convicted_in_another_state', 'false', 'convicted_in_another_state_disclosures', [ Object({ offense: '', offense_city: '', offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
 
     it('onchange sets disclosures ', () => {

@@ -22,6 +22,7 @@ export default class ChildDesiredCard extends React.Component {
     newData = newData.set(key, value)
     this.props.setParentState(key, newData.toJS()[key])
   }
+
   render () {
     const childCurrentlyInHomeVisible = this.props.desiredChildSection.child_identified === true || this.props.desiredChildSection.child_identified === 'true'
     return (

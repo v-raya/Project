@@ -4,54 +4,7 @@ import Immutable from 'immutable'
 import ApplicantMaritalHistoryCard from './applicantMaritalHistoryCard'
 import AdultChildrenFields from './adultChildrenFields'
 import {addCardAsJS, removeCard} from 'helpers/cardsHelper.jsx'
-
-export const relationshipToAdultsDefaults = Object.freeze({
-  applicant_id: '',
-  relationship_to_applicant: null
-})
-
-export const addressDefaults = Object.freeze({
-  street_address: '',
-  zip: '',
-  city: '',
-  state: null,
-  type: null
-})
-
-export const adultChildrenDefaults = Object.freeze({
-  name_prefix: null,
-  first_name: '',
-  middle_name: '',
-  last_name: '',
-  name_suffix: null,
-  relationship_to_applicants: [
-    relationshipToAdultsDefaults
-  ],
-  lives_in_home: '',
-  address: addressDefaults
-})
-
-export const formerSpousesDefaults = Object.freeze({
-  relationship_type: null,
-  applicant_id: '',
-  name_prefix: null,
-  first_name: '',
-  middle_name: '',
-  last_name: '',
-  name_suffix: null,
-  date_of_marriage: '',
-  place_of_marriage_city: '',
-  place_of_marriage_state: null,
-  marriage_termination_reason: null,
-  date_of_marriage_end: '',
-  place_of_marriage_end_city: '',
-  place_of_marriage_end_state: null
-})
-
-export const applicantsHistoryDefaults = Object.freeze({
-  former_spouses: [formerSpousesDefaults],
-  adult_children: [adultChildrenDefaults]
-})
+import {addressDefaults, relationshipToAdultsDefaults, adultChildrenDefaults, formerSpousesDefaults, applicantsHistoryDefaults} from 'constants/defaultFields'
 
 export default class ApplicantMaritalHistoryCardGroup extends React.Component {
   constructor (props) {
@@ -66,6 +19,7 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
     this.onMaritalHistoryClickClose = this.onMaritalHistoryClickClose.bind(this)
     this.onAdultChildClickClose = this.onAdultChildClickClose.bind(this)
     this.updateNestedCards = this.updateNestedCards.bind(this)
+    this.handleClearOnConditionalChange = this.handleClearOnConditionalChange.bind(this)
   }
 
   updateNestedCards (newCardFields, type) {
@@ -79,8 +33,7 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
     this.updateNestedCards(newSpouseFields, 'former_spouses')
   }
 
-  addAdultChildCard (event, adultChildren) {
-    event.preventDefault()
+  addAdultChildCard (adultChildren) {
     let newAdultFields = addCardAsJS(adultChildren, adultChildrenDefaults)
     this.updateNestedCards(newAdultFields, 'adult_children')
   }
@@ -133,6 +86,19 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
     adultChildrenList = adultChildrenList.setIn([index, 'relationship_to_applicants', 0, type], value)
     let updatedMaritalHistory = maritalHistory.set('adult_children', adultChildrenList)
     this.props.setParentState('applicantsHistory', updatedMaritalHistory.toJS())
+  }
+
+  handleClearOnConditionalChange (key, hiddenKey, value, hiddenDefaultValue, index) {
+    if (value === 'false') {
+      let maritalHistory = Immutable.fromJS(this.props.applicantsHistory)
+      let newData = Immutable.fromJS(this.props.applicantsHistory.adult_children)
+      newData = newData.update(index, x => x.set(key, value))
+      newData = newData.update(index, x => x.set(hiddenKey, hiddenDefaultValue))
+      let updatedMaritalHistory = maritalHistory.set('adult_children', newData)
+      this.props.setParentState('applicantsHistory', updatedMaritalHistory.toJS())
+    } else {
+      this.changeAdultChild(key, value, index)
+    }
   }
 
   render () {
@@ -197,6 +163,7 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
                       validator={this.props.validator}
                       changeAdultChild={this.changeAdultChild}
                       setParentState={this.props.setParentState}
+                      handleClearOnConditionalChange={this.handleClearOnConditionalChange}
                       changeAdultHistoryAddress={this.changeAdultHistoryAddress}
                       handleRelationshipTypeToApplicant={this.handleRelationshipTypeToApplicantAdultChild}
                       relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
@@ -211,7 +178,7 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
               })
             }
             <div className='text-center'>
-              <button onClick={(event) => this.addAdultChildCard(event, adultChildrenList)} className='btn btn-default'>Add another Adult Child +</button>
+              <button onClick={() => this.addAdultChildCard(adultChildrenList)} className='btn btn-default'>Add another Adult Child +</button>
             </div>
           </div>
         </div>

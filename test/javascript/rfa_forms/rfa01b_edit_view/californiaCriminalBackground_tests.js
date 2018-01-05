@@ -5,7 +5,7 @@ import {shallow, mount} from 'enzyme'
 describe('Verify californiaCriminalBackground card', function () {
   let setStateSpy, setParentStateSpy, setDisplayStateSpy,
     componentMount, setFocusStateSpy, onHideClickSpy, componentMountWithoutDisclosures,
-    getFocusClassNameSpy, addCardSpy, clickCloseSpy, onFieldChangeSpy
+    getFocusClassNameSpy, addCardSpy, clickCloseSpy, onFieldChangeSpy, handleClearOnConditionalChangeSpy
 
   let disclosures = [{
     'offense': 'test',
@@ -31,12 +31,14 @@ describe('Verify californiaCriminalBackground card', function () {
     clickCloseSpy = jasmine.createSpy('clickClose')
     onFieldChangeSpy = jasmine.createSpy('onFieldChange')
     setParentStateSpy = jasmine.createSpy('setParentState')
+    handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
 
     componentMount = mount(<CaliforniaCriminalBackground
       convictedInCalifornia={false}
       disclosures={disclosures}
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
+      handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
       setParentState={setParentStateSpy} />)
 
@@ -44,6 +46,7 @@ describe('Verify californiaCriminalBackground card', function () {
       convictedInCalifornia
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
+      handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
       setParentState={setParentStateSpy} />)
   })
@@ -66,15 +69,15 @@ describe('Verify californiaCriminalBackground card', function () {
     it('onClick event shows lived in other state multi select', () => {
       let cardComponent = componentMount.find('input[type="radio"]')
       let trueComponent = cardComponent.find('#californiaCriminalBackgroundRadiotrue')
-      trueComponent.simulate('change', {target: {checked: true}})
-      expect(setParentStateSpy).toHaveBeenCalledWith('convicted_in_california', true)
+      trueComponent.simulate('change', {target: {value: 'true'}})
+      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('convicted_in_california', 'true', 'convicted_in_california_disclosures', [ Object({ offense: '', offense_city: '', offense_state: Object({ value: 'California', id: 'CA' }), offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
 
     it('onClick event shows lived in other state multi select', () => {
       let cardComponent = componentMountWithoutDisclosures.find('input[type="radio"]')
       let trueComponent = cardComponent.find('#californiaCriminalBackgroundRadiotrue')
-      trueComponent.simulate('change', {target: {checked: false}})
-      expect(setParentStateSpy).toHaveBeenCalledWith('convicted_in_california', false)
+      trueComponent.simulate('change', {target: {value: 'false'}})
+      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('convicted_in_california', 'false', 'convicted_in_california_disclosures', [ Object({ offense: '', offense_city: '', offense_state: Object({ value: 'California', id: 'CA' }), offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
     it('onchange sets disclosures ', () => {
       let cardComponent = componentMountWithoutDisclosures.find('#californiaCriminalBackgroundoffenseReason').hostNodes()
