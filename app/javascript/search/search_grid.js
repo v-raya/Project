@@ -26,38 +26,41 @@ export default class SearchGrid extends React.Component {
                 </p>
               </div>
               <GridInnerLayout
-                title={'Facility ID/Approval #'}
+                title='Facility ID/Approval #'
                 value={result.license_number} />
               <GridInnerLayout
-                title={'Facility Type'}
+                title='Facility Type'
                 value={checkForNA(result.type)} />
               <GridInnerLayout
-                title={'Status'}
-                value={checkForNA(result.status)} />
+                title='Facility Source'
+                value={checkForNA(result.facility_source)} />
               <GridInnerLayout
-                title={'Licensee Name'}
-                value={result.name} />
+                title='Status'
+                value={checkForNA(result.status)} />
             </GridOuterLayout>
             <GridOuterLayout>
               <GridInnerLayout
-                title={'Facility Address'}
+                title='Licensee Name'
+                value={result.name} />
+              <GridInnerLayout
+                title='Facility Address'
                 value = {fullAddress} />
               <GridInnerLayout
-                title={'County'}
+                title='County'
                 value={checkForNA(result.county)} />
               <GridInnerLayout
-                title={'Facility Phone Number'}
+                title='Facility Phone Number'
                 value={phoneNo} />
               <GridInnerLayout
-                title={'Facility Email'}
+                title='Facility Email'
                 value={checkForNA(result.email_address)} />
             </GridOuterLayout>
             <GridOuterLayout>
               <GridInnerLayout
-                title={'Assigned Worker'}
+                title='Assigned Worker'
                 value={checkForNA(result.assigned_worker)} />
               <GridInnerLayout
-                title={'Assigned Worker'}
+                title='Assigned Worker'
                 value={phoneNo} />
             </GridOuterLayout>
           </div>
