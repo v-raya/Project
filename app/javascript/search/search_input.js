@@ -2,13 +2,14 @@ import React from 'react'
 import InputDataBlock from './common/inputDataBlock.js'
 import {InputComponent} from 'components/common/inputFields'
 import {dictionaryNilSelectValue} from 'helpers/commonHelper.jsx'
+import {userDefaults} from 'constants/defaultFields.js'
 
 export default class SearchInput extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       searchId: {
-        countyValue: '',
+        countyValue: this.props.userDetails.county_name || userDefaults,
         facilityTypeValue: '',
         facilityIdValue: '',
         facilityNameValue: '',
@@ -106,4 +107,7 @@ export default class SearchInput extends React.Component {
       </div>
     )
   }
+}
+SearchInput.defaultProps = {
+  userDetails: userDefaults
 }

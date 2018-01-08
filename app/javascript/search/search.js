@@ -80,6 +80,7 @@ export default class Search extends React.Component {
             sendSearchInput={this.addSearchInput.bind(this)}
             countyList={this.props.countyTypes}
             facilityTypes={this.props.facilityTypes}
+            userDetails={this.props.user || undefined}
           />
         </div>
         {searchResponseHasValues && <SearchDetails sendSearchInput={this.addSearchInput.bind(this)} {...this} />}

@@ -13,6 +13,10 @@ export const addressDefaults = Object.freeze({
   type: null
 })
 
+export const userDefaults = Object.freeze({
+  county_name: ''
+})
+
 export const phoneDefaults = Object.freeze({
   relation: '',
   type: '',

@@ -10,6 +10,9 @@ describe('Verify Search component Fields', function () {
         value: ''
       }
     ],
+    user: {
+      county_name: 'Los Angeles'
+    },
     countyTypes: [
       {
         id: '',

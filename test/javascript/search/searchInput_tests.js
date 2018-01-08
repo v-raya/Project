@@ -10,6 +10,9 @@ describe('Render Search Inputs', function () {
         value: ''
       }
     ],
+    userDetails: {
+      county_name: 'Los Angeles'
+    },
     countyList: [
       {
         id: '',
@@ -30,6 +33,11 @@ describe('Render Search Inputs', function () {
     spyOn(searchInputComp.instance(), 'handleChange').and.callThrough()
     countyField.simulate('change', {target: {options: {'19': {id: '19', value: 'Los Angeles'}, selectedIndex: 19}}})
     expect(searchInputComp.instance().handleChange).toHaveBeenCalledWith('countyValue', 'Los Angeles')
+  })
+
+  it('verify user logged in county', () => {
+    let userCounty = searchInputComp.find('#county_select').props().value
+    expect(userCounty).toBe('Los Angeles')
   })
 
   it('verify facilityTypes select', () => {
