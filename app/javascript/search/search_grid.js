@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 import GridInnerLayout from './common/gridInnerLayout.js'
 import GridOuterLayout from './common/gridOuterLayout.js'
-import {checkForNA, addressStringValueOrNa, phoneNumberOrNa} from './common/commonUtils'
+import {checkForNA, checkValueForNull, addressStringValueOrNa, phoneNumberOrNa} from './common/commonUtils'
 
 export default class SearchGrid extends React.Component {
   render () {
@@ -33,7 +33,7 @@ export default class SearchGrid extends React.Component {
                 value={checkForNA(result.type)} />
               <GridInnerLayout
                 title='Facility Source'
-                value={checkForNA(result.facility_source)} />
+                value={checkValueForNull(result.facility_source)} />
               <GridInnerLayout
                 title='Status'
                 value={checkForNA(result.status)} />
