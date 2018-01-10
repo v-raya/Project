@@ -31,8 +31,8 @@ export class MinorCardField extends React.Component {
           selectClassName='reusable-select'
           optionList={setToWhomOptionList(this.props.applicants)}
           label='To whom'
-          value={getDictionaryId(handleToWhomValue(minor.relationship_to_applicants[0].applicant_id, this.props.applicants))}
-          onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, event.target.value, 'applicant_id')} />
+          value={handleToWhomValue(minor.relationship_to_applicants[0].applicant_id, this.props.applicants).id}
+          onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, dictionaryNilSelectValue(event.target.options), 'applicant_id')} />
         <DateField gridClassName='col-md-4' label='Date of Birth' id={this.props.idPrefix + 'date_of_birth'}
           value={FormatDateForDisplay(minor.date_of_birth)}
           errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}

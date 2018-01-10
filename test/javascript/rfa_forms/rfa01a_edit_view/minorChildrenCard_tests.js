@@ -53,7 +53,7 @@ describe('Verify MinorCardFields', function () {
 
   it('verify applicantid field', () => {
     let relationShipField = minorChildCardComp.find('#applicant_id')
-    relationShipField.simulate('change', {target: {value: '2'}})
+    relationShipField.simulate('change', {target: {options: {'2': {value: '2', text: 'Applicant 2'}, selectedIndex: 2}}})
     expect(handleRelationshipTypeToApplicantSpy).toHaveBeenCalledWith(0, '2', 'applicant_id')
   })
 

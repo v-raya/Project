@@ -123,17 +123,23 @@ RSpec.feature 'RFA', js: true do
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
 
     expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('first_name', with: Faker::Name.name, :match => :prefer_exact)
+    applicant1FirstName = Faker::Name.name
+    applicant1LastName  = Faker::Name.name
+    applicant1FullName  = applicant1FirstName + ' ' + 'k' + ' ' + applicant1LastName 
+    fill_in('first_name', with: applicant1FirstName, :match => :prefer_exact)
     fill_in('middle_name', with: 'k', :match => :prefer_exact)
-    fill_in('last_name', with: Faker::Name.name, :match => :prefer_exact)
+    fill_in('last_name', with: applicant1LastName, :match => :prefer_exact)
     expect(page).to have_content 'IV. Minor Children Residing in the Home'
     find(:select, 'relationship_to_applicant').first(:option, 'Child').select_option
+    find(:select, 'applicant_id').first(:option, applicant1FullName).select_option
     find(:select, 'child_financially_supported').first(:option, 'Yes').select_option
     find(:select, 'child_adopted').first(:option, 'Yes').select_option
     find(:select, 'minor_gender').first(:option, 'Male').select_option
     click_button('Save Progress')
     visit page.driver.current_url
     expect(find_field('relationship_to_applicant').value).to eq '1'
+    applicantIdValue = find_field('applicant_id').value
+    expect(find_field('applicant_id').value).to eq applicantIdValue
   end
 
   scenario 'validate Other Adults card', set_auth_header: true do
@@ -142,9 +148,13 @@ RSpec.feature 'RFA', js: true do
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('first_name', with: Faker::Name.name, :match => :prefer_exact)
+    applicant1FirstName = Faker::Name.name
+    applicant1LastName  = Faker::Name.name
+    applicant1FullName  = applicant1FirstName + ' ' + 'k' + ' ' + applicant1LastName 
+    fill_in('first_name', with: applicant1FirstName, :match => :prefer_exact)
     fill_in('middle_name', with: 'k', :match => :prefer_exact)
-    fill_in('last_name', with: Faker::Name.name, :match => :prefer_exact)
+    fill_in('last_name', with: applicant1LastName, :match => :prefer_exact)
+    find(:select, 'availableApplicants').first(:option, applicant1FullName).select_option
     expect(page).to have_content 'V.Other Adults Residing or Regularly Present in the Home'
     find(:select, 'otherAdults[0].relationshipType').first(:option, 'Child').select_option
     fill_in('otherAdults[0].firstName', with: Faker::Name.name, :match => :prefer_exact)
@@ -153,6 +163,8 @@ RSpec.feature 'RFA', js: true do
     visit page.driver.current_url
 
     expect(find_field('otherAdults[0].relationshipType').value).to eq '1'
+    availableApplicantId = find_field('availableApplicants').value
+    expect(find_field('availableApplicants').value).to eq availableApplicantId
   end
 
 
