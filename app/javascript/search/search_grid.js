@@ -40,9 +40,6 @@ export default class SearchGrid extends React.Component {
             </GridOuterLayout>
             <GridOuterLayout>
               <GridInnerLayout
-                title='Licensee Name'
-                value={result.name} />
-              <GridInnerLayout
                 title='Facility Address'
                 value = {respectiveFullAddressOrNA(result.addresses, physicalAddressType)} />
               <GridInnerLayout
@@ -54,6 +51,9 @@ export default class SearchGrid extends React.Component {
               <GridInnerLayout
                 title='Facility Email'
                 value={checkForNA(result.email_address)} />
+              <GridInnerLayout
+                title='Licensee Name'
+                value={result.name} />
             </GridOuterLayout>
             <GridOuterLayout>
               <GridInnerLayout
