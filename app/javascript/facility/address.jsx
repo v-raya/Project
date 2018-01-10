@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {SmallInnerBlockDetails} from './smallInnerBlockDetails.js'
 import {InnerBlockAddressTitles} from './innerBlockAddressTitles.js'
-import {checkForNA, checkValueForNull, stringForCityStateZip, formatPhoneNumberForDashes} from '../search/common/commonUtils'
+import {checkForNA, checkValueForNull, checkforDateOrNa, stringForCityStateZip, formatPhoneNumberForDashes} from '../search/common/commonUtils'
 import {facilityDataDefaults} from 'constants/defaultFields'
 
 export default class FacilityAddress extends React.Component {
@@ -48,7 +48,7 @@ export default class FacilityAddress extends React.Component {
               <SmallInnerBlockDetails
                 classNameTitle={'last_visit'}
                 title='LAST VISIT DATE'
-                value={checkValueForNull(result.last_visit_date)} />
+                value={checkforDateOrNa(result.last_visit_date)} />
               <SmallInnerBlockDetails
                 classNameTitle={'visit_reason'}
                 title='LAST VISIT REASON'

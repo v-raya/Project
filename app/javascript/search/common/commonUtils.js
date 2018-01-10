@@ -24,6 +24,10 @@ export const phoneNumberOrNa = (phone) => {
   }
 }
 
+export const checkforDateOrNa = (date) => {
+  return date ? date.split(' ')[0] : 'N/A'
+}
+
 export const formatPhoneNumberForDashes = (phone) => {
   return phone.number.replace(/(\d{3})(\d{3})(\d{4})/, '($1)-$2-$3')
 }

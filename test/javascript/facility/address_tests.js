@@ -27,7 +27,7 @@ describe('Verify Facility Address', function () {
       'capacity': 10,
       'license_effective_date': '2012-10-01',
       'original_application_recieved_date': '2012-07-18',
-      'last_visit_date': '2017-04-14 00:00:00',
+      'last_visit_date': '2017-04-14',
       'last_visit_reason': {
         'id': '10',
         'value': 'CASELOAD MANAGEMENT'
@@ -92,7 +92,7 @@ describe('Verify Facility Address', function () {
   })
   it('verify Facility Last Visit Date Value', function () {
     let lastVisitDateValue = AddressCompShallow.props().children.props.children[2].props.children.props.children[0].props.value
-    expect(lastVisitDateValue).toBe('2017-04-14 00:00:00')
+    expect(lastVisitDateValue).toBe('2017-04-14')
   })
   it('verify Facility Last Visit Reason', function () {
     let lastVisitReasonValue = AddressCompShallow.props().children.props.children[2].props.children.props.children[1].props.value
