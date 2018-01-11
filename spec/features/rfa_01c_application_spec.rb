@@ -31,12 +31,14 @@ RSpec.feature 'RFA01C', js: true do
     fill_in('desiredChildCarddate_of_birth', with: '01/01/2000', :match => :prefer_exact)
     find(:select, 'name_suffix').first(:option, 'Sr').select_option
     find(:select, 'grade').first(:option, 'TK').select_option
-    find(:select, 'state_type').first(:option, 'Alaska').select_option
     fill_in('Zip', with: '12345', :match => :prefer_exact)
+    find(:css, '.Select--single').click
+    find(:css, '#react-select-2--option-0').click
     find(:select, 'gender').first(:option, 'Male').select_option
     fill_in('name_of_school', with: 'School name', :match => :prefer_exact)
     click_button('Save Progress')
     visit page.driver.current_url
+    expect(page).to have_css(:span, text: 'Alaska')
     expect(find_field('gender').value).to eq '1'
     expect(find_field('name_of_school').value).to eq 'School name'
     expect(find_field('Zip').value).to eq '12345'

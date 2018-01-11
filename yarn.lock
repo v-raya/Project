@@ -2268,7 +2268,7 @@ doctrine@^2.0.0, doctrine@^2.0.2:
   dependencies:
     esutils "^2.0.2"
 
-dom-helpers@^3.0.0, dom-helpers@^3.2.0:
+dom-helpers@^3.0.0, dom-helpers@^3.2.0, dom-helpers@^3.2.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.3.1.tgz#fc1a4e15ffdf60ddde03a480a9c0fece821dd4a6"
 
@@ -6601,6 +6601,12 @@ promzard@^0.3.0:
   dependencies:
     read "1"
 
+prop-types-extra@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/prop-types-extra/-/prop-types-extra-1.0.1.tgz#a57bd4810e82d27a3ff4317ecc1b4ad005f79a82"
+  dependencies:
+    warning "^3.0.0"
+
 prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
@@ -6866,6 +6872,17 @@ react-onclickoutside@^6.5.0:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.7.0.tgz#997a4d533114c9a0a104913638aa26afc084f75c"
 
+react-overlays@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-0.8.3.tgz#fad65eea5b24301cca192a169f5dddb0b20d3ac5"
+  dependencies:
+    classnames "^2.2.5"
+    dom-helpers "^3.2.1"
+    prop-types "^15.5.10"
+    prop-types-extra "^1.0.1"
+    react-transition-group "^2.2.0"
+    warning "^3.0.0"
+
 react-prop-types@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/react-prop-types/-/react-prop-types-0.4.0.tgz#f99b0bfb4006929c9af2051e7c1414a5c75b93d0"
@@ -6957,9 +6974,9 @@ react-widgets@4.1.0:
     uncontrollable "^4.0.0"
     warning "^2.0.0"
 
-react-wood-duck@0.1.38:
-  version "0.1.38"
-  resolved "https://registry.yarnpkg.com/react-wood-duck/-/react-wood-duck-0.1.38.tgz#2fd7eaa252367dbd75cc38420622303576c028e9"
+react-wood-duck@0.1.46:
+  version "0.1.46"
+  resolved "https://registry.yarnpkg.com/react-wood-duck/-/react-wood-duck-0.1.46.tgz#53adb465b995723922a496704119dfb5644d675d"
   dependencies:
     babel-runtime "^6.6.1"
     bootstrap "^3.3.7"
@@ -6971,6 +6988,7 @@ react-wood-duck@0.1.38:
     prop-types "^15.6.0"
     react-autosuggest "^9.3.2"
     react-datetime "^2.9.0"
+    react-overlays "^0.8.3"
     react-select "^1.0.0-rc.5"
 
 react@^15.5.0:

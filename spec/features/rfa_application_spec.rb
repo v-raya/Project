@@ -101,9 +101,9 @@ RSpec.feature 'RFA', js: true do
     find('#others_using_residence_as_mailingYes').click
     fill_in('directions', with: 'directions goes here', :match => :prefer_exact)
     page.find(:css, '.languages').click
-    page.find(:css, "#react-select-2--option-0").click
+    page.find(:css, "#react-select-5--option-0").click
     page.find(:css, '.languages').click
-    page.find(:css, "#react-select-2--option-1").click
+    page.find(:css, "#react-select-5--option-1").click
     expect(page).to have_css(:span, text: 'American Sign Language')
     expect(page).to have_css(:span, text: 'Armenian')
     click_button('Save Progress')
