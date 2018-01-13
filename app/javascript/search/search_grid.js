@@ -3,14 +3,12 @@ import PropTypes from 'prop-types'
 import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 import GridInnerLayout from './common/gridInnerLayout.js'
 import GridOuterLayout from './common/gridOuterLayout.js'
-import {checkForNA, checkValueForNull, respectiveNumberOrNA, respectiveFullAddressOrNA} from './common/commonUtils'
+import {checkForNA, checkValueForNull, respectiveNumberOrNA, respectiveFullAddressOrNA,
+  primaryPhoneRelation, alternativePhoneRelation, physicalAddressType} from './common/commonUtils'
 
 export default class SearchGrid extends React.Component {
   render () {
     const searchResults = this.props.searchResults
-    const primaryPhoneRelation = 'primary'
-    const alternativePhoneRelation = 'Alternative'
-    const physicalAddressType = 'Residential'
     const gridResult = searchResults.map((result, index) => {
       return (
         <div key={index} className='grid_view_inner col-xs-12 col-sm-12 col-md-12 col-lg-12' >
