@@ -13,14 +13,14 @@ export default class SearchGrid extends React.Component {
       return (
         <div key={index} className='grid_view_inner col-xs-12 col-sm-12 col-md-12 col-lg-12' >
           <div className='col-xs-12 col-sm-1 col-md-1 col-lg-1'>
-            <a href={urlPrefixHelper('/facilities/' + result.license_number)}><div className='home-icon' /></a>
+            <a href={urlPrefixHelper('/facilities/' + result.id)}><div className='home-icon' /></a>
           </div>
           <div className='col-xs-12 col-sm-11 col-md-11 col-lg-11'>
             <GridOuterLayout>
               <div>
                 <p className='block_label'>Facility Name </p>
                 <p className='block_text'>
-                  <a href={urlPrefixHelper('/facilities/' + result.license_number)}>{result.name}</a>
+                  <a href={urlPrefixHelper('/facilities/' + result.id)}>{result.name}</a>
                 </p>
               </div>
               <GridInnerLayout

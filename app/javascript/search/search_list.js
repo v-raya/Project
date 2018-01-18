@@ -10,7 +10,7 @@ export default class SearchList extends React.Component {
     const resultTable = searchResult.map((result, index) => {
       return (
         <tr key={index}>
-          <td><a href={urlPrefixHelper('/facilities/' + result.license_number)}>{result.name}</a></td>
+          <td><a href={urlPrefixHelper('/facilities/' + result.id)}>{result.name}</a></td>
           <td>{result.license_number}</td>
           <td>{checkForNA(result.type) + ' / ' + checkValueForNull(result.facility_source)}</td>
           <td>{checkForNA(result.status)}</td>

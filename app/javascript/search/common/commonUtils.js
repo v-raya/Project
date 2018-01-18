@@ -54,6 +54,10 @@ export const checkForNA = (object) => {
   return (object && object.value) ? object.value : 'N/A'
 }
 
+export const checkNameorNA = (object) => {
+  return (object && object.name) ? object.name : 'N/A'
+}
+
 export const checkfullNameorNA = (object) => {
   return object ? fullName(object) : 'N/A'
 }
