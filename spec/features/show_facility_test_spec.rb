@@ -35,7 +35,7 @@ RSpec.feature 'Facilities', js: true, set_auth_header: true  do
     visit search_index_path
     find(:select, 'county_select').first(:option, 'Alameda').select_option
     find_button('search').click
-    expect(page).to have_text('West, Connie & Anthony CFH')
+    expect(page).to have_text('DONALD DUCK ARF')
   end
 
   scenario 'select facility type dropdown and show search results' do
@@ -48,13 +48,15 @@ RSpec.feature 'Facilities', js: true, set_auth_header: true  do
 
   scenario 'find facilties by entering facility ID' do
     visit search_index_path
+    select "Los Angeles", :from => "county_select"
     fill_in 'Enter Facility ID #', with: '198798943'
     find_button('search').click
     expect(page).to have_text('Altadena Youth Shelter')
   end
 
-  scenario 'find facilties by entering facility ID with alpha charecters' do
+  scenario 'find facilties by entering facility ID with alpha characters' do
     visit search_index_path
+    select "Sacramento", :from => "county_select"
     fill_in 'Enter Facility ID #', with: 'DL7oFNL0AB'
     find_button('search').click
     expect(page).to have_text('Sandy Beach Foster Care Home')

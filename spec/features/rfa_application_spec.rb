@@ -92,9 +92,8 @@ RSpec.feature 'RFA', js: true do
     fill_in('street_address', with: 'maing address here', :match => :prefer_exact)
     fill_in('zip', with: '12345', :match => :prefer_exact)
     fill_in('city', with: 'secondary city', :match => :prefer_exact)
-    #find(:select, 'Residentialstate_type').first(:option, 'Alaska').select_option
     expect(page).to have_content 'About This Residence'
-    #find(:select, 'residenceTypes').first(:option, 'Own').select_option
+    find(:select, 'residenceTypes').first(:option, 'Own').select_option
     find('#weaponsYes').click
 
     find('#body_of_water_existYes').click

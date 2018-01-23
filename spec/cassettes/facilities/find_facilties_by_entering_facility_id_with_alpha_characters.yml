@@ -1,0 +1,430 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/counties
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..cJtyPD8kupyMPFGx.fA_OjSn3wGWlzNZsUhRwrAkDs8zTw54xxMimla__DW2SzVDG0WZE3u0jcNwBC_zsJmWpcIlHi_jfq4h8sUYjDu49MkLImBlSkL9iVTwS_5MLfzYt1meet9S6JnOJhH8QGtneCa7xUxuCMBCGBuiY3OorDB2KmlsNr0M9e5imO8QDQgPt5b0UvKk4Wjr0_yU62DW0WUD15dwqtcga50hoAfIeDydMs9xEe9C5rX24b7bJ-RtkM6TzdzzV3je5Ht8QgejH8YnsidYY2G2E2I1O7bXLZGPFnjJg2SzdwuDxSlNVnRZil1VjsPAbmNlzFvqxjnppv90HrIqNyqJ7NWAm3HV6xu36YfKP6xZpJWE-UWsImtWyYfKWtGhXv0-aelFLCMNqPfKguDu58VLxN3NxVPNKM0qXwcbR7rZ70Q-CsQaP2vvFqhDD66W3u2Vhq-ss4Kuxj5krIw7OCHeLbuwDxOsSk6N--Bf5fbkGV_JLvHzBK09YP_lvATOsxpHdiuaedR5YpiZLo36eb_C9TnXLzHyftVZaaPtKPlyp3yCVTY-C5MAax3rFCR4FSd-abLHm0MERtM7WR4fLm2m3sWLDKfh3WXlnJAm1TogkuRJ9MpX31UvWOnIUw_XpXIifg19SVr_mpSCvoIXYIArrbCP3Uw2tDbALvfv1hAIXJbeQ7pGhGGPS4rlgTTF5B0PSZQkXocD_yIwbCNtFVaF4W0EblEWb1rxFVzRkzTcdL4C-qyPCQvyDqTkWPw-ZMZtTzJ8q9FvSe-pnrb1K9O4aWOPpGt_E8SqXtux_tasQE1m01-zfeX902uiRjF4vGgVjMuw6V6_IMsz44zM2GX1eBaw9oPvhSg7PJ1Au830id3kIgGzvw1hKmGcbm1w-DmL5LiOm6MNErvEfZmmh2REHnZlusvF2JtVG5VC_js2Ycps4oGBeWvfbk8hJ9VKhfS1cVO7QfgtXgwE8O1oLSMdGaaLm-8XqOeM6e41ZDDmXqT-JQymrsw_-n2L0wcwlFY_1r84Ei-zBkmziRybLD5E3OYuja07YYQ.nxXdZaNFKPLTtvZLIsLKzA"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 23 Jan 2018 18:49:42 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 22-Jan-2018 18:49:42
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '591'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alameda",
+            "id" : 1
+          }, {
+            "value" : "Alpine",
+            "id" : 2
+          }, {
+            "value" : "Amador",
+            "id" : 3
+          }, {
+            "value" : "Butte",
+            "id" : 4
+          }, {
+            "value" : "Calaveras",
+            "id" : 5
+          }, {
+            "value" : "Colusa",
+            "id" : 6
+          }, {
+            "value" : "Contra Costa",
+            "id" : 7
+          }, {
+            "value" : "Del Norte",
+            "id" : 8
+          }, {
+            "value" : "El Dorado",
+            "id" : 9
+          }, {
+            "value" : "Fresno",
+            "id" : 10
+          }, {
+            "value" : "Glenn",
+            "id" : 11
+          }, {
+            "value" : "Humboldt",
+            "id" : 12
+          }, {
+            "value" : "Imperial",
+            "id" : 13
+          }, {
+            "value" : "Inyo",
+            "id" : 14
+          }, {
+            "value" : "Kern",
+            "id" : 15
+          }, {
+            "value" : "Kings",
+            "id" : 16
+          }, {
+            "value" : "Lake",
+            "id" : 17
+          }, {
+            "value" : "Lassen",
+            "id" : 18
+          }, {
+            "value" : "Los Angeles",
+            "id" : 19
+          }, {
+            "value" : "Madera",
+            "id" : 20
+          }, {
+            "value" : "Marin",
+            "id" : 21
+          }, {
+            "value" : "Mariposa",
+            "id" : 22
+          }, {
+            "value" : "Mendocino",
+            "id" : 23
+          }, {
+            "value" : "Merced",
+            "id" : 24
+          }, {
+            "value" : "Modoc",
+            "id" : 25
+          }, {
+            "value" : "Mono",
+            "id" : 26
+          }, {
+            "value" : "Monterey",
+            "id" : 27
+          }, {
+            "value" : "Napa",
+            "id" : 28
+          }, {
+            "value" : "Nevada",
+            "id" : 29
+          }, {
+            "value" : "Orange",
+            "id" : 30
+          }, {
+            "value" : "Placer",
+            "id" : 31
+          }, {
+            "value" : "Plumas",
+            "id" : 32
+          }, {
+            "value" : "Riverside",
+            "id" : 33
+          }, {
+            "value" : "Sacramento",
+            "id" : 34
+          }, {
+            "value" : "San Benito",
+            "id" : 35
+          }, {
+            "value" : "San Bernardino",
+            "id" : 36
+          }, {
+            "value" : "San Diego",
+            "id" : 37
+          }, {
+            "value" : "San Francisco",
+            "id" : 38
+          }, {
+            "value" : "San Joaquin",
+            "id" : 39
+          }, {
+            "value" : "San Luis Obispo",
+            "id" : 40
+          }, {
+            "value" : "San Mateo",
+            "id" : 41
+          }, {
+            "value" : "Santa Barbara",
+            "id" : 42
+          }, {
+            "value" : "Santa Clara",
+            "id" : 43
+          }, {
+            "value" : "Santa Cruz",
+            "id" : 44
+          }, {
+            "value" : "Shasta",
+            "id" : 45
+          }, {
+            "value" : "Sierra",
+            "id" : 46
+          }, {
+            "value" : "Siskiyou",
+            "id" : 47
+          }, {
+            "value" : "Solano",
+            "id" : 48
+          }, {
+            "value" : "Sonoma",
+            "id" : 49
+          }, {
+            "value" : "Stanislaus",
+            "id" : 50
+          }, {
+            "value" : "Sutter",
+            "id" : 51
+          }, {
+            "value" : "Tehama",
+            "id" : 52
+          }, {
+            "value" : "Trinity",
+            "id" : 53
+          }, {
+            "value" : "Tulare",
+            "id" : 54
+          }, {
+            "value" : "Tuolumne",
+            "id" : 55
+          }, {
+            "value" : "Ventura",
+            "id" : 56
+          }, {
+            "value" : "Yolo",
+            "id" : 57
+          }, {
+            "value" : "Yuba",
+            "id" : 58
+          }, {
+            "value" : "State of California",
+            "id" : 59
+          } ]
+        }
+    http_version: 
+  recorded_at: Tue, 23 Jan 2018 18:49:42 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..cJtyPD8kupyMPFGx.fA_OjSn3wGWlzNZsUhRwrAkDs8zTw54xxMimla__DW2SzVDG0WZE3u0jcNwBC_zsJmWpcIlHi_jfq4h8sUYjDu49MkLImBlSkL9iVTwS_5MLfzYt1meet9S6JnOJhH8QGtneCa7xUxuCMBCGBuiY3OorDB2KmlsNr0M9e5imO8QDQgPt5b0UvKk4Wjr0_yU62DW0WUD15dwqtcga50hoAfIeDydMs9xEe9C5rX24b7bJ-RtkM6TzdzzV3je5Ht8QgejH8YnsidYY2G2E2I1O7bXLZGPFnjJg2SzdwuDxSlNVnRZil1VjsPAbmNlzFvqxjnppv90HrIqNyqJ7NWAm3HV6xu36YfKP6xZpJWE-UWsImtWyYfKWtGhXv0-aelFLCMNqPfKguDu58VLxN3NxVPNKM0qXwcbR7rZ70Q-CsQaP2vvFqhDD66W3u2Vhq-ss4Kuxj5krIw7OCHeLbuwDxOsSk6N--Bf5fbkGV_JLvHzBK09YP_lvATOsxpHdiuaedR5YpiZLo36eb_C9TnXLzHyftVZaaPtKPlyp3yCVTY-C5MAax3rFCR4FSd-abLHm0MERtM7WR4fLm2m3sWLDKfh3WXlnJAm1TogkuRJ9MpX31UvWOnIUw_XpXIifg19SVr_mpSCvoIXYIArrbCP3Uw2tDbALvfv1hAIXJbeQ7pGhGGPS4rlgTTF5B0PSZQkXocD_yIwbCNtFVaF4W0EblEWb1rxFVzRkzTcdL4C-qyPCQvyDqTkWPw-ZMZtTzJ8q9FvSe-pnrb1K9O4aWOPpGt_E8SqXtux_tasQE1m01-zfeX902uiRjF4vGgVjMuw6V6_IMsz44zM2GX1eBaw9oPvhSg7PJ1Au830id3kIgGzvw1hKmGcbm1w-DmL5LiOm6MNErvEfZmmh2REHnZlusvF2JtVG5VC_js2Ycps4oGBeWvfbk8hJ9VKhfS1cVO7QfgtXgwE8O1oLSMdGaaLm-8XqOeM6e41ZDDmXqT-JQymrsw_-n2L0wcwlFY_1r84Ei-zBkmziRybLD5E3OYuja07YYQ.nxXdZaNFKPLTtvZLIsLKzA"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 23 Jan 2018 18:49:42 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 22-Jan-2018 18:49:42
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '686'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Home Care Organization",
+            "id" : 300
+          }, {
+            "value" : "Adoption Agency",
+            "id" : 400
+          }, {
+            "value" : "Resource Family Home",
+            "id" : 403
+          }, {
+            "value" : "Foster Family Agency",
+            "id" : 430
+          }, {
+            "value" : "Foster Family AG-Sub",
+            "id" : 431
+          }, {
+            "value" : "FFA Certified Home",
+            "id" : 433
+          }, {
+            "value" : "Small Family Home",
+            "id" : 710
+          }, {
+            "value" : "Foster Family Home",
+            "id" : 711
+          }, {
+            "value" : "Crisis Nursery",
+            "id" : 720
+          }, {
+            "value" : "Temporary Shelter Care Facility",
+            "id" : 721
+          }, {
+            "value" : "Transitional Shelter Care",
+            "id" : 722
+          }, {
+            "value" : "Transitional Housing Placement Program",
+            "id" : 726
+          }, {
+            "value" : "Community Treatment Facility",
+            "id" : 728
+          }, {
+            "value" : "GH-Enhanced Behavioral Supports Home",
+            "id" : 729
+          }, {
+            "value" : "Group Home",
+            "id" : 730
+          }, {
+            "value" : "Out Of State GH",
+            "id" : 731
+          }, {
+            "value" : "Runaway And Homeless Youth Shelter-GH",
+            "id" : 732
+          }, {
+            "value" : "Short Term Residential Therapeutic Program",
+            "id" : 733
+          }, {
+            "value" : "ARFPSHN",
+            "id" : 734
+          }, {
+            "value" : "Adult Residential",
+            "id" : 735
+          }, {
+            "value" : "Resid FAC Chron Ill",
+            "id" : 736
+          }, {
+            "value" : "ARF-Enhanced Behavioral Supports Home",
+            "id" : 737
+          }, {
+            "value" : "Community Crisis Home-ARF",
+            "id" : 738
+          }, {
+            "value" : "Residential-Elderly",
+            "id" : 740
+          }, {
+            "value" : "Residential Elderly-Continuing Care",
+            "id" : 741
+          }, {
+            "value" : "Rehab Facility",
+            "id" : 771
+          }, {
+            "value" : "Social Rehabilitation Facility",
+            "id" : 772
+          }, {
+            "value" : "Adult Day Care",
+            "id" : 775
+          }, {
+            "value" : "County Shelter/Recving Home(Non EA/AFDC)",
+            "id" : 790
+          }, {
+            "value" : "Court Specified Home",
+            "id" : 791
+          }, {
+            "value" : "Medical Facility",
+            "id" : 792
+          }, {
+            "value" : "Relative/NREFM Home",
+            "id" : 793
+          }, {
+            "value" : "Tribe Specified Home",
+            "id" : 795
+          }, {
+            "value" : "Guardian Home",
+            "id" : 796
+          }, {
+            "value" : "Supervised Independent Living Placement",
+            "id" : 800
+          }, {
+            "value" : "Family Day Care",
+            "id" : 810
+          }, {
+            "value" : "Infant Center",
+            "id" : 830
+          }, {
+            "value" : "School-Age DC Center",
+            "id" : 840
+          }, {
+            "value" : "DC Center - Ill Child",
+            "id" : 845
+          }, {
+            "value" : "Day Care Center",
+            "id" : 850
+          }, {
+            "value" : "Dummy Facility",
+            "id" : 999
+          } ]
+        }
+    http_version: 
+  recorded_at: Tue, 23 Jan 2018 18:49:42 GMT
+- request:
+    method: post
+    uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
+    body:
+      encoding: UTF-8
+      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"match_phrase":{"county.value":"Sacramento"}},{"match_phrase":{"id":"DL7oFNL0AB"}}]}}]}}}'
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..cJtyPD8kupyMPFGx.fA_OjSn3wGWlzNZsUhRwrAkDs8zTw54xxMimla__DW2SzVDG0WZE3u0jcNwBC_zsJmWpcIlHi_jfq4h8sUYjDu49MkLImBlSkL9iVTwS_5MLfzYt1meet9S6JnOJhH8QGtneCa7xUxuCMBCGBuiY3OorDB2KmlsNr0M9e5imO8QDQgPt5b0UvKk4Wjr0_yU62DW0WUD15dwqtcga50hoAfIeDydMs9xEe9C5rX24b7bJ-RtkM6TzdzzV3je5Ht8QgejH8YnsidYY2G2E2I1O7bXLZGPFnjJg2SzdwuDxSlNVnRZil1VjsPAbmNlzFvqxjnppv90HrIqNyqJ7NWAm3HV6xu36YfKP6xZpJWE-UWsImtWyYfKWtGhXv0-aelFLCMNqPfKguDu58VLxN3NxVPNKM0qXwcbR7rZ70Q-CsQaP2vvFqhDD66W3u2Vhq-ss4Kuxj5krIw7OCHeLbuwDxOsSk6N--Bf5fbkGV_JLvHzBK09YP_lvATOsxpHdiuaedR5YpiZLo36eb_C9TnXLzHyftVZaaPtKPlyp3yCVTY-C5MAax3rFCR4FSd-abLHm0MERtM7WR4fLm2m3sWLDKfh3WXlnJAm1TogkuRJ9MpX31UvWOnIUw_XpXIifg19SVr_mpSCvoIXYIArrbCP3Uw2tDbALvfv1hAIXJbeQ7pGhGGPS4rlgTTF5B0PSZQkXocD_yIwbCNtFVaF4W0EblEWb1rxFVzRkzTcdL4C-qyPCQvyDqTkWPw-ZMZtTzJ8q9FvSe-pnrb1K9O4aWOPpGt_E8SqXtux_tasQE1m01-zfeX902uiRjF4vGgVjMuw6V6_IMsz44zM2GX1eBaw9oPvhSg7PJ1Au830id3kIgGzvw1hKmGcbm1w-DmL5LiOm6MNErvEfZmmh2REHnZlusvF2JtVG5VC_js2Ycps4oGBeWvfbk8hJ9VKhfS1cVO7QfgtXgwE8O1oLSMdGaaLm-8XqOeM6e41ZDDmXqT-JQymrsw_-n2L0wcwlFY_1r84Ei-zBkmziRybLD5E3OYuja07YYQ.nxXdZaNFKPLTtvZLIsLKzA"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Tue, 23 Jan 2018 18:49:42 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 22-Jan-2018 18:49:42
+        GMT
+      content-length:
+      - '2359'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"took":1,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":1,"max_score":8.169776,"hits":[{"_index":"facilities","_type":"facility","_id":"DL7oFNL0AB","_score":8.169776,"_source":{"href":null,"id":"DL7oFNL0AB","capacity_last_changed":null,"type":{"id":"711","value":"Foster
+        Family Home"},"name":"Sandy Beach Foster Care Home","licensee_name":"","license_type":null,"assigned_worker":{"id":null,"value":"Kay
+        Riley"},"district_office":{"number":"37","name":"San Diego"},"license_number":null,"status":{"id":"0002","value":"Pending"},"capacity":0,"license_effective_date":null,"original_application_recieved_date":{"year":1996,"month":"APRIL","era":"CE","dayOfMonth":15,"dayOfWeek":"MONDAY","dayOfYear":106,"leapYear":true,"monthValue":4,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"34","value":"Sacramento","lis_code":null},"phones":[{"id":null,"relation":"primary","type":null,"number":"5302223333"},{"id":null,"relation":"alternate","type":null,"number":"5305633333"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"9622
+        Sandstone Drive","city":"San Diego","state":"CA","zip_code":"95819","zip_suffix_code":"1234"}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"230
+        D St.","city":"San Diego","state":"CA","zip_code":"95819","zip_suffix_code":"1234"}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS","children":[{"id":"Ar6kQoF0AB","facilityId":null,"person":{"id":null,"gender":"M","age":29,"ssn":null,"ethnicityId":null,"first_name":"Teddy","last_name":"Wendt","date_of_birth":{"year":1988,"month":"SEPTEMBER","era":"CE","dayOfMonth":11,"dayOfWeek":"SUNDAY","dayOfYear":255,"leapYear":true,"monthValue":9,"chronology":{"calendarType":"iso8601","id":"ISO"}}},"date_of_placement":{"year":1996,"month":"DECEMBER","era":"CE","dayOfMonth":14,"dayOfWeek":"SATURDAY","dayOfYear":349,"leapYear":true,"monthValue":12,"chronology":{"calendarType":"iso8601","id":"ISO"}},"assigned_worker":null,"county_of_origin":"San
+        Diego"}],"inspections":[],"complaints":[]}}]}}'
+    http_version: 
+  recorded_at: Tue, 23 Jan 2018 18:49:42 GMT
+recorded_with: VCR 3.0.3
