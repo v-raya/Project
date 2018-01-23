@@ -17,6 +17,7 @@ def remote_capabilities(capybara_config)
     capybara_app_port = ENV['CAPYBARA_APP_PORT']
     if capybara_app_port.present?
       capybara_config.app_host =  "#{capybara_config.app_host}:#{capybara_app_port}"
+      capybara_config.server_host = '0.0.0.0'
       capybara_config.server_port = capybara_app_port
     end
   end
