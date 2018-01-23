@@ -7,7 +7,12 @@ import Validator from 'helpers/validator'
 describe('Verify Child Desired Comp', () => {
   let childDesiredComp, setParentStateSpy, getFocusClassNameSpy, setFocusStateSpy
   let validator = new Validator({})
-
+  const applicants = [{
+    id: 20,
+    first_name: 'gdfghfhgv',
+    last_name: 'hgbhg',
+    middle_name: ''
+  }]
   const identifiedChildren = Object.freeze({
     first_name: '',
     middle_name: '',
@@ -42,8 +47,9 @@ describe('Verify Child Desired Comp', () => {
     setFocusStateSpy = jasmine.createSpy('setFocusState')
 
     childDesiredComp = mount(<DesiredChildCardGroup
+      applicants={applicants}
       focusComponentName={'ChildDesiredMain'}
-      identified_children={identifiedChildren}
+      identifiedChildren={[identifiedChildren, identifiedChildren]}
       desiredChild={identifiedChildren}
       getFocusClassName={getFocusClassNameSpy}
       setFocusState={setFocusStateSpy}
@@ -72,6 +78,36 @@ describe('Verify Child Desired Comp', () => {
     childDesiredComp.instance().addCard()
     expect(childDesiredComp.instance().addCard).toHaveBeenCalled()
   })
+
+  it('verify relationship to applicant on change', () => {
+    let relationField = childDesiredComp.find('#relationship_to_applicant1child0').hostNodes()
+    relationField.simulate('change', {target: {value: 'test'}})
+    expect(setParentStateSpy).toHaveBeenCalledWith('identified_children', [ { gender: null,
+      name_suffix: null,
+      date_of_birth: '',
+      school_address: { street_address: '', zip: '', city: '', state: null, type: { value: 'Mailing', id: 3 } },
+      school_grade: null,
+      relationship_to_applicants: [ { applicant_id: '', relationship_to_applicant: null } ],
+      date_of_placement: '',
+      last_name: '',
+      county_of_jurisdiction: null,
+      middle_name: '',
+      school_name: '',
+      first_name: '' },
+    { gender: null,
+      name_suffix: null,
+      date_of_birth: '',
+      school_address: { street_address: '', zip: '', city: '', state: null, type: { value: 'Mailing', id: 3 } },
+      school_grade: null,
+      relationship_to_applicants: [ { applicant_id: 20, relationship_to_applicant: null, relationship_to_applicant_freeform: 'test' } ],
+      date_of_placement: '',
+      last_name: '',
+      county_of_jurisdiction: null,
+      middle_name: '',
+      school_name: '',
+      first_name: '' } ])
+  })
+
   it('removes a card', () => {
     spyOn(childDesiredComp.instance(), 'clickClose').and.callThrough()
     childDesiredComp.instance().clickClose()

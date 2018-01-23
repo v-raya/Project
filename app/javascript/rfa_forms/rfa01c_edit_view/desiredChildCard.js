@@ -25,10 +25,10 @@ export default class DesiredChildCard extends React.Component {
     this.props.setParentState(index, 'school_address', schoolAddressObj.toJS())
   }
 
-  handleRelationshipChange (applicant, value, index) {
+  handleRelationshipChange (applicant, value, index, subIndex) {
     let relationshipToApplicant = Immutable.fromJS(checkArrayObjectPresence(this.props.desiredChild.relationship_to_applicants) || [relationshipToApplicantDefaults])
-    relationshipToApplicant = relationshipToApplicant.setIn([0, 'applicant_id'], applicant.id)
-    relationshipToApplicant = relationshipToApplicant.setIn([0, 'relationship_to_applicant_freeform'], value)
+    relationshipToApplicant = relationshipToApplicant.setIn([subIndex, 'applicant_id'], applicant.id)
+    relationshipToApplicant = relationshipToApplicant.setIn([subIndex, 'relationship_to_applicant_freeform'], value)
     this.props.setParentState(index, 'relationship_to_applicants', relationshipToApplicant.toJS())
   }
 

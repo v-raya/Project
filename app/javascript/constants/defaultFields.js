@@ -44,13 +44,7 @@ export const blankIdentifiedChild = Object.freeze({
   gender: null,
   county_of_jurisdiction: null,
   date_of_placement: '',
-  relationship_to_applicants: null,
-  // relationship_to_applicants: [
-  //   {
-  //     applicant_id: '',
-  //     relationship_to_applicant: null
-  //   }
-  // ],
+  relationship_to_applicants: [relationshipToApplicantDefaults],
   school_grade: null,
   school_name: '',
   school_address: {

@@ -126,7 +126,7 @@ describe('Verify RFA 01C child desired', function () {
   })
 
   it('verify relationship to applicant on change', () => {
-    let relationField = childCardComp.find('#relationship_to_applicant0').hostNodes()
+    let relationField = childCardComp.find('#relationship_to_applicant0child0').hostNodes()
     relationField.simulate('change', {target: {value: 'test'}})
     expect(setParentStateSpy).toHaveBeenCalledWith(0, 'relationship_to_applicants',
       [{applicant_id: 20, relationship_to_applicant_freeform: 'test', relationship_to_applicant: {value: '', id: 0}}])
