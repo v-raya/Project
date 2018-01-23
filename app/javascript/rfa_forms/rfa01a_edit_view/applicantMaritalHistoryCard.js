@@ -44,8 +44,7 @@ export default class ApplicantMaritalHistoryCard extends React.Component {
             onChange={(event) => this.props.changeMaritalHistory('relationship_type',
               dictionaryNilSelect(event.target.options), this.props.index)} />
         </div>
-        <div className='col-md-12'>
-          <CompleteNameFields
+        <CompleteNameFields
             index={this.props.index}
             namePrefixId='name_prefix'
             nameSuffixId='name_suffix'
@@ -60,7 +59,6 @@ export default class ApplicantMaritalHistoryCard extends React.Component {
             suffixTypes={this.props.suffixTypes}
             prefixTypes={this.props.prefixTypes}
             onChange={this.props.changeMaritalHistory} />
-        </div>
         <div className='col-md-12'>
           <div className='cards-inner-label'> Date and Place of Previous Relationship </div>
 
