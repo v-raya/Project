@@ -5,7 +5,6 @@ import Immutable from 'immutable'
 import CriminalFields from './criminalFields'
 import {DropDownField} from 'components/common/dropDownField'
 import YesNoRadioComponent from 'components/common/yesNoFields'
-
 import CardLayout from 'components/common/cardLayout'
 import Button from 'components/common/button'
 import {Rfa01bCaliforniaCriminalBackGroundCardText} from 'constants/rfaText'
@@ -46,7 +45,7 @@ export default class CaliforniaCriminalBackground extends React.Component {
 
   render () {
     const convictedInCalifornia = String(this.props.convictedInCalifornia)
-    const disclosures = checkArrayObjectPresence(this.props.disclosures) || [disclosureDefaults]
+    const disclosures = this.props.disclosures
     return (
 
       <CardLayout

@@ -31,6 +31,7 @@ describe('Verify crimeBackgroundAgainstCohabitant card', function () {
 
     componentMountWithoutDisclosures = mount(<CrimeBackgroundAgainstCohabitant
       arrestedForCrime
+      disclosures={undefined}
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}

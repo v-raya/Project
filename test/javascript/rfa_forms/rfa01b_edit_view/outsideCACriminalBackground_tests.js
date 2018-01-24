@@ -31,7 +31,7 @@ describe('Verify OutsideCACriminalBackground card', function () {
 
     componentMountWithoutDisclosures = mount(<OutsideCACriminalBackground
       convictedInAnotherState
-      disclosures={disclosures}
+      disclosures={undefined}
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
@@ -70,7 +70,7 @@ describe('Verify OutsideCACriminalBackground card', function () {
     it('onchange sets disclosures ', () => {
       let cardComponent = componentMountWithoutDisclosures.find('#outsideCaliforniaCriminalBackgroundoffenseReason').hostNodes()
       cardComponent.simulate('change', {target: {value: 'testing'}})
-      expect(setParentStateSpy).toHaveBeenCalledWith('convicted_in_another_state_disclosures', [ Object({ offense: 'testing', offense_city: 'test', offense_state: Object({ }), when_offense_happen: 'test', offense_details: 'test' }) ])
+      expect(setParentStateSpy).toHaveBeenCalledWith('convicted_in_another_state_disclosures', [ Object({ offense: 'testing', offense_city: '', offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
   })
 })

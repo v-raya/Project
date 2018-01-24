@@ -44,6 +44,7 @@ describe('Verify californiaCriminalBackground card', function () {
 
     componentMountWithoutDisclosures = mount(<CaliforniaCriminalBackground
       convictedInCalifornia
+      disclosures={undefined}
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
