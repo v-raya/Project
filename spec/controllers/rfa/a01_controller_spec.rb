@@ -1,8 +1,6 @@
 require 'rspec'
 require 'rails_helper'
 
-include RSpec
-
 describe  Rfa::A01Controller do
   before(:each) do
     allow(controller).to receive_messages(:authenticate_with_cwds => true)

@@ -1,8 +1,6 @@
 require 'rspec'
 require 'rails_helper'
 
-include RSpec
-
 describe  Rfa::C01Controller, set_auth_header: true do
   before(:each) do
     allow(controller).to receive_messages(:authenticate_with_cwds => true)
@@ -27,8 +25,8 @@ describe  Rfa::C01Controller, set_auth_header: true do
       c01_application_helper = Helpers::Rfa::C01::ApplicationHelper.new(auth_header: ENV['TOKEN'])
       rfa_c01_app_response = c01_application_helper.create(rfa_application_response['id'], '{}')
 
-     get :edit, {params: {a01_id: rfa_application_response['id'], id: rfa_c01_app_response.id}}
-     expect(response).to render_template('edit')
+      get :edit, {params: {a01_id: rfa_application_response['id'], id: rfa_c01_app_response.id}}
+      expect(response).to render_template('edit')
     end
   end
 end

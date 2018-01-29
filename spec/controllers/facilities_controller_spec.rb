@@ -1,8 +1,6 @@
 require 'rspec'
 require 'rails_helper'
 
-include RSpec
-
 describe FacilitiesController do
   before do
     allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
@@ -10,15 +8,15 @@ describe FacilitiesController do
   end
 
   #describe 'GET index' do
-    #it 'assigns @facilities' do
-      #get :index
-      #expect(assigns(:facilities).size).to eq(53)
-    #end
+  #it 'assigns @facilities' do
+  #get :index
+  #expect(assigns(:facilities).size).to eq(53)
+  #end
 
-    #it 'renders the index template' do
-      #get :index
-      #expect(response).to render_template('index')
-    #end
+  #it 'renders the index template' do
+  #get :index
+  #expect(response).to render_template('index')
+  #end
   #end
 
   describe 'POST search' do

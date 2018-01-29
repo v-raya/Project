@@ -1,4 +1,5 @@
 ENV['RAILS_ENV'] = 'test'
+
 require 'simplecov'
 require 'mock_redis'
 SimpleCov.start 'rails'
