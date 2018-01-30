@@ -55,6 +55,16 @@ RSpec.feature 'RFA', js: true do
     expect(find_field('applicants[0].phones[0].number').value).to eq '(201) 222-2345'
   end
 
+  scenario 'validate dropdown focus select on Phone Card', set_auth_header: true do
+    visit root_path
+    click_button 'Create RFA Application (Form 01)'
+    expect(page).to have_content 'Rfa-01A Section Summary'
+    page.find('#Rfa01AOverview').find('a.btn.btn-default').click
+    expect(page).to have_content 'Applicant 1 - Information'
+    fill_in "applicants[0].phones[0].number", with: "\t"
+    expect(page).to have_selector(:css, "select:focus")
+  end
+
   scenario 'validate Relationship between Applicant', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application (Form 01)'

@@ -11,6 +11,11 @@
   border-left: 0.7rem solid transparent;
 }
 
+select:focus {
+  border: 0.1rem solid;
+  border-radius: 0.2rem;
+  border-color: #2974a2; }
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
