@@ -58,8 +58,8 @@ export default class Employment extends React.Component {
               label='Occupation' placeholder=''
               type='text' onChange={(event) => this.onEmploymentChange('occupation', event.target.value)} />
 
-            <div className='col-md-3' >
-              <label>{'Personal Income'}</label>
+            <div className='col-md-2' >
+              <label>Income</label>
 
               <Cleave placeholder='$0'
                 id='income'
@@ -76,7 +76,7 @@ export default class Employment extends React.Component {
 
             </div>
 
-            <DropDownField gridClassName='col-md-1' id='income_type'
+            <DropDownField gridClassName='col-md-2' id='income_type'
               value={employmentFields.income_type.id}
               selectClassName='reusable-select'
               optionList={this.props.salaryTypes}
