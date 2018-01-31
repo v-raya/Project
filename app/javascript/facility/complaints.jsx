@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {checkforDateOrNa} from 'search/common/commonUtils'
 
 const title = 'Complaint History'
 
@@ -12,12 +13,12 @@ export default class Complaints extends React.Component {
       return (
         <tr key={complaint.id} >
           <td data-label='id'> {complaint.id} </td>
-          <td data-label='complaint date'> {complaint.complaint_date} </td>
+          <td data-label='complaint date'> {checkforDateOrNa(complaint.complaint_date)} </td>
           <td data-label='assigned worker'> {complaint.assigned_worker} </td>
           <td data-label='control number' > {complaint.control_number} </td>
           <td data-label='priority level'> {complaint.priority_level} </td>
           <td data-label='status'> {complaint.status} </td>
-          <td data-label='approval date'> {complaint.approval_date} </td>
+          <td data-label='approval date'> {checkforDateOrNa(complaint.approval_date)} </td>
         </tr>
       )
     })

@@ -2,7 +2,7 @@ import React from 'react'
 import SearchInput from '../../../app/javascript/search/search_input'
 import {shallow, mount} from 'enzyme'
 
-describe('Render Search Inputs', function () {
+describe('Verify search input component', function () {
   const props = {
     facilityTypes: [
       {
@@ -12,7 +12,7 @@ describe('Render Search Inputs', function () {
     ],
     searchId: {
       userDetails: {
-        county_name: 'Los Angeles'
+        county_name: ''
       }
     },
     countyList: [
@@ -24,56 +24,47 @@ describe('Render Search Inputs', function () {
 
   }
 
-  const searchInputComp = mount(<SearchInput {...props} />)
+  const spySendSearchInput = jasmine.createSpy('sendSearchInput')
+
+  const searchInputComp = mount(<SearchInput {...props} sendSearchInput={spySendSearchInput} />)
 
   it('verify component load', () => {
     expect(searchInputComp.length).toBe(1)
   })
 
-  it('verify county select', () => {
+  it('verify county select after component render', () => {
     let countyField = searchInputComp.find('#county_select')
-    spyOn(searchInputComp.instance(), 'handleChange').and.callThrough()
     countyField.simulate('change', {target: {options: {'19': {id: '19', value: 'Los Angeles'}, selectedIndex: 19}}})
-    expect(searchInputComp.instance().handleChange).toHaveBeenCalledWith('countyValue', 'Los Angeles')
+    expect(searchInputComp.update().find('#county_select').hostNodes().props().value).toBe('Los Angeles')
   })
 
-  it('verify user logged in county', () => {
-    let userCounty = searchInputComp.find('#county_select').props().value
-    expect(userCounty).toBe('Los Angeles')
+  it('verify facilityTypes select after component render', () => {
+    let facilityType = searchInputComp.find('#facility_select').hostNodes()
+    facilityType.simulate('change', {target: {options: {'2': {id: '400', value: 'Adoption Agency'}, selectedIndex: 2}}})
+    expect(searchInputComp.update().find('#facility_select').hostNodes().props().value).toBe('Adoption Agency')
   })
 
-  it('verify facilityTypes select', () => {
-    let countyField = searchInputComp.find('#facility_select')
-    spyOn(searchInputComp.instance(), 'handleChange').and.callThrough()
-    countyField.simulate('change', {target: {options: {'2': {id: '400', value: 'Adoption Agency'}, selectedIndex: 2}}})
-    expect(searchInputComp.instance().handleChange).toHaveBeenCalledWith('facilityTypeValue', 'Adoption Agency')
+  it('verify facility Id value after component render', () => {
+    let facilityId = searchInputComp.find('#facilityIdValue').hostNodes()
+    facilityId.simulate('change', {target: {value: 300665437}})
+    expect(searchInputComp.update().find('#facilityIdValue').hostNodes().props().value).toBe(300665437)
   })
 
-  it('verify facility Id', () => {
-    let countyField = searchInputComp.find('#facilityIdValue').hostNodes()
-    spyOn(searchInputComp.instance(), 'handleChange').and.callThrough()
-    countyField.simulate('change', {target: {value: 300665437}})
-    expect(searchInputComp.instance().handleChange).toHaveBeenCalledWith('facilityIdValue', 300665437)
+  it('verify facility name value after component render', () => {
+    let facilityName = searchInputComp.find('#facilityNameValue').hostNodes()
+    facilityName.simulate('change', {target: {value: 'Lederhouse Transitions'}})
+    expect(searchInputComp.update().find('#facilityNameValue').hostNodes().props().value).toBe('Lederhouse Transitions')
   })
 
-  it('verify facility Id accepting alpha characters', () => {
-    let countyField = searchInputComp.find('#facilityIdValue').hostNodes()
-    spyOn(searchInputComp.instance(), 'handleChange').and.callThrough()
-    countyField.simulate('change', {target: {value: 'DL7oFNL0AB'}})
-    expect(searchInputComp.instance().handleChange).toHaveBeenCalledWith('facilityIdValue', 'DL7oFNL0AB')
+  it('verify facility address value after component render', () => {
+    let facilityAddressValue = searchInputComp.find('#facilityAddressValue').hostNodes()
+    facilityAddressValue.simulate('change', {target: {value: '36 Sequoia Dr, Aliso Viejo, CA 92656'}})
+    expect(searchInputComp.update().find('#facilityAddressValue').hostNodes().props().value).toBe('36 Sequoia Dr, Aliso Viejo, CA 92656')
   })
 
-  it('verify facility Name', () => {
-    let countyField = searchInputComp.find('#facilityNameValue').hostNodes()
-    spyOn(searchInputComp.instance(), 'handleChange').and.callThrough()
-    countyField.simulate('change', {target: {value: 'Lederhouse Transitions'}})
-    expect(searchInputComp.instance().handleChange).toHaveBeenCalledWith('facilityNameValue', 'Lederhouse Transitions')
-  })
-
-  it('verify facility Address', () => {
-    let countyField = searchInputComp.find('#facilityAddressValue').hostNodes()
-    spyOn(searchInputComp.instance(), 'handleChange').and.callThrough()
-    countyField.simulate('change', {target: {value: '36 Sequoia Dr,Aliso Viejo,CA 92656'}})
-    expect(searchInputComp.instance().handleChange).toHaveBeenCalledWith('facilityAddressValue', '36 Sequoia Dr,Aliso Viejo,CA 92656')
+  it('verify clicking search button calls sendSearchInput method', () => {
+    let searchFacility = searchInputComp.find('.btn-primary')
+    searchFacility.simulate('submit')
+    expect(spySendSearchInput).toHaveBeenCalledWith('Los Angeles,Adoption Agency,300665437,Lederhouse Transitions,36 Sequoia Dr, Aliso Viejo, CA 92656')
   })
 })

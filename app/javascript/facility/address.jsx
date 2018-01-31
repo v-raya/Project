@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {SmallInnerBlockDetails} from './smallInnerBlockDetails.js'
 import {InnerBlockAddressTitles} from './innerBlockAddressTitles.js'
 import {checkForNA, checkforDateOrNa, cityStateZipOfRespectiveAddressOrNA, respectiveNumberOrNA, respectiveStreetAddressOrNA,
-  primaryPhoneRelation, alternativePhoneRelation, physicalAddressType, mailingAddressType} from '../search/common/commonUtils'
+  primaryPhoneRelation, alternativePhoneRelation, physicalAddressType, mailingAddressType} from 'search/common/commonUtils'
 import {facilityDataDefaults} from 'constants/defaultFields'
 
 export default class FacilityAddress extends React.Component {

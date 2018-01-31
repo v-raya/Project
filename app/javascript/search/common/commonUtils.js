@@ -43,7 +43,11 @@ export const respectiveFullAddressOrNA = (addresses, addressType) => {
 }
 
 export const checkforDateOrNa = (date) => {
-  return date ? date.split(' ')[0] : 'N/A'
+  if (date) {
+    return date.split(' ')[0].replace(/(\d{4})-(\d{2})-(\d{2})/, '$2/$3/$1')
+  } else {
+    return 'N/A'
+  }
 }
 
 export const formatPhoneNumberForDashes = (phone) => {
@@ -77,3 +81,13 @@ export const alternativePhoneRelation = 'alternate'
 export const physicalAddressType = 'Residential'
 
 export const mailingAddressType = 'Mailing'
+
+export const listOfStatus = ['LICENSED', 'CERTIFIED/APPROVED', 'LICENSED(PENDING CAPACITY CHANGE)']
+
+export const handleLicenseEffectiveDate = (result) => {
+  if (result.status) {
+    return listOfStatus.indexOf(result.status.value) >= 0 ? checkforDateOrNa(result.license_effective_date) : 'N/A'
+  } else {
+    return 'N/A'
+  }
+}

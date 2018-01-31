@@ -27,7 +27,7 @@ describe('Verify Complaints Component', function () {
     expect(renderComplaintsComp.find('td[data-label="id"]').props().children[1]).toBe('dlf0245')
   })
   it('Verify complaint date', function () {
-    expect(renderComplaintsComp.find('td[data-label="complaint date"]').props().children[1]).toBe('2016-09-27 00:00:00')
+    expect(renderComplaintsComp.find('td[data-label="complaint date"]').props().children[1]).toBe('09/27/2016')
   })
   it('Verify assigned worker full name', function () {
     expect(renderComplaintsComp.find('td[data-label="assigned worker"]').props().children[1]).toBe('Harry Potter')
@@ -42,6 +42,32 @@ describe('Verify Complaints Component', function () {
     expect(renderComplaintsComp.find('td[data-label="status"]').props().children[1]).toBe('Approved')
   })
   it('Verify complaint approval date', function () {
-    expect(renderComplaintsComp.find('td[data-label="approval date"]').props().children[1]).toBe('2016-12-10 00:00:00')
+    expect(renderComplaintsComp.find('td[data-label="approval date"]').props().children[1]).toBe('12/10/2016')
+  })
+})
+
+describe('Verify Complaints Component with null values', function () {
+  const props = {
+    facilityData: {
+      'count': 3,
+      'complaints': [
+        {
+          'id': 'dlf0245',
+          'complaint_date': null,
+          'assigned_worker': 'Harry Potter',
+          'control_number': '19-CR-20160927081411',
+          'priority_level': '2',
+          'status': 'Approved',
+          'approval_date': ' '
+        }
+      ]
+    }
+  }
+  const renderComplaintsComp = mount(<FacilityComplaints {...props} />)
+  it('Verify complaint date to be N/A', function () {
+    expect(renderComplaintsComp.find('td[data-label="complaint date"]').props().children[1]).toBe('N/A')
+  })
+  it('Verify complaint approval date to be invalid date', function () {
+    expect(renderComplaintsComp.find('td[data-label="approval date"]').props().children[1]).toBe('')
   })
 })

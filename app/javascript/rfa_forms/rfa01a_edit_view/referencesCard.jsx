@@ -45,7 +45,7 @@ export default class ReferencesCard extends React.Component {
           suffixTypes={this.props.suffixTypes}
           prefixTypes={this.props.prefixTypes}
           onChange={this.props.setParentState} />
-        <div class='col-md-12'>
+        <div className='col-md-12'>
           <AddressComponent
             index={this.props.index}
             stateTypes={this.props.stateTypes}
@@ -56,7 +56,7 @@ export default class ReferencesCard extends React.Component {
             onChange={(fieldId, event) => this.handleAddressChange(fieldId, event, this.props.index)}
           />
         </div>
-        <div class='col-md-12'>
+        <div className='col-md-12'>
           <CleaveInputField
             gridClassName='col-md-4'
             id={phoneNumberId}

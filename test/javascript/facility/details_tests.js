@@ -7,15 +7,9 @@ describe('Verify Facility Details', function () {
     facilityData: {
       'href': 'facilities/300665437',
       'id': '300665437',
-      'type': {
-        'id': '726',
-        'value': 'TRANSITIONAL HOUSING PLACEMENT PROGRAM'
-      },
-      'name': 'Lederhouse Transitions',
       'licensee_name': 'Lederhouse Transitions Inc.',
-      'license_type': 'A',
       'assigned_worker': {
-        'value': 'Something'
+        'value': 'Chewalah Inc.'
       },
       'district_office': {
         'number': '19',
@@ -24,105 +18,54 @@ describe('Verify Facility Details', function () {
       'license_number': '300665437',
       'status': {
         'id': '5',
-        'value': 'PROBATIONARY LICENSE'
+        'value': 'LICENSED'
       },
       'capacity': 10,
-      'capacity_last_changed': '2012-10-01',
-      'license_effective_date': '2012-10-01',
-      'original_application_recieved_date': '2012-07-18',
-      'last_visit_date': '2017-04-14 00:00:00',
-      'last_visit_reason': {
-        'id': '10',
-        'value': 'CASELOAD MANAGEMENT'
-      },
-      'county': {
-        'id': '30',
-        'value': 'ORANGE'
-      },
-      'phones': [
-        {
-          'relation': 'primary',
-          'type': 'Cell',
-          'number': '9494480118'
-        }
-      ],
-      'addresses': [
-        {
-          'type': 'Residential',
-          'address': {
-            'street_address': '36 Sequoia Dr',
-            'city': 'Aliso Viejo',
-            'state': 'CA',
-            'zip_code': '92656'
-          }
-        },
-        {
-          'type': 'Mailing',
-          'address': {
-            'street_address': '36 Sequoia Dr',
-            'city': 'Aliso Viejo',
-            'state': 'CA',
-            'zip_code': '92656'
-          }
-        }
-      ],
-      'visits': [
-        {
-          'approval': '',
-          'visit_type': 'Annual 10 month',
-          'visit_date': '2011-10-28'
-        },
-        {
-          'approval': '',
-          'visit_type': 'Annual 22 month'
-        },
-        {
-          'approval': '',
-          'visit_type': 'Post Licensing',
-          'visit_deferred_date': '1991-11-06'
-        },
-        {
-          'approval': '',
-          'visit_type': 'Renewal'
-        }
-      ],
-      'annual_visit_year': 12
+      'capacity_last_changed': '2012-10-01 00:00:00',
+      'license_effective_date': '2012-10-01 00:00:00',
+      'original_application_recieved_date': '2012-07-18 00:00:00'
     }
   }
   let detailsCompShallow = shallow(<FacilityDetails {...props} />)
   it('verify Facility Details fields', function () {
     expect(detailsCompShallow.find('.grid_view').length).toEqual(1)
   })
-  it('Assigned Worker Value', function () {
-    let assignedWorkerValue = detailsCompShallow.props().children[2].props.children[0].props.children.props.children[1].props.value
-    expect(assignedWorkerValue).toBe('Something')
+  it('Verify Name of Licensee / Parents', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="NAME OF LICENSEE / PARENTS"]').props().value).toBe('Lederhouse Transitions Inc.')
   })
-  it('Original Application Recieved Date', function () {
-    let originalApplicationRecievedDate = detailsCompShallow.props().children[2].props.children[2].props.children.props.children[1].props.value
-    expect(originalApplicationRecievedDate).toBe('2012-07-18')
+  it('Verify Approval / Licensing worker', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="APPROVAL / LICENSING WORKER"]').props().value).toBe('Chewalah Inc.')
   })
-  it(' verify capacity last changed', function () {
-    let verifyCapacityAndCapacityLastChanged = detailsCompShallow.props().children[2].props.children[1].props.children.props.children[2].props.value
-    expect(verifyCapacityAndCapacityLastChanged).toBe('10 / 2012-10-01')
+  it('Verify Assigned Oversight agency', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="ASSIGNED OVERSIGHT AGENCY"]').props().value).toBe('PACIFIC INLAND CR')
+  })
+  it('Verify Facility License Number', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="FACILITY LICENSE NUMBER"]').props().value).toBe('300665437')
+  })
+  it('Verify License status', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="LICENSE STATUS"]').props().value).toBe('LICENSED')
+  })
+  it('Verify Capacity / Capacity Last Changed', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="CAPACITY / CAPACITY LAST CHANGED"]').props().value).toBe('10 / 10/01/2012')
+  })
+  it('Verify License Effective Date when license status is "Licensed"', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="LICENSE EFFECTIVE DATE"]').props().value).toBe('10/01/2012')
+  })
+  it('Verify Application Received Date', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="APPLICATION RECEIVED DATE"]').props().value).toBe('07/18/2012')
   })
 })
 
-describe('Verify Facility Details Null Value', function () {
+describe('Verify Facility Details with Null Value', function () {
   const props = {
     facilityData: {
       'href': 'facilities/300665437',
       'id': '300665437',
-      'type': {
-        'id': '726',
-        'value': 'TRANSITIONAL HOUSING PLACEMENT PROGRAM'
-      },
-      'name': 'Lederhouse Transitions',
-      'licensee_name': 'Lederhouse Transitions Inc.',
-      'license_type': 'A',
+      'licensee_name': null,
       'assigned_worker': {},
       'district_office': {
         'number': '19',
-        'name': 'PACIFIC INLAND CR'
+        'name': null
       },
       'license_number': '300665437',
       'status': {
@@ -131,81 +74,27 @@ describe('Verify Facility Details Null Value', function () {
       },
       'capacity': 10,
       'capacity_last_changed': null,
-      'license_effective_date': '2012-10-01',
-      'original_application_recieved_date': null,
-      'last_visit_date': '2017-04-14 00:00:00',
-      'last_visit_reason': {
-        'id': '10',
-        'value': 'CASELOAD MANAGEMENT'
-      },
-      'county': {
-        'id': '30',
-        'value': 'ORANGE'
-      },
-      'phones': [
-        {
-          'relation': 'primary',
-          'type': 'Cell',
-          'number': '9494480118'
-        }
-      ],
-      'addresses': [
-        {
-          'type': 'Residential',
-          'address': {
-            'street_address': '36 Sequoia Dr',
-            'city': 'Aliso Viejo',
-            'state': 'CA',
-            'zip_code': '92656'
-          }
-        },
-        {
-          'type': 'Mailing',
-          'address': {
-            'street_address': '36 Sequoia Dr',
-            'city': 'Aliso Viejo',
-            'state': 'CA',
-            'zip_code': '92656'
-          }
-        }
-      ],
-      'visits': [
-        {
-          'approval': '',
-          'visit_type': 'Annual 10 month',
-          'visit_date': '2011-10-28'
-        },
-        {
-          'approval': '',
-          'visit_type': 'Annual 22 month'
-        },
-        {
-          'approval': '',
-          'visit_type': 'Post Licensing',
-          'visit_deferred_date': '1991-11-06'
-        },
-        {
-          'approval': '',
-          'visit_type': 'Renewal'
-        }
-      ],
-      'annual_visit_year': 12
+      'license_effective_date': null,
+      'original_application_recieved_date': null
     }
   }
   let detailsCompShallow = shallow(<FacilityDetails {...props} />)
-  it('verify Facility Details fields', function () {
+  it('verify Facility Details fields to be "N/A"', function () {
     expect(detailsCompShallow.find('.grid_view').length).toEqual(1)
   })
-  it('Assigned Worker Value', function () {
-    let assignedWorkerValue = detailsCompShallow.props().children[2].props.children[0].props.children.props.children[1].props.value
-    expect(assignedWorkerValue).toBe('N/A')
+  it('Verify Approval / Licensing worker to be "N/A"', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="APPROVAL / LICENSING WORKER"]').props().value).toBe('N/A')
   })
-  it('Original Application Recieved Date', function () {
-    let originalApplicationRecievedDate = detailsCompShallow.props().children[2].props.children[2].props.children.props.children[1].props.value
-    expect(originalApplicationRecievedDate).toBe('N/A')
+  it('Verify Assigned Oversight agency to be "N/A"', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="ASSIGNED OVERSIGHT AGENCY"]').props().value).toBe('N/A')
   })
-  it(' verify capacity last changed', function () {
-    let verifyCapacityAndCapacityLastChanged = detailsCompShallow.props().children[2].props.children[1].props.children.props.children[2].props.value
-    expect(verifyCapacityAndCapacityLastChanged).toBe('10 / N/A')
+  it('Verify Capacity Last Changed to be "N/A"', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="CAPACITY / CAPACITY LAST CHANGED"]').props().value).toBe('10 / N/A')
+  })
+  it('Verify License Effective Date to be "N/A", when License status is "Probationary License"', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="LICENSE EFFECTIVE DATE"]').props().value).toBe('N/A')
+  })
+  it('Verify Application Received Date to be "N/A"', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="APPLICATION RECEIVED DATE"]').props().value).toBe('N/A')
   })
 })
