@@ -88,7 +88,7 @@ export default class AboutApplicant extends React.Component {
 
               <InputField gridClassName='col-md-4' id={this.driversLicenseNumberId}
                 value={this.props.applicantFields.driver_license_number}
-                label='Driver License number' placeholder=''
+                label='Driver License Number' placeholder=''
                 type='text' onChange={(event) => this.props.setParentState('driver_license_number', event.target.value)}
                 errors={fieldErrorsAsImmutableSet(this.props.errors.driver_license_number)}
                 onBlur={(event) => this.validateDLcombo(this.driversLicenseNumberId, event.target.value, this.driversLicenseStateId, 'driver_license_state')} />

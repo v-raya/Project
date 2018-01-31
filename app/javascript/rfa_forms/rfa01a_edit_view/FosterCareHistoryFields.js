@@ -220,7 +220,7 @@ export class FosterCareHistoryFields extends React.Component {
                         agencies={q1History.agencies}
                         label='Agency Name'
                         placeholder=''
-                        dropdownLabel='license type'
+                        dropdownLabel='License Type'
                         inputId={'agency-q1-name-' + index}
                         dropDownId={'agency-q1-type-' + index}
                         optionList={Object.keys(licenseTypes).map(function (v) { return licenseTypes[v] })}
@@ -307,7 +307,7 @@ export class FosterCareHistoryFields extends React.Component {
                         placeholder=''
                         agencies={q3History.agencies}
                         defKey='facility_operation_licenses_q3'subKey='agencies'
-                        dropdownLabel='license type'
+                        dropdownLabel='License Type'
                         inputId={'agency-q3-name-' + index}
                         dropDownId={'agency-q3-type-' + index}
                         optionList={Object.keys(licenseTypes).map(function (v) { return licenseTypes[v] })}
@@ -394,7 +394,7 @@ export class FosterCareHistoryFields extends React.Component {
                         placeholder=''
                         agencies={q5History.agencies}
                         defKey='denial_history_q5' subKey='agencies'
-                        dropdownLabel='license type'
+                        dropdownLabel='License Type'
                         inputId={'agency-q5-name-' + index}
                         dropDownId={'agency-q5-type-' + index}
                         optionList={Object.keys(licenseTypes).map(function (v) { return licenseTypes[v] })}
@@ -439,7 +439,7 @@ export class FosterCareHistoryFields extends React.Component {
                         placeholder=''
                         agencies={q6History.agencies}
                         defKey='suspension_revocation_history_q6'subKey='agencies'
-                        dropdownLabel='license type'
+                        dropdownLabel='License Type'
                         inputId={'agency-q6-name-' + index}
                         dropDownId={'agency-q6-type-' + index}
                         optionList={Object.keys(licenseTypes).map(function (v) { return licenseTypes[v] })}
