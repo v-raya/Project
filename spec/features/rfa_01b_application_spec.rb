@@ -26,7 +26,7 @@ RSpec.feature 'RFA01B', js: true do
     fill_in('NameOfResourceFamily', with: 'test', :match => :prefer_exact)
     fill_in('ssn', with: '123-45-6789' , :match => :prefer_exact)
     fill_in('driversLicenseNumberId', with: 'D123', :match => :prefer_exact)
-    find(:select, 'driversLicenseStateId').first(:option, 'Alaska').select_option
+    select 'Alaska', from: 'driversLicenseStateId'
     find('[for=californiaCriminalBackgroundRadiotrue]').click
     fill_in('californiaCriminalBackgroundoffenseReason', with: 'test offense', :match => :prefer_exact)
     fill_in('californiaCriminalBackgroundoffenseCity', with: 'test offense city' , :match => :prefer_exact)

@@ -19,6 +19,8 @@ def remote_capabilities(capybara_config)
       capybara_config.app_host =  "#{capybara_config.app_host}:#{capybara_app_port}"
       capybara_config.server_host = '0.0.0.0'
       capybara_config.server_port = capybara_app_port
+    else
+      capybara_config.run_server = false
     end
   end
 end
@@ -61,6 +63,10 @@ end
 Capybara.configure do |c|
 
   remote_capabilities(c)
+
+  # wait increased to 5 seconds to avoid random failures.
+  # default wait is 2 seconds.
+  c.default_max_wait_time = 5
 
   case selenium_browser
   when :chrome, :headless_chrome

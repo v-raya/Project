@@ -33,7 +33,7 @@ RSpec.feature 'Facilities', js: true, set_auth_header: true  do
 
   scenario 'select county dropdown and show search results' do
     visit search_index_path
-    find(:select, 'county_select').first(:option, 'Alameda').select_option
+    select 'Alameda', from: 'county_select'
     find_button('search').click
     expect(page).to have_text('DONALD DUCK ARF')
   end
@@ -41,7 +41,7 @@ RSpec.feature 'Facilities', js: true, set_auth_header: true  do
   scenario 'select facility type dropdown and show search results' do
     visit search_index_path
     select "Orange", :from => "county_select"
-    find(:select, 'facility_select').first(:option, 'Adoption Agency').select_option
+    select 'Adoption Agency', from: 'facility_select'
     find_button('search').click
     expect(page).to have_text('Open Door Adoption')
   end
