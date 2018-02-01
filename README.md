@@ -17,7 +17,7 @@ Make sure homebrew is up to date and xcode is installed.
 Make sure XCode is installed.
 `xcode-select --install`
 
-## initialization
+## Initialization
 
 run the command:
 `yarn run dev-build`
