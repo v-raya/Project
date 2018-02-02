@@ -132,8 +132,8 @@ RSpec.feature 'RFA', js: true do
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
 
     expect(page).to have_content 'Applicant 1 - Information'
-    applicant1FirstName = Faker::Name.name
-    applicant1LastName  = Faker::Name.name
+    applicant1FirstName = Faker::Name.first_name
+    applicant1LastName  = Faker::Name.last_name
     applicant1FullName  = applicant1FirstName + ' ' + 'k' + ' ' + applicant1LastName
     fill_in('first_name', with: applicant1FirstName, :match => :prefer_exact)
     fill_in('middle_name', with: 'k', :match => :prefer_exact)
@@ -158,8 +158,8 @@ RSpec.feature 'RFA', js: true do
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
-    applicant1FirstName = Faker::Name.name
-    applicant1LastName  = Faker::Name.name
+    applicant1FirstName = Faker::Name.first_name
+    applicant1LastName  = Faker::Name.last_name
     applicant1FullName  = applicant1FirstName + ' ' + 'k' + ' ' + applicant1LastName
     fill_in('first_name', with: applicant1FirstName, :match => :prefer_exact)
     fill_in('middle_name', with: 'k', :match => :prefer_exact)
@@ -167,7 +167,7 @@ RSpec.feature 'RFA', js: true do
     select applicant1FullName, from: 'availableApplicants'
     expect(page).to have_content 'V.Other Adults Residing or Regularly Present in the Home'
     select 'Child', from: 'otherAdults[0].relationshipType'
-    fill_in('otherAdults[0].firstName', with: Faker::Name.name, :match => :prefer_exact)
+    fill_in('otherAdults[0].firstName', with: Faker::Name.first_name, :match => :prefer_exact)
 
     click_button('Save Progress')
     visit page.driver.current_url
