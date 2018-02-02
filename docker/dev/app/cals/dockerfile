@@ -13,20 +13,6 @@ RUN cd /var/www/cals \
   && yarn install
 
 # ENV variables
-ENV BASE_CALS_API_URL=http://localhost:3001/v1 \
-  CALS_API_URL=https://calsapi.preint.cwds.io \
-  BASE_SEARCH_API_URL=https://dora.preint.cwds.io \
-  GEO_SERVICE_URL=https://geo.preint.cwds.io \
-  AUTHENTICATION_API_BASE_URL=https://web.preint.cwds.io/perry \
-  USE_XVFB=true
-
-
-# RUN tests
-RUN rails assets:precompile RAILS_ENV=test
-RUN npm run spec-ci
-RUN npm run karma-ci
-
-# ENV variables
 ENV BASE_CALS_API_URL=http://calsmockapi:3001/v1 \
   AUTHENTICATION_API_BASE_URL=http://perry.dev.cwds.tabordasolutions.net \
   REDIS_HOST=calsredis \
@@ -34,7 +20,7 @@ ENV BASE_CALS_API_URL=http://calsmockapi:3001/v1 \
   RAILS_RELATIVE_URL_ROOT=/cals
 
 # compile assets
-RUN rails assets:precompile RAILS_ENV=development
+RUN bundle exec rails assets:precompile RAILS_ENV=development
 
 # run rails server
 CMD rails server -e development -b 0.0.0.0 -p 3000

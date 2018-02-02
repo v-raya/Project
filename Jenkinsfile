@@ -1,63 +1,97 @@
 #!/usr/bin/env groovy
 
-DOCKER_GROUP = 'cwds'
-DOCKER_IMAGE = 'cals'
+import java.text.SimpleDateFormat
 
-def notify(String status)
-{
+DOCKER_GROUP = 'cwds'
+DOCKER_APP_IMAGE = 'cals'
+DOCKER_TEST_IMAGE = 'cals_acceptance_test'
+
+def notify(String status) {
     def colorCode = status == 'SUCCESS' ? '11AB1B' : '#FF0000'
     slackSend(
         color: colorCode,
         message: "${env.JOB_NAME} #${env.BUILD_NUMBER} - *${currentBuild.currentResult}* after ${currentBuild.durationString} (Details at ${env.BUILD_URL})"
     )
 }
-def reports()
-{
-    try {
-            stage ('Reports') {
-                // step([$class: 'JUnitResultArchiver', testResults: '**/reports/*.xml'])
 
-                publishHTML (target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: false,
-                    keepAll: true,
-                    reportDir: 'reports/coverage/karma',
-                    reportFiles: 'index.html',
-                    reportName: 'JS Code Coverage'
-                ])
+def reports() {
+    // step([$class: 'JUnitResultArchiver', testResults: '**/reports/*.xml'])
+    publishHTML (target: [
+        allowMissing: false,
+        alwaysLinkToLastBuild: false,
+        keepAll: true,
+        reportDir: 'reports/coverage/karma',
+        reportFiles: 'index.html',
+        reportName: 'JS Code Coverage'
+    ])
 
-                publishHTML (target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: false,
-                    keepAll: true,
-                    reportDir: 'reports/coverage/rspec',
-                    reportFiles: 'index.html',
-                    reportName: 'Ruby Code Coverage'
-                ])
-            }
-        }
-        catch(e) {
-            pipelineStatus = 'FAILED'
-            currentBuild.result = 'FAILURE'
-        }
+    publishHTML (target: [
+        allowMissing: false,
+        alwaysLinkToLastBuild: false,
+        keepAll: true,
+        reportDir: 'reports/coverage/rspec',
+        reportFiles: 'index.html',
+        reportName: 'Ruby Code Coverage'
+    ])
 }
-def pushToDocker()
-{
-    // stage('Publish') {
-    //     curStage = 'Publish'
-    //     sh "make tag latest \$(git rev-parse --short HEAD)"
-    //     withEnv(["DOCKER_USER=${DOCKER_USER}",
-    //              "DOCKER_PASSWORD=${DOCKER_PASSWORD}"]) {
-    //         sh "make login"
-    //         sh "make publish"
-    //     }
-    // }
+
+def dockerStages() {
+    String newTag = "0.${getBuildTag()}-${env.BUILD_ID}"
+
+    stage('Docker App Build Publish') {
+        curStage = 'Docker App Build Publish'
+        pushToDocker(
+            "${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:${newTag}",
+            "--no-cache -f ./docker/dev/app/cals/dockerfile .",
+            DOCKER_CREDENTIALS_ID
+            )
+
+    }
+    stage('Docker Test Build Publish') {
+        curStage = 'Docker Test Build Publish'
+        pushToDocker(
+            "${DOCKER_GROUP}/${DOCKER_TEST_IMAGE}:${newTag}",
+            "--no-cache -f ./docker/dev/app/cals-acceptance-tests/Dockerfile .",
+            DOCKER_CREDENTIALS_ID
+            )
+    }
+
+}
+
+def pushToDocker(imageLocation, args, docker_credential_id) {
+    def app = docker.build(imageLocation, args)
+    withEnv(["DOCKER_CREDENTIALS_ID=${docker_credential_id}"]) {
+        withDockerRegistry([credentialsId: docker_credential_id]) {
+            app.push()
+            app.push('latest')
+        }
+    }
+}
+
+def getBuildTag() {
+    int baseTagNumber = 55
+    def baseDate = new SimpleDateFormat("yyyy-MM-dd").parse("2018-01-11")
+    def today = new Date()
+    int sprintsSince = (today - baseDate).intdiv(14)
+
+    return getNewTagNumber(baseTagNumber, sprintsSince)
+}
+def getNewTagNumber(baseTagNumber, sprints) {
+    int newTagNumber = baseTagNumber
+    sprints.times {
+        newTagNumber += 1
+        if ((newTagNumber % 10) == 7) {
+            newTagNumber += 4
+        }
+    }
+    return newTagNumber
 }
 
 node {
     checkout scm
     env.DISABLE_SPRING = 1
-    def branch = env.BRANCH_NAME ?: 'development'
+
+    def branch = env.BRANCH_NAME_PARAM
     def curStage = 'Start'
     def emailList = 'ratnesh.raval@osi.ca.gov'
     def pipelineStatus = 'SUCCESS'
@@ -83,9 +117,9 @@ node {
             sh 'bundle install'
             sh 'yarn install'
         }
-         stage('Lint') {
+        stage('Lint') {
             curStage = 'lint'
-            sh 'yarn run lint'
+            sh 'yarn lint'
         }
         stage('Compile Assets') {
             curStage = 'assets'
@@ -94,7 +128,7 @@ node {
 
         stage('Test - Jasmine') {
             curStage = 'karma'
-            sh 'yarn run karma-ci'
+            sh 'yarn karma-ci'
         }
         stage('Test - Rspec') {
             curStage = 'rspec'
@@ -104,21 +138,24 @@ node {
                 'BASE_SEARCH_API_URL=https://dora.preint.cwds.io',
                 'AUTHENTICATION_API_BASE_URL=https://web.preint.cwds.io/perry'
                 ]) {
-                sh 'yarn run spec-ci'
+                sh 'yarn spec-ci'
             }
         }
 
         if (branch == 'development') {
             // push to docker
-            pushToDocker()
+            dockerStages()
+        }
+
+        stage ('Reports') {
+            reports()
         }
     }
     catch (e) {
         pipelineStatus = 'FAILED'
-        throw e
+        currentBuild.result = 'FAILURE'
     }
     finally {
-        reports()
         notify(pipelineStatus)
         // cleanWs()
     }

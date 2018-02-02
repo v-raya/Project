@@ -11,7 +11,6 @@ services:
     environment:
       RAILS_ENV: ${RAILS_ENV:-test}
       NODE_ENV: test
-      BASE_CALS_API_URL: "http://localhost:3001/v1"
       CALS_API_URL: "https://calsapi.preint.cwds.io"
       GEO_SERVICE_URL: "https://geo.preint.cwds.io"
       AUTHENTICATION_API_BASE_URL: "https://web.preint.cwds.io/perry"
