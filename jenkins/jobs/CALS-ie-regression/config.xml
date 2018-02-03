@@ -4,26 +4,22 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
+    <hudson.security.AuthorizationMatrixProperty>
+      <inheritanceStrategy class="org.jenkinsci.plugins.matrixauth.inheritance.InheritParentStrategy"/>
+      <permission>hudson.model.Item.Read:anonymous</permission>
+    </hudson.security.AuthorizationMatrixProperty>
     <hudson.plugins.buildblocker.BuildBlockerProperty plugin="build-blocker-plugin@1.7.3">
       <useBuildBlocker>false</useBuildBlocker>
       <blockLevel>GLOBAL</blockLevel>
       <scanQueueFor>DISABLED</scanQueueFor>
       <blockingJobs></blockingJobs>
     </hudson.plugins.buildblocker.BuildBlockerProperty>
-    <jenkins.model.BuildDiscarderProperty>
-      <strategy class="hudson.tasks.LogRotator">
-        <daysToKeep>30</daysToKeep>
-        <numToKeep>50</numToKeep>
-        <artifactDaysToKeep>-1</artifactDaysToKeep>
-        <artifactNumToKeep>-1</artifactNumToKeep>
-      </strategy>
-    </jenkins.model.BuildDiscarderProperty>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.0">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.28.1">
       <projectUrl>https://github.com/ca-cwds/CALS.git/</projectUrl>
       <displayName></displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.7.0">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.6.4">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -40,42 +36,49 @@
     <extensions/>
   </scm>
   <canRoam>true</canRoam>
-  <disabled>true</disabled>
+  <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.29.0">
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.28.1">
       <spec></spec>
     </com.cloudbees.jenkins.GitHubPushTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>echo Cleaning up docker environment
-# docker rm $(docker ps -q -f status=exited) || true
-# docker volume rm $(docker volume ls -qf dangling=true) || true
-# docker rmi $(docker images -qf dangling=true --no-trunc) || true
-echo Docker environment cleaned</command>
-    </hudson.tasks.Shell>
-    <com.cloudbees.dockerpublish.DockerBuilder plugin="docker-build-publish@1.3.2">
-      <server plugin="docker-commons@1.11"/>
-      <registry plugin="docker-commons@1.11"/>
-      <repoName>cwds/cals</repoName>
-      <noCache>false</noCache>
-      <forcePull>true</forcePull>
-      <buildContext>docker/dev/app/cals</buildContext>
-      <dockerfilePath>docker/dev/app/cals/dockerfile</dockerfilePath>
-      <skipBuild>false</skipBuild>
-      <skipDecorate>false</skipDecorate>
-      <repoTag>0.56-${BUILD_NUMBER}</repoTag>
-      <skipPush>false</skipPush>
-      <createFingerprint>true</createFingerprint>
-      <skipTagLatest>false</skipTagLatest>
-      <buildAdditionalArgs>--no-cache</buildAdditionalArgs>
-      <forceTag>false</forceTag>
-    </com.cloudbees.dockerpublish.DockerBuilder>
-    <hudson.tasks.Shell>
-      <command>sleep 2</command>
+      <command>export CALS_API_URL=&quot;https://calsapi.preint.cwds.io&quot;
+export GEO_SERVICE_URL=&quot;https://geo.preint.cwds.io&quot;
+export BASE_SEARCH_API_URL=&quot;https://dora.preint.cwds.io&quot;
+export AUTHENTICATION_API_BASE_URL=&quot;https://web.preint.cwds.io/perry&quot;
+export CAPYBARA_APP_HOST=&quot;http://10.0.51.156&quot;
+export CAPYBARA_APP_PORT=&quot;4445&quot;
+export SELENIUM_SERVER=&quot;10.0.51.35:4444&quot;
+export DISABLE_SPRING=1
+
+
+set -e
+echo -----------------------------------------------------
+echo which ruby
+which ruby
+echo -----------------------------------------------------
+echo which bundler
+which bundler
+echo -----------------------------------------------------
+echo which bundle
+which bundle
+echo -----------------------------------------------------
+gem install bundler
+
+bundle install 
+yarn install
+
+bundle exec rails assets:precompile RAILS_ENV=test
+
+yarn run spec-ie
+
+sleep 1
+</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
@@ -103,11 +106,11 @@ echo Docker environment cleaned</command>
     </jenkins.plugins.slack.SlackNotifier>
   </publishers>
   <buildWrappers>
-    <hudson.plugins.build__timeout.BuildTimeoutWrapper plugin="build-timeout@1.19">
-      <strategy class="hudson.plugins.build_timeout.impl.AbsoluteTimeOutStrategy">
-        <timeoutMinutes>15</timeoutMinutes>
-      </strategy>
-      <operationList/>
-    </hudson.plugins.build__timeout.BuildTimeoutWrapper>
+    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.34">
+      <deleteDirs>false</deleteDirs>
+      <cleanupParameter></cleanupParameter>
+      <externalDelete></externalDelete>
+    </hudson.plugins.ws__cleanup.PreBuildCleanup>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.8.8"/>
   </buildWrappers>
 </project>

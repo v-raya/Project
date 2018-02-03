@@ -1,9 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<scriptApproval plugin="script-security@1.34">
+<scriptApproval plugin="script-security@1.40">
   <approvedScriptHashes>
     <string>017d0db438428731cd600b6ebda805065433520f</string>
+    <string>1c899c9e42a19e73d41b3d9f89f260a0bc21381c</string>
+    <string>47ed8c31788e7fb30aa268ec221bab942531305d</string>
+    <string>4ebd5141218625a166b3e026ce9b38029696015b</string>
+    <string>98a959b566ec8a00afcc0ae0ff3a28b0f89882a7</string>
+    <string>b5e77488c63e1fd643cf5b5e495b4a5e98c7beb5</string>
+    <string>d4de1880954595d51fc94054a6b1da20673d0bb2</string>
   </approvedScriptHashes>
-  <approvedSignatures/>
+  <approvedSignatures>
+    <string>method java.text.DateFormat parse java.lang.String</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DateGroovyMethods minus java.util.Date java.util.Date</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods times java.lang.Number groovy.lang.Closure</string>
+  </approvedSignatures>
   <aclApprovedSignatures/>
   <approvedClasspathEntries/>
   <pendingScripts/>

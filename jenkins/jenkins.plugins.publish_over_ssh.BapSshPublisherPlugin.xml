@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin_-Descriptor plugin="publish-over-ssh@1.17">
+<jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin_-Descriptor plugin="publish-over-ssh@1.18">
   <hostConfigurations>
     <jenkins.plugins.publish__over__ssh.BapSshHostConfiguration>
       <name>CALS Dev</name>
       <hostname>dev.cs-cals.com</hostname>
       <username>ec2-user</username>
-      <secretPassword>{AQAAABAAAAAQwsE6qHiHBJ0KnzOFrdPW+CyKbxRkCdibSC5hmFC5G3g=}</secretPassword>
+      <secretPassword>{AQAAABAAAAAQkQVJ3apeAr67C1+cLApb4xC7MamGAlIBod9wzH09zoA=}</secretPassword>
       <remoteRootDir></remoteRootDir>
       <port>22</port>
       <commonConfig class="jenkins.plugins.publish_over_ssh.BapSshCommonConfiguration">

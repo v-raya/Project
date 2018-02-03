@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description></description>
+  <description>This (re-)builds the test container (CALS) based on a commit to the &quot;development&quot; branch of CALS repository on GitHub.</description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <hudson.plugins.buildblocker.BuildBlockerProperty plugin="build-blocker-plugin@1.7.3">
@@ -52,19 +52,18 @@
   <builders>
     <hudson.tasks.Shell>
       <command>echo Cleaning up docker environment
-# docker rm $(docker ps -q -f status=exited) || true
-# docker volume rm $(docker volume ls -qf dangling=true) || true
-# docker rmi $(docker images -qf dangling=true --no-trunc) || true
+docker rm $(docker ps -q -f status=exited) || true
+docker volume rm $(docker volume ls -qf dangling=true) || true
+docker rmi $(docker images -qf dangling=true --no-trunc) || true
 echo Docker environment cleaned</command>
     </hudson.tasks.Shell>
     <com.cloudbees.dockerpublish.DockerBuilder plugin="docker-build-publish@1.3.2">
       <server plugin="docker-commons@1.11"/>
       <registry plugin="docker-commons@1.11"/>
-      <repoName>cwds/cals</repoName>
+      <repoName>cwds/cals_acceptance_test</repoName>
       <noCache>false</noCache>
       <forcePull>true</forcePull>
-      <buildContext>docker/dev/app/cals</buildContext>
-      <dockerfilePath>docker/dev/app/cals/dockerfile</dockerfilePath>
+      <buildContext>docker/dev/app/cals-acceptance-tests</buildContext>
       <skipBuild>false</skipBuild>
       <skipDecorate>false</skipDecorate>
       <repoTag>0.56-${BUILD_NUMBER}</repoTag>
