@@ -55,6 +55,17 @@ RSpec.feature 'RFA', js: true do
     expect(find_field('applicants[0].phones[0].number').value).to eq '(201) 222-2345'
   end
 
+  scenario 'prevent backspace navigation', set_auth_header: true do
+    visit root_path
+    click_button 'Create RFA Application (Form 01)'
+    expect(page).to have_content 'Rfa-01A Section Summary'
+    page.find('#Rfa01AOverview').find('a.btn.btn-default').click
+    expect(page).to have_content 'Applicant 1 - Information'
+    select "Mr.", :from => "name_prefix", :match => :first
+    page.first('select#name_prefix').send_keys :backspace 
+    expect(page).to have_content 'Applicant 1 - Information'
+  end
+
   scenario 'validate dropdown focus select on Phone Card', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application (Form 01)'
