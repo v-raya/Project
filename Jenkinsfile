@@ -6,13 +6,21 @@ DOCKER_GROUP = 'cwds'
 DOCKER_APP_IMAGE = 'cals'
 DOCKER_TEST_IMAGE = 'cals_acceptance_test'
 
-def notify(String status) {
-    def colorCode = status == 'SUCCESS' ? '11AB1B' : '#FF0000'
+SUCCESS_COLOR = '#11AB1B'
+FAILURE_COLOR = '#FF0000'
+
+def notify(String tagNumber) {
+    def colorCode = currentBuild.currentResult == 'SUCCESS' ? SUCCESS_COLOR : FAILURE_COLOR
+    def tagMessage = (tagNumber != '') ? tagMessage = "\nDocker tag: ${tagNumber}" : ''
+
     slackSend(
         color: colorCode,
-        message: "${env.JOB_NAME} #${env.BUILD_NUMBER} - *${currentBuild.currentResult}* after ${currentBuild.durationString} (Details at ${env.BUILD_URL})"
+        message: "${env.JOB_NAME} #${env.BUILD_NUMBER} - *${currentBuild.currentResult}* after ${currentBuild.durationString}" +
+            "${tagMessage}" +
+            "\n(Details at ${env.BUILD_URL})"
     )
 }
+
 
 def reports() {
     // step([$class: 'JUnitResultArchiver', testResults: '**/reports/*.xml'])
@@ -35,9 +43,7 @@ def reports() {
     ])
 }
 
-def dockerStages() {
-    String newTag = "0.${getBuildTag()}-${env.BUILD_ID}"
-
+def dockerStages(newTag) {
     stage('Docker App Build Publish') {
         curStage = 'Docker App Build Publish'
         pushToDocker(
@@ -55,7 +61,6 @@ def dockerStages() {
             DOCKER_CREDENTIALS_ID
             )
     }
-
 }
 
 def pushToDocker(imageLocation, args, docker_credential_id) {
@@ -95,10 +100,7 @@ node {
     def curStage = 'Start'
     def emailList = 'ratnesh.raval@osi.ca.gov'
     def pipelineStatus = 'SUCCESS'
-    def pipelineStatusMessage = ''
-    def successColor = '11AB1B'
-    def failureColor = '#FF0000'
-
+    String newTag = ''
     try {
         emailList = EMAIL_NOTIFICATION_LIST
     } catch (e) {
@@ -144,7 +146,8 @@ node {
 
         if (branch == 'development') {
             // push to docker
-            dockerStages()
+            newTag = "0.${getBuildTag()}-${env.BUILD_ID}"
+            dockerStages(newTag)
         }
 
         stage ('Reports') {
@@ -156,7 +159,7 @@ node {
         currentBuild.result = 'FAILURE'
     }
     finally {
-        notify(pipelineStatus)
+        notify(newTag)
         // cleanWs()
     }
 }
