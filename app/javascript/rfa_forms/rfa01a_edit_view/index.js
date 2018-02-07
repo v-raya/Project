@@ -38,6 +38,10 @@ export default class Rfa01EditView extends React.Component {
       disableSave: !(checkForNameValidation(this.props.application.applicants)),
       errors: {}
     }
+    if (!this.state.application.application_county) {
+      const countyValue = (this.props.user && this.props.user.county_code)
+      this.state.application.application_county = this.props.countyTypes.find(countyType => countyType.id === parseInt(countyValue))
+    }
   }
 
   validateFieldSetErrorState (fieldName, value) {
@@ -113,7 +117,6 @@ export default class Rfa01EditView extends React.Component {
 
   render () {
     const hideRelationshipBetweenApplicants = this.state.application.applicants !== null && this.state.application.applicants.length === 2 ? 'cards-section' + 'col-xs-12 col-sm-12 col-md-12 col-lg-12' : 'hidden'
-    const countyValue = getDictionaryId(this.state.application.application_county) || (this.props.user && this.props.user.county_code)
 
     return (
       <div className='main_page'>
@@ -146,7 +149,7 @@ export default class Rfa01EditView extends React.Component {
               countyUseOnlyCardId='county_use_only'
               setFocusState={this.setFocusState}
               getFocusClassName={this.getFocusClassName}
-              county={countyValue}
+              county={getDictionaryId(this.state.application.application_county)}
               CountyList={this.props.countyTypes}
               onFieldChange={(event) => this.setApplicationState('application_county',
                 dictionaryNilSelect(event.target.options))} />
