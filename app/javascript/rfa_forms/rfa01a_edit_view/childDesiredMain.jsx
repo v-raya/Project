@@ -23,7 +23,7 @@ export default class ChildDesiredMain extends React.Component {
     if (newData.toJS().child_identified === 'false') {
       newData = newData.set('child_in_home', '')
     }
-    this.props.setParentState('childDesired', newData.toJS())
+    this.props.setParentState('child_desired', newData.toJS())
   }
 
   render () {

@@ -39,11 +39,6 @@ export default class AdultChildrenFields extends React.Component {
           <div className='col-md-12'>
             <CompleteNameFields
               index={this.props.index}
-              namePrefixId='name_prefix'
-              nameSuffixId='name_suffix'
-              firstNameId='first_name'
-              middleNameId='middle_name'
-              lastNameId='last_name'
               firstName={adultChild.first_name}
               middleName={adultChild.middle_name}
               lastName={adultChild.last_name}

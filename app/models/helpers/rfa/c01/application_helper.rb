@@ -3,6 +3,10 @@ class Helpers::Rfa::C01::ApplicationHelper < Helpers::ModelHelperBase
     Rfa::C01::Application
   end
 
+  def all(application_id)
+    model_class.all(application_id, auth_header)
+  end
+
   def find_by_id(application_id, rfa_c01_form_id)
     model_class.find_by_id(application_id, rfa_c01_form_id, auth_header)
   end

@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:14 GMT
+      - Wed, 07 Feb 2018 17:41:14 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:14
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:14
         GMT
       vary:
       - Accept-Encoding
@@ -42,6 +42,87 @@ http_interactions:
       string: |-
         {
           "items" : [ {
+            "id" : 1939,
+            "applicants" : [ {
+              "id" : 1200,
+              "first_name" : "Dillon",
+              "middle_name" : "",
+              "last_name" : "Wisozk",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "is_initial_application" : false
+          }, {
+            "id" : 1937,
+            "applicants" : [ {
+              "id" : 1199,
+              "first_name" : "Dillon",
+              "middle_name" : "",
+              "last_name" : "Wisozk",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "is_initial_application" : false
+          }, {
+            "id" : 1936,
+            "applicants" : [ {
+              "id" : 1197,
+              "first_name" : "alpha0",
+              "middle_name" : "",
+              "last_name" : "beta0",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            }, {
+              "id" : 1198,
+              "first_name" : "alpha1",
+              "middle_name" : "",
+              "last_name" : "beta1",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "other_adults" : [ {
+              "id" : 353,
+              "first_name" : "alpha2",
+              "last_name" : "beta2",
+              "relationship_to_applicants" : [ { } ]
+            } ],
+            "is_initial_application" : false
+          }, {
+            "id" : 1933,
+            "applicants_relationship" : {
+              "relationship_type" : {
+                "value" : "Married",
+                "id" : 1
+              },
+              "place_of_relationship_city" : "",
+              "place_of_relationship_state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              }
+            },
+            "applicants" : [ {
+              "id" : 1195,
+              "first_name" : "Christine",
+              "middle_name" : "",
+              "last_name" : "Skiles",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            }, {
+              "id" : 1196,
+              "first_name" : "Imogene",
+              "middle_name" : "",
+              "last_name" : "Johnson",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "is_initial_application" : false
+          }, {
             "id" : 1930,
             "applicants" : [ {
               "id" : 1194,
@@ -15442,7 +15523,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:15 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:15 GMT
 - request:
     method: post
     uri: https://calsapi.preint.cwds.io/rfa-1a-forms
@@ -15464,9 +15545,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:15 GMT
+      - Wed, 07 Feb 2018 17:41:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:15
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:16
         GMT
       x-content-type-options:
       - nosniff
@@ -15482,14 +15563,14 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "id" : 1931,
+          "id" : 1941,
           "is_initial_application" : false
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:15 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:16 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-packet/1931/summary
+    uri: https://calsapi.preint.cwds.io/rfa-packet/1941/summary
     body:
       encoding: US-ASCII
       string: ''
@@ -15508,9 +15589,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:15 GMT
+      - Wed, 07 Feb 2018 17:41:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:15
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:16
         GMT
       vary:
       - Accept-Encoding
@@ -15564,10 +15645,10 @@ http_interactions:
           "adult_children" : [ ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:15 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:16 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1931?expanded=true
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941?expanded=true
     body:
       encoding: US-ASCII
       string: ''
@@ -15586,9 +15667,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:15 GMT
+      - Wed, 07 Feb 2018 17:41:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:15
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:16
         GMT
       vary:
       - Accept-Encoding
@@ -15606,14 +15687,14 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "id" : 1931,
+          "id" : 1941,
           "is_initial_application" : false
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:15 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:16 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1931/rfa-1c-forms
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/rfa-1c-forms
     body:
       encoding: US-ASCII
       string: ''
@@ -15634,9 +15715,9 @@ http_interactions:
       content-type:
       - text/html;charset=iso-8859-1
       date:
-      - Wed, 07 Feb 2018 17:32:15 GMT
+      - Wed, 07 Feb 2018 17:41:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:15
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:16
         GMT
       x-content-type-options:
       - nosniff
@@ -15657,12 +15738,12 @@ http_interactions:
         <title>Error 404 Not Found</title>
         </head>
         <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/1931/rfa-1c-forms. Reason:
+        <p>Problem accessing /rfa-1a-forms/1941/rfa-1c-forms. Reason:
         <pre>    Not Found</pre></p>
         </body>
         </html>
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:15 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/residence-ownership-types
@@ -15684,9 +15765,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:16 GMT
+      - Wed, 07 Feb 2018 17:41:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:16
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:16
         GMT
       vary:
       - Accept-Encoding
@@ -15716,7 +15797,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:16 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/ethnicity-types
@@ -15738,9 +15819,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:16 GMT
+      - Wed, 07 Feb 2018 17:41:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:16
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:16
         GMT
       vary:
       - Accept-Encoding
@@ -15860,7 +15941,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:16 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/address-types
@@ -15882,9 +15963,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:16 GMT
+      - Wed, 07 Feb 2018 17:41:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:16
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:16
         GMT
       vary:
       - Accept-Encoding
@@ -15914,7 +15995,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:16 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/applicant-relationship-types
@@ -15936,9 +16017,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:16 GMT
+      - Wed, 07 Feb 2018 17:41:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:16
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:16
         GMT
       vary:
       - Accept-Encoding
@@ -15974,7 +16055,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:16 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/license-types
@@ -15996,9 +16077,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:16 GMT
+      - Wed, 07 Feb 2018 17:41:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:16
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:16
         GMT
       vary:
       - Accept-Encoding
@@ -16028,7 +16109,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:16 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/relationship-to-applicant-types
@@ -16050,9 +16131,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:16 GMT
+      - Wed, 07 Feb 2018 17:41:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:16
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:17
         GMT
       vary:
       - Accept-Encoding
@@ -16088,7 +16169,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:16 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/name-types
@@ -16110,9 +16191,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:16 GMT
+      - Wed, 07 Feb 2018 17:41:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:16
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:17
         GMT
       vary:
       - Accept-Encoding
@@ -16145,7 +16226,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:16 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
@@ -16167,9 +16248,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:16 GMT
+      - Wed, 07 Feb 2018 17:41:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:16
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:17
         GMT
       vary:
       - Accept-Encoding
@@ -16217,7 +16298,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:16 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/name-prefix-types
@@ -16239,9 +16320,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:16 GMT
+      - Wed, 07 Feb 2018 17:41:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:16
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:17
         GMT
       vary:
       - Accept-Encoding
@@ -16280,7 +16361,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:16 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/phone-number-types
@@ -16302,9 +16383,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:16 GMT
+      - Wed, 07 Feb 2018 17:41:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:16
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:17
         GMT
       vary:
       - Accept-Encoding
@@ -16340,7 +16421,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:16 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/genders
@@ -16362,9 +16443,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:17 GMT
+      - Wed, 07 Feb 2018 17:41:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:17
         GMT
       vary:
       - Accept-Encoding
@@ -16391,7 +16472,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:17 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/education-level-types
@@ -16413,9 +16494,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:17 GMT
+      - Wed, 07 Feb 2018 17:41:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:17
         GMT
       vary:
       - Accept-Encoding
@@ -16457,7 +16538,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:17 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/languages
@@ -16479,9 +16560,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:17 GMT
+      - Wed, 07 Feb 2018 17:41:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:17
         GMT
       vary:
       - Accept-Encoding
@@ -16601,7 +16682,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:17 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/states
@@ -16623,9 +16704,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:17 GMT
+      - Wed, 07 Feb 2018 17:41:18 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:18
         GMT
       vary:
       - Accept-Encoding
@@ -16820,7 +16901,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:17 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:18 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/income-types
@@ -16842,9 +16923,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:17 GMT
+      - Wed, 07 Feb 2018 17:41:18 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:18
         GMT
       vary:
       - Accept-Encoding
@@ -16871,7 +16952,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:17 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:18 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/marriage-termination-reasons
@@ -16893,9 +16974,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:17 GMT
+      - Wed, 07 Feb 2018 17:41:18 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:18
         GMT
       vary:
       - Accept-Encoding
@@ -16925,7 +17006,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:17 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:18 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/age-groups
@@ -16947,9 +17028,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:17 GMT
+      - Wed, 07 Feb 2018 17:41:18 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:18
         GMT
       vary:
       - Accept-Encoding
@@ -16991,7 +17072,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:17 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:18 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/sibling-groups
@@ -17013,9 +17094,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:17 GMT
+      - Wed, 07 Feb 2018 17:41:18 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:18
         GMT
       vary:
       - Accept-Encoding
@@ -17051,7 +17132,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:17 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:18 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/counties
@@ -17073,9 +17154,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:17 GMT
+      - Wed, 07 Feb 2018 17:41:18 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:18
         GMT
       vary:
       - Accept-Encoding
@@ -17273,10 +17354,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:17 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:18 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1931
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941
     body:
       encoding: US-ASCII
       string: ''
@@ -17295,9 +17376,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 07 Feb 2018 17:32:17 GMT
+      - Wed, 07 Feb 2018 17:41:18 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:18
         GMT
       vary:
       - Accept-Encoding
@@ -17315,14 +17396,14 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "id" : 1931,
+          "id" : 1941,
           "is_initial_application" : false
         }
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:17 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:18 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1931/applicants
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/applicants
     body:
       encoding: US-ASCII
       string: ''
@@ -17343,9 +17424,9 @@ http_interactions:
       content-type:
       - text/html;charset=iso-8859-1
       date:
-      - Wed, 07 Feb 2018 17:32:17 GMT
+      - Wed, 07 Feb 2018 17:41:18 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:18
         GMT
       x-content-type-options:
       - nosniff
@@ -17366,15 +17447,15 @@ http_interactions:
         <title>Error 404 Not Found</title>
         </head>
         <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/1931/applicants. Reason:
+        <p>Problem accessing /rfa-1a-forms/1941/applicants. Reason:
         <pre>    Not Found</pre></p>
         </body>
         </html>
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:17 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:18 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1931/residence
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/residence
     body:
       encoding: US-ASCII
       string: ''
@@ -17395,9 +17476,9 @@ http_interactions:
       content-type:
       - text/html;charset=iso-8859-1
       date:
-      - Wed, 07 Feb 2018 17:32:17 GMT
+      - Wed, 07 Feb 2018 17:41:18 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:18
         GMT
       x-content-type-options:
       - nosniff
@@ -17418,15 +17499,15 @@ http_interactions:
         <title>Error 404 Not Found</title>
         </head>
         <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/1931/residence. Reason:
+        <p>Problem accessing /rfa-1a-forms/1941/residence. Reason:
         <pre>    Not Found</pre></p>
         </body>
         </html>
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:17 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:18 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1931/applicants-history
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/applicants-history
     body:
       encoding: US-ASCII
       string: ''
@@ -17447,9 +17528,9 @@ http_interactions:
       content-type:
       - text/html;charset=iso-8859-1
       date:
-      - Wed, 07 Feb 2018 17:32:17 GMT
+      - Wed, 07 Feb 2018 17:41:19 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:20
         GMT
       x-content-type-options:
       - nosniff
@@ -17470,15 +17551,15 @@ http_interactions:
         <title>Error 404 Not Found</title>
         </head>
         <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/1931/applicants-history. Reason:
+        <p>Problem accessing /rfa-1a-forms/1941/applicants-history. Reason:
         <pre>    Not Found</pre></p>
         </body>
         </html>
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:17 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:20 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1931/minor-children
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/minor-children
     body:
       encoding: US-ASCII
       string: ''
@@ -17499,9 +17580,9 @@ http_interactions:
       content-type:
       - text/html;charset=iso-8859-1
       date:
-      - Wed, 07 Feb 2018 17:32:18 GMT
+      - Wed, 07 Feb 2018 17:41:20 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:18
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:20
         GMT
       x-content-type-options:
       - nosniff
@@ -17522,15 +17603,15 @@ http_interactions:
         <title>Error 404 Not Found</title>
         </head>
         <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/1931/minor-children. Reason:
+        <p>Problem accessing /rfa-1a-forms/1941/minor-children. Reason:
         <pre>    Not Found</pre></p>
         </body>
         </html>
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:18 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:20 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1931/other-adults
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/other-adults
     body:
       encoding: US-ASCII
       string: ''
@@ -17551,9 +17632,9 @@ http_interactions:
       content-type:
       - text/html;charset=iso-8859-1
       date:
-      - Wed, 07 Feb 2018 17:32:18 GMT
+      - Wed, 07 Feb 2018 17:41:20 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:18
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:20
         GMT
       x-content-type-options:
       - nosniff
@@ -17574,15 +17655,15 @@ http_interactions:
         <title>Error 404 Not Found</title>
         </head>
         <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/1931/other-adults. Reason:
+        <p>Problem accessing /rfa-1a-forms/1941/other-adults. Reason:
         <pre>    Not Found</pre></p>
         </body>
         </html>
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:18 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:20 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1931/adoption-history
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/adoption-history
     body:
       encoding: US-ASCII
       string: ''
@@ -17603,9 +17684,9 @@ http_interactions:
       content-type:
       - text/html;charset=iso-8859-1
       date:
-      - Wed, 07 Feb 2018 17:32:18 GMT
+      - Wed, 07 Feb 2018 17:41:20 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:18
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:20
         GMT
       x-content-type-options:
       - nosniff
@@ -17626,15 +17707,15 @@ http_interactions:
         <title>Error 404 Not Found</title>
         </head>
         <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/1931/adoption-history. Reason:
+        <p>Problem accessing /rfa-1a-forms/1941/adoption-history. Reason:
         <pre>    Not Found</pre></p>
         </body>
         </html>
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:18 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:20 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1931/applicants-relationship
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/applicants-relationship
     body:
       encoding: US-ASCII
       string: ''
@@ -17655,9 +17736,9 @@ http_interactions:
       content-type:
       - text/html;charset=iso-8859-1
       date:
-      - Wed, 07 Feb 2018 17:32:18 GMT
+      - Wed, 07 Feb 2018 17:41:20 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:18
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:20
         GMT
       x-content-type-options:
       - nosniff
@@ -17678,15 +17759,15 @@ http_interactions:
         <title>Error 404 Not Found</title>
         </head>
         <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/1931/applicants-relationship. Reason:
+        <p>Problem accessing /rfa-1a-forms/1941/applicants-relationship. Reason:
         <pre>    Not Found</pre></p>
         </body>
         </html>
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:18 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:20 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1931/child-desired
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/child-desired
     body:
       encoding: US-ASCII
       string: ''
@@ -17707,9 +17788,9 @@ http_interactions:
       content-type:
       - text/html;charset=iso-8859-1
       date:
-      - Wed, 07 Feb 2018 17:32:18 GMT
+      - Wed, 07 Feb 2018 17:41:20 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:18
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:20
         GMT
       x-content-type-options:
       - nosniff
@@ -17730,15 +17811,15 @@ http_interactions:
         <title>Error 404 Not Found</title>
         </head>
         <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/1931/child-desired. Reason:
+        <p>Problem accessing /rfa-1a-forms/1941/child-desired. Reason:
         <pre>    Not Found</pre></p>
         </body>
         </html>
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:18 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:20 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1931/references
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/references
     body:
       encoding: US-ASCII
       string: ''
@@ -17759,9 +17840,9 @@ http_interactions:
       content-type:
       - text/html;charset=iso-8859-1
       date:
-      - Wed, 07 Feb 2018 17:32:18 GMT
+      - Wed, 07 Feb 2018 17:41:20 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:18
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:20
         GMT
       x-content-type-options:
       - nosniff
@@ -17782,15 +17863,15 @@ http_interactions:
         <title>Error 404 Not Found</title>
         </head>
         <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/1931/references. Reason:
+        <p>Problem accessing /rfa-1a-forms/1941/references. Reason:
         <pre>    Not Found</pre></p>
         </body>
         </html>
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:18 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:20 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1931/rfa-1c-forms/
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/rfa-1c-forms/
     body:
       encoding: US-ASCII
       string: ''
@@ -17811,9 +17892,9 @@ http_interactions:
       content-type:
       - text/html;charset=iso-8859-1
       date:
-      - Wed, 07 Feb 2018 17:32:18 GMT
+      - Wed, 07 Feb 2018 17:41:20 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:32:18
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:20
         GMT
       x-content-type-options:
       - nosniff
@@ -17834,10 +17915,4231 @@ http_interactions:
         <title>Error 404 Not Found</title>
         </head>
         <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/1931/rfa-1c-forms/. Reason:
+        <p>Problem accessing /rfa-1a-forms/1941/rfa-1c-forms/. Reason:
         <pre>    Not Found</pre></p>
         </body>
         </html>
     http_version: 
-  recorded_at: Wed, 07 Feb 2018 17:32:18 GMT
+  recorded_at: Wed, 07 Feb 2018 17:41:20 GMT
+- request:
+    method: post
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/applicants
+    body:
+      encoding: UTF-8
+      string: '{"email":"","date_of_birth":"","first_name":"Dillon","middle_name":"","last_name":"Wisozk","driver_license_number":"","other_names":[]}'
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:22 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:22
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '163'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 1201,
+          "first_name" : "Dillon",
+          "middle_name" : "",
+          "last_name" : "Wisozk",
+          "other_names" : [ ],
+          "driver_license_number" : "",
+          "email" : ""
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:22 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/residence-ownership-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:22 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:22
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '144'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Own",
+            "id" : 1
+          }, {
+            "value" : "Rent",
+            "id" : 2
+          }, {
+            "value" : "Lease",
+            "id" : 3
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:22 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941?expanded=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:22 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:22
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '255'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 1941,
+          "applicants" : [ {
+            "id" : 1201,
+            "first_name" : "Dillon",
+            "middle_name" : "",
+            "last_name" : "Wisozk",
+            "other_names" : [ ],
+            "driver_license_number" : "",
+            "email" : ""
+          } ],
+          "is_initial_application" : false
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:22 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/ethnicity-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Security-Policy:
+      - default-src 'self' 'unsafe-inline';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Feb 2018 17:41:22 GMT
+      Set-Cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:22
+        GMT
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '419'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alaskan Native",
+            "id" : 1
+          }, {
+            "value" : "American Indian",
+            "id" : 2
+          }, {
+            "value" : "Asian Indian",
+            "id" : 3
+          }, {
+            "value" : "Black",
+            "id" : 4
+          }, {
+            "value" : "Cambodian",
+            "id" : 5
+          }, {
+            "value" : "Caribbean",
+            "id" : 6
+          }, {
+            "value" : "Central American",
+            "id" : 7
+          }, {
+            "value" : "Chinese",
+            "id" : 8
+          }, {
+            "value" : "Declines to State",
+            "id" : 9
+          }, {
+            "value" : "Ethiopian",
+            "id" : 10
+          }, {
+            "value" : "Filipino",
+            "id" : 11
+          }, {
+            "value" : "Guamanian",
+            "id" : 12
+          }, {
+            "value" : "Hawaiian",
+            "id" : 13
+          }, {
+            "value" : "Hispanic",
+            "id" : 14
+          }, {
+            "value" : "Hmong",
+            "id" : 15
+          }, {
+            "value" : "Japanese",
+            "id" : 16
+          }, {
+            "value" : "Korean",
+            "id" : 17
+          }, {
+            "value" : "Laotian",
+            "id" : 18
+          }, {
+            "value" : "Mexican",
+            "id" : 19
+          }, {
+            "value" : "Other Asian",
+            "id" : 20
+          }, {
+            "value" : "Other Pacific Islander",
+            "id" : 21
+          }, {
+            "value" : "Other Race Unknown",
+            "id" : 22
+          }, {
+            "value" : "Polynesian",
+            "id" : 23
+          }, {
+            "value" : "Samoan",
+            "id" : 24
+          }, {
+            "value" : "South American",
+            "id" : 25
+          }, {
+            "value" : "Unable to Determine",
+            "id" : 26
+          }, {
+            "value" : "Vietnamese",
+            "id" : 27
+          }, {
+            "value" : "White - Armenian",
+            "id" : 28
+          }, {
+            "value" : "White - Central American",
+            "id" : 29
+          }, {
+            "value" : "White - European",
+            "id" : 30
+          }, {
+            "value" : "White - Middle Eastern",
+            "id" : 31
+          }, {
+            "value" : "White - Romanian",
+            "id" : 32
+          }, {
+            "value" : "White",
+            "id" : 33
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:22 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/ethnicity-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:22 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:22
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '419'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alaskan Native",
+            "id" : 1
+          }, {
+            "value" : "American Indian",
+            "id" : 2
+          }, {
+            "value" : "Asian Indian",
+            "id" : 3
+          }, {
+            "value" : "Black",
+            "id" : 4
+          }, {
+            "value" : "Cambodian",
+            "id" : 5
+          }, {
+            "value" : "Caribbean",
+            "id" : 6
+          }, {
+            "value" : "Central American",
+            "id" : 7
+          }, {
+            "value" : "Chinese",
+            "id" : 8
+          }, {
+            "value" : "Declines to State",
+            "id" : 9
+          }, {
+            "value" : "Ethiopian",
+            "id" : 10
+          }, {
+            "value" : "Filipino",
+            "id" : 11
+          }, {
+            "value" : "Guamanian",
+            "id" : 12
+          }, {
+            "value" : "Hawaiian",
+            "id" : 13
+          }, {
+            "value" : "Hispanic",
+            "id" : 14
+          }, {
+            "value" : "Hmong",
+            "id" : 15
+          }, {
+            "value" : "Japanese",
+            "id" : 16
+          }, {
+            "value" : "Korean",
+            "id" : 17
+          }, {
+            "value" : "Laotian",
+            "id" : 18
+          }, {
+            "value" : "Mexican",
+            "id" : 19
+          }, {
+            "value" : "Other Asian",
+            "id" : 20
+          }, {
+            "value" : "Other Pacific Islander",
+            "id" : 21
+          }, {
+            "value" : "Other Race Unknown",
+            "id" : 22
+          }, {
+            "value" : "Polynesian",
+            "id" : 23
+          }, {
+            "value" : "Samoan",
+            "id" : 24
+          }, {
+            "value" : "South American",
+            "id" : 25
+          }, {
+            "value" : "Unable to Determine",
+            "id" : 26
+          }, {
+            "value" : "Vietnamese",
+            "id" : 27
+          }, {
+            "value" : "White - Armenian",
+            "id" : 28
+          }, {
+            "value" : "White - Central American",
+            "id" : 29
+          }, {
+            "value" : "White - European",
+            "id" : 30
+          }, {
+            "value" : "White - Middle Eastern",
+            "id" : 31
+          }, {
+            "value" : "White - Romanian",
+            "id" : 32
+          }, {
+            "value" : "White",
+            "id" : 33
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:22 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/address-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:22 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:22
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '154'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Residential",
+            "id" : 1
+          }, {
+            "value" : "Home",
+            "id" : 2
+          }, {
+            "value" : "Mailing",
+            "id" : 3
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:22 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/applicant-relationship-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:22 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:22
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '151'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Married",
+            "id" : 1
+          }, {
+            "value" : "Domestic Partnership",
+            "id" : 2
+          }, {
+            "value" : "Related (Family Member)",
+            "id" : 3
+          }, {
+            "value" : "Cohabitants",
+            "id" : 4
+          }, {
+            "value" : "Other",
+            "id" : 5
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:22 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/license-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:22 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:22
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '160'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "License",
+            "id" : 1
+          }, {
+            "value" : "Certification",
+            "id" : 2
+          }, {
+            "value" : "Approval",
+            "id" : 3
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:22 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/relationship-to-applicant-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:23 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:23
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '237'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Child",
+            "id" : 1
+          }, {
+            "value" : "Sibling",
+            "id" : 2
+          }, {
+            "value" : "Cousin",
+            "id" : 3
+          }, {
+            "value" : "Niece",
+            "id" : 4
+          }, {
+            "value" : "Nephew",
+            "id" : 5
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:23 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:23 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:23
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '187'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "AKA",
+            "id" : 1
+          }, {
+            "value" : "Doe",
+            "id" : 2
+          }, {
+            "value" : "Legal",
+            "id" : 3
+          }, {
+            "value" : "Maiden",
+            "id" : 4
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:23 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:23 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:23
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '123'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Esq",
+            "id" : 1
+          }, {
+            "value" : "II",
+            "id" : 2
+          }, {
+            "value" : "III",
+            "id" : 3
+          }, {
+            "value" : "IV",
+            "id" : 4
+          }, {
+            "value" : "JD",
+            "id" : 9
+          }, {
+            "value" : "Jr",
+            "id" : 5
+          }, {
+            "value" : "MD",
+            "id" : 7
+          }, {
+            "value" : "PhD",
+            "id" : 8
+          }, {
+            "value" : "Sr",
+            "id" : 6
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:23 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-prefix-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:23 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:23
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '105'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Dr.",
+            "id" : 4
+          }, {
+            "value" : "Miss",
+            "id" : 5
+          }, {
+            "value" : "Mr.",
+            "id" : 1
+          }, {
+            "value" : "Mrs.",
+            "id" : 3
+          }, {
+            "value" : "Ms.",
+            "id" : 2
+          }, {
+            "value" : "Rev.",
+            "id" : 6
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:23 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/phone-number-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:23 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:23
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '232'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Cell",
+            "id" : 1
+          }, {
+            "value" : "Home",
+            "id" : 2
+          }, {
+            "value" : "Work",
+            "id" : 3
+          }, {
+            "value" : "Alternate",
+            "id" : 4
+          }, {
+            "value" : "Fax",
+            "id" : 5
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:23 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/genders
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:23 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:23
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '104'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Male",
+            "id" : 1
+          }, {
+            "value" : "Female",
+            "id" : 2
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:23 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/education-level-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:23 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:23
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '208'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Eighth Grade or Less",
+            "id" : 1
+          }, {
+            "value" : "Some High School",
+            "id" : 2
+          }, {
+            "value" : "High School or Equivalent",
+            "id" : 3
+          }, {
+            "value" : "Technical Training beyond High School",
+            "id" : 4
+          }, {
+            "value" : "Some College or College-Level courses",
+            "id" : 5
+          }, {
+            "value" : "College Graduate",
+            "id" : 6
+          }, {
+            "value" : "Post-Graduate Education",
+            "id" : 7
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:23 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/languages
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:23 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:23
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '375'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "American Sign Language",
+            "id" : 1
+          }, {
+            "value" : "Arabic",
+            "id" : 2
+          }, {
+            "value" : "Armenian",
+            "id" : 3
+          }, {
+            "value" : "Cambodian",
+            "id" : 4
+          }, {
+            "value" : "Cantonese",
+            "id" : 5
+          }, {
+            "value" : "English",
+            "id" : 6
+          }, {
+            "value" : "Farsi",
+            "id" : 7
+          }, {
+            "value" : "French",
+            "id" : 8
+          }, {
+            "value" : "Hebrew",
+            "id" : 9
+          }, {
+            "value" : "Hmong",
+            "id" : 10
+          }, {
+            "value" : "Ilacano",
+            "id" : 11
+          }, {
+            "value" : "Italian",
+            "id" : 12
+          }, {
+            "value" : "Japanese",
+            "id" : 13
+          }, {
+            "value" : "Korean",
+            "id" : 14
+          }, {
+            "value" : "Lao",
+            "id" : 15
+          }, {
+            "value" : "Mandarin",
+            "id" : 16
+          }, {
+            "value" : "Mien",
+            "id" : 17
+          }, {
+            "value" : "Other Chinese",
+            "id" : 18
+          }, {
+            "value" : "Other Non-English",
+            "id" : 19
+          }, {
+            "value" : "German",
+            "id" : 20
+          }, {
+            "value" : "Hawaiian",
+            "id" : 21
+          }, {
+            "value" : "Polish",
+            "id" : 22
+          }, {
+            "value" : "Portuguese",
+            "id" : 23
+          }, {
+            "value" : "Russian",
+            "id" : 24
+          }, {
+            "value" : "Samoan",
+            "id" : 25
+          }, {
+            "value" : "Sign Language (Not ASL)",
+            "id" : 26
+          }, {
+            "value" : "Spanish",
+            "id" : 27
+          }, {
+            "value" : "Tagalog",
+            "id" : 28
+          }, {
+            "value" : "Thai",
+            "id" : 29
+          }, {
+            "value" : "Turkish",
+            "id" : 30
+          }, {
+            "value" : "Vietnamese",
+            "id" : 31
+          }, {
+            "value" : "Indochinese",
+            "id" : 32
+          }, {
+            "value" : "Romanian",
+            "id" : 33
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:23 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/states
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:23 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:23
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '640'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alabama",
+            "id" : "AL"
+          }, {
+            "value" : "Alaska",
+            "id" : "AK"
+          }, {
+            "value" : "American Samoa",
+            "id" : "AM"
+          }, {
+            "value" : "Arizona",
+            "id" : "AZ"
+          }, {
+            "value" : "Arkansas",
+            "id" : "AR"
+          }, {
+            "value" : "California",
+            "id" : "CA"
+          }, {
+            "value" : "Canal Zone",
+            "id" : "CZ"
+          }, {
+            "value" : "Colorado",
+            "id" : "CO"
+          }, {
+            "value" : "Connecticut",
+            "id" : "CT"
+          }, {
+            "value" : "Delaware",
+            "id" : "DE"
+          }, {
+            "value" : "District of Columbia",
+            "id" : "DC"
+          }, {
+            "value" : "Florida",
+            "id" : "FL"
+          }, {
+            "value" : "Georgia",
+            "id" : "GA"
+          }, {
+            "value" : "Guam",
+            "id" : "GU"
+          }, {
+            "value" : "Hawaii",
+            "id" : "HI"
+          }, {
+            "value" : "Idaho",
+            "id" : "ID"
+          }, {
+            "value" : "Illinois",
+            "id" : "IL"
+          }, {
+            "value" : "Indiana",
+            "id" : "IN"
+          }, {
+            "value" : "Iowa",
+            "id" : "IA"
+          }, {
+            "value" : "Kansas",
+            "id" : "KS"
+          }, {
+            "value" : "Kentucky",
+            "id" : "KY"
+          }, {
+            "value" : "Louisiana",
+            "id" : "LA"
+          }, {
+            "value" : "Maine",
+            "id" : "ME"
+          }, {
+            "value" : "Maryland",
+            "id" : "MD"
+          }, {
+            "value" : "Massachusetts",
+            "id" : "MA"
+          }, {
+            "value" : "Michigan",
+            "id" : "MI"
+          }, {
+            "value" : "Minnesota",
+            "id" : "MN"
+          }, {
+            "value" : "Mississippi",
+            "id" : "MS"
+          }, {
+            "value" : "Missouri",
+            "id" : "MO"
+          }, {
+            "value" : "Montana",
+            "id" : "MT"
+          }, {
+            "value" : "Nebraska",
+            "id" : "NE"
+          }, {
+            "value" : "Nevada",
+            "id" : "NV"
+          }, {
+            "value" : "New Hampshire",
+            "id" : "NH"
+          }, {
+            "value" : "New Jersey",
+            "id" : "NJ"
+          }, {
+            "value" : "New Mexico",
+            "id" : "NM"
+          }, {
+            "value" : "New York",
+            "id" : "NY"
+          }, {
+            "value" : "North Carolina",
+            "id" : "NC"
+          }, {
+            "value" : "North Dakota",
+            "id" : "ND"
+          }, {
+            "value" : "Northern Marianas Islands",
+            "id" : "CM"
+          }, {
+            "value" : "Ohio",
+            "id" : "OH"
+          }, {
+            "value" : "Oklahoma",
+            "id" : "OK"
+          }, {
+            "value" : "Oregon",
+            "id" : "OR"
+          }, {
+            "value" : "Pennsylvania",
+            "id" : "PA"
+          }, {
+            "value" : "Puerto Rico",
+            "id" : "PR"
+          }, {
+            "value" : "Rhode Island",
+            "id" : "RI"
+          }, {
+            "value" : "South Carolina",
+            "id" : "SC"
+          }, {
+            "value" : "South Dakota",
+            "id" : "SD"
+          }, {
+            "value" : "Tennessee",
+            "id" : "TN"
+          }, {
+            "value" : "Texas",
+            "id" : "TX"
+          }, {
+            "value" : "Trust Territories",
+            "id" : "TT"
+          }, {
+            "value" : "Utah",
+            "id" : "UT"
+          }, {
+            "value" : "Vermont",
+            "id" : "VT"
+          }, {
+            "value" : "Virginia",
+            "id" : "VA"
+          }, {
+            "value" : "Virgin Islands",
+            "id" : "VI"
+          }, {
+            "value" : "Washington",
+            "id" : "WA"
+          }, {
+            "value" : "West Virginia",
+            "id" : "WV"
+          }, {
+            "value" : "Wisconsin",
+            "id" : "WI"
+          }, {
+            "value" : "Wyoming",
+            "id" : "WY"
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:24 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/income-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:24
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '107'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "yearly",
+            "id" : 1
+          }, {
+            "value" : "monthly",
+            "id" : 2
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:24 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/marriage-termination-reasons
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:24
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '205'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Marriage Dissolution (Divorce)",
+            "id" : 1
+          }, {
+            "value" : "Spouse Died",
+            "id" : 2
+          }, {
+            "value" : "Domestic Partnership Dissolution",
+            "id" : 3
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:24 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/age-groups
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:24
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '141'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "0-3 years",
+            "id" : 1
+          }, {
+            "value" : "4-8 years",
+            "id" : 2
+          }, {
+            "value" : "9-12 years",
+            "id" : 3
+          }, {
+            "value" : "13-15 years",
+            "id" : 4
+          }, {
+            "value" : "16-18 years",
+            "id" : 5
+          }, {
+            "value" : "18-21 years",
+            "id" : 6
+          }, {
+            "value" : "No preference",
+            "id" : 7
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:24 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/sibling-groups
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:24
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '214'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "0",
+            "id" : 1
+          }, {
+            "value" : "2",
+            "id" : 2
+          }, {
+            "value" : "3",
+            "id" : 3
+          }, {
+            "value" : "4",
+            "id" : 4
+          }, {
+            "value" : "5+",
+            "id" : 5
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:24 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/counties
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:24
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '596'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alameda",
+            "id" : 1
+          }, {
+            "value" : "Alpine",
+            "id" : 2
+          }, {
+            "value" : "Amador",
+            "id" : 3
+          }, {
+            "value" : "Butte",
+            "id" : 4
+          }, {
+            "value" : "Calaveras",
+            "id" : 5
+          }, {
+            "value" : "Colusa",
+            "id" : 6
+          }, {
+            "value" : "Contra Costa",
+            "id" : 7
+          }, {
+            "value" : "Del Norte",
+            "id" : 8
+          }, {
+            "value" : "El Dorado",
+            "id" : 9
+          }, {
+            "value" : "Fresno",
+            "id" : 10
+          }, {
+            "value" : "Glenn",
+            "id" : 11
+          }, {
+            "value" : "Humboldt",
+            "id" : 12
+          }, {
+            "value" : "Imperial",
+            "id" : 13
+          }, {
+            "value" : "Inyo",
+            "id" : 14
+          }, {
+            "value" : "Kern",
+            "id" : 15
+          }, {
+            "value" : "Kings",
+            "id" : 16
+          }, {
+            "value" : "Lake",
+            "id" : 17
+          }, {
+            "value" : "Lassen",
+            "id" : 18
+          }, {
+            "value" : "Los Angeles",
+            "id" : 19
+          }, {
+            "value" : "Madera",
+            "id" : 20
+          }, {
+            "value" : "Marin",
+            "id" : 21
+          }, {
+            "value" : "Mariposa",
+            "id" : 22
+          }, {
+            "value" : "Mendocino",
+            "id" : 23
+          }, {
+            "value" : "Merced",
+            "id" : 24
+          }, {
+            "value" : "Modoc",
+            "id" : 25
+          }, {
+            "value" : "Mono",
+            "id" : 26
+          }, {
+            "value" : "Monterey",
+            "id" : 27
+          }, {
+            "value" : "Napa",
+            "id" : 28
+          }, {
+            "value" : "Nevada",
+            "id" : 29
+          }, {
+            "value" : "Orange",
+            "id" : 30
+          }, {
+            "value" : "Placer",
+            "id" : 31
+          }, {
+            "value" : "Plumas",
+            "id" : 32
+          }, {
+            "value" : "Riverside",
+            "id" : 33
+          }, {
+            "value" : "Sacramento",
+            "id" : 34
+          }, {
+            "value" : "San Benito",
+            "id" : 35
+          }, {
+            "value" : "San Bernardino",
+            "id" : 36
+          }, {
+            "value" : "San Diego",
+            "id" : 37
+          }, {
+            "value" : "San Francisco",
+            "id" : 38
+          }, {
+            "value" : "San Joaquin",
+            "id" : 39
+          }, {
+            "value" : "San Luis Obispo",
+            "id" : 40
+          }, {
+            "value" : "San Mateo",
+            "id" : 41
+          }, {
+            "value" : "Santa Barbara",
+            "id" : 42
+          }, {
+            "value" : "Santa Clara",
+            "id" : 43
+          }, {
+            "value" : "Santa Cruz",
+            "id" : 44
+          }, {
+            "value" : "Shasta",
+            "id" : 45
+          }, {
+            "value" : "Sierra",
+            "id" : 46
+          }, {
+            "value" : "Siskiyou",
+            "id" : 47
+          }, {
+            "value" : "Solano",
+            "id" : 48
+          }, {
+            "value" : "Sonoma",
+            "id" : 49
+          }, {
+            "value" : "Stanislaus",
+            "id" : 50
+          }, {
+            "value" : "State of California",
+            "id" : 59
+          }, {
+            "value" : "Sutter",
+            "id" : 51
+          }, {
+            "value" : "Tehama",
+            "id" : 52
+          }, {
+            "value" : "Trinity",
+            "id" : 53
+          }, {
+            "value" : "Tulare",
+            "id" : 54
+          }, {
+            "value" : "Tuolumne",
+            "id" : 55
+          }, {
+            "value" : "Ventura",
+            "id" : 56
+          }, {
+            "value" : "Yolo",
+            "id" : 57
+          }, {
+            "value" : "Yuba",
+            "id" : 58
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:24 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:24
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '53'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 1941,
+          "is_initial_application" : false
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:24 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/applicants
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:24
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '199'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "id" : 1201,
+            "first_name" : "Dillon",
+            "middle_name" : "",
+            "last_name" : "Wisozk",
+            "other_names" : [ ],
+            "driver_license_number" : "",
+            "email" : ""
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:24 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/residence
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Wed, 07 Feb 2018 17:41:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:24
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '259'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/1941/residence. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:24 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/applicants-history
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Wed, 07 Feb 2018 17:41:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:24
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '268'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/1941/applicants-history. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:24 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/minor-children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Wed, 07 Feb 2018 17:41:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:24
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '264'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/1941/minor-children. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:24 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/other-adults
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Wed, 07 Feb 2018 17:41:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:24
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '262'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/1941/other-adults. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:24 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/adoption-history
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Wed, 07 Feb 2018 17:41:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:24
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '266'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/1941/adoption-history. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:24 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/applicants-relationship
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Wed, 07 Feb 2018 17:41:25 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:25
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '273'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/1941/applicants-relationship. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:25 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/child-desired
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Wed, 07 Feb 2018 17:41:25 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:25
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '263'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/1941/child-desired. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:25 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/references
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Wed, 07 Feb 2018 17:41:25 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:25
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '260'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/1941/references. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:25 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/rfa-1c-forms/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Wed, 07 Feb 2018 17:41:25 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:25
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '263'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/1941/rfa-1c-forms/. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:25 GMT
+- request:
+    method: post
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/rfa-1b-forms/applicants/1201
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:26 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:26
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '16'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 210
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:26 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/counties
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:26 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:26
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '596'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alameda",
+            "id" : 1
+          }, {
+            "value" : "Alpine",
+            "id" : 2
+          }, {
+            "value" : "Amador",
+            "id" : 3
+          }, {
+            "value" : "Butte",
+            "id" : 4
+          }, {
+            "value" : "Calaveras",
+            "id" : 5
+          }, {
+            "value" : "Colusa",
+            "id" : 6
+          }, {
+            "value" : "Contra Costa",
+            "id" : 7
+          }, {
+            "value" : "Del Norte",
+            "id" : 8
+          }, {
+            "value" : "El Dorado",
+            "id" : 9
+          }, {
+            "value" : "Fresno",
+            "id" : 10
+          }, {
+            "value" : "Glenn",
+            "id" : 11
+          }, {
+            "value" : "Humboldt",
+            "id" : 12
+          }, {
+            "value" : "Imperial",
+            "id" : 13
+          }, {
+            "value" : "Inyo",
+            "id" : 14
+          }, {
+            "value" : "Kern",
+            "id" : 15
+          }, {
+            "value" : "Kings",
+            "id" : 16
+          }, {
+            "value" : "Lake",
+            "id" : 17
+          }, {
+            "value" : "Lassen",
+            "id" : 18
+          }, {
+            "value" : "Los Angeles",
+            "id" : 19
+          }, {
+            "value" : "Madera",
+            "id" : 20
+          }, {
+            "value" : "Marin",
+            "id" : 21
+          }, {
+            "value" : "Mariposa",
+            "id" : 22
+          }, {
+            "value" : "Mendocino",
+            "id" : 23
+          }, {
+            "value" : "Merced",
+            "id" : 24
+          }, {
+            "value" : "Modoc",
+            "id" : 25
+          }, {
+            "value" : "Mono",
+            "id" : 26
+          }, {
+            "value" : "Monterey",
+            "id" : 27
+          }, {
+            "value" : "Napa",
+            "id" : 28
+          }, {
+            "value" : "Nevada",
+            "id" : 29
+          }, {
+            "value" : "Orange",
+            "id" : 30
+          }, {
+            "value" : "Placer",
+            "id" : 31
+          }, {
+            "value" : "Plumas",
+            "id" : 32
+          }, {
+            "value" : "Riverside",
+            "id" : 33
+          }, {
+            "value" : "Sacramento",
+            "id" : 34
+          }, {
+            "value" : "San Benito",
+            "id" : 35
+          }, {
+            "value" : "San Bernardino",
+            "id" : 36
+          }, {
+            "value" : "San Diego",
+            "id" : 37
+          }, {
+            "value" : "San Francisco",
+            "id" : 38
+          }, {
+            "value" : "San Joaquin",
+            "id" : 39
+          }, {
+            "value" : "San Luis Obispo",
+            "id" : 40
+          }, {
+            "value" : "San Mateo",
+            "id" : 41
+          }, {
+            "value" : "Santa Barbara",
+            "id" : 42
+          }, {
+            "value" : "Santa Clara",
+            "id" : 43
+          }, {
+            "value" : "Santa Cruz",
+            "id" : 44
+          }, {
+            "value" : "Shasta",
+            "id" : 45
+          }, {
+            "value" : "Sierra",
+            "id" : 46
+          }, {
+            "value" : "Siskiyou",
+            "id" : 47
+          }, {
+            "value" : "Solano",
+            "id" : 48
+          }, {
+            "value" : "Sonoma",
+            "id" : 49
+          }, {
+            "value" : "Stanislaus",
+            "id" : 50
+          }, {
+            "value" : "State of California",
+            "id" : 59
+          }, {
+            "value" : "Sutter",
+            "id" : 51
+          }, {
+            "value" : "Tehama",
+            "id" : 52
+          }, {
+            "value" : "Trinity",
+            "id" : 53
+          }, {
+            "value" : "Tulare",
+            "id" : 54
+          }, {
+            "value" : "Tuolumne",
+            "id" : 55
+          }, {
+            "value" : "Ventura",
+            "id" : 56
+          }, {
+            "value" : "Yolo",
+            "id" : 57
+          }, {
+            "value" : "Yuba",
+            "id" : 58
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:26 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:26 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:26
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '123'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Esq",
+            "id" : 1
+          }, {
+            "value" : "II",
+            "id" : 2
+          }, {
+            "value" : "III",
+            "id" : 3
+          }, {
+            "value" : "IV",
+            "id" : 4
+          }, {
+            "value" : "JD",
+            "id" : 9
+          }, {
+            "value" : "Jr",
+            "id" : 5
+          }, {
+            "value" : "MD",
+            "id" : 7
+          }, {
+            "value" : "PhD",
+            "id" : 8
+          }, {
+            "value" : "Sr",
+            "id" : 6
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:26 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-prefix-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:26 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:26
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '105'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Dr.",
+            "id" : 4
+          }, {
+            "value" : "Miss",
+            "id" : 5
+          }, {
+            "value" : "Mr.",
+            "id" : 1
+          }, {
+            "value" : "Mrs.",
+            "id" : 3
+          }, {
+            "value" : "Ms.",
+            "id" : 2
+          }, {
+            "value" : "Rev.",
+            "id" : 6
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:26 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/states
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:26 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:26
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '640'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alabama",
+            "id" : "AL"
+          }, {
+            "value" : "Alaska",
+            "id" : "AK"
+          }, {
+            "value" : "American Samoa",
+            "id" : "AM"
+          }, {
+            "value" : "Arizona",
+            "id" : "AZ"
+          }, {
+            "value" : "Arkansas",
+            "id" : "AR"
+          }, {
+            "value" : "California",
+            "id" : "CA"
+          }, {
+            "value" : "Canal Zone",
+            "id" : "CZ"
+          }, {
+            "value" : "Colorado",
+            "id" : "CO"
+          }, {
+            "value" : "Connecticut",
+            "id" : "CT"
+          }, {
+            "value" : "Delaware",
+            "id" : "DE"
+          }, {
+            "value" : "District of Columbia",
+            "id" : "DC"
+          }, {
+            "value" : "Florida",
+            "id" : "FL"
+          }, {
+            "value" : "Georgia",
+            "id" : "GA"
+          }, {
+            "value" : "Guam",
+            "id" : "GU"
+          }, {
+            "value" : "Hawaii",
+            "id" : "HI"
+          }, {
+            "value" : "Idaho",
+            "id" : "ID"
+          }, {
+            "value" : "Illinois",
+            "id" : "IL"
+          }, {
+            "value" : "Indiana",
+            "id" : "IN"
+          }, {
+            "value" : "Iowa",
+            "id" : "IA"
+          }, {
+            "value" : "Kansas",
+            "id" : "KS"
+          }, {
+            "value" : "Kentucky",
+            "id" : "KY"
+          }, {
+            "value" : "Louisiana",
+            "id" : "LA"
+          }, {
+            "value" : "Maine",
+            "id" : "ME"
+          }, {
+            "value" : "Maryland",
+            "id" : "MD"
+          }, {
+            "value" : "Massachusetts",
+            "id" : "MA"
+          }, {
+            "value" : "Michigan",
+            "id" : "MI"
+          }, {
+            "value" : "Minnesota",
+            "id" : "MN"
+          }, {
+            "value" : "Mississippi",
+            "id" : "MS"
+          }, {
+            "value" : "Missouri",
+            "id" : "MO"
+          }, {
+            "value" : "Montana",
+            "id" : "MT"
+          }, {
+            "value" : "Nebraska",
+            "id" : "NE"
+          }, {
+            "value" : "Nevada",
+            "id" : "NV"
+          }, {
+            "value" : "New Hampshire",
+            "id" : "NH"
+          }, {
+            "value" : "New Jersey",
+            "id" : "NJ"
+          }, {
+            "value" : "New Mexico",
+            "id" : "NM"
+          }, {
+            "value" : "New York",
+            "id" : "NY"
+          }, {
+            "value" : "North Carolina",
+            "id" : "NC"
+          }, {
+            "value" : "North Dakota",
+            "id" : "ND"
+          }, {
+            "value" : "Northern Marianas Islands",
+            "id" : "CM"
+          }, {
+            "value" : "Ohio",
+            "id" : "OH"
+          }, {
+            "value" : "Oklahoma",
+            "id" : "OK"
+          }, {
+            "value" : "Oregon",
+            "id" : "OR"
+          }, {
+            "value" : "Pennsylvania",
+            "id" : "PA"
+          }, {
+            "value" : "Puerto Rico",
+            "id" : "PR"
+          }, {
+            "value" : "Rhode Island",
+            "id" : "RI"
+          }, {
+            "value" : "South Carolina",
+            "id" : "SC"
+          }, {
+            "value" : "South Dakota",
+            "id" : "SD"
+          }, {
+            "value" : "Tennessee",
+            "id" : "TN"
+          }, {
+            "value" : "Texas",
+            "id" : "TX"
+          }, {
+            "value" : "Trust Territories",
+            "id" : "TT"
+          }, {
+            "value" : "Utah",
+            "id" : "UT"
+          }, {
+            "value" : "Vermont",
+            "id" : "VT"
+          }, {
+            "value" : "Virginia",
+            "id" : "VA"
+          }, {
+            "value" : "Virgin Islands",
+            "id" : "VI"
+          }, {
+            "value" : "Washington",
+            "id" : "WA"
+          }, {
+            "value" : "West Virginia",
+            "id" : "WV"
+          }, {
+            "value" : "Wisconsin",
+            "id" : "WI"
+          }, {
+            "value" : "Wyoming",
+            "id" : "WY"
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:26 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/rfa-1b-forms/210
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:27 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:27
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '16'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 210
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:27 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941?expanded=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:27 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:27
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '185'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id" : 1941,
+          "applicants" : [ {
+            "id" : 1201,
+            "first_name" : "Dillon",
+            "middle_name" : "",
+            "last_name" : "Wisozk",
+            "other_names" : [ ],
+            "driver_license_number" : "",
+            "email" : "",
+            "rfa1b_form" : {
+              "id" : 210
+            }
+          } ],
+          "is_initial_application" : false
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:27 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/rfa-1c-forms/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Wed, 07 Feb 2018 17:41:27 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:27
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '263'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/1941/rfa-1c-forms/. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:27 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/counties
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:34 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:34
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '596'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alameda",
+            "id" : 1
+          }, {
+            "value" : "Alpine",
+            "id" : 2
+          }, {
+            "value" : "Amador",
+            "id" : 3
+          }, {
+            "value" : "Butte",
+            "id" : 4
+          }, {
+            "value" : "Calaveras",
+            "id" : 5
+          }, {
+            "value" : "Colusa",
+            "id" : 6
+          }, {
+            "value" : "Contra Costa",
+            "id" : 7
+          }, {
+            "value" : "Del Norte",
+            "id" : 8
+          }, {
+            "value" : "El Dorado",
+            "id" : 9
+          }, {
+            "value" : "Fresno",
+            "id" : 10
+          }, {
+            "value" : "Glenn",
+            "id" : 11
+          }, {
+            "value" : "Humboldt",
+            "id" : 12
+          }, {
+            "value" : "Imperial",
+            "id" : 13
+          }, {
+            "value" : "Inyo",
+            "id" : 14
+          }, {
+            "value" : "Kern",
+            "id" : 15
+          }, {
+            "value" : "Kings",
+            "id" : 16
+          }, {
+            "value" : "Lake",
+            "id" : 17
+          }, {
+            "value" : "Lassen",
+            "id" : 18
+          }, {
+            "value" : "Los Angeles",
+            "id" : 19
+          }, {
+            "value" : "Madera",
+            "id" : 20
+          }, {
+            "value" : "Marin",
+            "id" : 21
+          }, {
+            "value" : "Mariposa",
+            "id" : 22
+          }, {
+            "value" : "Mendocino",
+            "id" : 23
+          }, {
+            "value" : "Merced",
+            "id" : 24
+          }, {
+            "value" : "Modoc",
+            "id" : 25
+          }, {
+            "value" : "Mono",
+            "id" : 26
+          }, {
+            "value" : "Monterey",
+            "id" : 27
+          }, {
+            "value" : "Napa",
+            "id" : 28
+          }, {
+            "value" : "Nevada",
+            "id" : 29
+          }, {
+            "value" : "Orange",
+            "id" : 30
+          }, {
+            "value" : "Placer",
+            "id" : 31
+          }, {
+            "value" : "Plumas",
+            "id" : 32
+          }, {
+            "value" : "Riverside",
+            "id" : 33
+          }, {
+            "value" : "Sacramento",
+            "id" : 34
+          }, {
+            "value" : "San Benito",
+            "id" : 35
+          }, {
+            "value" : "San Bernardino",
+            "id" : 36
+          }, {
+            "value" : "San Diego",
+            "id" : 37
+          }, {
+            "value" : "San Francisco",
+            "id" : 38
+          }, {
+            "value" : "San Joaquin",
+            "id" : 39
+          }, {
+            "value" : "San Luis Obispo",
+            "id" : 40
+          }, {
+            "value" : "San Mateo",
+            "id" : 41
+          }, {
+            "value" : "Santa Barbara",
+            "id" : 42
+          }, {
+            "value" : "Santa Clara",
+            "id" : 43
+          }, {
+            "value" : "Santa Cruz",
+            "id" : 44
+          }, {
+            "value" : "Shasta",
+            "id" : 45
+          }, {
+            "value" : "Sierra",
+            "id" : 46
+          }, {
+            "value" : "Siskiyou",
+            "id" : 47
+          }, {
+            "value" : "Solano",
+            "id" : 48
+          }, {
+            "value" : "Sonoma",
+            "id" : 49
+          }, {
+            "value" : "Stanislaus",
+            "id" : 50
+          }, {
+            "value" : "State of California",
+            "id" : 59
+          }, {
+            "value" : "Sutter",
+            "id" : 51
+          }, {
+            "value" : "Tehama",
+            "id" : 52
+          }, {
+            "value" : "Trinity",
+            "id" : 53
+          }, {
+            "value" : "Tulare",
+            "id" : 54
+          }, {
+            "value" : "Tuolumne",
+            "id" : 55
+          }, {
+            "value" : "Ventura",
+            "id" : 56
+          }, {
+            "value" : "Yolo",
+            "id" : 57
+          }, {
+            "value" : "Yuba",
+            "id" : 58
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:34 GMT
+- request:
+    method: put
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/rfa-1b-forms/210
+    body:
+      encoding: UTF-8
+      string: '{"id":210,"convicted_in_california":"true","convicted_in_another_state":"true","arrested_for_crime":"true","resource_family_name":"test","ssn":"123-45-6789","driver_license":"D123","driver_license_state":{"id":"AK","value":"Alaska"},"convicted_in_california_disclosures":[{"offense":"test
+        offense","offense_city":"test offense city","offense_date":"","when_offense_happen":"date
+        of offense","offense_details":"offense details"}],"arrested_for_crime_disclosures":[{"offense":"cohab
+        test offense","offense_city":"cohab test offense city","offense_date":"","when_offense_happen":"cohab
+        date of offense","offense_details":"cohab offense details"}],"convicted_in_another_state_disclosures":[{"offense":"outside
+        test offense","offense_city":"outside test offense city","offense_date":"","when_offense_happen":"outside
+        date of offense","offense_details":"outside offense details"}]}'
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:34 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:34
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '987'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 210,
+          "convicted_in_california" : true,
+          "convicted_in_another_state" : true,
+          "arrested_for_crime" : true,
+          "resource_family_name" : "test",
+          "ssn" : "123-45-6789",
+          "driver_license" : "D123",
+          "driver_license_state" : {
+            "value" : "Alaska",
+            "id" : "AK"
+          },
+          "convicted_in_california_disclosures" : [ {
+            "offense" : "test offense",
+            "offense_city" : "test offense city",
+            "when_offense_happen" : "date of offense",
+            "offense_details" : "offense details"
+          } ],
+          "convicted_in_another_state_disclosures" : [ {
+            "offense" : "outside test offense",
+            "offense_city" : "outside test offense city",
+            "when_offense_happen" : "outside date of offense",
+            "offense_details" : "outside offense details"
+          } ],
+          "arrested_for_crime_disclosures" : [ {
+            "offense" : "cohab test offense",
+            "offense_city" : "cohab test offense city",
+            "when_offense_happen" : "cohab date of offense",
+            "offense_details" : "cohab offense details"
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:34 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/rfa-1b-forms/210
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:34 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:34
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '299'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id" : 210,
+          "convicted_in_california" : true,
+          "convicted_in_another_state" : true,
+          "arrested_for_crime" : true,
+          "resource_family_name" : "test",
+          "ssn" : "123-45-6789",
+          "driver_license" : "D123",
+          "driver_license_state" : {
+            "value" : "Alaska",
+            "id" : "AK"
+          },
+          "convicted_in_california_disclosures" : [ {
+            "offense" : "test offense",
+            "offense_city" : "test offense city",
+            "when_offense_happen" : "date of offense",
+            "offense_details" : "offense details"
+          } ],
+          "convicted_in_another_state_disclosures" : [ {
+            "offense" : "outside test offense",
+            "offense_city" : "outside test offense city",
+            "when_offense_happen" : "outside date of offense",
+            "offense_details" : "outside offense details"
+          } ],
+          "arrested_for_crime_disclosures" : [ {
+            "offense" : "cohab test offense",
+            "offense_city" : "cohab test offense city",
+            "when_offense_happen" : "cohab date of offense",
+            "offense_details" : "cohab offense details"
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:34 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Security-Policy:
+      - default-src 'self' 'unsafe-inline';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Feb 2018 17:41:34 GMT
+      Set-Cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:34
+        GMT
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '123'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Esq",
+            "id" : 1
+          }, {
+            "value" : "II",
+            "id" : 2
+          }, {
+            "value" : "III",
+            "id" : 3
+          }, {
+            "value" : "IV",
+            "id" : 4
+          }, {
+            "value" : "JD",
+            "id" : 9
+          }, {
+            "value" : "Jr",
+            "id" : 5
+          }, {
+            "value" : "MD",
+            "id" : 7
+          }, {
+            "value" : "PhD",
+            "id" : 8
+          }, {
+            "value" : "Sr",
+            "id" : 6
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:34 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:34 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:34
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '123'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Esq",
+            "id" : 1
+          }, {
+            "value" : "II",
+            "id" : 2
+          }, {
+            "value" : "III",
+            "id" : 3
+          }, {
+            "value" : "IV",
+            "id" : 4
+          }, {
+            "value" : "JD",
+            "id" : 9
+          }, {
+            "value" : "Jr",
+            "id" : 5
+          }, {
+            "value" : "MD",
+            "id" : 7
+          }, {
+            "value" : "PhD",
+            "id" : 8
+          }, {
+            "value" : "Sr",
+            "id" : 6
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:34 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-prefix-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:34 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:34
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '105'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Dr.",
+            "id" : 4
+          }, {
+            "value" : "Miss",
+            "id" : 5
+          }, {
+            "value" : "Mr.",
+            "id" : 1
+          }, {
+            "value" : "Mrs.",
+            "id" : 3
+          }, {
+            "value" : "Ms.",
+            "id" : 2
+          }, {
+            "value" : "Rev.",
+            "id" : 6
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:34 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/states
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:34 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:34
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '640'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alabama",
+            "id" : "AL"
+          }, {
+            "value" : "Alaska",
+            "id" : "AK"
+          }, {
+            "value" : "American Samoa",
+            "id" : "AM"
+          }, {
+            "value" : "Arizona",
+            "id" : "AZ"
+          }, {
+            "value" : "Arkansas",
+            "id" : "AR"
+          }, {
+            "value" : "California",
+            "id" : "CA"
+          }, {
+            "value" : "Canal Zone",
+            "id" : "CZ"
+          }, {
+            "value" : "Colorado",
+            "id" : "CO"
+          }, {
+            "value" : "Connecticut",
+            "id" : "CT"
+          }, {
+            "value" : "Delaware",
+            "id" : "DE"
+          }, {
+            "value" : "District of Columbia",
+            "id" : "DC"
+          }, {
+            "value" : "Florida",
+            "id" : "FL"
+          }, {
+            "value" : "Georgia",
+            "id" : "GA"
+          }, {
+            "value" : "Guam",
+            "id" : "GU"
+          }, {
+            "value" : "Hawaii",
+            "id" : "HI"
+          }, {
+            "value" : "Idaho",
+            "id" : "ID"
+          }, {
+            "value" : "Illinois",
+            "id" : "IL"
+          }, {
+            "value" : "Indiana",
+            "id" : "IN"
+          }, {
+            "value" : "Iowa",
+            "id" : "IA"
+          }, {
+            "value" : "Kansas",
+            "id" : "KS"
+          }, {
+            "value" : "Kentucky",
+            "id" : "KY"
+          }, {
+            "value" : "Louisiana",
+            "id" : "LA"
+          }, {
+            "value" : "Maine",
+            "id" : "ME"
+          }, {
+            "value" : "Maryland",
+            "id" : "MD"
+          }, {
+            "value" : "Massachusetts",
+            "id" : "MA"
+          }, {
+            "value" : "Michigan",
+            "id" : "MI"
+          }, {
+            "value" : "Minnesota",
+            "id" : "MN"
+          }, {
+            "value" : "Mississippi",
+            "id" : "MS"
+          }, {
+            "value" : "Missouri",
+            "id" : "MO"
+          }, {
+            "value" : "Montana",
+            "id" : "MT"
+          }, {
+            "value" : "Nebraska",
+            "id" : "NE"
+          }, {
+            "value" : "Nevada",
+            "id" : "NV"
+          }, {
+            "value" : "New Hampshire",
+            "id" : "NH"
+          }, {
+            "value" : "New Jersey",
+            "id" : "NJ"
+          }, {
+            "value" : "New Mexico",
+            "id" : "NM"
+          }, {
+            "value" : "New York",
+            "id" : "NY"
+          }, {
+            "value" : "North Carolina",
+            "id" : "NC"
+          }, {
+            "value" : "North Dakota",
+            "id" : "ND"
+          }, {
+            "value" : "Northern Marianas Islands",
+            "id" : "CM"
+          }, {
+            "value" : "Ohio",
+            "id" : "OH"
+          }, {
+            "value" : "Oklahoma",
+            "id" : "OK"
+          }, {
+            "value" : "Oregon",
+            "id" : "OR"
+          }, {
+            "value" : "Pennsylvania",
+            "id" : "PA"
+          }, {
+            "value" : "Puerto Rico",
+            "id" : "PR"
+          }, {
+            "value" : "Rhode Island",
+            "id" : "RI"
+          }, {
+            "value" : "South Carolina",
+            "id" : "SC"
+          }, {
+            "value" : "South Dakota",
+            "id" : "SD"
+          }, {
+            "value" : "Tennessee",
+            "id" : "TN"
+          }, {
+            "value" : "Texas",
+            "id" : "TX"
+          }, {
+            "value" : "Trust Territories",
+            "id" : "TT"
+          }, {
+            "value" : "Utah",
+            "id" : "UT"
+          }, {
+            "value" : "Vermont",
+            "id" : "VT"
+          }, {
+            "value" : "Virginia",
+            "id" : "VA"
+          }, {
+            "value" : "Virgin Islands",
+            "id" : "VI"
+          }, {
+            "value" : "Washington",
+            "id" : "WA"
+          }, {
+            "value" : "West Virginia",
+            "id" : "WV"
+          }, {
+            "value" : "Wisconsin",
+            "id" : "WI"
+          }, {
+            "value" : "Wyoming",
+            "id" : "WY"
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:34 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/rfa-1b-forms/210
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:34 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:34
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '299'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id" : 210,
+          "convicted_in_california" : true,
+          "convicted_in_another_state" : true,
+          "arrested_for_crime" : true,
+          "resource_family_name" : "test",
+          "ssn" : "123-45-6789",
+          "driver_license" : "D123",
+          "driver_license_state" : {
+            "value" : "Alaska",
+            "id" : "AK"
+          },
+          "convicted_in_california_disclosures" : [ {
+            "offense" : "test offense",
+            "offense_city" : "test offense city",
+            "when_offense_happen" : "date of offense",
+            "offense_details" : "offense details"
+          } ],
+          "convicted_in_another_state_disclosures" : [ {
+            "offense" : "outside test offense",
+            "offense_city" : "outside test offense city",
+            "when_offense_happen" : "outside date of offense",
+            "offense_details" : "outside offense details"
+          } ],
+          "arrested_for_crime_disclosures" : [ {
+            "offense" : "cohab test offense",
+            "offense_city" : "cohab test offense city",
+            "when_offense_happen" : "cohab date of offense",
+            "offense_details" : "cohab offense details"
+          } ]
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:34 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941?expanded=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Wed, 07 Feb 2018 17:41:34 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:34
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '414'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id" : 1941,
+          "applicants" : [ {
+            "id" : 1201,
+            "first_name" : "Dillon",
+            "middle_name" : "",
+            "last_name" : "Wisozk",
+            "other_names" : [ ],
+            "driver_license_number" : "",
+            "email" : "",
+            "rfa1b_form" : {
+              "id" : 210,
+              "convicted_in_california" : true,
+              "convicted_in_another_state" : true,
+              "arrested_for_crime" : true,
+              "resource_family_name" : "test",
+              "ssn" : "123-45-6789",
+              "driver_license" : "D123",
+              "driver_license_state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "convicted_in_california_disclosures" : [ {
+                "offense" : "test offense",
+                "offense_city" : "test offense city",
+                "when_offense_happen" : "date of offense",
+                "offense_details" : "offense details"
+              } ],
+              "convicted_in_another_state_disclosures" : [ {
+                "offense" : "outside test offense",
+                "offense_city" : "outside test offense city",
+                "when_offense_happen" : "outside date of offense",
+                "offense_details" : "outside offense details"
+              } ],
+              "arrested_for_crime_disclosures" : [ {
+                "offense" : "cohab test offense",
+                "offense_city" : "cohab test offense city",
+                "when_offense_happen" : "cohab date of offense",
+                "offense_details" : "cohab offense details"
+              } ]
+            }
+          } ],
+          "is_initial_application" : false
+        }
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:34 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/1941/rfa-1c-forms/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - "..4PNLvs3sr0j0azmN.WYgFC2Iw8WbSizfFTy8FMoXqL8LKP2as0L0p0rf_ttZ9VQS0So1PkS_5c7y2fcb8l9vTGRDN864EOTkpcqGhIV_Ng6-3Xuz7FNAbqjPrDRcdftiMuy0i48tky7InQdiKlJLZTs95Pi_8esKxytw3KvxId0yn6mk0Pq7XP5uMOFyZA0exKj4iDCRgD3lexsN6Ow-9_w54xWGJODtz-nRd_Y0iYGwvBkysDFwv-FLBlwhLvU_SPfTsxdyP-C0l7P2vG4n_djcsrdxBgw0roS6mzUaP0fau3hASpyqy0GKRN_ms7VTxgV-B_lVPbX8g2IaN8Zt6hdQLDS6zvdrG2MWJMcDffePDFXvN9_dOZvZmgcmgZTROcpQBknREtIlCCDsDkCg8KWaslO99VjzQMkJIxmVM6-LoCJ8BMT0PVtZt20aEKI1YV-6CUueNGQoNxooFVeZ6_US4JXHA7cnMZbNszTDl05383PDUGCxMa6qXGyJ-lnEIIGoP6sPnO1PKQq78f8jpULTpJLgZk07FQvbS9i0plYIQshqZh9MfVCC3bmpu9BcPZc8M-htamDDJBcIDbYL2zcGQ76eXPpmjUsd_PYXQ51dWZ4PWSpuvEyGrCbZJ3e1Je4NwWV7afyAZq9kXg7hcJId_IBfWapTWFEKom-pOuKslhrCDZRVjtSMBc_wh8iTHlap5n19Y2SM1ULMW4yt5uhcFPTCSsATT0jLei0u2v9k2dM-XapCZrLaLcj7-wArU6Xm6YvtAakOXhD_nKMq7UbzIFNzKMP6X6qEze-e3ERZF36SytW6mKrkcdIwKOrQ9SvSgldLE5QF9xAr7yOrbVw8W4zOVyNX_rv61OAagQlzDLt0Ue0fwMegAhLq8IW-noGE-ULQ7FYYyDHL3CSBAOomGYHeBSJ0Uq-mc6jiLKubyfkF3jk37N8lOtetwI8SRbtdRQBMRfwsgNPkPL18a4_oLnGj9gWs6Qu2j3vSNuxiwy6tWxqcTNLE4TjNZkS6rvGlJEYOtQsoZxZSh7zdFtq9FxXBdg2N8PIlFyc_hY3jOgyzHnDxxY7rCXcmlb9h8hHf_DBv0v8JdP-EF44Xvxw.91COC62NtlRpq5bsWp3Mpw"
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Wed, 07 Feb 2018 17:41:34 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 06-Feb-2018 17:41:34
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '263'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/1941/rfa-1c-forms/. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Wed, 07 Feb 2018 17:41:34 GMT
 recorded_with: VCR 3.0.3

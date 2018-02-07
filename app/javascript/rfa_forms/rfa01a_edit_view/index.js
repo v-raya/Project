@@ -11,7 +11,7 @@ import RelationshipBetweenApplicantsCardMain from './relationshipBetweenApplican
 import ApplicantMaritalHistoryCardGroup from './applicantMaritalHistoryCardGroup'
 import ChildDesiredMain from './childDesiredMain'
 import {CountyUseOnlyCard} from 'components/rfa_forms/countyUseOnlyCard.js'
-import A01SideBar from './a01SideBar'
+import RfaSideBar from 'rfa_forms/rfa_sidebar/index.js'
 import './stylesheets/cards-main.scss'
 import {fetchRequest} from 'helpers/http'
 import {getDictionaryId, dictionaryNilSelect, checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
@@ -59,15 +59,16 @@ export default class Rfa01EditView extends React.Component {
   submitForm () {
     let url = '/rfa/a01/' + this.props.application_id
     let params = this.state.application
-    fetchRequest(url, 'PUT', this.state.application).then(
-      response => response.json()).then((response) => {
-      return this.setState({
-        formData: response
-      })
-    })
-      .catch(error => {
-        return this.setState({
-          data: error
+    fetchRequest(url, 'PUT', this.state.application)
+      .then((response) => {
+        return response.json()
+      }).then((data) => {
+        this.setState({
+          application: data
+        })
+      }).catch((errors) => {
+        this.setState({
+          errors: errors
         })
       })
   }
@@ -118,8 +119,14 @@ export default class Rfa01EditView extends React.Component {
       <div className='main_page'>
         <div className='form-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <div className='left-content col-xs-3 col-sm-3 col-md-3 col-lg-3'>
-            <A01SideBar
-              hideRelationshipBetweenApplicants={hideRelationshipBetweenApplicants}
+            <RfaSideBar
+              rfa01aApplicationId={this.state.application.id}
+              onRfa01AForm
+              rfa01cForms={this.state.application.rfa1c_forms}
+              otherAdults={this.state.application.other_adults}
+              applicants={this.state.application.applicants}
+              childIdentified={this.state.application.child_desired &&
+                this.state.application.child_desired.child_identified}
               isNavLinkActive={this.isNavLinkActive}
               handleNavLinkClick={this.handleNavLinkClick} />
           </div>
@@ -220,7 +227,7 @@ export default class Rfa01EditView extends React.Component {
                 validator={this.validator}
                 errors={this.state.errors.otherAdults}
                 applicants={this.state.application.applicants || []}
-                otherAdults={this.state.application.otherAdults || undefined}
+                otherAdults={this.state.application.other_adults || undefined}
                 relationship_types={this.props.relationshipToApplicantTypes} />
             </div>
 
@@ -250,7 +257,7 @@ export default class Rfa01EditView extends React.Component {
               <h3>VII.<span>Child Desired </span></h3>
               <ChildDesiredMain
                 focusComponentName={this.state.focusComponentName}
-                childDesired={this.state.application.childDesired || undefined}
+                childDesired={this.state.application.child_desired || undefined}
                 getFocusClassName={this.getFocusClassName}
                 setFocusState={this.setFocusState}
                 setParentState={this.setApplicationState}
@@ -288,6 +295,7 @@ export default class Rfa01EditView extends React.Component {
           </div>
         </div>
       </div>
+
     )
   }
 }

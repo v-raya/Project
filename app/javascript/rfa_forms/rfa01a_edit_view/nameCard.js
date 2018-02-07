@@ -54,11 +54,7 @@ export default class NameCard extends React.Component {
       <div className='card-body'>
         <div className='row'>
           <CompleteNameFields
-            namePrefixId='name_prefix'
-            nameSuffixId='name_suffix'
-            firstNameId='first_name'
-            middleNameId='middle_name'
-            lastNameId='last_name'
+            idPrefix={this.props.idPrefix}
             firstName={nameFields.first_name}
             middleName={nameFields.middle_name}
             lastName={nameFields.last_name}
@@ -79,12 +75,7 @@ export default class NameCard extends React.Component {
                   className='pull-right remove-btn'>Remove</a>
                 <CompleteNameFields
                   index={index}
-                  namePrefixId='name_prefix'
-                  nameSuffixId='name_suffix'
-                  nameTypeId='name_type'
-                  firstNameId='first_name'
-                  middleNameId='middle_name'
-                  lastNameId='last_name'
+                  idPrefix={this.props.idPrefix + 'other_'}
                   firstName={nameCardFields.first_name}
                   middleName={nameCardFields.middle_name}
                   lastName={nameCardFields.last_name}
@@ -116,5 +107,6 @@ NameCard.propTypes = {
 }
 
 NameCard.defaultProps = {
-  nameFields: blankNameFields
+  nameFields: blankNameFields,
+  idPrefix: ''
 }

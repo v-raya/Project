@@ -21,13 +21,13 @@ RSpec.feature 'RFA', js: true do
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('first_name', with: Faker::Name.name, :match => :prefer_exact)
-    fill_in('middle_name', with: 'k', :match => :prefer_exact)
-    fill_in('last_name', with: Faker::Name.name, :match => :prefer_exact)
+    fill_in('applicants[0].first_name', with: Faker::Name.first_name, :match => :prefer_exact)
+    fill_in('applicants[0].middle_name', with: 'k', :match => :prefer_exact)
+    fill_in('applicants[0].last_name', with: Faker::Name.last_name, :match => :prefer_exact)
     fill_in 'applicants[0].driver_license_number', with: 'ABC123'
-    fill_in('first_name', with: Faker::Name.name, :match => :prefer_exact)
-    fill_in('middle_name', with: 'k', :match => :prefer_exact)
-    fill_in('last_name', with: Faker::Name.name, :match => :prefer_exact)
+    # fill_in('first_name', with: Faker::Name.first_name, :match => :prefer_exact)
+    # fill_in('middle_name', with: 'k', :match => :prefer_exact)
+    # fill_in('last_name', with: Faker::Name.last_name, :match => :prefer_exact)
     expect(page).to have_content 'More About Applicant'
     select 'Some High School', from: 'highest_education_level'
     select 'Black', from: 'ethnicity'
@@ -62,7 +62,7 @@ RSpec.feature 'RFA', js: true do
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
     select "Mr.", :from => "name_prefix", :match => :first
-    page.first('select#name_prefix').send_keys :backspace 
+    page.first('select#name_prefix').send_keys :backspace
     expect(page).to have_content 'Applicant 1 - Information'
   end
 
@@ -82,13 +82,11 @@ RSpec.feature 'RFA', js: true do
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('first_name', with: Faker::Name.name, :match => :prefer_exact)
-    fill_in('middle_name', with: 'k', :match => :prefer_exact)
-    fill_in('last_name', with: Faker::Name.name, :match => :prefer_exact)
+    fill_in('applicants[0].first_name', with: Faker::Name.first_name, :match => :prefer_exact)
+    fill_in('applicants[0].last_name', with: Faker::Name.last_name, :match => :prefer_exact)
     click_button('Add Another Applicant +')
-    fill_in('first_name', with: Faker::Name.name, :match => :prefer_exact)
-    fill_in('middle_name', with: 'k', :match => :prefer_exact)
-    fill_in('last_name', with: Faker::Name.name, :match => :prefer_exact)
+    fill_in('applicants[1].first_name', with: Faker::Name.first_name, :match => :prefer_exact)
+    fill_in('applicants[1].last_name', with: Faker::Name.last_name, :match => :prefer_exact)
     select 'Married', from: 'relationship_type'
     select 'Alaska', from: 'place_of_relationship_state'
     click_button('Save Progress')
@@ -103,9 +101,9 @@ RSpec.feature 'RFA', js: true do
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('first_name', with: Faker::Name.name, :match => :prefer_exact)
-    fill_in('middle_name', with: 'k', :match => :prefer_exact)
-    fill_in('last_name', with: Faker::Name.name, :match => :prefer_exact)
+    fill_in('applicants[0].first_name', with: Faker::Name.first_name, :match => :prefer_exact)
+    fill_in('applicants[0].middle_name', with: 'k', :match => :prefer_exact)
+    fill_in('applicants[0].last_name', with: Faker::Name.last_name, :match => :prefer_exact)
     expect(page).to have_content 'IV. Minor Children Residing in the Home'
     fill_in('street_address', with: '2870 something else', :match => :prefer_exact)
     fill_in('Zip', with: '12345', :match => :prefer_exact)
@@ -143,24 +141,23 @@ RSpec.feature 'RFA', js: true do
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
 
     expect(page).to have_content 'Applicant 1 - Information'
-    applicant1FirstName = Faker::Name.first_name
-    applicant1LastName  = Faker::Name.last_name
-    applicant1FullName  = applicant1FirstName + ' ' + 'k' + ' ' + applicant1LastName
-    fill_in('first_name', with: applicant1FirstName, :match => :prefer_exact)
-    fill_in('middle_name', with: 'k', :match => :prefer_exact)
-    fill_in('last_name', with: applicant1LastName, :match => :prefer_exact)
+    applicant_1_first_name = Faker::Name.first_name
+    applicant_1_last_name  = Faker::Name.last_name
+    applicant_1_full_name  = applicant_1_first_name + ' ' + 'k' + ' ' + applicant_1_last_name
+    fill_in('applicants[0].first_name', with: applicant_1_first_name, :match => :prefer_exact)
+    fill_in('applicants[0].middle_name', with: 'k', :match => :prefer_exact)
+    fill_in('applicants[0].last_name', with: applicant_1_last_name, :match => :prefer_exact)
     expect(page).to have_content 'IV. Minor Children Residing in the Home'
     select 'Child', from: 'relationship_to_applicant'
-    select applicant1FullName, from: 'applicant_id'
+    select applicant_1_full_name, from: 'applicant_id'
     select 'Yes', from: 'child_financially_supported'
     select 'Yes', from: 'child_adopted'
     select 'Male', from: 'minor_gender'
-
     click_button('Save Progress')
     visit page.driver.current_url
-    expect(find_field('relationship_to_applicant').value).to eq '1'
-    applicantIdValue = find_field('applicant_id').value
-    expect(find_field('applicant_id').value).to eq applicantIdValue
+    expect(find(:select, 'relationship_to_applicant').value).to eq '1'
+    applicant_id_value = find(:select, 'applicant_id').value
+    expect(find_field('applicant_id').value).to eq applicant_id_value
   end
 
   scenario 'validate Other Adults card', set_auth_header: true do
@@ -169,23 +166,22 @@ RSpec.feature 'RFA', js: true do
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
-    applicant1FirstName = Faker::Name.first_name
-    applicant1LastName  = Faker::Name.last_name
-    applicant1FullName  = applicant1FirstName + ' ' + 'k' + ' ' + applicant1LastName
-    fill_in('first_name', with: applicant1FirstName, :match => :prefer_exact)
-    fill_in('middle_name', with: 'k', :match => :prefer_exact)
-    fill_in('last_name', with: applicant1LastName, :match => :prefer_exact)
-    select applicant1FullName, from: 'availableApplicants'
+    applicant_1_first_name = Faker::Name.first_name
+    applicant_1_last_name  = Faker::Name.last_name
+    applicant_1_full_name  = applicant_1_first_name + ' ' + 'k' + ' ' + applicant_1_last_name
+    fill_in('applicants[0].first_name', with: applicant_1_first_name, :match => :prefer_exact)
+    fill_in('applicants[0].middle_name', with: 'k', :match => :prefer_exact)
+    fill_in('applicants[0].last_name', with: applicant_1_last_name, :match => :prefer_exact)
+    select applicant_1_full_name, from: 'otherAdults[0].availableApplicants'
     expect(page).to have_content 'V.Other Adults Residing or Regularly Present in the Home'
     select 'Child', from: 'otherAdults[0].relationshipType'
     fill_in('otherAdults[0].firstName', with: Faker::Name.first_name, :match => :prefer_exact)
-
     click_button('Save Progress')
     visit page.driver.current_url
 
     expect(find_field('otherAdults[0].relationshipType').value).to eq '1'
-    availableApplicantId = find_field('availableApplicants').value
-    expect(find_field('availableApplicants').value).to eq availableApplicantId
+    availableApplicantId = find_field('otherAdults[0].availableApplicants').value
+    expect(find_field('otherAdults[0].availableApplicants').value).to eq availableApplicantId
   end
 
 
@@ -195,9 +191,9 @@ RSpec.feature 'RFA', js: true do
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('first_name', with: Faker::Name.name, :match => :prefer_exact)
-    fill_in('middle_name', with: 'k', :match => :prefer_exact)
-    fill_in('last_name', with: Faker::Name.name, :match => :prefer_exact)
+    fill_in('applicants[0].first_name', with: Faker::Name.first_name, :match => :prefer_exact)
+    fill_in('applicants[0].middle_name', with: 'k', :match => :prefer_exact)
+    fill_in('applicants[0].last_name', with: Faker::Name.last_name, :match => :prefer_exact)
     expect(page).to have_content 'VIII. Foster Care / Adoption / Licensure History'
     find('#q1-select-dropdownYes').click
 
@@ -213,9 +209,9 @@ RSpec.feature 'RFA', js: true do
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('first_name', with: Faker::Name.name, :match => :prefer_exact)
-    fill_in('middle_name', with: 'k', :match => :prefer_exact)
-    fill_in('last_name', with: Faker::Name.name, :match => :prefer_exact)
+    fill_in('applicants[0].first_name', with: Faker::Name.first_name, :match => :prefer_exact)
+    fill_in('applicants[0].middle_name', with: 'k', :match => :prefer_exact)
+    fill_in('applicants[0].last_name', with: Faker::Name.last_name, :match => :prefer_exact)
     expect(page).to have_content 'IX. References'
     fill_in('first_name', with: 'Sam', :match => :prefer_exact)
 

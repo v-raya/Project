@@ -20,11 +20,12 @@ class Rfa::A01Controller < CalsBaseController
     @application.residence = rfa_residence_helper.find_by_application_id(params[:id])
     @application.applicantsHistory = rfa_applicant_history_helper.find_by_application_id(params[:id])
     @application.minorChildren = rfa_minor_children_helper.find_items_by_application_id(params[:id])
-    @application.otherAdults = rfa_other_adults_helper.find_items_by_application_id(params[:id])
+    @application.other_adults = rfa_other_adults_helper.find_items_by_application_id(params[:id])
     @application.fosterCareHistory = rfa_adoption_history_helper.find_by_application_id(params[:id])
     @application.relationshipBetweenApplicants = rfa_relation_between_applicants_helper.find_by_application_id(params[:id])
-    @application.childDesired = rfa_child_desired_helper.find_by_application_id(params[:id])
+    @application.child_desired = rfa_child_desired_helper.find_by_application_id(params[:id])
     @application.references = rfa_references_helper.find_items_by_application_id(params[:id])
+    @application.rfa1c_forms = rfa_c01_application_helper.all(params[:id])
   end
 
   def update
@@ -34,17 +35,14 @@ class Rfa::A01Controller < CalsBaseController
     @application_response[:residence] = process_items_for_persistance(residence_params, rfa_residence_helper, params[:id]) if params[:residence].present?
     @application_response[:applicantsHistory] = process_items_for_persistance(applicants_history_params, rfa_applicant_history_helper, params[:id]) if params[:applicantsHistory].present?
     @application_response[:minorChildren] = process_items_for_persistance(minor_children_params, rfa_minor_children_helper, params[:id]) if params[:minorChildren].present?
-    @application_response[:otherAdults] = process_items_for_persistance(other_adults_params, rfa_other_adults_helper, params[:id]) if params[:otherAdults].present?
+    @application_response[:other_adults] = process_items_for_persistance(other_adults_params, rfa_other_adults_helper, params[:id]) if params[:other_adults].present?
     @application_response[:fosterCareHistory] = process_items_for_persistance(adoption_history_params, rfa_adoption_history_helper, params[:id]) if params[:fosterCareHistory].present?
     @application_response[:relationshipBetweenApplicants] = process_items_for_persistance(relationship_between_applicants_params, rfa_relation_between_applicants_helper, params[:id]) if params[:relationshipBetweenApplicants].present?
     @application_response[:references] = process_items_for_persistance(references_params, rfa_references_helper, params[:id]) if params[:references].present?
-    @application_response[:childDesired] = process_items_for_persistance(child_desired_params, rfa_child_desired_helper, params[:id]) if params[:childDesired].present?
+    @application_response[:child_desired] = process_items_for_persistance(child_desired_params, rfa_child_desired_helper, params[:id]) if params[:child_desired].present?
     @application_response[:references] = process_items_for_persistance(references_params, rfa_references_helper, params[:id]) if params[:references].present?
 
-    #TODO:MAYBE on update we need to create the relevant rfa 01b forms for all
-    # applicatns, other adults, and minorchildren IF generation is to be automatic
-    # create_rfa_01b_forms(@application_response[:applicants], params[:id])  if @application_response[:applicants].present?
-    # create_rfa_01b_forms(@application_response[:otherAdults], params[:id]) if @application_response[:otherAdults].present?
+    render json: rfa_application_helper.find_by_application_id(params[:id])
   end
 
   private
@@ -105,7 +103,7 @@ class Rfa::A01Controller < CalsBaseController
   end
 
   def other_adults_params
-    params.require(:otherAdults).map do |adult|
+    params.require(:other_adults).map do |adult|
       adult.permit!
       adult = set_relationship_to_applicants(adult, @application_response[:applicants])
       ActionController::Parameters.new(adult.to_h).permit(
@@ -123,7 +121,7 @@ class Rfa::A01Controller < CalsBaseController
 
 
   def child_desired_params
-    params.require(:childDesired).permit(:to_delete, :child_identified, :child_in_home, preferred_ages: %i[id value],
+    params.require(:child_desired).permit(:to_delete, :child_identified, :child_in_home, preferred_ages: %i[id value],
                                          preferred_sibling_group_up_to: %i[id value])
   end
 
@@ -152,6 +150,10 @@ class Rfa::A01Controller < CalsBaseController
 
   def rfa_b01_application_helper
     Helpers::Rfa::B01::ApplicationHelper.new(auth_header: get_session_token)
+  end
+
+  def rfa_c01_application_helper
+    Helpers::Rfa::C01::ApplicationHelper.new(auth_header: get_session_token)
   end
 
   def rfa_applicant_helper

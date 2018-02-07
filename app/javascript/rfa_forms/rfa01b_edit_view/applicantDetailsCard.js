@@ -90,11 +90,8 @@ export default class ApplicantDetailsCard extends React.Component {
         </div>
         <CompleteNameFields
           index={0}
-          namePrefixId='applicant_name_prefix'
-          nameSuffixId='applicant_name_suffix'
-          firstNameId='applicant_first_name'
-          middleNameId='applicant_middle_name'
-          lastNameId='applicant_last_name'
+          idPrefix='applicant_'
+          onChangePrefix='applicant_'
           firstName={application.applicant_first_name}
           middleName={application.applicant_middle_name}
           lastName={application.applicant_last_name}

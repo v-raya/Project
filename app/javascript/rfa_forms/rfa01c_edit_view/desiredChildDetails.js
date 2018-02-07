@@ -20,12 +20,8 @@ const DesiredChildDetails = ({
     <div className='card-header'>Name of the Child</div>
     <CompleteNameFields
       index={index}
+      idPrefix= {idPrefix}
       fieldValues={child}
-      namePrefixId='name_prefix'
-      nameSuffixId='name_suffix'
-      firstNameId='first_name'
-      middleNameId='middle_name'
-      lastNameId='last_name'
       firstName={child.first_name}
       middleName={child.middle_name}
       lastName={child.last_name}

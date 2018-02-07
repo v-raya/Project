@@ -19,13 +19,16 @@ export default class Rfa01cList extends React.Component {
     this.getFocusClassName = this.getFocusClassName.bind(this)
     this.setApplicationState = this.setApplicationState.bind(this)
     this.setFocusState = this.setFocusState.bind(this)
+    this.handleNavLinkClick = this.handleNavLinkClick.bind(this)
+    this.isNavLinkActive = this.isNavLinkActive.bind(this)
     this.validator = new Validator({})
     this.validator.validateFieldSetErrorState = this.validateFieldSetErrorState.bind(this)
 
     this.state = {
       focusComponentName: '',
       application: this.props.rfa_c1_application,
-      applicants: this.props.applicants,
+      rfa_a01_application: this.props.rfa_a01_application,
+      activeNavLinkId: this.props.rfa_c1_application.id,
       errors: {}
     }
   }
@@ -41,17 +44,19 @@ export default class Rfa01cList extends React.Component {
   }
 
   submitForm () {
-    let url = '/rfa/a01/' + this.props.application_id + '/c01/' + this.props.rfa_c1_application_id
+    let url = '/rfa/a01/' + this.state.rfa_a01_application.id + '/c01/' + this.state.application.id
     let params = this.state.application
-    fetchRequest(url, 'PUT', params).then(
-      response => response.json()).then((response) => {
-      return this.setState({
-        formData: response
+    fetchRequest(url, 'PUT', params)
+      .then((response) => {
+        return response.json()
+      }).then((data) => {
+        this.setState({
+          application: data
+        })
       })
-    })
-      .catch(error => {
-        return this.setState({
-          data: error
+      .catch((error) => {
+        this.setState({
+          errors: error
         })
       })
   }
@@ -70,6 +75,16 @@ export default class Rfa01cList extends React.Component {
     return this.state.focusComponentName === componentName ? 'edit' : 'show'
   }
 
+  handleNavLinkClick (id) {
+    if (id) {
+      this.setState({ activeNavLinkId: id })
+    }
+  }
+
+  isNavLinkActive (id) {
+    return this.state.activeNavLinkId === id
+  }
+
   render () {
     return (
       <PageTemplate
@@ -77,7 +92,15 @@ export default class Rfa01cList extends React.Component {
         buttonId='desiredChildCardsaveProgress'
         buttonLabel='Save Progress'
         buttonTextAlignment='right'
-        onButtonClick={this.submitForm} >
+        onButtonClick={this.submitForm}
+        rfa01aApplicationId={this.state.rfa_a01_application.id}
+        rfa01cForms={this.state.rfa_a01_application.rfa1c_forms}
+        applicants={this.state.rfa_a01_application.applicants}
+        otherAdults={this.state.rfa_a01_application.other_adults}
+        childIdentified={this.state.rfa_a01_application.child_desired &&
+        this.state.rfa_a01_application.child_desired.child_identified}
+        isNavLinkActive={this.isNavLinkActive}
+        handleNavLinkClick={this.handleNavLinkClick} >
         <CardsGroupLayout>
           <CountyUseOnlyCard
             countyUseOnlyCardId='county_use_only'

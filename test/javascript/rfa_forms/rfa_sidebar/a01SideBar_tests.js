@@ -1,26 +1,23 @@
 import React from 'react'
 import {shallow, mount} from 'enzyme'
-import A01SideBar from 'rfa_forms/rfa01a_edit_view/a01SideBar'
+import A01SideBar from 'rfa_forms/rfa_sidebar/a01SideBar'
 
 describe('RFA 01a side bar ', () => {
-  let component, noHiddenRelationshipNavcomponent
+  let component
   let isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
   let handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
   beforeEach(() => {
     component = mount(<A01SideBar
-      hideRelationshipBetweenApplicants='hidden'
+      showRelationshipBetweenApplicants={false}
       isNavLinkActive={isNavLinkActiveSpy}
-      handleNavLinkClick={handleNavLinkClickSpy}
-    />)
-    noHiddenRelationshipNavcomponent = mount(<A01SideBar
-      hideRelationshipBetweenApplicants={false}
-      isNavLinkActive={isNavLinkActiveSpy}
+      onRfa01AForm
+      rfa01aApplicationId={10}
       handleNavLinkClick={handleNavLinkClickSpy}
     />)
   })
 
   it('renders the div wrapper', () => {
-    expect(component.find('div.col-lg-12').exists()).toBe(true)
+    expect(component.find('div.col-lg-10').exists()).toBe(true)
   })
 
   it('renders a link to the Applicant Information card', () => {
@@ -100,6 +97,21 @@ describe('RFA 01a side bar ', () => {
   it('does not render a link to the Applicant Information card when no relationship', () => {
     expect(component.find('NavLink[text="3. Applicant Relationship"]').exists()).toBe(false)
   })
+})
+
+describe('RFA 01a side bar  relationship links', () => {
+  let noHiddenRelationshipNavcomponent
+  let isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
+  let handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
+  beforeEach(() => {
+    noHiddenRelationshipNavcomponent = mount(<A01SideBar
+      showRelationshipBetweenApplicants
+      onRfa01AForm
+      rfa01aApplicationId={10}
+      isNavLinkActive={isNavLinkActiveSpy}
+      handleNavLinkClick={handleNavLinkClickSpy}
+    />)
+  })
   it('renders a link to the Applicant relationship card', () => {
     expect(noHiddenRelationshipNavcomponent.find('NavLink[text="3. Applicant Relationship"]').props().href)
       .toBe('#relationship-between-applicants-card')
@@ -108,5 +120,28 @@ describe('RFA 01a side bar ', () => {
     noHiddenRelationshipNavcomponent.find('Link[text="3. Applicant Relationship"]').simulate('click')
     noHiddenRelationshipNavcomponent.update()
     expect(handleNavLinkClickSpy).toHaveBeenCalledWith('#relationship-between-applicants-card')
+  })
+})
+describe('RFA 01a side bar  not on rfa 01a form', () => {
+  let notOnRfa01AForm
+  let isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
+  let handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
+  beforeEach(() => {
+    notOnRfa01AForm = mount(<A01SideBar
+      showRelationshipBetweenApplicants
+      onRfa01AForm={false}
+      rfa01aApplicationId={10}
+      isNavLinkActive={isNavLinkActiveSpy}
+      handleNavLinkClick={handleNavLinkClickSpy}
+    />)
+  })
+  it('renders a link to the Applicant relationship card from not on rfa 01 a form', () => {
+    expect(notOnRfa01AForm.find('NavLink[text="8. Foster Care History"]').props().href)
+      .toBe('/rfa/a01/10/edit#foster-care-card')
+  })
+  it('clicks the link and updates link to the Applicant Relationship card from not on rfa 01 a form', () => {
+    notOnRfa01AForm.find('Link[text="8. Foster Care History"]').simulate('click')
+    notOnRfa01AForm.update()
+    expect(handleNavLinkClickSpy).toHaveBeenCalledWith('#foster-care-card')
   })
 })

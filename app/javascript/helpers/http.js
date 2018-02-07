@@ -16,7 +16,7 @@ export const getMethod = (url, method, query) => {
   let data = {
     method: method,
     headers: myHeaders,
-    mode: 'cors',
+    mode: 'no-cors',
     credentials: 'same-origin'
   }
   return fetch(url, data)

@@ -24,22 +24,22 @@ export default class OtherAdultsCardsGroup extends React.Component {
   }
 
   addCard (event) {
-    this.props.setParentState('otherAdults', addCardAsJS(this.props.otherAdults, otherAdultsDefaults))
+    this.props.setParentState('other_adults', addCardAsJS(this.props.otherAdults, otherAdultsDefaults))
   }
 
   clickClose (cardIndex) {
-    this.props.setParentState('otherAdults',
+    this.props.setParentState('other_adults',
       removeCardWithId(this.props.otherAdults, cardIndex, otherAdultsDefaults))
   }
 
   onFieldChange (cardIndex, value, type) {
     let otherAdultsList = Immutable.fromJS(this.props.otherAdults)
     otherAdultsList = otherAdultsList.update(cardIndex, x => x.set(type, value))
-    this.props.setParentState('otherAdults', otherAdultsList.toJS())
+    this.props.setParentState('other_adults', otherAdultsList.toJS())
   }
 
   handleRelationshipTypeToApplicant (index, value, type) {
-    this.props.setParentState('otherAdults', handleRelationshipTypeToApplicant(index, value, type, checkArrayObjectPresence(this.props.otherAdults) || [otherAdultsDefaults]))
+    this.props.setParentState('other_adults', handleRelationshipTypeToApplicant(index, value, type, checkArrayObjectPresence(this.props.otherAdults) || [otherAdultsDefaults]))
   }
 
   render () {

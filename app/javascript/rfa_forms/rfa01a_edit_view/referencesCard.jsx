@@ -32,11 +32,6 @@ export default class ReferencesCard extends React.Component {
       <div>
         <CompleteNameFields
           index={this.props.index}
-          namePrefixId='name_prefix'
-          nameSuffixId='name_suffix'
-          firstNameId='first_name'
-          middleNameId='middle_name'
-          lastNameId='last_name'
           firstName={reference.first_name}
           middleName={reference.middle_name}
           lastName={reference.last_name}

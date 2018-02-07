@@ -31,7 +31,8 @@ export default class ReferenceMain extends React.Component {
     this.props.setParentState('references', newData.toJS())
   }
   render () {
-    const references = this.props.references
+    const references = Array.isArray(this.props.references)
+      ? this.props.references : this.props.references.items
     return (
       <div className='reference_main'>
         <div>Please list the name, telephone number(s), and address of three individuals who have knowledge of your home environment, lifestyle, and
@@ -72,7 +73,10 @@ export default class ReferenceMain extends React.Component {
 
 ReferenceMain.propTypes = {
   suffixTypes: PropTypes.array.isRequired,
-  references: PropTypes.array.isRequired,
+  references: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object
+  ]),
   prefixTypes: PropTypes.array.isRequired,
   nameTypes: PropTypes.array.isRequired,
   stateTypes: PropTypes.array.isRequired,

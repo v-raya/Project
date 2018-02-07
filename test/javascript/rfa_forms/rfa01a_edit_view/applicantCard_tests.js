@@ -70,7 +70,7 @@ describe('Verify Applicant Card', () => {
   it('Verify application State Change', () => {
     let namecardComponent = applicantCardComponent.find('.name-section').hostNodes()
     let NameFields = namecardComponent.find('input[type="text"]')
-    let firstNameField = NameFields.find('#first_name')
+    let firstNameField = NameFields.findWhere(n => n.props().id === 'applicants[0].first_name')
     firstNameField.simulate('change', {target: {value: 'Anuroop'}})
     applicantFields.first_name = 'Anuroop'
     expect(setApplicantsStateSpy).toHaveBeenCalledWith(0, applicantFields)

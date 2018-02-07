@@ -29,7 +29,7 @@ export class OtherAdultsCardField extends React.Component {
           label='Relationship Type'
           value={getDictionaryId(adult.relationship_to_applicants[0].relationship_to_applicant)}
           onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, dictionaryNilSelect(event.target.options), 'relationship_to_applicant')} />
-        <DropDownField gridClassName='col-md-4' id='availableApplicants'
+        <DropDownField gridClassName='col-md-4' id={this.props.idPrefix + 'availableApplicants'}
           selectClassName='reusable-select'
           optionList={setToWhomOptionList(this.props.applicants)}
           value={handleToWhomValue(adult.relationship_to_applicants[0].applicant_id, this.props.applicants).id}
@@ -47,7 +47,7 @@ export class OtherAdultsCardField extends React.Component {
         <InputComponent gridClassName='col-md-4' id={this.props.idPrefix + 'middleName'} value={adult.middle_name}
           label='Middle Name' placeholder='Enter Middle Name'
           type='text' onChange={(event, id) => this.props.onFieldChange(this.props.index, event.target.value, ('middle_name'))} />
-        <InputComponent gridClassName='col-md-4' id={'lastName'} value={adult.last_name}
+        <InputComponent gridClassName='col-md-4' id={this.props.idPrefix + 'lastName'} value={adult.last_name}
           label='Last Name' placeholder='Enter Last Name'
           type='text' onChange={(event, id) => this.props.onFieldChange(this.props.index, event.target.value, ('last_name'))} />
       </form>

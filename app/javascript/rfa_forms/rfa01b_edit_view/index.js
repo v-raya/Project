@@ -10,13 +10,13 @@ import CaliforniaCriminalBackground from './californiaCriminalBackground'
 import OutsideCACriminalBackground from './outsideCACriminalBackground'
 import CrimeBackgroundAgainstCohabitant from './crimeBackgroundAgainstCohabitant'
 import PrivacyStatement from './privacyStatement'
+import RfaSideBar from 'rfa_forms/rfa_sidebar/index.js'
 import {CountyUseOnlyCard} from 'components/rfa_forms/countyUseOnlyCard.js'
 import {getDictionaryId, dictionaryNilSelect, checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import CardsGroupLayout from 'components/common/cardsGroupLayout.js'
 import {addCardAsJS, getFocusClassName, removeCard} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
 import {disclosureDefaults} from 'constants/defaultFields'
-// import '../rfa01a_edit_view/stylesheets/cards-main.scss'
 
 export default class Rfa01bList extends React.Component {
   constructor (props) {
@@ -29,10 +29,13 @@ export default class Rfa01bList extends React.Component {
     this.handleClearOnConditionalChange = this.handleClearOnConditionalChange.bind(this)
     this.validator = new Validator({})
     this.validator.validateFieldSetErrorState = this.validateFieldSetErrorState.bind(this)
+    this.handleNavLinkClick = this.handleNavLinkClick.bind(this)
+    this.isNavLinkActive = this.isNavLinkActive.bind(this)
 
     this.state = {
-      application_id: this.props.application_id,
       application: this.props.rfa_b01_application,
+      activeNavLinkId: this.props.rfa_b01_application.id,
+      rfa_a01_application: this.props.rfa_a01_application,
       disclosureInstructionsDisplay: null,
       privacyStatementDisplay: null,
       focusComponentName: '',
@@ -54,15 +57,16 @@ export default class Rfa01bList extends React.Component {
 
   submitForm () {
     let url = '/rfa/b01/' + this.props.application_id
-    fetchRequest(url, 'PUT', this.state).then(
-      response => response.json()).then((response) => {
-      return this.setState({
-        formData: response
-      })
-    })
-      .catch(error => {
-        return this.setState({
-          data: error
+    fetchRequest(url, 'PUT', this.state.application)
+      .then((response) => {
+        return response.json()
+      }).then((data) => {
+        this.setState({
+          application: data
+        })
+      }).catch((errors) => {
+        this.setState({
+          errors: errors
         })
       })
   }
@@ -98,6 +102,16 @@ export default class Rfa01bList extends React.Component {
     }
   }
 
+  handleNavLinkClick (id) {
+    if (id) {
+      this.setState({ activeNavLinkId: id })
+    }
+  }
+
+  isNavLinkActive (id) {
+    return this.state.activeNavLinkId === id
+  }
+
   render () {
     const countyValue = getDictionaryId(this.state.application.application_county) || (this.props.user && this.props.user.county_code)
 
@@ -108,7 +122,19 @@ export default class Rfa01bList extends React.Component {
           <div className='header-logo' />
         </div>
         <div className='form-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <div className='left-content col-xs-9 col-sm-9 col-md-9 col-lg-9'>
+          <div className='left-content col-xs-3 col-sm-3 col-md-3 col-lg-3'>
+
+            <RfaSideBar
+              rfa01aApplicationId={this.state.rfa_a01_application.id}
+              rfa01cForms={this.state.rfa_a01_application.rfa1c_forms}
+              applicants={this.state.rfa_a01_application.applicants}
+              otherAdults={this.state.rfa_a01_application.other_adults}
+              childIdentified={this.state.rfa_a01_application.child_desired &&
+              this.state.rfa_a01_application.child_desired.child_identified}
+              isNavLinkActive={this.isNavLinkActive}
+              handleNavLinkClick={this.handleNavLinkClick} />
+          </div>
+          <div className='right-content col-xs-9 col-sm-9 col-md-9 col-lg-9'>
             <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <div className='col-xs-10 col-sm-10 col-md-10 col-lg-10'>
                 <h1 className='page-header'>Resource Family Criminal Record Statement (RFA 01B)</h1>

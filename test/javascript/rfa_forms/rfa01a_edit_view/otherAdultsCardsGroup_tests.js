@@ -70,7 +70,7 @@ describe('Verify other adults Component View', function () {
       let relationShipField = componentMount.findWhere(n => n.props().id === 'otherAdults[0].relationshipType').hostNodes()
       relationShipField.simulate('change', {target: {options: {'2': {value: '2', text: 'Sibling'}, selectedIndex: 2}}})
       OtherAdultsCard.relationship_to_applicants[0].relationship_to_applicant = { id: '2', value: 'Sibling' }
-      expect(setParentStateSpy).toHaveBeenCalledWith('otherAdults', [OtherAdultsCard])
+      expect(setParentStateSpy).toHaveBeenCalledWith('other_adults', [OtherAdultsCard])
     })
   })
 
@@ -102,7 +102,7 @@ describe('Verify other adults Component View', function () {
       newData[0] = OtherAdultsCard
       newData[1] = otherAdultsDefaults
 
-      expect(setParentStateSpy).toHaveBeenCalledWith('otherAdults', newData)
+      expect(setParentStateSpy).toHaveBeenCalledWith('other_adults', newData)
     })
   })
 
@@ -121,7 +121,7 @@ describe('Verify other adults Component View', function () {
       let newData = []
       newData[0] = OtherAdultsCard
       newData[1] = otherAdultsDefaults
-      component.setProps({otherAdults: newData})
+      component.setProps({other_adults: newData})
       spyOn(component.instance(), 'clickClose').and.callThrough()
       component.find('.remove-btn').at(0).simulate('click')
       component.update()
@@ -131,10 +131,17 @@ describe('Verify other adults Component View', function () {
 
     it('Verify application State Change', () => {
       let NameFields = componentMount.find('input[type="text"]')
-      let firstNameField = NameFields.find('#lastName')
-      firstNameField.simulate('change', {target: {value: 'dude'}})
-      OtherAdultsCard.last_name = 'dude'
-      expect(setParentStateSpy).toHaveBeenCalledWith('otherAdults', [OtherAdultsCard])
+      let lastNameField = NameFields.findWhere(n => n.props().id === 'otherAdults[0].lastName')
+      lastNameField.simulate('change', {target: {value: 'dude'}})
+      expect(setParentStateSpy).toHaveBeenCalledWith('other_adults',
+        [ { relationship_types: { items: [ ] },
+          relationship_to_applicants: [ { applicant_id: null,
+            relationship_to_applicant: { id: '2', value: 'Sibling' } } ],
+          index: 0,
+          first_name: '',
+          middle_name: '',
+          last_name: 'dude',
+          date_of_birth: '2017-01-01' } ])
     })
   })
 })

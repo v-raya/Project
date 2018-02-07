@@ -1,18 +1,19 @@
 class Rfa::C01Controller < CalsBaseController
   def index
-    rfa_c01_app_response = rfa_c01_application_helper.create(params[:a01_id], '{}')
-    redirect_to edit_rfa_a01_c01_path(id: rfa_c01_app_response.id, a01_id: params[:a01_id])
+    @rfa_c01_application = rfa_c01_application_helper.create(params[:a01_id], '{}')
+    redirect_to edit_rfa_a01_c01_path(id: @rfa_c01_application.id, a01_id: params[:a01_id])
   end
 
   def edit
     @dictionaries = dictionaries_helper.rfa_c01_dictioniaries
     @rfa_c1_application = rfa_c01_application_helper.find_by_id(params[:a01_id], params[:id])
-    @application = rfa_application_helper.find_by_id(params[:a01_id])
-    @application.applicants = rfa_applicant_helper.find_items_by_application_id(params[:a01_id])
+    @rfa_a01_application = rfa_application_helper.find_by_application_id(params[:a01_id])
+    @rfa_a01_application['rfa1c_forms'] = rfa_c01_application_helper.all(params[:a01_id])
   end
 
   def update
     rfa_c01_application_helper.update(params[:a01_id], params[:id], c01_params.to_json)
+    render json: rfa_c01_application_helper.find_by_id(params[:a01_id], params[:id])
   end
 
 private

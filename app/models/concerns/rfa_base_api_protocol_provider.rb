@@ -29,6 +29,10 @@ module Concerns::RfaBaseApiProtocolProvider
       body.present? ? body['items'] : nil
     end
 
+    def all(application_id, auth_header)
+      response = FaradayCals.get("/#{parent_path}/#{application_id}/#{api_resource_path}", auth_header)
+      response.status == 200 ? JSON.parse(response.body) : nil
+    end
 
   end
 end

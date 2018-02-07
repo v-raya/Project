@@ -3,12 +3,12 @@ class Helpers::Rfa::B01::ApplicationHelper < Helpers::ModelHelperBase
     Rfa::B01::Application
   end
 
-  def create_application(applicationId, applicantId, api_url_path)
-    model_class.create_application(auth_header, applicationId, applicantId, api_url_path)
+  def create_application(application_id, applicant_id, api_url_path)
+    model_class.create_application(auth_header, application_id, applicant_id, api_url_path)
   end
 
-  def all(applicationId)
-    model_class.all(auth_header, applicationId)
+  def all(application_id)
+    model_class.all(application_id, auth_header)
   end
 
   def find_by_id(id, application_id)
@@ -17,5 +17,9 @@ class Helpers::Rfa::B01::ApplicationHelper < Helpers::ModelHelperBase
 
   def update(id, application_id, body)
     model_class.update(id, application_id, body, auth_header)
+  end
+
+  def rfa_01a_application(application_id)
+    Rfa::Application.find_by_application_id(auth_header, application_id)
   end
 end
