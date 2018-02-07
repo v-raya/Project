@@ -55,7 +55,7 @@ RSpec.feature 'RFA', js: true do
     expect(find_field('applicants[0].phones[0].number').value).to eq '(201) 222-2345'
   end
 
-  scenario 'prevent backspace navigation', set_auth_header: true do
+  scenario 'prevent backspace navigation on IE', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
@@ -63,6 +63,12 @@ RSpec.feature 'RFA', js: true do
     expect(page).to have_content 'Applicant 1 - Information'
     select "Mr.", :from => "name_prefix", :match => :first
     page.first('select#name_prefix').send_keys :backspace
+    expect(page).to have_content 'Applicant 1 - Information'
+    fill_in "applicants[0].phones[0].number", with: "\t"
+    page.first('select#phone_type').send_keys :backspace
+    expect(page).to have_content 'Applicant 1 - Information'
+    find('#addAnotherNumber').send_keys :tab
+    find('#addAnotherApplicant').send_keys :backspace
     expect(page).to have_content 'Applicant 1 - Information'
   end
 

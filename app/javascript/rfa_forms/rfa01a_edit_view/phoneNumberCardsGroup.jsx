@@ -64,7 +64,7 @@ export default class PhoneComponent extends React.Component {
           })
         }
         <div className='text-center'>
-          <button onClick={this.addCard} className='btn btn-default'>Add another Number +</button>
+          <button onClick={this.addCard} id='addAnotherNumber' className='btn btn-default'>Add another Number +</button>
         </div>
       </div>
     )

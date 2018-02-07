@@ -82,7 +82,7 @@ export default class ApplicantCardsGroup extends React.Component {
         </div>
         <div className='add-another col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <div className='text-center'>
-            <button onClick={this.addCard} className='btn btn-default'>Add Another Applicant +</button>
+            <button onClick={this.addCard} id='addAnotherApplicant' className='btn btn-default'>Add Another Applicant +</button>
           </div>
         </div>
       </div>
