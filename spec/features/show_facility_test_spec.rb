@@ -12,6 +12,14 @@ RSpec.feature 'Facilities', js: true, set_auth_header: true  do
     expect(page).to have_text('Lederhouse Transitions')
   end
 
+  scenario 'Click toggle result and validate facility name in list view' do
+    facilities_list
+    within(:css, '.toggle_result') do
+      page.find(:css,'.line_off-icon.navbar-brand').click
+    end
+    expect(page).to have_text('Lederhouse Transitions')
+  end
+
   scenario 'refresh facility' do
     facilities_list
     click_link('Lederhouse Transitions')
@@ -25,10 +33,11 @@ RSpec.feature 'Facilities', js: true, set_auth_header: true  do
     expect(page).to have_text('Approved')
   end
 
-  scenario 'click into facility and show children' do
+  scenario 'click into facility and validate children section' do
     facilities_list
     click_link('Lederhouse Transitions')
     expect(page).to have_text('Takahashi')
+    expect(page).to have_xpath('//tbody/tr[1]/td[4]', :text => 'F')
   end
 
   scenario 'select county dropdown and show search results' do
