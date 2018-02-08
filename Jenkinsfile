@@ -109,49 +109,49 @@ node {
 
     try {
         stage('Install Dependencies') {
-            // curStage = 'dependencies'
-            // echo 'which ruby'
-            // sh 'which ruby'
-            // echo 'which bundler'
-            // sh 'which bundler'
-            // echo 'which bundle'
-            // sh 'which bundle'
-            // sh 'bundle install'
-            // sh 'yarn install'
+            curStage = 'dependencies'
+            echo 'which ruby'
+            sh 'which ruby'
+            echo 'which bundler'
+            sh 'which bundler'
+            echo 'which bundle'
+            sh 'which bundle'
+            sh 'bundle install'
+            sh 'yarn install'
         }
         stage('Lint') {
-            // curStage = 'lint'
-            // sh 'yarn lint'
+            curStage = 'lint'
+            sh 'yarn lint'
         }
         stage('Compile Assets') {
-            // curStage = 'assets'
-            // sh 'bundle exec rails assets:precompile RAILS_ENV=test'
+            curStage = 'assets'
+            sh 'bundle exec rails assets:precompile RAILS_ENV=test'
         }
 
         stage('Test - Jasmine') {
-            // curStage = 'karma'
-            // sh 'yarn karma-ci'
+            curStage = 'karma'
+            sh 'yarn karma-ci'
         }
         stage('Test - Rspec') {
-            // curStage = 'rspec'
-            // withEnv([
-            //     'CALS_API_URL=https://calsapi.preint.cwds.io',
-            //     'GEO_SERVICE_URL=https://geo.preint.cwds.io',
-            //     'BASE_SEARCH_API_URL=https://dora.preint.cwds.io',
-            //     'AUTHENTICATION_API_BASE_URL=https://web.preint.cwds.io/perry'
-            //     ]) {
-            //     sh 'yarn spec-ci'
-            // }
+            curStage = 'rspec'
+            withEnv([
+                'CALS_API_URL=https://calsapi.preint.cwds.io',
+                'GEO_SERVICE_URL=https://geo.preint.cwds.io',
+                'BASE_SEARCH_API_URL=https://dora.preint.cwds.io',
+                'AUTHENTICATION_API_BASE_URL=https://web.preint.cwds.io/perry'
+                ]) {
+                sh 'yarn spec-ci'
+            }
         }
 
         if (branch == 'development') {
             // push to docker
             newTag = "0.${getBuildTag()}-${env.BUILD_ID}"
-            // dockerStages(newTag)
+            dockerStages(newTag)
         }
 
         stage ('Reports') {
-            // reports()
+            reports()
         }
     }
     catch (e) {
