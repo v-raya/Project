@@ -2,8 +2,8 @@
 <jenkins.plugins.slack.SlackNotifier_-DescriptorImpl plugin="slack@2.3">
   <baseUrl>https://hooks.slack.com/services/T0FSW5RLH/B5EF1K685/</baseUrl>
   <teamDomain>ccwds</teamDomain>
-  <token>Nhkuz3K4a2SRFiLHyTmYvwEn</token>
-  <tokenCredentialId></tokenCredentialId>
+  <token></token>
+  <tokenCredentialId>SLACK_TOKEN_ID</tokenCredentialId>
   <botUser>false</botUser>
   <room>#tech-cals-updates</room>
 </jenkins.plugins.slack.SlackNotifier_-DescriptorImpl>

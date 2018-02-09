@@ -5,7 +5,7 @@
       <name>CALS Dev</name>
       <hostname>dev.cs-cals.com</hostname>
       <username>ec2-user</username>
-      <secretPassword>{AQAAABAAAAAQkQVJ3apeAr67C1+cLApb4xC7MamGAlIBod9wzH09zoA=}</secretPassword>
+      <secretPassword>{AQAAABAAAAAQw6iYfEuCM/oeqp8j9tZD5Cmil8KzqL5wmlL7pkPhFVI=}</secretPassword>
       <remoteRootDir></remoteRootDir>
       <port>22</port>
       <commonConfig class="jenkins.plugins.publish_over_ssh.BapSshCommonConfiguration">

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<flow-definition plugin="workflow-job@2.15">
+<flow-definition plugin="workflow-job@2.17">
   <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
@@ -22,7 +22,7 @@
         <artifactNumToKeep>-1</artifactNumToKeep>
       </strategy>
     </jenkins.model.BuildDiscarderProperty>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.28.1">
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.0">
       <projectUrl>https://github.com/ca-cwds/CALS/</projectUrl>
       <displayName>CALS</displayName>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
@@ -42,11 +42,23 @@
           <credentialType>org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl</credentialType>
           <required>false</required>
         </com.cloudbees.plugins.credentials.CredentialsParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>BASE_TAG_NUMBER</name>
+          <description></description>
+          <defaultValue>57</defaultValue>
+          <trim>true</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>BASE_TAG_DATE</name>
+          <description></description>
+          <defaultValue>2018-02-08</defaultValue>
+          <trim>true</trim>
+        </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
     <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
       <triggers>
-        <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.39.0">
+        <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.40.0">
           <spec>H/5 * * * *</spec>
           <configVersion>3</configVersion>
           <adminlist></adminlist>
@@ -104,8 +116,8 @@
       </triggers>
     </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
   </properties>
-  <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@2.42">
-    <scm class="hudson.plugins.git.GitSCM" plugin="git@3.6.4">
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@2.44">
+    <scm class="hudson.plugins.git.GitSCM" plugin="git@3.7.0">
       <configVersion>2</configVersion>
       <userRemoteConfigs>
         <hudson.plugins.git.UserRemoteConfig>
