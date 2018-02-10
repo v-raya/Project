@@ -74,8 +74,8 @@ def pushToDocker(imageLocation, args, docker_credential_id) {
 }
 
 def getBuildTag() {
-    int baseTagNumber = 55
-    def baseDate = new SimpleDateFormat("yyyy-MM-dd").parse("2018-01-11")
+    int baseTagNumber = env.BASE_TAG_NUMBER ? env.BASE_TAG_NUMBER.toInteger() : 61
+    def baseDate = env.BASE_TAG_DATE ? new SimpleDateFormat("yyyy-MM-dd").parse(env.BASE_TAG_DATE) : new SimpleDateFormat("yyyy-MM-dd").parse("2018-02-21")
     def today = new Date()
     int sprintsSince = (today - baseDate).intdiv(14)
 
@@ -85,7 +85,7 @@ def getNewTagNumber(baseTagNumber, sprints) {
     int newTagNumber = baseTagNumber
     sprints.times {
         newTagNumber += 1
-        if ((newTagNumber % 10) == 7) {
+        if ((newTagNumber % 10) >= 7) {
             newTagNumber += 4
         }
     }
@@ -101,11 +101,6 @@ node {
     def emailList = 'ratnesh.raval@osi.ca.gov'
     def pipelineStatus = 'SUCCESS'
     String newTag = ''
-    try {
-        emailList = EMAIL_NOTIFICATION_LIST
-    } catch (e) {
-        // Okay not to perform assignment if EMAIL_NOTIFICATION_LIST is not defined
-    }
 
     try {
         stage('Install Dependencies') {
@@ -159,7 +154,6 @@ node {
         currentBuild.result = 'FAILURE'
     }
     finally {
-        echo newTag
         notify(newTag)
         // cleanWs()
     }
