@@ -177,11 +177,12 @@ export default class Rfa01EditView extends React.Component {
           <h3>II. Applicant (S) - <span>Residence</span></h3>
           <ResidenceCards
             focusComponentName={this.state.focusComponentName}
+            setFocusState={this.setFocusState}
+            getFocusClassName={this.getFocusClassName}
             residence={this.state.application.residence || undefined}
             languageTypes={this.props.languageTypes}
             residenceTypes={this.props.residenceTypes}
             stateTypes={this.props.stateTypes}
-            setFocusState={this.setFocusState}
             setParentState={this.setApplicationState} />
         </div>
 

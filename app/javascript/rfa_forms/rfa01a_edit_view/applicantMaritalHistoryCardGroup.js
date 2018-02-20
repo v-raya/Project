@@ -65,11 +65,13 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
   }
 
   changeAdultHistoryAddress (type, value, index) {
-    let maritalHistory = Immutable.fromJS(this.props.applicantsHistory)
-    let adultChildrenList = Immutable.fromJS(this.props.applicantsHistory.adult_children)
-    let address = Immutable.fromJS(this.props.applicantsHistory.adult_children[index].address)
-    address = address.set(type, value)
-    this.changeAdultChild('address', address, index)
+    if (type === 'address') {
+      this.changeAdultChild(type, value, index)
+    } else {
+      let address = Immutable.fromJS(this.props.applicantsHistory.adult_children[index].address)
+      address = address.set(type, value)
+      this.changeAdultChild('address', address.toJS(), index)
+    }
   }
 
   handleRelationshipTypeToApplicantFormerSpouse (index, value, type) {

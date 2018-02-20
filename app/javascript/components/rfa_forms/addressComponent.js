@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {CommonAddressComponent} from 'react-wood-duck'
+import {physicalAddressType, mailingAddressType} from 'constants/rfaConstants'
+import {blankPhysicalAddress, blankMailingAddress} from 'constants/defaultFields'
 import {fetchRequest} from 'helpers/http'
 import Immutable from 'immutable'
 
@@ -12,30 +14,47 @@ export default class AddressComponent extends React.Component {
     }
     this.onSuggestionSelected = this.onSuggestionSelected.bind(this)
     this.onSelectionUpdateProp = this.onSelectionUpdateProp.bind(this)
+    this.onInvalidAddressSelection = this.onInvalidAddressSelection.bind(this)
     this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this)
+    this.onSelection = this.onSelection.bind(this)
+  }
+
+  onSelection (parentStateKey, addressType, autoFillData) {
+    const blankAddressFields = (addressType === physicalAddressType)
+      ? blankPhysicalAddress : blankMailingAddress
+
+    autoFillData.type = blankAddressFields.type
+
+    let addresses = addressType === physicalAddressType
+      ? Immutable.List([autoFillData, this.props.mailingAddress].filter(n => n))
+      : Immutable.List([this.props.physicalAddress, autoFillData].filter(n => n))
+
+    addresses.size === 1
+      ? this.props.setParentState(parentStateKey, addresses.toObject()[0])
+      : this.props.setParentState(parentStateKey, addresses.toJS())
   }
 
   onInvalidAddressSelection (updateSuggetions) {
-    updateSuggetions.city = ''
-    updateSuggetions.state = null
-    // updateSuggetions.state = this.props.stateTypes.find(x => x.id === updateSuggetions.state)
-    // TODO: Have to find a fix for state to see why invalid address is causing an issue
-    updateSuggetions.zip = ''
-
-    let addressObj = Immutable.fromJS(this.props.addressFields)
-    addressObj = addressObj.update(x => updateSuggetions)
-    this.props.onSelection(addressObj)
+    if (updateSuggetions) {
+      updateSuggetions.city = ''
+      updateSuggetions.state = null
+      updateSuggetions.zip = ''
+      let addressObj = Immutable.fromJS(this.props.addressFields)
+      addressObj = addressObj.update(x => updateSuggetions)
+      this.onSelection(this.props.parentStateKey, this.props.addressType, addressObj)
+    }
   }
 
   onSuggestionsFetchRequested ({value, reason}) {
     let url = '/geoservice/'
     let params = encodeURIComponent(value)
     fetchRequest(url, 'POST', params).then(
-      response => response.json()).then((response) => {
-      return this.setState({
-        suggestions: response
-      })
-    }).catch(() => {
+      response => response.json()).then(
+      (response) => {
+        return this.setState({
+          suggestions: response
+        })
+      }).catch(() => {
       return this.setState({
         suggestions: []
       })
@@ -46,10 +65,10 @@ export default class AddressComponent extends React.Component {
     let addressObj = Immutable.fromJS(this.props.addressFields)
     updateSuggetions.state = this.props.stateTypes.find(x => x.id === updateSuggetions.state)
     addressObj = addressObj.update(x => updateSuggetions)
-    this.props.onSelection(addressObj)
+    this.onSelection(this.props.parentStateKey, this.props.addressType, addressObj)
   }
 
-  onSuggestionSelected (event, {suggestion, suggestionValue, suggestionIndex, sectionIndex, method}, addressType) {
+  onSuggestionSelected (event, {suggestion, suggestionValue, suggestionIndex, sectionIndex, method}) {
     let url = '/geoservice/validate'
     let params = suggestion
     let updateSuggetions
@@ -61,6 +80,7 @@ export default class AddressComponent extends React.Component {
       this.onInvalidAddressSelection(updateSuggetions)
     })
   }
+
   render () {
     return (
       <CommonAddressComponent
@@ -89,8 +109,9 @@ AddressComponent.propTypes = {
 }
 
 AddressComponent.defaultProps = {
-  addressType: '',
+  addressType: physicalAddressType,
   placeholder: '',
   addressTitle: 'Physical Address',
-  suggestions: []
+  suggestions: [],
+  parentStateKey: ''
 }
