@@ -69,7 +69,7 @@ export const checkForNameValidation = (applicantData) => {
   let validationResult = false
   if (checkArrayObjectPresence(applicantData)) {
     if (applicantData[0] && applicantData[0].first_name && applicantData[0].last_name) {
-      validationResult = applicantData[0].first_name.length > 0 && applicantData[0].last_name.length > 0
+      validationResult = applicantData[0].first_name.trim().length > 0 && applicantData[0].last_name.trim().length > 0
     }
   }
   return validationResult

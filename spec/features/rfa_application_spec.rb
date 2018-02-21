@@ -94,6 +94,19 @@ RSpec.feature 'RFA', js: true do
 
   end
 
+  scenario 'remove leading spaces in the names', set_auth_header: true do
+    visit root_path
+    click_button 'Create RFA Application (Form 01)'
+    expect(page).to have_content 'Rfa-01A Section Summary'
+    page.find('#Rfa01AOverview').find('a.btn.btn-default').click
+    expect(page).to have_content 'Applicant 1 - Information'
+    fill_in 'applicants[0].first_name', with: "  first"
+    fill_in 'applicants[0].last_name', with: "  last"
+    click_button('Save Progress')
+    expect(find_field('applicants[0].first_name').value).to eq 'first'
+    expect(find_field('applicants[0].last_name').value).to eq 'last'
+  end
+
   scenario 'prevent backspace navigation on IE', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application (Form 01)'
