@@ -230,6 +230,31 @@ RSpec.feature 'RFA', js: true do
     expect(find_field('otherAdults[0].availableApplicants').value).to eq availableApplicantId
   end
 
+  scenario 'validate Marital History card', set_auth_header: true do
+    visit root_path
+    click_button 'Create RFA Application (Form 01)'
+    expect(page).to have_content 'Rfa-01A Section Summary'
+    page.find('#Rfa01AOverview').find('a.btn.btn-default').click
+    expect(page).to have_content 'Applicant 1 - Information'
+    applicant_1_first_name = 'Super'
+    applicant_1_last_name  = 'Man'
+    applicant_1_full_name  = applicant_1_first_name + ' ' + 'k' + ' ' + applicant_1_last_name
+    fill_in('applicants[0].first_name', with: applicant_1_first_name, :match => :prefer_exact)
+    fill_in('applicants[0].middle_name', with: 'k', :match => :prefer_exact)
+    fill_in('applicants[0].last_name', with: applicant_1_last_name, :match => :prefer_exact)
+    select applicant_1_full_name, from: 'applicantsHistory.former_spouses[0].applicant_id'
+    expect(page).to have_content 'VI.Applicant\'s Marital History'
+    select 'Married', from: 'applicantsHistory.former_spouses[0].relationship_type'
+
+    click_button('Save Progress')
+    expect(find_field('applicantsHistory.former_spouses[0].relationship_type').value).to eq '1'
+    find_field('applicantsHistory.former_spouses[0].applicant_id').should have_content(applicant_1_full_name)
+
+    visit page.driver.current_url
+    expect(find_field('applicantsHistory.former_spouses[0].relationship_type').value).to eq '1'
+    find_field('applicantsHistory.former_spouses[0].applicant_id').should have_content(applicant_1_full_name)
+  end
+
 
   scenario 'validate Foster Care card', set_auth_header: true do
     visit root_path

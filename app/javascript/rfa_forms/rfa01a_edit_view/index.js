@@ -214,7 +214,7 @@ export default class Rfa01EditView extends React.Component {
             validator={this.validator}
             errors={this.state.errors.minorChildren}
             applicants={this.state.application.applicants || []}
-            minorChildren={this.state.application.minorChildren || undefined} />
+            minorChildren={this.state.application.minor_children || undefined} />
         </div>
 
         <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'
@@ -239,7 +239,7 @@ export default class Rfa01EditView extends React.Component {
             focusComponentName={this.state.focusComponentName}
             getFocusClassName={this.getFocusClassName}
             applicants={this.state.application.applicants || []}
-            applicantsHistory={this.state.application.applicantsHistory || undefined}
+            applicantsHistory={this.state.application.applicants_history || undefined}
             setFocusState={this.setFocusState}
             setParentState={this.setApplicationState}
             relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
@@ -271,7 +271,7 @@ export default class Rfa01EditView extends React.Component {
           <h3>VIII. Foster Care / Adoption / Licensure History</h3>
           <FosterCareHistoryCardMain
             focusComponentName={this.state.focusComponentName}
-            fosterCareHistory={this.state.application.fosterCareHistory || {}}
+            fosterCareHistory={this.state.application.adoption_history || {}}
             getFocusClassName={this.getFocusClassName}
             setParentState={this.setApplicationState}
             setFocusState={this.setFocusState}
