@@ -1,4 +1,5 @@
 import React from 'react'
+import Immutable from 'immutable'
 import ReactDOM from 'react-dom'
 import {shallow, mount} from 'enzyme'
 import {salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes, languageTypes} from './../../helpers/constants'
@@ -10,7 +11,7 @@ var TestUtils = require('react-dom/test-utils')
 describe('Verify More About Applican', () => {
   let aboutApplicantComp, setCardState,
     renderedCardComp, renderedDom
-  const applicantFields = {
+  const applicantFields = Immutable.fromJS({
     highest_education_level: {
       id: '1',
       value: 'High School'
@@ -30,7 +31,7 @@ describe('Verify More About Applican', () => {
       value: 'Alabama'
     },
     email: 'test@test.com'
-  }
+  })
   beforeEach(() => {
     setCardState = jasmine.createSpy('setParentState')
     let validator = new Validator({})

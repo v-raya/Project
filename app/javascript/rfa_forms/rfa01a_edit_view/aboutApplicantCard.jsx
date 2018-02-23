@@ -9,7 +9,7 @@ import Validator from 'helpers/validator'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 import Cleave from 'cleave.js/react'
 
-export default class AboutApplicant extends React.Component {
+export default class AboutApplicant extends React.PureComponent {
   constructor (props) {
     super(props)
 
@@ -52,6 +52,10 @@ export default class AboutApplicant extends React.Component {
   }
 
   render () {
+    // console.log('rendering - AboutApplicantCard.js')
+
+    const aboutApplicantFields = this.props.applicantFields.toJS()
+
     return (
       <div className='card-body'>
         <div className='row'>
@@ -59,35 +63,35 @@ export default class AboutApplicant extends React.Component {
             <div className='col-md-12'>
               <DropDownField id='highest_education_level' gridClassName='col-md-4'
                 selectClassName='reusable-select'
-                value={getDictionaryId(this.props.applicantFields.highest_education_level)}
+                value={getDictionaryId(aboutApplicantFields.highest_education_level)}
                 optionList={this.props.educationLevels}
                 label='Highest Level of Education'
                 onChange={(event) => this.props.setParentState('highest_education_level', dictionaryNilSelect(event.target.options))} />
 
               <DateField
                 gridClassName='col-md-4' label='Date of Birth' id={this.dateOfBirthId}
-                value={FormatDateForDisplay(this.props.applicantFields.date_of_birth)}
+                value={FormatDateForDisplay(aboutApplicantFields.date_of_birth)}
                 errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}
                 onChange={(event) => this.props.setParentState('date_of_birth', FormatDateForPersistance(event.target.value))}
                 onBlur={(event) => this.props.validator.validateFieldSetErrorState(this.dateOfBirthId, event.target.value)} />
 
               <DropDownField gridClassName='col-md-4' id='gender'
                 selectClassName='reusable-select'
-                value={getDictionaryId(this.props.applicantFields.gender)}
+                value={getDictionaryId(aboutApplicantFields.gender)}
                 optionList={this.props.genderTypes}
                 label='Gender'
                 onChange={(event) => this.props.setParentState('gender', dictionaryNilSelect(event.target.options))} />
             </div>
             <div className='col-md-12'>
               <DropDownField gridClassName='col-md-4' id='ethnicity'
-                value={getDictionaryId(this.props.applicantFields.ethnicity)}
+                value={getDictionaryId(aboutApplicantFields.ethnicity)}
                 selectClassName='reusable-select'
                 optionList={this.props.ethnicityTypes}
                 label='Race / Ethnicity'
                 onChange={(event) => this.props.setParentState('ethnicity', {id: dictionaryNilSelectValue(event.target.options), value: dictionaryNilSelectText(event.target.options)})} />
 
               <InputField gridClassName='col-md-4' id={this.driversLicenseNumberId}
-                value={this.props.applicantFields.driver_license_number}
+                value={aboutApplicantFields.driver_license_number}
                 label='Driver License Number' placeholder=''
                 type='text' onChange={(event) => this.props.setParentState('driver_license_number', event.target.value)}
                 errors={fieldErrorsAsImmutableSet(this.props.errors.driver_license_number)}
@@ -95,7 +99,7 @@ export default class AboutApplicant extends React.Component {
 
               <DropDownFormField gridClassName='col-md-4' id={this.driversLicenseStateId}
                 selectClassName='reusable-select'
-                value={getDictionaryId(this.props.applicantFields.driver_license_state)}
+                value={getDictionaryId(aboutApplicantFields.driver_license_state)}
                 optionList={this.props.stateTypes}
                 label='Driver License State'
                 onChange={(event) => this.props.setParentState('driver_license_state', dictionaryNilSelect(event.target.options))}
@@ -105,7 +109,7 @@ export default class AboutApplicant extends React.Component {
             </div>
             <div className='col-md-12'>
               <InputField gridClassName='col-md-4' id='email'
-                value={this.props.applicantFields.email}
+                value={aboutApplicantFields.email}
                 label='Email Address (optional)' placeholder=''
                 type='text' onChange={(event) => this.props.setParentState('email', event.target.value)} />
             </div>

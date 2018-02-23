@@ -9,7 +9,7 @@ import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 
 const phoneNumberRule = {rule: 'is10digits', message: 'Invalid Phone Number'}
 
-export class PhoneNumberField extends React.Component {
+export class PhoneNumberField extends React.PureComponent {
   constructor (props) {
     super(props)
 

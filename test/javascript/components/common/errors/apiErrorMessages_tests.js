@@ -26,7 +26,6 @@ describe('Api Error Message', () => {
       'invalid_value': {'id': '0'}
     } ]
     apiErrorComp = mount(<ApiErrorMessages errors={props} />)
-    console.log(apiErrorComp.html())
     expect(apiErrorComp.find('span').length).toEqual(4)
   })
 })

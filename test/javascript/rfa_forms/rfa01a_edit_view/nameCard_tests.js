@@ -1,5 +1,6 @@
 import sinon from 'sinon'
 import React from 'react'
+import Immutable from 'immutable'
 import ReactDOM from 'react-dom'
 import {nameTypes, suffixTypes, prefixTypes} from './../../helpers/constants'
 import NameCard from 'rfa_forms/rfa01a_edit_view/nameCard'
@@ -20,13 +21,13 @@ describe('Name Card Component', () => {
     nameType = nameTypes
     suffixType = suffixTypes
     prefixType = prefixTypes
-    nameField = {
+    nameField = Immutable.fromJS({
       first_name: 'John',
       middle_name: '',
       last_name: 'Smith',
       other_names: []
-    }
-    otherName = {
+    })
+    otherName = Immutable.fromJS({
       first_name: '',
       middle_name: '',
       last_name: '',
@@ -34,7 +35,7 @@ describe('Name Card Component', () => {
         id: '',
         value: ''
       }
-    }
+    })
     renderedCard = TestUtils.renderIntoDocument(<NameCard
       nameFields={nameField}
       nameTypes={nameType.items}
@@ -58,7 +59,7 @@ describe('Name Card Component', () => {
     let addNameBtn = renderedDom.children[1].children[0]
     TestUtils.Simulate.click(addNameBtn)
     expect(setCardState.calledOnce).toBe(true)
-    nameField.other_names.push(otherName)
+    nameField.toJS().other_names.push(otherName)
     const newRenderedCard = TestUtils.renderIntoDocument(<NameCard
       nameFields={nameField}
       nameTypes={nameType.items}
@@ -68,13 +69,13 @@ describe('Name Card Component', () => {
       removeCard={isNameCardRemoved}
       validator={new Validator({})}
       handleNameChange={handleNameChangeFun} />)
-    expect(renderedDOM(newRenderedCard).children.length).toEqual(3)
-    let otherNameField = renderedDOM(newRenderedCard).children[1].children[1].children[1].children[0].children[0].children[0].children[1]
+    expect(renderedDOM(newRenderedCard).children.length).toEqual(2)
+    let otherNameField = renderedDOM(newRenderedCard).children[1]
     TestUtils.Simulate.change(otherNameField, {target: {value: 'othername'}})
     expect(setCardState.called).toBe(true)
     let closeButton = renderedDOM(newRenderedCard).children[1].children[0]
     TestUtils.Simulate.click(closeButton)
-    expect(setCardState.callCount).toBe(3)
+    expect(setCardState.callCount).toBe(2)
   })
 
   it('Change First Name in Name Card', () => {

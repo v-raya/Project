@@ -25,22 +25,21 @@ export default class ApplicantCardsGroup extends React.Component {
   }
 
   addCard (event) {
-    this.props.setParentState('applicants', addCardAsJS(this.props.applicants, blankApplicantFields))
+    this.props.setParentState('applicants', addCardAsJS(this.props.applicants, Immutable.fromJS(blankApplicantFields)))
   }
 
   onApplicantClickClose (cardIndex) {
     this.props.setParentState('applicants',
-      removeCardWithId(this.props.applicants, cardIndex, blankApplicantFields))
+      removeCardWithId(this.props.applicants, cardIndex, Immutable.fromJS(blankApplicantFields)))
   }
 
   setApplicantsState (applicantIndex, data) {
-    let applicantsList = Immutable.fromJS(checkArrayObjectPresence(this.props.applicants) || [blankApplicantFields])
-    applicantsList = applicantsList.update(applicantIndex, val => data)
-    this.props.setParentState('applicants', applicantsList.toJS())
+    const applicantsList = this.props.applicants.update(applicantIndex, val => data)
+    this.props.setParentState('applicants', applicantsList)
   }
 
   render () {
-    let applicantsList = checkArrayObjectPresence(this.props.applicants) || [blankApplicantFields]
+    let applicantsList = this.props.applicants
 
     return (
       <div>
@@ -107,6 +106,6 @@ ApplicantCardsGroup.propTypes = {
 }
 
 ApplicantCardsGroup.defaultProps = {
-  applicants: [blankApplicantFields],
+  applicants: Immutable.fromJS([blankApplicantFields]),
   errors: []
 }

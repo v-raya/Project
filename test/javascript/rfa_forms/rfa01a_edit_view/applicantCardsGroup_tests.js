@@ -1,7 +1,7 @@
 import React from 'react'
+import Immutable from 'immutable'
 import sinon from 'sinon'
 import {nameTypes, suffixTypes, prefixTypes, stateTypes, genderTypes, educationLevels, ethnicityTypes, languageTypes, salaryTypes} from './../../helpers/constants.js'
-// import ShallowRenderer from 'react-test-renderer/shallow'
 import ApplicantCardsGroup from 'rfa_forms/rfa01a_edit_view/applicantCardsGroup.jsx'
 import ReactDOM from 'react-dom'
 import {shallow, mount} from 'enzyme'
@@ -11,7 +11,7 @@ var TestUtils = require('react-dom/test-utils')
 describe('Verify Applicant Card Group', () => {
   const isApplicantAdded = sinon.spy()
   const getFocusClassNameSpy = sinon.spy()
-  const applicants = {
+  const applicants = Immutable.fromJS({
     to_delete: false,
     first_name: '',
     middle_name: '',
@@ -21,14 +21,13 @@ describe('Verify Applicant Card Group', () => {
     driver_license_number: '',
     email: '',
     phones: null
-  }
+  })
   let props = {
     nameTypes: nameTypes.items,
     suffixTypes: suffixTypes.items,
     prefixTypes: prefixTypes.items,
     phoneTypes: nameTypes.items,
     salaryTypes: salaryTypes.items,
-    // applicants: applicants,
     stateTypes: stateTypes.items,
     educationLevels: educationLevels.items,
     genderTypes: genderTypes.items,
@@ -49,14 +48,13 @@ describe('Verify Applicant Card Group', () => {
     expect(isApplicantAdded.calledOnce).toBe(true)
   })
   it('verify default props', () => {
-    props.applicants = []
     applicantRender = TestUtils.renderIntoDocument(<ApplicantCardsGroup {...props}/>)
     let applicantCard = renderedDOM(applicantRender)
     expect(applicantCard.children.length).toBe(2)
     expect(applicantCard.children[0].children[0].children[1].children.length).toEqual(4)
   })
   describe('close second applicant', () => {
-    props.applicants = [applicants, applicants]
+    props.applicants = Immutable.fromJS([applicants, applicants])
     applicantRender = TestUtils.renderIntoDocument(<ApplicantCardsGroup {...props}/>)
     let applicantCard = renderedDOM(applicantRender)
     let applicantsList = applicantCard.children[0].children[1].children

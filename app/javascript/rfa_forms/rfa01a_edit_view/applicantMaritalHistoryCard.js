@@ -9,7 +9,7 @@ import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 
 const dateValidator = {rule: 'isValidDate', message: 'date is invalid'}
 
-export default class ApplicantMaritalHistoryCard extends React.Component {
+export default class ApplicantMaritalHistoryCard extends React.PureComponent {
   constructor (props) {
     super(props)
     this.props.validator.addFieldValidation(this.props.idPrefix + 'date_of_marriage', dateValidator)

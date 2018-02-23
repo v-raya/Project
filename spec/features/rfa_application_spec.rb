@@ -178,7 +178,6 @@ RSpec.feature 'RFA', js: true do
     fill_in('directions', with: 'directions goes here', :match => :prefer_exact)
     page.find(:css, '.languages').click
     page.find(:css, "#react-select-4--option-0").click
-        byebug
     page.find(:css, '.languages').click
     page.find(:css, "#react-select-4--option-1").click
     expect(page).to have_css(:span, text: 'American Sign Language')

@@ -20,26 +20,26 @@ export default class PhoneComponent extends React.Component {
 
   onPhoneClickClose (phoneCardIndex) {
     this.props.setParentState('phones',
-      removeCard(this.props.phones, phoneCardIndex, blankPhoneNumberFields))
+      removeCard(this.props.phones, phoneCardIndex, Immutable.fromJS(blankPhoneNumberFields)))
   }
 
   onPhoneFieldChange (phoneCardIndex, value, type) {
-    let phoneNumbersList = Immutable.fromJS(this.props.phones)
+    let phoneNumbersList = this.props.phones
     // if type preferred then set all preferred =false
     if (type === 'preferred') {
       phoneNumbersList = phoneNumbersList.map(x => x.set(type, false))
     }
 
     phoneNumbersList = phoneNumbersList.update(phoneCardIndex, x => x.set(type, value))
-    this.props.setParentState('phones', phoneNumbersList.toJS())
+    this.props.setParentState('phones', phoneNumbersList)
   }
 
   addCard (event) {
-    this.props.setParentState('phones', addCardAsJS(this.props.phones, blankPhoneNumberFields))
+    this.props.setParentState('phones', addCardAsJS(this.props.phones, Immutable.fromJS(blankPhoneNumberFields)))
   }
 
   render () {
-    let phonesList = this.props.phones
+    let phonesList = this.props.phones.toJS()
 
     return (
       <div className='card-body'>
@@ -74,12 +74,12 @@ export default class PhoneComponent extends React.Component {
 PhoneComponent.propTypes = {
   idPrefix: PropTypes.string,
   phoneTypes: PropTypes.array.isRequired,
-  phones: PropTypes.array.isRequired,
+  phones: PropTypes.object.isRequired,
   setParentState: PropTypes.func.isRequired
 }
 
 PhoneComponent.defaultProps = {
   idPrefix: '',
-  phones: [blankPhoneNumberFields],
+  phones: Immutable.fromJS([blankPhoneNumberFields]),
   errors: []
 }

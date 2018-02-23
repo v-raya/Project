@@ -2,38 +2,78 @@ import Immutable from 'immutable'
 import {checkArrayObjectPresence} from './commonHelper'
 
 export const addCardAsJS = (inputArray, newCardFields) => {
-  let inputList = Immutable.fromJS(inputArray)
-  return inputList.push(newCardFields).toJS()
+  if (Immutable.Iterable.isIterable(inputArray)) {
+    return addCardAsImmutable(inputArray, newCardFields)
+  } else {
+    return Immutable.fromJS(inputArray).push(newCardFields).toJS()
+  }
+}
+
+export const addCardAsImmutable = (inputArray, newCardFields) => {
+  return inputArray.push(newCardFields)
 }
 
 export const removeCard = (inputArray, index, newCardFields) => {
-  let inputList = Immutable.fromJS(inputArray)
-  inputList = inputList.delete(index)
+  if (Immutable.Iterable.isIterable(inputArray)) {
+    return removeCardAsImmutable(inputArray, index, newCardFields)
+  } else {
+    let inputList = Immutable.fromJS(inputArray)
+    inputList = inputList.delete(index)
+    if (inputList.size === 0) {
+      inputList = inputList.push(newCardFields)
+    }
+    return inputList.toJS()
+  }
+}
+
+export const removeCardAsImmutable = (inputArray, index, newCardFields) => {
+  let inputList = inputArray.delete(index)
   if (inputList.size === 0) {
     inputList = inputList.push(newCardFields)
   }
-  return inputList.toJS()
+  return inputList
 }
 
 export const removeCardWithId = (inputArray, index, newCardFields) => {
-  let inputList = Immutable.fromJS(inputArray)
-  let itemForDeletion = inputList.get(index)
+  if (Immutable.Iterable.isIterable(inputArray)) {
+    return removeCardWithIdAsImmutable(inputArray, index, newCardFields)
+  } else {
+    let inputList = Immutable.fromJS(inputArray)
+    let itemForDeletion = inputList.get(index)
+    let visibleCount = inputArray.length
+    // the item marked for deletion has already been saved once,
+    // so we need to add a flag for deletion to make a delete api call
+    // rather than an update api call.
+    if (itemForDeletion.get('id')) {
+      itemForDeletion = itemForDeletion.set('to_delete', true)
+      inputList = inputList.set(index, itemForDeletion)
+      visibleCount--
+    } else {
+      inputList = inputList.delete(index)
+      visibleCount--
+    }
+    if (visibleCount === 0) {
+      inputList = inputList.push(newCardFields)
+    }
+    return inputList.toJS()
+  }
+}
+
+export const removeCardWithIdAsImmutable = (inputArray, index, newCardFields) => {
+  let itemForDeletion = inputArray.get(index)
   let visibleCount = inputArray.length
-  // the item marked for deletion has already been saved once,
-  // so we need to add a flag for deletion to make a delete api call
-  // rather than an update api call.
   if (itemForDeletion.get('id')) {
     itemForDeletion = itemForDeletion.set('to_delete', true)
-    inputList = inputList.set(index, itemForDeletion)
+    inputArray = inputArray.set(index, itemForDeletion)
     visibleCount--
   } else {
-    inputList = inputList.delete(index)
+    inputArray = inputArray.delete(index)
     visibleCount--
   }
   if (visibleCount === 0) {
-    inputList = inputList.push(newCardFields)
+    inputArray = inputArray.push(newCardFields)
   }
-  return inputList.toJS()
+  return inputArray
 }
 
 export const getFocusClassName = (focusedComponentName, currentComponentName) => {

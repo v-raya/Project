@@ -1,4 +1,5 @@
 import React from 'react'
+import Immutable from 'immutable'
 import PhoneComponent, {blankPhoneNumberFields} from 'rfa_forms/rfa01a_edit_view/phoneNumberCardsGroup'
 import {PhoneNumberField} from 'components/common/phoneNumberFields'
 import {shallow, mount} from 'enzyme'
@@ -19,7 +20,7 @@ describe('Verify Phone Card Component View', function () {
     setParentStateSpy = jasmine.createSpy('setParentState')
     props = {
       phoneTypes: phoneTypes,
-      phones: [phoneNumber],
+      phones: Immutable.fromJS([phoneNumber]),
       setParentState: setParentStateSpy,
       validator: new Validator({})
     }
@@ -51,15 +52,12 @@ describe('Verify Phone Card Component View', function () {
       expect(component.instance().addCard).toHaveBeenCalled()
 
       // build data that parent should be called with
-      let newData = []
-      newData[0] = phoneNumber
-      newData[1] = blankPhoneNumberFields
+      let newData = Immutable.fromJS([])
+      newData = newData.push(Immutable.fromJS(phoneNumber))
+      newData = newData.push(Immutable.fromJS(blankPhoneNumberFields))
 
       // parent should be called with 2 phone numbers, 1st with data and 2nd with blank
       expect(setParentStateSpy).toHaveBeenCalledWith('phones', newData)
-
-      // parent should be called with 2 numbers
-      // expect(props.phones.length).toEqual(2)
     })
   })
 
@@ -69,24 +67,26 @@ describe('Verify Phone Card Component View', function () {
       component.find('.remove-btn').simulate('click')
       expect(component.instance().onPhoneClickClose).toHaveBeenCalledWith(0)
 
+      const newData = Immutable.fromJS([]).push(Immutable.fromJS(blankPhoneNumberFields))
+
       // check if setParent is called
-      expect(setParentStateSpy).toHaveBeenCalledWith('phones', [blankPhoneNumberFields])
-      // expect(props.phones.length).toEqual(1)
+      expect(setParentStateSpy).toHaveBeenCalledWith('phones', newData)
     })
 
     it('Deletes a phone when 2 phone numbers are present', () => {
-      let newData = []
-      newData[0] = phoneNumber
-      newData[1] = blankPhoneNumberFields
-      component.setProps({phones: newData})
+      let data = Immutable.fromJS([phoneNumber, blankPhoneNumberFields])
+
+      component.setProps({phones: data})
 
       spyOn(component.instance(), 'onPhoneClickClose').and.callThrough()
       component.find('.remove-btn').at(1).simulate('click')
       expect(component.instance().onPhoneClickClose).toHaveBeenCalledWith(1)
 
+      data = data.delete(1)
+
       // check if setParent is called
-      expect(setParentStateSpy).toHaveBeenCalledWith('phones', [phoneNumber])
-      expect(props.phones.length).toEqual(1)
+      expect(setParentStateSpy).toHaveBeenCalledWith('phones', data)
+      expect(props.phones.size).toEqual(1)
     })
   })
 
@@ -111,69 +111,58 @@ describe('Verify Phone Card Component View', function () {
 describe('Preferred logic', () => {
   let component
   let props
-  const phoneNumber = {number: '3333-222-5545',
+  let phoneNumbers = Immutable.fromJS([{number: '3333-222-5545',
     phone_type: {id: '1', value: 'Cell'},
-    preferred: false}
+    preferred: false}])
   let setParentStateSpy
+  // let onPhoneFieldChangeSpy
 
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     props = {
       phoneTypes: phoneTypes,
-      phones: [phoneNumber],
+      phones: phoneNumbers,
       validator: new Validator({}),
       setParentState: setParentStateSpy
     }
 
+    // onPhoneFieldChangeSpy = spyOn(PhoneComponent.prototype, 'onPhoneFieldChange').and.callThrough()
     component = mount(
       <PhoneComponent {...props} />
     )
-
     spyOn(component.instance(), 'onPhoneFieldChange').and.callThrough()
   })
 
   it('only 1 phone number is preferred', () => {
-    let tmpData = []
-    tmpData[0] = phoneNumber
-    tmpData[1] = {number: '999-444-2323',
+    let tmpData = phoneNumbers.push(Immutable.fromJS({number: '999-444-2323',
       phone_type: {id: '1', value: 'Cell'},
-      preferred: true}
+      preferred: true}))
 
     component.setProps({phones: tmpData})
     component.find('input[type="checkbox"]').at(0).simulate('change', {target: {checked: true}})
     expect(component.instance().onPhoneFieldChange).toHaveBeenCalledWith(0, true, 'preferred')
 
-    tmpData[0].preferred = true
-    tmpData[1].preferred = false
-
-    expect(setParentStateSpy).toHaveBeenCalledWith('phones', tmpData)
+    let newData = tmpData.setIn([0, 'preferred'], true).setIn([1, 'preferred'], false)
+    expect(setParentStateSpy).toHaveBeenCalledWith('phones', newData)
   })
+
   it('allows to change number', () => {
     const newNumber = '8884442323'
-    // why do I have to update this?
-    component.setProps({
-      number: ''
-    })
     component.find('input[type="text"]').simulate('change', {target: {value: newNumber}})
-    expect(component.instance().onPhoneFieldChange).toHaveBeenCalledWith(0, newNumber, 'number')
 
-    let tmpData = [phoneNumber]
-    tmpData[0].number = newNumber
-    expect(setParentStateSpy).toHaveBeenCalledWith('phones', tmpData)
+    let newData = phoneNumbers.setIn([0, 'number'], newNumber)
+    expect(setParentStateSpy).toHaveBeenCalledWith('phones', newData)
   })
 
-  // it('allows to change type', () => {
-  //   const newType = {id: '2', value: 'Mobile'}
-  //   console.log(component.html())
-  //   // why do I have to update this?
-  //   component.update()
-  //   console.log(component.html())
-  //   component.find('#phone_type').simulate('change', {target: {text: 'Mobile'}})
+  it('allows to change type', () => {
+    const newType = {id: '2', value: 'Mobile'}
+    component.setProps({phones: phoneNumbers.setIn([0, 'phone_type'], newType)})
+    component.find('select[id="phone_type"]').simulate('change', {target: {options: {'1': {value: '2', text: 'Mobile'}, selectedIndex: 1}}})
 
-  //   expect(component.instance().onPhoneFieldChange).toHaveBeenCalledWith(0, newType, 'phone_type')
+    expect(component.instance().onPhoneFieldChange).toHaveBeenCalledWith(0, newType, 'phone_type')
+    // expect(onPhoneFieldChangeSpy).toHaveBeenCalledWith(0, newType, 'phone_type')
 
-  //   let tmpData = [phoneNumber]
-  //   tmpData[0].phone_type = newType
-  //   expect(setParentStateSpy).toHaveBeenCalledWith('phones', tmpData)
-  // })
+    const tmpData = phoneNumbers.setIn([0, 'phone_type'], newType)
+    expect(setParentStateSpy).toHaveBeenCalledWith('phones', tmpData)
+  })
 })

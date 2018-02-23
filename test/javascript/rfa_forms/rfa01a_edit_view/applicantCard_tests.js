@@ -1,4 +1,5 @@
 import React from 'react'
+import Immutable from 'immutable'
 import ApplicantCard from 'rfa_forms/rfa01a_edit_view/applicantCard.jsx'
 import {ethnicityTypes, languageTypes, genderTypes, educationLevels, salaryTypes, stateTypes, prefixTypes, suffixTypes, nameTypes, relationshipToApplicantTypes} from './../../helpers/constants'
 import {shallow, mount} from 'enzyme'
@@ -15,7 +16,7 @@ describe('Verify Applicant Card', () => {
     setApplicantsStateSpy = jasmine.createSpy('setApplicantsState')
     getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('getFocusClassName')
-    applicantFields = {
+    applicantFields = Immutable.fromJS({
       first_name: '',
       middle_name: '',
       last_name: '',
@@ -24,7 +25,7 @@ describe('Verify Applicant Card', () => {
       driver_license_number: '',
       email: '',
       phones: null
-    }
+    })
     applicantCardComponent = mount(<ApplicantCard
       index={0}
       applicantFields={applicantFields}
@@ -72,7 +73,7 @@ describe('Verify Applicant Card', () => {
     let NameFields = namecardComponent.find('input[type="text"]')
     let firstNameField = NameFields.findWhere(n => n.props().id === 'applicants[0].first_name')
     firstNameField.simulate('change', {target: {value: 'Anuroop'}})
-    applicantFields.first_name = 'Anuroop'
+    applicantFields = applicantFields.set('first_name', 'Anuroop')
     expect(setApplicantsStateSpy).toHaveBeenCalledWith(0, applicantFields)
   })
 })

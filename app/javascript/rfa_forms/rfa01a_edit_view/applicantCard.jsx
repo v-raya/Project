@@ -15,9 +15,8 @@ export default class ApplicantCard extends React.Component {
   }
 
   setApplicantState (key, value) {
-    let applicantData = Immutable.fromJS(this.props.applicantFields)
-    applicantData = applicantData.set(key, value)
-    this.props.setParentState(this.props.index, applicantData.toJS())
+    const applicantData = this.props.applicantFields.set(key, value)
+    this.props.setParentState(this.props.index, applicantData)
   }
 
   render () {
@@ -73,7 +72,7 @@ export default class ApplicantCard extends React.Component {
           <Employment
             stateTypes={this.props.stateTypes}
             salaryTypes={this.props.salaryTypes}
-            employment={this.props.applicantFields.employment || undefined}
+            employment={this.props.applicantFields.get('employment') || undefined}
             setParentState={this.setApplicantState} />
         </div>
 
@@ -87,11 +86,10 @@ export default class ApplicantCard extends React.Component {
             idPrefix={idPrefix}
             phoneTypes={this.props.phoneTypes}
             applicant_id={this.props.index}
-            phones={checkArrayObjectPresence(this.props.applicantFields.phones) || undefined}
+            phones={this.props.applicantFields.get('phones') || undefined}
             setParentState={this.setApplicantState}
             validator={this.props.validator}
             errors={this.props.errors.phones} />
-
         </div>
       </div>
     )

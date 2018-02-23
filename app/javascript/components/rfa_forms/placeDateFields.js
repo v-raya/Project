@@ -34,6 +34,7 @@ const PlaceDateField = ({
         gridClassName='col-md-4'
         label='City'
         id={cityId}
+        type='text'
         value={cityValue}
         onChange={onCityChange} />
 

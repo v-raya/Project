@@ -1,4 +1,5 @@
 import React from 'react'
+import Immutable from 'immutable'
 import Employment from 'rfa_forms/rfa01a_edit_view/employmentCard.jsx'
 import ReactDOM from 'react-dom'
 import {shallow, mount} from 'enzyme'
@@ -10,7 +11,7 @@ describe('Employment Card', function () {
     stateTypes: stateTypes.items,
     salaryTypes: salaryTypes.items
   }
-  const applicantFields = {
+  const applicantFields = Immutable.fromJS({
     employer_name: 'System Integration',
     occupation: 'Developer',
     income: 'xxxxxx',
@@ -27,7 +28,7 @@ describe('Employment Card', function () {
         value: 'California'
       }
     }
-  }
+  })
   let employmentCardComp, onEmploymentChange, setCardState
   const employmentCard = new ShallowRenderer()
   const cardRendered = employmentCard.render(<Employment {...props} />)
@@ -51,8 +52,8 @@ describe('Employment Card', function () {
     spyOn(employmentCardComp.instance(), 'onEmploymentChange').and.callThrough()
     employmentNameField.simulate('change', {target: {value: 'Child Welfare'}})
     expect(employmentCardComp.instance().onEmploymentChange).toHaveBeenCalledWith('employer_name', 'Child Welfare')
-    applicantFields.employer_name = 'Child Welfare'
-    expect(setCardState).toHaveBeenCalledWith('employment', applicantFields)
+    let newApplicantFields = applicantFields.set('employer_name', 'Child Welfare')
+    expect(setCardState).toHaveBeenCalledWith('employment', newApplicantFields)
   })
   it('verify Occupation Change', () => {
     let occupationField = employmentCardComp.find('#occupation')
@@ -95,8 +96,8 @@ describe('Employment Card', function () {
       spyOn(employmentCardComp.instance(), 'onPhysicalAddressChange').and.callThrough()
       physicalZipField.simulate('change', {target: {value: '95832'}})
       expect(employmentCardComp.instance().onPhysicalAddressChange).toHaveBeenCalledWith('zip', '95832', 0)
-      applicantFields.physical_address.zip = '95832'
-      expect(setCardState).toHaveBeenCalledWith('employment', applicantFields)
+      const updateApplicantFields = applicantFields.setIn(['physical_address', 'zip'], '95832')
+      expect(setCardState).toHaveBeenCalledWith('employment', updateApplicantFields)
     })
     it('verify City Change', () => {
       let physicalCityField = employmentCardComp.find('#Residentialcity').hostNodes()

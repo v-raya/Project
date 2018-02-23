@@ -31,25 +31,25 @@ export default class NameCard extends React.PureComponent {
   }
 
   addCard (event) {
-    this.props.setParentState('other_names', addCardAsJS(this.props.nameFields.other_names, blankNameFields))
+    this.props.setParentState('other_names', addCardAsJS(this.props.nameFields.get('other_names'), Immutable.fromJS(blankNameFields)))
   }
 
   removeCard (indexValue) {
-    let nameCardsList = Immutable.fromJS(this.props.nameFields.other_names)
-    nameCardsList = nameCardsList.delete(indexValue)
-    this.props.setParentState('other_names', nameCardsList.toJS())
+    this.props.setParentState('other_names', this.props.nameFields.get('other_names').delete(indexValue))
   }
 
   handleNameChange (key, value, nameIndex) {
-    let otherNameList = Immutable.fromJS(this.props.nameFields.other_names)
+    let otherNameList = this.props.nameFields.get('other_names')
 
     otherNameList = otherNameList.update(nameIndex, x => x.set(key, value))
-    this.props.setParentState('other_names', otherNameList.toJS())
+    this.props.setParentState('other_names', otherNameList)
   }
 
   render () {
-    let nameFields = this.props.nameFields
-    let nameCardsList = nameFields.other_names
+    // console.log('rendering - nameCard.js')
+
+    const nameFields = this.props.nameFields.toJS()
+    const nameCardsList = nameFields.other_names
     return (
       <div className='card-body'>
         <div className='row'>
@@ -68,7 +68,7 @@ export default class NameCard extends React.PureComponent {
             errors={this.props.errors} />
         </div>
         {
-          nameCardsList && this.props.nameFields.other_names.map((nameCardFields, index) => {
+          nameCardsList && nameCardsList.map((nameCardFields, index) => {
             return (
               <div key={index} className='row list-item'>
                 <a onClick={(event) => this.removeCard(index)}
@@ -107,6 +107,6 @@ NameCard.propTypes = {
 }
 
 NameCard.defaultProps = {
-  nameFields: blankNameFields,
+  nameFields: Immutable.fromJS(blankNameFields),
   idPrefix: ''
 }

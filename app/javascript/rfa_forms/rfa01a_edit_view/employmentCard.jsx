@@ -9,7 +9,7 @@ import AddressComponent from 'components/rfa_forms/addressComponent.js'
 import {blankEmploymentFields} from 'constants/defaultFields'
 import Cleave from 'cleave.js/react'
 
-export default class Employment extends React.Component {
+export default class Employment extends React.PureComponent {
   constructor (props) {
     super(props)
     this.onEmploymentChange = this.onEmploymentChange.bind(this)
@@ -17,18 +17,21 @@ export default class Employment extends React.Component {
   }
 
   onEmploymentChange (key, value) {
-    let newData = Immutable.fromJS(this.props.employment)
-    newData = newData.set(key, value)
-    this.props.setParentState('employment', newData.toJS())
+    const newData = this.props.employment.set(key, value)
+    this.props.setParentState('employment', newData)
   }
   onPhysicalAddressChange (key, value) {
-    let newData = Immutable.fromJS(this.props.employment)
-    newData = newData.setIn(['physical_address', key], value)
-    this.props.setParentState('employment', newData.toJS())
+    const newData = this.props.employment.setIn(['physical_address', key], value)
+    this.props.setParentState('employment', newData)
+  }
+
+  onSelection (key, value) {
+    const newData = this.props.employment.set(key, value)
+    this.props.setParentState('employment', newData)
   }
 
   render () {
-    const employmentFields = this.props.employment
+    const employmentFields = this.props.employment.toJS()
     return (
       <div className='card-body'>
         <div className='row'>
@@ -85,5 +88,5 @@ Employment.propTypes = {
 }
 
 Employment.defaultProps = {
-  employment: blankEmploymentFields
+  employment: Immutable.fromJS(blankEmploymentFields)
 }

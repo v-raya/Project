@@ -43,6 +43,7 @@ export default class Rfa01EditView extends React.Component {
       const countyValue = (this.props.user && this.props.user.county_code)
       this.state.application.application_county = this.props.countyTypes.find(countyType => countyType.id === parseInt(countyValue))
     }
+    this.state.application = Immutable.fromJS(this.state.application)
   }
 
   validateFieldSetErrorState (fieldName, value) {
@@ -62,15 +63,14 @@ export default class Rfa01EditView extends React.Component {
   }
 
   submitForm () {
-    let url = '/rfa/a01/' + this.props.application_id
-    let params = this.state.application
-    fetchRequest(url, 'PUT', this.state.application)
+    const url = '/rfa/a01/' + this.props.application_id
+    fetchRequest(url, 'PUT', this.state.application.toJS())
       .then((response) => {
         return response.json()
       }).then((data) => {
         if (!data.issue_details) {
           this.setState({
-            application: data,
+            application: Immutable.fromJS(data),
             errors: {}
           })
         } else {
@@ -86,16 +86,17 @@ export default class Rfa01EditView extends React.Component {
   }
 
   setApplicationState (key, value) {
-    let newState = Immutable.fromJS(this.state)
-    newState = newState.setIn(['application', key], value)
-    this.setState(newState.toJS())
+    if (Immutable.Iterable.isIterable(value) === false) {
+      value = Immutable.fromJS(value)
+    }
+    this.setState({application: this.state.application.set(key, value)})
 
     // TODO: need a method in validator to get errors filtered out where field = isRequired
     // No need to validate here again, the data change at component level should validate the fields
     // const requiredFieldsErrors = this.validator.allFieldErrorsByRule('isRequired')
     // this.setState({disableSave: requiredFieldsErrors.size > 0})
     if (key === 'applicants') {
-      if (checkForNameValidation(value)) {
+      if (checkForNameValidation(value.toJS())) {
         this.setState({
           disableSave: false
         })
@@ -124,7 +125,10 @@ export default class Rfa01EditView extends React.Component {
   }
 
   render () {
-    const hideRelationshipBetweenApplicants = this.state.application.applicants !== null && this.state.application.applicants.length === 2 ? 'cards-section' + 'col-xs-12 col-sm-12 col-md-12 col-lg-12' : 'hidden'
+    const stateApplicationJS = this.state.application.toJS()
+    const applicantsAsJs = (this.state.application.get('applicants') && this.state.application.get('applicants').toJS()) || []
+    const hideRelationshipBetweenApplicants = applicantsAsJs.length === 2 ? 'cards-section' + 'col-xs-12 col-sm-12 col-md-12 col-lg-12' : 'hidden'
+
     return (
       <PageTemplate
         headerLabel='Resource Family Application - Confidential (RFA 01A)'
@@ -132,21 +136,21 @@ export default class Rfa01EditView extends React.Component {
         buttonLabel='Save Progress'
         buttonTextAlignment='right'
         onButtonClick={this.submitForm}
-        rfa01aApplicationId={this.state.application.id}
+        rfa01aApplicationId={stateApplicationJS.id}
         onRfa01AForm
-        rfa01cForms={this.state.application.rfa1c_forms}
-        otherAdults={this.state.application.other_adults}
-        applicants={this.state.application.applicants}
-        childIdentified={this.state.application.child_desired &&
-          this.state.application.child_desired.child_identified}
+        rfa01cForms={stateApplicationJS.rfa1c_forms}
+        otherAdults={stateApplicationJS.other_adults}
+        applicants={applicantsAsJs}
+        childIdentified={stateApplicationJS.child_desired && stateApplicationJS.child_desired.child_identified}
         isNavLinkActive={this.isNavLinkActive}
         handleNavLinkClick={this.handleNavLinkClick}
         errors={this.state.errors.issue_details} >
+
         <CountyUseOnlyCard
           countyUseOnlyCardId='county_use_only'
           setFocusState={this.setFocusState}
           getFocusClassName={this.getFocusClassName}
-          county={getDictionaryId(this.state.application.application_county)}
+          county={getDictionaryId(stateApplicationJS.application_county)}
           CountyList={this.props.countyTypes}
           onFieldChange={(event) => this.setApplicationState('application_county',
             dictionaryNilSelect(event.target.options))} />
@@ -164,7 +168,7 @@ export default class Rfa01EditView extends React.Component {
           ethnicityTypes={this.props.ethnicityTypes}
           languageTypes={this.props.languageTypes}
           focusComponentName={this.state.focusComponentName}
-          applicants={this.state.application.applicants || []}
+          applicants={this.state.application.get('applicants') || undefined}
           setParentState={this.setApplicationState}
           setFocusState={this.setFocusState}
           getFocusClassName={this.getFocusClassName}
@@ -177,9 +181,9 @@ export default class Rfa01EditView extends React.Component {
           <h3>II. Applicant (S) - <span>Residence</span></h3>
           <ResidenceCards
             focusComponentName={this.state.focusComponentName}
+            residence={(this.state.application.get('residence') && this.state.application.get('residence').toJS()) || undefined}
             setFocusState={this.setFocusState}
             getFocusClassName={this.getFocusClassName}
-            residence={this.state.application.residence || undefined}
             languageTypes={this.props.languageTypes}
             residenceTypes={this.props.residenceTypes}
             stateTypes={this.props.stateTypes}
@@ -191,7 +195,7 @@ export default class Rfa01EditView extends React.Component {
           <h3>III.<span>Relationship Between Applicant</span></h3>
           <RelationshipBetweenApplicantsCardMain
             focusComponentName={this.state.focusComponentName}
-            relationshipBetweenApplicants={this.state.application.applicants_relationship || undefined}
+            relationshipBetweenApplicants={(this.state.application.get('applicants_relationship') && this.state.application.get('applicants_relationship').toJS()) || undefined}
             getFocusClassName={this.getFocusClassName}
             setParentState={this.setApplicationState}
             setFocusState={this.setFocusState}
@@ -199,7 +203,7 @@ export default class Rfa01EditView extends React.Component {
             relationshipTypes={this.props.relationshipTypes}
             validator={this.validator}
             errors={this.state.errors.relationshipBetweenApplicants}
-            applicants={this.state.application.applicants || []} />
+            applicants={applicantsAsJs} />
         </div>
 
         <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'
@@ -213,8 +217,8 @@ export default class Rfa01EditView extends React.Component {
             setParentState={this.setApplicationState}
             validator={this.validator}
             errors={this.state.errors.minorChildren}
-            applicants={this.state.application.applicants || []}
-            minorChildren={this.state.application.minor_children || undefined} />
+            applicants={applicantsAsJs}
+            minorChildren={(this.state.application.get('minor_children') && this.state.application.get('minor_children').toJS()) || undefined} />
         </div>
 
         <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'
@@ -227,8 +231,8 @@ export default class Rfa01EditView extends React.Component {
             setParentState={this.setApplicationState}
             validator={this.validator}
             errors={this.state.errors.otherAdults}
-            applicants={this.state.application.applicants || []}
-            otherAdults={this.state.application.other_adults || undefined}
+            applicants={applicantsAsJs}
+            otherAdults={(this.state.application.get('other_adults') && this.state.application.get('other_adults').toJS()) || undefined}
             relationship_types={this.props.relationshipToApplicantTypes} />
         </div>
 
@@ -238,8 +242,8 @@ export default class Rfa01EditView extends React.Component {
           <ApplicantMaritalHistoryCardGroup
             focusComponentName={this.state.focusComponentName}
             getFocusClassName={this.getFocusClassName}
-            applicants={this.state.application.applicants || []}
-            applicantsHistory={this.state.application.applicants_history || undefined}
+            applicants={applicantsAsJs}
+            applicantsHistory={(this.state.application.get('applicants_history') && this.state.application.get('applicants_history').toJS()) || undefined}
             setFocusState={this.setFocusState}
             setParentState={this.setApplicationState}
             relationshipToApplicantTypes={this.props.relationshipToApplicantTypes}
@@ -258,7 +262,7 @@ export default class Rfa01EditView extends React.Component {
           <h3>VII.<span>Child Desired </span></h3>
           <ChildDesiredMain
             focusComponentName={this.state.focusComponentName}
-            childDesired={this.state.application.child_desired || undefined}
+            childDesired={(this.state.application.get('child_desired') && this.state.application.get('child_desired').toJS()) || undefined}
             getFocusClassName={this.getFocusClassName}
             setFocusState={this.setFocusState}
             setParentState={this.setApplicationState}
@@ -269,9 +273,10 @@ export default class Rfa01EditView extends React.Component {
         <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'
           id='foster-care-card'>
           <h3>VIII. Foster Care / Adoption / Licensure History</h3>
+          {/*  todo: convert ...this.props to individual listed props */}
           <FosterCareHistoryCardMain
             focusComponentName={this.state.focusComponentName}
-            fosterCareHistory={this.state.application.adoption_history || {}}
+            fosterCareHistory={(this.state.application.get('adoption_history') && this.state.application.get('adoption_history').toJS()) || {}}
             getFocusClassName={this.getFocusClassName}
             setParentState={this.setApplicationState}
             setFocusState={this.setFocusState}
@@ -286,13 +291,14 @@ export default class Rfa01EditView extends React.Component {
             getFocusClassName={this.getFocusClassName}
             setFocusState={this.setFocusState}
             stateTypes={this.props.stateTypes}
-            references={this.state.application.references || undefined}
+            references={(this.state.application.get('references') && this.state.application.get('references').toJS()) || undefined}
             suffixTypes={this.props.suffixTypes}
             prefixTypes={this.props.prefixTypes}
             nameTypes={this.props.nameTypes}
             validator={this.validator}
             errors={this.state.errors.reference} />
         </div>
+
       </PageTemplate>
     )
   }
