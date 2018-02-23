@@ -5,8 +5,9 @@ import {physicalAddressType, mailingAddressType} from 'constants/rfaConstants'
 import {blankPhysicalAddress, blankMailingAddress} from 'constants/defaultFields'
 import {fetchRequest} from 'helpers/http'
 import Immutable from 'immutable'
+import debounce from 'lodash/debounce'
 
-export default class AddressComponent extends React.Component {
+export default class AddressComponent extends React.PureComponent {
   constructor (props) {
     super(props)
     this.state = {
@@ -15,7 +16,7 @@ export default class AddressComponent extends React.Component {
     this.onSuggestionSelected = this.onSuggestionSelected.bind(this)
     this.onSelectionUpdateProp = this.onSelectionUpdateProp.bind(this)
     this.onInvalidAddressSelection = this.onInvalidAddressSelection.bind(this)
-    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this)
+    this.onSuggestionsFetchRequestedDelayed = debounce(this.onSuggestionsFetchRequested.bind(this), 300)
     this.onSelection = this.onSelection.bind(this)
   }
 
@@ -49,12 +50,11 @@ export default class AddressComponent extends React.Component {
     let url = '/geoservice/'
     let params = encodeURIComponent(value)
     fetchRequest(url, 'POST', params).then(
-      response => response.json()).then(
-      (response) => {
-        return this.setState({
-          suggestions: response
-        })
-      }).catch(() => {
+      response => response.json()).then((response) => {
+      return this.setState({
+        suggestions: response
+      })
+    }).catch(() => {
       return this.setState({
         suggestions: []
       })
@@ -91,7 +91,7 @@ export default class AddressComponent extends React.Component {
         addressFields={this.props.addressFields}
         stateTypes={this.props.stateTypes}
         onChange={this.props.onChange}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+        onSuggestionsFetchRequested={this.onSuggestionsFetchRequestedDelayed}
         onSuggestionSelected={this.onSuggestionSelected}
       />
     )
