@@ -32,7 +32,7 @@ RSpec.feature 'RFA', js: true do
     select 'Some High School', from: 'highest_education_level'
     select 'Black', from: 'ethnicity'
     select 'Alaska', from: 'applicants[0].driver_license_state'
-    fill_in('Email Address (optional)', with: 'test@test.com', :match => :prefer_exact)
+    fill_in('Email Address', with: 'test@test.com', :match => :prefer_exact)
     expect(page).to have_content 'Employment'
     fill_in('Name of the Employer', with: 'Employer Name', :match => :prefer_exact)
     fill_in('Occupation', with: 'Front End Developer', :match => :prefer_exact)

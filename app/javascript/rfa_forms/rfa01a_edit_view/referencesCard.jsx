@@ -79,7 +79,7 @@ export default class ReferencesCard extends React.Component {
 
           <InputComponent gridClassName='col-md-4' id='email'
             value={this.props.reference.email}
-            label='Email (optional)' placeholder=''
+            label='Email' placeholder=''
             type='text' onChange={(event) => this.props.setParentState('email',
               event.target.value, this.props.index)} />
         </div>

@@ -110,7 +110,7 @@ export default class AboutApplicant extends React.PureComponent {
             <div className='col-md-12'>
               <InputField gridClassName='col-md-4' id='email'
                 value={aboutApplicantFields.email}
-                label='Email Address (optional)' placeholder=''
+                label='Email Address' placeholder=''
                 type='text' onChange={(event) => this.props.setParentState('email', event.target.value)} />
             </div>
           </form>
