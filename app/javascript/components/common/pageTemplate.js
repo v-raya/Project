@@ -20,6 +20,7 @@ const PageTemplate = ({
   childIdentified,
   isNavLinkActive,
   handleNavLinkClick,
+  disableSave,
   errors,
   children
 }) => (
@@ -40,13 +41,15 @@ const PageTemplate = ({
       <div className='col-xs-9 col-sm-9 col-md-9 col-lg-9'>
         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <PageHeader headerLabel={headerLabel} />
+
           <Button
             id={buttonId}
+            disabled={disableSave}
             label={buttonLabel}
             textAlignment={buttonTextAlignment}
             onClick={onButtonClick} />
         </div>
-        <ApiErrorMessages errors={errors}/>
+        <ApiErrorMessages errors={errors} />
         {children}
       </div>
     </div>
@@ -66,7 +69,8 @@ PageTemplate.propTypes = {
 }
 
 PageTemplate.defaultProps = {
-  headerLabel: 'To implement'
+  headerLabel: 'To implement',
+  disableSave: false
 }
 
 export default PageTemplate

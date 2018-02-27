@@ -136,6 +136,7 @@ export default class Rfa01EditView extends React.Component {
         buttonLabel='Save Progress'
         buttonTextAlignment='right'
         onButtonClick={this.submitForm}
+        disableSave={this.state.disableSave}
         rfa01aApplicationId={stateApplicationJS.id}
         onRfa01AForm
         rfa01cForms={stateApplicationJS.rfa1c_forms}

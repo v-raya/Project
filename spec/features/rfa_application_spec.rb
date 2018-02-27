@@ -21,9 +21,12 @@ RSpec.feature 'RFA', js: true do
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
+    expect(page).to have_button('Save Progress', disabled: true)
     fill_in('applicants[0].first_name', with: Faker::Name.first_name, :match => :prefer_exact)
     fill_in('applicants[0].middle_name', with: 'k', :match => :prefer_exact)
+    expect(page).to have_button('Save Progress', disabled: true)
     fill_in('applicants[0].last_name', with: Faker::Name.last_name, :match => :prefer_exact)
+    expect(page).to have_button('Save Progress', disabled: false)
     fill_in 'applicants[0].driver_license_number', with: 'ABC123'
     # fill_in('first_name', with: Faker::Name.first_name, :match => :prefer_exact)
     # fill_in('middle_name', with: 'k', :match => :prefer_exact)

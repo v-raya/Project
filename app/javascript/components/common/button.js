@@ -5,10 +5,12 @@ const Button = ({
   buttonId,
   onClick,
   label,
+  disabled,
   textAlignment
 }) => (
   <div className={'text-' + textAlignment}>
     <button className='btn'
+      disabled={disabled}
       id={buttonId}
       onClick={onClick}>
       {label}
@@ -20,10 +22,12 @@ Button.propTypes = {
   buttonId: PropTypes.string,
   onClick: PropTypes.func,
   label: PropTypes.string,
-  textAlignment: PropTypes.string
+  textAlignment: PropTypes.string,
+  disabled: PropTypes.bool
 }
 
 Button.defaultProps = {
-  textAlignment: 'center'
+  textAlignment: 'center',
+  disabled: false
 }
 export default Button
