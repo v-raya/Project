@@ -1,33 +1,86 @@
 import React from 'react'
 import SearchApp from '../../../app/javascript/search/search'
-var TestUtils = require('react-dom/test-utils')
+import {shallow, mount} from 'enzyme'
 
-describe('Verify Search component Fields', function () {
-  const props = {
-    facilityTypes: [
-      {
-        id: '',
-        value: ''
-      }
-    ],
-    user: {
-      county_name: 'Los Angeles'
-    },
-    countyTypes: [
-      {
-        id: '',
-        value: ''
-      }
-    ]
+describe('Verify Search component', function () {
+  let handleToggleSpy
+  let searchComp
+  let handleChangeSpy
 
-  }
-  const searchComp = TestUtils.renderIntoDocument(<SearchApp {...props} />)
-  it('Verify Search Address fields', function () {
-    // let searchResults = renderIntoDocument(<SearchApp />);
-    let DataSearch = '02,738,193600008,home,2024 W el camino,Sacramento,Ca,95833'
-    var query = DataSearch.split(',')
-    var addressField = query[4] + ',' + query[5] + ',' + query[6]
-    const addressQuery = searchComp.addressQuery(query)
-    expect(addressQuery).toEqual(['2024 W el camino', 'Sacramento', 'Ca', '95833'])
+  beforeEach(() => {
+    const props = {
+      facilityTypes: [
+        {
+          id: '',
+          value: ''
+        }
+      ],
+      user: {
+        county_name: 'Los Angeles'
+      },
+      countyTypes: [
+        {
+          id: '',
+          value: ''
+        }
+      ]
+    }
+
+    handleToggleSpy = spyOn(SearchApp.prototype, 'handleToggle').and.callThrough()
+    handleChangeSpy = spyOn(SearchApp.prototype, 'handleChange').and.callThrough()
+
+    searchComp = mount(<SearchApp {...props}
+    />)
+    searchComp.setState({
+      searchResults: [
+        {
+          assigned_worker: 'Kari Gutierrez',
+          county: 'Marin',
+          district_office: 'NO. CAL SC/RES',
+          fac_capacity: 7,
+          fac_email_address: null,
+          fac_last_visit_date: '1991-12-10',
+          fac_lic_eff_date: '1992-02-22',
+          fac_licensee_name: 'TERRIER PROGRAMS, INC.',
+          fac_licensee_type: 'C',
+          fac_mail_city: 'MODESTO',
+          fac_mail_state: 'CA',
+          fac_mail_street_addr: '767 GLEN EAGLES DRIVE',
+          fac_mail_zip_code: '95350',
+          fac_name: "DEPUTY DOG'S GROUP HOME",
+          fac_nbr: 193600008,
+          fac_orig_appl_rec_date: '1983-02-02',
+          fac_res_city: 'MODESTO',
+          fac_res_state: 'CA',
+          fac_res_street_addr: '767 GLEN EAGLES DRIVE',
+          fac_res_zip_code: '95350',
+          facility_telephone: '8183366556',
+          last_visit_reason: "Renewal (Fac.'s w/Expir.)",
+          status: 'Licensed',
+          type: 'Foster Family Home (Confidential - Do not release)'
+        }
+      ]
+
+    })
+  })
+
+  it('Verify Search component render', () => {
+    expect(searchComp.length).toBe(1)
+  })
+
+  it('verify onclick for toggle button', () => {
+    let searchFacility = searchComp.find('.btn-primary')
+    searchFacility.simulate('submit')
+    let handleToggleButton = searchComp.find('#toggle_button')
+    expect(searchComp.instance().state.isToggled).toBe(true)
+    handleToggleButton.simulate('click')
+    expect(handleToggleSpy).toHaveBeenCalled()
+    expect(searchComp.instance().state.isToggled).toBe(false)
+  })
+
+  it('verify dropDown value change to change number of facilities', () => {
+    let dropdownForfacilitiesCount = searchComp.find('#dropdownFacilities')
+    dropdownForfacilitiesCount.simulate('change', {target: {options: {'2': {id: '2', value: 15}, selectedIndex: 2}}})
+    expect(handleChangeSpy).toHaveBeenCalledWith(15)
   })
 })

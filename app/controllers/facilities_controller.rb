@@ -17,16 +17,20 @@ class FacilitiesController < CalsBaseController
   end
 
   def search
+    size_params = params[:size]
+    from_params = params[:from]
     post_data = request.body.read
     parsed_post_data = JSON.parse(post_data)
     query_hash = QueryPreprocessor.params_to_query_hash(parsed_post_data)
     logger.info "query_hash: #{query_hash}"
-    es_query_json = Elastic::QueryBuilder.facility_search_v1(query_hash).to_json
+    es_query_json = Elastic::QueryBuilder.facility_search_v1(query_hash, from_params, size_params).to_json
     logger.info "es query: #{es_query_json}"
     @facilities = facility_helper.search es_query_json
-    @facilities = @facilities['hits']['hits'].collect { |facility| facility['_source']}
-    @facilities.sort_by! {|facility_name| facility_name['name']}
-    json_response @facilities
+    @facilities_response = {}
+    @facilities_response['facilities'] = @facilities['hits']['hits'].collect { |facility| facility['_source']}
+    @facilities_response['facilities'].sort_by! {|facility_name| facility_name['name']}  
+    @facilities_response['total'] = @facilities['hits']['total']
+    json_response @facilities_response
   end
 
   private

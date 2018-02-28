@@ -19,16 +19,7 @@ const dateValidator = {rule: 'isValidDate', message: 'date is invalid'}
 export default class RelationshipBetweenApplicantsFields extends React.Component {
   constructor (props) {
     super(props)
-    this.onChange = this.onChange.bind(this)
-
     this.validator = this.props.validator.addFieldValidation(this.props.idPrefix + 'date_of_relationship', dateValidator)
-  }
-
-  onChange (key, value) {
-    let newData = Immutable.fromJS(this.props.relationshipBetweenApplicants)
-    newData = newData.update(0, x => x.set(key, value))
-
-    this.props.setParentState('relationshipBetweenApplicants', newData.toJS())
   }
   render () {
     const relationship = this.props.relationshipBetweenApplicants

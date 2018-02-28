@@ -1,11 +1,15 @@
 import React from 'react'
 import SearchData from '../../../app/javascript/search/search_Data'
-import ShallowRenderer from 'react-test-renderer/shallow'
+import {shallow, mount} from 'enzyme'
 
 describe('Render Search Data', function () {
-  const props = {}
-  props.state = {
+  const props = {
     inputData: '02,738,193600008,home,2024 W el camino,Sacramento,Ca,95833',
+    toggeledResult: true,
+    totalNoOfFacilities: 64,
+    fromValue: 0,
+    sizeValue: 5,
+    pageNumber: 1,
     searchData: [
       {
         assigned_worker: 'Kari Gutierrez',
@@ -35,10 +39,49 @@ describe('Render Search Data', function () {
       }
     ]
   }
-  const renderDataCop = new ShallowRenderer()
-  const dataCompRendered = renderDataCop.render(<SearchData {...props} />)
-  it('Verify Search Data component was Rendered', function () {
-    let toggleDiv = dataCompRendered.props
-    expect(toggleDiv.className).toEqual('search-toggle col-xs-12 col-sm-12 col-md-12 col-lg-12')
+
+  const spyHandleChange = jasmine.createSpy('handleChange')
+  const spyHandleToggle = jasmine.createSpy('handleToggle')
+  const spyPreviousButton = jasmine.createSpy('backToPreviousPage')
+  const spyNextButton = jasmine.createSpy('changeToNextPage')
+  const spySearchInput = jasmine.createSpy('searchApiCall')
+
+  const dataCompRendered = mount(<SearchData {...props}
+    handleChange={spyHandleChange}
+    handleToggle={spyHandleToggle}
+    backToPreviousPage={spyPreviousButton}
+    changeToNextPage={spyNextButton}
+    totalNoOfFacilities={64}
+    toggeledResult={true}
+    searchApiCall={spySearchInput} />)
+  // const dataCompRendered = renderDataCop.render(<SearchData {...props} />)
+  it('verify component load', () => {
+    expect(dataCompRendered.length).toBe(1)
+  })
+
+  it('verify number of facilities dropdown after component render', () => {
+    let dropDownFacilities = dataCompRendered.find('.search_dropdown')
+    dropDownFacilities.simulate('change', {target: {options: {'5': {id: '5', value: '5'}, selectedIndex: 5}}})
+    expect(spyHandleChange).toHaveBeenCalledWith('5')
+  })
+
+  it('Verify number of pages', () => {
+    expect(dataCompRendered.find('.noOfPages').props().children).toBe(13)
+  })
+
+  it('Verify page number', () => {
+    expect(dataCompRendered.find('.page_number').props().children).toBe(1)
+  })
+
+  it('clicks previous on pagination', () => {
+    let previousButton = dataCompRendered.find('.previous')
+    previousButton.simulate('click')
+    expect(spyPreviousButton).toHaveBeenCalledWith(0, 5, 1)
+  })
+
+  it('clicks next on pagination', () => {
+    let nextButton = dataCompRendered.find('.next')
+    nextButton.simulate('click')
+    expect(spyNextButton).toHaveBeenCalledWith(0, 5, 1)
   })
 })

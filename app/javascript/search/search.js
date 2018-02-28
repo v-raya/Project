@@ -14,79 +14,135 @@ export default class Search extends React.Component {
       landingPageUrl: props.landingUrl,
       isToggled: true,
       inputData: ' ',
-      searchData: undefined
+      searchResults: undefined,
+      totalNoOfResults: 0,
+      disableNext: false,
+      disablePrevious: true,
+      fromValue: 0,
+      sizeValue: 5,
+      pageNumber: 1
     }
     this.handleToggle = this.handleToggle.bind(this)
-    this.getCsrfToken = this.getCsrfToken.bind(this)
-    this.addressQuery = this.addressQuery.bind(this)
-  }
-
-  addressQuery (query) {
-    var addQuery = []
-    for (var i = 4; i >= 4 && i < query.length; i++) {
-      addQuery.push(query[i])
-    }
-    return addQuery
-  }
-
-  getCsrfToken (value) {
-    var metas = document.getElementsByTagName('meta')
-    return metas[value] ? metas[value].content : ''
+    this.searchApiCall = this.searchApiCall.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.changeToNextPage = this.changeToNextPage.bind(this)
+    this.backToPreviousPage = this.backToPreviousPage.bind(this)
+    this.nextPageLinkStatus = this.nextPageLinkStatus.bind(this)
+    this.previousPageLinkStatus = this.previousPageLinkStatus.bind(this)
   }
 
   handleToggle () {
     this.setState({isToggled: !this.state.isToggled})
   }
 
-  addSearchInput (DataSearch) {
-    var query = DataSearch.split(',')
-    var addressData = this.addressQuery(query)
+  searchApiCall (DataSearch, getFromValue, getSizeValue) {
+    const query = DataSearch.split(',')
 
-    var params = {
+    const params = {
       'county.value': [query[0]],
       'type.value': [query[1]],
       id: [query[2]],
       name: [query[3]],
-      'addresses.address.street_address': addressData
+      'addresses.address.street_address': query.slice(4, (query.length))
     }
 
-    this.state.inputData = DataSearch
-
     // call http request function with arguments
-    let url = '/facilities/search'
-    fetchRequest(url, 'POST', params).then(
-      response => response.json())
-      .then((response) => {
-        return this.setState({
-          searchData: response
-        })
+    let url = '/facilities/search' + '?from=' + getFromValue + '&size=' + getSizeValue
+    fetchRequest(url, 'POST', params).then((response) => {
+      return response.json()
+    }).then((data) => {
+      this.setState({
+        inputData: DataSearch,
+        searchResults: data.facilities,
+        totalNoOfResults: data.total,
+        sizeValue: getSizeValue,
+        disableNext: this.nextPageLinkStatus(data.total, getFromValue, getSizeValue),
+        disablePrevious: this.previousPageLinkStatus(getFromValue, getSizeValue)
       })
-      .catch(error => {
-        console.log(error)
-        return this.setState({
-          searchData: []
-        })
+    }).catch(error => {
+      console.log(error)
+      return this.setState({
+        searchResults: []
       })
+    })
+  }
+
+  handleChange (facilitiesPerPage) {
+    this.setState({
+      sizeValue: parseInt(facilitiesPerPage),
+      fromValue: 0
+    }, () => {
+      this.searchApiCall(this.state.inputData, this.state.fromValue, this.state.sizeValue)
+    })
+  }
+
+  nextPageLinkStatus (total, fromValue, sizeValue) {
+    if (fromValue + sizeValue >= total || total < 5) {
+      return true
+    }
+  }
+
+  previousPageLinkStatus (fromValue, sizeValue) {
+    if (fromValue - sizeValue < 0 || fromValue === 0) {
+      this.setState({
+        pageNumber: 1
+      })
+      return true
+    }
+  }
+
+  changeToNextPage (fromValue, sizeValue, pageNumber) {
+    this.setState({
+      fromValue: fromValue + sizeValue,
+      disablePrevious: false,
+      pageNumber: pageNumber + 1
+    }, () => {
+      this.searchApiCall(this.state.inputData, this.state.fromValue, this.state.sizeValue)
+    })
+  }
+
+  backToPreviousPage (fromValue, sizeValue, pageNumber) {
+    this.setState({
+      fromValue: fromValue - sizeValue,
+      disableNext: false,
+      pageNumber: pageNumber - 1
+    }, () => {
+      this.searchApiCall(this.state.inputData, this.state.fromValue, this.state.sizeValue)
+    })
   }
 
   render () {
-    const initialLoad = this.state.searchData === undefined
-    const searchResponseHasValues = this.state.searchData && this.state.searchData.length > 0
+    const initialLoad = this.state.searchResults === undefined
+    const searchResponseHasValues = this.state.searchResults && this.state.searchResults.length > 0
 
     return (
       <div className='search_page'>
         <div className='search-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <SearchInput
-            sendSearchInput={this.addSearchInput.bind(this)}
+            searchApiCall={this.searchApiCall.bind(this)}
             countyList={this.props.countyTypes}
             facilityTypes={this.props.facilityTypes}
             userDetails={this.props.user || undefined}
           />
         </div>
-        {searchResponseHasValues && <SearchDetails sendSearchInput={this.addSearchInput.bind(this)} {...this} />}
+        {searchResponseHasValues &&
+          <SearchDetails
+            inputData={this.state.inputData}
+            totalNoOfFacilities={this.state.totalNoOfResults}
+            toggeledResult={this.state.isToggled}
+            disablePrevious={this.state.disablePrevious}
+            disableNext={this.state.disableNext}
+            sizeValue={this.state.sizeValue}
+            fromValue={this.state.fromValue}
+            pageNumber={this.state.pageNumber}
+            searchApiCall={this.searchApiCall.bind(this)}
+            handleToggle={this.handleToggle.bind(this)}
+            changeToNextPage={this.changeToNextPage.bind(this)}
+            backToPreviousPage={this.backToPreviousPage.bind(this)}
+            handleChange={this.handleChange.bind(this)} />}
         <div className='result-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          {this.state.isToggled && <SearchGrid searchResults={this.state.searchData} />}
-          {!this.state.isToggled && <SearchList searchResults={this.state.searchData} />}
+          {this.state.isToggled && <SearchGrid searchResults={this.state.searchResults} />}
+          {!this.state.isToggled && <SearchList searchResults={this.state.searchResults} />}
           {(!searchResponseHasValues && !initialLoad) && <SearchNotFound />}
         </div>
       </div>

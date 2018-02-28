@@ -84,6 +84,8 @@ export const mailingAddressType = 'Mailing'
 
 export const listOfStatus = ['LICENSED', 'CERTIFIED/APPROVED', 'LICENSED(PENDING CAPACITY CHANGE)']
 
+export const resultsPerPage = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+
 export const handleLicenseEffectiveDate = (result) => {
   if (result.status) {
     return listOfStatus.indexOf(result.status.value) >= 0 ? checkforDateOrNa(result.license_effective_date) : 'N/A'

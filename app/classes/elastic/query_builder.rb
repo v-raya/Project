@@ -28,7 +28,7 @@ class Elastic::QueryBuilder
   # returns:
   # {"query":{"bool":{"should":[{"bool":{"must":[{"match":{"fac_co_nbr":"28"}},{"match":{"fac_name":"home"}}]}},{"bool":{"must":[{"match":{"fac_co_nbr":"18"}}]}}]}}}
   #
-  def self.match_boolean(query_array)
+  def self.match_boolean(query_array, from_params, size_params)
 
     # prepare array of match queries.
     combined_query_array = []
@@ -38,27 +38,27 @@ class Elastic::QueryBuilder
       # combined_query_array << address_query(itm.delete('addresses.address.street_address')) if itm['addresses.address.street_address'].present?
       combined_query_array << match_and(itm)
     end
-
     # wrap array in a bool OR query
     return {
       query: {
         bool: {
           should: combined_query_array
         }
-      }
+      },
+      from: from_params,
+      size: size_params
     }
   end
 
-  def self.facility_search_v1(query_array)
+  def self.facility_search_v1(query_array, from_params, size_params)
     address_params = query_array.map {|param| param['addresses.address.street_address']}.first
-
     if address_params
       query_array_without_address = [query_array.first.except('addresses.address.street_address')]
-      search_query = match_boolean(query_array_without_address)
+      search_query = match_boolean(query_array_without_address, from_params, size_params)
       search_query[:query][:bool][:should].first[:bool][:must] << address_query(address_params)
       return search_query
     else
-      match_boolean(query_array)
+      match_boolean(query_array, from_params, size_params)
     end
   end
 

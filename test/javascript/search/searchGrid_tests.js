@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchGrid from '../../../app/javascript/search/search_grid'
 import ShallowRenderer from 'react-test-renderer/shallow'
+import {shallow, mount} from 'enzyme'
 
 describe('Render Search results to Grid', function () {
   let indexValue = '0'
@@ -86,5 +87,21 @@ describe('Render Search results to Grid', function () {
   })
   it('Verify Anchor Tag href value', function () {
     expect(gridArrayChildElem.props.href).toEqual('/facilities/193600008')
+  })
+})
+
+describe('Search results to Grid', function () {
+  let indexValue = '0'
+  const props = {
+    searchResults: [
+      {
+        addresses: []
+      }
+    ]
+  }
+
+  const searchGridComp = mount(<SearchGrid {...props} />)
+  it('Verify address to be N/A', () => {
+    expect(searchGridComp.find('GridInnerLayout[title="Facility Address"]').props().value).toBe('N/A')
   })
 })

@@ -30,7 +30,9 @@ export default class SearchInput extends React.Component {
   sendSearchInput (event) {
     event.preventDefault()
     const finalQuery = (this.state.searchId.countyValue + ',' + this.state.searchId.facilityTypeValue + ',' + this.state.searchId.facilityIdValue + ',' + this.state.searchId.facilityNameValue + ',' + this.state.searchId.facilityAddressValue)
-    this.props.sendSearchInput(finalQuery)
+    const fromValue = 0
+    const sizeValue = 5
+    this.props.searchApiCall(finalQuery, fromValue, sizeValue)
   }
   render () {
     const facilityTypes = this.props.facilityTypes

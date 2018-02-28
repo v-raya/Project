@@ -32,20 +32,17 @@ describe FacilitiesController do
                   {match_phrase:{'fac_name':'home'}}
                 ]
                 }
-               },
-              {bool:
-               {must: [
-                  {match_phrase:{'fac_co_nbr':'18'}}
-                ]
-                }
                }]
           }
-        }
+        },
+        from: '0',
+        size: '5' 
       }
 
-      input = [ {fac_co_nbr: '28', fac_name: 'home'}, {fac_co_nbr: '18'} ]
-      output = Elastic::QueryBuilder.match_boolean(input)
-
+      input = [{"fac_co_nbr"=>"28", "fac_name"=>"home"}]
+      from = "0"
+      size = "5"
+      output = Elastic::QueryBuilder.match_boolean(input, from, size)
       expect(output).to eq(expected_output)
     end
 

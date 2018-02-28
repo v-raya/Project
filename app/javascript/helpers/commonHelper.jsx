@@ -2,6 +2,10 @@ export const valuePresent = (val) => {
   return (val !== null) && (val !== undefined)
 }
 
+export const floatToNextInt = (val1, val2) => {
+  return Math.ceil(val1 / val2)
+}
+
 export const getDictionaryId = (object) => {
   return (object && object.id) || ''
 }

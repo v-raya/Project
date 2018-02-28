@@ -24,9 +24,9 @@ describe('Verify search input component', function () {
 
   }
 
-  const spySendSearchInput = jasmine.createSpy('sendSearchInput')
+  const spySearchApiCall = jasmine.createSpy('searchApiCall')
 
-  const searchInputComp = mount(<SearchInput {...props} sendSearchInput={spySendSearchInput} />)
+  const searchInputComp = mount(<SearchInput {...props} searchApiCall={spySearchApiCall} />)
 
   it('verify component load', () => {
     expect(searchInputComp.length).toBe(1)
@@ -62,9 +62,9 @@ describe('Verify search input component', function () {
     expect(searchInputComp.update().find('#facilityAddressValue').hostNodes().props().value).toBe('36 Sequoia Dr, Aliso Viejo, CA 92656')
   })
 
-  it('verify clicking search button calls sendSearchInput method', () => {
+  it('verify clicking search button calls searchApiCall method', () => {
     let searchFacility = searchInputComp.find('.btn-primary')
     searchFacility.simulate('submit')
-    expect(spySendSearchInput).toHaveBeenCalledWith('Los Angeles,Adoption Agency,300665437,Lederhouse Transitions,36 Sequoia Dr, Aliso Viejo, CA 92656')
+    expect(spySearchApiCall).toHaveBeenCalledWith('Los Angeles,Adoption Agency,300665437,Lederhouse Transitions,36 Sequoia Dr, Aliso Viejo, CA 92656', 0, 5)
   })
 })
