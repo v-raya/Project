@@ -3,8 +3,10 @@ module.exports = {
   enforce: 'pre',
   exclude: /node_modules/,
   loader: 'rails-erb-loader'
-  // ,
-  // options: {
-  //   runner: 'bin/rails runner'
-  // }
+  // use: [{
+  //   loader: 'rails-erb-loader',
+  //   options: {
+  //     runner: 'bin/rails runner'
+  //   }
+  // }]
 }

@@ -43,3 +43,5 @@ dump.rdb
 
 #ignore rubyMine Files
 /.idea/*
+yarn-debug.log*
+.yarn-integrity

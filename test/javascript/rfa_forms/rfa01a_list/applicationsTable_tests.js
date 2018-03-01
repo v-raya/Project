@@ -5,7 +5,7 @@ import ShallowRenderer from 'react-test-renderer/shallow'
 describe('Verify Application List View', () => {
   let applications = [
     {
-      applicants: [],
+      applicants: undefined,
       id: 43,
       is_initial_application: false,
       is_other_type: false,
@@ -16,7 +16,7 @@ describe('Verify Application List View', () => {
     },
     {
 
-      applicants: [],
+      applicants: undefined,
       id: 44,
       is_initial_application: false,
       is_other_type: false,

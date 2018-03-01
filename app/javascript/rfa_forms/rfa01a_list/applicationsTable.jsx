@@ -23,8 +23,8 @@ export default class ApplicationsTable extends React.Component {
               return (
                 <a href={urlPrefixHelper('/rfa/a01/' + application.id + '/packet')} className='table-row' key={index}>
                   <div className='table-cell'>{application.id}</div>
-                  <div className='table-cell'>{(application.applicants.length > 0) && application.applicants[0].first_name}</div>
-                  <div className='table-cell'>{(application.applicants.length > 0) && application.applicants[0].last_name}</div>
+                  <div className='table-cell'>{application.applicants && application.applicants[0].first_name}</div>
+                  <div className='table-cell'>{application.applicants && application.applicants[0].last_name}</div>
                 </a>
               )
             })

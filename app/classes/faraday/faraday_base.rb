@@ -32,6 +32,10 @@ class Faraday::FaradayBase
     conn = Faraday.new(url: url) do |c|
       c.use CalsFaradayMiddleware::ApiErrorException
       c.adapter Faraday.default_adapter
+
+      unless Rails.env.test?
+        c.response :logger, Rails.logger, bodies: {request: false, response: true}
+      end
     end
 
     response = conn.send(method) do |req|
@@ -41,10 +45,6 @@ class Faraday::FaradayBase
       req.options.timeout = 5
     end
 
-    unless Rails.env.test?
-      Rails.logger.info('API call response:')
-      Rails.logger.info(response)
-    end
     return response
   end
 

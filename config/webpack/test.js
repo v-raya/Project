@@ -1,20 +1,12 @@
-// Note: You must restart bin/webpack-dev-server for changes to take effect
+const environment = require('./environment')
 
-const merge = require('webpack-merge')
-const sharedConfig = require('./shared.js')
-
-module.exports = merge(sharedConfig, {
-  devtool: 'sourcemap',
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: [/node_modules/, /test/],
-        loader: 'istanbul-instrumenter-loader',
-        query: {
-          esModules: true
-        }
-      }
-    ]
+environment.plugins.get('Manifest').opts.writeToFileEmit = process.env.NODE_ENV !== 'test'
+environment.loaders.append('istanbul-instrumenter', {
+  test: /\.(js|jsx)$/,
+  exclude: [/node_modules/, /test/],
+  loader: 'istanbul-instrumenter-loader',
+  query: {
+    esModules: true
   }
-})
+}) /* optional */
+module.exports = environment.toWebpackConfig()
