@@ -151,6 +151,8 @@ RSpec.feature 'RFA', js: true do
     expect(page).to have_content 'Applicant 1 - Information'
     find('#addAnotherNumber').send_keys :tab
     find('#addAnotherApplicant').send_keys :backspace
+    find("input[type='checkbox'][label='0-3 years']").send_keys :backspace
+    find("input[type='radio'][id='weaponstrue']").send_keys :backspace
     expect(page).to have_content 'Applicant 1 - Information'
   end
 
