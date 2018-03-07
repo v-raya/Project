@@ -20,14 +20,11 @@ ReactRailsUJS.useContext(componentRequireContext)
 document.addEventListener('keydown', keyDownSelect)
 function keyDownSelect (e) {
   let keyCode = e.which
-  if ((document.activeElement === document.body ||
+  if (document.activeElement === document.body ||
       document.activeElement.tagName === 'SELECT' ||
       document.activeElement.tagName === 'BUTTON' ||
       document.activeElement.tagName === 'A' ||
-      document.activeElement.type === 'radio' ||
-      document.activeElement.type === 'checkbox') &&
-     (document.activeElement.type !== 'text' ||
-      document.activeElement.type !== 'textarea')
+      document.activeElement.type !== 'text'
   ) {
     if (e.keyCode === 8) {
       e.preventDefault()
