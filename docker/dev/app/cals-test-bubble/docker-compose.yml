@@ -3,7 +3,7 @@ services:
   cals:
     # build: .
     # command: bash -c "bundle check || bundle install && yarn && bundle exec puma"
-    image: cwds/cals:0.58-443
+    image: cwds/cals:0.58-441
     ports:
       - 3000:3000
     environment:
@@ -27,7 +27,7 @@ services:
       - 6379:6379
 
   perry:
-    image: cwds/perry:1.5.7
+    image: cwds/perry:0.5.4_V1_47-RC
     hostname: perry
     ports:
       - 8080:8080
@@ -52,7 +52,7 @@ services:
     env_file: docker-compose.env
 
   cals-api:
-    image: cwds/cals-api:0.5.8_377-RC_959-RC
+    image: cwds/cals-api:0.5.8_968-RC
     hostname: cals-api
     depends_on:
       - cals_db2_data
