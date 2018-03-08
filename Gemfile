@@ -18,7 +18,7 @@ gem 'responders', '~> 2.3'
 gem 'autoprefixer-rails', '~> 6.7'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap'
-gem 'react-rails', '~> 2.2'
+gem 'react-rails', '~> 2.4'
 
 gem 'redis-rails', '~> 5.0'
 gem 'redis-namespace'
