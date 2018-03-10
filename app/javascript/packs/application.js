@@ -12,7 +12,7 @@ import React from 'react'
 
 console.log('Hello World from CALS')
 // Support component names relative to this directory:
-var componentRequireContext = require.context('.', true)
+var componentRequireContext = require.context('components', true)
 var ReactRailsUJS = require('react_ujs')
 ReactRailsUJS.useContext(componentRequireContext)
 
