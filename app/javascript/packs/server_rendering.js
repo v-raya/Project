@@ -4,6 +4,10 @@
 import './polyfills'
 import React from 'react'
 
-var componentRequireContext = require.context('components', true)
 var ReactRailsUJS = require('react_ujs')
+
+var componentRequireContext = require.context('components', true)
 ReactRailsUJS.useContext(componentRequireContext)
+
+// var headerRequireContext = require.context('header', true)
+// ReactRailsUJS.useContext(headerRequireContext)

@@ -1,7 +1,7 @@
 import React from 'react'
 import {GlobalHeader} from 'react-wood-duck'
 
-export default class HeaderComponent extends React.Component {
+export default class GlobalHeaderComponent extends React.Component {
   constructor (props) {
     super(props)
     this.logoutCallback = this.logoutCallback.bind(this)

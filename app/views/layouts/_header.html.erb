@@ -1,5 +1,6 @@
 <div id="header_div">
 
-  <%= react_component('HeaderComponent', {logoutUrl: logout_path},{prerender: false}) %>
+  <%= javascript_pack_tag 'headerComponent' %>
+  <%= react_component('globalHeaderComponent', {logoutUrl: logout_path}, {prerender: false}) %>
 
 </div>
