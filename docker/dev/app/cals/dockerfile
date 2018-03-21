@@ -8,6 +8,8 @@ WORKDIR /cals
 RUN cd /cals \
   && bundle install \
   && yarn install
+  
+VOLUME /cals
 
 ENV RAILS_ENV=production \
   NODE_ENV=production \
