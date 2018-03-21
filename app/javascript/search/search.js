@@ -26,7 +26,8 @@ export default class Search extends React.Component {
     this.searchApiCall = this.searchApiCall.bind(this)
     this.changePage = this.changePage.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
-    this.removeCriteria = this.removeCriteria.bind(this)
+    this.resetForm = this.resetForm.bind(this)
+    this.handleOnSubmit = this.handleOnSubmit.bind(this)
   }
 
   handleInputChange (key, value) {
@@ -37,9 +38,15 @@ export default class Search extends React.Component {
     })
   }
 
-  removeCriteria (value) {
-    this.handleInputChange(value, '')
+  handleOnSubmit (event) {
+    event.preventDefault()
     this.searchApiCall(0, this.state.sizeValue)
+  }
+
+  resetForm () {
+    this.setState({
+      inputData: {},
+      searchResults: undefined})
   }
 
   handleToggle () {
@@ -106,7 +113,8 @@ export default class Search extends React.Component {
         <BreadCrumb />
         <div className='search-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <SearchInput
-            searchApiCall={this.searchApiCall}
+            resetForm={this.resetForm}
+            handleOnSubmit={this.handleOnSubmit}
             handleInputChange={this.handleInputChange}
             countyList={this.props.countyTypes}
             facilityTypes={this.props.facilityTypes}
@@ -118,16 +126,13 @@ export default class Search extends React.Component {
         </div>
         {searchResponseHasValues &&
           <SearchDetails
-            inputData={this.state.inputData}
             totalNoOfFacilities={this.state.totalNoOfResults}
             toggeledResult={this.state.isToggled}
             sizeValue={this.state.sizeValue}
             pageNumber={this.state.pageNumber}
             searchApiCall={this.searchApiCall}
             handleToggle={this.handleToggle}
-            changePage={this.changePage}
-            handleInputChange={this.handleInputChange}
-            removeCriteria={this.removeCriteria} />}
+            changePage={this.changePage} />}
         <div className='result-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           {this.state.isToggled && <SearchGrid searchResults={this.state.searchResults} />}
           {!this.state.isToggled && <SearchList searchResults={this.state.searchResults} />}

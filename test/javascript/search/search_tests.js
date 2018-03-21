@@ -3,14 +3,15 @@ import SearchApp from '../../../app/javascript/search/search'
 import {shallow, mount} from 'enzyme'
 
 describe('Verify Search component', function () {
-  let handleToggleSpy, searchComp, handleChangeSpy, handleInputChangeSpy, changePageSpy, searchApiCallSpy
+  let handleToggleSpy, searchComp, handleChangeSpy, handleInputChangeSpy, changePageSpy, searchApiCallSpy,
+    resetFormSpy, spyHandleOnSubmit
 
   beforeEach(() => {
     const props = {
       total: 0,
-      pageNumber: 1,
+      pageNumber: 2,
       from: 0,
-      size: 5,
+      size: 20,
       inputData: {},
       facilityTypes: [
         {
@@ -30,9 +31,11 @@ describe('Verify Search component', function () {
     }
 
     handleToggleSpy = spyOn(SearchApp.prototype, 'handleToggle').and.callThrough()
+    resetFormSpy = spyOn(SearchApp.prototype, 'resetForm').and.callThrough()
     searchApiCallSpy = spyOn(SearchApp.prototype, 'searchApiCall').and.callThrough()
     handleInputChangeSpy = spyOn(SearchApp.prototype, 'handleInputChange').and.callThrough()
     changePageSpy = spyOn(SearchApp.prototype, 'changePage').and.callThrough()
+    spyHandleOnSubmit = spyOn(SearchApp.prototype, 'handleOnSubmit').and.callThrough()
 
     searchComp = mount(<SearchApp {...props}
     />)
@@ -74,7 +77,7 @@ describe('Verify Search component', function () {
   })
 
   it('verify onclick for toggle button', () => {
-    let searchFacility = searchComp.find('.btn-primary')
+    let searchFacility = searchComp.find('#search')
     searchFacility.simulate('submit')
     let handleToggleButton = searchComp.find('#toggle_button')
     expect(searchComp.instance().state.isToggled).toBe(true)
@@ -93,5 +96,25 @@ describe('Verify Search component', function () {
     let countyDropDownChange = searchComp.find('#county_select')
     countyDropDownChange.simulate('change', {target: {options: {'19': {id: '19', value: 'Los Angeles'}, selectedIndex: 19}}})
     expect(handleInputChangeSpy).toHaveBeenCalledWith('countyValue', 'Los Angeles')
+  })
+  it('verify clicking reset button calls resetForm method', () => {
+    let resetForm = searchComp.find('#reset')
+    resetForm.simulate('click')
+    expect(resetFormSpy).toHaveBeenCalled()
+    expect(searchComp.state('inputData')).toEqual({})
+    expect(searchComp.state('searchResults')).toEqual(undefined)
+    let toggleButton = searchComp.find('#toggle_button')
+    expect(toggleButton.length).toBe(0)
+  })
+  it('verify clicking previous button calls changePage method', () => {
+    let changePage = searchComp.find('#previous_button')
+    changePage.simulate('click')
+    expect(changePageSpy).toHaveBeenCalledWith(1)
+  })
+  it('verify clicking search button calls handleOnSubmit method', () => {
+    let searchFacility = searchComp.find('#search')
+    searchFacility.simulate('submit')
+    expect(spyHandleOnSubmit).toHaveBeenCalled()
+    expect(searchApiCallSpy).toHaveBeenCalledWith(0, 20)
   })
 })
