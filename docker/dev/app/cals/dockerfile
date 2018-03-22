@@ -19,6 +19,8 @@ ENV RAILS_ENV=production \
 # compile assets
 RUN bundle exec rails assets:precompile
 
+ADD /cals/public/* /cals/public/cals
+
 VOLUME /cals
 
 # run rails server
