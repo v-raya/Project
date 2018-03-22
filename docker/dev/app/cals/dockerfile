@@ -8,8 +8,6 @@ WORKDIR /cals
 RUN cd /cals \
   && bundle install \
   && yarn install
-  
-VOLUME /cals
 
 ENV RAILS_ENV=production \
   NODE_ENV=production \
@@ -20,6 +18,8 @@ ENV RAILS_SERVE_STATIC_FILES=true
 
 # compile assets
 RUN bundle exec rails assets:precompile
+
+VOLUME /cals
 
 # run rails server
 CMD rails server -b 0.0.0.0 -p 3000
