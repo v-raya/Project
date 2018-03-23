@@ -20,12 +20,6 @@ RSpec.feature 'RFA01C', js: true do
     click_button('Save Progress')
     visit current_url
     expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(3) > div > div > div > div > nav > ul > div > li > a').text).to eq('child identified')
-
-    # packet_url = current_url.gsub('/edit', '') + '/packet'
-    # visit current_url
-    # visit packet_url
-    # byebug
-    # page.find('#Rfa01COverview').find('a.btn.btn-default').click
     click_link('child identified')
     fill_in('desiredChildCardfirst_name', with: first_name, match: :prefer_exact)
     fill_in('desiredChildCardmiddle_name', with: 'k', match: :prefer_exact)
@@ -49,5 +43,28 @@ RSpec.feature 'RFA01C', js: true do
     expect(find_field('desiredChildCardname_suffix').value).to eq '6'
     expect(find_field('Residentialstreet_address').value).to eq 'address here'
     expect(find_field('desiredChildCarddate_of_birth').value).to eq '01/01/2000'
+  end
+
+  scenario 'show error validation message on RFA01C', set_auth_header: true do
+    visit root_path
+    click_button 'Create RFA Application (Form 01)'
+    expect(page).to have_content 'Rfa-01A Section Summary'
+    page.find('#Rfa01AOverview').find('a.btn.btn-default').click
+    expect(page).to have_content 'Applicant 1 - Information'
+    first_name = 'Kimberley'
+    last_name = "RReily"
+    fill_in('applicants[0].first_name', with: first_name, match: :prefer_exact)
+    fill_in('applicants[0].middle_name', with: 'k', match: :prefer_exact)
+    fill_in('applicants[0].last_name', with: last_name, match: :prefer_exact)
+    find('#child_identifiedYes').click
+    find('#child_in_homeYes').click
+    click_button('Save Progress')
+    visit current_url
+    click_link('child identified')
+    fill_in('desiredChildCardfirst_name', with: first_name, match: :prefer_exact)
+    fill_in('desiredChildCardmiddle_name', with: 'k', match: :prefer_exact)
+    fill_in('desiredChildCardlast_name', with: '12345678901234567890123456', match: :prefer_exact)
+    click_button('Save Progress')
+    expect(page).to have_content "Message: 12345678901234567890123456 exceeds maximum length of 25"
   end
 end
