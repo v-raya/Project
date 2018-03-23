@@ -39,7 +39,10 @@ module Cals
 
     # use environment variable to set sub-directory/sub-uri for deployment
     config.relative_url_root = ENV['RAILS_RELATIVE_URL_ROOT'] || '/'
+
+    # change output to resolve conflicts with assets of other projects
+    config.assets.prefix = "#{ENV['RAILS_RELATIVE_URL_ROOT']}/assets"
     # config.action_controller.relative_url_root = ENV['RAILS_RELATIVE_URL_ROOT'] || '/'
-  #  config.cache_store = :redis_store
+    #  config.cache_store = :redis_store
   end
 end

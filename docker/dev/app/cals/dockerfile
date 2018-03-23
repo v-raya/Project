@@ -16,9 +16,9 @@ ENV RAILS_ENV=production \
 # compile assets
 RUN bundle exec rails assets:precompile
 
-RUN mkdir public/cals \
-  && mv public/packs public/cals/packs \
-  && mv public/assets public/cals/assets
+# RUN mkdir public/cals \
+#   && mv public/packs public/cals/packs \
+#   && mv public/assets public/cals/assets
 
 VOLUME /cals
 
