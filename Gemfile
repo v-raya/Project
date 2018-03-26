@@ -52,8 +52,8 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock'
   gem 'faker'
-  gem 'rspec', '~> 3.5', '< 3.6.0'
-  gem 'rspec-rails', '~> 3.5', '< 3.6.0'
+  gem 'rspec', '~> 3.7'
+  gem 'rspec-rails', '~> 3.7'
   gem 'awesome_print', :require => 'ap'
   gem 'rubocop', '~> 0.48.1', require: false
 
@@ -62,6 +62,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'poltergeist'
   gem 'chromedriver-helper'
+  gem 'transpec'
 end
 
 group :test do

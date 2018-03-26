@@ -1,6 +1,6 @@
 require 'capybara/rspec'
 require 'capybara/poltergeist'
-require "selenium/webdriver"
+require 'selenium/webdriver'
 
 selenium_browser = ENV['SELENIUM_BROWSER'].downcase.to_sym
 
@@ -27,9 +27,9 @@ end
 
 def register_internet_explorer(capybara_config, selenium_browser)
   selenium_server = ENV['SELENIUM_SERVER'] || 'localhost:4444'
-
+  
   capybara_config.register_driver selenium_browser do |app|
-
+  
     capabilities = Selenium::WebDriver::Remote::Capabilities.internet_explorer(
       native_events: false,
       javascript_enabled: true,
@@ -60,24 +60,21 @@ def registar_chrome(capybara_config, selenium_browser)
 
 end
 
-Capybara.configure do |c|
+remote_capabilities(Capybara)
 
-  remote_capabilities(c)
+# wait increased to 5 seconds to avoid random failures.
+# default wait is 2 seconds.
+Capybara.default_max_wait_time = 5
 
-  # wait increased to 5 seconds to avoid random failures.
-  # default wait is 2 seconds.
-  c.default_max_wait_time = 5
+case selenium_browser
+when :chrome, :headless_chrome
+  registar_chrome(Capybara, selenium_browser)
 
-  case selenium_browser
-  when :chrome, :headless_chrome
-    registar_chrome(c, selenium_browser)
+when :internet_explorer
+  register_internet_explorer(Capybara, selenium_browser)
 
-  when :internet_explorer
-    register_internet_explorer(c, selenium_browser)
-
-  else
-    c.javascript_driver = :poltergeist
-  end
-
-  c.app = Rack::Builder.parse_file(File.expand_path('../../../config.ru', __FILE__)).first
+else
+  Capybara.javascript_driver = :poltergeist
 end
+
+Capybara.app = Rack::Builder.parse_file(File.expand_path('../../../config.ru', __FILE__)).first

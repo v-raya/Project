@@ -302,11 +302,11 @@ RSpec.feature 'RFA', js: true do
 
     click_button('Save Progress')
     expect(find_field('applicantsHistory.former_spouses[0].relationship_type').value).to eq '1'
-    find_field('applicantsHistory.former_spouses[0].applicant_id').should have_content(applicant_1_full_name)
+    expect(find_field('applicantsHistory.former_spouses[0].applicant_id')).to have_content(applicant_1_full_name)
 
     visit page.driver.current_url
     expect(find_field('applicantsHistory.former_spouses[0].relationship_type').value).to eq '1'
-    find_field('applicantsHistory.former_spouses[0].applicant_id').should have_content(applicant_1_full_name)
+    expect(find_field('applicantsHistory.former_spouses[0].applicant_id')).to have_content(applicant_1_full_name)
   end
 
 
