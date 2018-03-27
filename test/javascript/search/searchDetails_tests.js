@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchData from '../../../app/javascript/search/search_Data'
+import SearchData from 'search/searchDetails'
 import {shallow, mount} from 'enzyme'
 
 describe('Render Search Data', function () {

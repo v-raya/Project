@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchInput from '../../../app/javascript/search/search_input'
+import SearchInput from 'search/searchInput'
 import {shallow, mount} from 'enzyme'
 
 describe('Verify search input component', function () {
@@ -36,7 +36,7 @@ describe('Verify search input component', function () {
   })
 
   it('verify county select after component render', () => {
-    let countyField = searchInputComp.find('#county_select')
+    let countyField = searchInputComp.find('#county_select').hostNodes()
     countyField.simulate('change', {target: {options: {'19': {id: '19', value: 'Los Angeles'}, selectedIndex: 19}}})
     expect(spyHandleInputChange).toHaveBeenCalledWith('countyValue', 'Los Angeles')
   })

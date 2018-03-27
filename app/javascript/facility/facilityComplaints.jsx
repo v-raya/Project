@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {checkforDateOrNa} from 'search/common/commonUtils'
 
-const Complaints = ({
+const FacilityComplaints = ({
   facilityData
 }) => (
   <div className='facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -40,12 +40,12 @@ const Complaints = ({
   </div>
 )
 
-Complaints.propTypes = {
+FacilityComplaints.propTypes = {
   facilityData: PropTypes.object.isRequired
 }
 
-Complaints.defaultProps = {
+FacilityComplaints.defaultProps = {
   facilityData: {}
 }
 
-export default Complaints
+export default FacilityComplaints

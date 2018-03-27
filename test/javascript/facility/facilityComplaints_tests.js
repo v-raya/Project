@@ -1,5 +1,5 @@
 import React from 'react'
-import FacilityComplaints from '../../../app/javascript/facility/complaints.jsx'
+import FacilityComplaints from 'facility/facilityComplaints.jsx'
 import {mount} from 'enzyme'
 
 describe('Verify Complaints Component', function () {

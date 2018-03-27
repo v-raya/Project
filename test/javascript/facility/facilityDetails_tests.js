@@ -1,5 +1,5 @@
 import React from 'react'
-import FacilityDetails from 'facility/details.jsx'
+import FacilityDetails from 'facility/facilityDetails.jsx'
 import {shallow} from 'enzyme'
 
 describe('Verify Facility Details', function () {

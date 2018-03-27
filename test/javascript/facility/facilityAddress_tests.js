@@ -1,5 +1,5 @@
 import React from 'react'
-import FacilityAddress from '../../../app/javascript/facility/address.jsx'
+import FacilityAddress from 'facility/facilityAddress.jsx'
 import {shallow, mount} from 'enzyme'
 
 describe('Verify Facility Address', function () {

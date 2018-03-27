@@ -1,9 +1,9 @@
 import React from 'react'
-import SearchGrid from './search_grid'
-import SearchInput from './search_input'
-import SearchList from './search_list'
-import SearchNotFound from './search_notfount'
-import SearchDetails from './search_Data'
+import SearchGrid from './searchGrid'
+import SearchInput from './searchInput'
+import SearchList from './searchList'
+import SearchNotFound from './searchNotFound'
+import SearchDetails from './searchDetails'
 import {fetchRequest} from '../helpers/http'
 import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 import {PageHeader} from 'react-wood-duck'
@@ -46,7 +46,8 @@ export default class Search extends React.Component {
   resetForm () {
     this.setState({
       inputData: {},
-      searchResults: undefined})
+      searchResults: undefined,
+      sizeValue: 10})
   }
 
   handleToggle () {
@@ -55,8 +56,8 @@ export default class Search extends React.Component {
 
   searchApiCall (getFromValue, getSizeValue) {
     const params = {
-      'county.value': this.state.inputData.countyValue || this.props.user.county_name,
-      'type.value': checkForValue(this.state.inputData.facilityTypeValue),
+      'county.id': this.state.inputData.countyValue >= 0 ? this.state.inputData.countyValue : this.props.user.county_code,
+      'type.id': checkForValue(this.state.inputData.facilityTypeValue),
       id: checkForValue(this.state.inputData.facilityIdValue),
       name: checkForValue(this.state.inputData.facilityNameValue),
       'addresses.address.street_address': checkForValue(this.state.inputData.facilityAddressValue)
@@ -103,6 +104,7 @@ export default class Search extends React.Component {
   render () {
     const initialLoad = this.state.searchResults === undefined
     const searchResponseHasValues = this.state.searchResults && this.state.searchResults.length > 0
+    const countyValue = (this.state.inputData.countyValue || this.state.inputData.countyValue === '') ? this.state.inputData.countyValue : this.props.user.county_code
 
     return (
       <div className='search_page'>
@@ -118,7 +120,7 @@ export default class Search extends React.Component {
             handleInputChange={this.handleInputChange}
             countyList={this.props.countyTypes}
             facilityTypes={this.props.facilityTypes}
-            countyValue={this.state.inputData.countyValue || this.props.user.county_name}
+            countyValue={countyValue}
             facilityTypeValue={checkForValue(this.state.inputData.facilityTypeValue)}
             facilityIdValue={checkForValue(this.state.inputData.facilityIdValue)}
             facilityNameValue={checkForValue(this.state.inputData.facilityNameValue)}

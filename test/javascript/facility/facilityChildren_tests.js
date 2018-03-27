@@ -1,5 +1,5 @@
 import React from 'react'
-import Children from '../../../app/javascript/facility/children.jsx'
+import Children from 'facility/facilityChildren.jsx'
 import {mount} from 'enzyme'
 
 describe('Verify Children Component', function () {

@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchList from '../../../app/javascript/search/search_list'
+import SearchList from 'search/searchList'
 import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('Render search list', function () {

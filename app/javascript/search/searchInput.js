@@ -2,6 +2,7 @@ import React from 'react'
 import InputDataBlock from './common/inputDataBlock.js'
 import {InputComponent} from 'components/common/inputFields'
 import {dictionaryNilSelectValue} from 'helpers/commonHelper.jsx'
+import {DropDownField} from 'components/common/dropDownField'
 import PropTypes from 'prop-types'
 
 const SearchInput = ({
@@ -25,12 +26,12 @@ const SearchInput = ({
             <span>County</span>
           </div>
           <div>
-            <select className='searchSelect' id='county_select' value={countyValue} onChange={(event) => handleInputChange('countyValue', dictionaryNilSelectValue(event.target.options))}>
-              <option value=' ' />
-              {countyList.map((county) =>
-                <option key={county.id} id={county.id} value={county.value}>{county.value}</option>
-              )}
-            </select>
+            <DropDownField
+              id='county_select'
+              selectClassName='searchSelect'
+              value={countyValue}
+              optionList={countyList}
+              onChange={(event) => handleInputChange('countyValue', dictionaryNilSelectValue(event.target.options))} />
           </div>
         </div>
         <div className='input_data col-xs-12 col-sm-2 col-md-2 col-lg-2'>
@@ -38,12 +39,12 @@ const SearchInput = ({
             <span>Facility Type</span>
           </div>
           <div>
-            <select className='searchSelect' id='facility_select' value={facilityTypeValue} onChange={(event) => handleInputChange('facilityTypeValue', dictionaryNilSelectValue(event.target.options))}>
-              <option value='' />
-              {facilityTypes.map((facilityType) =>
-                <option key={facilityType.id} id={facilityType.id} value={facilityType.value}>{facilityType.value}</option>
-              )}
-            </select>
+            <DropDownField
+              id='facility_select'
+              selectClassName='searchSelect'
+              value={facilityTypeValue}
+              optionList={facilityTypes}
+              onChange={(event) => handleInputChange('facilityTypeValue', dictionaryNilSelectValue(event.target.options))} />
           </div>
         </div>
         <InputDataBlock

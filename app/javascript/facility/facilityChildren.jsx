@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {checkfullNameorNA, checkforDateOrNa} from 'search/common/commonUtils'
 
-const Children = ({
+const FacilityChildren = ({
   facilityData
 }) => (
   <div className='facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -44,12 +44,12 @@ const Children = ({
   </div>
 )
 
-Children.propTypes = {
+FacilityChildren.propTypes = {
   facilityData: PropTypes.object.isRequired
 }
 
-Children.defaultProps = {
+FacilityChildren.defaultProps = {
   facilityData: {}
 }
 
-export default Children
+export default FacilityChildren

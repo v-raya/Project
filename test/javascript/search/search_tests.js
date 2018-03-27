@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchApp from '../../../app/javascript/search/search'
+import SearchApp from 'search/search'
 import {shallow, mount} from 'enzyme'
 
 describe('Verify Search component', function () {
@@ -93,7 +93,7 @@ describe('Verify Search component', function () {
   })
 
   it('verify county dropdown value change ', () => {
-    let countyDropDownChange = searchComp.find('#county_select')
+    let countyDropDownChange = searchComp.find('#county_select').hostNodes()
     countyDropDownChange.simulate('change', {target: {options: {'19': {id: '19', value: 'Los Angeles'}, selectedIndex: 19}}})
     expect(handleInputChangeSpy).toHaveBeenCalledWith('countyValue', 'Los Angeles')
   })

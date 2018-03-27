@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchGrid from '../../../app/javascript/search/search_grid'
+import SearchGrid from 'search/searchGrid'
 import ShallowRenderer from 'react-test-renderer/shallow'
 import {shallow, mount} from 'enzyme'
 

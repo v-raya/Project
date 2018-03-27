@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchNotFound from '../../../app/javascript/search/search_notfount'
+import SearchNotFound from 'search/searchNotFound'
 import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('Search Not Found Component', function () {
