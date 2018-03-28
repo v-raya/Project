@@ -13,8 +13,9 @@ const DesiredChildEducation = ({
   setParentState,
   handleAddressChange
 }) => (
+
   <div className='row'>
-    <div className='card-header'>Child's Education</div>
+    <div className='child-name-section child-applicant'><span className='row-margin'>Child's Education</span></div>
     <div className='col-md-12'>
       <DropDownField
         id='grade'

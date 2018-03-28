@@ -37,8 +37,8 @@ export default class DesiredChildCard extends React.Component {
     const child = this.props.desiredChild
     const index = this.props.index
     return (
-      <div className='row'>
-        <div key={'desiredChildRemoveLink' + index} className='row'>
+      <div className='container-fluid'>
+        <div key={'desiredChildRemoveLink' + index} className='col-md-12'>
           {index > 0
             ? <div>
               <hr style={{padding: '1rem', marginBottom: '0px', marginTop: '10px'}} />

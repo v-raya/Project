@@ -18,7 +18,7 @@ const DesiredChildDetails = ({
   countyTypes
 }) => (
   <div className='row'>
-    <div className='card-header'>Name of the Child</div>
+    <div className='child-name-section'><span className='row-margin'>Name of the Child</span></div>
     <CompleteNameFields
       index={index}
       idPrefix= {idPrefix}

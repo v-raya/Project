@@ -93,7 +93,7 @@ export default class Rfa01cList extends React.Component {
   render () {
     return (
       <PageTemplate
-        headerLabel='Resource Family Application - Confidential (RFA O1C)'
+        headerLabel='Resource Family Application - Confidential (RFA 01C)'
         buttonId='desiredChildCardsaveProgress'
         buttonLabel='Save Progress'
         buttonTextAlignment='right'
@@ -125,7 +125,7 @@ export default class Rfa01cList extends React.Component {
             getFocusClassName={this.getFocusClassName}
             setParentState={this.setApplicationState}
             identifiedChildren={checkArrayObjectPresence(this.state.application.identified_children) || undefined}
-            applicants={this.state.applicants}
+            applicants={this.state.rfa_a01_application.applicants}
             setFocusState={this.setFocusState}
             stateTypes={this.props.stateTypes}
             suffixTypes={this.props.suffixTypes}

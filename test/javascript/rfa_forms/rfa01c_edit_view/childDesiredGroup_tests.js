@@ -79,6 +79,11 @@ describe('Verify Child Desired Comp', () => {
     expect(childDesiredComp.instance().addCard).toHaveBeenCalled()
   })
 
+  it('verify relationship to applicant Id value after component render', () => {
+    let relationField = childDesiredComp.find('#relationship_to_applicant1child0').hostNodes()
+    expect(relationField.length).toBe(1)
+  })
+
   it('verify relationship to applicant on change', () => {
     let relationField = childDesiredComp.find('#relationship_to_applicant1child0').hostNodes()
     relationField.simulate('change', {target: {value: 'test'}})

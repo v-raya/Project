@@ -9,12 +9,12 @@ const DesiredChildRelationships = ({
   handleRelationshipChange
 }) => (
   <div className='row'>
-    <div className='card-header'>Child's Relationship to Applicant</div>
-    <div className='col-md-12'>
+    <div className='child-name-section child-applicant'><span className='row-margin'>Child's Relationship to Applicant</span></div>
+    <div>
       {
         applicants && applicants.map((applicant, subIndex) => {
           return (
-            <div className='row' key={'desiredChildRelationships' + index + 'child' + subIndex} >
+            <div className='col-md-12' key={'desiredChildRelationships' + index + 'child' + subIndex} >
               <InputComponent
                 gridClassName='col-md-4'
                 id={'relationship_to_applicant' + index + 'child' + subIndex}
