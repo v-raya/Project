@@ -14,6 +14,12 @@ export default class AboutThisResidenceCard extends React.Component {
   constructor (props) {
     super(props)
     this.onChange = this.onChange.bind(this)
+
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'weapon_in_home', {rule: 'isRequiredBoolean', message: 'Required'})
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'body_of_water_exist', {rule: 'isRequiredBoolean', message: 'Required'})
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'others_using_residence_as_mailing', {rule: 'isRequiredBoolean', message: 'Required'})
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'residence_ownership', {rule: 'isRequiredBoolean', message: 'Required'})
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'home_languages', {rule: 'isRequiredBoolean', message: 'Required'})
   }
 
   onChange (key, value) {
@@ -99,10 +105,13 @@ export default class AboutThisResidenceCard extends React.Component {
 }
 
 AboutThisResidenceCard.propTypes = {
+  idPrefix: PropTypes.string,
   aboutResidence: PropTypes.object.isRequired,
-  handleClearOnConditionalChange: PropTypes.func
+  handleClearOnConditionalChange: PropTypes.func,
+  validator: PropTypes.object
 }
 
 AboutThisResidenceCard.defaultProps = {
+  idPrefix: 'residence.',
   aboutResidence: [othersUsingAddressMailing]
 }

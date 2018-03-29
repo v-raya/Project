@@ -20,7 +20,7 @@ describe('Verify relation between applicant', function () {
 
   const applicants = [{first_name: 'thing'}, {first_name: 'thing'}]
 
-  let setParentStateSpy, relationCardComp, onChange, validator
+  let setParentStateSpy, relationCardComp, relationshipComp, onChange, validator
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     onChange = jasmine.createSpy('onChange')
@@ -37,6 +37,23 @@ describe('Verify relation between applicant', function () {
       stateTypes={stateTypes.items}
       validator={validator}
     />)
+
+    relationshipComp = mount(<RelationshipBetweenApplicantsFields
+
+      relationshipTypes={applicantrelationTypes}
+      relationshipBetweenApplicants={blankValues}
+      setParentState={setParentStateSpy}
+      applicants={applicants}
+      onChange={onChange}
+      stateTypes={stateTypes.items}
+      validator={validator}
+    />)
+  })
+  it('verify relationship_type', () => {
+    let relationshipField = relationshipComp.find('#relationship_type').hostNodes()
+    relationshipField.simulate('change', {target: {options: {'1': {value: '1', text: 'Married'}, selectedIndex: 1}}})
+    let relationshipDropdownSection = relationshipComp.find('.relationship-status')
+    expect(setParentStateSpy).toHaveBeenCalledWith('relationship_type', ({ id: '1', value: 'Married' }))
   })
 
   it('verify relation ship state', () => {

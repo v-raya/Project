@@ -7,6 +7,7 @@ import {DropDownField} from 'components/common/dropDownField'
 import CompleteNameFields from './completeNameField.jsx'
 import {checkArrayObjectPresence, removeLegalNameType} from 'helpers/commonHelper.jsx'
 import {addCardAsJS, removeCard} from 'helpers/cardsHelper.jsx'
+import {requiredForSubmitRule} from 'helpers/validator'
 
 const blankNameFields = Object.freeze({
   name_suffix: null,
@@ -26,8 +27,10 @@ export default class NameCard extends React.PureComponent {
     this.removeCard = this.removeCard.bind(this)
     this.handleNameChange = this.handleNameChange.bind(this)
 
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'first_name', requiredNameRule)
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'last_name', requiredNameRule)
+    this.firstNameValidationId = this.props.idPrefix + 'first_name'
+    this.lastNameValidationId = this.props.idPrefix + 'last_name'
+    this.props.validator.addFieldValidation(this.firstNameValidationId, requiredNameRule)
+    this.props.validator.addFieldValidation(this.lastNameValidationId, requiredNameRule)
   }
 
   addCard (event) {
@@ -43,6 +46,11 @@ export default class NameCard extends React.PureComponent {
 
     otherNameList = otherNameList.update(nameIndex, x => x.set(key, value))
     this.props.setParentState('other_names', otherNameList)
+  }
+
+  componentWillUnmount () {
+    const rulesToRemove = [this.firstNameValidationId, this.lastNameValidationId]
+    this.props.validator.removeValidations(rulesToRemove)
   }
 
   render () {

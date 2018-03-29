@@ -9,7 +9,7 @@ import Validator from 'helpers/validator'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 import Cleave from 'cleave.js/react'
 
-export default class AboutApplicant extends React.PureComponent {
+export default class AboutApplicant extends React.Component {
   constructor (props) {
     super(props)
 
@@ -21,7 +21,12 @@ export default class AboutApplicant extends React.PureComponent {
       {
         [this.dateOfBirthId]: [{
           rule: 'isValidDate',
-          message: 'date is invalid'}],
+          message: 'date is invalid'},
+        {
+          rule: 'isRequired',
+          message: 'date is required'}
+
+        ],
         [this.driversLicenseStateId]: [{
           rule: 'isRequiredIf',
           message: 'State is required',
@@ -39,7 +44,7 @@ export default class AboutApplicant extends React.PureComponent {
   }
 
   isValuePresent (fieldName) {
-    const val = this.props.applicantFields[fieldName]
+    const val = this.props.applicantFields.get(fieldName)
     return valuePresent(val) && (val !== '')
   }
 
@@ -48,12 +53,15 @@ export default class AboutApplicant extends React.PureComponent {
     this.props.validator.validateFieldSetErrorState(currentField, currentFieldValue)
 
     // validate other field
-    this.props.validator.validateFieldSetErrorState(otherField, this.props.applicantFields[otherFieldPropName])
+    this.props.validator.validateFieldSetErrorState(otherField, this.props.applicantFields.get(otherFieldPropName))
+  }
+
+  componentWillUnmount () {
+    const rulesToRemove = [this.dateOfBirthId, this.driversLicenseStateId, this.driversLicenseNumberId]
+    this.props.validator.removeValidations(rulesToRemove)
   }
 
   render () {
-    // console.log('rendering - AboutApplicantCard.js')
-
     const aboutApplicantFields = this.props.applicantFields.toJS()
 
     return (
@@ -88,7 +96,7 @@ export default class AboutApplicant extends React.PureComponent {
                 selectClassName='reusable-select'
                 optionList={this.props.ethnicityTypes}
                 label='Race / Ethnicity'
-                onChange={(event) => this.props.setParentState('ethnicity', {id: dictionaryNilSelectValue(event.target.options), value: dictionaryNilSelectText(event.target.options)})} />
+                onChange={(event) => this.props.setParentState('ethnicity', dictionaryNilSelect(event.target.options))} />
 
               <InputField gridClassName='col-md-4' id={this.driversLicenseNumberId}
                 value={aboutApplicantFields.driver_license_number}

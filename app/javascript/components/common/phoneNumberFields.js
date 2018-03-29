@@ -14,7 +14,13 @@ export class PhoneNumberField extends React.PureComponent {
     super(props)
 
     this.phoneNumberId = this.props.idPrefix + 'number'
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'number', phoneNumberRule)
+    this.props.validator.addFieldValidation(this.phoneNumberId, phoneNumberRule)
+    this.props.validator.addFieldValidation(this.phoneNumberId, {rule: 'isRequired', message: 'Required'})
+  }
+
+  componentWillUnmount () {
+    const rulesToRemove = [this.phoneNumberId]
+    this.props.validator.removeValidations(rulesToRemove)
   }
 
   render () {

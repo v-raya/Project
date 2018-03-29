@@ -2,12 +2,14 @@ import React from 'react'
 import AddressCard from 'rfa_forms/rfa01a_edit_view/addressCard.js'
 import {stateTypes, genderTypes} from './../../helpers/constants'
 import {blankPhysicalAddress, blankMailingAddress} from 'constants/defaultFields'
+import Validator from 'helpers/validator'
 import {shallow, mount} from 'enzyme'
 import ShallowRenderer from 'react-test-renderer/shallow'
 
 describe('Verify Physical Address', function () {
   const props = {
-    stateTypes: stateTypes.items
+    stateTypes: stateTypes.items,
+    validator: new Validator({})
   }
   const addressCard = new ShallowRenderer()
   const cardRendered = addressCard.render(<AddressCard {...props} />)
@@ -41,13 +43,14 @@ describe('Verify Address card fields', function () {
   }
 
   let setParentStateSpy, addressCardMount, setOnPhysicalAddressChangeSpy,
-    handleClearOnConditionalChangeSpy, addresses, props, setOnMailingAddressChange
+    handleClearOnConditionalChangeSpy, addresses, props, setOnMailingAddressChange, validator
   beforeEach(() => {
     spyOn(window, 'fetch').and.callThrough()
     setParentStateSpy = jasmine.createSpy('setParentState')
     handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
     setOnPhysicalAddressChangeSpy = jasmine.createSpy('onPhysicalAddressChange')
     setOnMailingAddressChange = jasmine.createSpy('onMailingAddressChange')
+    validator = new Validator({})
     props = {
       setParentState: setParentStateSpy,
       handleClearOnConditionalChange: handleClearOnConditionalChangeSpy,
@@ -55,7 +58,8 @@ describe('Verify Address card fields', function () {
       stateTypes: stateTypes.items,
       addresses: [],
       physicalMailingSimilar: 'false',
-      physicalAddressFields: physicalAddressFields
+      physicalAddressFields: physicalAddressFields,
+      validator: validator
     }
     addressCardMount = mount(<AddressCard {...props} />)
   })

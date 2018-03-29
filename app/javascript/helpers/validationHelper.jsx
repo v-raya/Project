@@ -1,6 +1,6 @@
 import Immutable from 'immutable'
 
 export const fieldErrorsAsImmutableSet = (errors) => {
-  errors !== undefined ? errors = [errors] : errors = []
+  errors = errors !== undefined ? [errors] : []
   return Immutable.Set(errors)
 }

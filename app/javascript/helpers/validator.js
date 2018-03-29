@@ -10,6 +10,7 @@ export default class Validator {
     // all avaialble rules
     this.rules = {
       isRequired: this.isRequired,
+      isRequiredBoolean: this.isRequiredBoolean,
       isRequiredIf: this.isRequiredIf,
       isNotInTheFuture: this.isNotInTheFuture,
       isBeforeOtherDate: this.isBeforeOtherDate,
@@ -37,17 +38,28 @@ export default class Validator {
     this.validations = this.validations.merge({[fieldName]: newRules})
   }
 
+  removeValidations (validations) {
+    let currentValidations = this.validations
+    let newValidations
+    for (let i = 0; i < validations.length; i++) {
+      currentValidations = currentValidations.delete(Immutable.fromJS(validations[i]))
+    }
+    this.validations = currentValidations
+  }
+
+  // NOTE:commented out as unused currently
   // allFieldErrorsByRule (rule) {
   //   let errors = {}
   //   let filteredRules = this.allValidationsWithOnlyRule(rule)
-
+  //
   //   filteredRules.map((fieldRules, fieldName) => {
   //     if (this.fieldErrors(fieldName).size > 0) { errors[fieldName] = this.fieldErrors(fieldName) }
   //   })
-
+  //
   //   return Immutable.fromJS(errors)
   // }
 
+  // NOTE:commented out as unused currently
   // allFieldsErrors (container) {
   //   let errors = {}
   //   if (container) {
@@ -68,6 +80,11 @@ export default class Validator {
     return !(_.isEmpty(opt.value) || _.isEmpty(opt.value.trim()))
   }
 
+  isRequiredBoolean (opt) {
+    // TODO: find a better way to check boolean value for "true/false"
+    return (_.isBoolean(opt.value) || !_.isEmpty(opt.value))
+  }
+
   isRequiredIf (opt) {
     if (opt.condition()) {
       return !(_.isEmpty(opt.value) || (typeof (opt) === 'string' && _.isEmpty(opt.value.trim())))
@@ -75,13 +92,13 @@ export default class Validator {
     return true
   }
 
-  // isNotInTheFuture ({value}) {
-  //   return !(value > moment().toISOString())
-  // }
+  isNotInTheFuture ({value}) {
+    return !(value > moment().toISOString())
+  }
 
-  // isBeforeOtherDate ({value, otherValue}) {
-  //   return !(value && otherValue() && value >= otherValue())
-  // }
+  isBeforeOtherDate ({value, otherValue}) {
+    return !(value && otherValue() && value >= otherValue())
+  }
 
   is10digits (opt) {
     return (opt.value.length === 10) || (opt.value.length === 0)
@@ -90,36 +107,36 @@ export default class Validator {
   isValidDate (opt) {
     return (moment(opt.value, 'MM/DD/YYYY', true).isValid() || (_.isEmpty(opt.value) || _.isEmpty(opt.value.trim())))
   }
-  // // Filter field validations containing given ruleName
-  // // return all validations for that field
-  // // if a field has multiple rules, all rules are returned
-  // // alternate function names
-  // // getAllValidationsByRule
-  // // filterFieldValidationsAllRules
-  // allValidationsWithRule (ruleName) {
-  // // get all validation rule that matches with rule name
-  //   return this.validations.filter(fieldValidations => (
-  //     fieldValidations.find(validationRule => validationRule.get('rule') === ruleName)
-  //   ) !== undefined)
-  // }
+  // Filter field validations containing given ruleName
+  // return all validations for that field
+  // if a field has multiple rules, all rules are returned
+  // alternate function names
+  // getAllValidationsByRule
+  // filterFieldValidationsAllRules
+  allValidationsWithRule (ruleName) {
+  // get all validation rule that matches with rule name
+    return this.validations.filter(fieldValidations => (
+      fieldValidations.find(validationRule => validationRule.get('rule') === ruleName)
+    ) !== undefined)
+  }
 
-  // // Filter field validations containing given ruleName
-  // // return only rules matching ruleName
-  // // alternate function names
-  // // getValidationsByRule
-  // // filterFieldValidationsContainingRule
-  // allValidationsWithOnlyRule (ruleName) {
-  //   return this.validations.map(fieldValidations => (
-  //     fieldValidations.filter(validationRule => validationRule.get('rule') === ruleName)
-  //   )).filter(rules =>
-  //     // remove empty validations
-  //     rules.size > 0
-  //   )
-  // }
+  // Filter field validations containing given ruleName
+  // return only rules matching ruleName
+  // alternate function names
+  // getValidationsByRule
+  // filterFieldValidationsContainingRule
+  allValidationsWithOnlyRule (ruleName) {
+    return this.validations.map(fieldValidations => (
+      fieldValidations.filter(validationRule => validationRule.get('rule') === ruleName)
+    )).filter(rules =>
+      // remove empty validations
+      rules.size > 0
+    )
+  }
 
-  // allIsRequiredRules () {
-  //   return this.allValidationsWithOnlyRule('isRequired')
-  // }
+  allIsRequiredRules () {
+    return this.allValidationsWithOnlyRule('isRequired')
+  }
 
   validateFieldAndGetError (fieldName, value) {
     let error
@@ -166,21 +183,55 @@ export default class Validator {
     }
   }
 
-  // validateAllRequired (data) {
-  //   let requiredRules = this.allIsRequiredRules()
-  //   requiredRules.map((fieldRules, fieldName) => {
-  //     const fieldValue = _.get(data, fieldName)
-  //     this.validateField(fieldName, fieldValue)
-  //   })
-  // }
+  validateAllFieldsWithRules (data, rules) {
+    let allValidationsPass = true
+    rules.map((fieldRules, fieldName) => {
+      const fieldValue = _.get(data, fieldName)
+      allValidationsPass = allValidationsPass && this.validateFieldWithRule(fieldName, fieldValue, fieldRules)
+    })
+    return allValidationsPass
+  }
 
+  validateFieldWithRule (fieldName, value, ruleName) {
+    let allValidPass = true
+    if (ruleName) {
+      let ruleNameAsJS = ruleName.toJS()
+      for (let s in ruleNameAsJS) {
+        let ruleOptions = Immutable.fromJS(ruleNameAsJS[s])
+        const opts = {
+          value: value,
+          ruleName: ruleOptions.get('rule'),
+          errorMessage: ruleOptions.get('message'),
+          condition: ruleOptions.get('condition'),
+          otherValue: ruleOptions.get('otherValue')
+        }
+
+        this.errors[fieldName] = this.errors[fieldName] || new Set()
+
+        if (this.rules[opts.ruleName](opts)) {
+          // validation passed
+          allValidPass = true
+        } else {
+          allValidPass = false
+          break
+        }
+      }
+    }
+    return allValidPass
+  }
+  validateAllRequired (data) {
+    let requiredRules = this.allIsRequiredRules()
+    this.validateAllFieldsWithRules(data, requiredRules)
+  }
+
+  // NOTE:commented out as unused currently
   // validateAll (data) {
   //   // validate all fields
   //   this.validations.map((fieldRules, fieldName) => {
   //     const fieldValue = _.get(data, fieldName)
   //     this.validateField(fieldName, fieldValue)
   //   })
-
+  //
   //   //  validate all sub validators
   //   this.validators.map(v => {
   //     console.log(v.datakey)
@@ -188,6 +239,7 @@ export default class Validator {
   //   })
   // }
 
+  // NOTE:commented out as unused currently
   // validateAllFields (container) {
   //   if (container) {
   //     Object.entries(container).forEach(([fieldName, value]) => {

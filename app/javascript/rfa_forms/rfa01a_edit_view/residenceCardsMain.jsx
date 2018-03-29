@@ -58,7 +58,8 @@ export default class ResidenceCards extends React.Component {
             mailingAddress={residenceData.addresses.find(o => o.type.value === mailingAddressType)}
             physicalMailingSimilar={residenceData.physical_mailing_similar}
             setParentState={this.setResidenceState}
-            handleClearOnConditionalChange={this.handleClearOnConditionalChange} />
+            handleClearOnConditionalChange={this.handleClearOnConditionalChange}
+            validator={this.props.validator} />
         </CardLayout>
 
         <CardLayout
@@ -75,7 +76,8 @@ export default class ResidenceCards extends React.Component {
             languageTypes={this.props.languageTypes}
             aboutResidence={residenceData}
             setParentState={this.setResidenceState}
-            handleClearOnConditionalChange={this.handleClearOnConditionalChange} />
+            handleClearOnConditionalChange={this.handleClearOnConditionalChange}
+            validator={this.props.validator} />
         </CardLayout>
       </div>
     )
@@ -83,7 +85,8 @@ export default class ResidenceCards extends React.Component {
 }
 
 ResidenceCards.propTypes = {
-  residence: PropTypes.object
+  residence: PropTypes.object,
+  validator: PropTypes.object
 }
 
 ResidenceCards.defaultProps = {

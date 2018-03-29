@@ -1,5 +1,6 @@
 import React from 'react'
 import AboutThisResidenceCard from 'rfa_forms/rfa01a_edit_view/aboutThisResidenceCard.jsx'
+import Validator from 'helpers/validator'
 import {languageTypes, residenceTypes, selectedYes} from './../../helpers/constants'
 import {shallow, mount} from 'enzyme'
 
@@ -25,7 +26,8 @@ describe('Verify Physical Address', function () {
     }]
   })
 
-  let setParentStateSpy, residenceCardComp, handleClearOnConditionalChangeSpy
+  let setParentStateSpy, residenceCardComp, handleClearOnConditionalChangeSpy, validator
+  validator = new Validator({})
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
@@ -35,6 +37,7 @@ describe('Verify Physical Address', function () {
       residenceTypes={residenceTypes.items}
       aboutResidence={blankAboutThisResidenceFields}
       setParentState={setParentStateSpy}
+      validator={validator}
     />)
   })
 
@@ -54,6 +57,7 @@ describe('Verify Physical Address', function () {
         residenceTypes={residenceTypes.items}
         aboutResidence={blankAboutThisResidenceFields}
         setParentState={setParentStateSpy}
+        validator={validator}
       />)
     })
     it('verify body of water exists change', () => {
@@ -137,6 +141,7 @@ describe('Verify Physical Address first name, middle name and last name', functi
       residenceTypes={residenceTypes.items}
       aboutResidence={blankAboutThisResidenceFields}
       setParentState={setParentStateSpy}
+      validator={new Validator({})}
     />)
   })
 

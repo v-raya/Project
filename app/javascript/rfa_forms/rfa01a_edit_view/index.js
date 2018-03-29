@@ -13,10 +13,9 @@ import ChildDesiredMain from './childDesiredMain'
 import {CountyUseOnlyCard} from 'components/rfa_forms/countyUseOnlyCard.js'
 import RfaSideBar from 'rfa_forms/rfa_sidebar/index.js'
 import PageTemplate from 'components/common/pageTemplate'
-import './stylesheets/cards-main.scss'
 import {fetchRequest} from 'helpers/http'
 import {getDictionaryId, dictionaryNilSelect, checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
-import {checkForNameValidation} from 'helpers/cardsHelper.jsx'
+import {checkForNameValidation, checkFieldsForSubmit} from 'helpers/cardsHelper.jsx'
 import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 import Validator from 'helpers/validator'
 import ScrollSpy from 'components/common/scrollSpy'
@@ -24,7 +23,9 @@ import ScrollSpy from 'components/common/scrollSpy'
 export default class Rfa01EditView extends React.Component {
   constructor (props) {
     super(props)
-    this.submitForm = this.submitForm.bind(this)
+    this.saveProgress = this.saveProgress.bind(this)
+    this.submit = this.submit.bind(this)
+    this.fetchToRails = this.fetchToRails.bind(this)
     this.getFocusClassName = this.getFocusClassName.bind(this)
     this.setApplicationState = this.setApplicationState.bind(this)
     this.setFocusState = this.setFocusState.bind(this)
@@ -32,19 +33,22 @@ export default class Rfa01EditView extends React.Component {
     this.validator.validateFieldSetErrorState = this.validateFieldSetErrorState.bind(this)
     this.handleNavLinkClick = this.handleNavLinkClick.bind(this)
     this.isNavLinkActive = this.isNavLinkActive.bind(this)
+    this.validateAllRequiredForSubmit = this.validateAllRequiredForSubmit.bind(this)
 
     this.state = {
       focusComponentName: '',
       activeNavLinkHref: '',
-      application: this.props.application,
-      disableSave: !(checkForNameValidation(this.props.application.applicants)),
+      application: Immutable.fromJS(this.props.application),
       errors: {}
     }
-    if (!this.state.application.application_county) {
-      const countyValue = (this.props.user && this.props.user.county_code)
-      this.state.application.application_county = this.props.countyTypes.find(countyType => countyType.id === parseInt(countyValue))
-    }
-    this.state.application = Immutable.fromJS(this.state.application)
+  }
+
+  validateAllRequiredForSubmit (data) {
+    let requiredRules = this.validator.allIsRequiredRules()
+    requiredRules = requiredRules.merge(this.validator.allValidationsWithOnlyRule('isRequiredBoolean'))
+    requiredRules = requiredRules.merge(this.validator.allValidationsWithOnlyRule('isRequiredIf'))
+
+    return this.validator.validateAllFieldsWithRules(data, requiredRules)
   }
 
   validateFieldSetErrorState (fieldName, value) {
@@ -59,13 +63,45 @@ export default class Rfa01EditView extends React.Component {
     this.setState({errors: currentErrors})
   }
 
+  componentWillMount () {
+    if (!this.state.application.application_county) {
+      const countyValueId = (this.props.user && this.props.user.county_code)
+      const county = this.props.countyTypes.find(countyType => countyType.id === parseInt(countyValueId))
+      this.setApplicationState('application_county', county)
+    }
+  }
   componentDidMount () {
-    // set Dictionaty Here
+    const DataValidForSubmit = !this.validateAllRequiredForSubmit(this.props.application)
+    const DataValidForSave = !checkForNameValidation(this.props.application.applicants)
+
+    this.setState({disableSave: DataValidForSave})
+    this.setState({disableSubmit: DataValidForSubmit})
   }
 
-  submitForm () {
+  componentDidUpdate (prevProps, prevState) {
+    const DataValidForSubmit = !this.validateAllRequiredForSubmit(this.state.application.toJS())
+    const DataValidForSave = !checkForNameValidation(this.state.application.toJS().applicants)
+
+    if (this.state.disableSubmit !== DataValidForSubmit) {
+      this.setState({disableSubmit: DataValidForSubmit})
+    }
+    if (this.state.disableSave !== DataValidForSave) {
+      this.setState({disableSave: DataValidForSave})
+    }
+  }
+
+  saveProgress () {
     const url = '/rfa/a01/' + this.props.application_id
-    fetchRequest(url, 'PUT', this.state.application.toJS())
+    this.fetchToRails(url, 'PUT', this.state.application.toJS())
+  }
+
+  submit () {
+    const url = '/rfa/a01/' + this.props.application.id + '/submit'
+    this.fetchToRails(url, 'POST', this.state.application.toJS())
+  }
+
+  fetchToRails (url, method, body) {
+    fetchRequest(url, method, body)
       .then((response) => {
         return response.json()
       }).then((data) => {
@@ -91,22 +127,6 @@ export default class Rfa01EditView extends React.Component {
       value = Immutable.fromJS(value)
     }
     this.setState({application: this.state.application.set(key, value)})
-
-    // TODO: need a method in validator to get errors filtered out where field = isRequired
-    // No need to validate here again, the data change at component level should validate the fields
-    // const requiredFieldsErrors = this.validator.allFieldErrorsByRule('isRequired')
-    // this.setState({disableSave: requiredFieldsErrors.size > 0})
-    if (key === 'applicants') {
-      if (checkForNameValidation(value.toJS())) {
-        this.setState({
-          disableSave: false
-        })
-      } else {
-        this.setState({
-          disableSave: true
-        })
-      }
-    }
   }
 
   setFocusState (focusComponentName) {
@@ -133,11 +153,12 @@ export default class Rfa01EditView extends React.Component {
     return (
       <PageTemplate
         headerLabel='Resource Family Application - Confidential (RFA 01A)'
-        buttonId='saveProgress'
-        buttonLabel='Save Progress'
-        buttonTextAlignment='right'
-        onButtonClick={this.submitForm}
+        saveProgressId='saveProgress'
+        onSaveProgressClick={this.saveProgress}
         disableSave={this.state.disableSave}
+        submitId={'submitApplication' + stateApplicationJS.id}
+        disableSubmit={this.state.disableSubmit}
+        onSubmitClick={this.submit}
         rfa01aApplicationId={stateApplicationJS.id}
         onRfa01AForm
         rfa01cForms={stateApplicationJS.rfa1c_forms}
@@ -194,7 +215,8 @@ export default class Rfa01EditView extends React.Component {
               languageTypes={this.props.languageTypes}
               residenceTypes={this.props.residenceTypes}
               stateTypes={this.props.stateTypes}
-              setParentState={this.setApplicationState} />
+              setParentState={this.setApplicationState}
+              validator={this.validator} />
           </div>
         </ScrollSpy>
         <ScrollSpy onEnter={() => this.handleNavLinkClick('#relationship-between-applicants-card')}>

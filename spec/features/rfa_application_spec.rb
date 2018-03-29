@@ -27,7 +27,7 @@ RSpec.feature 'RFA', js: true do
     page.execute_script "window.scrollBy(0,20)"
     expect(find('a.link.active').text).to eq '2. Applicant Residence'
     click_button('Add Another Applicant +')
-    fill_in('applicants[0].first_name', with: 'Testing', :match => :prefer_exact)
+    fill_in('applicants[0].first_name', with: 'testing', :match => :prefer_exact)
     page.execute_script "document.getElementById('relationship-between-applicants-card').scrollIntoView()"
     page.execute_script "window.scrollBy(0,20)"
     expect(find('a.link.active').text).to eq '3. Applicant Relationship'
@@ -93,6 +93,41 @@ RSpec.feature 'RFA', js: true do
     expect(find_field('income_type').value).to eq '1'
     expect(find_field('applicants[0].phones[0].number').value).to eq '(201) 222-2345'
   end
+
+scenario 'validate submit button functionality', set_auth_header: true do
+  visit root_path
+  click_button 'Create RFA Application (Form 01)'
+  expect(page).to have_content 'Rfa-01A Section Summary'
+  page.find('#Rfa01AOverview').find('a.btn.btn-default').click
+  expect(page).to have_content 'Applicant 1 - Information'
+  fill_in('applicants[0].first_name', with: 'Geovanni', :match => :prefer_exact)
+  expect(page).to have_button('Save Progress', disabled: true)
+  expect(page).to have_button('Submit', disabled: true)
+  fill_in('applicants[0].last_name', with: 'Moen', :match => :prefer_exact)
+  expect(page).to have_button('Save Progress', disabled: false)
+  expect(page).to have_button('Submit', disabled: true)
+  fill_in('applicants[0].date_of_birth', with: '11/11/1111', :match => :prefer_exact)
+  expect(page).to have_content 'Phone Number'
+  fill_in 'applicants[0].phones[0].number', with: '201-222-2345'
+  page.find('#residentAddress').fill_in('Residentialstreet_address', with: '2870 something else', :match => :prefer_exact)
+  page.find('#residentAddress').fill_in('Residentialzip', with: '12345', :match => :prefer_exact)
+  page.find('#residentAddress').fill_in('Residentialcity', with: 'Sacremento', :match => :prefer_exact)
+  find('#react-select-3--value').click
+  find('#react-select-3--option-1').click
+  find('#mailing_similarYes').click
+  expect(page).to have_content 'About This Residence'
+  select 'Own', from: 'residenceTypes'
+  find('#weaponsYes').click
+  find('#body_of_water_existYes').click
+  find('#others_using_residence_as_mailingYes').click
+  page.find(:css, '.languages').click
+  page.find(:css, "#react-select-4--option-0").click
+  page.find(:css, '.languages').click
+  page.find(:css, "#react-select-4--option-1").click
+  expect(page).to have_button('Submit', disabled: false)
+  #DevNote: this test case will be updated to include more fields as submit
+  #functionality is further fleshed out.
+end
 
   scenario 'show error validation message on full Applicant Card', set_auth_header: true do
     visit root_path

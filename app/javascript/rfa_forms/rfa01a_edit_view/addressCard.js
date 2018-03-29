@@ -13,6 +13,12 @@ export default class AddressCard extends React.Component {
     super(props)
     this.onMailingAddressChange = this.onMailingAddressChange.bind(this)
     this.onPhysicalAddressChange = this.onPhysicalAddressChange.bind(this)
+
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'physical_mailing_similar', {rule: 'isRequiredBoolean', message: 'Required'})
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].street_address', {rule: 'isRequired', message: 'Required'})
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].zip', {rule: 'isRequired', message: 'Required'})
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].city', {rule: 'isRequired', message: 'Required'})
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].state', {rule: 'isRequiredBoolean', message: 'Required'})
   }
 
   onMailingAddressChange (key, value) {
@@ -42,6 +48,7 @@ export default class AddressCard extends React.Component {
             mailingAddress={this.props.mailingAddress}
             setParentState={this.props.setParentState}
             parentStateKey='addresses'
+            validator={this.props.validator}
             onChange={(fieldId, event) => this.onPhysicalAddressChange(fieldId, event)} />
           <YesNoRadioComponent
             label='Mailing address the same as Physical Address? (required)'
@@ -60,6 +67,7 @@ export default class AddressCard extends React.Component {
                 addressFields={this.props.mailingAddress}
                 physicalAddress={this.props.physicalAddress}
                 setParentState={this.props.setParentState}
+                validator={this.props.validator}
                 onChange={(fieldId, event) => this.onMailingAddressChange(fieldId, event)} />
               : null
           }
@@ -70,11 +78,13 @@ export default class AddressCard extends React.Component {
 }
 
 AddressCard.propTypes = {
-  handleClearOnConditionalChange: PropTypes.func
+  handleClearOnConditionalChange: PropTypes.func,
+  idPrefix: PropTypes.string
 }
 
 AddressCard.defaultProps = {
   physicalMailingSimilar: '',
+  idPrefix: 'residence.',
   suggestions: [],
   mailingAddress: blankMailingAddress,
   physicalAddress: blankPhysicalAddress

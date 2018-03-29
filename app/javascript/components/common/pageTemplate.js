@@ -8,10 +8,10 @@ import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
 
 const PageTemplate = ({
   headerLabel,
-  buttonId,
-  buttonLabel,
-  buttonTextAlignment,
-  onButtonClick,
+  disableSave,
+  onSaveProgressClick,
+  disableSubmit,
+  onSubmitClick,
   applicants,
   rfa01aApplicationId,
   rfa01cForms,
@@ -20,7 +20,6 @@ const PageTemplate = ({
   childIdentified,
   isNavLinkActive,
   handleNavLinkClick,
-  disableSave,
   errors,
   children
 }) => (
@@ -28,11 +27,10 @@ const PageTemplate = ({
     <LogoHeader />
     <PageHeader
       headerLabel={headerLabel}
-      buttonId={buttonId}
       disableSave={disableSave}
-      buttonLabel={buttonLabel}
-      buttonTextAlignment={buttonTextAlignment}
-      onButtonClick={onButtonClick} />
+      onSaveProgressClick={onSaveProgressClick}
+      disableSubmit={disableSubmit}
+      onSubmitClick={onSubmitClick} />
     <div className='form-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
       <div className='left-content col-xs-3 col-sm-3 col-md-3 col-lg-3'>
         <RfaSideBar
@@ -44,11 +42,9 @@ const PageTemplate = ({
           childIdentified={childIdentified}
           isNavLinkActive={isNavLinkActive}
           handleNavLinkClick={handleNavLinkClick} />
+
       </div>
       <div className='col-xs-9 col-sm-9 col-md-9 col-lg-9'>
-        <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-
-        </div>
         <ApiErrorMessages errors={errors} />
         {children}
       </div>
