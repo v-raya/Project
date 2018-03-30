@@ -92,6 +92,12 @@ RSpec.feature 'Facilities', js: true, set_auth_header: true  do
     expect(page).not_to have_selector("#next_button")
   end
 
+  scenario 'test error messages in search' do
+    visit search_index_path
+    find_button('search').click
+    expect(page).to have_content('There was an error processing your request')
+  end
+
 
 
   def facilities_list

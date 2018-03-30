@@ -1,0 +1,384 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/counties
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 224049bf-52fb-477a-aac3-b2aace6a221f
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Mon, 26 Mar 2018 17:17:33 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 25-Mar-2018 17:17:33
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '596'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alameda",
+            "id" : 1
+          }, {
+            "value" : "Alpine",
+            "id" : 2
+          }, {
+            "value" : "Amador",
+            "id" : 3
+          }, {
+            "value" : "Butte",
+            "id" : 4
+          }, {
+            "value" : "Calaveras",
+            "id" : 5
+          }, {
+            "value" : "Colusa",
+            "id" : 6
+          }, {
+            "value" : "Contra Costa",
+            "id" : 7
+          }, {
+            "value" : "Del Norte",
+            "id" : 8
+          }, {
+            "value" : "El Dorado",
+            "id" : 9
+          }, {
+            "value" : "Fresno",
+            "id" : 10
+          }, {
+            "value" : "Glenn",
+            "id" : 11
+          }, {
+            "value" : "Humboldt",
+            "id" : 12
+          }, {
+            "value" : "Imperial",
+            "id" : 13
+          }, {
+            "value" : "Inyo",
+            "id" : 14
+          }, {
+            "value" : "Kern",
+            "id" : 15
+          }, {
+            "value" : "Kings",
+            "id" : 16
+          }, {
+            "value" : "Lake",
+            "id" : 17
+          }, {
+            "value" : "Lassen",
+            "id" : 18
+          }, {
+            "value" : "Los Angeles",
+            "id" : 19
+          }, {
+            "value" : "Madera",
+            "id" : 20
+          }, {
+            "value" : "Marin",
+            "id" : 21
+          }, {
+            "value" : "Mariposa",
+            "id" : 22
+          }, {
+            "value" : "Mendocino",
+            "id" : 23
+          }, {
+            "value" : "Merced",
+            "id" : 24
+          }, {
+            "value" : "Modoc",
+            "id" : 25
+          }, {
+            "value" : "Mono",
+            "id" : 26
+          }, {
+            "value" : "Monterey",
+            "id" : 27
+          }, {
+            "value" : "Napa",
+            "id" : 28
+          }, {
+            "value" : "Nevada",
+            "id" : 29
+          }, {
+            "value" : "Orange",
+            "id" : 30
+          }, {
+            "value" : "Placer",
+            "id" : 31
+          }, {
+            "value" : "Plumas",
+            "id" : 32
+          }, {
+            "value" : "Riverside",
+            "id" : 33
+          }, {
+            "value" : "Sacramento",
+            "id" : 34
+          }, {
+            "value" : "San Benito",
+            "id" : 35
+          }, {
+            "value" : "San Bernardino",
+            "id" : 36
+          }, {
+            "value" : "San Diego",
+            "id" : 37
+          }, {
+            "value" : "San Francisco",
+            "id" : 38
+          }, {
+            "value" : "San Joaquin",
+            "id" : 39
+          }, {
+            "value" : "San Luis Obispo",
+            "id" : 40
+          }, {
+            "value" : "San Mateo",
+            "id" : 41
+          }, {
+            "value" : "Santa Barbara",
+            "id" : 42
+          }, {
+            "value" : "Santa Clara",
+            "id" : 43
+          }, {
+            "value" : "Santa Cruz",
+            "id" : 44
+          }, {
+            "value" : "Shasta",
+            "id" : 45
+          }, {
+            "value" : "Sierra",
+            "id" : 46
+          }, {
+            "value" : "Siskiyou",
+            "id" : 47
+          }, {
+            "value" : "Solano",
+            "id" : 48
+          }, {
+            "value" : "Sonoma",
+            "id" : 49
+          }, {
+            "value" : "Stanislaus",
+            "id" : 50
+          }, {
+            "value" : "State of California",
+            "id" : 59
+          }, {
+            "value" : "Sutter",
+            "id" : 51
+          }, {
+            "value" : "Tehama",
+            "id" : 52
+          }, {
+            "value" : "Trinity",
+            "id" : 53
+          }, {
+            "value" : "Tulare",
+            "id" : 54
+          }, {
+            "value" : "Tuolumne",
+            "id" : 55
+          }, {
+            "value" : "Ventura",
+            "id" : 56
+          }, {
+            "value" : "Yolo",
+            "id" : 57
+          }, {
+            "value" : "Yuba",
+            "id" : 58
+          } ]
+        }
+    http_version: 
+  recorded_at: Mon, 26 Mar 2018 17:17:33 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 224049bf-52fb-477a-aac3-b2aace6a221f
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Mon, 26 Mar 2018 17:17:33 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 25-Mar-2018 17:17:33
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '494'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Foster Family Agency Certified Home",
+            "id" : 9
+          }, {
+            "value" : "Adoption Agency",
+            "id" : 400
+          }, {
+            "value" : "Resource Family Home",
+            "id" : 403
+          }, {
+            "value" : "Foster Family Agency",
+            "id" : 430
+          }, {
+            "value" : "Foster Family AG-Sub",
+            "id" : 431
+          }, {
+            "value" : "Small Family Home",
+            "id" : 710
+          }, {
+            "value" : "Foster Family Home",
+            "id" : 711
+          }, {
+            "value" : "Crisis Nursery",
+            "id" : 720
+          }, {
+            "value" : "Temporary Shelter Care Facility",
+            "id" : 721
+          }, {
+            "value" : "Transitional Shelter Care",
+            "id" : 722
+          }, {
+            "value" : "Transitional Housing Placement Program",
+            "id" : 726
+          }, {
+            "value" : "Community Treatment Facility",
+            "id" : 728
+          }, {
+            "value" : "GH-Enhanced Behavioral Supports Home",
+            "id" : 729
+          }, {
+            "value" : "Group Home",
+            "id" : 730
+          }, {
+            "value" : "Out Of State GH",
+            "id" : 731
+          }, {
+            "value" : "Runaway And Homeless Youth Shelter-GH",
+            "id" : 732
+          }, {
+            "value" : "Short Term Residential Therapeutic Program",
+            "id" : 733
+          }, {
+            "value" : "County Shelter/Receiving Home(Non EA/AFDC)",
+            "id" : 790
+          }, {
+            "value" : "Court Specified Home",
+            "id" : 791
+          }, {
+            "value" : "Relative/NREFM Home",
+            "id" : 793
+          }, {
+            "value" : "Tribe Specified Home",
+            "id" : 795
+          }, {
+            "value" : "Guardian Home",
+            "id" : 796
+          }, {
+            "value" : "Supervised Independent Living Placement",
+            "id" : 800
+          }, {
+            "value" : "Foster Fam Agency Cert Resource Fam Home",
+            "id" : 808
+          } ]
+        }
+    http_version: 
+  recorded_at: Mon, 26 Mar 2018 17:17:33 GMT
+- request:
+    method: post
+    uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
+    body:
+      encoding: UTF-8
+      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"match_phrase":{"county.value":"Los
+        Angeles"}}]}}]}},"from":"0","size":"10","sort":[{"name":{"order":"asc"}}]}'
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 224049bf-52fb-477a-aac3-b2aace6a221f
+  response:
+    status:
+      code: 500
+      message: 
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Mon, 26 Mar 2018 17:17:34 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 25-Mar-2018 17:17:34
+        GMT
+      content-length:
+      - '9798'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "issue_details" : [ {
+            "incident_id" : "edf613b0-a1a3-43b8-9c1c-de775677616f",
+            "type" : "unexpected_exception",
+            "user_message" : "There was an error processing your request. It has been logged with unique incident id",
+            "technical_message" : "Bad Request",
+            "stack_trace" : "gov.ca.cwds.rest.api.DoraException: Bad Request\\n\\tat gov.ca.cwds.rest.services.es.IndexQueryService.postRequest(IndexQueryService.java:153)\\n\\tat gov.ca.cwds.rest.services.es.IndexQueryService.invokeElasticsearch(IndexQueryService.java:136)\\n\\tat gov.ca.cwds.rest.services.es.IndexQueryService.searchIndexByQuery(IndexQueryService.java:117)\\n\\tat gov.ca.cwds.rest.services.es.IndexQueryService.handleRequest(IndexQueryService.java:68)\\n\\tat gov.ca.cwds.rest.resources.IndexQueryResource.searchIndex(IndexQueryResource.java:82)\\n\\tat sun.reflect.GeneratedMethodAccessor41.invoke(Unknown Source)\\n\\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\n\\tat java.lang.reflect.Method.invoke(Method.java:498)\\n\\tat org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)\\n\\tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)\\n\\tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)\\n\\tat org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)\\n\\tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)\\n\\tat org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)\\n\\tat org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)\\n\\tat org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)\\n\\tat org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)\\n\\tat org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)\\n\\tat org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)\\n\\tat org.glassfish.jersey.internal.Errors.process(Errors.java:315)\\n\\tat org.glassfish.jersey.internal.Errors.process(Errors.java:297)\\n\\tat org.glassfish.jersey.internal.Errors.process(Errors.java:267)\\n\\tat org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)\\n\\tat org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)\\n\\tat org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)\\n\\tat org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)\\n\\tat org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)\\n\\tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)\\n\\tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)\\n\\tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)\\n\\tat io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)\\n\\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1634)\\n\\tat io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)\\n\\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1621)\\n\\tat io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)\\n\\tat io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)\\n\\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1621)\\n\\tat org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:308)\\n\\tat org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:262)\\n\\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1621)\\n\\tat gov.ca.cwds.rest.filters.RequestResponseLoggingFilter.doFilter(RequestResponseLoggingFilter.java:76)\\n\\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1621)\\n\\tat gov.ca.cwds.rest.filters.WebSecurityFilter.doFilter(WebSecurityFilter.java:61)\\n\\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1621)\\n\\tat org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:308)\\n\\tat org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:262)\\n\\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1621)\\n\\tat com.google.inject.servlet.FilterChainInvocation.doFilter(FilterChainInvocation.java:89)\\n\\tat com.google.inject.servlet.ManagedFilterPipeline.dispatch(ManagedFilterPipeline.java:119)\\n\\tat com.google.inject.servlet.GuiceFilter$1.call(GuiceFilter.java:133)\\n\\tat com.google.inject.servlet.GuiceFilter$1.call(GuiceFilter.java:130)\\n\\tat com.google.inject.servlet.GuiceFilter$Context.call(GuiceFilter.java:203)\\n\\tat com.google.inject.servlet.GuiceFilter.doFilter(GuiceFilter.java:130)\\n\\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1621)\\n\\tat org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)\\n\\tat org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)\\n\\tat org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)\\n\\tat org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)\\n\\tat org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)\\n\\tat org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)\\n\\tat org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)\\n\\tat org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)\\n\\tat org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)\\n\\tat org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)\\n\\tat org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)\\n\\tat org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)\\n\\tat org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)\\n\\tat org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)\\n\\tat org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)\\n\\tat org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)\\n\\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1621)\\n\\tat org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:541)\\n\\tat org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)\\n\\tat org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1592)\\n\\tat org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)\\n\\tat org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1239)\\n\\tat org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)\\n\\tat org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:481)\\n\\tat org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1561)\\n\\tat org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)\\n\\tat org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1141)\\n\\tat org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)\\n\\tat org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)\\n\\tat com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:241)\\n\\tat io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)\\n\\tat org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:494)\\n\\tat io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)\\n\\tat org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)\\n\\tat org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)\\n\\tat org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)\\n\\tat org.eclipse.jetty.server.Server.handle(Server.java:564)\\n\\tat org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:320)\\n\\tat org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)\\n\\tat org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)\\n\\tat org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:110)\\n\\tat org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)\\n\\tat org.eclipse.jetty.util.thread.Invocable.invokePreferred(Invocable.java:122)\\n\\tat org.eclipse.jetty.util.thread.strategy.ExecutingExecutionStrategy.invoke(ExecutingExecutionStrategy.java:58)\\n\\tat org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:201)\\n\\tat org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:133)\\n\\tat org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:672)\\n\\tat org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:590)\\n\\tat java.lang.Thread.run(Thread.java:748)\\n"
+          } ]
+        }
+    http_version: 
+  recorded_at: Mon, 26 Mar 2018 17:17:34 GMT
+recorded_with: VCR 3.0.3

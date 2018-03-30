@@ -20,6 +20,7 @@ export default class Search extends React.Component {
       totalNoOfResults: 0,
       searchResults: undefined,
       pageNumber: props.pageNumber,
+      errors: {},
       sizeValue: props.size
     }
     this.handleToggle = this.handleToggle.bind(this)
@@ -72,16 +73,25 @@ export default class Search extends React.Component {
     fetchRequest(url, 'POST', params).then((response) => {
       return response.json()
     }).then((data) => {
-      this.setState({
-        searchResults: data.facilities,
-        totalNoOfResults: data.total,
-        sizeValue: getSizeValue,
-        pageNumber: getFromValue === 0 ? 1 : this.state.pageNumber
-      })
+      if (!data.issue_details) {
+        this.setState({
+          searchResults: data.facilities,
+          totalNoOfResults: data.total,
+          sizeValue: getSizeValue,
+          pageNumber: getFromValue === 0 ? 1 : this.state.pageNumber,
+          errors: {}
+        })
+      } else {
+        this.setState({
+          errors: data,
+          searchResults: []
+        })
+      }
     }).catch(error => {
       console.log(error)
       return this.setState({
-        searchResults: []
+        searchResults: [],
+        errors: {}
       })
     })
   }
@@ -138,7 +148,7 @@ export default class Search extends React.Component {
         <div className='result-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           {this.state.isToggled && <SearchGrid searchResults={this.state.searchResults} />}
           {!this.state.isToggled && <SearchList searchResults={this.state.searchResults} />}
-          {(!searchResponseHasValues && !initialLoad) && <SearchNotFound />}
+          {(!searchResponseHasValues && !initialLoad) && <SearchNotFound errors={this.state.errors.issue_details}/>}
         </div>
       </div>
     )

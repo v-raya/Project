@@ -49,7 +49,7 @@ const SearchGrid = ({
                 value={respectiveNumberOrNA(result.phones, primaryPhoneRelation)} />
               <GridInnerLayout
                 title='Facility Email'
-                value={checkForNA(result.email_address)} />
+                value={checkValueForNull(result.email_address)} />
               <GridInnerLayout
                 title='Licensee Name'
                 value={result.name} />

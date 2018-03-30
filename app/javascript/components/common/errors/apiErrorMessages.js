@@ -9,16 +9,16 @@ const ApiErrorMessages = ({errors}) => (
       {(() => {
         switch (error.type) {
           case 'business_validation':
-            return (<span className='input-error-message' role='alert'>a bussiness validation exception occured: {error.technical_message}</span>)
+            return (<span className='input-error-message' role='alert'>a business validation exception occured: {error.technical_message}</span>)
           case 'unexpected_exception':
-            return (<span className='input-error-message' role='alert'>an unexpected 500 error occured: {error.stack_trace.substring(0, error.stack_trace.indexOf('\\n\\'))}</span>)
+            return (<span className='input-error-message' role='alert'>an unexpected exception occured: {error.technical_message}</span>)
           case 'security_exception':
             return (<span className='input-error-message' role='alert'>a security exception occured: {error.technical_message}</span>)
           default:
             return (
               <div>
-                <span className='input-error-message' role='alert'>Property: {error.property}</span>
-                <span className='input-error-message' role='alert'>Invalid Value : {error.invalid_value.id}</span>
+                <span className='input-error-message' role='alert'>a constraint validation exception occured on property: {error.property}</span>
+                <span className='input-error-message' role='alert'>Invalid Value : {error.invalid_value}</span>
               </div>
             )
         }

@@ -117,4 +117,22 @@ describe('Verify Search component', function () {
     expect(spyHandleOnSubmit).toHaveBeenCalled()
     expect(searchApiCallSpy).toHaveBeenCalledWith(0, 20)
   })
+
+  it('verify error messages', () => {
+    let searchFacility = searchComp.find('#search')
+    searchComp.setState({
+      errors: {
+        'issue_details': [ {
+          'incident_id': '95100850-f514-4365-9b93-6cbd28adcf27',
+          'type': 'unexpected_exception',
+          'user_message': 'There was an error processing your request. It has been logged with unique incident id',
+          'technical_message': 'Bad Request',
+          'stack_trace': 'gov.ca.cwds.rest.api.DoraException: Forbidden\\n\\'
+        } ]
+      },
+      searchResults: []
+    })
+    searchFacility.simulate('submit')
+    expect(searchComp.text()).toContain('Message: There was an error processing your request')
+  })
 })

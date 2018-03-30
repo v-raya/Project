@@ -36,7 +36,7 @@ export const SearchList = ({
               <td>{respectiveFullAddressOrNA(result.addresses, physicalAddressType)}</td>
               <td>{result.county.value}</td>
               <td>{respectiveNumberOrNA(result.phones, primaryPhoneRelation)}</td>
-              <td>{checkForNA(result.email_address)}</td>
+              <td>{checkValueForNull(result.email_address)}</td>
               <td>{checkForNA(result.assigned_worker)}</td>
               <td>{respectiveNumberOrNA(result.phones, alternativePhoneRelation)}</td>
             </tr>

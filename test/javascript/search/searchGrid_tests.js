@@ -12,7 +12,7 @@ describe('Render Search results to Grid', function () {
         county: 'Marin',
         district_office: 'NO. CAL SC/RES',
         fac_capacity: 7,
-        fac_email_address: null,
+        email_address: 'test@test.com',
         fac_last_visit_date: '1991-12-10',
         fac_lic_eff_date: '1992-02-22',
         fac_licensee_name: 'TERRIER PROGRAMS, INC.',
@@ -95,7 +95,8 @@ describe('Search results to Grid', function () {
   const props = {
     searchResults: [
       {
-        addresses: []
+        addresses: [],
+        email_address: 'test@test.com'
       }
     ]
   }
@@ -103,5 +104,8 @@ describe('Search results to Grid', function () {
   const searchGridComp = mount(<SearchGrid {...props} />)
   it('Verify address to be N/A', () => {
     expect(searchGridComp.find('GridInnerLayout[title="Facility Address"]').props().value).toBe('N/A')
+  })
+  it('Verify email address', function () {
+    expect(searchGridComp.find('GridInnerLayout[title="Facility Email"]').props().value).toBe('test@test.com')
   })
 })

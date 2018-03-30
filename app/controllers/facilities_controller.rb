@@ -42,6 +42,8 @@ class FacilitiesController < CalsBaseController
     @facilities_response['facilities'] = @facilities['hits']['hits'].collect { |facility| facility['_source']}
     @facilities_response['total'] = @facilities['hits']['total']
     json_response @facilities_response
+  rescue ApiError => e
+    render json: e.response, status: e.status
   end
 
   def store_in_session(params)
