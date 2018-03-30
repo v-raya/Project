@@ -81,8 +81,11 @@ describe('foster car card tests', function () {
     })
     it('expect Previously licensed label as', () => {
       const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} />)
-
       expect(wrapper.find('YesNoRadioComponent').at(2).props().label).toBe(rfa01ALabels.previouslyLicensedLabel)
+    })
+    it('expect Previously Employed label as', () => {
+      const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} />)
+      expect(wrapper.find('YesNoRadioComponent').at(3).props().label).toBe(rfa01ALabels.previouslyEmployedLabel)
     })
     describe('when "Add another agency" is clicked', () => {
       it('adds a agency', () => {

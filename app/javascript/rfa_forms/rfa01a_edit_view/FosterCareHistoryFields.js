@@ -334,8 +334,7 @@ export class FosterCareHistoryFields extends React.Component {
               }
 
               <YesNoRadioComponent
-                label='Have you previously been employed by or volunteered at a community care facility, child care center, family child care
-                    home, or residential care facility for the elderly or chromincally ill?'
+                label={rfa01ALabels.previouslyEmployedLabel}
                 idPrefix='q4-select-dropdown'
                 value={q4History.was_employed_or_volunteered}
                 onFieldChange={(event) => this.handleClearOnConditionalChange('employment_in_facilities_q4', 'was_employed_or_volunteered', event.target.value, 'facilities', [''])} />

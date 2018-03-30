@@ -54,7 +54,9 @@ const yesNoMarginStyle = Object.freeze({
 
 const rfa01ALabels = Object.freeze({
   'previouslyLicensedLabel': 'Have you previously been licensed to operate a non-foster care community care facility, child care center, family child care\n' +
-  'home, or residential care facility for the elderly or chromically ill?'
+  'home, or residential care facility for the elderly or chronically ill?',
+  'previouslyEmployedLabel': 'Have you previously been employed by or volunteered at a community care facility, child care center, family child care\n' +
+  'home, or residential care facility for the elderly or chronically ill?'
 })
 
 export {Rfa01bDisclosureInstructions,
