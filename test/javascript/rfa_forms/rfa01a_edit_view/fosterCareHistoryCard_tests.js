@@ -3,6 +3,7 @@ import FosterCareHistoryCard from 'rfa_forms/rfa01a_edit_view/FosterCareHistoryC
 import {FosterCareHistoryFields, blankFosterCareFields} from 'rfa_forms/rfa01a_edit_view/FosterCareHistoryFields.js'
 import {shallow, mount} from 'enzyme'
 import {yesNo, licenseTypes, selectedYes} from './../../helpers/constants'
+import {rfa01ALabels} from 'constants/rfaText'
 var TestUtils = require('react-dom/test-utils')
 
 describe('foster car card tests', function () {
@@ -78,7 +79,11 @@ describe('foster car card tests', function () {
       wrapper.simulate('change')
       expect(onChangeSpy.calls.count()).toEqual(1)
     })
+    it('expect Previously licensed label as', () => {
+      const wrapper = mount(<FosterCareHistoryFields {...props} handleClearOnConditionalChange={handleClearOnConditionalChangeSpy} />)
 
+      expect(wrapper.find('YesNoRadioComponent').at(2).props().label).toBe(rfa01ALabels.previouslyLicensedLabel)
+    })
     describe('when "Add another agency" is clicked', () => {
       it('adds a agency', () => {
         let event

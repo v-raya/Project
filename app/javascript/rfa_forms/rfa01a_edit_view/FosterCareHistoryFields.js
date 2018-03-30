@@ -7,7 +7,7 @@ import {FacilityComponent} from 'components/rfa_forms/fosterFacilityComponent'
 import {checkArrayObjectPresence, dictionaryNilSelectValue} from 'helpers/commonHelper.jsx'
 import {addCardAsJS, removeCard} from 'helpers/cardsHelper.jsx'
 import YesNoRadioComponent from 'components/common/yesNoFields'
-
+import {rfa01ALabels} from 'constants/rfaText'
 export const blankFosterCareFields = Object.freeze(
   {
     foster_care_licenses_q1: {
@@ -288,8 +288,7 @@ export class FosterCareHistoryFields extends React.Component {
               // Question 3
               }
               <YesNoRadioComponent
-                label='Have you previously been licensed to operate a non-foster care community care facility, child care center, family child
-                care home, or residential care facility for the elderly or chronically ill?'
+                label={rfa01ALabels.previouslyLicensedLabel}
                 idPrefix='q3-select-dropdown'
                 value={q3History.was_previously_licensed}
                 onFieldChange={(event) => this.handleClearOnConditionalChange('facility_operation_licenses_q3', 'was_previously_licensed', event.target.value, 'agencies', [blankAgencyFields])} />

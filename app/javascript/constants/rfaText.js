@@ -52,6 +52,11 @@ const yesNoMarginStyle = Object.freeze({
   marginBottom: '20px'
 })
 
+const rfa01ALabels = Object.freeze({
+  'previouslyLicensedLabel': 'Have you previously been licensed to operate a non-foster care community care facility, child care center, family child care\n' +
+  'home, or residential care facility for the elderly or chromically ill?'
+})
+
 export {Rfa01bDisclosureInstructions,
   Rfa01bPrivacyStatement,
   toggleInstructionStyle,
@@ -62,4 +67,5 @@ export {Rfa01bDisclosureInstructions,
   Rfa01bCrimeBackGroundAgainstCohabCardText,
   Rfa01bCriminalFieldsCardText,
   Rfa01bOutsideCACriminalBackgroundCardText,
-  RfaCommon}
+  RfaCommon,
+  rfa01ALabels}
