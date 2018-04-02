@@ -1,14 +1,10 @@
 FROM ratneshraval/cals-base:0.6
 
-RUN mkdir /var/www \
-  && cd /var/www
+COPY . /cals
 
-# clone CALS
-RUN git clone -b development https://github.com/ca-cwds/CALS.git /var/www/cals
+WORKDIR /cals
 
-WORKDIR /var/www/cals
-
-RUN cd /var/www/cals \
+RUN cd /cals \
   && bundle install \
   && yarn install
 

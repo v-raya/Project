@@ -14,6 +14,9 @@ def notify(String tagNumber) {
     def tagMessage = (tagNumber != '') ? "\nDocker tag: ${tagNumber}" : ''
 
     slackSend(
+        baseUrl: 'https://hooks.slack.com/services/',
+        tokenCredentialId: SLACK_CREDENTIALS_ID,
+        channel: '#tech-cals-updates',
         color: colorCode,
         message: "${env.JOB_NAME} #${env.BUILD_NUMBER} - *${currentBuild.currentResult}* after ${currentBuild.durationString}" +
             "${tagMessage}" +
@@ -48,7 +51,7 @@ def dockerStages(newTag) {
         curStage = 'Docker App Build Publish'
         pushToDocker(
             "${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:${newTag}",
-            "--no-cache -f ./docker/dev/app/cals/dockerfile .",
+            "-f ./docker/release/Dockerfile .",
             DOCKER_CREDENTIALS_ID
             )
 
@@ -57,7 +60,7 @@ def dockerStages(newTag) {
         curStage = 'Docker Test Build Publish'
         pushToDocker(
             "${DOCKER_GROUP}/${DOCKER_TEST_IMAGE}:${newTag}",
-            "--no-cache -f ./docker/dev/app/cals-acceptance-tests/Dockerfile .",
+            "-f ./docker/dev/app/cals-acceptance-tests/Dockerfile .",
             DOCKER_CREDENTIALS_ID
             )
     }
@@ -92,61 +95,70 @@ def getNewTagNumber(baseTagNumber, sprints) {
     return newTagNumber
 }
 
-node {
-    checkout scm
+node('cals-slave') {
     env.DISABLE_SPRING = 1
 
-    def branch = env.BRANCH_NAME_PARAM
+    def branch = env.GIT_BRANCH
     def curStage = 'Start'
     def emailList = 'ratnesh.raval@osi.ca.gov'
     def pipelineStatus = 'SUCCESS'
     String newTag = ''
 
+    def appDockerImage
+
     try {
-        stage('Install Dependencies') {
-            curStage = 'dependencies'
-            echo 'which ruby'
-            sh 'which ruby'
-            echo 'which bundler'
-            sh 'which bundler'
-            echo 'which bundle'
-            sh 'which bundle'
-            sh 'bundle install'
-            sh 'yarn install'
-        }
-        stage('Lint') {
-            curStage = 'lint'
-            sh 'yarn lint'
-        }
-        stage('Compile Assets') {
-            curStage = 'assets'
-            sh 'bundle exec rails assets:precompile RAILS_ENV=test'
+        deleteDir()
+        stage ('Checkout Github') {
+            checkout scm
         }
 
-        stage('Test - Jasmine') {
-            curStage = 'karma'
-            sh 'yarn karma-ci'
+        // build the container from current code
+        stage('Build Docker Image') {
+            newTag = "0.${getBuildTag()}-${env.BUILD_ID}"
+            appDockerImage = docker.build("${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:${newTag}",
+                "-f ./docker/test/Dockerfile .")
         }
-        stage('Test - Rspec') {
-            curStage = 'rspec'
-            withEnv([
-                'CALS_API_URL=https://calsapi.preint.cwds.io',
-                'GEO_SERVICE_URL=https://geo.preint.cwds.io',
-                'BASE_SEARCH_API_URL=https://dora.preint.cwds.io',
-                'AUTHENTICATION_API_BASE_URL=https://web.preint.cwds.io/perry'
-                ]) {
-                sh 'yarn spec-ci'
+
+        // run all commands inside container
+        appDockerImage.withRun { container ->
+            stage('Lint') {
+                sh "docker exec -t ${container.id} yarn lint"
+            }
+            stage('Compile Assets') {
+                curStage = 'assets'
+                sh "docker exec -t ${container.id} bundle exec rails assets:precompile RAILS_ENV=test"
+            }
+            stage('Test - Jasmine') {
+                curStage = 'karma'
+                sh "docker exec -t ${container.id} yarn karma-ci"
+            }
+            stage('Test - Rspec') {
+                def envVariablesRspec = 'CALS_API_URL=https://calsapi.preint.cwds.io' +
+                    ' -e GEO_SERVICE_URL=https://geo.preint.cwds.io' +
+                    ' -e BASE_SEARCH_API_URL=https://dora.preint.cwds.io' +
+                    ' -e AUTHENTICATION_API_BASE_URL=https://web.preint.cwds.io/perry'
+                curStage = 'rspec'
+                sh "docker exec -e ${envVariablesRspec} -t ${container.id} yarn spec-ci"
+            }
+            stage('Reports') {
+                sh "docker cp ${container.id}:cals/reports ./reports"
+                reports()
             }
         }
 
         if (branch == 'development') {
-            // push to docker
-            newTag = "0.${getBuildTag()}-${env.BUILD_ID}"
-            dockerStages(newTag)
-        }
+            // run test bubble
+            // commented till cals-api can work with perry v2
+            // stage('Test Bubble') {
+            //     withDockerRegistry([credentialsId: DOCKER_CREDENTIALS_ID]) {
+            //         sh "docker-compose -f ./docker/cals-test-bubble/docker-compose.yml up -d --build"
+            //         sh "sleep 120"
+            //         sh "docker-compose exec -T cals-test TEST_END_TO_END=true SELENIUM_BROWSER=HEADLESS_CHROME bundle exec rspec spec/features/global_header_test_spec.rb"
+            //     }
+            // }
 
-        stage ('Reports') {
-            reports()
+            // push to docker
+            dockerStages(newTag)
         }
     }
     catch (e) {
@@ -154,7 +166,8 @@ node {
         currentBuild.result = 'FAILURE'
     }
     finally {
+        // bring all containers down
+        // sh "docker-compose -f ./docker/cals-test-bubble/docker-compose.yml down"
         notify(newTag)
-        // cleanWs()
     }
 }
