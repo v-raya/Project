@@ -10,7 +10,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..K9sblY0aYkNgU8oe.Q1MQIS5O3CgPqDK0eh1mF_iYPUZgzTM_L_NWztVMeWhiLsahMHEgvxAg6WPPP92xXyKRJ21tZI5DMoSQcnpIRKNsvXCpJtI7AzAo3seZk5R7PmoAJ6XywOR9fO5IHC4zYLuvPbPdKVGecICzeEL4lL0JYQZVcwQGFPjDHsnXfuL4-jgCfBRPU9GeVY_tUgOgoZKhXDWxuPQPo_nBPSWM6qAkoU7Zb0-ImcbHyZV25L_S1N99oTXl1M2ia1bqpCBVUe2A3zA9TOTtX3g5MdI8avFs73vSIdPFRjXOufR7UsjV8u3UFA2ltQzLSOvJhOtFQUII8dNQPzPaq_R3nPce4gPe-baPM6K0D5Q0SXP8QwIR7jljxobdBG1rDMljM5u-cBxRGwE9Y5gwCBqbhzVGswy9ui67x1fA3--SmMhpe4Bfc43PXAFMjjGTgLjICwTko9NCKm6rnhBr1iVNZRYOU0qL3ZeGP5R3P8VLLXCThK9-OA4JxkrFls-nM0bzCma4QMT1U3xlfuZ8kFMBUYk6G8CyKzU7A6jpRUaqhJLKSEaxTpYyNxLYGEdl0SIRL_FX0G7YkHig5hTf_LpHPKZzpxcqvKsZYyeS9K2up80xrHWwTw7JScPSuvR3Bi03LJBjD6cx1TuUTK_lFRia8vxPy8XhmDhpwDO9jSkzprbrR2z60NPokpoll5qqZxqjFL-D9iY5vCm5k7EMcCndHtajAabKQ--BpAZ3sx6dip_UU-aaQ6XfLQtAmCr0OhLMRRMwGNufX9calayaKqH5CKfLs5Zi0G9DMMEmoBUzhrfEhwK_O2LRwtqNiXVLX1cHYuKsd8_gz9cKQ31NBUwfDZ0iqliaCc79bfeWNC4jukJbAGpzD9U5148g15WaCbhPIc4YBtXjQB7o4Cx0KresQ19hCKWE2QuYHVNWxu-LBVHzeON6NY_omgSiucwKG566nGvS--XbqHDX2sA1msyEJR3ehIaA3L7T3wgUM13ud-eC6A.xr2uQ1gWfA6ZsSoj9TiAGg"
+      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
   response:
     status:
       code: 200
@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 18 Jan 2018 19:23:48 GMT
+      - Thu, 29 Mar 2018 18:28:01 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 17-Jan-2018 19:23:48
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 28-Mar-2018 18:28:01
         GMT
       vary:
       - Accept-Encoding
@@ -34,7 +34,7 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '591'
+      - '596'
       connection:
       - keep-alive
     body:
@@ -192,6 +192,9 @@ http_interactions:
             "value" : "Stanislaus",
             "id" : 50
           }, {
+            "value" : "State of California",
+            "id" : 59
+          }, {
             "value" : "Sutter",
             "id" : 51
           }, {
@@ -215,13 +218,10 @@ http_interactions:
           }, {
             "value" : "Yuba",
             "id" : 58
-          }, {
-            "value" : "State of California",
-            "id" : 59
           } ]
         }
     http_version: 
-  recorded_at: Thu, 18 Jan 2018 19:23:49 GMT
+  recorded_at: Thu, 29 Mar 2018 18:28:01 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
@@ -232,7 +232,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - "..K9sblY0aYkNgU8oe.Q1MQIS5O3CgPqDK0eh1mF_iYPUZgzTM_L_NWztVMeWhiLsahMHEgvxAg6WPPP92xXyKRJ21tZI5DMoSQcnpIRKNsvXCpJtI7AzAo3seZk5R7PmoAJ6XywOR9fO5IHC4zYLuvPbPdKVGecICzeEL4lL0JYQZVcwQGFPjDHsnXfuL4-jgCfBRPU9GeVY_tUgOgoZKhXDWxuPQPo_nBPSWM6qAkoU7Zb0-ImcbHyZV25L_S1N99oTXl1M2ia1bqpCBVUe2A3zA9TOTtX3g5MdI8avFs73vSIdPFRjXOufR7UsjV8u3UFA2ltQzLSOvJhOtFQUII8dNQPzPaq_R3nPce4gPe-baPM6K0D5Q0SXP8QwIR7jljxobdBG1rDMljM5u-cBxRGwE9Y5gwCBqbhzVGswy9ui67x1fA3--SmMhpe4Bfc43PXAFMjjGTgLjICwTko9NCKm6rnhBr1iVNZRYOU0qL3ZeGP5R3P8VLLXCThK9-OA4JxkrFls-nM0bzCma4QMT1U3xlfuZ8kFMBUYk6G8CyKzU7A6jpRUaqhJLKSEaxTpYyNxLYGEdl0SIRL_FX0G7YkHig5hTf_LpHPKZzpxcqvKsZYyeS9K2up80xrHWwTw7JScPSuvR3Bi03LJBjD6cx1TuUTK_lFRia8vxPy8XhmDhpwDO9jSkzprbrR2z60NPokpoll5qqZxqjFL-D9iY5vCm5k7EMcCndHtajAabKQ--BpAZ3sx6dip_UU-aaQ6XfLQtAmCr0OhLMRRMwGNufX9calayaKqH5CKfLs5Zi0G9DMMEmoBUzhrfEhwK_O2LRwtqNiXVLX1cHYuKsd8_gz9cKQ31NBUwfDZ0iqliaCc79bfeWNC4jukJbAGpzD9U5148g15WaCbhPIc4YBtXjQB7o4Cx0KresQ19hCKWE2QuYHVNWxu-LBVHzeON6NY_omgSiucwKG566nGvS--XbqHDX2sA1msyEJR3ehIaA3L7T3wgUM13ud-eC6A.xr2uQ1gWfA6ZsSoj9TiAGg"
+      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
   response:
     status:
       code: 200
@@ -243,9 +243,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 18 Jan 2018 19:23:49 GMT
+      - Thu, 29 Mar 2018 18:28:01 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 17-Jan-2018 19:23:49
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 28-Mar-2018 18:28:01
         GMT
       vary:
       - Accept-Encoding
@@ -256,7 +256,7 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '686'
+      - '494'
       connection:
       - keep-alive
     body:
@@ -264,8 +264,8 @@ http_interactions:
       string: |-
         {
           "items" : [ {
-            "value" : "Home Care Organization",
-            "id" : 300
+            "value" : "Foster Family Agency Certified Home",
+            "id" : 9
           }, {
             "value" : "Adoption Agency",
             "id" : 400
@@ -278,9 +278,6 @@ http_interactions:
           }, {
             "value" : "Foster Family AG-Sub",
             "id" : 431
-          }, {
-            "value" : "FFA Certified Home",
-            "id" : 433
           }, {
             "value" : "Small Family Home",
             "id" : 710
@@ -318,44 +315,11 @@ http_interactions:
             "value" : "Short Term Residential Therapeutic Program",
             "id" : 733
           }, {
-            "value" : "ARFPSHN",
-            "id" : 734
-          }, {
-            "value" : "Adult Residential",
-            "id" : 735
-          }, {
-            "value" : "Resid FAC Chron Ill",
-            "id" : 736
-          }, {
-            "value" : "ARF-Enhanced Behavioral Supports Home",
-            "id" : 737
-          }, {
-            "value" : "Community Crisis Home-ARF",
-            "id" : 738
-          }, {
-            "value" : "Residential-Elderly",
-            "id" : 740
-          }, {
-            "value" : "Residential Elderly-Continuing Care",
-            "id" : 741
-          }, {
-            "value" : "Rehab Facility",
-            "id" : 771
-          }, {
-            "value" : "Social Rehabilitation Facility",
-            "id" : 772
-          }, {
-            "value" : "Adult Day Care",
-            "id" : 775
-          }, {
-            "value" : "County Shelter/Recving Home(Non EA/AFDC)",
+            "value" : "County Shelter/Receiving Home(Non EA/AFDC)",
             "id" : 790
           }, {
             "value" : "Court Specified Home",
             "id" : 791
-          }, {
-            "value" : "Medical Facility",
-            "id" : 792
           }, {
             "value" : "Relative/NREFM Home",
             "id" : 793
@@ -369,38 +333,23 @@ http_interactions:
             "value" : "Supervised Independent Living Placement",
             "id" : 800
           }, {
-            "value" : "Family Day Care",
-            "id" : 810
-          }, {
-            "value" : "Infant Center",
-            "id" : 830
-          }, {
-            "value" : "School-Age DC Center",
-            "id" : 840
-          }, {
-            "value" : "DC Center - Ill Child",
-            "id" : 845
-          }, {
-            "value" : "Day Care Center",
-            "id" : 850
-          }, {
-            "value" : "Dummy Facility",
-            "id" : 999
+            "value" : "Foster Fam Agency Cert Resource Fam Home",
+            "id" : 808
           } ]
         }
     http_version: 
-  recorded_at: Thu, 18 Jan 2018 19:23:49 GMT
+  recorded_at: Thu, 29 Mar 2018 18:28:01 GMT
 - request:
     method: post
     uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
     body:
       encoding: UTF-8
-      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"match_phrase":{"id":"DL7oFNL0AB"}}]}}]}}}'
+      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"match_phrase":{"county.id":"34"}},{"match_phrase":{"id":"GmbHwyg0NM"}}]}}]}},"from":"0","size":"10","sort":[]}'
     headers:
       Content-type:
       - application/json
       Authorization:
-      - "..K9sblY0aYkNgU8oe.Q1MQIS5O3CgPqDK0eh1mF_iYPUZgzTM_L_NWztVMeWhiLsahMHEgvxAg6WPPP92xXyKRJ21tZI5DMoSQcnpIRKNsvXCpJtI7AzAo3seZk5R7PmoAJ6XywOR9fO5IHC4zYLuvPbPdKVGecICzeEL4lL0JYQZVcwQGFPjDHsnXfuL4-jgCfBRPU9GeVY_tUgOgoZKhXDWxuPQPo_nBPSWM6qAkoU7Zb0-ImcbHyZV25L_S1N99oTXl1M2ia1bqpCBVUe2A3zA9TOTtX3g5MdI8avFs73vSIdPFRjXOufR7UsjV8u3UFA2ltQzLSOvJhOtFQUII8dNQPzPaq_R3nPce4gPe-baPM6K0D5Q0SXP8QwIR7jljxobdBG1rDMljM5u-cBxRGwE9Y5gwCBqbhzVGswy9ui67x1fA3--SmMhpe4Bfc43PXAFMjjGTgLjICwTko9NCKm6rnhBr1iVNZRYOU0qL3ZeGP5R3P8VLLXCThK9-OA4JxkrFls-nM0bzCma4QMT1U3xlfuZ8kFMBUYk6G8CyKzU7A6jpRUaqhJLKSEaxTpYyNxLYGEdl0SIRL_FX0G7YkHig5hTf_LpHPKZzpxcqvKsZYyeS9K2up80xrHWwTw7JScPSuvR3Bi03LJBjD6cx1TuUTK_lFRia8vxPy8XhmDhpwDO9jSkzprbrR2z60NPokpoll5qqZxqjFL-D9iY5vCm5k7EMcCndHtajAabKQ--BpAZ3sx6dip_UU-aaQ6XfLQtAmCr0OhLMRRMwGNufX9calayaKqH5CKfLs5Zi0G9DMMEmoBUzhrfEhwK_O2LRwtqNiXVLX1cHYuKsd8_gz9cKQ31NBUwfDZ0iqliaCc79bfeWNC4jukJbAGpzD9U5148g15WaCbhPIc4YBtXjQB7o4Cx0KresQ19hCKWE2QuYHVNWxu-LBVHzeON6NY_omgSiucwKG566nGvS--XbqHDX2sA1msyEJR3ehIaA3L7T3wgUM13ud-eC6A.xr2uQ1gWfA6ZsSoj9TiAGg"
+      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
   response:
     status:
       code: 200
@@ -409,22 +358,20 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 18 Jan 2018 19:23:50 GMT
+      - Thu, 29 Mar 2018 18:28:03 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 17-Jan-2018 19:23:50
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 28-Mar-2018 18:28:03
         GMT
       content-length:
-      - '2361'
+      - '1412'
       connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"took":0,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":1,"max_score":4.1692457,"hits":[{"_index":"facilities","_type":"facility","_id":"DL7oFNL0AB","_score":4.1692457,"_source":{"href":null,"id":"DL7oFNL0AB","capacity_last_changed":null,"type":{"id":"711","value":"Foster
-        Family Home"},"name":"Sandy Beach Foster Care Home","licensee_name":"","license_type":null,"assigned_worker":{"id":null,"value":"Kay
-        Riley"},"district_office":{"number":"37","name":"San Diego"},"license_number":null,"status":{"id":"0002","value":"Pending"},"capacity":0,"license_effective_date":null,"original_application_recieved_date":{"year":1996,"month":"APRIL","era":"CE","dayOfMonth":15,"dayOfWeek":"MONDAY","dayOfYear":106,"leapYear":true,"monthValue":4,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"34","value":"Sacramento","lis_code":null},"phones":[{"id":null,"relation":"primary","type":null,"number":"5302223333"},{"id":null,"relation":"alternate","type":null,"number":"5305633333"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"9622
-        Sandstone Drive","city":"San Diego","state":"CA","zip_code":"95819","zip_suffix_code":"1234"}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"230
-        D St.","city":"San Diego","state":"CA","zip_code":"95819","zip_suffix_code":"1234"}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS","children":[{"id":"Ar6kQoF0AB","facilityId":null,"person":{"id":null,"gender":"M","age":29,"ssn":null,"ethnicityId":null,"first_name":"Teddy","last_name":"Wendt","date_of_birth":{"year":1988,"month":"SEPTEMBER","era":"CE","dayOfMonth":11,"dayOfWeek":"SUNDAY","dayOfYear":255,"leapYear":true,"monthValue":9,"chronology":{"calendarType":"iso8601","id":"ISO"}}},"date_of_placement":{"year":1996,"month":"DECEMBER","era":"CE","dayOfMonth":14,"dayOfWeek":"SATURDAY","dayOfYear":349,"leapYear":true,"monthValue":12,"chronology":{"calendarType":"iso8601","id":"ISO"}},"assigned_worker":null,"county_of_origin":"San
-        Diego"}],"inspections":[],"complaints":[]}}]}}'
+      string: '{"took":4,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":1,"max_score":10.291903,"hits":[{"_index":"facilities","_type":"facility","_id":"GmbHwyg0NM","_score":10.291903,"_source":{"href":null,"id":"GmbHwyg0NM","capacity_last_changed":null,"type":{"id":"432","value":"Foster
+        Family Agency Certified Home"},"name":"Cannadate, Pam","licensee_name":"","license_type":null,"assigned_worker":null,"district_office":null,"license_number":null,"status":null,"capacity":1,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"34","value":"Sacramento","lis_code":null},"phones":[{"id":null,"relation":"primary","type":null,"number":"9169660319"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"4813
+        Suncrest Way","city":"Fair Oaks","state":"CA","zip_code":"95628","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"9719
+        LINCOLN VILLAGE DRIVE, SUITE 401","city":"SACRAMENTO","state":"CA","zip_code":"95827","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"}}]}}'
     http_version: 
-  recorded_at: Thu, 18 Jan 2018 19:23:50 GMT
+  recorded_at: Thu, 29 Mar 2018 18:28:04 GMT
 recorded_with: VCR 3.0.3

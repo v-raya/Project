@@ -1,0 +1,431 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/counties
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Thu, 29 Mar 2018 18:21:01 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 28-Mar-2018 18:21:01
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '596'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alameda",
+            "id" : 1
+          }, {
+            "value" : "Alpine",
+            "id" : 2
+          }, {
+            "value" : "Amador",
+            "id" : 3
+          }, {
+            "value" : "Butte",
+            "id" : 4
+          }, {
+            "value" : "Calaveras",
+            "id" : 5
+          }, {
+            "value" : "Colusa",
+            "id" : 6
+          }, {
+            "value" : "Contra Costa",
+            "id" : 7
+          }, {
+            "value" : "Del Norte",
+            "id" : 8
+          }, {
+            "value" : "El Dorado",
+            "id" : 9
+          }, {
+            "value" : "Fresno",
+            "id" : 10
+          }, {
+            "value" : "Glenn",
+            "id" : 11
+          }, {
+            "value" : "Humboldt",
+            "id" : 12
+          }, {
+            "value" : "Imperial",
+            "id" : 13
+          }, {
+            "value" : "Inyo",
+            "id" : 14
+          }, {
+            "value" : "Kern",
+            "id" : 15
+          }, {
+            "value" : "Kings",
+            "id" : 16
+          }, {
+            "value" : "Lake",
+            "id" : 17
+          }, {
+            "value" : "Lassen",
+            "id" : 18
+          }, {
+            "value" : "Los Angeles",
+            "id" : 19
+          }, {
+            "value" : "Madera",
+            "id" : 20
+          }, {
+            "value" : "Marin",
+            "id" : 21
+          }, {
+            "value" : "Mariposa",
+            "id" : 22
+          }, {
+            "value" : "Mendocino",
+            "id" : 23
+          }, {
+            "value" : "Merced",
+            "id" : 24
+          }, {
+            "value" : "Modoc",
+            "id" : 25
+          }, {
+            "value" : "Mono",
+            "id" : 26
+          }, {
+            "value" : "Monterey",
+            "id" : 27
+          }, {
+            "value" : "Napa",
+            "id" : 28
+          }, {
+            "value" : "Nevada",
+            "id" : 29
+          }, {
+            "value" : "Orange",
+            "id" : 30
+          }, {
+            "value" : "Placer",
+            "id" : 31
+          }, {
+            "value" : "Plumas",
+            "id" : 32
+          }, {
+            "value" : "Riverside",
+            "id" : 33
+          }, {
+            "value" : "Sacramento",
+            "id" : 34
+          }, {
+            "value" : "San Benito",
+            "id" : 35
+          }, {
+            "value" : "San Bernardino",
+            "id" : 36
+          }, {
+            "value" : "San Diego",
+            "id" : 37
+          }, {
+            "value" : "San Francisco",
+            "id" : 38
+          }, {
+            "value" : "San Joaquin",
+            "id" : 39
+          }, {
+            "value" : "San Luis Obispo",
+            "id" : 40
+          }, {
+            "value" : "San Mateo",
+            "id" : 41
+          }, {
+            "value" : "Santa Barbara",
+            "id" : 42
+          }, {
+            "value" : "Santa Clara",
+            "id" : 43
+          }, {
+            "value" : "Santa Cruz",
+            "id" : 44
+          }, {
+            "value" : "Shasta",
+            "id" : 45
+          }, {
+            "value" : "Sierra",
+            "id" : 46
+          }, {
+            "value" : "Siskiyou",
+            "id" : 47
+          }, {
+            "value" : "Solano",
+            "id" : 48
+          }, {
+            "value" : "Sonoma",
+            "id" : 49
+          }, {
+            "value" : "Stanislaus",
+            "id" : 50
+          }, {
+            "value" : "State of California",
+            "id" : 59
+          }, {
+            "value" : "Sutter",
+            "id" : 51
+          }, {
+            "value" : "Tehama",
+            "id" : 52
+          }, {
+            "value" : "Trinity",
+            "id" : 53
+          }, {
+            "value" : "Tulare",
+            "id" : 54
+          }, {
+            "value" : "Tuolumne",
+            "id" : 55
+          }, {
+            "value" : "Ventura",
+            "id" : 56
+          }, {
+            "value" : "Yolo",
+            "id" : 57
+          }, {
+            "value" : "Yuba",
+            "id" : 58
+          } ]
+        }
+    http_version: 
+  recorded_at: Thu, 29 Mar 2018 18:21:01 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Thu, 29 Mar 2018 18:21:01 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 28-Mar-2018 18:21:01
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '494'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Foster Family Agency Certified Home",
+            "id" : 9
+          }, {
+            "value" : "Adoption Agency",
+            "id" : 400
+          }, {
+            "value" : "Resource Family Home",
+            "id" : 403
+          }, {
+            "value" : "Foster Family Agency",
+            "id" : 430
+          }, {
+            "value" : "Foster Family AG-Sub",
+            "id" : 431
+          }, {
+            "value" : "Small Family Home",
+            "id" : 710
+          }, {
+            "value" : "Foster Family Home",
+            "id" : 711
+          }, {
+            "value" : "Crisis Nursery",
+            "id" : 720
+          }, {
+            "value" : "Temporary Shelter Care Facility",
+            "id" : 721
+          }, {
+            "value" : "Transitional Shelter Care",
+            "id" : 722
+          }, {
+            "value" : "Transitional Housing Placement Program",
+            "id" : 726
+          }, {
+            "value" : "Community Treatment Facility",
+            "id" : 728
+          }, {
+            "value" : "GH-Enhanced Behavioral Supports Home",
+            "id" : 729
+          }, {
+            "value" : "Group Home",
+            "id" : 730
+          }, {
+            "value" : "Out Of State GH",
+            "id" : 731
+          }, {
+            "value" : "Runaway And Homeless Youth Shelter-GH",
+            "id" : 732
+          }, {
+            "value" : "Short Term Residential Therapeutic Program",
+            "id" : 733
+          }, {
+            "value" : "County Shelter/Receiving Home(Non EA/AFDC)",
+            "id" : 790
+          }, {
+            "value" : "Court Specified Home",
+            "id" : 791
+          }, {
+            "value" : "Relative/NREFM Home",
+            "id" : 793
+          }, {
+            "value" : "Tribe Specified Home",
+            "id" : 795
+          }, {
+            "value" : "Guardian Home",
+            "id" : 796
+          }, {
+            "value" : "Supervised Independent Living Placement",
+            "id" : 800
+          }, {
+            "value" : "Foster Fam Agency Cert Resource Fam Home",
+            "id" : 808
+          } ]
+        }
+    http_version: 
+  recorded_at: Thu, 29 Mar 2018 18:21:01 GMT
+- request:
+    method: post
+    uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
+    body:
+      encoding: UTF-8
+      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"match_phrase":{"county.id":"1"}}]}}]}},"from":"0","size":"10","sort":[]}'
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Thu, 29 Mar 2018 18:21:02 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 28-Mar-2018 18:21:02
+        GMT
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"took":4,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":13,"max_score":7.126623,"hits":[{"_index":"facilities","_type":"facility","_id":"456426245","_score":7.126623,"_source":{"href":null,"id":"456426245","capacity_last_changed":null,"type":{"id":"710","value":"SMALL
+        FAMILY HOME"},"name":"Boy''s Town Home","licensee_name":"Mullah Mahaboob","license_type":"C","assigned_worker":{"id":null,"value":null},"district_office":{"number":"14","name":"SF
+        COASTAL AC/SC"},"license_number":"456426245","status":{"id":"3","value":"LICENSED"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9164150000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"343
+        Right Way","city":"HAYWARD","state":"CA","zip_code":"94545","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"24543
+        MARIE DRIVE","city":"HAYWARD","state":"CA","zip_code":"94542","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"}},{"_index":"facilities","_type":"facility","_id":"100004414","_score":6.6195397,"_source":{"href":null,"id":"100004414","capacity_last_changed":null,"type":{"id":"710","value":"SMALL
+        FAMILY HOME"},"name":"Bluebird Home","licensee_name":"Ravi Chintamaneni","license_type":"D","assigned_worker":{"id":null,"value":null},"district_office":{"number":"14","name":"SF
+        COASTAL AC/SC"},"license_number":"100004414","status":{"id":"3","value":"LICENSED"},"capacity":50,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":5,"dayOfWeek":"THURSDAY","dayOfYear":126,"month":"MAY","monthValue":5,"year":2016,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_deferred_visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":18,"dayOfWeek":"WEDNESDAY","dayOfYear":262,"month":"SEPTEMBER","monthValue":9,"year":1996,"chronology":{"calendarType":"iso8601","id":"ISO"}},"email_address":null,"last_visit_reason":{"id":"10","value":"CASELOAD
+        MANAGEMENT"},"last_deferred_visit_reason":{"id":"4","value":"ANNUAL"},"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9164140000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"8645
+        3rd St.","city":"OAKLAND","state":"CA","zip_code":"94609","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"390
+        - 40TH STREET","city":"OAKLAND","state":"CA","zip_code":"94609   0","zip_suffix_code":null}}],"visits":[{"approval":"","visit_type":"Annual
+        10 month","visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":29,"dayOfWeek":"MONDAY","dayOfYear":303,"month":"OCTOBER","monthValue":10,"year":2012,"chronology":{"calendarType":"iso8601","id":"ISO"}},"visit_deferred_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":18,"dayOfWeek":"WEDNESDAY","dayOfYear":262,"month":"SEPTEMBER","monthValue":9,"year":1996,"chronology":{"calendarType":"iso8601","id":"ISO"}}},{"approval":"","visit_type":"Annual
+        22 month","visit_date":null,"visit_deferred_date":null},{"approval":"","visit_type":"Post
+        Licensing","visit_date":null,"visit_deferred_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":6,"dayOfWeek":"WEDNESDAY","dayOfYear":310,"month":"NOVEMBER","monthValue":11,"year":1991,"chronology":{"calendarType":"iso8601","id":"ISO"}}},{"approval":"","visit_type":"Renewal","visit_date":null,"visit_deferred_date":null}],"annual_visit_year":13,"prelicensing_visit_date":null,"facility_source":"LIS"}},{"_index":"facilities","_type":"facility","_id":"100000365","_score":6.6195397,"_source":{"href":null,"id":"100000365","capacity_last_changed":null,"type":{"id":"730","value":"GROUP
+        HOME"},"name":"Six Flags","licensee_name":"Mullah Mahaboob","license_type":"C","assigned_worker":{"id":null,"value":null},"district_office":{"number":"26","name":"CENTRAL
+        COAST CR/RES"},"license_number":"100000365","status":{"id":"9","value":"CLOSED,
+        LIC INIT."},"capacity":9,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9163650000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"343
+        Right Way","city":"SAN LEANDRO","state":"CA","zip_code":"94577","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1933
+        DAVIS STREET #298","city":"SAN LEANDRO","state":"CA","zip_code":"94577","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"}},{"_index":"facilities","_type":"facility","_id":"100000010","_score":6.038136,"_source":{"href":null,"id":"100000010","capacity_last_changed":null,"type":{"id":"710","value":"SMALL
+        FAMILY HOME"},"name":"Arms of Love Home","licensee_name":"Ananya Nandi","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"14","name":"SF
+        COASTAL AC/SC"},"license_number":"100000010","status":{"id":"7","value":"APPLICATION
+        WITHDRWN"},"capacity":1,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9160100000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"123
+        Main St.","city":"ALAMEDA","state":"CA","zip_code":"94501","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1011
+        TAYLOR AVE #D","city":"ALAMEDA","state":"CA","zip_code":"94501","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"}},{"_index":"facilities","_type":"facility","_id":"100000011","_score":6.038136,"_source":{"href":null,"id":"100000011","capacity_last_changed":null,"type":{"id":"710","value":"SMALL
+        FAMILY HOME"},"name":"Aurora Home","licensee_name":"Palani K","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"14","name":"SF
+        COASTAL AC/SC"},"license_number":"100000011","status":{"id":"7","value":"APPLICATION
+        WITHDRWN"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9160110000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"876
+        Pine St.","city":"OAKLAND","state":"CA","zip_code":"94608","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"2815
+        WEST STREET","city":"OAKLAND","state":"CA","zip_code":"94608","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"}},{"_index":"facilities","_type":"facility","_id":"100000105","_score":6.038136,"_source":{"href":null,"id":"100000105","capacity_last_changed":null,"type":{"id":"400","value":"ADOPTION
+        AGENCY"},"name":"Little River Home","licensee_name":"Mullah Mahaboob","license_type":null,"assigned_worker":{"id":null,"value":null},"district_office":{"number":"23","name":"NO.
+        CAL CR/RES."},"license_number":"100000105","status":{"id":"16","value":"DE-CERTIFIED/RESCINDED"},"capacity":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9161050000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"343
+        Right Way","city":"SACRAMENTO","state":"CA","zip_code":"95822","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"6748
+        GOLFVIEW DRIVE","city":"SACRAMENTO","state":"CA","zip_code":"95822","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"}},{"_index":"facilities","_type":"facility","_id":"100004593","_score":5.849587,"_source":{"href":null,"id":"100004593","capacity_last_changed":null,"type":{"id":"730","value":"GROUP
+        HOME"},"name":"White House","licensee_name":"Dane Corbett","license_type":"D","assigned_worker":{"id":null,"value":null},"district_office":{"number":"14","name":"SF
+        COASTAL AC/SC"},"license_number":"100004593","status":{"id":"2","value":"APPLICATION
+        PENDING"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9165930000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"987
+        1st Ave.","city":"FREMONT","state":"CA","zip_code":"94539","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"4281
+        KATELLA AVENUE","city":"LOS ALAMITOS","state":"CA","zip_code":"90720","zip_suffix_code":null}}],"visits":[{"approval":null,"visit_type":"Annual
+        10 month","visit_date":null,"visit_deferred_date":null},{"approval":null,"visit_type":"Annual
+        22 month","visit_date":null,"visit_deferred_date":null},{"approval":null,"visit_type":"Post
+        Licensing","visit_date":null,"visit_deferred_date":null},{"approval":null,"visit_type":"Renewal","visit_date":null,"visit_deferred_date":null}],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"}},{"_index":"facilities","_type":"facility","_id":"100000681","_score":5.849587,"_source":{"href":null,"id":"100000681","capacity_last_changed":null,"type":{"id":"711","value":"FOSTER
+        FAMILY HOME"},"name":"Kindred Hearts Home","licensee_name":"Palani K","license_type":"C","assigned_worker":{"id":null,"value":null},"district_office":{"number":"26","name":"CENTRAL
+        COAST CR/RES"},"license_number":"100000681","status":{"id":"15","value":"CLOSED,
+        CHG LOCATION"},"capacity":88,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9166810000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"876
+        Pine St.","city":"OAKLAND","state":"CA","zip_code":"94607","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"111
+        MYRTLE ST, STE 102","city":"OAKLAND","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"}},{"_index":"facilities","_type":"facility","_id":"100000001","_score":5.849587,"_source":{"href":null,"id":"100000001","capacity_last_changed":null,"type":{"id":"710","value":"SMALL
+        FAMILY HOME"},"name":"Aladdin''s Lamp","licensee_name":"Palani K","license_type":"C","assigned_worker":{"id":null,"value":null},"district_office":{"number":"26","name":"CENTRAL
+        COAST CR/RES"},"license_number":"100000001","status":{"id":"15","value":"CLOSED,
+        CHG LOCATION"},"capacity":14,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9160010000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"876
+        Pine St.","city":"SAN LEANDRO","state":"CA","zip_code":"94577","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"14429
+        CATALINA STREET","city":"SAN LEANDRO","state":"CA","zip_code":"94577","zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"}},{"_index":"facilities","_type":"facility","_id":"100004518","_score":5.6629605,"_source":{"href":null,"id":"100004518","capacity_last_changed":null,"type":{"id":"400","value":"ADOPTION
+        AGENCY"},"name":"Lullaby Home","licensee_name":"Saritha Reddy","license_type":"C","assigned_worker":{"id":null,"value":null},"district_office":{"number":"14","name":"SF
+        COASTAL AC/SC"},"license_number":"100004518","status":{"id":"3","value":"LICENSED"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":18,"dayOfWeek":"WEDNESDAY","dayOfYear":169,"month":"JUNE","monthValue":6,"year":2014,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":{"id":"10","value":"CASELOAD
+        MANAGEMENT"},"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9165180000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"92
+        High St.","city":"BERKELEY","state":"CA","zip_code":"94702","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1253
+        CARRISON STREET","city":"BERKELEY","state":"CA","zip_code":"94702","zip_suffix_code":null}}],"visits":[{"approval":"","visit_type":"Annual
+        10 month","visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":19,"dayOfWeek":"WEDNESDAY","dayOfYear":170,"month":"JUNE","monthValue":6,"year":2013,"chronology":{"calendarType":"iso8601","id":"ISO"}},"visit_deferred_date":null},{"approval":"","visit_type":"Annual
+        22 month","visit_date":null,"visit_deferred_date":null},{"approval":"","visit_type":"Post
+        Licensing","visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":12,"dayOfWeek":"WEDNESDAY","dayOfYear":346,"month":"DECEMBER","monthValue":12,"year":2007,"chronology":{"calendarType":"iso8601","id":"ISO"}},"visit_deferred_date":null},{"approval":"","visit_type":"Renewal","visit_date":null,"visit_deferred_date":null}],"annual_visit_year":14,"prelicensing_visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":29,"dayOfWeek":"THURSDAY","dayOfYear":88,"month":"MARCH","monthValue":3,"year":2007,"chronology":{"calendarType":"iso8601","id":"ISO"}},"facility_source":"LIS"}}]}}'
+    http_version: 
+  recorded_at: Thu, 29 Mar 2018 18:21:02 GMT
+recorded_with: VCR 3.0.3

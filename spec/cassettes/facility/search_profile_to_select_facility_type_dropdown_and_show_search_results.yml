@@ -1,0 +1,405 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/counties
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 30 Mar 2018 00:43:29 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 29-Mar-2018 00:43:29
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '596'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alameda",
+            "id" : 1
+          }, {
+            "value" : "Alpine",
+            "id" : 2
+          }, {
+            "value" : "Amador",
+            "id" : 3
+          }, {
+            "value" : "Butte",
+            "id" : 4
+          }, {
+            "value" : "Calaveras",
+            "id" : 5
+          }, {
+            "value" : "Colusa",
+            "id" : 6
+          }, {
+            "value" : "Contra Costa",
+            "id" : 7
+          }, {
+            "value" : "Del Norte",
+            "id" : 8
+          }, {
+            "value" : "El Dorado",
+            "id" : 9
+          }, {
+            "value" : "Fresno",
+            "id" : 10
+          }, {
+            "value" : "Glenn",
+            "id" : 11
+          }, {
+            "value" : "Humboldt",
+            "id" : 12
+          }, {
+            "value" : "Imperial",
+            "id" : 13
+          }, {
+            "value" : "Inyo",
+            "id" : 14
+          }, {
+            "value" : "Kern",
+            "id" : 15
+          }, {
+            "value" : "Kings",
+            "id" : 16
+          }, {
+            "value" : "Lake",
+            "id" : 17
+          }, {
+            "value" : "Lassen",
+            "id" : 18
+          }, {
+            "value" : "Los Angeles",
+            "id" : 19
+          }, {
+            "value" : "Madera",
+            "id" : 20
+          }, {
+            "value" : "Marin",
+            "id" : 21
+          }, {
+            "value" : "Mariposa",
+            "id" : 22
+          }, {
+            "value" : "Mendocino",
+            "id" : 23
+          }, {
+            "value" : "Merced",
+            "id" : 24
+          }, {
+            "value" : "Modoc",
+            "id" : 25
+          }, {
+            "value" : "Mono",
+            "id" : 26
+          }, {
+            "value" : "Monterey",
+            "id" : 27
+          }, {
+            "value" : "Napa",
+            "id" : 28
+          }, {
+            "value" : "Nevada",
+            "id" : 29
+          }, {
+            "value" : "Orange",
+            "id" : 30
+          }, {
+            "value" : "Placer",
+            "id" : 31
+          }, {
+            "value" : "Plumas",
+            "id" : 32
+          }, {
+            "value" : "Riverside",
+            "id" : 33
+          }, {
+            "value" : "Sacramento",
+            "id" : 34
+          }, {
+            "value" : "San Benito",
+            "id" : 35
+          }, {
+            "value" : "San Bernardino",
+            "id" : 36
+          }, {
+            "value" : "San Diego",
+            "id" : 37
+          }, {
+            "value" : "San Francisco",
+            "id" : 38
+          }, {
+            "value" : "San Joaquin",
+            "id" : 39
+          }, {
+            "value" : "San Luis Obispo",
+            "id" : 40
+          }, {
+            "value" : "San Mateo",
+            "id" : 41
+          }, {
+            "value" : "Santa Barbara",
+            "id" : 42
+          }, {
+            "value" : "Santa Clara",
+            "id" : 43
+          }, {
+            "value" : "Santa Cruz",
+            "id" : 44
+          }, {
+            "value" : "Shasta",
+            "id" : 45
+          }, {
+            "value" : "Sierra",
+            "id" : 46
+          }, {
+            "value" : "Siskiyou",
+            "id" : 47
+          }, {
+            "value" : "Solano",
+            "id" : 48
+          }, {
+            "value" : "Sonoma",
+            "id" : 49
+          }, {
+            "value" : "Stanislaus",
+            "id" : 50
+          }, {
+            "value" : "State of California",
+            "id" : 59
+          }, {
+            "value" : "Sutter",
+            "id" : 51
+          }, {
+            "value" : "Tehama",
+            "id" : 52
+          }, {
+            "value" : "Trinity",
+            "id" : 53
+          }, {
+            "value" : "Tulare",
+            "id" : 54
+          }, {
+            "value" : "Tuolumne",
+            "id" : 55
+          }, {
+            "value" : "Ventura",
+            "id" : 56
+          }, {
+            "value" : "Yolo",
+            "id" : 57
+          }, {
+            "value" : "Yuba",
+            "id" : 58
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 30 Mar 2018 00:43:29 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 30 Mar 2018 00:43:29 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 29-Mar-2018 00:43:29
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '494'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Foster Family Agency Certified Home",
+            "id" : 9
+          }, {
+            "value" : "Adoption Agency",
+            "id" : 400
+          }, {
+            "value" : "Resource Family Home",
+            "id" : 403
+          }, {
+            "value" : "Foster Family Agency",
+            "id" : 430
+          }, {
+            "value" : "Foster Family AG-Sub",
+            "id" : 431
+          }, {
+            "value" : "Small Family Home",
+            "id" : 710
+          }, {
+            "value" : "Foster Family Home",
+            "id" : 711
+          }, {
+            "value" : "Crisis Nursery",
+            "id" : 720
+          }, {
+            "value" : "Temporary Shelter Care Facility",
+            "id" : 721
+          }, {
+            "value" : "Transitional Shelter Care",
+            "id" : 722
+          }, {
+            "value" : "Transitional Housing Placement Program",
+            "id" : 726
+          }, {
+            "value" : "Community Treatment Facility",
+            "id" : 728
+          }, {
+            "value" : "GH-Enhanced Behavioral Supports Home",
+            "id" : 729
+          }, {
+            "value" : "Group Home",
+            "id" : 730
+          }, {
+            "value" : "Out Of State GH",
+            "id" : 731
+          }, {
+            "value" : "Runaway And Homeless Youth Shelter-GH",
+            "id" : 732
+          }, {
+            "value" : "Short Term Residential Therapeutic Program",
+            "id" : 733
+          }, {
+            "value" : "County Shelter/Receiving Home(Non EA/AFDC)",
+            "id" : 790
+          }, {
+            "value" : "Court Specified Home",
+            "id" : 791
+          }, {
+            "value" : "Relative/NREFM Home",
+            "id" : 793
+          }, {
+            "value" : "Tribe Specified Home",
+            "id" : 795
+          }, {
+            "value" : "Guardian Home",
+            "id" : 796
+          }, {
+            "value" : "Supervised Independent Living Placement",
+            "id" : 800
+          }, {
+            "value" : "Foster Fam Agency Cert Resource Fam Home",
+            "id" : 808
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 30 Mar 2018 00:43:29 GMT
+- request:
+    method: post
+    uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
+    body:
+      encoding: UTF-8
+      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"match_phrase":{"county.id":"30"}},{"match_phrase":{"type.id":"400"}}]}}]}},"from":"0","size":"10","sort":[]}'
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Fri, 30 Mar 2018 00:43:29 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 29-Mar-2018 00:43:29
+        GMT
+      content-length:
+      - '9496'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"took":4,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":4,"max_score":7.0572653,"hits":[{"_index":"facilities","_type":"facility","_id":"100004519","_score":7.0572653,"_source":{"href":null,"id":"100004519","capacity_last_changed":null,"type":{"id":"400","value":"ADOPTION
+        AGENCY"},"name":"Mercy Home Home","licensee_name":"Ananya Nandi","license_type":"D","assigned_worker":{"id":null,"value":null},"district_office":{"number":"22","name":"ORANGE
+        & INLAND A/SC"},"license_number":"100004519","status":{"id":"3","value":"LICENSED"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":6,"dayOfWeek":"THURSDAY","dayOfYear":96,"month":"APRIL","monthValue":4,"year":2017,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":{"id":"8","value":"COMPLAINT"},"last_deferred_visit_reason":null,"county":{"id":"30","value":"ORANGE","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9165190000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"123
+        Main St.","city":"BUENA PARK","state":"CA","zip_code":"90620","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"6891
+        SAN PEDRO CIRCLE","city":"BUENA PARK","state":"CA","zip_code":"90620","zip_suffix_code":null}}],"visits":[{"approval":"","visit_type":"Annual
+        10 month","visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":12,"dayOfWeek":"WEDNESDAY","dayOfYear":286,"month":"OCTOBER","monthValue":10,"year":2016,"chronology":{"calendarType":"iso8601","id":"ISO"}},"visit_deferred_date":null},{"approval":"","visit_type":"Annual
+        22 month","visit_date":null,"visit_deferred_date":null},{"approval":"","visit_type":"Post
+        Licensing","visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":20,"dayOfWeek":"WEDNESDAY","dayOfYear":171,"month":"JUNE","monthValue":6,"year":2007,"chronology":{"calendarType":"iso8601","id":"ISO"}},"visit_deferred_date":null},{"approval":"","visit_type":"Renewal","visit_date":null,"visit_deferred_date":null}],"annual_visit_year":17,"prelicensing_visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":28,"dayOfWeek":"WEDNESDAY","dayOfYear":59,"month":"FEBRUARY","monthValue":2,"year":2007,"chronology":{"calendarType":"iso8601","id":"ISO"}},"facility_source":"LIS"}},{"_index":"facilities","_type":"facility","_id":"100004551","_score":7.013774,"_source":{"href":null,"id":"100004551","capacity_last_changed":null,"type":{"id":"400","value":"ADOPTION
+        AGENCY"},"name":"Radiant Futures Home","licensee_name":"Palani K","license_type":"C","assigned_worker":{"id":null,"value":null},"district_office":{"number":"22","name":"ORANGE
+        & INLAND A/SC"},"license_number":"100004551","status":{"id":"3","value":"LICENSED"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":31,"dayOfWeek":"TUESDAY","dayOfYear":31,"month":"JANUARY","monthValue":1,"year":2017,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":{"id":"10","value":"CASELOAD
+        MANAGEMENT"},"last_deferred_visit_reason":null,"county":{"id":"30","value":"ORANGE","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9165510000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"876
+        Pine St.","city":"SANTA ANA","state":"CA","zip_code":"92701","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"416
+        SOUTH MAIN STREET","city":"SANTA ANA","state":"CA","zip_code":"92701","zip_suffix_code":null}}],"visits":[{"approval":"","visit_type":"Annual
+        10 month","visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":15,"dayOfWeek":"THURSDAY","dayOfYear":259,"month":"SEPTEMBER","monthValue":9,"year":2016,"chronology":{"calendarType":"iso8601","id":"ISO"}},"visit_deferred_date":null},{"approval":"","visit_type":"Annual
+        22 month","visit_date":null,"visit_deferred_date":null},{"approval":"","visit_type":"Post
+        Licensing","visit_date":null,"visit_deferred_date":null},{"approval":"","visit_type":"Renewal","visit_date":null,"visit_deferred_date":null}],"annual_visit_year":17,"prelicensing_visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":5,"dayOfWeek":"THURSDAY","dayOfYear":248,"month":"SEPTEMBER","monthValue":9,"year":2013,"chronology":{"calendarType":"iso8601","id":"ISO"}},"facility_source":"LIS"}},{"_index":"facilities","_type":"facility","_id":"100004549","_score":7.002509,"_source":{"href":null,"id":"100004549","capacity_last_changed":null,"type":{"id":"400","value":"ADOPTION
+        AGENCY"},"name":"Prospects Home","licensee_name":"Ananya Nandi","license_type":"C","assigned_worker":{"id":null,"value":null},"district_office":{"number":"22","name":"ORANGE
+        & INLAND A/SC"},"license_number":"100004549","status":{"id":"3","value":"LICENSED"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":4,"dayOfWeek":"THURSDAY","dayOfYear":124,"month":"MAY","monthValue":5,"year":2017,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":{"id":"10","value":"CASELOAD
+        MANAGEMENT"},"last_deferred_visit_reason":null,"county":{"id":"30","value":"ORANGE","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9165490000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"123
+        Main St.","city":"PLACENTIA","state":"CA","zip_code":"92870","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"P.O.
+        BOX 6803","city":"FULLERTON","state":"CA","zip_code":"92834","zip_suffix_code":null}}],"visits":[{"approval":null,"visit_type":"Annual
+        10 month","visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":5,"dayOfWeek":"MONDAY","dayOfYear":340,"month":"DECEMBER","monthValue":12,"year":2016,"chronology":{"calendarType":"iso8601","id":"ISO"}},"visit_deferred_date":null},{"approval":null,"visit_type":"Annual
+        22 month","visit_date":null,"visit_deferred_date":null},{"approval":null,"visit_type":"Post
+        Licensing","visit_date":null,"visit_deferred_date":null},{"approval":null,"visit_type":"Renewal","visit_date":null,"visit_deferred_date":null}],"annual_visit_year":17,"prelicensing_visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":6,"dayOfWeek":"THURSDAY","dayOfYear":341,"month":"DECEMBER","monthValue":12,"year":2012,"chronology":{"calendarType":"iso8601","id":"ISO"}},"facility_source":"LIS"}},{"_index":"facilities","_type":"facility","_id":"100004534","_score":7.002509,"_source":{"href":null,"id":"100004534","capacity_last_changed":null,"type":{"id":"400","value":"ADOPTION
+        AGENCY"},"name":"New Vision Home","licensee_name":"Ravi Chintamaneni","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"22","name":"ORANGE
+        & INLAND A/SC"},"license_number":"100004534","status":{"id":"3","value":"LICENSED"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":14,"dayOfWeek":"THURSDAY","dayOfYear":105,"month":"APRIL","monthValue":4,"year":2016,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_deferred_visit_date":null,"email_address":"EARS@THECHILDRENSSTATION.COM","last_visit_reason":{"id":"10","value":"CASELOAD
+        MANAGEMENT"},"last_deferred_visit_reason":null,"county":{"id":"30","value":"ORANGE","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9165340000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"8645
+        3rd St.","city":"ANAHEIM","state":"CA","zip_code":"92801","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"P.O.
+        BOX 40439","city":"DOWNEY","state":"CA","zip_code":"90239","zip_suffix_code":null}}],"visits":[{"approval":null,"visit_type":"Annual
+        10 month","visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":11,"dayOfWeek":"FRIDAY","dayOfYear":71,"month":"MARCH","monthValue":3,"year":2016,"chronology":{"calendarType":"iso8601","id":"ISO"}},"visit_deferred_date":null},{"approval":null,"visit_type":"Annual
+        22 month","visit_date":null,"visit_deferred_date":null},{"approval":null,"visit_type":"Post
+        Licensing","visit_date":null,"visit_deferred_date":null},{"approval":null,"visit_type":"Renewal","visit_date":null,"visit_deferred_date":null}],"annual_visit_year":17,"prelicensing_visit_date":{"hour":0,"minute":0,"nano":0,"second":0,"dayOfMonth":11,"dayOfWeek":"THURSDAY","dayOfYear":70,"month":"MARCH","monthValue":3,"year":2010,"chronology":{"calendarType":"iso8601","id":"ISO"}},"facility_source":"LIS"}}]}}'
+    http_version: 
+  recorded_at: Fri, 30 Mar 2018 00:43:30 GMT
+recorded_with: VCR 3.0.3
