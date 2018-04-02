@@ -3,6 +3,7 @@ import {shallow, mount} from 'enzyme'
 import ReferencesCard from 'rfa_forms/rfa01a_edit_view/referencesCard.jsx'
 import {stateTypes, nameTypes, suffixTypes, prefixTypes} from '../../helpers/constants'
 import Validator from 'helpers/validator'
+import {RfaCommon} from 'constants/rfaText'
 
 describe('References Card', () => {
   let referencesComp, setParentStateSpy, handleAddressChangeSpy
@@ -48,6 +49,9 @@ describe('References Card', () => {
   })
   it('Verify reference Component loaded', () => {
     expect(referencesComp.length).toEqual(1)
+  })
+  it('Verify email address label', () => {
+    expect(referencesComp.find('#email').at(0).props().label).toBe('Email Address' + RfaCommon.requiredIndicator)
   })
   it('verify phone change in reference Card', () => {
     let phoneField = referencesComp.find('#reference1phone_number').hostNodes()

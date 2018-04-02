@@ -7,6 +7,7 @@ import CleaveInputField from 'components/common/cleaveInputField.jsx'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 import AddressComponent from 'components/rfa_forms/addressComponent.js'
 import {fetchRequest} from 'helpers/http'
+import {RfaCommon} from 'constants/rfaText'
 
 const phoneNumberRule = {rule: 'is10digits', message: 'Invalid Phone Number'}
 
@@ -79,7 +80,7 @@ export default class ReferencesCard extends React.Component {
 
           <InputComponent gridClassName='col-md-4' id='email'
             value={this.props.reference.email}
-            label='Email (required)' placeholder=''
+            label={'Email Address' + RfaCommon.requiredIndicator} placeholder=''
             type='text' onChange={(event) => this.props.setParentState('email',
               event.target.value, this.props.index)} />
         </div>
