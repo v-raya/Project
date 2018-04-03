@@ -65,8 +65,8 @@ export default class Search extends React.Component {
     }
 
     // for future use
-    const sortBy = ''
-    const orderBy = ''
+    const sortBy = 'name'
+    const orderBy = 'asc'
 
     // call http request function with arguments
     let url = '/facilities/search' + '?from=' + getFromValue + '&size=' + getSizeValue + '&pageNumber=' + this.state.pageNumber + '&sort=' + sortBy + '&order=' + orderBy
