@@ -79,6 +79,7 @@ export default class ApplicantDetailsCard extends React.Component {
             stateTypes={this.props.stateTypes}
             addressTitle={'Residence Address' + RfaCommon.requiredIndicator}
             id='street_address'
+            label=' (required)'
             addressFields={residenceAddressValues}
             parentStateKey='residence_address'
             setParentState={this.props.setParentState}

@@ -181,7 +181,7 @@ describe('Verify ApplicantDetailsCard card', function () {
       expect(componentHtml).toContain('Last Name (required)')
       expect(componentHtml).toContain('Residence Address (required)')
       expect(componentHtml).toContain('Zip (required)')
-      expect(componentHtml).toContain('City (required')
+      expect(componentHtml).toContain('City (required)')
       expect(componentHtml).toContain('State (required)')
       expect(componentHtml).toContain('Date of Birth (required)')
       expect(componentHtml).toContain('Driver License State (required)')

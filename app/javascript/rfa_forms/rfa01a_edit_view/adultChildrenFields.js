@@ -62,6 +62,7 @@ export default class AdultChildrenFields extends React.Component {
               index={this.props.index}
               stateTypes={this.props.stateTypes}
               addressTitle='Physical Address (required)'
+              label=' (required)'
               id='street_address'
               addressFields={adultChild.address}
               parentStateKey='address'

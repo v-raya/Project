@@ -42,6 +42,7 @@ export default class AddressCard extends React.Component {
           <AddressComponent
             stateTypes={this.props.stateTypes}
             addressTitle='Physical Address (required)'
+            label=' (required)'
             id='street_address'
             addressType={physicalAddressType}
             addressFields={this.props.physicalAddress}
@@ -61,6 +62,7 @@ export default class AddressCard extends React.Component {
               ? <AddressComponent
                 stateTypes={this.props.stateTypes}
                 addressTitle='Mailing Address (required)'
+                label=' (required)'
                 id='street_address'
                 parentStateKey='addresses'
                 addressType={mailingAddressType}

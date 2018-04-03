@@ -85,6 +85,7 @@ export default class AddressComponent extends React.PureComponent {
     return (
       <CommonAddressComponent
         addressTitle={this.props.addressTitle}
+        label={this.props.label}
         addressType={this.props.addressType}
         id={this.props.id}
         suggestions={this.state.suggestions}
@@ -102,6 +103,7 @@ AddressComponent.propTypes = {
   addressType: PropTypes.string,
   id: PropTypes.string,
   addressTitle: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   addressFields: PropTypes.object.isRequired,
   stateTypes: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,

@@ -53,6 +53,7 @@ export default class ReferencesCard extends React.Component {
             index={this.props.index}
             stateTypes={this.props.stateTypes}
             addressTitle='Physical Address (required)'
+            label=' (required)'
             id='street_address'
             parentStateKey='mailing_address'
             setParentState={this.handleFullAddressChange}
