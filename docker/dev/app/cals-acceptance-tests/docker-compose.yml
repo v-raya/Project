@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   cals_acceptance_test:
-    build: .
+    image: "cwds/cals:${APP_VERSION}"
     command: bash -c 'yarn run spec-end2end-features'
     volumes:
       - ./reports/:/var/www/cals/reports/
