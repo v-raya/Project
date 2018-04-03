@@ -2,18 +2,14 @@ version: '3.3'
 services:
   cals:
     # build: .
-    # command: bash -c "bundle check || bundle install && yarn && bundle exec puma"
-    image: cwds/cals:0.58-441
+    command: bash -c "bundle check || bundle install && yarn && bundle exec puma"
+    image: cwds/cals:0.62-489
     ports:
       - 3000:3000
     environment:
       REDIS_HOST: 'redis'
       REDIS_PORT: 6379
     env_file: docker-compose.env
-    # volumes:
-    #   - .:/cals
-    #   - cals_rubygems:/ruby_gems
-    #   - cals_node_modules:/cals/node_modules
     links:
       - redis
       - perry
@@ -27,10 +23,11 @@ services:
       - 6379:6379
 
   perry:
-    image: cwds/perry:0.5.4_V1_47-RC
+    image: cwds/perry:1.6.1_376-RC
     hostname: perry
     ports:
       - 8080:8080
+      - 8092:8092
     restart: on-failure
     env_file: docker-compose.env
 
@@ -52,17 +49,15 @@ services:
     env_file: docker-compose.env
 
   cals-api:
-    image: cwds/cals-api:0.5.8_968-RC
+    image: cwds/cals-api:0.6.2_1112-RC
     hostname: cals-api
     depends_on:
       - cals_db2_data
       - postgresql_data
       - perry
     restart: on-failure
+    ports:
+      - 8081:8081
     expose:
-      - 8080
+      - 8081
     env_file: docker-compose.env
-
-# volumes:
-#   cals_rubygems:
-#   cals_node_modules:
