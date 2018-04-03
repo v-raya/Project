@@ -114,8 +114,7 @@ node('cals-slave') {
 
         // build the container from current code
         stage('Build Docker Image') {
-            newTag = "0.${getBuildTag()}-${env.BUILD_ID}"
-            appDockerImage = docker.build("${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:${newTag}",
+            appDockerImage = docker.build("${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:test",
                 "-f ./docker/test/Dockerfile .")
         }
 
@@ -158,12 +157,20 @@ node('cals-slave') {
             // }
 
             // push to docker
+            newTag = "0.${getBuildTag()}-${env.BUILD_ID}"
             dockerStages(newTag)
         }
+
+        stage('Clean Up') {
+            sh "docker images ${DOCKER_GROUP}/${DOCKER_APP_IMAGE} --filter \"before=${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:${env.BUILD_ID}\" -q | xargs docker rmi -f || true"
+            sh "docker images ${DOCKER_GROUP}/${DOCKER_APP_IMAGE} --filter \"before=${DOCKER_GROUP}/${DOCKER_TEST_IMAGE}:${env.BUILD_ID}\" -q | xargs docker rmi -f || true"
+        }
+
     }
     catch (e) {
         pipelineStatus = 'FAILED'
         currentBuild.result = 'FAILURE'
+        newTag = ''
     }
     finally {
         // bring all containers down
