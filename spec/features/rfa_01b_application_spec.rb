@@ -84,8 +84,8 @@ RSpec.feature 'RFA01B', js: true do
     # find other adult section, add 1 other adult
     other_adult_first_name = 'alpha2'
     other_adult_last_name = 'beta2'
-    fill_in('otherAdults[0].firstName', with: other_adult_first_name, match: :prefer_exact)
-    fill_in('otherAdults[0].lastName', with: other_adult_last_name, match: :prefer_exact)
+    fill_in('other_adults[0].first_name', with: other_adult_first_name, match: :prefer_exact)
+    fill_in('other_adults[0].last_name', with: other_adult_last_name, match: :prefer_exact)
     click_button('Save Progress')
     visit page.driver.current_url
 #byebug

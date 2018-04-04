@@ -25,9 +25,9 @@ describe('Verify other adultsFields', function () {
     ],
     index: 0,
     to_delete: false,
-    'firstName': '',
-    'middleName': '',
-    'lastName': '',
+    'first_name': '',
+    'middle_name': '',
+    'last_name': '',
     date_of_birth: '2017-01-01'
   }
 
@@ -63,17 +63,17 @@ describe('Verify other adultsFields', function () {
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, '2000-02-01', 'date_of_birth')
   })
   it('verifies first name field', () => {
-    let firstNameField = otherAdultsCardComp.find('#firstName')
+    let firstNameField = otherAdultsCardComp.find('#first_name')
     firstNameField.simulate('change', {target: {value: 'test'}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'test', 'first_name')
   })
   it('verifies middle name field', () => {
-    let middleNameField = otherAdultsCardComp.find('#middleName')
+    let middleNameField = otherAdultsCardComp.find('#middle_name')
     middleNameField.simulate('change', {target: {value: 'test'}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'test', 'middle_name')
   })
   it('verifies last name field', () => {
-    let lastNameField = otherAdultsCardComp.find('#lastName')
+    let lastNameField = otherAdultsCardComp.find('#last_name')
     lastNameField.simulate('change', {target: {value: 'test'}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'test', 'last_name')
   })

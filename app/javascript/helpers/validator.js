@@ -87,7 +87,7 @@ export default class Validator {
 
   isRequiredIf (opt) {
     if (opt.condition()) {
-      return !(_.isEmpty(opt.value) || (typeof (opt) === 'string' && _.isEmpty(opt.value.trim())))
+      return !(_.isEmpty(opt.value) || (typeof (opt.value) === 'string' && _.isEmpty(opt.value.trim())))
     }
     return true
   }

@@ -105,7 +105,7 @@ describe('Verify other adults Component View', function () {
     it('has simulates relationship field change', function () {
       componentMount.update()
       spyOn(componentMount.instance(), 'handleRelationshipTypeToApplicant').and.callThrough()
-      let relationShipField = componentMount.findWhere(n => n.props().id === 'otherAdults[0].relationshipType').hostNodes()
+      let relationShipField = componentMount.findWhere(n => n.props().id === 'other_adults[0].relationshipType').hostNodes()
       relationShipField.simulate('change', {target: {options: {'2': {value: '2', text: 'Sibling'}, selectedIndex: 2}}})
       OtherAdultsCard.relationship_to_applicants[0].relationship_to_applicant = { id: '2', value: 'Sibling' }
       expect(setParentStateSpy).toHaveBeenCalledWith('other_adults', [OtherAdultsCard])
@@ -131,6 +131,9 @@ describe('Verify other adults Component View', function () {
       let componentSection = componentMount.find('#otherAdultsSection')
       componentSection.simulate('click')
       expect(setFocusStateSpy).toHaveBeenCalled()
+    })
+    it('expects 5 validations', function () {
+      expect(component.instance().props.validator.validations.size).toEqual(4)
     })
   })
 
@@ -178,7 +181,7 @@ describe('Verify other adults Component View', function () {
 
     it('Verify application State Change', () => {
       let NameFields = componentMount.find('input[type="text"]')
-      let lastNameField = NameFields.findWhere(n => n.props().id === 'otherAdults[0].lastName')
+      let lastNameField = NameFields.findWhere(n => n.props().id === 'other_adults[0].last_name')
       lastNameField.simulate('change', {target: {value: 'dude'}})
       expect(setParentStateSpy).toHaveBeenCalledWith('other_adults',
         [ { relationship_types: { items: [ ] },

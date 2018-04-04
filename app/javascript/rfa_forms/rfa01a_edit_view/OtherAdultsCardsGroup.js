@@ -54,7 +54,7 @@ export default class OtherAdultsCardsGroup extends React.Component {
           <div className='card-body'>
             {
               otherAdultsList.map((otherAdultsFields, index) => {
-                const idPrefix = 'otherAdults[' + index + '].'
+                const idPrefix = 'other_adults[' + index + '].'
                 if (!otherAdultsFields.to_delete) {
                   return (
                     <div key={index} className='row list-item' >

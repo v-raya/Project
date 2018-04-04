@@ -118,6 +118,9 @@ describe('Verify minor children Component View', function () {
     it('expect children to be array', function () {
       expect(component.children.length).toEqual(1)
     })
+    it('expects six validations', function () {
+      expect(component.instance().props.validator.validations.size).toEqual(6)
+    })
   })
 
   describe('when "Add new minor card" is clicked', () => {

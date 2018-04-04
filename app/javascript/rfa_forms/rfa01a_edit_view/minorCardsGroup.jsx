@@ -58,7 +58,7 @@ export default class MinorCardsGroup extends React.Component {
           <div className='card-body'>
             {
               minorChildrenList.map((minor, index) => {
-                const idPrefix = 'minorChildren[' + index + '].'
+                const idPrefix = 'minor_children[' + index + '].'
                 if (!minor.to_delete) {
                   return (
                     <div key={index} className='row list-item' >

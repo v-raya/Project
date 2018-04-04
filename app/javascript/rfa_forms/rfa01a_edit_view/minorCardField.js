@@ -14,12 +14,29 @@ export class MinorCardField extends React.Component {
   constructor (props) {
     super(props)
 
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'date_of_birth', dateValidator)
+    this.minorDOBId = this.props.idPrefix + 'date_of_birth'
+    this.relationshipToApplicantID = this.props.idPrefix + 'relationship_to_applicants[0].relationship_to_applicant'
+    this.ApplicantIdID = this.props.idPrefix + 'relationship_to_applicants[0].applicant_id'
+    this.genderID = this.props.idPrefix + 'gender'
+    this.childFinanciallySupportedID = this.props.idPrefix + 'child_financially_supported'
+    this.childAdoptedID = this.props.idPrefix + 'child_adopted'
+    this.props.validator.addFieldValidation(this.minorDOBId, dateValidator)
+    this.props.validator.addFieldValidation(this.minorDOBId, {rule: 'isRequired', message: 'required'})
+    this.props.validator.addFieldValidation(this.relationshipToApplicantID, {rule: 'isRequiredBoolean', message: 'required'})
+    this.props.validator.addFieldValidation(this.ApplicantIdID, {rule: 'isRequiredBoolean', message: 'required'})
+    this.props.validator.addFieldValidation(this.genderID, {rule: 'isRequiredBoolean', message: 'required'})
+    this.props.validator.addFieldValidation(this.childFinanciallySupportedID, {rule: 'isRequiredBoolean', message: 'required'})
+    this.props.validator.addFieldValidation(this.childAdoptedID, {rule: 'isRequiredBoolean', message: 'required'})
+  }
+
+  componentWillUnmount () {
+    const rulesToRemove = [this.minorDOBId, this.relationshipToApplicantID,
+      this.ApplicantIdID, this.genderID, this.childFinanciallySupportedID, this.childAdoptedID]
+    this.props.validator.removeValidations(rulesToRemove)
   }
 
   render () {
     const minor = this.props.minorChild
-    const minorRuleId = this.props.idPrefix + 'date_of_birth'
     return (
       <form>
         <DropDownField gridClassName='col-md-4' id='relationship_to_applicant'
@@ -38,7 +55,7 @@ export class MinorCardField extends React.Component {
           errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}
           onChange={(event) => this.props.onFieldChange(this.props.index,
             FormatDateForPersistance(event.target.value), 'date_of_birth')}
-          onBlur={(event) => this.props.validator.validateFieldSetErrorState(minorRuleId, event.target.value)} />
+          onBlur={(event) => this.props.validator.validateFieldSetErrorState(this.minorDOBId, event.target.value)} />
         <DropDownField gridClassName='col-md-4' id='minor_gender'
           selectClassName='reusable-select'
           optionList={this.props.genderTypes}
