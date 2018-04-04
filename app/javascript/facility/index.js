@@ -7,17 +7,20 @@ import {PageHeader} from 'react-wood-duck'
 import Button from 'components/common/button'
 import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 import BreadCrumb from 'components/common/breadCrumb'
-import './stylesheets/facility.scss'
+import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
+import {checkUndefinedOrErrorMessage, checkUndefinedOrErrorUrl, checkNameorNA} from 'search/common/commonUtils'
+// import './stylesheets/facility.scss'
 
 export default class Facility extends React.Component {
   render () {
     const propsData = this.props.facility
     const childrenResults = this.props.children
     const complaintsResults = this.props.complaints
+    const errors = this.props.errors
     return (
       <div className='main_page'>
         <PageHeader
-          pageTitle={this.props.facility.name}
+          pageTitle={checkNameorNA(propsData)}
           button={null}
         />
         <BreadCrumb
@@ -27,6 +30,7 @@ export default class Facility extends React.Component {
           <div className='header-logo' />
         </div>
         <div className='body_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+          <ApiErrorMessages errors={checkUndefinedOrErrorMessage(errors)} url={checkUndefinedOrErrorUrl(errors)} />
           <FacilityDetails facilityData={propsData} />
           <FacilityAddress facilityData={propsData} />
           {childrenResults && <FacilityChildren facilityData={childrenResults} />}

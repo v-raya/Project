@@ -26,9 +26,7 @@ module CalsFaradayMiddleware
 
     def raise_error(env, response)
       body = response.body
-      Rails.logger.info("Method : #{env[:method]}")
-      Rails.logger.info(body)
-      raise ApiError.new(body, response[:status])
+      raise ApiError.new(body, response[:status], response[:url])
     end
   end
 end

@@ -5,7 +5,7 @@ import {shallow, mount} from 'enzyme'
 describe('Api Error Message', () => {
   let apiErrorComp
   it('verify error block with type business validation', () => {
-    let props =
+    const props =
       [ {
         'incident_id': '8d2c379f-15c6-4012-917b-e0f9eb495305',
         'type': 'business_validation',
@@ -17,7 +17,7 @@ describe('Api Error Message', () => {
     expect(apiErrorComp.find('span').length).toEqual(3)
   })
   it('verify error block with type constraint validation', () => {
-    let props =
+    const props =
       [ {
         'incident_id': '8d2c379f-15c6-4012-917b-e0f9eb495305',
         'type': 'constraint_validation',
@@ -30,7 +30,7 @@ describe('Api Error Message', () => {
   })
 
   it('verify error block with type security exception', () => {
-    let props =
+    const props =
     [ {
       'incident_id': '8d2c379f-15c6-4012-917b-e0f9eb495305',
       'type': 'security_exception',
@@ -39,5 +39,18 @@ describe('Api Error Message', () => {
     } ]
     apiErrorComp = mount(<ApiErrorMessages errors={props} />)
     expect(apiErrorComp.find('span').length).toEqual(3)
+  })
+
+  it('verify error block with type security exception and url', () => {
+    const props =
+    [ {
+      'incident_id': '8d2c379f-15c6-4012-917b-e0f9eb495305',
+      'type': 'security_exception',
+      'user_message': 'Applicant with first name - [test], last name - [fix] and name suffix - [] already exists in application',
+      'technical_message': 'Something went wrong'
+    } ]
+    const url = 'http://localhost:5000/facilities/SouUlov56F'
+    apiErrorComp = mount(<ApiErrorMessages errors={props} url={url} />)
+    expect(apiErrorComp.find('span').length).toEqual(4)
   })
 })

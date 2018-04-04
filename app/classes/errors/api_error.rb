@@ -2,8 +2,10 @@
 class ApiError < StandardError
   attr_reader :status
   attr_reader :response
-  def initialize(response = 'My default response', status = 200)
+  attr_reader :url
+  def initialize(response = 'My default response', status = 200, url = 'url')
     @status = status
-    @response = response
+    @response = JSON.parse(response)
+    @url = url
   end
 end

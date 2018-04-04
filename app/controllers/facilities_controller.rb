@@ -13,7 +13,10 @@ class FacilitiesController < CalsBaseController
     @facility = facility_helper.find_by_id(params[:id])
     @children = child_helper.find_by_facility(params[:id])
     @complaints = complaint_helper.find_by_facility(params[:id])
-    #@facility = @facility
+  rescue ApiError => e
+    @errors = {}
+    @errors['message'] = e.response
+    @errors['url'] = e.url
   end
 
   def search
@@ -50,8 +53,8 @@ class FacilitiesController < CalsBaseController
     session[:size] = params['size'].to_i
     session[:page_number] = params['pageNumber'].to_i
     session[:input_data] = {}
-    session[:input_data]['countyValue'] = params['county.value']
-    session[:input_data]['facilityTypeValue'] = params['type.value']
+    session[:input_data]['countyValue'] = params['county.id']
+    session[:input_data]['facilityTypeValue'] = params['type.id']
     session[:input_data]['facilityIdValue'] = params['id']
     session[:input_data]['facilityNameValue'] = params['name']
     session[:input_data]['facilityAddressValue'] = params['addresses.address.street_address']
