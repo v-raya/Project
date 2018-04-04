@@ -131,7 +131,6 @@ scenario 'validate submit button functionality', set_auth_header: true do
   select 'Yes', from: 'child_adopted'
   select 'Male', from: 'minor_gender'
   fill_in('minor_children[0].date_of_birth', with: '11/11/1111', :match => :prefer_exact)
-
   expect(page).to have_button('Submit', disabled: false)
   select 'Child', from: 'other_adults[0].relationshipType'
   expect(page).to have_button('Submit', disabled: true)
@@ -141,6 +140,8 @@ scenario 'validate submit button functionality', set_auth_header: true do
   expect(page).to have_button('Submit', disabled: true)
   fill_in('other_adults[0].last_name', with: Faker::Name.last_name, :match => :prefer_exact)
   expect(page).to have_button('Submit', disabled: false)
+  expect(page).to have_content 'IV. Minor Children Residing in the Home'
+  select 'Child', from: 'relationship_to_applicant'
   #DevNote: this test case will be updated to include more fields as submit
   #functionality is further fleshed out.
 end
