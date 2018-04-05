@@ -159,6 +159,12 @@ node('cals-slave') {
             // push to docker
             newTag = "0.${getBuildTag()}-${env.BUILD_ID}"
             dockerStages(newTag)
+
+            stage('Deploy Preint') {
+                sh "curl -v 'http://${JENKINS_USER}:${JENKINS_API_TOKEN}@jenkins.mgmt.cwds.io:8080/job/preint/job/deploy-CALS/buildWithParameters" +
+                    "?token=${JENKINS_TRIGGER_TOKEN}&cause=Caused%20by%20Build%20${env.BUILD_ID}" +
+                    "CALS_APP_VERSION=${newTag}'"
+            }
         }
 
         stage('Clean Up') {
