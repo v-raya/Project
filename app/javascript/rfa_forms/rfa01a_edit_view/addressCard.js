@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 import Immutable from 'immutable'
 import PropTypes from 'prop-types'
 import YesNoRadioComponent from 'components/common/yesNoFields'
@@ -13,12 +14,29 @@ export default class AddressCard extends React.Component {
     super(props)
     this.onMailingAddressChange = this.onMailingAddressChange.bind(this)
     this.onPhysicalAddressChange = this.onPhysicalAddressChange.bind(this)
-
+  //  this.isPhysicalDifferentThanMailingAddress = this.isPhysicalDifferentThanMailingAddress.bind(this)
     this.props.validator.addFieldValidation(this.props.idPrefix + 'physical_mailing_similar', {rule: 'isRequiredBoolean', message: 'Required'})
     this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].street_address', {rule: 'isRequired', message: 'Required'})
     this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].zip', {rule: 'isRequired', message: 'Required'})
     this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].city', {rule: 'isRequired', message: 'Required'})
     this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].state', {rule: 'isRequiredBoolean', message: 'Required'})
+
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[1].street_address',
+      {rule: 'isRequiredIf',
+        message: 'Required',
+        condition: () => this.isPhysicalDifferentThanMailingAddress()})
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[1].zip',
+      {rule: 'isRequiredIf',
+        message: 'Required',
+        condition: () => this.isPhysicalDifferentThanMailingAddress()})
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[1].city',
+      {rule: 'isRequiredIf',
+        message: 'Required',
+        condition: () => this.isPhysicalDifferentThanMailingAddress()})
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[1].state',
+      {rule: 'isRequiredIf',
+        message: 'Required',
+        condition: () => this.isPhysicalDifferentThanMailingAddress()})
   }
 
   onMailingAddressChange (key, value) {
@@ -33,6 +51,10 @@ export default class AddressCard extends React.Component {
     physicalAddress = physicalAddress.set(key, value)
     let addresses = Immutable.List([physicalAddress, this.props.mailingAddress])
     this.props.setParentState('addresses', addresses.toJS())
+  }
+
+  isPhysicalDifferentThanMailingAddress () {
+    return (this.props.physicalMailingSimilar == 'false' || this.props.physicalMailingSimilar == false)
   }
 
   render () {

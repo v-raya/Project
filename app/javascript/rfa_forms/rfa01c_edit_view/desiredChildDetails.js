@@ -21,7 +21,7 @@ const DesiredChildDetails = ({
     <div className='child-name-section'><span className='row-margin'>Name of the Child</span></div>
     <CompleteNameFields
       index={index}
-      idPrefix= {idPrefix}
+      idPrefix={idPrefix}
       fieldValues={child}
       firstName={child.first_name}
       middleName={child.middle_name}

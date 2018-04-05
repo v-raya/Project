@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 import PropTypes from 'prop-types'
 import {NameCardField} from 'components/common/nameCardField'
 import Immutable from 'immutable'
@@ -32,7 +33,6 @@ export default class NameCard extends React.PureComponent {
     this.props.validator.addFieldValidation(this.firstNameValidationId, requiredNameRule)
     this.props.validator.addFieldValidation(this.lastNameValidationId, requiredNameRule)
   }
-
   addCard (event) {
     this.props.setParentState('other_names', addCardAsJS(this.props.nameFields.get('other_names'), Immutable.fromJS(blankNameFields)))
   }
@@ -72,7 +72,7 @@ export default class NameCard extends React.PureComponent {
             suffixTypes={this.props.suffixTypes}
             prefixTypes={this.props.prefixTypes}
             hideNameType
-            validator={this.props.validator}
+          //  validator={this.props.validator}
             errors={this.props.errors} />
         </div>
         {
@@ -83,7 +83,7 @@ export default class NameCard extends React.PureComponent {
                   className='pull-right remove-btn'>Remove</a>
                 <CompleteNameFields
                   index={index}
-                  idPrefix={this.props.idPrefix + 'other_'}
+                  idPrefix={this.props.idPrefix + 'other_names[' + index + '].'}
                   firstName={nameCardFields.first_name}
                   middleName={nameCardFields.middle_name}
                   lastName={nameCardFields.last_name}
@@ -94,7 +94,9 @@ export default class NameCard extends React.PureComponent {
                   nameTypes={removeLegalNameType(this.props.nameTypes)}
                   suffixTypes={this.props.suffixTypes}
                   prefixTypes={this.props.prefixTypes}
-                  hideNameType={false} />
+                  hideNameType={false}
+                  validator={this.props.validator}
+                  errors={this.props.errors} />
               </div>
             )
           })
