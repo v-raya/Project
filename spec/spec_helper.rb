@@ -1,5 +1,4 @@
 require "simplecov"
-require 'webmock/rspec'
 require 'selenium/webdriver'
 
 SimpleCov.start 'rails' do
