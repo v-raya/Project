@@ -11,6 +11,8 @@ export default class Validator {
     this.rules = {
       isRequired: this.isRequired,
       isRequiredBoolean: this.isRequiredBoolean,
+      isRequiredIfBoolean: this.isRequiredIfBoolean,
+      isRequiredIfNumber: this.isRequiredIfNumber,
       isRequiredIf: this.isRequiredIf,
       isNotInTheFuture: this.isNotInTheFuture,
       isBeforeOtherDate: this.isBeforeOtherDate,
@@ -85,6 +87,25 @@ export default class Validator {
     return (_.isBoolean(opt.value) || !_.isEmpty(opt.value))
   }
 
+  isRequiredIfBoolean (opt) {
+    if (opt.condition()) {
+      return this.isRequiredBoolean(opt)
+    }
+    return true
+  }
+
+  isRequiredIfNumber (opt) {
+    if (opt.condition()) {
+      if (opt.value !== '') {
+        if (typeof (opt.value) === 'string') {
+          return !_.isEmpty(opt.value.trim())
+        } else {
+          return (!isNaN(+opt.value))
+        }
+      }
+    }
+    return true
+  }
   isRequiredIf (opt) {
     if (opt.condition()) {
       return !(_.isEmpty(opt.value) || (typeof (opt.value) === 'string' && _.isEmpty(opt.value.trim())))

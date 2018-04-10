@@ -1,7 +1,8 @@
 import React from 'react'
-import OtherAdultsCardsGroup, {otherAdultsDefaults} from 'rfa_forms/rfa01a_edit_view/OtherAdultsCardsGroup.js'
+import OtherAdultsCardsGroup from 'rfa_forms/rfa01a_edit_view/OtherAdultsCardsGroup.js'
 import {shallow, mount} from 'enzyme'
 import {relationshipTypes} from '../../helpers/constants'
+import {otherAdultsDefaults} from 'constants/defaultFields'
 import Validator from 'helpers/validator'
 
 describe('Verify other adults Component View', function () {
@@ -17,6 +18,7 @@ describe('Verify other adults Component View', function () {
     relationship_to_applicants: [
       {
         applicant_id: null,
+        relationship_to_applicant_freeform: '',
         relationship_to_applicant: {
           'id': 0,
           'value': ''
@@ -36,12 +38,10 @@ describe('Verify other adults Component View', function () {
       items: []
     },
     relationship_to_applicants: [
-      {
-        applicant_id: null,
+      {applicant_id: null,
         relationship_to_applicant: {
           'id': 0,
-          'value': ''
-        }
+          'value': ''}
       }
     ],
     index: 0,
@@ -105,10 +105,10 @@ describe('Verify other adults Component View', function () {
     it('has simulates relationship field change', function () {
       componentMount.update()
       spyOn(componentMount.instance(), 'handleRelationshipTypeToApplicant').and.callThrough()
-      let relationShipField = componentMount.findWhere(n => n.props().id === 'other_adults[0].relationshipType').hostNodes()
-      relationShipField.simulate('change', {target: {options: {'2': {value: '2', text: 'Sibling'}, selectedIndex: 2}}})
-      OtherAdultsCard.relationship_to_applicants[0].relationship_to_applicant = { id: '2', value: 'Sibling' }
-      expect(setParentStateSpy).toHaveBeenCalledWith('other_adults', [OtherAdultsCard])
+      let relationShipField = componentMount.findWhere(n => n.props().id === 'other_adults[0].relationship_to_applicant_freeform').hostNodes()
+      relationShipField.simulate('change', {target: {value: 'Sibling'}})
+
+      expect(setParentStateSpy).toHaveBeenCalledWith('other_adults', [ Object({ relationship_types: Object({ items: [ ] }), relationship_to_applicants: [ Object({ applicant_id: null, relationship_to_applicant_freeform: 'Sibling', relationship_to_applicant: Object({ id: 0, value: '' }) }) ], index: 0, first_name: '', middle_name: '', last_name: '', date_of_birth: '2017-01-01' }) ])
     })
   })
 
@@ -132,7 +132,7 @@ describe('Verify other adults Component View', function () {
       componentSection.simulate('click')
       expect(setFocusStateSpy).toHaveBeenCalled()
     })
-    it('expects 5 validations', function () {
+    it('expects 4 validations', function () {
       expect(component.instance().props.validator.validations.size).toEqual(4)
     })
   })
@@ -186,7 +186,8 @@ describe('Verify other adults Component View', function () {
       expect(setParentStateSpy).toHaveBeenCalledWith('other_adults',
         [ { relationship_types: { items: [ ] },
           relationship_to_applicants: [ { applicant_id: null,
-            relationship_to_applicant: { id: '2', value: 'Sibling' } } ],
+            relationship_to_applicant_freeform: '',
+            relationship_to_applicant: {id: 0, value: ''}} ],
           index: 0,
           first_name: '',
           middle_name: '',

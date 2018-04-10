@@ -3,15 +3,7 @@ import React from 'react'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import {OtherAdultsCardField} from 'components/common/OtherAdultsCardField'
 import {addCardAsJS, removeCardWithId, handleRelationshipTypeToApplicant, getFocusClassName} from 'helpers/cardsHelper.jsx'
-
-export const otherAdultsDefaults = Object.freeze({
-  relationship_to_applicants: [
-    {
-      applicant_id: '',
-      relationship_to_applicant: null
-    }
-  ]
-})
+import {otherAdultsDefaults} from 'constants/defaultFields'
 
 export default class OtherAdultsCardsGroup extends React.Component {
   constructor (props) {

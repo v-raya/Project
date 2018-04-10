@@ -18,6 +18,7 @@ describe('Verify MinorCardFields', function () {
     relationship_to_applicants: [
       {
         applicant_id: null,
+        relationship_to_applicant_freeform: '',
         relationship_to_applicant: {
           'id': 0,
           'value': ''
@@ -46,9 +47,9 @@ describe('Verify MinorCardFields', function () {
       validator={validator} />)
   })
   it('verify Relationship field', () => {
-    let relationShipField = minorChildCardComp.find('#relationship_to_applicant')
-    relationShipField.simulate('change', {target: {options: {'2': {value: '2', text: 'Sibling'}, selectedIndex: 2}}})
-    expect(handleRelationshipTypeToApplicantSpy).toHaveBeenCalledWith(0, Object({ id: '2', value: 'Sibling' }), 'relationship_to_applicant')
+    let relationShipField = minorChildCardComp.find('#relationship_to_applicant_freeform')
+    relationShipField.simulate('change', {target: {value: 'Child'}})
+    expect(handleRelationshipTypeToApplicantSpy).toHaveBeenCalledWith(0, 'Child', 'relationship_to_applicant_freeform')
   })
 
   it('verify applicantid field', () => {

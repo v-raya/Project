@@ -179,3 +179,28 @@ export const othersUsingAddressMailing = Object.freeze({
   middle_name: '',
   last_name: ''
 })
+
+export const minorDefaults = Object.freeze({
+  relationship_to_applicants: [
+    {
+      relationship_to_applicant_freeform: '',
+      applicant_id: '',
+      relationship_to_applicant: null
+    }
+  ],
+  child_adopted: '',
+  child_financially_supported: ''
+})
+
+export const otherAdultsDefaults = Object.freeze({
+  relationship_to_applicants: [
+    {
+      relationship_to_applicant_freeform: '',
+      applicant_id: '',
+      relationship_to_applicant: null
+    }
+  ],
+  first_name: '',
+  middle_name: '',
+  last_name: ''
+})

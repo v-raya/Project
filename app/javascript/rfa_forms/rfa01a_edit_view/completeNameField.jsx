@@ -26,15 +26,15 @@ export default class CompleteNameFields extends React.Component {
     return (
       <div>
         {
-        this.props.prefixTypes && <div className='col-md-12'>
-          <DropDownField gridClassName='col-md-4'
-            id={this.props.idPrefix + 'name_prefix'} value={getDictionaryId(this.props.namePrefix)}
-            selectClassName={'reusable-select'}
-            optionList={this.props.prefixTypes}
-            label={'Prefix'}
-            onChange={(event, id) => this.props.onChange(this.props.onChangePrefix + 'name_prefix', dictionaryNilSelect(event.target.options), this.props.index)} />
-        </div>
-      }
+          this.props.prefixTypes && <div className='col-md-12'>
+            <DropDownField gridClassName='col-md-4'
+              id={this.props.idPrefix + 'name_prefix'} value={getDictionaryId(this.props.namePrefix)}
+              selectClassName={'reusable-select'}
+              optionList={this.props.prefixTypes}
+              label={'Prefix'}
+              onChange={(event, id) => this.props.onChange(this.props.onChangePrefix + 'name_prefix', dictionaryNilSelect(event.target.options), this.props.index)} />
+          </div>
+        }
         <div className='col-md-12'>
           <NameCommonFields
             index={this.props.index}
@@ -57,17 +57,17 @@ export default class CompleteNameFields extends React.Component {
             onChange={(event, id) => this.props.onChange(this.props.onChangePrefix + 'name_suffix', dictionaryNilSelect(event.target.options), this.props.index)} />
         </div>
         {
-        this.props.nameTypes && <div className='col-md-12'>
-          <DropDownField
-            gridClassName='col-md-4'
-            id={this.props.idPrefix + 'name_type'}
-            value={getDictionaryId(this.props.nameType)}
-            selectClassName={'reusable-select'}
-            optionList={this.props.nameTypes}
-            label={'Name Type (required)'}
-            onChange={(event, id) => this.props.onChange(this.props.onChangePrefix + 'name_type', dictionaryNilSelect(event.target.options), this.props.index)} />
-        </div>
-      }
+          this.props.nameTypes && <div className='col-md-12'>
+            <DropDownField
+              gridClassName='col-md-4'
+              id={this.props.idPrefix + 'name_type'}
+              value={getDictionaryId(this.props.nameType)}
+              selectClassName={'reusable-select'}
+              optionList={this.props.nameTypes}
+              label={'Name Type (required)'}
+              onChange={(event, id) => this.props.onChange(this.props.onChangePrefix + 'name_type', dictionaryNilSelect(event.target.options), this.props.index)} />
+          </div>
+        }
       </div>)
   }
 }

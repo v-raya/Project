@@ -1,7 +1,8 @@
 import React from 'react'
-import MinorCardsGroup, {minorDefaults} from 'rfa_forms/rfa01a_edit_view//minorCardsGroup.jsx'
+import MinorCardsGroup from 'rfa_forms/rfa01a_edit_view//minorCardsGroup.jsx'
 import {shallow, mount} from 'enzyme'
 import {genderTypes, relationshipTypes, selectedYes} from '../../helpers/constants'
+import {minorDefaults} from 'constants/defaultFields'
 import Validator from 'helpers/validator'
 describe('Verify minor children Component View', function () {
   let component, componentMount, setFocusStateSpy, onFieldChangeSpy
@@ -14,6 +15,7 @@ describe('Verify minor children Component View', function () {
     relationship_to_applicants: [
       {
         applicant_id: null,
+        relationship_to_applicant_freeform: '',
         relationship_to_applicant: {
           'id': 0,
           'value': ''
@@ -34,6 +36,7 @@ describe('Verify minor children Component View', function () {
     relationship_to_applicants: [
       {
         applicant_id: null,
+        relationship_to_applicant_freeform: '',
         relationship_to_applicant: {
           'id': 0,
           'value': ''
@@ -92,9 +95,11 @@ describe('Verify minor children Component View', function () {
     it('has class name', function () {
       componentMount.update()
       spyOn(componentMount.instance(), 'handleRelationshipTypeToApplicant').and.callThrough()
-      let relationShipField = componentMount.find('#relationship_to_applicant').hostNodes()
-      relationShipField.simulate('change', {target: {options: {'2': {value: '2', text: 'Sibling'}, selectedIndex: 2}}})
-      minorCardChild.relationship_to_applicants[0].relationship_to_applicant = { id: '2', value: 'Sibling' }
+
+      let relationShipField = componentMount.findWhere(n => n.props().id === 'minor_children[0].relationship_to_applicant_freeform').hostNodes()
+      relationShipField.simulate('change', {target: {value: 'Sibling'}})
+
+      minorCardChild.relationship_to_applicants[0].relationship_to_applicant_freeform = 'Sibling'
       expect(setParentStateSpy).toHaveBeenCalledWith('minor_children', [minorCardChild])
     })
 

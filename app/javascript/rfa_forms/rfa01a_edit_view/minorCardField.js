@@ -3,9 +3,10 @@ import _ from 'lodash'
 import PropTypes from 'prop-types'
 import {DropDownField} from 'components/common/dropDownField'
 import {DateField} from '../../components/common/dateFields'
-import {getDictionaryId, dictionaryNilSelect, dictionaryNilSelectValue, FormatDateForDisplay, FormatDateForPersistance} from 'helpers/commonHelper.jsx'
+import {InputComponent} from 'components/common/inputFields'
+import {getDictionaryId, dictionaryNilSelect, dictionaryNilSelectValue, FormatDateForDisplay, FormatDateForPersistance, checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import {yesNo} from 'constants/constants'
-import {setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
+import {setToWhomOptionList, handleToWhomValue, checkRelationshipFreeformPresence} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 
@@ -16,7 +17,7 @@ export class MinorCardField extends React.Component {
     super(props)
     this.isRelationShipToApplicantObject = this.isRelationShipToApplicantObject.bind(this)
     this.minorDOBId = this.props.idPrefix + 'date_of_birth'
-    this.relationshipToApplicantID = this.props.idPrefix + 'relationship_to_applicants[0].relationship_to_applicant'
+    this.relationshipToApplicantID = this.props.idPrefix + 'relationship_to_applicants[0].relationship_to_applicant_freeform'
     this.ApplicantIdID = this.props.idPrefix + 'relationship_to_applicants[0].applicant_id'
     this.genderID = this.props.idPrefix + 'gender'
     this.childFinanciallySupportedID = this.props.idPrefix + 'child_financially_supported'
@@ -31,7 +32,7 @@ export class MinorCardField extends React.Component {
         message: 'required',
         condition: () => this.isRelationShipToApplicantObject()})
     this.props.validator.addFieldValidation(this.ApplicantIdID,
-      {rule: 'isRequiredIf',
+      {rule: 'isRequiredIfNumber',
         message: 'required',
         condition: () => this.isRelationShipToApplicantObject()})
     this.props.validator.addFieldValidation(this.genderID,
@@ -39,17 +40,17 @@ export class MinorCardField extends React.Component {
         message: 'required',
         condition: () => this.isRelationShipToApplicantObject()})
     this.props.validator.addFieldValidation(this.childFinanciallySupportedID,
-      {rule: 'isRequiredIf',
+      {rule: 'isRequiredIfBoolean',
         message: 'required',
         condition: () => this.isRelationShipToApplicantObject()})
     this.props.validator.addFieldValidation(this.childAdoptedID,
-      {rule: 'isRequiredIf',
+      {rule: 'isRequiredIfBoolean',
         message: 'required',
         condition: () => this.isRelationShipToApplicantObject()})
   }
   isRelationShipToApplicantObject () {
-    const val = this.props.minorChild.relationship_to_applicants[0].relationship_to_applicant
-    return _.isObject(val)
+    const val = this.props.minorChild.relationship_to_applicants[0].relationship_to_applicant_freeform
+    return !_.isEmpty(val)
   }
 
   componentWillUnmount () {
@@ -63,13 +64,11 @@ export class MinorCardField extends React.Component {
     const isRelationShipToApplicantObject = this.isRelationShipToApplicantObject()
     return (
       <form>
-        <DropDownField gridClassName='col-md-4'
-          id='relationship_to_applicant'
-          selectClassName='reusable-select'
-          optionList={this.props.relationshipToApplicantTypes}
-          value={getDictionaryId(minor.relationship_to_applicants[0].relationship_to_applicant)}
-          label={isRelationShipToApplicantObject ? 'Relationship Type (required)' : 'Relationship Type'}
-          onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, dictionaryNilSelect(event.target.options), 'relationship_to_applicant')} />
+        <InputComponent gridClassName='col-md-4'
+          id={this.props.idPrefix + 'relationship_to_applicant_freeform'}
+          value={checkRelationshipFreeformPresence(minor)}
+          label={'Relationship to Applicant'}
+          onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, event.target.value, 'relationship_to_applicant_freeform')} />
         <DropDownField gridClassName='col-md-4'
           id='applicant_id'
           selectClassName='reusable-select'

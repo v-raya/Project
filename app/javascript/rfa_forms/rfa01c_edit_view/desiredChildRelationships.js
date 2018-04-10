@@ -1,5 +1,6 @@
 import React from 'react'
 import {InputComponent} from 'components/common/inputFields'
+import {checkRelationshipFreeformPresence} from 'helpers/cardsHelper.jsx'
 import PropTypes from 'prop-types'
 
 const DesiredChildRelationships = ({
@@ -18,7 +19,7 @@ const DesiredChildRelationships = ({
               <InputComponent
                 gridClassName='col-md-4'
                 id={'relationship_to_applicant' + index + 'child' + subIndex}
-                value={child.relationship_to_applicants && child.relationship_to_applicants[subIndex] ? child.relationship_to_applicants[subIndex].relationship_to_applicant_freeform : ''}
+                value={checkRelationshipFreeformPresence(child)}
                 label={'Relationship to Applicant ' + applicant.first_name + ' ' + applicant.last_name}
                 placeholder=''
                 onChange={(event) => handleRelationshipChange(applicant, event.target.value, index, subIndex)} />

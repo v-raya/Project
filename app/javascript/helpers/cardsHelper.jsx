@@ -115,6 +115,10 @@ export const checkForNameValidation = (applicantData) => {
   return validationResult
 }
 
+export const checkRelationshipFreeformPresence = (relationshipObject) => {
+  return (relationshipObject && relationshipObject.relationship_to_applicants[0]) ? relationshipObject.relationship_to_applicants[0].relationship_to_applicant_freeform : ''
+}
+
 // export const checkFieldsForSubmit = (application) => {
 //   let validationResult = false
 //   let isValidApplicants = true

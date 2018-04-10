@@ -4,7 +4,7 @@ import {InputComponent} from './inputFields'
 import {DropDownField} from './dropDownField'
 import {DateField} from './dateFields'
 import {valuePresent, dictionaryNilSelect, dictionaryNilSelectValue, getDictionaryId, FormatDateForDisplay, FormatDateForPersistance} from 'helpers/commonHelper.jsx'
-import {setToWhomOptionList, handleToWhomValue} from 'helpers/cardsHelper.jsx'
+import {setToWhomOptionList, handleToWhomValue, checkRelationshipFreeformPresence} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 
@@ -17,7 +17,7 @@ export class OtherAdultsCardField extends React.Component {
     this.otherAdultDOBId = this.props.idPrefix + 'date_of_birth'
     this.props.validator.addFieldValidation(this.otherAdultDOBId, dateValidator)
 
-    this.relationshipToApplicantID = this.props.idPrefix + 'relationship_to_applicants[0].relationship_to_applicant'
+    this.relationshipToApplicantID = this.props.idPrefix + 'relationship_to_applicants[0].relationship_to_applicant_freeform'
     this.ApplicantIdID = this.props.idPrefix + 'relationship_to_applicants[0].applicant_id'
     this.otherAdultFirstNameID = this.props.idPrefix + 'first_name'
     this.otherAdultMiddleNameID = this.props.idPrefix + 'middle_name'
@@ -30,7 +30,7 @@ export class OtherAdultsCardField extends React.Component {
         condition: () => this.isRelationshipToApplicantObject()})
     this.props.validator.addFieldValidation(
       this.ApplicantIdID,
-      {rule: 'isRequiredIf',
+      {rule: 'isRequiredIfNumber',
         message: 'required',
         condition: () => this.isRelationshipToApplicantObject()})
     this.props.validator.addFieldValidation(
@@ -46,8 +46,8 @@ export class OtherAdultsCardField extends React.Component {
   }
 
   isRelationshipToApplicantObject () {
-    const val = this.props.otherAdults.relationship_to_applicants[0].relationship_to_applicant
-    return _.isObject(val)
+    const val = this.props.otherAdults.relationship_to_applicants[0].relationship_to_applicant_freeform
+    return !_.isEmpty(val)
   }
 
   componentWillUnmount () {
@@ -61,13 +61,11 @@ export class OtherAdultsCardField extends React.Component {
     const isRelationshipToApplicantObject = this.isRelationshipToApplicantObject()
     return (
       <form>
-        <DropDownField gridClassName='col-md-4'
-          id={this.props.idPrefix + 'relationshipType'}
-          selectClassName='reusable-select'
-          optionList={this.props.relationship_types}
-          label={isRelationshipToApplicantObject ? 'Relationship Type (required)' : 'Relationship Type'}
-          value={getDictionaryId(adult.relationship_to_applicants[0].relationship_to_applicant)}
-          onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, dictionaryNilSelect(event.target.options), 'relationship_to_applicant')} />
+        <InputComponent gridClassName='col-md-4'
+          id={this.props.idPrefix + 'relationship_to_applicant_freeform'}
+          value={checkRelationshipFreeformPresence(adult)}
+          label='Relationship to Applicant'
+          onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, event.target.value, 'relationship_to_applicant_freeform')} />
         <DropDownField gridClassName='col-md-4'
           id={this.props.idPrefix + 'availableApplicants'}
           selectClassName='reusable-select'

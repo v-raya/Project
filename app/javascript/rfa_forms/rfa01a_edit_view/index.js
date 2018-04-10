@@ -47,6 +47,8 @@ export default class Rfa01EditView extends React.Component {
     let requiredRules = this.validator.allIsRequiredRules()
     requiredRules = requiredRules.merge(this.validator.allValidationsWithOnlyRule('isRequiredBoolean'))
     requiredRules = requiredRules.merge(this.validator.allValidationsWithOnlyRule('isRequiredIf'))
+    requiredRules = requiredRules.merge(this.validator.allValidationsWithOnlyRule('isRequiredIfBoolean'))
+    requiredRules = requiredRules.merge(this.validator.allValidationsWithOnlyRule('isRequiredIfNumber'))
 
     return this.validator.validateAllFieldsWithRules(data, requiredRules)
   }

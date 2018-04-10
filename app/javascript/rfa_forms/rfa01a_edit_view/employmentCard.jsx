@@ -72,6 +72,7 @@ export default class Employment extends React.PureComponent {
               stateTypes={this.props.stateTypes}
               addressTitle='Physical Address'
               id='street_address'
+              label=''
               addressFields={employmentFields.physical_address}
               setParentState={this.onEmploymentChange}
               parentStateKey='physical_address'

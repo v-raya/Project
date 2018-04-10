@@ -14,7 +14,7 @@ export default class AddressCard extends React.Component {
     super(props)
     this.onMailingAddressChange = this.onMailingAddressChange.bind(this)
     this.onPhysicalAddressChange = this.onPhysicalAddressChange.bind(this)
-  //  this.isPhysicalDifferentThanMailingAddress = this.isPhysicalDifferentThanMailingAddress.bind(this)
+    //  this.isPhysicalDifferentThanMailingAddress = this.isPhysicalDifferentThanMailingAddress.bind(this)
     this.props.validator.addFieldValidation(this.props.idPrefix + 'physical_mailing_similar', {rule: 'isRequiredBoolean', message: 'Required'})
     this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].street_address', {rule: 'isRequired', message: 'Required'})
     this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].zip', {rule: 'isRequired', message: 'Required'})
@@ -54,7 +54,7 @@ export default class AddressCard extends React.Component {
   }
 
   isPhysicalDifferentThanMailingAddress () {
-    return (this.props.physicalMailingSimilar == 'false' || this.props.physicalMailingSimilar == false)
+    return (this.props.physicalMailingSimilar === 'false' || this.props.physicalMailingSimilar === false)
   }
 
   render () {

@@ -17,6 +17,7 @@ describe('Verify other adultsFields', function () {
     relationship_to_applicants: [
       {
         applicant_id: null,
+        relationship_to_applicant_freeform: '',
         relationship_to_applicant: {
           'id': 0,
           'value': ''
@@ -47,9 +48,9 @@ describe('Verify other adultsFields', function () {
   })
 
   it('verifies relationship type field', () => {
-    let relationShipField = otherAdultsCardComp.find('#relationshipType')
-    relationShipField.simulate('change', {target: {options: {'2': {value: '2', text: 'Sibling'}, selectedIndex: 2}}})
-    expect(handleRelationshipTypeToApplicantSpy).toHaveBeenCalledWith(0, { id: '2', value: 'Sibling' }, 'relationship_to_applicant')
+    let relationShipField = otherAdultsCardComp.find('#relationship_to_applicant_freeform')
+    relationShipField.simulate('change', {target: {value: 'Sibling'}})
+    expect(handleRelationshipTypeToApplicantSpy).toHaveBeenCalledWith(0, 'Sibling', 'relationship_to_applicant_freeform')
   })
 
   it('verifies applicantid field', () => {

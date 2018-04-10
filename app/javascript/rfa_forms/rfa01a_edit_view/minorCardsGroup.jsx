@@ -4,17 +4,7 @@ import PropTypes from 'prop-types'
 import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import {MinorCardField} from './minorCardField'
 import {addCardAsJS, removeCardWithId, handleRelationshipTypeToApplicant, getFocusClassName} from 'helpers/cardsHelper.jsx'
-
-export const minorDefaults = Object.freeze({
-  relationship_to_applicants: [
-    {
-      applicant_id: '',
-      relationship_to_applicant: null
-    }
-  ],
-  child_adopted: '',
-  child_financially_supported: ''
-})
+import {minorDefaults} from 'constants/defaultFields'
 
 export default class MinorCardsGroup extends React.Component {
   constructor (props) {

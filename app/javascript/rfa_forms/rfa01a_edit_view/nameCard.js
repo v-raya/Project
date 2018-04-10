@@ -72,7 +72,7 @@ export default class NameCard extends React.PureComponent {
             suffixTypes={this.props.suffixTypes}
             prefixTypes={this.props.prefixTypes}
             hideNameType
-          //  validator={this.props.validator}
+            //  validator={this.props.validator}
             errors={this.props.errors} />
         </div>
         {
