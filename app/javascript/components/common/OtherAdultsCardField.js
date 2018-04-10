@@ -30,7 +30,7 @@ export class OtherAdultsCardField extends React.Component {
         condition: () => this.isRelationshipToApplicantObject()})
     this.props.validator.addFieldValidation(
       this.ApplicantIdID,
-      {rule: 'isRequiredIfNumber',
+      {rule: 'isRequiredNumberIf',
         message: 'required',
         condition: () => this.isRelationshipToApplicantObject()})
     this.props.validator.addFieldValidation(

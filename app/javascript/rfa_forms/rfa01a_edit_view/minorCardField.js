@@ -32,7 +32,7 @@ export class MinorCardField extends React.Component {
         message: 'required',
         condition: () => this.isRelationShipToApplicantObject()})
     this.props.validator.addFieldValidation(this.ApplicantIdID,
-      {rule: 'isRequiredIfNumber',
+      {rule: 'isRequiredNumberIf',
         message: 'required',
         condition: () => this.isRelationShipToApplicantObject()})
     this.props.validator.addFieldValidation(this.genderID,
@@ -40,11 +40,11 @@ export class MinorCardField extends React.Component {
         message: 'required',
         condition: () => this.isRelationShipToApplicantObject()})
     this.props.validator.addFieldValidation(this.childFinanciallySupportedID,
-      {rule: 'isRequiredIfBoolean',
+      {rule: 'isRequiredBooleanIf',
         message: 'required',
         condition: () => this.isRelationShipToApplicantObject()})
     this.props.validator.addFieldValidation(this.childAdoptedID,
-      {rule: 'isRequiredIfBoolean',
+      {rule: 'isRequiredBooleanIf',
         message: 'required',
         condition: () => this.isRelationShipToApplicantObject()})
   }
