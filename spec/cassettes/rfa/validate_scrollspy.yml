@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Fri, 13 Apr 2018 16:48:03 GMT
+      - Fri, 13 Apr 2018 16:47:50 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:48:03
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:50
         GMT
       vary:
       - Accept-Encoding
@@ -21853,5 +21853,1882 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Fri, 13 Apr 2018 16:48:05 GMT
+  recorded_at: Fri, 13 Apr 2018 16:47:53 GMT
+- request:
+    method: post
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:57 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:57
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '53'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 4960,
+          "is_initial_application" : false
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:47:59 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-packet/4960/summary
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:57 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:57
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '202'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "rfa1a_sections" : [ {
+            "section" : "applicants",
+            "filled" : false
+          }, {
+            "section" : "residence",
+            "filled" : false
+          }, {
+            "section" : "applicants-relationship",
+            "filled" : false
+          }, {
+            "section" : "minor-children",
+            "filled" : false
+          }, {
+            "section" : "other-adults",
+            "filled" : false
+          }, {
+            "section" : "applicants-history",
+            "filled" : false
+          }, {
+            "section" : "child-desired",
+            "filled" : false
+          }, {
+            "section" : "adoption-history",
+            "filled" : false
+          }, {
+            "section" : "references",
+            "filled" : false
+          }, {
+            "section" : "applicants-declaration",
+            "filled" : false
+          } ],
+          "applicants" : [ ],
+          "other_adults" : [ ],
+          "adult_children" : [ ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:47:59 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/4960?expanded=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:57 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:57
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '53'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 4960,
+          "is_initial_application" : false
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:47:59 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/4960/rfa-1c-forms
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Fri, 13 Apr 2018 16:47:57 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:57
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '262'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/4960/rfa-1c-forms. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:47:59 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/residence-ownership-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:58 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:58
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '144'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Own",
+            "id" : 1
+          }, {
+            "value" : "Rent",
+            "id" : 2
+          }, {
+            "value" : "Lease",
+            "id" : 3
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:00 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/ethnicity-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:58 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:58
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '419'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alaskan Native",
+            "id" : 1
+          }, {
+            "value" : "American Indian",
+            "id" : 2
+          }, {
+            "value" : "Asian Indian",
+            "id" : 3
+          }, {
+            "value" : "Black",
+            "id" : 4
+          }, {
+            "value" : "Cambodian",
+            "id" : 5
+          }, {
+            "value" : "Caribbean",
+            "id" : 6
+          }, {
+            "value" : "Central American",
+            "id" : 7
+          }, {
+            "value" : "Chinese",
+            "id" : 8
+          }, {
+            "value" : "Declines to State",
+            "id" : 9
+          }, {
+            "value" : "Ethiopian",
+            "id" : 10
+          }, {
+            "value" : "Filipino",
+            "id" : 11
+          }, {
+            "value" : "Guamanian",
+            "id" : 12
+          }, {
+            "value" : "Hawaiian",
+            "id" : 13
+          }, {
+            "value" : "Hispanic",
+            "id" : 14
+          }, {
+            "value" : "Hmong",
+            "id" : 15
+          }, {
+            "value" : "Japanese",
+            "id" : 16
+          }, {
+            "value" : "Korean",
+            "id" : 17
+          }, {
+            "value" : "Laotian",
+            "id" : 18
+          }, {
+            "value" : "Mexican",
+            "id" : 19
+          }, {
+            "value" : "Other Asian",
+            "id" : 20
+          }, {
+            "value" : "Other Pacific Islander",
+            "id" : 21
+          }, {
+            "value" : "Other Race Unknown",
+            "id" : 22
+          }, {
+            "value" : "Polynesian",
+            "id" : 23
+          }, {
+            "value" : "Samoan",
+            "id" : 24
+          }, {
+            "value" : "South American",
+            "id" : 25
+          }, {
+            "value" : "Unable to Determine",
+            "id" : 26
+          }, {
+            "value" : "Vietnamese",
+            "id" : 27
+          }, {
+            "value" : "White - Armenian",
+            "id" : 28
+          }, {
+            "value" : "White - Central American",
+            "id" : 29
+          }, {
+            "value" : "White - European",
+            "id" : 30
+          }, {
+            "value" : "White - Middle Eastern",
+            "id" : 31
+          }, {
+            "value" : "White - Romanian",
+            "id" : 32
+          }, {
+            "value" : "White",
+            "id" : 33
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:00 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/address-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:58 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:58
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '154'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Residential",
+            "id" : 1
+          }, {
+            "value" : "Home",
+            "id" : 2
+          }, {
+            "value" : "Mailing",
+            "id" : 3
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:00 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/applicant-relationship-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:59 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:59
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '151'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Married",
+            "id" : 1
+          }, {
+            "value" : "Domestic Partnership",
+            "id" : 2
+          }, {
+            "value" : "Related (Family Member)",
+            "id" : 3
+          }, {
+            "value" : "Cohabitants",
+            "id" : 4
+          }, {
+            "value" : "Other",
+            "id" : 5
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:00 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/license-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:59 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:59
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '160'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "License",
+            "id" : 1
+          }, {
+            "value" : "Certification",
+            "id" : 2
+          }, {
+            "value" : "Approval",
+            "id" : 3
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:00 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/relationship-to-applicant-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:59 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:59
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '237'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Child",
+            "id" : 1
+          }, {
+            "value" : "Sibling",
+            "id" : 2
+          }, {
+            "value" : "Cousin",
+            "id" : 3
+          }, {
+            "value" : "Niece",
+            "id" : 4
+          }, {
+            "value" : "Nephew",
+            "id" : 5
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:00 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:59 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:59
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '187'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "AKA",
+            "id" : 1
+          }, {
+            "value" : "Doe",
+            "id" : 2
+          }, {
+            "value" : "Legal",
+            "id" : 3
+          }, {
+            "value" : "Maiden",
+            "id" : 4
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:01 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:59 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:59
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '123'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Esq",
+            "id" : 1
+          }, {
+            "value" : "II",
+            "id" : 2
+          }, {
+            "value" : "III",
+            "id" : 3
+          }, {
+            "value" : "IV",
+            "id" : 4
+          }, {
+            "value" : "JD",
+            "id" : 9
+          }, {
+            "value" : "Jr",
+            "id" : 5
+          }, {
+            "value" : "MD",
+            "id" : 7
+          }, {
+            "value" : "PhD",
+            "id" : 8
+          }, {
+            "value" : "Sr",
+            "id" : 6
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:01 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-prefix-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:59 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:59
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '105'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Dr.",
+            "id" : 4
+          }, {
+            "value" : "Miss",
+            "id" : 5
+          }, {
+            "value" : "Mr.",
+            "id" : 1
+          }, {
+            "value" : "Mrs.",
+            "id" : 3
+          }, {
+            "value" : "Ms.",
+            "id" : 2
+          }, {
+            "value" : "Rev.",
+            "id" : 6
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:01 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/phone-number-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:59 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:59
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '232'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Cell",
+            "id" : 1
+          }, {
+            "value" : "Home",
+            "id" : 2
+          }, {
+            "value" : "Work",
+            "id" : 3
+          }, {
+            "value" : "Alternate",
+            "id" : 4
+          }, {
+            "value" : "Fax",
+            "id" : 5
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:01 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/genders
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:59 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:59
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '104'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Male",
+            "id" : 1
+          }, {
+            "value" : "Female",
+            "id" : 2
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:01 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/education-level-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:47:59 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:47:59
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '208'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Eighth Grade or Less",
+            "id" : 1
+          }, {
+            "value" : "Some High School",
+            "id" : 2
+          }, {
+            "value" : "High School or Equivalent",
+            "id" : 3
+          }, {
+            "value" : "Technical Training beyond High School",
+            "id" : 4
+          }, {
+            "value" : "Some College or College-Level courses",
+            "id" : 5
+          }, {
+            "value" : "College Graduate",
+            "id" : 6
+          }, {
+            "value" : "Post-Graduate Education",
+            "id" : 7
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:01 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/languages
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:48:01 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:48:01
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '375'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "American Sign Language",
+            "id" : 1
+          }, {
+            "value" : "Arabic",
+            "id" : 2
+          }, {
+            "value" : "Armenian",
+            "id" : 3
+          }, {
+            "value" : "Cambodian",
+            "id" : 4
+          }, {
+            "value" : "Cantonese",
+            "id" : 5
+          }, {
+            "value" : "English",
+            "id" : 6
+          }, {
+            "value" : "Farsi",
+            "id" : 7
+          }, {
+            "value" : "French",
+            "id" : 8
+          }, {
+            "value" : "Hebrew",
+            "id" : 9
+          }, {
+            "value" : "Hmong",
+            "id" : 10
+          }, {
+            "value" : "Ilacano",
+            "id" : 11
+          }, {
+            "value" : "Italian",
+            "id" : 12
+          }, {
+            "value" : "Japanese",
+            "id" : 13
+          }, {
+            "value" : "Korean",
+            "id" : 14
+          }, {
+            "value" : "Lao",
+            "id" : 15
+          }, {
+            "value" : "Mandarin",
+            "id" : 16
+          }, {
+            "value" : "Mien",
+            "id" : 17
+          }, {
+            "value" : "Other Chinese",
+            "id" : 18
+          }, {
+            "value" : "Other Non-English",
+            "id" : 19
+          }, {
+            "value" : "German",
+            "id" : 20
+          }, {
+            "value" : "Hawaiian",
+            "id" : 21
+          }, {
+            "value" : "Polish",
+            "id" : 22
+          }, {
+            "value" : "Portuguese",
+            "id" : 23
+          }, {
+            "value" : "Russian",
+            "id" : 24
+          }, {
+            "value" : "Samoan",
+            "id" : 25
+          }, {
+            "value" : "Sign Language (Not ASL)",
+            "id" : 26
+          }, {
+            "value" : "Spanish",
+            "id" : 27
+          }, {
+            "value" : "Tagalog",
+            "id" : 28
+          }, {
+            "value" : "Thai",
+            "id" : 29
+          }, {
+            "value" : "Turkish",
+            "id" : 30
+          }, {
+            "value" : "Vietnamese",
+            "id" : 31
+          }, {
+            "value" : "Indochinese",
+            "id" : 32
+          }, {
+            "value" : "Romanian",
+            "id" : 33
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:02 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/states
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:48:01 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:48:01
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '640'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alabama",
+            "id" : "AL"
+          }, {
+            "value" : "Alaska",
+            "id" : "AK"
+          }, {
+            "value" : "American Samoa",
+            "id" : "AM"
+          }, {
+            "value" : "Arizona",
+            "id" : "AZ"
+          }, {
+            "value" : "Arkansas",
+            "id" : "AR"
+          }, {
+            "value" : "California",
+            "id" : "CA"
+          }, {
+            "value" : "Canal Zone",
+            "id" : "CZ"
+          }, {
+            "value" : "Colorado",
+            "id" : "CO"
+          }, {
+            "value" : "Connecticut",
+            "id" : "CT"
+          }, {
+            "value" : "Delaware",
+            "id" : "DE"
+          }, {
+            "value" : "District of Columbia",
+            "id" : "DC"
+          }, {
+            "value" : "Florida",
+            "id" : "FL"
+          }, {
+            "value" : "Georgia",
+            "id" : "GA"
+          }, {
+            "value" : "Guam",
+            "id" : "GU"
+          }, {
+            "value" : "Hawaii",
+            "id" : "HI"
+          }, {
+            "value" : "Idaho",
+            "id" : "ID"
+          }, {
+            "value" : "Illinois",
+            "id" : "IL"
+          }, {
+            "value" : "Indiana",
+            "id" : "IN"
+          }, {
+            "value" : "Iowa",
+            "id" : "IA"
+          }, {
+            "value" : "Kansas",
+            "id" : "KS"
+          }, {
+            "value" : "Kentucky",
+            "id" : "KY"
+          }, {
+            "value" : "Louisiana",
+            "id" : "LA"
+          }, {
+            "value" : "Maine",
+            "id" : "ME"
+          }, {
+            "value" : "Maryland",
+            "id" : "MD"
+          }, {
+            "value" : "Massachusetts",
+            "id" : "MA"
+          }, {
+            "value" : "Michigan",
+            "id" : "MI"
+          }, {
+            "value" : "Minnesota",
+            "id" : "MN"
+          }, {
+            "value" : "Mississippi",
+            "id" : "MS"
+          }, {
+            "value" : "Missouri",
+            "id" : "MO"
+          }, {
+            "value" : "Montana",
+            "id" : "MT"
+          }, {
+            "value" : "Nebraska",
+            "id" : "NE"
+          }, {
+            "value" : "Nevada",
+            "id" : "NV"
+          }, {
+            "value" : "New Hampshire",
+            "id" : "NH"
+          }, {
+            "value" : "New Jersey",
+            "id" : "NJ"
+          }, {
+            "value" : "New Mexico",
+            "id" : "NM"
+          }, {
+            "value" : "New York",
+            "id" : "NY"
+          }, {
+            "value" : "North Carolina",
+            "id" : "NC"
+          }, {
+            "value" : "North Dakota",
+            "id" : "ND"
+          }, {
+            "value" : "Northern Marianas Islands",
+            "id" : "CM"
+          }, {
+            "value" : "Ohio",
+            "id" : "OH"
+          }, {
+            "value" : "Oklahoma",
+            "id" : "OK"
+          }, {
+            "value" : "Oregon",
+            "id" : "OR"
+          }, {
+            "value" : "Pennsylvania",
+            "id" : "PA"
+          }, {
+            "value" : "Puerto Rico",
+            "id" : "PR"
+          }, {
+            "value" : "Rhode Island",
+            "id" : "RI"
+          }, {
+            "value" : "South Carolina",
+            "id" : "SC"
+          }, {
+            "value" : "South Dakota",
+            "id" : "SD"
+          }, {
+            "value" : "Tennessee",
+            "id" : "TN"
+          }, {
+            "value" : "Texas",
+            "id" : "TX"
+          }, {
+            "value" : "Trust Territories",
+            "id" : "TT"
+          }, {
+            "value" : "Utah",
+            "id" : "UT"
+          }, {
+            "value" : "Vermont",
+            "id" : "VT"
+          }, {
+            "value" : "Virginia",
+            "id" : "VA"
+          }, {
+            "value" : "Virgin Islands",
+            "id" : "VI"
+          }, {
+            "value" : "Washington",
+            "id" : "WA"
+          }, {
+            "value" : "West Virginia",
+            "id" : "WV"
+          }, {
+            "value" : "Wisconsin",
+            "id" : "WI"
+          }, {
+            "value" : "Wyoming",
+            "id" : "WY"
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:02 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/income-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:48:01 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:48:01
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '107'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "yearly",
+            "id" : 1
+          }, {
+            "value" : "monthly",
+            "id" : 2
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:03 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/marriage-termination-reasons
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:48:01 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:48:01
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '205'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Marriage Dissolution (Divorce)",
+            "id" : 1
+          }, {
+            "value" : "Spouse Died",
+            "id" : 2
+          }, {
+            "value" : "Domestic Partnership Dissolution",
+            "id" : 3
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:03 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/age-groups
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:48:01 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:48:01
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '141'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "0-3 years",
+            "id" : 1
+          }, {
+            "value" : "4-8 years",
+            "id" : 2
+          }, {
+            "value" : "9-12 years",
+            "id" : 3
+          }, {
+            "value" : "13-15 years",
+            "id" : 4
+          }, {
+            "value" : "16-18 years",
+            "id" : 5
+          }, {
+            "value" : "18-21 years",
+            "id" : 6
+          }, {
+            "value" : "No preference",
+            "id" : 7
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:03 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/sibling-groups
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:48:01 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:48:01
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '214'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "0",
+            "id" : 1
+          }, {
+            "value" : "2",
+            "id" : 2
+          }, {
+            "value" : "3",
+            "id" : 3
+          }, {
+            "value" : "4",
+            "id" : 4
+          }, {
+            "value" : "5+",
+            "id" : 5
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:03 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/counties
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:48:01 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:48:01
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '596'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alameda",
+            "id" : 1
+          }, {
+            "value" : "Alpine",
+            "id" : 2
+          }, {
+            "value" : "Amador",
+            "id" : 3
+          }, {
+            "value" : "Butte",
+            "id" : 4
+          }, {
+            "value" : "Calaveras",
+            "id" : 5
+          }, {
+            "value" : "Colusa",
+            "id" : 6
+          }, {
+            "value" : "Contra Costa",
+            "id" : 7
+          }, {
+            "value" : "Del Norte",
+            "id" : 8
+          }, {
+            "value" : "El Dorado",
+            "id" : 9
+          }, {
+            "value" : "Fresno",
+            "id" : 10
+          }, {
+            "value" : "Glenn",
+            "id" : 11
+          }, {
+            "value" : "Humboldt",
+            "id" : 12
+          }, {
+            "value" : "Imperial",
+            "id" : 13
+          }, {
+            "value" : "Inyo",
+            "id" : 14
+          }, {
+            "value" : "Kern",
+            "id" : 15
+          }, {
+            "value" : "Kings",
+            "id" : 16
+          }, {
+            "value" : "Lake",
+            "id" : 17
+          }, {
+            "value" : "Lassen",
+            "id" : 18
+          }, {
+            "value" : "Los Angeles",
+            "id" : 19
+          }, {
+            "value" : "Madera",
+            "id" : 20
+          }, {
+            "value" : "Marin",
+            "id" : 21
+          }, {
+            "value" : "Mariposa",
+            "id" : 22
+          }, {
+            "value" : "Mendocino",
+            "id" : 23
+          }, {
+            "value" : "Merced",
+            "id" : 24
+          }, {
+            "value" : "Modoc",
+            "id" : 25
+          }, {
+            "value" : "Mono",
+            "id" : 26
+          }, {
+            "value" : "Monterey",
+            "id" : 27
+          }, {
+            "value" : "Napa",
+            "id" : 28
+          }, {
+            "value" : "Nevada",
+            "id" : 29
+          }, {
+            "value" : "Orange",
+            "id" : 30
+          }, {
+            "value" : "Placer",
+            "id" : 31
+          }, {
+            "value" : "Plumas",
+            "id" : 32
+          }, {
+            "value" : "Riverside",
+            "id" : 33
+          }, {
+            "value" : "Sacramento",
+            "id" : 34
+          }, {
+            "value" : "San Benito",
+            "id" : 35
+          }, {
+            "value" : "San Bernardino",
+            "id" : 36
+          }, {
+            "value" : "San Diego",
+            "id" : 37
+          }, {
+            "value" : "San Francisco",
+            "id" : 38
+          }, {
+            "value" : "San Joaquin",
+            "id" : 39
+          }, {
+            "value" : "San Luis Obispo",
+            "id" : 40
+          }, {
+            "value" : "San Mateo",
+            "id" : 41
+          }, {
+            "value" : "Santa Barbara",
+            "id" : 42
+          }, {
+            "value" : "Santa Clara",
+            "id" : 43
+          }, {
+            "value" : "Santa Cruz",
+            "id" : 44
+          }, {
+            "value" : "Shasta",
+            "id" : 45
+          }, {
+            "value" : "Sierra",
+            "id" : 46
+          }, {
+            "value" : "Siskiyou",
+            "id" : 47
+          }, {
+            "value" : "Solano",
+            "id" : 48
+          }, {
+            "value" : "Sonoma",
+            "id" : 49
+          }, {
+            "value" : "Stanislaus",
+            "id" : 50
+          }, {
+            "value" : "State of California",
+            "id" : 59
+          }, {
+            "value" : "Sutter",
+            "id" : 51
+          }, {
+            "value" : "Tehama",
+            "id" : 52
+          }, {
+            "value" : "Trinity",
+            "id" : 53
+          }, {
+            "value" : "Tulare",
+            "id" : 54
+          }, {
+            "value" : "Tuolumne",
+            "id" : 55
+          }, {
+            "value" : "Ventura",
+            "id" : 56
+          }, {
+            "value" : "Yolo",
+            "id" : 57
+          }, {
+            "value" : "Yuba",
+            "id" : 58
+          } ]
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:03 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/4960?expanded=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - a502c523-1e7f-41f6-9746-d52847f13198
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Fri, 13 Apr 2018 16:48:01 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Thu, 12-Apr-2018 16:48:01
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '53'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 4960,
+          "is_initial_application" : false
+        }
+    http_version: 
+  recorded_at: Fri, 13 Apr 2018 16:48:03 GMT
 recorded_with: VCR 3.0.3

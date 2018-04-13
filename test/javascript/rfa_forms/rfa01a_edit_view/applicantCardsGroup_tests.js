@@ -9,9 +9,10 @@ import Validator from 'helpers/validator.js'
 var TestUtils = require('react-dom/test-utils')
 
 describe('Verify Applicant Card Group', () => {
+  let setApplicantsStateSpy = jasmine.createSpy('setApplicantsState')
   const isApplicantAdded = sinon.spy()
   const getFocusClassNameSpy = sinon.spy()
-  const applicants = [{
+  let applicants = Immutable.fromJS([{
     to_delete: true,
     first_name: '',
     middle_name: '',
@@ -21,7 +22,7 @@ describe('Verify Applicant Card Group', () => {
     driver_license_number: '',
     email: '',
     phones: null
-  }]
+  }])
   let props = {
     nameTypes: nameTypes.items,
     suffixTypes: suffixTypes.items,
@@ -85,6 +86,34 @@ describe('Verify Applicant Card Group', () => {
       let clickCloseButton = applicantsList[1]
       TestUtils.Simulate.click(clickCloseButton)
       expect(isApplicantAdded.called).toBe(true)
+    })
+  })
+
+  describe('updates child component calls setParentState', () => {
+    applicants = applicants.update(0, x => x.set('to_delete', false))
+
+    let applicant = mount(<ApplicantCardsGroup
+      applicants={applicants}
+      nameTypes={nameTypes.items}
+      suffixTypes={suffixTypes.items}
+      prefixTypes={prefixTypes.items}
+      phoneTypes={nameTypes.items}
+      salaryTypes={salaryTypes.items}
+      stateTypes={stateTypes.items}
+      educationLevels={educationLevels.items}
+      genderTypes={genderTypes.items}
+      ethnicityTypes={ethnicityTypes.items}
+      languageTypes={languageTypes.items}
+      setParentState={setApplicantsStateSpy}
+      validator={new Validator({})}
+      getFocusClassName={getFocusClassNameSpy} />)
+
+    let nameCard = applicant.find('.name-section').find('input[type="text"]')
+    let firstNameField = nameCard.findWhere(n => n.props().id === 'applicants[0].first_name')
+    it('check name change', () => {
+      applicants = applicants.update(0, x => x.set('first_name', 'Applicant'))
+      firstNameField.simulate('change', {target: {value: 'Applicant'}})
+      expect(setApplicantsStateSpy).toHaveBeenCalledWith('applicants', applicants)
     })
   })
 })
