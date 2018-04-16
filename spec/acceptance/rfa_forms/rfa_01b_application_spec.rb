@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'vcr'
 require 'faker'
 
 RSpec.feature 'RFA01B', js: true do
+
   scenario 'validate rfa01b creation and fields', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application (Form 01)'
@@ -18,7 +21,6 @@ RSpec.feature 'RFA01B', js: true do
     expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(2) > div > div > div > div > nav > ul > div > div:nth-child(1) > li > a').text).to eq("#{first_name} #{last_name}")
 
     click_link("#{first_name} #{last_name}")
-    #byebug
     fill_in('NameOfResourceFamily', with: 'test', match: :prefer_exact)
     fill_in('ssn', with: '123-45-6789', match: :prefer_exact)
     fill_in('driversLicenseNumberId', with: 'D123', match: :prefer_exact)
@@ -88,10 +90,8 @@ RSpec.feature 'RFA01B', js: true do
     fill_in('other_adults[0].last_name', with: other_adult_last_name, match: :prefer_exact)
     click_button('Save Progress')
     visit page.driver.current_url
-#byebug
-    expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(2) > div > div > div > div > nav > ul > div > div:nth-child(1) > li > a').text).to eq("alpha0 beta0")
-    expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(2) > div > div > div > div > nav > ul > div > div:nth-child(2) > li > a').text).to eq("alpha1 beta1")
-    expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(2) > div > div > div > div > nav > ul > div > div:nth-child(3) > li > a').text).to eq("alpha2 beta2")
-
+    expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(2) > div > div > div > div > nav > ul > div > div:nth-child(1) > li > a').text).to eq('alpha0 beta0')
+    expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(2) > div > div > div > div > nav > ul > div > div:nth-child(2) > li > a').text).to eq('alpha1 beta1')
+    expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(2) > div > div > div > div > nav > ul > div > div:nth-child(3) > li > a').text).to eq('alpha2 beta2')
   end
 end

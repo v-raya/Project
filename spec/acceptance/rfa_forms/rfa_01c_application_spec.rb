@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'vcr'
 require 'faker'
 
 RSpec.feature 'RFA01C', js: true do
+
   scenario 'validate rfa01c', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application (Form 01)'
@@ -10,7 +13,7 @@ RSpec.feature 'RFA01C', js: true do
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
     first_name = 'Kimberley'
-    last_name = "RReily"
+    last_name = 'RReily'
     fill_in('applicants[0].first_name', with: first_name, match: :prefer_exact)
     fill_in('applicants[0].middle_name', with: 'k', match: :prefer_exact)
     fill_in('applicants[0].last_name', with: last_name, match: :prefer_exact)
@@ -52,7 +55,7 @@ RSpec.feature 'RFA01C', js: true do
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
     first_name = 'Kimberley'
-    last_name = "RReily"
+    last_name = 'RReily'
     fill_in('applicants[0].first_name', with: first_name, match: :prefer_exact)
     fill_in('applicants[0].middle_name', with: 'k', match: :prefer_exact)
     fill_in('applicants[0].last_name', with: last_name, match: :prefer_exact)
@@ -65,6 +68,6 @@ RSpec.feature 'RFA01C', js: true do
     fill_in('desiredChildCardmiddle_name', with: 'k', match: :prefer_exact)
     fill_in('desiredChildCardlast_name', with: '12345678901234567890123456', match: :prefer_exact)
     click_button('Save Progress')
-    expect(page).to have_content "Message: 12345678901234567890123456 exceeds maximum length of 25"
+    expect(page).to have_content 'Message: 12345678901234567890123456 exceeds maximum length of 25'
   end
 end

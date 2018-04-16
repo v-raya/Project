@@ -1,0 +1,9 @@
+services:
+  - name: CALS (Facilities)
+    id: facility_search
+    enabled: true
+    roles: []
+    privileges: ['CWS Case Management System', 'Resource Management']
+    summary: >
+      Search for Facility
+    href: /search

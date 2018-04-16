@@ -74,3 +74,8 @@ this command will run the automated tests and open a browser with the results.
 
 ## Deployment
 see docker wiki
+
+## Content permission logic
+The structural interface of the service contains the array of `roles` and the array of `permissions`. 
+The logged in user account has to have one of the listed `roles` or one of the listed `permissions` to see the particular functional button.
+If both `roles` and `permissions` arrays of the service are empty/not authorized, than the functional button will not be showed to any user.

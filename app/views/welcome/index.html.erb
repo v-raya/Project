@@ -4,7 +4,9 @@
     <div id="links" class="container col-xs-12">
       <%= button_to "Create RFA Application (Form 01)" , rfa_a01_index_path, :method=>:post, :disabled => DISABLE_RFA_APPLICATION %>
       <br/>
+      <% if !@content[:services].empty? %>
       <%= button_to "Search for Facilities", {:controller => "search", :action => "index"} , :method=>:post,  params: { search_params: 'yes'} %>
+      <% end %>
     </div >
   </div>
   <% if !DISABLE_RFA_APPLICATION %>

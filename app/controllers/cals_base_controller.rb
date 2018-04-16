@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 class CalsBaseController < ApplicationController
   include AuthenticationProvider
   include RedisHelper
   before_action :authenticate_with_cwds # , unless: 'Rails.env.development?'
-
 
   def logout
     delete_user_from_session

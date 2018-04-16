@@ -6,8 +6,8 @@ require 'faker'
 
 RSpec.feature 'RFA01A', js: true do
 
-	before(:each) do 
-		visit root_path
+  before(:each) do 
+    visit root_path
 	end
 	scenario 'Dashboard page', set_auth_header: true do
 	    expect(page).to have_button('Create RFA Application (Form 01)')

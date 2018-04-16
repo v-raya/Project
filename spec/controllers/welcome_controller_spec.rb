@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
 require 'rspec'
 require 'rails_helper'
 
 describe WelcomeController do
   before(:each) do
-    allow(controller).to receive_messages(:authenticate_with_cwds => true)
-    allow(controller).to receive_messages(:get_session_token => ENV['TOKEN'])
+    allow_any_instance_of(WelcomeController).to receive(:user_from_session).and_return(FactoryGirl.build(:user))
+    allow(controller).to receive_messages(authenticate_with_cwds: true)
+    allow(controller).to receive_messages(get_session_token: ENV['TOKEN'])
   end
 
   describe 'GET index' do
