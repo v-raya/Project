@@ -31,8 +31,8 @@ export default class Facility extends React.Component {
         </div>
         <div className='body_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <ApiErrorMessages errors={checkUndefinedOrErrorMessage(errors)} url={checkUndefinedOrErrorUrl(errors)} />
-          <FacilityDetails facilityData={propsData} />
-          <FacilityAddress facilityData={propsData} />
+          {propsData && <FacilityDetails facilityData={propsData} />}
+          {propsData && <FacilityAddress facilityData={propsData} />}
           {childrenResults && <FacilityChildren facilityData={childrenResults} />}
           {complaintsResults && <FacilityComplaints facilityData={complaintsResults} />}
         </div>
