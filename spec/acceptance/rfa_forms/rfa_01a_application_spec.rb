@@ -65,23 +65,19 @@ RSpec.feature 'RFA01A', js: true do
   	expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
-    expect(page).to have_button('Save Progress', disabled: true)
-    fill_in('applicants[0].first_name', with: 'Geovanni', match: :prefer_exact)
+    fill_in('applicants[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
     fill_in('applicants[0].middle_name', with: 'k', match: :prefer_exact)
-    expect(page).to have_button('Save Progress', disabled: true)
-    fill_in('applicants[0].last_name', with: 'kriyah', match: :prefer_exact)
-    expect(page).to have_button('Save Progress', disabled: false)
+    fill_in('applicants[0].last_name', with: Faker::Name.last_name, match: :prefer_exact)
     click_button 'Add Another Applicant +'
     expect(page).to have_content('Applicant 2 - Information')
-    fill_in('applicants[1].first_name', with: 'Lowell', match: :prefer_exact)
-    fill_in('applicants[1].last_name', with: 'Bruen', match: :prefer_exact)
-    click_button 'Save Progress'
+    fill_in('applicants[1].first_name', with: Faker::Name.first_name, match: :prefer_exact)
+    fill_in('applicants[1].last_name', with: Faker::Name.last_name, match: :prefer_exact)
     applicant_cards = page.all('#applicants-card')
-    expect(applicant_cards[2].first('a')).to have_content('Remove')
-	applicant_cards[2].first('a').click
-    within '.cards-section#applicants-card' do
-    	expect(page).not_to have_content 'Applicant 2 - Information'
-	end
+    expect(applicant_cards[2].find('.applicant-list-remove-btn')).to have_content('Remove')
+    applicant_cards[2].find('.applicant-list-remove-btn').click
+    expect(page).not_to have_content 'Applicant 2 - Information'
+    click_button 'Save Progress'
+    expect(page).not_to have_content 'Applicant 2 - Information'
   end
   scenario 'validate submit button functionality', set_auth_header: true do
     click_button 'Create RFA Application (Form 01)'
