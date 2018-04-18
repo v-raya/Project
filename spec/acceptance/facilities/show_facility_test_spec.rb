@@ -44,11 +44,11 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     expect(find_field('dropdownFacilities').value).to eq '20'
   end
 
-  scenario 'To test reset button' do
-    facilities_list
-    find_button('reset').click
-    expect(page).not_to have_selector('#next_button')
-  end
+  # scenario 'To test reset button' do
+  #   facilities_list
+  #   find_button('reset').click
+  #   expect(page).not_to have_selector('#next_button')
+  # end
 
   def facilities_list
     visit search_index_path

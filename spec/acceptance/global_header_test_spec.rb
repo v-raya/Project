@@ -13,6 +13,8 @@ RSpec.feature 'GlobalHeader', js: true do
     expect(page).to have_link('PN')
     click_link 'PN'
     expect(page).to have_content('Logout')
-    # expect(current_path).to eql(logout_path)
+    click_link 'Logout'
+    expect(current_path).to eql(logout_path)
+    expect(page).not_to have_content('Logout')
   end
 end

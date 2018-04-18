@@ -7,8 +7,12 @@ export default class HeaderComponent extends React.Component {
     this.logoutCallback = this.logoutCallback.bind(this)
   }
 
-  logoutCallback (logoutUrl) {
-    window.location.href = logoutUrl
+  redirectUrl (path) {
+    window.location.href = path
+  }
+
+  logoutCallback () {
+    this.redirectUrl(this.props.logoutUrl)
   }
 
   render () {
