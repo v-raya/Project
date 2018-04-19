@@ -1,6 +1,7 @@
 import React from 'react'
 import CriminalFields from 'rfa_forms/rfa01b_edit_view/criminalFields'
 import {shallow, mount} from 'enzyme'
+import Validator from 'helpers/validator'
 
 describe('Verify criminal fields card', function () {
   const crime = Object.freeze({
@@ -12,7 +13,7 @@ describe('Verify criminal fields card', function () {
   })
 
   let clickCloseSpy, onFieldChangeSpy, componentMount
-
+  let validator = new Validator({})
   beforeEach(() => {
     let clickCloseSpy = jasmine.createSpy('clickClose')
     onFieldChangeSpy = jasmine.createSpy('onFieldChange')
@@ -22,7 +23,8 @@ describe('Verify criminal fields card', function () {
       crime={crime}
       idPrefix='test_'
       clickClose={clickCloseSpy}
-      onFieldChange={onFieldChangeSpy} />)
+      onFieldChange={onFieldChangeSpy}
+      validator={validator} />)
   })
   describe('Verify component', () => {
     it('verify component did mount', () => {

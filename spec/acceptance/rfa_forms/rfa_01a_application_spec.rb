@@ -13,12 +13,14 @@ RSpec.feature 'RFA01A', js: true do
 	    expect(page).to have_button('Create RFA Application (Form 01)')
   	end
 
-	scenario 'validate applicant card', set_auth_header: true do
-		click_button 'Create RFA Application (Form 01)'
-		expect(page).to have_content 'Rfa-01A Section Summary'
-	end
+  scenario 'validate applicant card', set_auth_header: true do
+    visit root_path
+    click_button 'Create RFA Application (Form 01)'
+    expect(page).to have_content 'Rfa-01A Section Summary'
+  end
 
-	scenario 'validate full applicant card', set_auth_header: true do
+  scenario 'validate full applicant card', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -79,7 +81,9 @@ RSpec.feature 'RFA01A', js: true do
     click_button 'Save Progress'
     expect(page).not_to have_content 'Applicant 2 - Information'
   end
+
   scenario 'validate submit button functionality', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -108,15 +112,17 @@ RSpec.feature 'RFA01A', js: true do
     page.find(:css, '#react-select-4--option-0').click
     page.find(:css, '.languages').click
     page.find(:css, '#react-select-4--option-1').click
+    expect(page).to have_button('Submit', disabled: false)
     expect(page).to have_content 'IV. Minor Children Residing in the Home'
-    fill_in('minor_children[0].date_of_birth', with: 'Child', match: :prefer_exact)
+    fill_in('minor_children[0].relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
+    expect(page).to have_button('Submit', disabled: true)
     select 'Geovanni Moen', from: 'applicant_id'
+    fill_in('minor_children[0].date_of_birth', with: '11/11/1111', match: :prefer_exact)
     select 'Yes', from: 'child_financially_supported'
     select 'Yes', from: 'child_adopted'
     select 'Male', from: 'minor_gender'
-    fill_in('minor_children[0].date_of_birth', with: '11/11/1111', match: :prefer_exact)
     expect(page).to have_button('Submit', disabled: false)
-    fill_in('other_adults[0].relationship_to_applicant_freeform', with: 'Child', match: :prefer_exact)
+    fill_in('other_adults[0].relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
     expect(page).to have_button('Submit', disabled: true)
     select 'Geovanni Moen', from: 'other_adults[0].availableApplicants'
     fill_in('other_adults[0].date_of_birth', with: '12/12/1211', match: :prefer_exact)
@@ -124,13 +130,13 @@ RSpec.feature 'RFA01A', js: true do
     expect(page).to have_button('Submit', disabled: true)
     fill_in('other_adults[0].last_name', with: Faker::Name.last_name, match: :prefer_exact)
     expect(page).to have_button('Submit', disabled: false)
-    expect(page).to have_content 'IV. Minor Children Residing in the Home'
-    fill_in('minor_children[0].date_of_birth', with: 'Child', match: :prefer_exact)
+    click_button 'Submit'
     # DevNote: this test case will be updated to include more fields as submit
     # functionality is further fleshed out.
   end
 
   scenario 'show error validation message on full Applicant Card', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -145,6 +151,7 @@ RSpec.feature 'RFA01A', js: true do
   end
 
   scenario 'remove error validation on full Applicant card', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -180,6 +187,7 @@ RSpec.feature 'RFA01A', js: true do
   # end
 
   scenario 'check for disabled save button when applicant names are empty', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -191,6 +199,7 @@ RSpec.feature 'RFA01A', js: true do
   end
 
   scenario 'prevent backspace navigation on IE', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -207,6 +216,7 @@ RSpec.feature 'RFA01A', js: true do
   end
 
   scenario 'validate dropdown focus select on Phone Card', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -214,8 +224,19 @@ RSpec.feature 'RFA01A', js: true do
     fill_in 'applicants[0].phones[0].number', with: "\t"
     expect(page).to have_selector(:css, 'select:focus')
   end
-
+  scenario 'validate county use only card', set_auth_header: true do
+    visit root_path
+    click_button 'Create RFA Application (Form 01)'
+    expect(page).to have_content 'Rfa-01A Section Summary'
+    page.find('#Rfa01AOverview').find('a.btn.btn-default').click
+    expect(page).to have_content 'Applicant 1 - Information'
+    fill_in('applicants[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
+    fill_in('applicants[0].last_name', with: Faker::Name.last_name, match: :prefer_exact)
+    select 'Kings', from: 'county'
+    click_button('Save Progress')
+  end
   scenario 'validate Relationship between Applicant', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -232,9 +253,19 @@ RSpec.feature 'RFA01A', js: true do
     visit page.driver.current_url
     expect(find_field('relationship_type').value).to eq '1'
     expect(find_field('place_of_relationship_state').value).to eq 'AK'
+    visit page.driver.current_url
+    select 'Other', from: 'relationship_type'
+    fill_in('other_relationship', with: 'test', match: :prefer_exact)
+    click_button('Save Progress')
+    expect(find_field('relationship_type').value).to eq '5'
+    expect(find_field('other_relationship').value).to eq 'test'
+    visit page.driver.current_url
+    select 'Cohabitants', from: 'relationship_type'
+    click_button('Save Progress')
   end
 
   scenario 'validate Residence card', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -272,6 +303,7 @@ RSpec.feature 'RFA01A', js: true do
   end
 
   scenario 'validate Minor Children card', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -284,19 +316,20 @@ RSpec.feature 'RFA01A', js: true do
     fill_in('applicants[0].middle_name', with: 'k', match: :prefer_exact)
     fill_in('applicants[0].last_name', with: applicant_1_last_name, match: :prefer_exact)
     expect(page).to have_content 'IV. Minor Children Residing in the Home'
-    fill_in('minor_children[0].relationship_to_applicant_freeform', with: 'Child', match: :prefer_exact)
+    fill_in('minor_children[0].relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
     select applicant_1_full_name, from: 'applicant_id'
     select 'Yes', from: 'child_financially_supported'
     select 'Yes', from: 'child_adopted'
     select 'Male', from: 'minor_gender'
     click_button('Save Progress')
     visit page.driver.current_url
-    expect(find_field('minor_children[0].relationship_to_applicant_freeform').value).to eq 'Child'
+    expect(find_field('minor_children[0].relationship_to_applicant_freeform').value).to eq 'child'
     applicant_id_value = find(:select, 'applicant_id').value
     expect(find_field('applicant_id').value).to eq applicant_id_value
   end
 
   scenario 'validate Other Adults card', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -308,17 +341,21 @@ RSpec.feature 'RFA01A', js: true do
     fill_in('applicants[0].middle_name', with: 'k', match: :prefer_exact)
     fill_in('applicants[0].last_name', with: applicant_1_last_name, match: :prefer_exact)
     select applicant_1_full_name, from: 'other_adults[0].availableApplicants'
-    expect(page).to have_content 'V.Other Adults Residing or Regularly Present in the Home'   
-    fill_in('other_adults[0].relationship_to_applicant_freeform', with: 'Child', match: :prefer_exact)
+    expect(page).to have_content 'V.Other Adults Residing or Regularly Present in the Home'
+
+    fill_in('other_adults[0].relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
+
     fill_in('other_adults[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
     click_button('Save Progress')
     visit page.driver.current_url
-    expect(find_field('other_adults[0].relationship_to_applicant_freeform').value).to eq 'Child'
+
+    expect(find_field('other_adults[0].relationship_to_applicant_freeform').value).to eq 'child'
     availableApplicantId = find_field('other_adults[0].availableApplicants').value
     expect(find_field('other_adults[0].availableApplicants').value).to eq availableApplicantId
   end
 
   scenario 'validate Marital History card', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -343,6 +380,7 @@ RSpec.feature 'RFA01A', js: true do
   end
 
   scenario 'validate Foster Care card', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -360,6 +398,7 @@ RSpec.feature 'RFA01A', js: true do
   end
 
   scenario 'validate references card', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -375,6 +414,7 @@ RSpec.feature 'RFA01A', js: true do
   end
 
   scenario 'RFA page dictionaries', set_auth_header: true do
+    visit root_path
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
@@ -382,4 +422,3 @@ RSpec.feature 'RFA01A', js: true do
     expect(page).to have_select('residenceTypes', with_options: %w[Own Rent Lease])
   end
 end
-

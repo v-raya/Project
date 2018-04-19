@@ -1,0 +1,196 @@
+import React from 'react'
+import Rfa01BEditView from 'rfa_forms/rfa01b_edit_view'
+import {siblingGroups, ageGroups, marriageTerminationReasons,
+  relationshipToApplicantTypes, nameTypes, suffixTypes, prefixTypes,
+  salaryTypes, relationshipTypes, applicantrelationTypes, educationLevels,
+  ethnicityTypes, genderTypes, schoolGrades, stateTypes, languageTypes,
+  residenceTypes, countyTypes, phoneTypes, licenseTypes} from './../../helpers/constants'
+import {shallow, mount} from 'enzyme'
+
+describe('Rfa01BEditView test', () => {
+  let setFocusStateSpy, submitSpy, _Rfa01BEditView,
+    setApplicationStateSpy, setDisplayStateSpy, saveProgressSpy,
+    handleClearOnConditionalChangeSpy, getFocusClassNameSpy
+
+  beforeEach(() => {
+    const props = {
+      user: {county_code: 1},
+      rfa_a01_application: {
+        'id': 744,
+        application_county: {
+          value: 'Los Angeles',
+          'id': 19
+        },
+        'residence': {
+          'addresses': [
+            {
+              'street_address': '4220 Ardwell Way',
+              'zip': '95823',
+              'city': 'Sacramento',
+              'state': {
+                'value': 'California',
+                'id': 'CA'
+              },
+              'type': {
+                'value': 'Residential',
+                'id': 1
+              }
+            },
+            {
+              'street_address': '',
+              'zip': '',
+              'city': '',
+              'type': {
+                'value': 'Mailing',
+                'id': 3
+              }
+            }
+          ],
+          'physical_mailing_similar': true,
+          'residence_ownership': {
+            'value': 'Own',
+            'id': 1
+          },
+          'weapon_in_home': true,
+          'body_of_water_exist': false,
+          'body_of_water_description': '',
+          'others_using_residence_as_mailing': false,
+          'directions_to_home': '',
+          'home_languages': [
+            {
+              'value': 'American Sign Language',
+              'id': 1
+            }
+          ]
+        },
+        'applicants': [
+          {
+            'id': 396,
+            'first_name': 'lkj',
+            'middle_name': '',
+            'last_name': 'lj',
+            'other_names': [],
+            'date_of_birth': '1111-11-11',
+            'driver_license_number': '',
+            'email': '',
+            'phones': [
+              {
+                'phone_type': {
+                  'value': 'Home',
+                  'id': 2
+                },
+                'number': '1111111111',
+                'preferred': false
+              }
+            ]
+          }
+        ],
+        'child_desired': {
+          'child_identified': true,
+          'child_in_home': false,
+          'preferred_ages': []
+        },
+        'is_initial_application': false,
+        metadata: {submit_enabled: true}
+      },
+      rfa_b01_application: {
+        id: 357,
+        metadata: {submit_enabled: true}
+      },
+      countyTypes: countyTypes.items,
+      suffixTypes: suffixTypes.items,
+      prefixTypes: prefixTypes.items,
+      nameTypes: nameTypes.items,
+      phoneTypes: phoneTypes,
+      genderTypes: genderTypes.items,
+      siblingGroups: siblingGroups.items,
+      ageGroups: ageGroups.items,
+      ethnicityTypes: ethnicityTypes.items,
+      educationLevels: educationLevels.items,
+      languageTypes: languageTypes.items,
+      relationshipToApplicantTypes: relationshipToApplicantTypes.items,
+      stateTypes: stateTypes.items,
+      license_types: licenseTypes.items,
+      salaryTypes: salaryTypes.items,
+      residenceTypes: residenceTypes.items,
+      relationshipTypes: relationshipTypes,
+      marriageTerminationReasons: marriageTerminationReasons.items
+    }
+
+    saveProgressSpy = spyOn(Rfa01BEditView.prototype, 'saveProgress').and.callThrough()
+    submitSpy = spyOn(Rfa01BEditView.prototype, 'submit').and.callThrough()
+    setApplicationStateSpy = spyOn(Rfa01BEditView.prototype, 'setApplicationState').and.callThrough()
+    setDisplayStateSpy = spyOn(Rfa01BEditView.prototype, 'setDisplayState').and.callThrough()
+    getFocusClassNameSpy = spyOn(Rfa01BEditView.prototype, 'getFocusClassName').and.callThrough()
+    setFocusStateSpy = spyOn(Rfa01BEditView.prototype, 'setFocusState').and.callThrough()
+    handleClearOnConditionalChangeSpy = spyOn(Rfa01BEditView.prototype, 'handleClearOnConditionalChange').and.callThrough()
+
+    _Rfa01BEditView = mount(<Rfa01BEditView {...props} />)
+  })
+
+  it('tests rendering index', () => {
+    expect(_Rfa01BEditView.length).toEqual(1)
+  })
+
+  it('tests handleNavLinkClick', () => {
+    let outOfStateDisclosureCard = _Rfa01BEditView.find('#outOfStateDisclosureCard').hostNodes()
+    outOfStateDisclosureCard.simulate('click')
+    expect(setFocusStateSpy).toHaveBeenCalledWith('outOfStateDisclosureCard')
+  })
+
+  it('tests setDisplayState', () => {
+    let disclosureInstructionsCard = _Rfa01BEditView.find('#DisclosureInstructionsCard').hostNodes()
+    disclosureInstructionsCard.find('#disclosureInstructionsToggle').simulate('click')
+    _Rfa01BEditView.instance().setDisplayState()
+    expect(setDisplayStateSpy).toHaveBeenCalledWith('disclosureInstructionsDisplay', true)
+  })
+
+  it('tests county change ', () => {
+    let countyCard = _Rfa01BEditView.find('#CountyUseOnlySection')
+    let countyCardField = countyCard.find('#county').hostNodes()// .simulate('keyup', { keyCode: 38 })
+    // countyCardField.simulate('keypress', { keyCode: 13 })
+    countyCardField.simulate('change', {target: {options: {'0': {value: '2', text: 'Alpine'}, selectedIndex: 0}}})
+    // _Rfa01BEditView.instance().setApplicationState('application_county', { value: 'Alameda', id: 1 })
+    expect(setApplicationStateSpy).toHaveBeenCalledWith('application_county', { id: '2', value: 'Alpine' })
+  })
+
+  it('tests handle change on true', () => {
+    let outOfStateCard = _Rfa01BEditView.find('#outOfStateDisclosureCard')
+    let cardComponent = outOfStateCard.find('input[type="radio"]')
+    let trueComponent = cardComponent.find('#outOfStateDisclosureCardtrue')
+    trueComponent.simulate('change', {target: {value: 'true'}})
+    expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('lived_in_other_state', 'true', 'other_states_of_living', [ ])
+  })
+
+  it('tests handle change on false', () => {
+    let outOfStateCard = _Rfa01BEditView.find('#outOfStateDisclosureCard')
+    let cardComponent = outOfStateCard.find('input[type="radio"]')
+    let trueComponent = cardComponent.find('#outOfStateDisclosureCardfalse')
+    trueComponent.simulate('change', {target: {value: 'false'}})
+    expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('lived_in_other_state', 'false', 'other_states_of_living', [ ])
+  })
+
+  it('tests saveProgress', () => {
+    let saveProgressBtn = _Rfa01BEditView.find('#saveProgress')
+    saveProgressBtn.simulate('click')
+    expect(saveProgressSpy).toHaveBeenCalled()
+  })
+
+  it('tests submit', () => {
+    let applicantDetailsCard = _Rfa01BEditView.find('#applicantDetailsCard').hostNodes()
+    applicantDetailsCard.find('#NameOfResourceFamily').hostNodes().simulate('change', {target: {value: 'resource family'}})
+    applicantDetailsCard.find('#date_of_birth').hostNodes().simulate('change', {target: {value: '11/12/2000'}})
+    applicantDetailsCard.find('#applicant_first_name').hostNodes().simulate('change', {target: {value: 'name'}})
+    applicantDetailsCard.find('#applicant_last_name').hostNodes().simulate('change', {target: {value: 'last'}})
+
+    applicantDetailsCard.find('#Residentialstreet_address').hostNodes().simulate('change', {target: {value: 'last'}})
+    applicantDetailsCard.find('#Residentialzip').hostNodes().simulate('change', {target: {value: 'last'}})
+    applicantDetailsCard.find('#Residentialcity').hostNodes().simulate('change', {target: {value: 'last'}})
+    let state = applicantDetailsCard.find('.Select-control').simulate('keyDown', { keyCode: 40 })
+    state.simulate('keyDown', { keyCode: 13 })
+
+    let submitBtn = _Rfa01BEditView.find('#submitApplication')
+    submitBtn.simulate('click')
+    expect(submitSpy).toHaveBeenCalled()
+  })
+})

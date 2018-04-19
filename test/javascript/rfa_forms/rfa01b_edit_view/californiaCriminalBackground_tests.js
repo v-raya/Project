@@ -1,6 +1,7 @@
 import React from 'react'
 import CaliforniaCriminalBackground from 'rfa_forms/rfa01b_edit_view/californiaCriminalBackground'
 import {shallow, mount} from 'enzyme'
+import Validator from 'helpers/validator'
 
 describe('Verify californiaCriminalBackground card', function () {
   let setStateSpy, setParentStateSpy, setDisplayStateSpy,
@@ -22,6 +23,9 @@ describe('Verify californiaCriminalBackground card', function () {
     'when_offense_happen': '',
     'offense_details': ''
   }]
+
+  let validator = new Validator({})
+
   beforeEach(() => {
     setStateSpy = jasmine.createSpy('setState')
     setDisplayStateSpy = jasmine.createSpy('setDisplayState')
@@ -40,21 +44,31 @@ describe('Verify californiaCriminalBackground card', function () {
       getFocusClassName={getFocusClassNameSpy}
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
-      setParentState={setParentStateSpy} />)
+      setParentState={setParentStateSpy}
+      validator={validator} />)
 
     componentMountWithoutDisclosures = mount(<CaliforniaCriminalBackground
       convictedInCalifornia
       disclosures={undefined}
-      focusComponentName={'CACriminalBackgroundCard'}
+      focusComponentName={'crimeBackgroundAgainstCohabitantCard'}
       getFocusClassName={getFocusClassNameSpy}
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
-      setParentState={setParentStateSpy} />)
+      setParentState={setParentStateSpy}
+      validator={validator} />)
   })
 
   describe('Verify component will mount', () => {
     it('verify component did mount', () => {
       expect(componentMount.length).toEqual(1)
+    })
+    it('expects 4 validations', () => {
+      expect(componentMount.instance().props.validator.validations.size).toEqual(4)
+    })
+    it('tests handleNavLinkClick', () => {
+      let CACrimeDisclosureCard = componentMount.find('#CACriminalBackgroundCard').hostNodes()
+      CACrimeDisclosureCard.simulate('click')
+      expect(setFocusStateSpy).toHaveBeenCalledWith('CACriminalBackgroundCard')
     })
     it('adds a card', () => {
       spyOn(componentMount.instance(), 'addCard').and.callThrough()

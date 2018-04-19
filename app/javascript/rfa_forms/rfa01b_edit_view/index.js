@@ -19,7 +19,7 @@ import Validator from 'helpers/validator'
 import PageTemplate from 'components/common/pageTemplate'
 import {disclosureDefaults} from 'constants/defaultFields'
 
-export default class Rfa01bList extends React.Component {
+export default class Rfa01bEditView extends React.Component {
   constructor (props) {
     super(props)
     this.saveProgress = this.saveProgress.bind(this)
@@ -35,17 +35,55 @@ export default class Rfa01bList extends React.Component {
     this.handleNavLinkClick = this.handleNavLinkClick.bind(this)
     this.isNavLinkActive = this.isNavLinkActive.bind(this)
 
+    let submitEnabled = this.props.rfa_a01_application.metadata &&
+    this.props.rfa_a01_application.metadata.submit_enabled &&
+    this.props.rfa_b01_application.metadata &&
+    this.props.rfa_b01_application.metadata.submit_enabled
+
+    if (submitEnabled === undefined) {
+      submitEnabled = false
+    }
     this.state = {
       application: this.props.rfa_b01_application,
       activeNavLinkId: this.props.rfa_b01_application.id,
       rfa_a01_application: this.props.rfa_a01_application,
-      disableSubmit: true, //! checkFieldsForSubmit(this.props.rfa_a01_application),
-      disableSave: !(checkForNameValidation(this.props.rfa_a01_application.applicants)),
       disclosureInstructionsDisplay: null,
       privacyStatementDisplay: null,
       focusComponentName: '',
-      errors: {}
+      errors: {},
+      disableSave: !checkForNameValidation(this.props.rfa_a01_application.applicants),
+      disableSubmit: !submitEnabled
     }
+
+    if (!this.props.rfa_b01_application.application_county) {
+      const countyValue = (this.props.user && this.props.user.county_code)
+      this.state.application.application_county = this.props.countyTypes.find(countyType => countyType.id === parseInt(countyValue))
+    }
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    if (prevState.application !== this.state.application) {
+      const DataValidForSubmit = !this.validateAllRequiredForSubmit(this.state.application)
+      const DataValidForSave = !checkForNameValidation(this.state.rfa_a01_application.applicants)
+
+      if (prevState.disableSubmit !== DataValidForSubmit) {
+        this.setState({disableSubmit: DataValidForSubmit})
+        let application = this.state.application
+        application.metadata = {submit_enabled: !DataValidForSubmit}
+        this.setState({application: application})
+      }
+      if (prevState.disableSave !== DataValidForSave) {
+        this.setState({disableSave: DataValidForSave})
+      }
+    }
+  }
+
+  validateAllRequiredForSubmit (data) {
+    let requiredRules = this.validator.allIsRequiredRules()
+    requiredRules = requiredRules.merge(this.validator.allValidationsWithOnlyRule('isRequiredBoolean'))
+    requiredRules = requiredRules.merge(this.validator.allValidationsWithOnlyRule('isRequiredIf'))
+
+    return this.validator.validateAllFieldsWithRules(data, requiredRules)
   }
 
   validateFieldSetErrorState (fieldName, value) {
@@ -66,7 +104,8 @@ export default class Rfa01bList extends React.Component {
   }
 
   submit () {
-    const url = '/rfa/a01/submit'
+    this.saveProgress()
+    const url = '/rfa/a01/' + this.state.rfa_a01_application.id + '/submit'
     this.fetchToRails(url, 'POST', this.state.rfa_a01_application)
   }
 
@@ -104,9 +143,6 @@ export default class Rfa01bList extends React.Component {
     let newState = Immutable.fromJS(this.state)
     newState = newState.setIn(['application', key], value)
     this.setState(newState.toJS())
-    this.setState({
-      disableSubmit: true//! checkFieldsForSubmit(newState.toJS())
-    })
   }
 
   setDisplayState (key, value) {
@@ -138,6 +174,7 @@ export default class Rfa01bList extends React.Component {
 
   render () {
     const countyValue = getDictionaryId(this.state.application.application_county) || (this.props.user && this.props.user.county_code)
+
     return (
       <PageTemplate
         headerLabel='Resource Family Application - Confidential (RFA 01B)'
@@ -155,6 +192,7 @@ export default class Rfa01bList extends React.Component {
               this.state.rfa_a01_application.child_desired.child_identified}
         isNavLinkActive={this.isNavLinkActive}
         handleNavLinkClick={this.handleNavLinkClick}
+
         errors={this.state.errors.issue_details} >
 
         <CardsGroupLayout>
@@ -171,6 +209,7 @@ export default class Rfa01bList extends React.Component {
         <CardsGroupLayout>
           <h2>I.<span>Out of State Disclosure</span></h2>
           <OutOfStateDisclosureCard
+            validator={this.validator}
             livedInOtherState={this.state.application.lived_in_other_state}
             otherStatesOfLiving={this.state.application.other_states_of_living}
             stateTypes={this.props.stateTypes}
@@ -199,7 +238,8 @@ export default class Rfa01bList extends React.Component {
             getFocusClassName={this.getFocusClassName}
             setFocusState={this.setFocusState}
             handleClearOnConditionalChange={this.handleClearOnConditionalChange}
-            setParentState={this.setApplicationState} />
+            setParentState={this.setApplicationState}
+            validator={this.validator} />
         </CardsGroupLayout>
 
         <CardsGroupLayout>
@@ -210,7 +250,8 @@ export default class Rfa01bList extends React.Component {
             getFocusClassName={this.getFocusClassName}
             setFocusState={this.setFocusState}
             handleClearOnConditionalChange={this.handleClearOnConditionalChange}
-            setParentState={this.setApplicationState} />
+            setParentState={this.setApplicationState}
+            validator={this.validator} />
         </CardsGroupLayout>
 
         <CardsGroupLayout>
@@ -221,7 +262,8 @@ export default class Rfa01bList extends React.Component {
             getFocusClassName={this.getFocusClassName}
             setFocusState={this.setFocusState}
             handleClearOnConditionalChange={this.handleClearOnConditionalChange}
-            setParentState={this.setApplicationState} />
+            setParentState={this.setApplicationState}
+            validator={this.validator} />
         </CardsGroupLayout>
 
         <CardsGroupLayout>

@@ -7,5 +7,5 @@ class Helpers::Child < Helpers::ModelHelperBase
   def find_by_facility(id)
     Child.find_by_facility(id, auth_header)
   end
-  
+
 end

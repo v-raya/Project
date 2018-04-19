@@ -5,7 +5,7 @@ import YesNoRadioComponent from 'components/common/yesNoFields'
 import CardLayout from 'components/common/cardLayout'
 import MultiSelect from 'components/common/multiSelect'
 import {Rfa01bOutOfStateDisclosureCardText, RfaCommon} from 'constants/rfaText'
-import {getDictionaryId, dictionaryNilSelect} from 'helpers/commonHelper.jsx'
+import {valuePresent, getDictionaryId, dictionaryNilSelect, isTrue} from 'helpers/commonHelper.jsx'
 
 const otherStatesOfLivingDefaults = Object.freeze({
   'other_states_of_living': [
@@ -16,6 +16,21 @@ const otherStatesOfLivingDefaults = Object.freeze({
   ]})
 
 export default class OutOfStateDisclosureCard extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.otherStatesOfLivingId = 'other_states_of_living'
+
+    this.props.validator.addNewValidation(
+      {
+        [this.otherStatesOfLivingId]: [{
+          rule: 'isRequiredIf',
+          message: 'other states are required',
+          condition: () => isTrue(this.props.livedInOtherState)
+        }]
+      }
+    )
+  }
   render () {
     const livedInOtherState = String(this.props.livedInOtherState)
 

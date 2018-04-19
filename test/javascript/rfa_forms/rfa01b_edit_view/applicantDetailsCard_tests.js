@@ -49,7 +49,8 @@ describe('Verify ApplicantDetailsCard card', function () {
     }
 
   let setParentStateSpy, setDisplayStateSpy, shallowMount, shallowMountNoResidence,
-    setFocusStateSpy, getFocusClassNameSpy, onChangeSpy, validator, shallowMountNoLicenseNumber
+    setFocusStateSpy, getFocusClassNameSpy, onChangeSpy, shallowMountNoLicenseNumber
+  let validator = new Validator({})
 
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setApplicationState')
@@ -57,7 +58,6 @@ describe('Verify ApplicantDetailsCard card', function () {
     setDisplayStateSpy = jasmine.createSpy('setDisplayState')
     getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
-    validator = new Validator({})
 
     shallowMount = shallow(<ApplicantDetailsCard
       validator={validator}
@@ -69,24 +69,33 @@ describe('Verify ApplicantDetailsCard card', function () {
       setParentState={setParentStateSpy}
       stateTypes={stateTypes.items}
       namePrefixTypes={prefixTypes.items}
-      nameSuffixTypes={suffixTypes.items} />)
+      nameSuffixTypes={suffixTypes.items}
+      validator={validator} />)
 
     shallowMountNoResidence = mount(<ApplicantDetailsCard
-      validator={validator}
       application={applicationNoResidence}
       setDisplayState={setDisplayStateSpy}
-      focusComponentName={blankValues.focusComponentName}
+      focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
       setFocusState={setFocusStateSpy}
       setParentState={setParentStateSpy}
       stateTypes={stateTypes.items}
       namePrefixTypes={prefixTypes.items}
-      nameSuffixTypes={suffixTypes.items} />)
+      nameSuffixTypes={suffixTypes.items}
+      validator={validator} />)
   })
 
   describe('Verify applicant details', () => {
     it('verify component did mount', () => {
       expect(shallowMount.length).toEqual(1)
+    })
+    it('expects 6 validations', () => {
+      expect(shallowMountNoResidence.instance().props.validator.validations.size).toEqual(6)
+    })
+    it('tests handleNavLinkClick', () => {
+      let CACrimeDisclosureCard = shallowMountNoResidence.find('#applicantDetailsCard').hostNodes()
+      CACrimeDisclosureCard.simulate('click')
+      expect(setFocusStateSpy).toHaveBeenCalledWith('applicantDetailsCard')
     })
 
     it('onChange event on Name Of Resource Family', () => {
@@ -130,28 +139,28 @@ describe('Verify ApplicantDetailsCard card', function () {
 
   describe('Verify required fields', () => {
     const applicationNoLicenseNumber =
-        {
-          resource_family_name: 'Peterson',
-          applicant_name_prefix: {},
-          applicant_first_name: 'Anna',
-          applicant_middle_name: 'M.',
-          applicant_last_name: 'Peterson',
-          applicant_name_suffix: {},
-          residence_address: {
-            street_address: '1702 Redoak Ct.',
-            zip: '98123',
-            zip_extension: '123',
-            city: 'Rocklin',
-            state: {
-              value: 'Los Angeles',
-              id: 'string'
-            }
-          },
-          ssn: '464942323',
-          date_of_birth: '1981-12-26',
-          driver_license: '',
-          driver_license_state: {}
-        }
+      {
+        resource_family_name: 'Peterson',
+        applicant_name_prefix: {},
+        applicant_first_name: 'Anna',
+        applicant_middle_name: 'M.',
+        applicant_last_name: 'Peterson',
+        applicant_name_suffix: {},
+        residence_address: {
+          street_address: '1702 Redoak Ct.',
+          zip: '98123',
+          zip_extension: '123',
+          city: 'Rocklin',
+          state: {
+            value: 'Los Angeles',
+            id: 'string'
+          }
+        },
+        ssn: '464942323',
+        date_of_birth: '1981-12-26',
+        driver_license: '',
+        driver_license_state: {}
+      }
 
     beforeEach(() => {
       setParentStateSpy = jasmine.createSpy('setApplicationState')
@@ -171,7 +180,8 @@ describe('Verify ApplicantDetailsCard card', function () {
         setParentState={setParentStateSpy}
         stateTypes={stateTypes.items}
         namePrefixTypes={prefixTypes.items}
-        nameSuffixTypes={suffixTypes.items} />)
+        nameSuffixTypes={suffixTypes.items}
+        validator={validator} />)
     })
 
     it('check required fields indicators', () => {

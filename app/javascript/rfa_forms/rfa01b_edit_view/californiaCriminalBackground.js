@@ -9,7 +9,7 @@ import CardLayout from 'components/common/cardLayout'
 import Button from 'components/common/button'
 import {Rfa01bCaliforniaCriminalBackGroundCardText} from 'constants/rfaText'
 import {addCardAsJS, removeCard} from 'helpers/cardsHelper.jsx'
-import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
+import {checkArrayObjectPresence, isTrue} from 'helpers/commonHelper.jsx'
 
 const disclosureDefaults = Object.freeze({
   'offense': '',
@@ -66,7 +66,7 @@ export default class CaliforniaCriminalBackground extends React.Component {
 
           </div>
         </div>
-        {convictedInCalifornia === 'true'
+        {isTrue(convictedInCalifornia)
           ? disclosures.map((crime, index) => {
             return (
               <div key={'californiaCriminalBackgroundKey' + index}>
@@ -75,14 +75,17 @@ export default class CaliforniaCriminalBackground extends React.Component {
                   crime={crime}
                   idPrefix='californiaCriminalBackground'
                   clickClose={this.clickClose}
-                  onFieldChange={this.onFieldChange} />
+                  onFieldChange={this.onFieldChange}
+                  validator={this.props.validator}
+                  validatorPrefix={'convicted_in_california_disclosures[' + index + '].'}
+                  validatorCondition={isTrue(convictedInCalifornia)} />
               </div>
             )
           })
           : null
         }
 
-        {convictedInCalifornia === 'true'
+        {isTrue(convictedInCalifornia)
           ? <div>
             <Button
               id='CACrimeAdd'

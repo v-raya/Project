@@ -30,6 +30,10 @@ export const isBoolean = (val) => {
   return (typeof val === 'boolean' || val === 'true' || val === 'false')
 }
 
+export const isTrue = (val) => {
+  return (val === 'true' || val === true)
+}
+
 export const removeLegalNameType = (nameTypes) => {
   delete nameTypes[2]
   return nameTypes

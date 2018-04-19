@@ -2,12 +2,13 @@ import React from 'react'
 import OutOfStateDisclosureCard from 'rfa_forms/rfa01b_edit_view/outOfStateDisclosureCard'
 import {shallow, mount} from 'enzyme'
 import {stateTypes} from '../../helpers/constants'
+import Validator from 'helpers/validator'
 
 describe('Verify out Of state disclosure card card', function () {
   let setParentStateSpy, setDisplayStateSpy, componentMountinState, componentMountOtherState,
     componentMountLivedOutOfState, componentShallowInState,
     setFocusStateSpy, setApplicationStateSpy, getFocusClassNameSpy, handleClearOnConditionalChangeSpy
-
+  let validator = new Validator({})
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     setDisplayStateSpy = jasmine.createSpy('setDisplayState')
@@ -23,7 +24,8 @@ describe('Verify out Of state disclosure card card', function () {
       getFocusClassName={getFocusClassNameSpy}
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
-      setParentState={setParentStateSpy} />)
+      setParentState={setParentStateSpy}
+      validator={validator} />)
     componentMountLivedOutOfState = mount(<OutOfStateDisclosureCard
       livedInOtherState={false}
       otherStatesOfLiving={[]}
@@ -32,7 +34,8 @@ describe('Verify out Of state disclosure card card', function () {
       getFocusClassName={getFocusClassNameSpy}
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
-      setParentState={setParentStateSpy} />)
+      setParentState={setParentStateSpy}
+      validator={validator} />)
     componentShallowInState = shallow(<OutOfStateDisclosureCard
       livedInOtherState
       otherStatesOfLiving={[]}
@@ -40,7 +43,8 @@ describe('Verify out Of state disclosure card card', function () {
       focusComponentName={'CACriminalBackgroundCard'}
       getFocusClassName={getFocusClassNameSpy}
       setFocusState={setFocusStateSpy}
-      setParentState={setParentStateSpy} />)
+      setParentState={setParentStateSpy}
+      validator={validator} />)
   })
 
   describe('Verify component will mount', () => {

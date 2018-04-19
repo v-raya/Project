@@ -11,7 +11,7 @@ import YesNoRadioComponent from 'components/common/yesNoFields'
 import {Rfa01bOutsideCACriminalBackgroundCardText} from 'constants/rfaText'
 import {disclosureDefaults} from 'constants/defaultFields'
 import {addCardAsJS, removeCard} from 'helpers/cardsHelper.jsx'
-import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
+import {checkArrayObjectPresence, isTrue} from 'helpers/commonHelper.jsx'
 
 export default class OutsideCACriminalBackground extends React.Component {
   constructor (props) {
@@ -55,7 +55,7 @@ export default class OutsideCACriminalBackground extends React.Component {
               onFieldChange={(event) => this.props.handleClearOnConditionalChange('convicted_in_another_state', event.target.value, 'convicted_in_another_state_disclosures', [disclosureDefaults])} />
           </div>
         </div>
-        {convictedInAnotherState === 'true'
+        {isTrue(convictedInAnotherState)
           ? disclosures.map((crime, index) => {
             return (
               <div key={'outsideCaliforniaCriminalBackground' + index}>
@@ -64,13 +64,16 @@ export default class OutsideCACriminalBackground extends React.Component {
                   crime={crime}
                   idPrefix='outsideCaliforniaCriminalBackground'
                   clickClose={this.clickClose}
-                  onFieldChange={this.onFieldChange} />
+                  onFieldChange={this.onFieldChange}
+                  validator={this.props.validator}
+                  validatorPrefix={'convicted_in_another_state_disclosures.[' + index + '].'}
+                  validatorCondition={isTrue(convictedInAnotherState)} />
               </div>
             )
           })
           : null
         }
-        {convictedInAnotherState === 'true'
+        {isTrue(convictedInAnotherState)
           ? <div>
             <Button
               id='outsideCACrimeAdd'

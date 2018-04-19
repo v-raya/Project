@@ -54,12 +54,4 @@ attr_accessor :id, :foster_care_licenses_q1, :applications_for_adoption_q2,
 #
 # )
 
-def self.parent_path
-  'rfa-1a-forms'
-end
-
-def self.api_resource_path
-  'adoption-history'
-end
-
 end

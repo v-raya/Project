@@ -1,8 +1,5 @@
 class Rfa::A01Controller < CalsBaseController
   #include AuthenticationProvider
-  def index
-    @applications = rfa_application_helper.all
-  end
 
   def create
     # make api call to create application
@@ -40,6 +37,7 @@ class Rfa::A01Controller < CalsBaseController
 
   def process_application_for_persistance(application_id)
     @application_response = {}
+    @application_response[:metadata]= process_items_for_persistance(application_params, rfa_application_helper, application_id)
     @application_response[:application_county] = process_items_for_persistance(application_county_params, rfa_application_helper, application_id) if params[:application_county].present?
     @application_response[:applicants] = process_items_for_persistance(applicant_params, rfa_applicant_helper, application_id) if params[:applicants].present?
     @application_response[:residence] = process_items_for_persistance(residence_params, rfa_residence_helper, application_id) if params[:residence].present?
@@ -54,8 +52,11 @@ class Rfa::A01Controller < CalsBaseController
     return @application_response
   end
 
+  def application_params
+    params.permit(:id, {metadata: :submit_enabled})
+  end
   def application_county_params
-    params.permit(:id, :to_delete, {application_county: %i[value id]})
+    params.permit(:id, :to_delete, {metadata: :submit_enabled}, {application_county: %i[value id]})
   end
 
   def applicant_params
@@ -163,14 +164,6 @@ class Rfa::A01Controller < CalsBaseController
 
   def rfa_application_helper
     Helpers::Rfa::ApplicationHelper.new(auth_header: get_session_token)
-  end
-
-  def rfa_b01_application_helper
-    Helpers::Rfa::B01::ApplicationHelper.new(auth_header: get_session_token)
-  end
-
-  def rfa_c01_application_helper
-    Helpers::Rfa::C01::ApplicationHelper.new(auth_header: get_session_token)
   end
 
   def rfa_applicant_helper

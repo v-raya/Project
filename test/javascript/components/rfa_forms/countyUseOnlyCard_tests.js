@@ -32,7 +32,7 @@ describe('Verify CountyUseOnlyCard Component', () => {
   })
   it('verifies county field', () => {
     let countyField = CountyUseOnlyCardComp.find('#county').hostNodes()
-    countyField.simulate('change', {target: {selectedOptions: [{value: '2', text: 'Alpine'}]}})
+    countyField.simulate('change', {target: {selectedOptions: [{value: 2, text: 'Alpine'}]}})
     expect(onFieldChangeSpy).toHaveBeenCalled()
   })
 

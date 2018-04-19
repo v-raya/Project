@@ -12,17 +12,44 @@ import AddressComponent from 'components/rfa_forms/addressComponent.js'
 import {Rfa01bApplicantDetailsCardText, RfaCommon} from 'constants/rfaText'
 import {residenceAddressValueDefaults, rfa01BapplicantDefaults} from 'constants/defaultFields'
 import {DateField} from 'components/common/dateFields'
-
-import {getDictionaryId, dictionaryNilSelect, FormatDateForDisplay, FormatDateForPersistance} from 'helpers/commonHelper.jsx'
+import {getDictionaryId, checkArrayObjectPresence, dictionaryNilSelect,
+  FormatDateForDisplay, FormatDateForPersistance, valuePresent} from 'helpers/commonHelper.jsx'
 import Validator from 'helpers/validator'
-
-const dateValidator = {rule: 'isValidDate', message: 'date is invalid'}
 
 export default class ApplicantDetailsCard extends React.Component {
   constructor (props) {
     super(props)
-    //  this.validateDLcombo = this.validateDLcombo.bind(this)
-    this.props.validator.addFieldValidation('date_of_birth', dateValidator)
+
+    this.resourceFamilyNameId = 'resource_family_name'
+    this.dateOfBirthId = 'date_of_birth'
+    this.driversLicenseStateId = 'driver_license_state'
+    this.driversLicenseNumberId = 'driver_license'
+    this.props.validator.addNewValidation(
+      {
+        [this.dateOfBirthId]: [{
+          rule: 'isValidDate',
+          message: 'date is invalid'},
+        {
+          rule: 'isRequired',
+          message: 'date is required'}
+        ],
+        [this.driversLicenseStateId]: [{
+          rule: 'isRequiredIf',
+          message: 'State is required',
+          condition: () => valuePresent(this.props.application.driver_license) && (this.props.application.driver_license !== '')
+        }],
+        [this.driversLicenseNumberId]: [{
+          rule: 'isRequiredIf',
+          message: 'DL/ID is required',
+          condition: () => valuePresent(this.props.application.driver_license_state)
+
+        }],
+        [this.resourceFamilyNameId]: [{
+          rule: 'isRequired',
+          message: 'offense is required'}
+        ]
+      }
+    )
   }
 
   onAddressChange (key, value) {
@@ -72,7 +99,8 @@ export default class ApplicantDetailsCard extends React.Component {
           namePrefix={application.applicant_name_prefix}
           suffixTypes={this.props.nameSuffixTypes}
           prefixTypes={this.props.namePrefixTypes}
-          onChange={this.props.setParentState} />
+          onChange={this.props.setParentState}
+          validator={this.props.validator} />
         <div className='col-lg-12'>
           <AddressComponent
             index={0}
@@ -83,6 +111,7 @@ export default class ApplicantDetailsCard extends React.Component {
             addressFields={residenceAddressValues}
             parentStateKey='residence_address'
             setParentState={this.props.setParentState}
+            validator={this.props.validator}
             //  onSelection={(autofillData) => this.props.setParentState('residence_address', autofillData)}
             onChange={(key, value) => this.onAddressChange(key, value)}
           /></div>
@@ -110,7 +139,7 @@ export default class ApplicantDetailsCard extends React.Component {
             gridClassName='col-md-4'
             id='driversLicenseNumberId'
             value={application.driver_license}
-            label='Driver License number'
+            label={application.driver_license_state ? 'Driver License Number' + RfaCommon.requiredIndicator : 'Driver License Number'}
             placeholder=''
             type='text'
             onChange={(event) => this.props.setParentState('driver_license', event.target.value)}

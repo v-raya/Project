@@ -35,11 +35,36 @@ export default class Rfa01EditView extends React.Component {
     this.isNavLinkActive = this.isNavLinkActive.bind(this)
     this.validateAllRequiredForSubmit = this.validateAllRequiredForSubmit.bind(this)
 
+    const submitEnabled = this.props.application.metadata && this.props.application.metadata.submit_enabled
+    const DataValidForSave = !checkForNameValidation(this.props.application.applicants)
+
     this.state = {
       focusComponentName: '',
       activeNavLinkHref: '',
       application: Immutable.fromJS(this.props.application),
-      errors: {}
+      errors: {},
+      disableSave: DataValidForSave,
+      disableSubmit: !submitEnabled
+    }
+
+    if (!this.state.application.get('application_county')) {
+      const countyValue = (this.props.user && this.props.user.county_code)
+      this.state.application = this.state.application.set('application_county', Immutable.fromJS(this.props.countyTypes.find(countyType => countyType.id === parseInt(countyValue))))
+    }
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    if (prevState.application !== this.state.application) {
+      const DataValidForSubmit = !this.validateAllRequiredForSubmit(this.state.application.toJS())
+      const DataValidForSave = !checkForNameValidation(this.state.application.toJS().applicants)
+
+      if (prevState.disableSubmit !== DataValidForSubmit) {
+        this.setState({disableSubmit: DataValidForSubmit})
+        this.setApplicationState('metadata', {'submit_enabled': !DataValidForSubmit})
+      }
+      if (prevState.disableSave !== DataValidForSave) {
+        this.setState({disableSave: DataValidForSave})
+      }
     }
   }
 
@@ -63,33 +88,6 @@ export default class Rfa01EditView extends React.Component {
       _.set(currentErrors, fieldName, error)
     }
     this.setState({errors: currentErrors})
-  }
-
-  componentWillMount () {
-    if (!this.state.application.application_county) {
-      const countyValueId = (this.props.user && this.props.user.county_code)
-      const county = this.props.countyTypes.find(countyType => countyType.id === parseInt(countyValueId))
-      this.setApplicationState('application_county', county)
-    }
-  }
-  componentDidMount () {
-    const DataValidForSubmit = !this.validateAllRequiredForSubmit(this.props.application)
-    const DataValidForSave = !checkForNameValidation(this.props.application.applicants)
-
-    this.setState({disableSave: DataValidForSave})
-    this.setState({disableSubmit: DataValidForSubmit})
-  }
-
-  componentDidUpdate (prevProps, prevState) {
-    const DataValidForSubmit = !this.validateAllRequiredForSubmit(this.state.application.toJS())
-    const DataValidForSave = !checkForNameValidation(this.state.application.toJS().applicants)
-
-    if (this.state.disableSubmit !== DataValidForSubmit) {
-      this.setState({disableSubmit: DataValidForSubmit})
-    }
-    if (this.state.disableSave !== DataValidForSave) {
-      this.setState({disableSave: DataValidForSave})
-    }
   }
 
   saveProgress () {
@@ -151,8 +149,8 @@ export default class Rfa01EditView extends React.Component {
     const stateApplicationJS = this.state.application.toJS()
     const applicantsAsJs = (this.state.application.get('applicants') && this.state.application.get('applicants').toJS()) || []
     const hideRelationshipBetweenApplicants = applicantsAsJs.length === 2 ? 'cards-section' + 'col-xs-12 col-sm-12 col-md-12 col-lg-12' : 'hidden'
-
     return (
+
       <PageTemplate
         headerLabel='Resource Family Application - Confidential (RFA 01A)'
         saveProgressId='saveProgress'

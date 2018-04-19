@@ -1,6 +1,7 @@
 import React from 'react'
 import OutsideCACriminalBackground from 'rfa_forms/rfa01b_edit_view/outsideCACriminalBackground'
 import {shallow, mount} from 'enzyme'
+import Validator from 'helpers/validator'
 
 describe('Verify OutsideCACriminalBackground card', function () {
   let setParentStateSpy, setDisplayStateSpy, componentMount,
@@ -13,6 +14,7 @@ describe('Verify OutsideCACriminalBackground card', function () {
     'when_offense_happen': 'test',
     'offense_details': 'test'
   }]
+  let validator = new Validator({})
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     setDisplayStateSpy = jasmine.createSpy('setDisplayState')
@@ -27,7 +29,8 @@ describe('Verify OutsideCACriminalBackground card', function () {
       getFocusClassName={getFocusClassNameSpy}
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
-      setParentState={setParentStateSpy} />)
+      setParentState={setParentStateSpy}
+      validator={validator} />)
 
     componentMountWithoutDisclosures = mount(<OutsideCACriminalBackground
       convictedInAnotherState
@@ -36,11 +39,20 @@ describe('Verify OutsideCACriminalBackground card', function () {
       getFocusClassName={getFocusClassNameSpy}
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
-      setParentState={setParentStateSpy} />)
+      setParentState={setParentStateSpy}
+      validator={validator} />)
   })
   describe('Verify component will mount', () => {
     it('verify component did mount', () => {
       expect(componentMount.length).toEqual(1)
+    })
+    it('expects 4 validations', () => {
+      expect(componentMount.instance().props.validator.validations.size).toEqual(4)
+    })
+    it('tests handleNavLinkClick', () => {
+      let outsideCADisclosureCard = componentMount.find('#OutsideCACriminalBackgroundCard').hostNodes()
+      outsideCADisclosureCard.simulate('click')
+      expect(setFocusStateSpy).toHaveBeenCalledWith('OutsideCACriminalBackgroundCard')
     })
     it('adds a card', () => {
       spyOn(componentMount.instance(), 'addCard').and.callThrough()

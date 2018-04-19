@@ -26,7 +26,7 @@ RSpec.feature 'RFA', js: true do
     page.execute_script 'window.scrollBy(0,20)'
     expect(find('a.link.active').text).to eq '4. Minor Children'
     page.execute_script "document.getElementById('other-adults-card').scrollIntoView()"
-    page.execute_script 'window.scrollBy(0,20)'
+    page.execute_script 'window.scrollBy(0,25)'
     expect(find('a.link.active').text).to eq '5. Other Adults'
     page.execute_script "document.getElementById('marital-history-card').scrollIntoView()"
     page.execute_script 'window.scrollBy(0,20)'

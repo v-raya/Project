@@ -9,6 +9,44 @@ import {disclosureDefaults} from 'constants/defaultFields'
 import Button from 'components/common/button'
 
 export default class CriminalFields extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.offenseId = this.props.validatorPrefix + 'offense'
+    this.offenseCityId = this.props.validatorPrefix + 'offense_city'
+    this.offenseDateId = this.props.validatorPrefix + 'when_offense_happen'
+    this.offenseDetailsId = this.props.validatorPrefix + 'offense_details'
+    this.props.validator.addNewValidation(
+      {
+        [this.offenseId]: [{
+          rule: 'isRequiredIf',
+          message: 'offense is required',
+          condition: () => this.props.validatorCondition
+        }],
+        [this.offenseCityId]: [{
+          rule: 'isRequiredIf',
+          message: 'offense city is required',
+          condition: () => this.props.validatorCondition
+        }],
+        [this.offenseDateId]: [{
+          rule: 'isRequiredIf',
+          message: 'offense date is required',
+          condition: () => this.props.validatorCondition
+        }],
+        [this.offenseDetailsId]: [{
+          rule: 'isRequiredIf',
+          message: 'offense details are required',
+          condition: () => this.props.validatorCondition
+        }]
+      }
+    )
+  }
+
+  componentWillUnmount () {
+    const rulesToRemove = [this.offenseId, this.offenseCityId,
+      this.offenseDateId, this.offenseDetailsId]
+    this.props.validator.removeValidations(rulesToRemove)
+  }
   render () {
     const crime = this.props.crime
 
@@ -56,5 +94,6 @@ CriminalFields.propTypes = {
 
 CriminalFields.defaultProps = {
   errors: [],
-  crime: disclosureDefaults
+  crime: disclosureDefaults,
+  validatorPrefix: ''
 }

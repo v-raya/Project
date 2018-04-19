@@ -11,7 +11,7 @@ import Button from 'components/common/button'
 import {Rfa01bCrimeBackGroundAgainstCohabCardText} from 'constants/rfaText'
 import {disclosureDefaults} from 'constants/defaultFields'
 import {addCardAsJS, removeCard} from 'helpers/cardsHelper.jsx'
-import {checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
+import {checkArrayObjectPresence, isTrue} from 'helpers/commonHelper.jsx'
 
 export default class CrimeBackgroundAgainstCohabitant extends React.Component {
   constructor (props) {
@@ -55,7 +55,7 @@ export default class CrimeBackgroundAgainstCohabitant extends React.Component {
 
           </div>
         </div>
-        { arrestedForCrime === 'true'
+        { isTrue(arrestedForCrime)
           ? disclosures.map((crime, index) => {
             return (
               <div key={'crimeBackgroundAgainstCohabitant' + index} >
@@ -64,14 +64,17 @@ export default class CrimeBackgroundAgainstCohabitant extends React.Component {
                   crime={crime}
                   idPrefix='crimeBackgroundAgainstCohabitant'
                   clickClose={this.clickClose}
-                  onFieldChange={this.onFieldChange} />
+                  onFieldChange={this.onFieldChange}
+                  validator={this.props.validator}
+                  validatorPrefix={'arrested_for_crime_disclosures.[' + index + '].'}
+                  validatorCondition={isTrue(arrestedForCrime)} />
               </div>
             )
           })
           : null
         }
 
-        {arrestedForCrime === 'true'
+        {isTrue(arrestedForCrime)
           ? <div>
             <Button
               id='CrimeAgainstCohabAdd'

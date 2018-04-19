@@ -8,17 +8,18 @@ import {siblingGroups, ageGroups, marriageTerminationReasons,
 import {shallow, mount} from 'enzyme'
 
 describe('Rfa01EditView test', () => {
-  let setFocusStateSpy, submitSpy, _Rfa01EditView
+  let setFocusStateSpy, getFocusClassNameSpy, setDisplayStateSpy, submitSpy,
+    saveProgressSpy, _Rfa01EditView, setApplicationStateSpy
 
   beforeEach(() => {
     const props = {
       user: {county_code: 51},
       application: {
         'id': 744,
-        'application_county': {
-          'value': 'Mendocino',
-          'id': 23
-        },
+        // 'application_county': {
+        //   'value': 'Mendocino',
+        //   'id': 23
+        // },
         'residence': {
           'addresses': [
             {
@@ -83,7 +84,8 @@ describe('Rfa01EditView test', () => {
             ]
           }
         ],
-        'is_initial_application': false
+        'is_initial_application': false,
+        metadata: { submit_enabled: false }
       },
       countyTypes: countyTypes.items,
       suffixTypes: suffixTypes.items,
@@ -106,10 +108,29 @@ describe('Rfa01EditView test', () => {
     }
 
     submitSpy = spyOn(Rfa01EditView.prototype, 'submit').and.callThrough()
+    saveProgressSpy = spyOn(Rfa01EditView.prototype, 'saveProgress').and.callThrough()
+    getFocusClassNameSpy = spyOn(Rfa01EditView.prototype, 'getFocusClassName').and.callThrough()
+    setFocusStateSpy = spyOn(Rfa01EditView.prototype, 'setFocusState').and.callThrough()
+    setApplicationStateSpy = spyOn(Rfa01EditView.prototype, 'setApplicationState').and.callThrough()
     _Rfa01EditView = mount(<Rfa01EditView {...props} />)
   })
 
   it('tests submit', () => {
     expect(_Rfa01EditView.length).toEqual(1)
+  })
+
+  it('tests saveProgress', () => {
+    let saveProgressBtn = _Rfa01EditView.find('#saveProgress')
+    saveProgressBtn.simulate('click')
+    expect(saveProgressSpy).toHaveBeenCalled()
+  })
+
+  it('tests county change ', () => {
+    let countyCard = _Rfa01EditView.find('#CountyUseOnlySection')
+    let countyCardField = countyCard.find('#county').hostNodes()// .simulate('keyup', { keyCode: 38 })
+    // countyCardField.simulate('keypress', { keyCode: 13 })
+    countyCardField.simulate('change', {target: {options: {'0': {value: '2', text: 'Alpine'}, selectedIndex: 0}}})
+    // _Rfa01BEditView.instance().setApplicationState('application_county', { value: 'Alameda', id: 1 })
+    expect(setApplicationStateSpy).toHaveBeenCalledWith('application_county', { id: '2', value: 'Alpine' })
   })
 })

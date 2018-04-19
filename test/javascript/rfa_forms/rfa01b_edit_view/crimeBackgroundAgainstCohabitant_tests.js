@@ -1,6 +1,7 @@
 import React from 'react'
 import CrimeBackgroundAgainstCohabitant from 'rfa_forms/rfa01b_edit_view/crimeBackgroundAgainstCohabitant'
 import {shallow, mount} from 'enzyme'
+import Validator from 'helpers/validator'
 
 describe('Verify crimeBackgroundAgainstCohabitant card', function () {
   let setParentStateSpy, getFocusClassNameSpy, setDisplayStateSpy, componentMount,
@@ -13,6 +14,9 @@ describe('Verify crimeBackgroundAgainstCohabitant card', function () {
     'when_offense_happen': 'test',
     'offense_details': 'test'
   }]
+
+  let validator = new Validator({})
+
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     setDisplayStateSpy = jasmine.createSpy('setDisplayState')
@@ -27,7 +31,8 @@ describe('Verify crimeBackgroundAgainstCohabitant card', function () {
       getFocusClassName={getFocusClassNameSpy}
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
-      setParentState={setParentStateSpy} />)
+      setParentState={setParentStateSpy}
+      validator={validator} />)
 
     componentMountWithoutDisclosures = mount(<CrimeBackgroundAgainstCohabitant
       arrestedForCrime
@@ -36,12 +41,22 @@ describe('Verify crimeBackgroundAgainstCohabitant card', function () {
       getFocusClassName={getFocusClassNameSpy}
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       setFocusState={setFocusStateSpy}
-      setParentState={setParentStateSpy} />)
+      setParentState={setParentStateSpy}
+      validator={validator} />)
   })
   describe('Verify component will mount', () => {
     it('verify component did mount', () => {
       expect(componentMount.length).toEqual(1)
     })
+    it('expects 4 validations', () => {
+      expect(componentMount.instance().props.validator.validations.size).toEqual(4)
+    })
+    it('tests handleNavLinkClick', () => {
+      let crimeBackgroundAgainstCohabitantCard = componentMount.find('#crimeBackgroundAgainstCohabitantCard').hostNodes()
+      crimeBackgroundAgainstCohabitantCard.simulate('click')
+      expect(setFocusStateSpy).toHaveBeenCalledWith('crimeBackgroundAgainstCohabitantCard')
+    })
+
     it('adds a card', () => {
       spyOn(componentMount.instance(), 'addCard').and.callThrough()
       componentMount.instance().addCard()
