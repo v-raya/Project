@@ -1,89 +1,124 @@
 import React from 'react'
 import SearchList from 'search/searchList'
-import ShallowRenderer from 'react-test-renderer/shallow'
+import { shallow } from 'enzyme'
 
-describe('Render search list', function () {
+describe('Render search list and each method', function () {
   const indexValue = '0'
   const props = {
-    searchResults: [
+    searchResults: [{
+      assigned_worker: {
+        id: '1',
+        value: 'Kari Gutierrez'
+      },
+      county: {
+        id: '19',
+        lis_code: null,
+        value: 'Los Angeles'
+      },
+      facility_source: 'CWS/CMS',
+      district_office: 'NO. CAL SC/RES',
+      fac_capacity: 7,
+      email_address: 'nesh_example@gmail.com',
+      fac_last_visit_date: '1991-12-10',
+      fac_lic_eff_date: '1992-02-22',
+      fac_licensee_name: 'TERRIER PROGRAMS, INC.',
+      fac_licensee_type: 'C',
+      fac_mail_city: 'MODESTO',
+      fac_mail_state: 'CA',
+      fac_mail_street_addr: '767 GLEN EAGLES DRIVE',
+      fac_mail_zip_code: '95350',
+      name: "DEPUTY DOG'S GROUP HOME",
+      license_number: 193600008,
+      fac_orig_appl_rec_date: '1983-02-02',
+      addresses: [{
+        'id': null,
+        'type': 'Residential',
+        'address': {
+          'id': null,
+          'longitude': null,
+          'lattitude': null,
+          'deliverable': null,
+          'street_address': '7 GREENROSE DRIVE',
+          'city': 'NAPA',
+          'state': 'CA',
+          'zip_code': '94558',
+          'zip_suffix_code': null
+        }
+      },
       {
-        assigned_worker: 'Kari Gutierrez',
-        county: 'Marin',
-        district_office: 'NO. CAL SC/RES',
-        fac_capacity: 7,
-        fac_email_address: null,
-        fac_last_visit_date: '1991-12-10',
-        fac_lic_eff_date: '1992-02-22',
-        fac_licensee_name: 'TERRIER PROGRAMS, INC.',
-        fac_licensee_type: 'C',
-        fac_mail_city: 'MODESTO',
-        fac_mail_state: 'CA',
-        fac_mail_street_addr: '767 GLEN EAGLES DRIVE',
-        fac_mail_zip_code: '95350',
-        name: "DEPUTY DOG'S GROUP HOME",
-        license_number: 193600008,
-        fac_orig_appl_rec_date: '1983-02-02',
-        addresses: [
-          {
-            'id': null,
-            'type': 'Residential',
-            'address': {
-              'id': null,
-              'longitude': null,
-              'lattitude': null,
-              'deliverable': null,
-              'street_address': '7 GREENROSE DRIVE',
-              'city': 'NAPA',
-              'state': 'CA',
-              'zip_code': '94558',
-              'zip_suffix_code': null
-            }
-          },
-          {
-            'id': null,
-            'type': 'Mailing',
-            'address': {
-              'id': null,
-              'longitude': null,
-              'lattitude': null,
-              'deliverable': null,
-              'street_address': '7 GREENROSE DRIVE',
-              'city': 'NAPA',
-              'state': 'CA',
-              'zip_code': '94558',
-              'zip_suffix_code': null
-            }
-          }
-        ],
-        phones: [
-          {
-            'id': null,
-            'relation': 'primary',
-            'type': 'Cell',
-            'number': '8317632735'
-          }
-        ],
-        last_visit_reason: "Renewal (Fac.'s w/Expir.)",
-        status: 'Licensed',
-        type: 'Foster Family Home (Confidential - Do not release)'
+        'id': null,
+        'type': 'Mailing',
+        'address': {
+          'id': null,
+          'longitude': null,
+          'lattitude': null,
+          'deliverable': null,
+          'street_address': '7 GREENROSE DRIVE',
+          'city': 'NAPA',
+          'state': 'CA',
+          'zip_code': '94558',
+          'zip_suffix_code': null
+        }
       }
-    ]
+      ],
+      phones: [{
+        'id': null,
+        'relation': 'primary',
+        'type': 'Cell',
+        'number': '8317632735'
+      }],
+      last_visit_reason: "Renewal (Fac.'s w/Expir.)",
+      status: {
+        id: '132',
+        value: 'Licensed'
+      },
+      type: {
+        id: '432',
+        value: 'Foster Family Agency Certified Home'
+      }
+    },
+    {
+      county: null,
+      phones: null,
+      addresses: null,
+      type: null
+    }]
   }
-  let searchListComp = new ShallowRenderer()
-  let searchListRender = searchListComp.render(<SearchList {...props} />)
-  let tableElement = searchListRender.props.children
-  it('Create table view', function () {
-    expect(searchListRender.props.className).toBe('main_table')
+  let searchListComp = shallow(< SearchList { ...props} />)
+
+  it('Verify Search component render', () => {
+    expect(searchListComp.length).toBe(1)
   })
-  it('Render Table', function () {
-    expect(tableElement.type).toBe('table')
+
+  it('Verify facility county renderd', () => {
+    expect(searchListComp.findWhere(n => n.props().id === 'facilities[0].county').props().children).toBe('Los Angeles')
   })
-  it('Render Table Body for Facility List', function () {
-    let tableChild = tableElement.props.children
-    expect(tableChild[1].type).toBe('tbody')
+
+  it('Verify facility county is N/A', () => {
+    expect(searchListComp.findWhere(n => n.props().id === 'facilities[1].county').props().children).toBe('N/A')
   })
-  it('Verify index value from table', function () {
-    let tableIndex = tableElement.props.children[1].props.children[0]
-    expect(tableIndex.key).toEqual(indexValue)
+
+  it('Verify facility type / source rendered', () => {
+    expect(searchListComp.findWhere(n => n.props().id === 'facilities[0].type').props().children).toBe('Foster Family Agency Certified Home / CWS/CMS')
+  })
+
+  it('Verify facility type / source is N/A', () => {
+    expect(searchListComp.findWhere(n => n.props().id === 'facilities[1].type').props().children).toBe('N/A / N/A')
+  })
+
+  it('Verify facility address rendered', () => {
+    expect(searchListComp.findWhere(n => n.props().id === 'facilities[0].physical_address').props().children).toBe('7 GREENROSE DRIVE, NAPA, CA 94558')
+  })
+
+  it('Verify facility address is N/A', () => {
+    expect(searchListComp.findWhere(n => n.props().id === 'facilities[1].physical_address').props().children).toBe('N/A')
+  })
+
+  it('Verify facility phone number rendered', () => {
+    expect(searchListComp.findWhere(n => n.props().id === 'facilities[0].primary_phone').props().children).toBe('(831) 763-2735')
+  })
+
+  it('Verify facility phone number is  N/A', () => {
+    expect(searchListComp.findWhere(n => n.props().id === 'facilities[1].primary_phone').props().children).toBe('N/A')
   })
 })

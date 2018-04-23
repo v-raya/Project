@@ -30,12 +30,12 @@ export const SearchList = ({
             <tr key={index}>
               <td><a href={urlPrefixHelper('/facilities/' + result.id)}>{result.name}</a></td>
               <td>{result.license_number}</td>
-              <td>{checkForNA(result.type) + ' / ' + checkValueForNull(result.facility_source)}</td>
+              <td id={'facilities[' + index + '].' + 'type'}>{checkForNA(result.type) + ' / ' + checkValueForNull(result.facility_source)}</td>
               <td>{checkForNA(result.status)}</td>
               <td>{result.name}</td>
-              <td>{respectiveFullAddressOrNA(result.addresses, physicalAddressType)}</td>
-              <td>{result.county.value}</td>
-              <td>{respectiveNumberOrNA(result.phones, primaryPhoneRelation)}</td>
+              <td id={'facilities[' + index + '].' + 'physical_address'}>{respectiveFullAddressOrNA(result.addresses, physicalAddressType)}</td>
+              <td id={'facilities[' + index + '].' + 'county'}>{checkForNA(result.county)}</td>
+              <td id={'facilities[' + index + '].' + 'primary_phone'}>{respectiveNumberOrNA(result.phones, primaryPhoneRelation)}</td>
               <td>{checkValueForNull(result.email_address)}</td>
               <td>{checkForNA(result.assigned_worker)}</td>
               <td>{respectiveNumberOrNA(result.phones, alternativePhoneRelation)}</td>
