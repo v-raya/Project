@@ -3,17 +3,18 @@ services:
   cals:
     # build: .
     command: bash -c "bundle check || bundle install && yarn && bundle exec puma"
-    image: cwds/cals:0.62-489
+    image: cwds/cals:0.63-86
     ports:
       - 3000:3000
     environment:
       REDIS_HOST: 'redis'
       REDIS_PORT: 6379
     env_file: docker-compose.env
-    links:
+    depends_on:
       - redis
       - perry
       - cals-api
+      - dora
     tty: true
     stdin_open: true
 
@@ -30,6 +31,8 @@ services:
       - 8092:8092
     restart: on-failure
     env_file: docker-compose.env
+    logging:
+      driver: none
 
   cals_db2_data:
     image: cwds/cals_db2_data
@@ -60,4 +63,54 @@ services:
       - 8081:8081
     expose:
       - 8081
+    env_file: docker-compose.env
+    logging:
+      driver: none
+
+  geo-services-api:
+    image: cwds/geo-services-api:latest
+    restart: always
+    depends_on:
+      - perry
+    ports:
+     - 8084:8080
+    expose:
+      - 8080
+    environment:
+      SS_ID: "${SS_ID}"
+      SS_TOKEN: "${SS_TOKEN}"
+      LOGIN_URL: 'http://perry:8080/perry/authn/login'
+      LOGOUT_URL: 'http://perry:8080/perry/authn/logout'
+      SWAGGER_TOKEN_URL: 'http://perry:8080/perry/authn/token'
+      SWAGGER_JSON_URL: 'http://localhost:8084/swagger.json'
+      SWAGGER_CALLBACK_URL: 'http://localhost:8084/swagger'
+
+  dora:
+    image: cwds/dora:latest
+    command: bash -c "./entrypoint.sh 2>&1 | tee 'log.file'"
+    depends_on:
+      - perry
+      - elasticsearch
+    ports:
+      - 8083:8080
+    expose:
+      - 8080
+    environment:
+      SWAGGER_JSON_URL: http://localhost:8083/swagger.json
+      SWAGGER_CALLBACK_URL: http://localhost:8083/swagger
+      SHIRO_CONFIG_PATH: /opt/cwds-dora/config/shiro.ini
+    env_file: docker-compose.env
+    healthcheck:
+      test: head -n 500 log.file | grep "Started @"
+      interval: 5s
+      timeout: 10s
+      retries: 80
+
+  elasticsearch:
+    image: cwds/elasticsearch_xpack_data:latest
+    depends_on:
+      - perry
+    expose:
+      - 9200
+      - 9300
     env_file: docker-compose.env
