@@ -6,6 +6,7 @@ RSpec.describe 'routes scope', :type => :request do
     #allow(controller).to receive_messages(:authenticate_with_cwds => true)
     allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
     allow_any_instance_of(CalsBaseController).to receive(:get_session_token).and_return(ENV['TOKEN'])
+    allow_any_instance_of(CalsBaseController).to receive(:check_for_priviliges).and_return(['Something Privilige'])
     $redis.flushdb
 
   end

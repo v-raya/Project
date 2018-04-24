@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :facilities, only: [:index, :show] do
+  resources :facilities do
     collection { post :search }
   end
 

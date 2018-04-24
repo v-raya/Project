@@ -1,14 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 //@import "shared/headers.scss";
-//@import "woodduck-rails";
-@import "font-awesome-sprockets";
-@import "font-awesome";
 @import 'react-wood-duck/dist/styles/application.scss';
 @import './sidebar.scss';
 @import './cards-main.scss';
 @import './application_relationship.scss';
 @import './facility.scss';
+@import './page-error.scss';
 
 .active-bar {
   border-left: 0.7rem solid transparent;

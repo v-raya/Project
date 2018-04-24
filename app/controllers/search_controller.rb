@@ -1,4 +1,5 @@
 class SearchController < CalsBaseController
+  before_action -> { require_privilege(method(:index)) }
 
   def index
     @landingPage_url = SANDBOX_LANDING_URL
@@ -15,7 +16,6 @@ class SearchController < CalsBaseController
   end
 
   private
-
   def dictionaries_helper
     Helpers::Dictionary.new(auth_header: get_session_token)
   end

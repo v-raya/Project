@@ -1,13 +1,7 @@
 class FacilitiesController < CalsBaseController
+  before_action -> { require_privilege(method(:show)) }, only: [:show]
 
   include Response
-
-  def index
-    #  @race_types = Helpers::Dictionaries::RaceTypeHelper.new(auth_header: 'abc').all
-    # byebug
-
-    @facilities = facility_helper.all
-  end
 
   def show
     @facility = facility_helper.find_by_id(params[:id])

@@ -3,7 +3,7 @@
 class WelcomeController < CalsBaseController
   def index
     @applications = rfa_application_helper.all_expanded
-    @content = Content::ContentService.new.filter_content(user_from_session)
+    @check_for_priviliges = check_for_priviliges
   end
 
   def create; end

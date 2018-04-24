@@ -15,6 +15,23 @@ class CalsBaseController < ApplicationController
     User.new(JSON.parse(session[:user_details])) if session[:user_details].present?
   end
 
+
+
+  private
+
+  def check_for_priviliges
+    @content = Content::ContentService.new.filter_content(user_from_session)
+    @content[:services]
+  end
+
+  def require_privilege(method)
+    if !check_for_priviliges.empty?
+      method
+    else
+      render 'errors/forbidden_page'
+    end
+  end
+
   protected
 
   def process_items_for_persistance(items, helper, parent_id)
