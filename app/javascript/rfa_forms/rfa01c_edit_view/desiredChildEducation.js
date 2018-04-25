@@ -36,6 +36,7 @@ const DesiredChildEducation = ({
         index={index}
         stateTypes={stateTypes}
         addressTitle='Address'
+        label=''
         id='street_address'
         addressFields={child.school_address}
         parentStateKey='school_address'

@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:53 GMT
+      - Tue, 24 Apr 2018 00:48:09 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:53
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:09
         GMT
       vary:
       - Accept-Encoding
@@ -42,143 +42,6 @@ http_interactions:
       string: |-
         {
           "items" : [ {
-            "id" : 7053,
-            "applicants" : [ {
-              "id" : 4324,
-              "first_name" : "Kim",
-              "middle_name" : "k",
-              "last_name" : "RReily",
-              "other_names" : [ ],
-              "driver_license_number" : "",
-              "email" : ""
-            } ],
-            "rfa1c_forms" : [ {
-              "id" : 518,
-              "child_identified" : false
-            } ],
-            "child_desired" : {
-              "child_identified" : true,
-              "child_in_home" : true,
-              "preferred_ages" : [ ]
-            },
-            "is_initial_application" : false
-          }, {
-            "id" : 7052,
-            "residence" : {
-              "addresses" : [ {
-                "street_address" : "2870 something else",
-                "zip" : "12345",
-                "city" : "Sacremento",
-                "state" : {
-                  "value" : "Alaska",
-                  "id" : "AK"
-                },
-                "type" : {
-                  "value" : "Residential",
-                  "id" : 1
-                }
-              }, {
-                "street_address" : "",
-                "zip" : "",
-                "city" : "",
-                "type" : {
-                  "value" : "Mailing",
-                  "id" : 3
-                }
-              } ],
-              "physical_mailing_similar" : true,
-              "residence_ownership" : {
-                "value" : "Own",
-                "id" : 1
-              },
-              "weapon_in_home" : true,
-              "body_of_water_exist" : true,
-              "body_of_water_description" : "",
-              "others_using_residence_as_mailing" : true,
-              "other_people_using_residence_as_mailing" : [ {
-                "first_name" : "",
-                "middle_name" : "",
-                "last_name" : ""
-              } ],
-              "directions_to_home" : "",
-              "home_languages" : [ {
-                "value" : "American Sign Language",
-                "id" : 1
-              }, {
-                "value" : "Armenian",
-                "id" : 3
-              } ]
-            },
-            "applicants" : [ {
-              "id" : 4323,
-              "first_name" : "Paul",
-              "middle_name" : "k",
-              "last_name" : "Smit",
-              "other_names" : [ ],
-              "date_of_birth" : "1111-11-11",
-              "driver_license_number" : "",
-              "email" : "",
-              "phones" : [ {
-                "phone_type" : {
-                  "value" : "Home",
-                  "id" : 2
-                },
-                "number" : "2012222345",
-                "preferred" : false
-              } ],
-              "rfa1b_form" : {
-                "id" : 621,
-                "resource_family_name" : "test",
-                "applicant_first_name" : "first name",
-                "applicant_last_name" : "last name",
-                "residence_address" : {
-                  "street_address" : "2870 something else",
-                  "zip" : "12345",
-                  "city" : "Sacremento",
-                  "state" : {
-                    "value" : "Alaska",
-                    "id" : "AK"
-                  }
-                },
-                "date_of_birth" : "1111-11-11",
-                "metadata" : {
-                  "submit_enabled" : true
-                }
-              }
-            } ],
-            "rfa1c_forms" : [ {
-              "id" : 517,
-              "child_identified" : false,
-              "identified_children" : [ {
-                "first_name" : "Paul",
-                "middle_name" : "k",
-                "last_name" : "Smit",
-                "date_of_birth" : "2000-01-01",
-                "relationship_to_applicants" : [ {
-                  "relationship_to_applicant_freeform" : ""
-                } ],
-                "school_name" : "",
-                "school_address" : {
-                  "street_address" : "",
-                  "zip" : "",
-                  "city" : ""
-                },
-                "child_in_home" : true
-              } ],
-              "metadata" : {
-                "submit_enabled" : true
-              }
-            } ],
-            "child_desired" : {
-              "child_identified" : true,
-              "child_in_home" : true,
-              "preferred_ages" : [ ]
-            },
-            "metadata" : {
-              "submit_enabled" : true
-            },
-            "is_initial_application" : false
-          }, {
             "id" : 7050,
             "applicants" : [ {
               "id" : 4322,
@@ -4377,10 +4240,85 @@ http_interactions:
               } ]
             } ],
             "is_initial_application" : false
+          }, {
+            "id" : 6898,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 4213,
+              "first_name" : "Dillon",
+              "middle_name" : "",
+              "last_name" : "Wisozk",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "rfa1b_form" : {
+                "id" : 599,
+                "application_county" : {
+                  "value" : "Los Angeles",
+                  "id" : 19
+                },
+                "convicted_in_california" : true,
+                "convicted_in_another_state" : true,
+                "arrested_for_crime" : true,
+                "resource_family_name" : "test",
+                "ssn" : "123-45-6789",
+                "driver_license" : "D123",
+                "driver_license_state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                },
+                "convicted_in_california_disclosures" : [ {
+                  "offense" : "test offense",
+                  "offense_city" : "test offense city",
+                  "when_offense_happen" : "date of offense",
+                  "offense_details" : "offense details"
+                } ],
+                "convicted_in_another_state_disclosures" : [ {
+                  "offense" : "outside test offense",
+                  "offense_city" : "outside test offense city",
+                  "when_offense_happen" : "outside date of offense",
+                  "offense_details" : "outside offense details"
+                } ],
+                "arrested_for_crime_disclosures" : [ {
+                  "offense" : "cohab test offense",
+                  "offense_city" : "cohab test offense city",
+                  "when_offense_happen" : "cohab date of offense",
+                  "offense_details" : "cohab offense details"
+                } ]
+              }
+            } ],
+            "child_desired" : {
+              "child_identified" : true,
+              "child_in_home" : true,
+              "preferred_ages" : [ ]
+            },
+            "is_initial_application" : false
+          }, {
+            "id" : 6897,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 4212,
+              "first_name" : "Dillonish",
+              "middle_name" : "",
+              "last_name" : "Wisozkish",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "rfa1b_form" : {
+                "id" : 598
+              }
+            } ],
+            "is_initial_application" : false
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:54 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:10 GMT
 - request:
     method: post
     uri: https://calsapi.preint.cwds.io/rfa-1a-forms
@@ -4402,9 +4340,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:54 GMT
+      - Tue, 24 Apr 2018 00:48:15 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:54
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:15
         GMT
       x-content-type-options:
       - nosniff
@@ -4420,14 +4358,14 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "id" : 7054,
+          "id" : 7052,
           "is_initial_application" : false
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:54 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:15 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-packet/7054/summary
+    uri: https://calsapi.preint.cwds.io/rfa-packet/7052/summary
     body:
       encoding: US-ASCII
       string: ''
@@ -4446,9 +4384,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:55 GMT
+      - Tue, 24 Apr 2018 00:48:15 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:55
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:15
         GMT
       vary:
       - Accept-Encoding
@@ -4502,10 +4440,10 @@ http_interactions:
           "adult_children" : [ ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:55 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:15 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054?expanded=true
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052?expanded=true
     body:
       encoding: US-ASCII
       string: ''
@@ -4524,9 +4462,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:55 GMT
+      - Tue, 24 Apr 2018 00:48:15 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:55
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:15
         GMT
       vary:
       - Accept-Encoding
@@ -4544,14 +4482,14 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "id" : 7054,
+          "id" : 7052,
           "is_initial_application" : false
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:55 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:15 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054/rfa-1c-forms
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/rfa-1c-forms
     body:
       encoding: US-ASCII
       string: ''
@@ -4572,9 +4510,9 @@ http_interactions:
       content-type:
       - text/html;charset=iso-8859-1
       date:
-      - Tue, 24 Apr 2018 00:48:55 GMT
+      - Tue, 24 Apr 2018 00:48:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:55
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:16
         GMT
       x-content-type-options:
       - nosniff
@@ -4595,12 +4533,12 @@ http_interactions:
         <title>Error 404 Not Found</title>
         </head>
         <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/7054/rfa-1c-forms. Reason:
+        <p>Problem accessing /rfa-1a-forms/7052/rfa-1c-forms. Reason:
         <pre>    Not Found</pre></p>
         </body>
         </html>
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:55 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/residence-ownership-types
@@ -4622,9 +4560,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:55 GMT
+      - Tue, 24 Apr 2018 00:48:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:55
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:16
         GMT
       vary:
       - Accept-Encoding
@@ -4654,7 +4592,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:55 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/ethnicity-types
@@ -4676,9 +4614,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:55 GMT
+      - Tue, 24 Apr 2018 00:48:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:55
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:16
         GMT
       vary:
       - Accept-Encoding
@@ -4798,7 +4736,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:55 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/address-types
@@ -4820,9 +4758,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:55 GMT
+      - Tue, 24 Apr 2018 00:48:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:55
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:16
         GMT
       vary:
       - Accept-Encoding
@@ -4852,7 +4790,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:55 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/applicant-relationship-types
@@ -4874,9 +4812,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:55 GMT
+      - Tue, 24 Apr 2018 00:48:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:55
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:16
         GMT
       vary:
       - Accept-Encoding
@@ -4912,7 +4850,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:55 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/license-types
@@ -4934,9 +4872,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:56 GMT
+      - Tue, 24 Apr 2018 00:48:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:56
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:16
         GMT
       vary:
       - Accept-Encoding
@@ -4966,7 +4904,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:56 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/relationship-to-applicant-types
@@ -4988,9 +4926,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:56 GMT
+      - Tue, 24 Apr 2018 00:48:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:56
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:16
         GMT
       vary:
       - Accept-Encoding
@@ -5026,7 +4964,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:56 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/name-types
@@ -5048,9 +4986,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:56 GMT
+      - Tue, 24 Apr 2018 00:48:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:56
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:16
         GMT
       vary:
       - Accept-Encoding
@@ -5083,7 +5021,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:56 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
@@ -5105,9 +5043,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:56 GMT
+      - Tue, 24 Apr 2018 00:48:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:56
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:17
         GMT
       vary:
       - Accept-Encoding
@@ -5155,7 +5093,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:56 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/name-prefix-types
@@ -5177,9 +5115,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:56 GMT
+      - Tue, 24 Apr 2018 00:48:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:56
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:17
         GMT
       vary:
       - Accept-Encoding
@@ -5218,7 +5156,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:56 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/phone-number-types
@@ -5240,9 +5178,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:56 GMT
+      - Tue, 24 Apr 2018 00:48:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:56
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:17
         GMT
       vary:
       - Accept-Encoding
@@ -5278,7 +5216,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:56 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/genders
@@ -5300,9 +5238,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:56 GMT
+      - Tue, 24 Apr 2018 00:48:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:56
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:17
         GMT
       vary:
       - Accept-Encoding
@@ -5329,7 +5267,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:56 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/education-level-types
@@ -5351,9 +5289,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:56 GMT
+      - Tue, 24 Apr 2018 00:48:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:56
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:17
         GMT
       vary:
       - Accept-Encoding
@@ -5395,7 +5333,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:56 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/languages
@@ -5417,9 +5355,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:56 GMT
+      - Tue, 24 Apr 2018 00:48:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:56
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:17
         GMT
       vary:
       - Accept-Encoding
@@ -5539,7 +5477,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:56 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/states
@@ -5561,9 +5499,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:57 GMT
+      - Tue, 24 Apr 2018 00:48:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:57
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:17
         GMT
       vary:
       - Accept-Encoding
@@ -5758,7 +5696,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:57 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/income-types
@@ -5780,9 +5718,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:57 GMT
+      - Tue, 24 Apr 2018 00:48:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:57
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:17
         GMT
       vary:
       - Accept-Encoding
@@ -5809,7 +5747,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:57 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/marriage-termination-reasons
@@ -5831,9 +5769,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:57 GMT
+      - Tue, 24 Apr 2018 00:48:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:57
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:17
         GMT
       vary:
       - Accept-Encoding
@@ -5863,7 +5801,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:57 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/age-groups
@@ -5885,9 +5823,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:57 GMT
+      - Tue, 24 Apr 2018 00:48:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:57
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:17
         GMT
       vary:
       - Accept-Encoding
@@ -5929,7 +5867,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:57 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/sibling-groups
@@ -5951,9 +5889,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:57 GMT
+      - Tue, 24 Apr 2018 00:48:17 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:57
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:17
         GMT
       vary:
       - Accept-Encoding
@@ -5989,7 +5927,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:57 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:17 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/counties
@@ -6011,9 +5949,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:57 GMT
+      - Tue, 24 Apr 2018 00:48:18 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:57
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:18
         GMT
       vary:
       - Accept-Encoding
@@ -6211,10 +6149,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:57 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:18 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054?expanded=true
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052?expanded=true
     body:
       encoding: US-ASCII
       string: ''
@@ -6233,9 +6171,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:48:57 GMT
+      - Tue, 24 Apr 2018 00:48:18 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:57
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:18
         GMT
       vary:
       - Accept-Encoding
@@ -6253,17 +6191,51 @@ http_interactions:
       encoding: UTF-8
       string: |-
         {
-          "id" : 7054,
+          "id" : 7052,
           "is_initial_application" : false
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:48:57 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:18 GMT
 - request:
-    method: put
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054
+    method: get
+    uri: https://geo.preint.cwds.io/address/suggest/2870%20something%20else
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:24
+        GMT
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '3'
+      connection:
+      - keep-alive
     body:
       encoding: UTF-8
-      string: '{"id":"7054"}'
+      string: "[ ]"
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:24 GMT
+- request:
+    method: put
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052
+    body:
+      encoding: UTF-8
+      string: '{"id":"7052","metadata":{"submit_enabled":true}}'
     headers:
       Content-type:
       - application/json
@@ -6279,9 +6251,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:00 GMT
+      - Tue, 24 Apr 2018 00:48:26 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:00
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:26
         GMT
       x-content-type-options:
       - nosniff
@@ -6290,18 +6262,21 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '53'
+      - '103'
       connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: |-
         {
-          "id" : 7054,
+          "id" : 7052,
+          "metadata" : {
+            "submit_enabled" : true
+          },
           "is_initial_application" : false
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:00 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:26 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/residence-ownership-types
@@ -6323,9 +6298,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:00 GMT
+      - Tue, 24 Apr 2018 00:48:26 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:00
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:26
         GMT
       vary:
       - Accept-Encoding
@@ -6355,13 +6330,13 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:00 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:26 GMT
 - request:
     method: post
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054/applicants
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/applicants
     body:
       encoding: UTF-8
-      string: '{"email":"","date_of_birth":"","first_name":"Kimberley","middle_name":"k","last_name":"RReily","driver_license_number":"","other_names":[]}'
+      string: '{"email":"","date_of_birth":"1111-11-11","first_name":"Paul","middle_name":"k","last_name":"Smit","driver_license_number":"","phones":[{"number":"2012222345","preferred":false,"phone_type":{"id":2,"value":"Home"}}],"other_names":[]}'
     headers:
       Content-type:
       - application/json
@@ -6377,9 +6352,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:00 GMT
+      - Tue, 24 Apr 2018 00:48:26 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:00
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:26
         GMT
       x-content-type-options:
       - nosniff
@@ -6388,23 +6363,32 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '167'
+      - '338'
       connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: |-
         {
-          "id" : 4325,
-          "first_name" : "Kimberley",
+          "id" : 4323,
+          "first_name" : "Paul",
           "middle_name" : "k",
-          "last_name" : "RReily",
+          "last_name" : "Smit",
           "other_names" : [ ],
+          "date_of_birth" : "1111-11-11",
           "driver_license_number" : "",
-          "email" : ""
+          "email" : "",
+          "phones" : [ {
+            "phone_type" : {
+              "value" : "Home",
+              "id" : 2
+            },
+            "number" : "2012222345",
+            "preferred" : false
+          } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:00 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:26 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/ethnicity-types
@@ -6426,9 +6410,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:00 GMT
+      - Tue, 24 Apr 2018 00:48:26 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:00
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:26
         GMT
       vary:
       - Accept-Encoding
@@ -6548,10 +6532,151 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:00 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:26 GMT
 - request:
     method: put
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054/child-desired
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/residence
+    body:
+      encoding: UTF-8
+      string: '{"physical_mailing_similar":"true","weapon_in_home":"true","body_of_water_exist":"true","body_of_water_description":"","others_using_residence_as_mailing":"true","directions_to_home":"","residence_ownership":{"id":"1","value":"Own"},"home_languages":[{"id":1,"value":"American
+        Sign Language"},{"id":3,"value":"Armenian"}],"other_people_using_residence_as_mailing":[{"first_name":"","middle_name":"","last_name":""}],"addresses":[{"street_address":"2870
+        something else","zip":"12345","city":"Sacremento","state":{"id":"AK","value":"Alaska"},"type":{"id":"1","value":"Residential"}},{"street_address":"","zip":"","city":"","type":{"id":"3","value":"Mailing"}}]}'
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:27 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '917'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "addresses" : [ {
+            "street_address" : "2870 something else",
+            "zip" : "12345",
+            "city" : "Sacremento",
+            "state" : {
+              "value" : "Alaska",
+              "id" : "AK"
+            },
+            "type" : {
+              "value" : "Residential",
+              "id" : 1
+            }
+          }, {
+            "street_address" : "",
+            "zip" : "",
+            "city" : "",
+            "type" : {
+              "value" : "Mailing",
+              "id" : 3
+            }
+          } ],
+          "physical_mailing_similar" : true,
+          "residence_ownership" : {
+            "value" : "Own",
+            "id" : 1
+          },
+          "weapon_in_home" : true,
+          "body_of_water_exist" : true,
+          "body_of_water_description" : "",
+          "others_using_residence_as_mailing" : true,
+          "other_people_using_residence_as_mailing" : [ {
+            "first_name" : "",
+            "middle_name" : "",
+            "last_name" : ""
+          } ],
+          "directions_to_home" : "",
+          "home_languages" : [ {
+            "value" : "American Sign Language",
+            "id" : 1
+          }, {
+            "value" : "Armenian",
+            "id" : 3
+          } ]
+        }
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/address-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:27 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '154'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Residential",
+            "id" : 1
+          }, {
+            "value" : "Home",
+            "id" : 2
+          }, {
+            "value" : "Mailing",
+            "id" : 3
+          } ]
+        }
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
+- request:
+    method: put
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/child-desired
     body:
       encoding: UTF-8
       string: '{"child_identified":"true","child_in_home":"true","preferred_ages":[]}'
@@ -6570,9 +6695,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:00 GMT
+      - Tue, 24 Apr 2018 00:48:27 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:00
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
         GMT
       x-content-type-options:
       - nosniff
@@ -6593,10 +6718,10 @@ http_interactions:
           "preferred_ages" : [ ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:01 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/dictionaries/address-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/applicant-relationship-types
     body:
       encoding: US-ASCII
       string: ''
@@ -6615,9 +6740,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:01 GMT
+      - Tue, 24 Apr 2018 00:48:27 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:01
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
         GMT
       vary:
       - Accept-Encoding
@@ -6628,89 +6753,152 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '154'
-      connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-          "items" : [ {
-            "value" : "Residential",
-            "id" : 1
-          }, {
-            "value" : "Home",
-            "id" : 2
-          }, {
-            "value" : "Mailing",
-            "id" : 3
-          } ]
-        }
-    http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:01 GMT
-- request:
-    method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054?expanded=true
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - application/json
-      date:
-      - Tue, 24 Apr 2018 00:49:01 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:01
-        GMT
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '215'
+      - '151'
       connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "id" : 7054,
+          "items" : [ {
+            "value" : "Married",
+            "id" : 1
+          }, {
+            "value" : "Domestic Partnership",
+            "id" : 2
+          }, {
+            "value" : "Related (Family Member)",
+            "id" : 3
+          }, {
+            "value" : "Cohabitants",
+            "id" : 4
+          }, {
+            "value" : "Other",
+            "id" : 5
+          } ]
+        }
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052?expanded=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:27 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '576'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id" : 7052,
+          "residence" : {
+            "addresses" : [ {
+              "street_address" : "2870 something else",
+              "zip" : "12345",
+              "city" : "Sacremento",
+              "state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "type" : {
+                "value" : "Residential",
+                "id" : 1
+              }
+            }, {
+              "street_address" : "",
+              "zip" : "",
+              "city" : "",
+              "type" : {
+                "value" : "Mailing",
+                "id" : 3
+              }
+            } ],
+            "physical_mailing_similar" : true,
+            "residence_ownership" : {
+              "value" : "Own",
+              "id" : 1
+            },
+            "weapon_in_home" : true,
+            "body_of_water_exist" : true,
+            "body_of_water_description" : "",
+            "others_using_residence_as_mailing" : true,
+            "other_people_using_residence_as_mailing" : [ {
+              "first_name" : "",
+              "middle_name" : "",
+              "last_name" : ""
+            } ],
+            "directions_to_home" : "",
+            "home_languages" : [ {
+              "value" : "American Sign Language",
+              "id" : 1
+            }, {
+              "value" : "Armenian",
+              "id" : 3
+            } ]
+          },
           "applicants" : [ {
-            "id" : 4325,
-            "first_name" : "Kimberley",
+            "id" : 4323,
+            "first_name" : "Paul",
             "middle_name" : "k",
-            "last_name" : "RReily",
+            "last_name" : "Smit",
             "other_names" : [ ],
+            "date_of_birth" : "1111-11-11",
             "driver_license_number" : "",
-            "email" : ""
+            "email" : "",
+            "phones" : [ {
+              "phone_type" : {
+                "value" : "Home",
+                "id" : 2
+              },
+              "number" : "2012222345",
+              "preferred" : false
+            } ]
           } ],
           "child_desired" : {
             "child_identified" : true,
             "child_in_home" : true,
             "preferred_ages" : [ ]
           },
+          "metadata" : {
+            "submit_enabled" : true
+          },
           "is_initial_application" : false
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:01 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/dictionaries/applicant-relationship-types
+    uri: https://calsapi.preint.cwds.io/dictionaries/license-types
     body:
       encoding: US-ASCII
       string: ''
@@ -6735,9 +6923,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 24 Apr 2018 00:49:01 GMT
+      - Tue, 24 Apr 2018 00:48:27 GMT
       Set-Cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:01
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
         GMT
       Vary:
       - Accept-Encoding
@@ -6748,92 +6936,26 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '151'
+      - '160'
       Connection:
       - keep-alive
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: |-
         {
           "items" : [ {
-            "value" : "Married",
+            "value" : "License",
             "id" : 1
           }, {
-            "value" : "Domestic Partnership",
+            "value" : "Certification",
             "id" : 2
           }, {
-            "value" : "Related (Family Member)",
+            "value" : "Approval",
             "id" : 3
-          }, {
-            "value" : "Cohabitants",
-            "id" : 4
-          }, {
-            "value" : "Other",
-            "id" : 5
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:01 GMT
-- request:
-    method: get
-    uri: https://calsapi.preint.cwds.io/dictionaries/applicant-relationship-types
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - application/json
-      date:
-      - Tue, 24 Apr 2018 00:49:01 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:01
-        GMT
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '151'
-      connection:
-      - keep-alive
-    body:
-      encoding: ASCII-8BIT
-      string: |-
-        {
-          "items" : [ {
-            "value" : "Married",
-            "id" : 1
-          }, {
-            "value" : "Domestic Partnership",
-            "id" : 2
-          }, {
-            "value" : "Related (Family Member)",
-            "id" : 3
-          }, {
-            "value" : "Cohabitants",
-            "id" : 4
-          }, {
-            "value" : "Other",
-            "id" : 5
-          } ]
-        }
-    http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:01 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/license-types
@@ -6855,9 +6977,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:01 GMT
+      - Tue, 24 Apr 2018 00:48:27 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:01
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
         GMT
       vary:
       - Accept-Encoding
@@ -6887,7 +7009,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:01 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/relationship-to-applicant-types
@@ -6909,9 +7031,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:01 GMT
+      - Tue, 24 Apr 2018 00:48:27 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:01
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
         GMT
       vary:
       - Accept-Encoding
@@ -6947,7 +7069,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:01 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/name-types
@@ -6969,9 +7091,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:01 GMT
+      - Tue, 24 Apr 2018 00:48:27 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:01
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
         GMT
       vary:
       - Accept-Encoding
@@ -7004,7 +7126,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:01 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
@@ -7026,9 +7148,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:01 GMT
+      - Tue, 24 Apr 2018 00:48:27 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:01
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
         GMT
       vary:
       - Accept-Encoding
@@ -7076,7 +7198,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:01 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/name-prefix-types
@@ -7098,9 +7220,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:01 GMT
+      - Tue, 24 Apr 2018 00:48:27 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:01
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
         GMT
       vary:
       - Accept-Encoding
@@ -7139,7 +7261,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:01 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/phone-number-types
@@ -7161,9 +7283,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:01 GMT
+      - Tue, 24 Apr 2018 00:48:27 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:01
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
         GMT
       vary:
       - Accept-Encoding
@@ -7199,7 +7321,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:01 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/genders
@@ -7221,9 +7343,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:01 GMT
+      - Tue, 24 Apr 2018 00:48:27 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:01
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
         GMT
       vary:
       - Accept-Encoding
@@ -7250,7 +7372,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:01 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/education-level-types
@@ -7272,9 +7394,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:01 GMT
+      - Tue, 24 Apr 2018 00:48:27 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:01
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:27
         GMT
       vary:
       - Accept-Encoding
@@ -7316,7 +7438,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:01 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:27 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/languages
@@ -7338,9 +7460,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:02 GMT
+      - Tue, 24 Apr 2018 00:48:28 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:02
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:28
         GMT
       vary:
       - Accept-Encoding
@@ -7460,7 +7582,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:02 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:28 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/states
@@ -7482,9 +7604,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:02 GMT
+      - Tue, 24 Apr 2018 00:48:28 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:02
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:28
         GMT
       vary:
       - Accept-Encoding
@@ -7679,7 +7801,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:02 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:28 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/income-types
@@ -7701,9 +7823,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:02 GMT
+      - Tue, 24 Apr 2018 00:48:28 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:02
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:28
         GMT
       vary:
       - Accept-Encoding
@@ -7730,7 +7852,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:02 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:28 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/marriage-termination-reasons
@@ -7752,9 +7874,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:02 GMT
+      - Tue, 24 Apr 2018 00:48:28 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:02
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:28
         GMT
       vary:
       - Accept-Encoding
@@ -7784,7 +7906,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:02 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:28 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/age-groups
@@ -7806,9 +7928,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:02 GMT
+      - Tue, 24 Apr 2018 00:48:28 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:02
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:28
         GMT
       vary:
       - Accept-Encoding
@@ -7850,7 +7972,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:02 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:28 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/sibling-groups
@@ -7872,9 +7994,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:02 GMT
+      - Tue, 24 Apr 2018 00:48:28 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:02
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:28
         GMT
       vary:
       - Accept-Encoding
@@ -7910,7 +8032,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:02 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:28 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/counties
@@ -7932,9 +8054,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:02 GMT
+      - Tue, 24 Apr 2018 00:48:28 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:02
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:28
         GMT
       vary:
       - Accept-Encoding
@@ -8132,10 +8254,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:02 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:28 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054?expanded=true
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052?expanded=true
     body:
       encoding: US-ASCII
       string: ''
@@ -8154,9 +8276,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:02 GMT
+      - Tue, 24 Apr 2018 00:48:28 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:02
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:28
         GMT
       vary:
       - Accept-Encoding
@@ -8167,35 +8289,92 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '215'
+      - '576'
       connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "id" : 7054,
+          "id" : 7052,
+          "residence" : {
+            "addresses" : [ {
+              "street_address" : "2870 something else",
+              "zip" : "12345",
+              "city" : "Sacremento",
+              "state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "type" : {
+                "value" : "Residential",
+                "id" : 1
+              }
+            }, {
+              "street_address" : "",
+              "zip" : "",
+              "city" : "",
+              "type" : {
+                "value" : "Mailing",
+                "id" : 3
+              }
+            } ],
+            "physical_mailing_similar" : true,
+            "residence_ownership" : {
+              "value" : "Own",
+              "id" : 1
+            },
+            "weapon_in_home" : true,
+            "body_of_water_exist" : true,
+            "body_of_water_description" : "",
+            "others_using_residence_as_mailing" : true,
+            "other_people_using_residence_as_mailing" : [ {
+              "first_name" : "",
+              "middle_name" : "",
+              "last_name" : ""
+            } ],
+            "directions_to_home" : "",
+            "home_languages" : [ {
+              "value" : "American Sign Language",
+              "id" : 1
+            }, {
+              "value" : "Armenian",
+              "id" : 3
+            } ]
+          },
           "applicants" : [ {
-            "id" : 4325,
-            "first_name" : "Kimberley",
+            "id" : 4323,
+            "first_name" : "Paul",
             "middle_name" : "k",
-            "last_name" : "RReily",
+            "last_name" : "Smit",
             "other_names" : [ ],
+            "date_of_birth" : "1111-11-11",
             "driver_license_number" : "",
-            "email" : ""
+            "email" : "",
+            "phones" : [ {
+              "phone_type" : {
+                "value" : "Home",
+                "id" : 2
+              },
+              "number" : "2012222345",
+              "preferred" : false
+            } ]
           } ],
           "child_desired" : {
             "child_identified" : true,
             "child_in_home" : true,
             "preferred_ages" : [ ]
           },
+          "metadata" : {
+            "submit_enabled" : true
+          },
           "is_initial_application" : false
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:02 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:28 GMT
 - request:
     method: post
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054/rfa-1c-forms
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/rfa-1b-forms/applicants/4323
     body:
       encoding: UTF-8
       string: "{}"
@@ -8214,9 +8393,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:03 GMT
+      - Tue, 24 Apr 2018 00:48:29 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:03
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:29
         GMT
       x-content-type-options:
       - nosniff
@@ -8225,309 +8404,17 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '46'
+      - '16'
       connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: |-
         {
-          "id" : 519,
-          "child_identified" : false
+          "id" : 621
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:03 GMT
-- request:
-    method: get
-    uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - application/json
-      date:
-      - Tue, 24 Apr 2018 00:49:03 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:03
-        GMT
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '123'
-      connection:
-      - keep-alive
-    body:
-      encoding: ASCII-8BIT
-      string: |-
-        {
-          "items" : [ {
-            "value" : "Esq",
-            "id" : 1
-          }, {
-            "value" : "II",
-            "id" : 2
-          }, {
-            "value" : "III",
-            "id" : 3
-          }, {
-            "value" : "IV",
-            "id" : 4
-          }, {
-            "value" : "JD",
-            "id" : 9
-          }, {
-            "value" : "Jr",
-            "id" : 5
-          }, {
-            "value" : "MD",
-            "id" : 7
-          }, {
-            "value" : "PhD",
-            "id" : 8
-          }, {
-            "value" : "Sr",
-            "id" : 6
-          } ]
-        }
-    http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:03 GMT
-- request:
-    method: get
-    uri: https://calsapi.preint.cwds.io/dictionaries/states
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - application/json
-      date:
-      - Tue, 24 Apr 2018 00:49:03 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:03
-        GMT
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '640'
-      connection:
-      - keep-alive
-    body:
-      encoding: ASCII-8BIT
-      string: |-
-        {
-          "items" : [ {
-            "value" : "Alabama",
-            "id" : "AL"
-          }, {
-            "value" : "Alaska",
-            "id" : "AK"
-          }, {
-            "value" : "American Samoa",
-            "id" : "AM"
-          }, {
-            "value" : "Arizona",
-            "id" : "AZ"
-          }, {
-            "value" : "Arkansas",
-            "id" : "AR"
-          }, {
-            "value" : "California",
-            "id" : "CA"
-          }, {
-            "value" : "Canal Zone",
-            "id" : "CZ"
-          }, {
-            "value" : "Colorado",
-            "id" : "CO"
-          }, {
-            "value" : "Connecticut",
-            "id" : "CT"
-          }, {
-            "value" : "Delaware",
-            "id" : "DE"
-          }, {
-            "value" : "District of Columbia",
-            "id" : "DC"
-          }, {
-            "value" : "Florida",
-            "id" : "FL"
-          }, {
-            "value" : "Georgia",
-            "id" : "GA"
-          }, {
-            "value" : "Guam",
-            "id" : "GU"
-          }, {
-            "value" : "Hawaii",
-            "id" : "HI"
-          }, {
-            "value" : "Idaho",
-            "id" : "ID"
-          }, {
-            "value" : "Illinois",
-            "id" : "IL"
-          }, {
-            "value" : "Indiana",
-            "id" : "IN"
-          }, {
-            "value" : "Iowa",
-            "id" : "IA"
-          }, {
-            "value" : "Kansas",
-            "id" : "KS"
-          }, {
-            "value" : "Kentucky",
-            "id" : "KY"
-          }, {
-            "value" : "Louisiana",
-            "id" : "LA"
-          }, {
-            "value" : "Maine",
-            "id" : "ME"
-          }, {
-            "value" : "Maryland",
-            "id" : "MD"
-          }, {
-            "value" : "Massachusetts",
-            "id" : "MA"
-          }, {
-            "value" : "Michigan",
-            "id" : "MI"
-          }, {
-            "value" : "Minnesota",
-            "id" : "MN"
-          }, {
-            "value" : "Mississippi",
-            "id" : "MS"
-          }, {
-            "value" : "Missouri",
-            "id" : "MO"
-          }, {
-            "value" : "Montana",
-            "id" : "MT"
-          }, {
-            "value" : "Nebraska",
-            "id" : "NE"
-          }, {
-            "value" : "Nevada",
-            "id" : "NV"
-          }, {
-            "value" : "New Hampshire",
-            "id" : "NH"
-          }, {
-            "value" : "New Jersey",
-            "id" : "NJ"
-          }, {
-            "value" : "New Mexico",
-            "id" : "NM"
-          }, {
-            "value" : "New York",
-            "id" : "NY"
-          }, {
-            "value" : "North Carolina",
-            "id" : "NC"
-          }, {
-            "value" : "North Dakota",
-            "id" : "ND"
-          }, {
-            "value" : "Northern Marianas Islands",
-            "id" : "CM"
-          }, {
-            "value" : "Ohio",
-            "id" : "OH"
-          }, {
-            "value" : "Oklahoma",
-            "id" : "OK"
-          }, {
-            "value" : "Oregon",
-            "id" : "OR"
-          }, {
-            "value" : "Pennsylvania",
-            "id" : "PA"
-          }, {
-            "value" : "Puerto Rico",
-            "id" : "PR"
-          }, {
-            "value" : "Rhode Island",
-            "id" : "RI"
-          }, {
-            "value" : "South Carolina",
-            "id" : "SC"
-          }, {
-            "value" : "South Dakota",
-            "id" : "SD"
-          }, {
-            "value" : "Tennessee",
-            "id" : "TN"
-          }, {
-            "value" : "Texas",
-            "id" : "TX"
-          }, {
-            "value" : "Trust Territories",
-            "id" : "TT"
-          }, {
-            "value" : "Utah",
-            "id" : "UT"
-          }, {
-            "value" : "Vermont",
-            "id" : "VT"
-          }, {
-            "value" : "Virginia",
-            "id" : "VA"
-          }, {
-            "value" : "Virgin Islands",
-            "id" : "VI"
-          }, {
-            "value" : "Washington",
-            "id" : "WA"
-          }, {
-            "value" : "West Virginia",
-            "id" : "WV"
-          }, {
-            "value" : "Wisconsin",
-            "id" : "WI"
-          }, {
-            "value" : "Wyoming",
-            "id" : "WY"
-          } ]
-        }
-    http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:03 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:29 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/counties
@@ -8549,9 +8436,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:04 GMT
+      - Tue, 24 Apr 2018 00:48:29 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:04
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:29
         GMT
       vary:
       - Accept-Encoding
@@ -8749,467 +8636,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:04 GMT
-- request:
-    method: get
-    uri: https://calsapi.preint.cwds.io/dictionaries/genders
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - application/json
-      date:
-      - Tue, 24 Apr 2018 00:49:04 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:04
-        GMT
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '104'
-      connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-          "items" : [ {
-            "value" : "Male",
-            "id" : 1
-          }, {
-            "value" : "Female",
-            "id" : 2
-          } ]
-        }
-    http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:04 GMT
-- request:
-    method: get
-    uri: https://calsapi.preint.cwds.io/dictionaries/school-grades
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - application/json
-      date:
-      - Tue, 24 Apr 2018 00:49:04 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:04
-        GMT
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '157'
-      connection:
-      - keep-alive
-    body:
-      encoding: ASCII-8BIT
-      string: |-
-        {
-          "items" : [ {
-            "value" : "TK",
-            "id" : 1
-          }, {
-            "value" : "K",
-            "id" : 2
-          }, {
-            "value" : "1",
-            "id" : 3
-          }, {
-            "value" : "2",
-            "id" : 4
-          }, {
-            "value" : "3",
-            "id" : 5
-          }, {
-            "value" : "4",
-            "id" : 6
-          }, {
-            "value" : "5",
-            "id" : 7
-          }, {
-            "value" : "6",
-            "id" : 8
-          }, {
-            "value" : "7",
-            "id" : 9
-          }, {
-            "value" : "8",
-            "id" : 10
-          }, {
-            "value" : "9",
-            "id" : 11
-          }, {
-            "value" : "10",
-            "id" : 12
-          }, {
-            "value" : "11",
-            "id" : 13
-          }, {
-            "value" : "12",
-            "id" : 14
-          }, {
-            "value" : "College +",
-            "id" : 15
-          } ]
-        }
-    http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:04 GMT
-- request:
-    method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054/rfa-1c-forms/519
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - application/json
-      date:
-      - Tue, 24 Apr 2018 00:49:04 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:04
-        GMT
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '46'
-      connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-          "id" : 519,
-          "child_identified" : false
-        }
-    http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:04 GMT
-- request:
-    method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054?expanded=true
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - application/json
-      date:
-      - Tue, 24 Apr 2018 00:49:04 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:04
-        GMT
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '235'
-      connection:
-      - keep-alive
-    body:
-      encoding: ASCII-8BIT
-      string: |-
-        {
-          "id" : 7054,
-          "applicants" : [ {
-            "id" : 4325,
-            "first_name" : "Kimberley",
-            "middle_name" : "k",
-            "last_name" : "RReily",
-            "other_names" : [ ],
-            "driver_license_number" : "",
-            "email" : ""
-          } ],
-          "rfa1c_forms" : [ {
-            "id" : 519,
-            "child_identified" : false
-          } ],
-          "child_desired" : {
-            "child_identified" : true,
-            "child_in_home" : true,
-            "preferred_ages" : [ ]
-          },
-          "is_initial_application" : false
-        }
-    http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:04 GMT
-- request:
-    method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054/rfa-1c-forms/
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - application/json
-      date:
-      - Tue, 24 Apr 2018 00:49:04 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:04
-        GMT
-      vary:
-      - Accept-Encoding
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '46'
-      connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-          "id" : 519,
-          "child_identified" : false
-        }
-    http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:04 GMT
-- request:
-    method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054/rfa-1b-forms/
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
-  response:
-    status:
-      code: 404
-      message: 
-    headers:
-      cache-control:
-      - must-revalidate,no-cache,no-store
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - text/html;charset=iso-8859-1
-      date:
-      - Tue, 24 Apr 2018 00:49:04 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:04
-        GMT
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '263'
-      connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: |
-        <html>
-        <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-        <title>Error 404 Not Found</title>
-        </head>
-        <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/7054/rfa-1b-forms/. Reason:
-        <pre>    Not Found</pre></p>
-        </body>
-        </html>
-    http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:04 GMT
-- request:
-    method: get
-    uri: https://geo.preint.cwds.io/address/suggest/address%20here
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-type:
-      - application/json
-      date:
-      - Tue, 24 Apr 2018 00:49:06 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:06
-        GMT
-      vary:
-      - Accept-Encoding
-      content-length:
-      - '3'
-      connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[ ]"
-    http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:06 GMT
-- request:
-    method: put
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054/rfa-1c-forms/519
-    body:
-      encoding: UTF-8
-      string: '{"id":519,"child_identified":false,"identified_children":[{"child_in_home":"","date_of_birth":"2000-01-01","date_of_placement":"","first_name":"Kimberley","middle_name":"k","last_name":"RReily","school_name":"School
-        name","name_suffix":{"id":"6","value":"Sr"},"school_grade":{"id":"1","value":"TK"},"gender":{"id":"1","value":"Male"},"school_address":{"street_address":"address
-        here","zip":"12345","city":"","state":{"id":"AL","value":"Alabama"}},"relationship_to_applicants":[{"applicant_id":"","relationship_to_applicant_freeform":""}]}]}'
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - application/json
-      date:
-      - Tue, 24 Apr 2018 00:49:07 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:07
-        GMT
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '720'
-      connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-          "id" : 519,
-          "child_identified" : false,
-          "identified_children" : [ {
-            "first_name" : "Kimberley",
-            "middle_name" : "k",
-            "last_name" : "RReily",
-            "name_suffix" : {
-              "value" : "Sr",
-              "id" : 6
-            },
-            "date_of_birth" : "2000-01-01",
-            "gender" : {
-              "value" : "Male",
-              "id" : 1
-            },
-            "relationship_to_applicants" : [ {
-              "relationship_to_applicant_freeform" : ""
-            } ],
-            "school_grade" : {
-              "value" : "TK",
-              "id" : 1
-            },
-            "school_name" : "School name",
-            "school_address" : {
-              "street_address" : "address here",
-              "zip" : "12345",
-              "city" : "",
-              "state" : {
-                "value" : "Alabama",
-                "id" : "AL"
-              }
-            }
-          } ]
-        }
-    http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:07 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:29 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
@@ -9231,9 +8658,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:07 GMT
+      - Tue, 24 Apr 2018 00:48:29 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:07
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:29
         GMT
       vary:
       - Accept-Encoding
@@ -9281,10 +8708,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:07 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:29 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054/rfa-1c-forms/519
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-prefix-types
     body:
       encoding: US-ASCII
       string: ''
@@ -9303,9 +8730,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:07 GMT
+      - Tue, 24 Apr 2018 00:48:30 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:07
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:30
         GMT
       vary:
       - Accept-Encoding
@@ -9316,55 +8743,633 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '320'
+      - '105'
       connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "id" : 519,
-          "child_identified" : false,
-          "identified_children" : [ {
-            "first_name" : "Kimberley",
-            "middle_name" : "k",
-            "last_name" : "RReily",
-            "name_suffix" : {
-              "value" : "Sr",
-              "id" : 6
-            },
-            "date_of_birth" : "2000-01-01",
-            "gender" : {
-              "value" : "Male",
-              "id" : 1
-            },
-            "relationship_to_applicants" : [ {
-              "relationship_to_applicant_freeform" : ""
-            } ],
-            "school_grade" : {
-              "value" : "TK",
-              "id" : 1
-            },
-            "school_name" : "School name",
-            "school_address" : {
-              "street_address" : "address here",
-              "zip" : "12345",
-              "city" : "",
-              "state" : {
-                "value" : "Alabama",
-                "id" : "AL"
-              }
-            }
+          "items" : [ {
+            "value" : "Dr.",
+            "id" : 4
+          }, {
+            "value" : "Miss",
+            "id" : 5
+          }, {
+            "value" : "Mr.",
+            "id" : 1
+          }, {
+            "value" : "Mrs.",
+            "id" : 3
+          }, {
+            "value" : "Ms.",
+            "id" : 2
+          }, {
+            "value" : "Rev.",
+            "id" : 6
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:07 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:30 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/states
     body:
       encoding: US-ASCII
       string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:30 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:30
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '640'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "value" : "Alabama",
+            "id" : "AL"
+          }, {
+            "value" : "Alaska",
+            "id" : "AK"
+          }, {
+            "value" : "American Samoa",
+            "id" : "AM"
+          }, {
+            "value" : "Arizona",
+            "id" : "AZ"
+          }, {
+            "value" : "Arkansas",
+            "id" : "AR"
+          }, {
+            "value" : "California",
+            "id" : "CA"
+          }, {
+            "value" : "Canal Zone",
+            "id" : "CZ"
+          }, {
+            "value" : "Colorado",
+            "id" : "CO"
+          }, {
+            "value" : "Connecticut",
+            "id" : "CT"
+          }, {
+            "value" : "Delaware",
+            "id" : "DE"
+          }, {
+            "value" : "District of Columbia",
+            "id" : "DC"
+          }, {
+            "value" : "Florida",
+            "id" : "FL"
+          }, {
+            "value" : "Georgia",
+            "id" : "GA"
+          }, {
+            "value" : "Guam",
+            "id" : "GU"
+          }, {
+            "value" : "Hawaii",
+            "id" : "HI"
+          }, {
+            "value" : "Idaho",
+            "id" : "ID"
+          }, {
+            "value" : "Illinois",
+            "id" : "IL"
+          }, {
+            "value" : "Indiana",
+            "id" : "IN"
+          }, {
+            "value" : "Iowa",
+            "id" : "IA"
+          }, {
+            "value" : "Kansas",
+            "id" : "KS"
+          }, {
+            "value" : "Kentucky",
+            "id" : "KY"
+          }, {
+            "value" : "Louisiana",
+            "id" : "LA"
+          }, {
+            "value" : "Maine",
+            "id" : "ME"
+          }, {
+            "value" : "Maryland",
+            "id" : "MD"
+          }, {
+            "value" : "Massachusetts",
+            "id" : "MA"
+          }, {
+            "value" : "Michigan",
+            "id" : "MI"
+          }, {
+            "value" : "Minnesota",
+            "id" : "MN"
+          }, {
+            "value" : "Mississippi",
+            "id" : "MS"
+          }, {
+            "value" : "Missouri",
+            "id" : "MO"
+          }, {
+            "value" : "Montana",
+            "id" : "MT"
+          }, {
+            "value" : "Nebraska",
+            "id" : "NE"
+          }, {
+            "value" : "Nevada",
+            "id" : "NV"
+          }, {
+            "value" : "New Hampshire",
+            "id" : "NH"
+          }, {
+            "value" : "New Jersey",
+            "id" : "NJ"
+          }, {
+            "value" : "New Mexico",
+            "id" : "NM"
+          }, {
+            "value" : "New York",
+            "id" : "NY"
+          }, {
+            "value" : "North Carolina",
+            "id" : "NC"
+          }, {
+            "value" : "North Dakota",
+            "id" : "ND"
+          }, {
+            "value" : "Northern Marianas Islands",
+            "id" : "CM"
+          }, {
+            "value" : "Ohio",
+            "id" : "OH"
+          }, {
+            "value" : "Oklahoma",
+            "id" : "OK"
+          }, {
+            "value" : "Oregon",
+            "id" : "OR"
+          }, {
+            "value" : "Pennsylvania",
+            "id" : "PA"
+          }, {
+            "value" : "Puerto Rico",
+            "id" : "PR"
+          }, {
+            "value" : "Rhode Island",
+            "id" : "RI"
+          }, {
+            "value" : "South Carolina",
+            "id" : "SC"
+          }, {
+            "value" : "South Dakota",
+            "id" : "SD"
+          }, {
+            "value" : "Tennessee",
+            "id" : "TN"
+          }, {
+            "value" : "Texas",
+            "id" : "TX"
+          }, {
+            "value" : "Trust Territories",
+            "id" : "TT"
+          }, {
+            "value" : "Utah",
+            "id" : "UT"
+          }, {
+            "value" : "Vermont",
+            "id" : "VT"
+          }, {
+            "value" : "Virginia",
+            "id" : "VA"
+          }, {
+            "value" : "Virgin Islands",
+            "id" : "VI"
+          }, {
+            "value" : "Washington",
+            "id" : "WA"
+          }, {
+            "value" : "West Virginia",
+            "id" : "WV"
+          }, {
+            "value" : "Wisconsin",
+            "id" : "WI"
+          }, {
+            "value" : "Wyoming",
+            "id" : "WY"
+          } ]
+        }
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:30 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/rfa-1b-forms/621
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:30 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:30
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '16'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 621
+        }
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:30 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052?expanded=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:30 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:30
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '592'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id" : 7052,
+          "residence" : {
+            "addresses" : [ {
+              "street_address" : "2870 something else",
+              "zip" : "12345",
+              "city" : "Sacremento",
+              "state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "type" : {
+                "value" : "Residential",
+                "id" : 1
+              }
+            }, {
+              "street_address" : "",
+              "zip" : "",
+              "city" : "",
+              "type" : {
+                "value" : "Mailing",
+                "id" : 3
+              }
+            } ],
+            "physical_mailing_similar" : true,
+            "residence_ownership" : {
+              "value" : "Own",
+              "id" : 1
+            },
+            "weapon_in_home" : true,
+            "body_of_water_exist" : true,
+            "body_of_water_description" : "",
+            "others_using_residence_as_mailing" : true,
+            "other_people_using_residence_as_mailing" : [ {
+              "first_name" : "",
+              "middle_name" : "",
+              "last_name" : ""
+            } ],
+            "directions_to_home" : "",
+            "home_languages" : [ {
+              "value" : "American Sign Language",
+              "id" : 1
+            }, {
+              "value" : "Armenian",
+              "id" : 3
+            } ]
+          },
+          "applicants" : [ {
+            "id" : 4323,
+            "first_name" : "Paul",
+            "middle_name" : "k",
+            "last_name" : "Smit",
+            "other_names" : [ ],
+            "date_of_birth" : "1111-11-11",
+            "driver_license_number" : "",
+            "email" : "",
+            "phones" : [ {
+              "phone_type" : {
+                "value" : "Home",
+                "id" : 2
+              },
+              "number" : "2012222345",
+              "preferred" : false
+            } ],
+            "rfa1b_form" : {
+              "id" : 621
+            }
+          } ],
+          "child_desired" : {
+            "child_identified" : true,
+            "child_in_home" : true,
+            "preferred_ages" : [ ]
+          },
+          "metadata" : {
+            "submit_enabled" : true
+          },
+          "is_initial_application" : false
+        }
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:30 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/rfa-1c-forms/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Tue, 24 Apr 2018 00:48:30 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:30
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '263'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/7052/rfa-1c-forms/. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:30 GMT
+- request:
+    method: get
+    uri: https://geo.preint.cwds.io/address/suggest/2870%20something%20else
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:32 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:32
+        GMT
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '3'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "[ ]"
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:32 GMT
+- request:
+    method: put
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/rfa-1b-forms/621
+    body:
+      encoding: UTF-8
+      string: '{"id":621,"resource_family_name":"test","applicant_first_name":"first
+        name","applicant_last_name":"last name","date_of_birth":"1111-11-11","metadata":{"submit_enabled":true},"residence_address":{"street_address":"2870
+        something else","zip":"12345","city":"Sacremento","state":{"id":"AK","value":"Alaska"}}}'
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:33 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:33
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '406'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 621,
+          "resource_family_name" : "test",
+          "applicant_first_name" : "first name",
+          "applicant_last_name" : "last name",
+          "residence_address" : {
+            "street_address" : "2870 something else",
+            "zip" : "12345",
+            "city" : "Sacremento",
+            "state" : {
+              "value" : "Alaska",
+              "id" : "AK"
+            }
+          },
+          "date_of_birth" : "1111-11-11",
+          "metadata" : {
+            "submit_enabled" : true
+          }
+        }
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:33 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/rfa-1b-forms/621
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:33 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:33
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '239'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id" : 621,
+          "resource_family_name" : "test",
+          "applicant_first_name" : "first name",
+          "applicant_last_name" : "last name",
+          "residence_address" : {
+            "street_address" : "2870 something else",
+            "zip" : "12345",
+            "city" : "Sacremento",
+            "state" : {
+              "value" : "Alaska",
+              "id" : "AK"
+            }
+          },
+          "date_of_birth" : "1111-11-11",
+          "metadata" : {
+            "submit_enabled" : true
+          }
+        }
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:33 GMT
+- request:
+    method: post
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/rfa-1c-forms
+    body:
+      encoding: UTF-8
+      string: "{}"
     headers:
       Content-Type:
       - application/json
@@ -9378,20 +9383,18 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 201
+      message: Created
     headers:
       Content-Security-Policy:
       - default-src 'self' 'unsafe-inline';
       Content-Type:
       - application/json
       Date:
-      - Tue, 24 Apr 2018 00:49:07 GMT
+      - Tue, 24 Apr 2018 00:48:33 GMT
       Set-Cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:07
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:33
         GMT
-      Vary:
-      - Accept-Encoding
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -9399,191 +9402,134 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '640'
+      - '46'
       Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 517,
+          "child_identified" : false
+        }
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:33 GMT
+- request:
+    method: post
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/rfa-1c-forms
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:33 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:33
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '46'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 517,
+          "child_identified" : false
+        }
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:33 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:33 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:33
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '123'
+      connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
       string: |-
         {
           "items" : [ {
-            "value" : "Alabama",
-            "id" : "AL"
+            "value" : "Esq",
+            "id" : 1
           }, {
-            "value" : "Alaska",
-            "id" : "AK"
+            "value" : "II",
+            "id" : 2
           }, {
-            "value" : "American Samoa",
-            "id" : "AM"
+            "value" : "III",
+            "id" : 3
           }, {
-            "value" : "Arizona",
-            "id" : "AZ"
+            "value" : "IV",
+            "id" : 4
           }, {
-            "value" : "Arkansas",
-            "id" : "AR"
+            "value" : "JD",
+            "id" : 9
           }, {
-            "value" : "California",
-            "id" : "CA"
+            "value" : "Jr",
+            "id" : 5
           }, {
-            "value" : "Canal Zone",
-            "id" : "CZ"
+            "value" : "MD",
+            "id" : 7
           }, {
-            "value" : "Colorado",
-            "id" : "CO"
+            "value" : "PhD",
+            "id" : 8
           }, {
-            "value" : "Connecticut",
-            "id" : "CT"
-          }, {
-            "value" : "Delaware",
-            "id" : "DE"
-          }, {
-            "value" : "District of Columbia",
-            "id" : "DC"
-          }, {
-            "value" : "Florida",
-            "id" : "FL"
-          }, {
-            "value" : "Georgia",
-            "id" : "GA"
-          }, {
-            "value" : "Guam",
-            "id" : "GU"
-          }, {
-            "value" : "Hawaii",
-            "id" : "HI"
-          }, {
-            "value" : "Idaho",
-            "id" : "ID"
-          }, {
-            "value" : "Illinois",
-            "id" : "IL"
-          }, {
-            "value" : "Indiana",
-            "id" : "IN"
-          }, {
-            "value" : "Iowa",
-            "id" : "IA"
-          }, {
-            "value" : "Kansas",
-            "id" : "KS"
-          }, {
-            "value" : "Kentucky",
-            "id" : "KY"
-          }, {
-            "value" : "Louisiana",
-            "id" : "LA"
-          }, {
-            "value" : "Maine",
-            "id" : "ME"
-          }, {
-            "value" : "Maryland",
-            "id" : "MD"
-          }, {
-            "value" : "Massachusetts",
-            "id" : "MA"
-          }, {
-            "value" : "Michigan",
-            "id" : "MI"
-          }, {
-            "value" : "Minnesota",
-            "id" : "MN"
-          }, {
-            "value" : "Mississippi",
-            "id" : "MS"
-          }, {
-            "value" : "Missouri",
-            "id" : "MO"
-          }, {
-            "value" : "Montana",
-            "id" : "MT"
-          }, {
-            "value" : "Nebraska",
-            "id" : "NE"
-          }, {
-            "value" : "Nevada",
-            "id" : "NV"
-          }, {
-            "value" : "New Hampshire",
-            "id" : "NH"
-          }, {
-            "value" : "New Jersey",
-            "id" : "NJ"
-          }, {
-            "value" : "New Mexico",
-            "id" : "NM"
-          }, {
-            "value" : "New York",
-            "id" : "NY"
-          }, {
-            "value" : "North Carolina",
-            "id" : "NC"
-          }, {
-            "value" : "North Dakota",
-            "id" : "ND"
-          }, {
-            "value" : "Northern Marianas Islands",
-            "id" : "CM"
-          }, {
-            "value" : "Ohio",
-            "id" : "OH"
-          }, {
-            "value" : "Oklahoma",
-            "id" : "OK"
-          }, {
-            "value" : "Oregon",
-            "id" : "OR"
-          }, {
-            "value" : "Pennsylvania",
-            "id" : "PA"
-          }, {
-            "value" : "Puerto Rico",
-            "id" : "PR"
-          }, {
-            "value" : "Rhode Island",
-            "id" : "RI"
-          }, {
-            "value" : "South Carolina",
-            "id" : "SC"
-          }, {
-            "value" : "South Dakota",
-            "id" : "SD"
-          }, {
-            "value" : "Tennessee",
-            "id" : "TN"
-          }, {
-            "value" : "Texas",
-            "id" : "TX"
-          }, {
-            "value" : "Trust Territories",
-            "id" : "TT"
-          }, {
-            "value" : "Utah",
-            "id" : "UT"
-          }, {
-            "value" : "Vermont",
-            "id" : "VT"
-          }, {
-            "value" : "Virginia",
-            "id" : "VA"
-          }, {
-            "value" : "Virgin Islands",
-            "id" : "VI"
-          }, {
-            "value" : "Washington",
-            "id" : "WA"
-          }, {
-            "value" : "West Virginia",
-            "id" : "WV"
-          }, {
-            "value" : "Wisconsin",
-            "id" : "WI"
-          }, {
-            "value" : "Wyoming",
-            "id" : "WY"
+            "value" : "Sr",
+            "id" : 6
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:07 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:33 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/states
@@ -9605,9 +9551,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:07 GMT
+      - Tue, 24 Apr 2018 00:48:33 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:07
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:33
         GMT
       vary:
       - Accept-Encoding
@@ -9802,7 +9748,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:07 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:33 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/counties
@@ -9824,9 +9770,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:07 GMT
+      - Tue, 24 Apr 2018 00:48:33 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:07
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:33
         GMT
       vary:
       - Accept-Encoding
@@ -10024,7 +9970,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:07 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:33 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/genders
@@ -10046,9 +9992,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:07 GMT
+      - Tue, 24 Apr 2018 00:48:33 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:07
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:33
         GMT
       vary:
       - Accept-Encoding
@@ -10075,7 +10021,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:08 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:33 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/school-grades
@@ -10097,9 +10043,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:08 GMT
+      - Tue, 24 Apr 2018 00:48:34 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:08
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:34
         GMT
       vary:
       - Accept-Encoding
@@ -10165,10 +10111,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:08 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:34 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054/rfa-1c-forms/519
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/rfa-1c-forms/517
     body:
       encoding: US-ASCII
       string: ''
@@ -10187,9 +10133,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:08 GMT
+      - Tue, 24 Apr 2018 00:48:34 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:08
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:34
         GMT
       vary:
       - Accept-Encoding
@@ -10200,52 +10146,21 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '320'
+      - '46'
       connection:
       - keep-alive
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: |-
         {
-          "id" : 519,
-          "child_identified" : false,
-          "identified_children" : [ {
-            "first_name" : "Kimberley",
-            "middle_name" : "k",
-            "last_name" : "RReily",
-            "name_suffix" : {
-              "value" : "Sr",
-              "id" : 6
-            },
-            "date_of_birth" : "2000-01-01",
-            "gender" : {
-              "value" : "Male",
-              "id" : 1
-            },
-            "relationship_to_applicants" : [ {
-              "relationship_to_applicant_freeform" : ""
-            } ],
-            "school_grade" : {
-              "value" : "TK",
-              "id" : 1
-            },
-            "school_name" : "School name",
-            "school_address" : {
-              "street_address" : "address here",
-              "zip" : "12345",
-              "city" : "",
-              "state" : {
-                "value" : "Alabama",
-                "id" : "AL"
-              }
-            }
-          } ]
+          "id" : 517,
+          "child_identified" : false
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:08 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:34 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054?expanded=true
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052?expanded=true
     body:
       encoding: US-ASCII
       string: ''
@@ -10264,9 +10179,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:08 GMT
+      - Tue, 24 Apr 2018 00:48:34 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:08
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:34
         GMT
       vary:
       - Accept-Encoding
@@ -10277,70 +10192,115 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '438'
+      - '688'
       connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "id" : 7054,
+          "id" : 7052,
+          "residence" : {
+            "addresses" : [ {
+              "street_address" : "2870 something else",
+              "zip" : "12345",
+              "city" : "Sacremento",
+              "state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "type" : {
+                "value" : "Residential",
+                "id" : 1
+              }
+            }, {
+              "street_address" : "",
+              "zip" : "",
+              "city" : "",
+              "type" : {
+                "value" : "Mailing",
+                "id" : 3
+              }
+            } ],
+            "physical_mailing_similar" : true,
+            "residence_ownership" : {
+              "value" : "Own",
+              "id" : 1
+            },
+            "weapon_in_home" : true,
+            "body_of_water_exist" : true,
+            "body_of_water_description" : "",
+            "others_using_residence_as_mailing" : true,
+            "other_people_using_residence_as_mailing" : [ {
+              "first_name" : "",
+              "middle_name" : "",
+              "last_name" : ""
+            } ],
+            "directions_to_home" : "",
+            "home_languages" : [ {
+              "value" : "American Sign Language",
+              "id" : 1
+            }, {
+              "value" : "Armenian",
+              "id" : 3
+            } ]
+          },
           "applicants" : [ {
-            "id" : 4325,
-            "first_name" : "Kimberley",
+            "id" : 4323,
+            "first_name" : "Paul",
             "middle_name" : "k",
-            "last_name" : "RReily",
+            "last_name" : "Smit",
             "other_names" : [ ],
+            "date_of_birth" : "1111-11-11",
             "driver_license_number" : "",
-            "email" : ""
+            "email" : "",
+            "phones" : [ {
+              "phone_type" : {
+                "value" : "Home",
+                "id" : 2
+              },
+              "number" : "2012222345",
+              "preferred" : false
+            } ],
+            "rfa1b_form" : {
+              "id" : 621,
+              "resource_family_name" : "test",
+              "applicant_first_name" : "first name",
+              "applicant_last_name" : "last name",
+              "residence_address" : {
+                "street_address" : "2870 something else",
+                "zip" : "12345",
+                "city" : "Sacremento",
+                "state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                }
+              },
+              "date_of_birth" : "1111-11-11",
+              "metadata" : {
+                "submit_enabled" : true
+              }
+            }
           } ],
           "rfa1c_forms" : [ {
-            "id" : 519,
-            "child_identified" : false,
-            "identified_children" : [ {
-              "first_name" : "Kimberley",
-              "middle_name" : "k",
-              "last_name" : "RReily",
-              "name_suffix" : {
-                "value" : "Sr",
-                "id" : 6
-              },
-              "date_of_birth" : "2000-01-01",
-              "gender" : {
-                "value" : "Male",
-                "id" : 1
-              },
-              "relationship_to_applicants" : [ {
-                "relationship_to_applicant_freeform" : ""
-              } ],
-              "school_grade" : {
-                "value" : "TK",
-                "id" : 1
-              },
-              "school_name" : "School name",
-              "school_address" : {
-                "street_address" : "address here",
-                "zip" : "12345",
-                "city" : "",
-                "state" : {
-                  "value" : "Alabama",
-                  "id" : "AL"
-                }
-              }
-            } ]
+            "id" : 517,
+            "child_identified" : false
           } ],
           "child_desired" : {
             "child_identified" : true,
             "child_in_home" : true,
             "preferred_ages" : [ ]
           },
+          "metadata" : {
+            "submit_enabled" : true
+          },
           "is_initial_application" : false
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:08 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:34 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054/rfa-1c-forms/
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/rfa-1c-forms/
     body:
       encoding: US-ASCII
       string: ''
@@ -10359,9 +10319,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:08 GMT
+      - Tue, 24 Apr 2018 00:48:34 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:08
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:34
         GMT
       vary:
       - Accept-Encoding
@@ -10372,52 +10332,21 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '320'
+      - '46'
       connection:
       - keep-alive
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: |-
         {
-          "id" : 519,
-          "child_identified" : false,
-          "identified_children" : [ {
-            "first_name" : "Kimberley",
-            "middle_name" : "k",
-            "last_name" : "RReily",
-            "name_suffix" : {
-              "value" : "Sr",
-              "id" : 6
-            },
-            "date_of_birth" : "2000-01-01",
-            "gender" : {
-              "value" : "Male",
-              "id" : 1
-            },
-            "relationship_to_applicants" : [ {
-              "relationship_to_applicant_freeform" : ""
-            } ],
-            "school_grade" : {
-              "value" : "TK",
-              "id" : 1
-            },
-            "school_name" : "School name",
-            "school_address" : {
-              "street_address" : "address here",
-              "zip" : "12345",
-              "city" : "",
-              "state" : {
-                "value" : "Alabama",
-                "id" : "AL"
-              }
-            }
-          } ]
+          "id" : 517,
+          "child_identified" : false
         }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:08 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:34 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7054/rfa-1b-forms/
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/rfa-1b-forms/
     body:
       encoding: US-ASCII
       string: ''
@@ -10428,19 +10357,80 @@ http_interactions:
       - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
   response:
     status:
-      code: 404
+      code: 200
       message: 
     headers:
-      cache-control:
-      - must-revalidate,no-cache,no-store
       content-security-policy:
       - default-src 'self' 'unsafe-inline';
       content-type:
-      - text/html;charset=iso-8859-1
+      - application/json
       date:
-      - Tue, 24 Apr 2018 00:49:08 GMT
+      - Tue, 24 Apr 2018 00:48:34 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:49:08
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:34
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '253'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "id" : 621,
+            "resource_family_name" : "test",
+            "applicant_first_name" : "first name",
+            "applicant_last_name" : "last name",
+            "residence_address" : {
+              "street_address" : "2870 something else",
+              "zip" : "12345",
+              "city" : "Sacremento",
+              "state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              }
+            },
+            "date_of_birth" : "1111-11-11",
+            "metadata" : {
+              "submit_enabled" : true
+            }
+          } ]
+        }
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:34 GMT
+- request:
+    method: put
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/rfa-1c-forms/517
+    body:
+      encoding: UTF-8
+      string: '{"id":517,"child_identified":false,"identified_children":[{"child_in_home":"true","date_of_birth":"2000-01-01","date_of_placement":"","first_name":"Paul","middle_name":"k","last_name":"Smit","school_name":"","school_address":{"street_address":"","zip":"","city":""},"relationship_to_applicants":[{"applicant_id":"","relationship_to_applicant_freeform":""}]}],"metadata":{"submit_enabled":true}}'
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:35 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:35
         GMT
       x-content-type-options:
       - nosniff
@@ -10449,22 +10439,100 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '263'
+      - '491'
       connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |
-        <html>
-        <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-        <title>Error 404 Not Found</title>
-        </head>
-        <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /rfa-1a-forms/7054/rfa-1b-forms/. Reason:
-        <pre>    Not Found</pre></p>
-        </body>
-        </html>
+      string: |-
+        {
+          "id" : 517,
+          "child_identified" : false,
+          "identified_children" : [ {
+            "first_name" : "Paul",
+            "middle_name" : "k",
+            "last_name" : "Smit",
+            "date_of_birth" : "2000-01-01",
+            "relationship_to_applicants" : [ {
+              "relationship_to_applicant_freeform" : ""
+            } ],
+            "school_name" : "",
+            "school_address" : {
+              "street_address" : "",
+              "zip" : "",
+              "city" : ""
+            },
+            "child_in_home" : true
+          } ],
+          "metadata" : {
+            "submit_enabled" : true
+          }
+        }
     http_version: 
-  recorded_at: Tue, 24 Apr 2018 00:49:08 GMT
+  recorded_at: Tue, 24 Apr 2018 00:48:36 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/7052/rfa-1c-forms/517
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 5ee9156c-9d6f-4c31-af72-f4823f8db0d7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 24 Apr 2018 00:48:36 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Apr-2018 00:48:36
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '251'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id" : 517,
+          "child_identified" : false,
+          "identified_children" : [ {
+            "first_name" : "Paul",
+            "middle_name" : "k",
+            "last_name" : "Smit",
+            "date_of_birth" : "2000-01-01",
+            "relationship_to_applicants" : [ {
+              "relationship_to_applicant_freeform" : ""
+            } ],
+            "school_name" : "",
+            "school_address" : {
+              "street_address" : "",
+              "zip" : "",
+              "city" : ""
+            },
+            "child_in_home" : true
+          } ],
+          "metadata" : {
+            "submit_enabled" : true
+          }
+        }
+    http_version: 
+  recorded_at: Tue, 24 Apr 2018 00:48:36 GMT
 recorded_with: VCR 3.0.3

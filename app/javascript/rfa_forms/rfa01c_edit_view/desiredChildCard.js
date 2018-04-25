@@ -10,14 +10,13 @@ import PropTypes from 'prop-types'
 import {relationshipToApplicantDefaults} from 'constants/defaultFields'
 import {RfaCommon} from 'constants/rfaText'
 
-const dateValidator = {rule: 'isValidDate', message: 'date is invalid'}
-
 export default class DesiredChildCard extends React.Component {
   constructor (props) {
     super(props)
     this.handleAddressChange = this.handleAddressChange.bind(this)
     this.handleRelationshipChange = this.handleRelationshipChange.bind(this)
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'date_of_birth', dateValidator)
+    this.childInHomeValidationId = this.props.idPrefix + 'child_in_home'
+    this.props.validator.addFieldValidation(this.props.idPrefix + 'child_in_home', {rule: 'isRequiredBoolean', message: 'Required'})
   }
 
   handleAddressChange (key, value, index) {
@@ -31,6 +30,11 @@ export default class DesiredChildCard extends React.Component {
     relationshipToApplicant = relationshipToApplicant.setIn([subIndex, 'applicant_id'], applicant.id)
     relationshipToApplicant = relationshipToApplicant.setIn([subIndex, 'relationship_to_applicant_freeform'], value)
     this.props.setParentState(index, 'relationship_to_applicants', relationshipToApplicant.toJS())
+  }
+
+  componentWillUnmount () {
+    const rulesToRemove = [this.childInHomeValidationId]
+    this.props.validator.removeValidations(rulesToRemove)
   }
 
   render () {
@@ -47,17 +51,18 @@ export default class DesiredChildCard extends React.Component {
           <a onClick={(event) => this.props.clickClose(index)} className='pull-right remove-btn'>Remove</a>
         </div>
         <YesNoRadioComponent
-          idPrefix={'child_identified' + index}
+          idPrefix={this.props.idPrefix + 'child_in_home'}
           label={'Is the child currently in your home?' + RfaCommon.requiredIndicator}
           value={child.child_in_home}
           onFieldChange={(event) => this.props.setParentState(index, 'child_in_home', event.target.value)} />
         <DesiredChildDetails
           index={index}
-          idPrefix='desiredChildCard'
+          idPrefix={this.props.idPrefix}
           child={child}
           setParentState={this.props.setParentState}
           suffixTypes={this.props.suffixTypes}
           genderTypes={this.props.genderTypes}
+          validator={this.props.validator}
           countyTypes={this.props.countyTypes} />
         <DesiredChildRelationships
           index={index}

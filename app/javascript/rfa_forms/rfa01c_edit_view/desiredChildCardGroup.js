@@ -46,7 +46,7 @@ export default class DesiredChildCardGroup extends React.Component {
               <div key={'desiredChildCard' + index} className='row'>
                 <DesiredChildCard
                   index={index}
-                  idPrefix={'desiredChild[' + index + '].'}
+                  idPrefix={'identified_children[' + index + '].'}
                   setParentState={this.setApplicationNestedState}
                   desiredChild={child}
                   applicants={this.props.applicants}

@@ -4,14 +4,14 @@ import _ from 'lodash'
 import DesiredChildCardGroup from 'rfa_forms/rfa01c_edit_view/desiredChildCardGroup'
 import {CountyUseOnlyCard} from 'components/rfa_forms/countyUseOnlyCard'
 import {fetchRequest} from 'helpers/http'
-import {checkForNameValidation, checkFieldsForSubmit} from 'helpers/cardsHelper.jsx'
+import {checkForNameValidation} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
 import CardsGroupLayout from 'components/common/cardsGroupLayout'
 import PageTemplate from 'components/common/pageTemplate'
-import {getCountyValue, checkArrayObjectPresence, dictionaryNilSelect} from 'helpers/commonHelper.jsx'
+import {getCountyValue, checkArrayObjectPresence, dictionaryNilSelect, checkSubmitEnabledForForms} from 'helpers/commonHelper.jsx'
 import Button from 'components/common/button'
 
-export default class Rfa01cList extends React.Component {
+export default class Rfa01cEditView extends React.Component {
   constructor (props) {
     super(props)
     this.saveProgress = this.saveProgress.bind(this)
@@ -25,16 +25,42 @@ export default class Rfa01cList extends React.Component {
     this.validator = new Validator({})
     this.validator.validateFieldSetErrorState = this.validateFieldSetErrorState.bind(this)
 
+    const submitEnabledForA = checkSubmitEnabledForForms(this.props.rfa_a01_application)
+    const submitEnabledForB = this.props.rfa_b01_applications &&
+     this.props.rfa_b01_applications.every(checkSubmitEnabledForForms)
+    let submitEnabled = submitEnabledForA && submitEnabledForB
+    const submitEnabledForAll = submitEnabled && checkSubmitEnabledForForms(this.props.rfa_c1_application)
+
     this.state = {
       focusComponentName: '',
-      disableSubmit: true, //! (checkFieldsForSubmit(this.props.rfa_a01_application)),
-      disableSave: !(checkForNameValidation(this.props.rfa_a01_application.applicants)),
       application: this.props.rfa_c1_application,
       rfa_a01_application: this.props.rfa_a01_application,
       activeNavLinkId: this.props.rfa_c1_application.id,
-      errors: {}
+      errors: {},
+      disableSubmit: !submitEnabledForAll,
+      disableSubmitAB: submitEnabled
     }
   }
+
+  validateAllRequiredForSubmit (data) {
+    let requiredRules = this.validator.allIsRequiredRules()
+    requiredRules = requiredRules.merge(this.validator.allValidationsWithOnlyRule('isRequiredBoolean'))
+    return this.validator.validateAllFieldsWithRules(data, requiredRules)
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    if (prevState.application !== this.state.application) {
+      const DataValidForSubmit = !(this.state.disableSubmitAB && this.validateAllRequiredForSubmit(this.state.application))
+
+      if (prevState.disableSubmit !== DataValidForSubmit) {
+        this.setState({disableSubmit: DataValidForSubmit})
+        let application = this.state.application
+        application.metadata = {submit_enabled: !DataValidForSubmit}
+        this.setState({application: application})
+      }
+    }
+  }
+
   validateFieldSetErrorState (fieldName, value) {
     const error = this.validator.validateFieldAndGetError(fieldName, value)
     let currentErrors = this.state.errors
@@ -82,9 +108,6 @@ export default class Rfa01cList extends React.Component {
     let newState = Immutable.fromJS(this.state)
     newState = newState.setIn(['application', key], value)
     this.setState(newState.toJS())
-    this.setState({
-      disableSubmit: true //! checkFieldsForSubmit(newState.toJS())
-    })
   }
 
   setFocusState (focusComponentName) {

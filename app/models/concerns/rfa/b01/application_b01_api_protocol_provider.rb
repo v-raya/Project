@@ -8,9 +8,10 @@ module Concerns::Rfa::B01::ApplicationB01ApiProtocolProvider
       JSON.parse(response.body)
     end
 
-    def all(auth_header, application_id)
+    def all(application_id, auth_header)
       response = FaradayCals.get("/rfa-1a-forms/#{application_id}/rfa-1b-forms/", auth_header)
-      JSON.parse(response.body)
+      body = response.status == 200 ? JSON.parse(response.body) : nil
+      body.present? ? body['items'] : nil
     end
 
     def find_by_id(id, application_id, auth_header)

@@ -10,7 +10,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - f2cd7868-91d5-43a0-9545-eaa21b55f17a
+      - b7832a9c-56cb-4304-a504-938db1596941
   response:
     status:
       code: 201
@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 14 Mar 2018 22:55:32 GMT
+      - Thu, 19 Apr 2018 16:04:36 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 13-Mar-2018 22:55:32
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 18-Apr-2018 16:04:36
         GMT
       x-content-type-options:
       - nosniff
@@ -32,21 +32,21 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '52'
+      - '53'
       connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: |-
         {
-          "id" : 396,
+          "id" : 6151,
           "is_initial_application" : false
         }
     http_version: 
-  recorded_at: Wed, 14 Mar 2018 22:55:32 GMT
+  recorded_at: Thu, 19 Apr 2018 16:04:36 GMT
 - request:
     method: post
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/396/rfa-1c-forms
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/6151/rfa-1c-forms
     body:
       encoding: UTF-8
       string: "{}"
@@ -54,7 +54,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - f2cd7868-91d5-43a0-9545-eaa21b55f17a
+      - b7832a9c-56cb-4304-a504-938db1596941
   response:
     status:
       code: 201
@@ -65,9 +65,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 14 Mar 2018 22:55:32 GMT
+      - Thu, 19 Apr 2018 16:04:36 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 13-Mar-2018 22:55:32
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 18-Apr-2018 16:04:36
         GMT
       x-content-type-options:
       - nosniff
@@ -76,18 +76,18 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '45'
+      - '46'
       connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: |-
         {
-          "id" : 41,
+          "id" : 357,
           "child_identified" : false
         }
     http_version: 
-  recorded_at: Wed, 14 Mar 2018 22:55:32 GMT
+  recorded_at: Thu, 19 Apr 2018 16:04:36 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/name-suffix-types
@@ -98,7 +98,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - f2cd7868-91d5-43a0-9545-eaa21b55f17a
+      - b7832a9c-56cb-4304-a504-938db1596941
   response:
     status:
       code: 200
@@ -109,9 +109,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 14 Mar 2018 22:55:32 GMT
+      - Thu, 19 Apr 2018 16:04:36 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 13-Mar-2018 22:55:32
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 18-Apr-2018 16:04:36
         GMT
       vary:
       - Accept-Encoding
@@ -159,7 +159,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 14 Mar 2018 22:55:32 GMT
+  recorded_at: Thu, 19 Apr 2018 16:04:36 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/states
@@ -170,7 +170,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - f2cd7868-91d5-43a0-9545-eaa21b55f17a
+      - b7832a9c-56cb-4304-a504-938db1596941
   response:
     status:
       code: 200
@@ -181,9 +181,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 14 Mar 2018 22:55:32 GMT
+      - Thu, 19 Apr 2018 16:04:36 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 13-Mar-2018 22:55:32
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 18-Apr-2018 16:04:36
         GMT
       vary:
       - Accept-Encoding
@@ -378,7 +378,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 14 Mar 2018 22:55:32 GMT
+  recorded_at: Thu, 19 Apr 2018 16:04:36 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/counties
@@ -389,7 +389,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - f2cd7868-91d5-43a0-9545-eaa21b55f17a
+      - b7832a9c-56cb-4304-a504-938db1596941
   response:
     status:
       code: 200
@@ -400,9 +400,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 14 Mar 2018 22:55:32 GMT
+      - Thu, 19 Apr 2018 16:04:36 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 13-Mar-2018 22:55:32
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 18-Apr-2018 16:04:36
         GMT
       vary:
       - Accept-Encoding
@@ -600,7 +600,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 14 Mar 2018 22:55:33 GMT
+  recorded_at: Thu, 19 Apr 2018 16:04:36 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/genders
@@ -611,7 +611,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - f2cd7868-91d5-43a0-9545-eaa21b55f17a
+      - b7832a9c-56cb-4304-a504-938db1596941
   response:
     status:
       code: 200
@@ -622,9 +622,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 14 Mar 2018 22:55:33 GMT
+      - Thu, 19 Apr 2018 16:04:36 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 13-Mar-2018 22:55:33
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 18-Apr-2018 16:04:36
         GMT
       vary:
       - Accept-Encoding
@@ -651,7 +651,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 14 Mar 2018 22:55:33 GMT
+  recorded_at: Thu, 19 Apr 2018 16:04:36 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/school-grades
@@ -662,7 +662,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - f2cd7868-91d5-43a0-9545-eaa21b55f17a
+      - b7832a9c-56cb-4304-a504-938db1596941
   response:
     status:
       code: 200
@@ -673,9 +673,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 14 Mar 2018 22:55:33 GMT
+      - Thu, 19 Apr 2018 16:04:36 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 13-Mar-2018 22:55:33
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 18-Apr-2018 16:04:36
         GMT
       vary:
       - Accept-Encoding
@@ -741,10 +741,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Wed, 14 Mar 2018 22:55:33 GMT
+  recorded_at: Thu, 19 Apr 2018 16:04:36 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/396/rfa-1c-forms/41
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/6151/rfa-1c-forms/357
     body:
       encoding: US-ASCII
       string: ''
@@ -752,7 +752,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - f2cd7868-91d5-43a0-9545-eaa21b55f17a
+      - b7832a9c-56cb-4304-a504-938db1596941
   response:
     status:
       code: 200
@@ -763,9 +763,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 14 Mar 2018 22:55:33 GMT
+      - Thu, 19 Apr 2018 16:04:36 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 13-Mar-2018 22:55:33
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 18-Apr-2018 16:04:36
         GMT
       vary:
       - Accept-Encoding
@@ -776,21 +776,21 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '45'
+      - '46'
       connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: |-
         {
-          "id" : 41,
+          "id" : 357,
           "child_identified" : false
         }
     http_version: 
-  recorded_at: Wed, 14 Mar 2018 22:55:33 GMT
+  recorded_at: Thu, 19 Apr 2018 16:04:36 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/396?expanded=true
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/6151?expanded=true
     body:
       encoding: US-ASCII
       string: ''
@@ -798,7 +798,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - f2cd7868-91d5-43a0-9545-eaa21b55f17a
+      - b7832a9c-56cb-4304-a504-938db1596941
   response:
     status:
       code: 200
@@ -809,9 +809,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 14 Mar 2018 22:55:34 GMT
+      - Thu, 19 Apr 2018 16:04:36 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 13-Mar-2018 22:55:34
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 18-Apr-2018 16:04:36
         GMT
       vary:
       - Accept-Encoding
@@ -822,25 +822,25 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '127'
+      - '129'
       connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: |-
         {
-          "id" : 396,
+          "id" : 6151,
           "rfa1c_forms" : [ {
-            "id" : 41,
+            "id" : 357,
             "child_identified" : false
           } ],
           "is_initial_application" : false
         }
     http_version: 
-  recorded_at: Wed, 14 Mar 2018 22:55:34 GMT
+  recorded_at: Thu, 19 Apr 2018 16:04:36 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/396/rfa-1c-forms/
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/6151/rfa-1c-forms/
     body:
       encoding: US-ASCII
       string: ''
@@ -848,7 +848,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - f2cd7868-91d5-43a0-9545-eaa21b55f17a
+      - b7832a9c-56cb-4304-a504-938db1596941
   response:
     status:
       code: 200
@@ -859,9 +859,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Wed, 14 Mar 2018 22:55:34 GMT
+      - Thu, 19 Apr 2018 16:04:37 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Tue, 13-Mar-2018 22:55:34
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 18-Apr-2018 16:04:37
         GMT
       vary:
       - Accept-Encoding
@@ -872,16 +872,68 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '45'
+      - '46'
       connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: |-
         {
-          "id" : 41,
+          "id" : 357,
           "child_identified" : false
         }
     http_version: 
-  recorded_at: Wed, 14 Mar 2018 22:55:34 GMT
+  recorded_at: Thu, 19 Apr 2018 16:04:37 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/6151/rfa-1b-forms/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - b7832a9c-56cb-4304-a504-938db1596941
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      cache-control:
+      - must-revalidate,no-cache,no-store
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - text/html;charset=iso-8859-1
+      date:
+      - Thu, 19 Apr 2018 16:04:37 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 18-Apr-2018 16:04:37
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '263'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <title>Error 404 Not Found</title>
+        </head>
+        <body><h2>HTTP ERROR 404</h2>
+        <p>Problem accessing /rfa-1a-forms/6151/rfa-1b-forms/. Reason:
+        <pre>    Not Found</pre></p>
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Thu, 19 Apr 2018 16:04:37 GMT
 recorded_with: VCR 3.0.3

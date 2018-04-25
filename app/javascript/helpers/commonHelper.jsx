@@ -77,3 +77,7 @@ export const findArrayValueByMethod = (arrayToBeFiltered, method, findByType, co
 export const getCountyValue = (application, user) => {
   return getDictionaryId(application.application_county) || (user && user.county_code)
 }
+
+export const checkSubmitEnabledForForms = (form) => {
+  return form.metadata && form.metadata.submit_enabled
+}

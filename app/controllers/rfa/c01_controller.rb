@@ -10,6 +10,7 @@ class Rfa::C01Controller < CalsBaseController
     @rfa_c1_application = rfa_c01_application_helper.find_by_id(params[:a01_id], params[:id])
     @rfa_a01_application = rfa_application_helper.find_by_application_id(params[:a01_id])
     @rfa_a01_application['rfa1c_forms'] = rfa_c01_application_helper.all(params[:a01_id])
+    @rfa_b01_applications = rfa_b01_application_helper.all(params[:a01_id])
   end
 
   def update
@@ -25,17 +26,27 @@ class Rfa::C01Controller < CalsBaseController
     params.require(:c01).permit(:id, :child_identified, identified_children:
                                 [:child_in_home, :date_of_birth, :date_of_placement,
                                  :first_name, :middle_name, :last_name, :school_name,
+                               applicant_name_prefix:  %i[id value],
+                                 applicant_name_suffix: %i[id value], application_county:  %i[id value],
                                  name_suffix: %i[id value], school_grade: %i[id value],
                                  gender: %i[id value], county_of_jurisdiction: %i[id value],
                                  school_address: [:street_address, :zip, :city, state: %i[id value]],
                                  relationship_to_applicants: [:applicant_id,
                                                               :relationship_to_applicant_freeform,
                                                               relationship_to_applicant: %i[id value]]],
-                                application_county: %i[id value])
+                                application_county: %i[id value], metadata: :submit_enabled)
   end
 
   def rfa_c01_application_helper
     Helpers::Rfa::C01::ApplicationHelper.new(auth_header: get_session_token)
+  end
+
+  def application_params
+    params.permit(:id, {metadata: :submit_enabled})
+  end
+
+   def rfa_b01_application_helper
+    Helpers::Rfa::B01::ApplicationHelper.new(auth_header: get_session_token)
   end
 
   def rfa_application_helper

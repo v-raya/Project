@@ -79,6 +79,8 @@ describe('Verify RFA 01C child desired', function () {
     onChangeSpy = jasmine.createSpy('')
     childCardComp = mount(<DesiredChildCard
       applicants={applicants}
+      idPrefix='childIdentifiedField'
+      // desiredChildNew={identified_children[0]}
       desiredChild={childDesired.identified_children[0]}
       setParentState={setParentStateSpy}
       genderTypes={genderTypes.items}
@@ -115,13 +117,13 @@ describe('Verify RFA 01C child desired', function () {
   })
 
   it('verify date of birth', () => {
-    let relationField = childCardComp.find('#desiredChildCarddate_of_birth').hostNodes()
+    let relationField = childCardComp.find('#childIdentifiedFielddate_of_birth').hostNodes()
     relationField.simulate('change', {target: {value: '01/01/2000'}})
     expect(setParentStateSpy).toHaveBeenCalledWith(0, 'date_of_birth', '2000-01-01')
   })
 
   it('verify date of placement on change', () => {
-    let relationField = childCardComp.find('#desiredChildCarddate_of_placement').hostNodes()
+    let relationField = childCardComp.find('#childIdentifiedFielddate_of_placement').hostNodes()
     relationField.simulate('change', {target: {value: '01/01/2000'}})
     expect(setParentStateSpy).toHaveBeenCalledWith(0, 'date_of_placement', '2000-01-01')
   })
@@ -136,9 +138,9 @@ describe('Verify RFA 01C child desired', function () {
   it('verify required fields labels', () => {
     let componentHtml = childCardComp.html()
     expect(componentHtml).toContain('Is the child currently in your home?' + RfaCommon.requiredIndicator)
-    expect(childCardComp.find('[htmlFor="desiredChildCarddate_of_birth"]').html()).toContain('Date of Birth' + RfaCommon.requiredIndicator)
-    expect(childCardComp.find('[htmlFor="desiredChildCardfirst_name"]').html()).toContain('First Name' + RfaCommon.requiredIndicator)
-    expect(childCardComp.find('[htmlFor="desiredChildCardlast_name"]').html()).toContain('Last Name' + RfaCommon.requiredIndicator)
+    expect(childCardComp.find('[htmlFor="childIdentifiedFielddate_of_birth"]').html()).toContain('Date of Birth' + RfaCommon.requiredIndicator)
+    expect(childCardComp.find('[htmlFor="childIdentifiedFieldfirst_name"]').html()).toContain('First Name' + RfaCommon.requiredIndicator)
+    expect(childCardComp.find('[htmlFor="childIdentifiedFieldlast_name"]').html()).toContain('Last Name' + RfaCommon.requiredIndicator)
   })
 
   describe('Address component mount', () => {
