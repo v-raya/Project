@@ -28,6 +28,6 @@ describe('Search Not Found with errors undefined', function () {
     expect(searchNotFoundShallow.length).toBe(1)
   })
   it('verifies error message when props are undefined', function () {
-    expect(searchNotFoundShallow.text()).toContain('No result found with the selected search criteria, Please refine your search and try again')
+    expect(searchNotFoundShallow.text()).toContain('No results were found with the selected search criteria, please refine your search criteria and try again.')
   })
 })

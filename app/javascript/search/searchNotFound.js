@@ -10,8 +10,8 @@ const SearchNotFound = ({errors}) => (
       <div className='col-xs-12 col-sm-11 col-md-11 col-lg-11'>
         <ApiErrorMessages errors={errors}/>
         {errors.length > 0 ? '' : <p className='error_message'>
-              No result found with the selected search criteria,
-              Please refine your search and try again
+              No results were found with the selected search criteria,
+              please refine your search criteria and try again.
         </p>}
       </div>
     </div>
