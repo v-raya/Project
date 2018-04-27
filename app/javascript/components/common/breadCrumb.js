@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 
 const BreadCrumb = ({
   navigationElements
@@ -8,7 +7,7 @@ const BreadCrumb = ({
   <div className='container'>
     <div className='row'>
       <div className='col-xs-7'>
-        <h5>Back to: <span><a href={urlPrefixHelper('/dashboard')}>Main Menu</a> {navigationElements.map((nav, index) => (<span key={index}> > {nav}</span>))}</span></h5>
+        <h5>Back to: <span><a href={'/dashboard'}>Main Menu</a> {navigationElements.map((nav, index) => (<span key={index}> > {nav}</span>))}</span></h5>
       </div>
     </div>
   </div>

@@ -28,6 +28,7 @@ describe('Render search list and each method', function () {
       fac_mail_street_addr: '767 GLEN EAGLES DRIVE',
       fac_mail_zip_code: '95350',
       name: "DEPUTY DOG'S GROUP HOME",
+      licensee_name: 'Ananya Nandi',
       license_number: 193600008,
       fac_orig_appl_rec_date: '1983-02-02',
       addresses: [{
@@ -120,5 +121,9 @@ describe('Render search list and each method', function () {
 
   it('Verify facility phone number is  N/A', () => {
     expect(searchListComp.findWhere(n => n.props().id === 'facilities[1].primary_phone').props().children).toBe('N/A')
+  })
+
+  it('Verify facility licensee name is rendered', () => {
+    expect(searchListComp.findWhere(n => n.props().id === 'facilities[0].licensee_name').props().children).toBe('Ananya Nandi')
   })
 })

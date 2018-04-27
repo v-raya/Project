@@ -96,6 +96,7 @@ describe('Search results to Grid', function () {
     searchResults: [
       {
         addresses: [],
+        licensee_name: 'Ananya Nandi',
         email_address: 'test@test.com'
       }
     ]
@@ -107,5 +108,8 @@ describe('Search results to Grid', function () {
   })
   it('Verify email address', function () {
     expect(searchGridComp.find('GridInnerLayout[title="Facility Email"]').props().value).toBe('test@test.com')
+  })
+  it('Verify licensee name', function () {
+    expect(searchGridComp.find('GridInnerLayout[title="Licensee Name"]').props().value).toBe('Ananya Nandi')
   })
 })

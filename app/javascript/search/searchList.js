@@ -32,7 +32,7 @@ export const SearchList = ({
               <td>{result.license_number}</td>
               <td id={'facilities[' + index + '].' + 'type'}>{checkForNA(result.type) + ' / ' + checkValueForNull(result.facility_source)}</td>
               <td>{checkForNA(result.status)}</td>
-              <td>{result.name}</td>
+              <td id={'facilities[' + index + '].' + 'licensee_name'}>{result.licensee_name}</td>
               <td id={'facilities[' + index + '].' + 'physical_address'}>{respectiveFullAddressOrNA(result.addresses, physicalAddressType)}</td>
               <td id={'facilities[' + index + '].' + 'county'}>{checkForNA(result.county)}</td>
               <td id={'facilities[' + index + '].' + 'primary_phone'}>{respectiveNumberOrNA(result.phones, primaryPhoneRelation)}</td>

@@ -52,7 +52,7 @@ const SearchGrid = ({
                 value={checkValueForNull(result.email_address)} />
               <GridInnerLayout
                 title='Licensee Name'
-                value={result.name} />
+                value={result.licensee_name} />
             </GridOuterLayout>
             <GridOuterLayout>
               <GridInnerLayout
