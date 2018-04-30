@@ -75,6 +75,8 @@ export default class ResidenceCards extends React.Component {
             residenceTypes={this.props.residenceTypes}
             languageTypes={this.props.languageTypes}
             aboutResidence={residenceData}
+            suffixTypes={this.props.suffixTypes}
+            prefixTypes={this.props.prefixTypes}
             setParentState={this.setResidenceState}
             handleClearOnConditionalChange={this.handleClearOnConditionalChange}
             validator={this.props.validator} />

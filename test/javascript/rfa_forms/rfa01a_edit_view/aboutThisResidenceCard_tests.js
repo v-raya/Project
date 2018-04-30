@@ -1,8 +1,9 @@
 import React from 'react'
 import AboutThisResidenceCard from 'rfa_forms/rfa01a_edit_view/aboutThisResidenceCard.jsx'
 import Validator from 'helpers/validator'
-import {languageTypes, residenceTypes, selectedYes} from './../../helpers/constants'
+import {suffixTypes, prefixTypes, languageTypes, residenceTypes, selectedYes} from './../../helpers/constants'
 import {shallow, mount} from 'enzyme'
+import {othersUsingAddressMailing} from 'constants/defaultFields'
 
 describe('Verify Physical Address', function () {
   const blankAboutThisResidenceFields = Object.freeze({
@@ -20,6 +21,8 @@ describe('Verify Physical Address', function () {
     body_of_water_description: '',
     others_using_residence_as_mailing: 'true',
     other_people_using_residence_as_mailing: [{
+      name_suffix: null,
+      name_prefix: null,
       first_name: '',
       middle_name: '',
       last_name: ''
@@ -73,12 +76,12 @@ describe('Verify Physical Address', function () {
     it('verify other using residence as mailing change', () => {
       let relationShipField = residenceCardComp.find('#others_using_residence_as_mailingtrue').hostNodes()
       relationShipField.simulate('change', {target: {value: 'false'}})
-      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('others_using_residence_as_mailing', 'other_people_using_residence_as_mailing', 'false', [ Object({ first_name: '', middle_name: '', last_name: '' }) ])
+      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('others_using_residence_as_mailing', 'other_people_using_residence_as_mailing', 'false', [othersUsingAddressMailing])
     })
     it('verify other using residence as mailing change', () => {
       let relationShipField = residenceCardComp.find('#others_using_residence_as_mailingtrue').hostNodes()
       relationShipField.simulate('change', {target: {value: 'true'}})
-      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('others_using_residence_as_mailing', 'other_people_using_residence_as_mailing', 'true', [ Object({ first_name: '', middle_name: '', last_name: '' }) ])
+      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('others_using_residence_as_mailing', 'other_people_using_residence_as_mailing', 'true', [othersUsingAddressMailing])
     })
   })
   it('verify body of water description', () => {
@@ -93,28 +96,6 @@ describe('Verify Physical Address', function () {
     expect(setParentStateSpy).toHaveBeenCalledWith('residence_ownership', {id: '1', value: 'Own'})
   })
 
-  it('verify first name', () => {
-    let relationShipField = residenceCardComp.find('#firstName')
-    spyOn(residenceCardComp.instance(), 'onChange').and.callThrough()
-    relationShipField.simulate('change', {target: {value: 'Text'}})
-    // expect(onChangeSpy).toHaveBeenCalledWith('firstName', 'Text')
-    expect(residenceCardComp.instance().onChange).toHaveBeenCalledWith('first_name', 'Text')
-  })
-  it('verify middle name', () => {
-    let relationShipField = residenceCardComp.find('#middleName')
-    spyOn(residenceCardComp.instance(), 'onChange').and.callThrough()
-    relationShipField.simulate('change', {target: {value: 'Text'}})
-    // expect(onChangeSpy).toHaveBeenCalledWith('firstName', 'Text')
-    expect(residenceCardComp.instance().onChange).toHaveBeenCalledWith('middle_name', 'Text')
-  })
-  it('verify last name', () => {
-    let relationShipField = residenceCardComp.find('#lastName')
-    spyOn(residenceCardComp.instance(), 'onChange').and.callThrough()
-    relationShipField.simulate('change', {target: {value: 'Text'}})
-    // expect(onChangeSpy).toHaveBeenCalledWith('firstName', 'Text')
-    expect(residenceCardComp.instance().onChange).toHaveBeenCalledWith('last_name', 'Text')
-  })
-
   it('verify languages select change', () => {
     let relationShipField = residenceCardComp.find('.languages')
     relationShipField.simulate('change', [{id: '1', value: 'English'}])
@@ -122,20 +103,26 @@ describe('Verify Physical Address', function () {
   })
 })
 
-describe('Verify Physical Address first name, middle name and last name', function () {
-  const blankAboutThisResidenceFields = Object.freeze({
+describe('Verify Physical Address prefix, suffix, first name, middle name and last name', function () {
+  let blankAboutThisResidenceFields = {
     home_languages: [{
       id: '',
       value: ''
     }],
-    others_using_residence_as_mailing: 'true'
-  })
+    others_using_residence_as_mailing: 'true',
+    other_people_using_residence_as_mailing: [othersUsingAddressMailing]
+  }
 
   let setParentStateSpy, residenceCardComp, handleClearOnConditionalChangeSpy
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
-    residenceCardComp = shallow(<AboutThisResidenceCard
+    spyOn(AboutThisResidenceCard.prototype, 'onChange')
+    spyOn(AboutThisResidenceCard.prototype, 'addCard').and.callThrough()
+    spyOn(AboutThisResidenceCard.prototype, 'removeCard').and.callThrough()
+    residenceCardComp = mount(<AboutThisResidenceCard
+      suffixTypes={suffixTypes.items}
+      prefixTypes={prefixTypes.items}
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
       languageTypes={languageTypes.items}
       residenceTypes={residenceTypes.items}
@@ -144,29 +131,52 @@ describe('Verify Physical Address first name, middle name and last name', functi
       validator={new Validator({})}
     />)
   })
+  it('verify prefix change', () => {
+    let relationShipField = residenceCardComp.find('#name_prefix').hostNodes()
+    residenceCardComp.update()
+    relationShipField.simulate('change', {target: {options: {'4': {value: '4', text: 'Dr.'}, selectedIndex: 4}}})
+    expect(AboutThisResidenceCard.prototype.onChange).toHaveBeenCalledWith('name_prefix', {id: '4', value: 'Dr.'}, 0)
+  })
 
   it('verify first name', () => {
-    let relationShipField = residenceCardComp.find('#firstName')
-    spyOn(residenceCardComp.instance(), 'onChange').and.callThrough()
+    let relationShipField = residenceCardComp.find('#first_name').hostNodes()
     residenceCardComp.update()
     relationShipField.simulate('change', {target: {value: 'text'}})
-    // expect(onChangeSpy).toHaveBeenCalledWith('firstName', 'Text')
-    expect(residenceCardComp.instance().onChange).toHaveBeenCalledWith('first_name', 'text')
+    expect(AboutThisResidenceCard.prototype.onChange).toHaveBeenCalledWith('first_name', 'text', 0)
   })
   it('verify middle name', () => {
-    let relationShipField = residenceCardComp.find('#middleName')
-    spyOn(residenceCardComp.instance(), 'onChange').and.callThrough()
+    let relationShipField = residenceCardComp.find('#middle_name').hostNodes()
     residenceCardComp.update()
     relationShipField.simulate('change', {target: {value: 'text'}})
-    // expect(onChangeSpy).toHaveBeenCalledWith('firstName', 'Text')
-    expect(residenceCardComp.instance().onChange).toHaveBeenCalledWith('middle_name', 'text')
+    expect(AboutThisResidenceCard.prototype.onChange).toHaveBeenCalledWith('middle_name', 'text', 0)
   })
   it('verify last name', () => {
-    let relationShipField = residenceCardComp.find('#lastName')
-    spyOn(residenceCardComp.instance(), 'onChange').and.callThrough()
+    let relationShipField = residenceCardComp.find('#last_name').hostNodes()
     residenceCardComp.update()
     relationShipField.simulate('change', {target: {value: 'text'}})
-    // expect(onChangeSpy).toHaveBeenCalledWith('firstName', 'Text')
-    expect(residenceCardComp.instance().onChange).toHaveBeenCalledWith('last_name', 'text')
+    expect(AboutThisResidenceCard.prototype.onChange).toHaveBeenCalledWith('last_name', 'text', 0)
+  })
+  it('verify suffix change', () => {
+    let relationShipField = residenceCardComp.find('#name_suffix').hostNodes()
+    residenceCardComp.update()
+    relationShipField.simulate('change', {target: {options: {'2': {value: '2', text: 'II'}, selectedIndex: 2}}})
+    expect(AboutThisResidenceCard.prototype.onChange).toHaveBeenCalledWith('name_suffix', {id: '2', value: 'II'}, 0)
+  })
+  it('verify adding another persons click', () => {
+    let addAnotherPersonButton = residenceCardComp.find('button.btn')
+    expect(AboutThisResidenceCard.prototype.addCard).not.toHaveBeenCalled()
+    addAnotherPersonButton.simulate('click')
+    expect(AboutThisResidenceCard.prototype.addCard).toHaveBeenCalled()
+    blankAboutThisResidenceFields['other_people_using_residence_as_mailing'].push(othersUsingAddressMailing)
+    let personsList = blankAboutThisResidenceFields.other_people_using_residence_as_mailing
+    expect(setParentStateSpy).toHaveBeenCalledWith('other_people_using_residence_as_mailing', personsList)
+  })
+  it('verify removing person information', () => {
+    let removeLink = residenceCardComp.find('.remove-btn').at(1)
+    expect(AboutThisResidenceCard.prototype.removeCard).not.toHaveBeenCalled()
+    removeLink.simulate('click')
+    let personsList = blankAboutThisResidenceFields.other_people_using_residence_as_mailing.slice(1)
+    expect(AboutThisResidenceCard.prototype.removeCard).toHaveBeenCalled()
+    expect(setParentStateSpy).toHaveBeenCalledWith('other_people_using_residence_as_mailing', personsList)
   })
 })

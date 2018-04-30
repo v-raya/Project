@@ -277,7 +277,7 @@ RSpec.feature 'RFA01A', js: true do
     fill_in('Residentialstreet_address', with: '2870 something else', match: :prefer_exact)
     fill_in('Residentialzip', with: '12345', match: :prefer_exact)
     find('#mailing_similarNo').click
-    fill_in('Mailingstreet_address', with: 'maing address here', match: :prefer_exact)
+    fill_in('Mailingstreet_address', with: 'mailing address here', match: :prefer_exact)
     fill_in('Mailingzip', with: '12345', match: :prefer_exact)
     fill_in('Mailingcity', with: 'secondary city', match: :prefer_exact)
     expect(page).to have_content 'About This Residence'
@@ -285,6 +285,21 @@ RSpec.feature 'RFA01A', js: true do
     find('#weaponsYes').click
     find('#body_of_water_existYes').click
     find('#others_using_residence_as_mailingYes').click
+    within '.residence_about_cards' do
+        select 'Mr.', from: 'name_prefix'
+        fill_in('first_name', with: Faker::Name.first_name, match: :prefer_exact)
+        fill_in('last_name', with: Faker::Name.last_name, match: :prefer_exact)
+        select 'II', from: 'name_suffix'
+        expect(page).to have_content('ADD ANOTHER PERSON +')
+        click_button('Add Another Person +')
+        second_person = find(:xpath, '//*[@id="aboutResidence"]/div[2]/div/div/div/div/div[6]/div[2]')
+        within second_person do 
+            select 'Miss', from: 'name_prefix'
+            fill_in('first_name', with: Faker::Name.first_name, match: :prefer_exact)
+            fill_in('last_name', with: Faker::Name.last_name, match: :prefer_exact)
+            select 'MD', from: 'name_suffix'
+        end
+    end
     fill_in('directions', with: 'directions goes here', match: :prefer_exact)
     page.find(:css, '.languages').click
     page.find(:css, '#react-select-4--option-0').click

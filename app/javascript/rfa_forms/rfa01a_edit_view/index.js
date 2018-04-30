@@ -216,6 +216,8 @@ export default class Rfa01EditView extends React.Component {
               residenceTypes={this.props.residenceTypes}
               stateTypes={this.props.stateTypes}
               setParentState={this.setApplicationState}
+              suffixTypes={this.props.suffixTypes}
+              prefixTypes={this.props.prefixTypes}
               validator={this.validator} />
           </div>
         </ScrollSpy>

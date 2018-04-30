@@ -175,6 +175,8 @@ export const rfa01BapplicantDefaults = Object.freeze({
 })
 
 export const othersUsingAddressMailing = Object.freeze({
+  name_suffix: null,
+  name_prefix: null,
   first_name: '',
   middle_name: '',
   last_name: ''

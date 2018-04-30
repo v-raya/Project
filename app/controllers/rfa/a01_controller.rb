@@ -79,7 +79,8 @@ class Rfa::A01Controller < CalsBaseController
     params.require(:residence).permit(:id, :to_delete, :physical_mailing_similar, :weapon_in_home,
                                       :body_of_water_exist, :body_of_water_description, :others_using_residence_as_mailing,
                                       :directions_to_home, residence_ownership: %i[id value], home_languages: %i[id value],
-                                      other_people_using_residence_as_mailing: %i[first_name middle_name last_name],
+                                      other_people_using_residence_as_mailing: [{ name_suffix: %i[id value] },
+                                                                                { name_prefix: %i[id value] }, %i[first_name middle_name last_name]],
                                       physical_address: [:street_address, :zip, :city, state: %i[id value]],
                                       addresses: [:street_address, :zip, :city, state: %i[id value], type: %i[id value]])
   end
@@ -95,18 +96,18 @@ class Rfa::A01Controller < CalsBaseController
     end
     applicants_history.permit!
     ActionController::Parameters.new(applicants_history.to_h).permit(:to_delete,
-                                              former_spouses: [:first_name, :middle_name, :last_name,
-                                                               :applicant_id, :date_of_marriage, :place_of_marriage_city,
-                                                               :date_of_marriage_end, :place_of_marriage_end_city,
-                                                               relationship_type:  %i[id value],
-                                                               name_prefix:  %i[id value], name_suffix:  %i[id value],
-                                                               place_of_marriage_state:  %i[id value],
-                                                               marriage_termination_reason:  %i[id value],
-                                                               place_of_marriage_end_state:  %i[id value]],
-                                              adult_children: [:first_name, :middle_name, :last_name, :lives_in_home,
-                                                               name_prefix: %i[id value], name_suffix: %i[id value],
-                                                               address: [:street_address, :zip, :city, state: %i[id value], type: %i[id value]],
-                                                               relationship_to_applicants: [:applicant_id, relationship_to_applicant: %i[id value]]])
+                                                                     former_spouses: [:first_name, :middle_name, :last_name,
+                                                                                      :applicant_id, :date_of_marriage, :place_of_marriage_city,
+                                                                                      :date_of_marriage_end, :place_of_marriage_end_city,
+                                                                                      relationship_type:  %i[id value],
+                                                                                      name_prefix:  %i[id value], name_suffix:  %i[id value],
+                                                                                      place_of_marriage_state:  %i[id value],
+                                                                                      marriage_termination_reason:  %i[id value],
+                                                                                      place_of_marriage_end_state:  %i[id value]],
+                                                                     adult_children: [:first_name, :middle_name, :last_name, :lives_in_home,
+                                                                                      name_prefix: %i[id value], name_suffix: %i[id value],
+                                                                                      address: [:street_address, :zip, :city, state: %i[id value], type: %i[id value]],
+                                                                                      relationship_to_applicants: [:applicant_id, relationship_to_applicant: %i[id value]]])
   end
 
   def minor_children_params
@@ -133,8 +134,8 @@ class Rfa::A01Controller < CalsBaseController
 
   def relationship_between_applicants_params
     params.require(:applicants_relationship).permit(:to_delete, :other_relationship, :place_of_relationship_city,
-                                                          :date_of_relationship, relationship_type: %i[id value],
-                                                          place_of_relationship_state: %i[id value])
+                                                    :date_of_relationship, relationship_type: %i[id value],
+                                                    place_of_relationship_state: %i[id value])
   end
 
 
@@ -145,12 +146,12 @@ class Rfa::A01Controller < CalsBaseController
 
   def adoption_history_params
     params.require(:adoption_history).permit(:id, :to_delete, :was_subject_for_exclusion_order_q7,
-                                              foster_care_licenses_q1: [:was_previously_licensed, agencies: [:name, type: %i[id value]]],
-                                              applications_for_adoption_q2: [:have_applied_for_adoption, facilities: []],
-                                              facility_operation_licenses_q3: [:was_previously_licensed, agencies: [:name, type: %i[id value]]],
-                                              employment_in_facilities_q4: [:was_employed_or_volunteered, facilities: []],
-                                              denial_history_q5: [:had_denials, agencies: [:name, type: %i[id value]]],
-                                              suspension_revocation_history_q6: [:had_suspensions_revocations, agencies: [:name, type: %i[id value]]])
+                                             foster_care_licenses_q1: [:was_previously_licensed, agencies: [:name, type: %i[id value]]],
+                                             applications_for_adoption_q2: [:have_applied_for_adoption, facilities: []],
+                                             facility_operation_licenses_q3: [:was_previously_licensed, agencies: [:name, type: %i[id value]]],
+                                             employment_in_facilities_q4: [:was_employed_or_volunteered, facilities: []],
+                                             denial_history_q5: [:had_denials, agencies: [:name, type: %i[id value]]],
+                                             suspension_revocation_history_q6: [:had_suspensions_revocations, agencies: [:name, type: %i[id value]]])
   end
 
   def references_params
