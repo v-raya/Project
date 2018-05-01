@@ -8,6 +8,7 @@ import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
 
 const PageTemplate = ({
   headerLabel,
+  pageSubHeader,
   disableSave,
   onSaveProgressClick,
   disableSubmit,
@@ -28,6 +29,7 @@ const PageTemplate = ({
     <PageHeader
       headerLabel={headerLabel}
       disableSave={disableSave}
+      pageSubHeader={pageSubHeader}
       onSaveProgressClick={onSaveProgressClick}
       disableSubmit={disableSubmit}
       onSubmitClick={onSubmitClick} />
@@ -54,6 +56,7 @@ const PageTemplate = ({
 
 PageTemplate.propTypes = {
   headerLabel: PropTypes.string,
+  pageSubHeader: PropTypes.string,
   buttonId: PropTypes.string,
   buttonLabel: PropTypes.string,
   buttonTextAlignment: PropTypes.string,

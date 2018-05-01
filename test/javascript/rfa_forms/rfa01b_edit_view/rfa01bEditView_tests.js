@@ -8,12 +8,20 @@ import {siblingGroups, ageGroups, marriageTerminationReasons,
 import {shallow, mount} from 'enzyme'
 
 describe('Rfa01BEditView test', () => {
-  let setFocusStateSpy, submitSpy, _Rfa01BEditView,
+  let setFocusStateSpy, submitSpy, _Rfa01BEditView, props,
     setApplicationStateSpy, setDisplayStateSpy, saveProgressSpy,
-    handleClearOnConditionalChangeSpy, getFocusClassNameSpy
+    handleClearOnConditionalChangeSpy, getFocusClassNameSpy,
+    rfaB01Application
 
   beforeEach(() => {
-    const props = {
+    rfaB01Application = {
+      id: 357,
+      applicant_first_name: '',
+      applicant_last_name: '',
+      applicant_middle_name: '',
+      metadata: {submit_enabled: true}
+    }
+    props = {
       user: {county_code: 1},
       rfa_a01_application: {
         'id': 744,
@@ -93,10 +101,7 @@ describe('Rfa01BEditView test', () => {
         'is_initial_application': false,
         metadata: {submit_enabled: true}
       },
-      rfa_b01_application: {
-        id: 357,
-        metadata: {submit_enabled: true}
-      },
+      rfa_b01_application: rfaB01Application,
       countyTypes: countyTypes.items,
       suffixTypes: suffixTypes.items,
       prefixTypes: prefixTypes.items,
@@ -143,6 +148,16 @@ describe('Rfa01BEditView test', () => {
     disclosureInstructionsCard.find('#disclosureInstructionsToggle').simulate('click')
     _Rfa01BEditView.instance().setDisplayState()
     expect(setDisplayStateSpy).toHaveBeenCalledWith('disclosureInstructionsDisplay', true)
+  })
+
+  it('Header to have applicant full name', () => {
+    rfaB01Application.applicant_first_name = 'Applicant'
+    rfaB01Application.applicant_last_name = 'Full name'
+    _Rfa01BEditView.setProps({
+      rfa_b01_application: rfaB01Application
+    })
+    let rfa01bApplicantName = _Rfa01BEditView.find('.name-field')
+    expect(rfa01bApplicantName.props().children).toEqual('Applicant Full name')
   })
 
   it('tests county change ', () => {

@@ -34,6 +34,7 @@ export default class Rfa01bEditView extends React.Component {
     this.validator.validateFieldSetErrorState = this.validateFieldSetErrorState.bind(this)
     this.handleNavLinkClick = this.handleNavLinkClick.bind(this)
     this.isNavLinkActive = this.isNavLinkActive.bind(this)
+    this.getApplicantFullName = this.getApplicantFullName.bind(this)
 
     let submitEnabled = this.props.rfa_a01_application.metadata &&
     this.props.rfa_a01_application.metadata.submit_enabled &&
@@ -47,6 +48,7 @@ export default class Rfa01bEditView extends React.Component {
       application: this.props.rfa_b01_application,
       activeNavLinkId: this.props.rfa_b01_application.id,
       rfa_a01_application: this.props.rfa_a01_application,
+      rfa_b01_application: this.props.rfa_b01_application,
       disclosureInstructionsDisplay: null,
       privacyStatementDisplay: null,
       focusComponentName: '',
@@ -173,6 +175,10 @@ export default class Rfa01bEditView extends React.Component {
     return this.state.activeNavLinkId === id
   }
 
+  getApplicantFullName (applicants) {
+    return applicants ? applicants.applicant_first_name + ' ' + applicants.applicant_last_name : undefined
+  }
+
   render () {
     const countyValue = getDictionaryId(this.state.application.application_county) || (this.props.user && this.props.user.county_code)
 
@@ -180,6 +186,7 @@ export default class Rfa01bEditView extends React.Component {
       <PageTemplate
         headerLabel='Resource Family Application - Confidential (RFA 01B)'
         saveProgressId='saveProgress'
+        pageSubHeader={this.getApplicantFullName(this.state.rfa_b01_application)}
         onSaveProgressClick={this.saveProgress}
         disableSave={this.state.disableSave}
         submitId={'submitApplication' + this.state.rfa_a01_application.id}

@@ -5,6 +5,7 @@ import Affix from 'react-overlays/lib/AutoAffix'
 
 const PageHeader = ({
   headerLabel,
+  pageSubHeader,
   disableSave,
   onSaveProgressClick,
   disableSubmit,
@@ -19,6 +20,9 @@ const PageHeader = ({
             <div className='col-xs-7'>
               <div className='page-title text-left'>
                 {headerLabel}
+              </div>
+              <div className='page-title text-left name-field'>
+                {pageSubHeader}
               </div>
             </div>
             <div className='col-xs-5'>
