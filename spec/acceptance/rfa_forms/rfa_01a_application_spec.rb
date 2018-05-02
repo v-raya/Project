@@ -8,10 +8,10 @@ RSpec.feature 'RFA01A', js: true do
 
   before(:each) do 
     visit root_path
-	end
-	scenario 'Dashboard page', set_auth_header: true do
-	    expect(page).to have_button('Create RFA Application (Form 01)')
-  	end
+    end
+    scenario 'Dashboard page', set_auth_header: true do
+        expect(page).to have_button('Create RFA Application (Form 01)')
+    end
 
   scenario 'validate applicant card', set_auth_header: true do
     visit root_path
@@ -63,8 +63,8 @@ RSpec.feature 'RFA01A', js: true do
   end
 
   scenario 'validate remove button, applicant card', set_auth_header: true do
-  	click_button 'Create RFA Application (Form 01)'
-  	expect(page).to have_content 'Rfa-01A Section Summary'
+    click_button 'Create RFA Application (Form 01)'
+    expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
     fill_in('applicants[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
@@ -120,8 +120,8 @@ RSpec.feature 'RFA01A', js: true do
     expect(page).to have_button('Submit', disabled: true)
     select 'Geovanni Moen', from: 'applicant_id'
     fill_in('minor_children[0].date_of_birth', with: '11/11/1111', match: :prefer_exact)
-    select 'Yes', from: 'child_financially_supported'
-    select 'Yes', from: 'child_adopted'
+    find('#child_financially_supported0Yes').click
+    find('#child_adopted0Yes').click
     select 'Male', from: 'minor_gender'
     expect(page).to have_button('Submit', disabled: false)
     fill_in('other_adults[0].relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
@@ -335,8 +335,8 @@ RSpec.feature 'RFA01A', js: true do
     expect(page).to have_content 'IV. Minor Children Residing in the Home'
     fill_in('minor_children[0].relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
     select applicant_1_full_name, from: 'applicant_id'
-    select 'Yes', from: 'child_financially_supported'
-    select 'Yes', from: 'child_adopted'
+    find('#child_financially_supported0Yes').click
+    find('#child_adopted0Yes').click
     select 'Male', from: 'minor_gender'
     click_button('Save Progress')
     visit page.driver.current_url

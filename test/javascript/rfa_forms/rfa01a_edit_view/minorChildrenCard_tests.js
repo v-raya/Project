@@ -68,14 +68,31 @@ describe('Verify MinorCardFields', function () {
     dateOfBirthField.simulate('change', {target: {value: '01/02/2000'}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, '2000-01-02', 'date_of_birth')
   })
-  it('verify child_financially_supported field', () => {
-    let relationShipField = minorChildCardComp.find('#child_financially_supported')
-    relationShipField.simulate('change', selectedYes)
-    expect(onFieldChangeSpy).toHaveBeenCalledWith(0, '2', 'child_financially_supported')
-  })
-  it('verify child adopted field', () => {
-    let relationShipField = minorChildCardComp.find('#child_adopted')
-    relationShipField.simulate('change', selectedYes)
-    expect(onFieldChangeSpy).toHaveBeenCalledWith(0, '2', 'child_adopted')
+  describe('#YesNoRadioComponent', () => {
+    let relationType = relationshipTypes
+    beforeEach(() => {
+      handleRelationshipTypeToApplicantSpy = jasmine.createSpy('')
+      onFieldChangeSpy = jasmine.createSpy('')
+      let validator = new Validator({})
+      minorChildCardComp = mount(<MinorCardField
+        index={0}
+        genderTypes={genderTypes.items}
+        relationshipTypes={relationType}
+        applicants={applicants}
+        handleRelationshipTypeToApplicant={handleRelationshipTypeToApplicantSpy}
+        onFieldChange={onFieldChangeSpy}
+        minorChild={minorChildren}
+        validator={validator} />)
+    })
+    it('verify child_financially_supported field', () => {
+      let relationShipField = minorChildCardComp.find('input[type="radio"]').at(0)
+      relationShipField.simulate('change', {target: {value: true}})
+      expect(onFieldChangeSpy).toHaveBeenCalledWith(0, true, 'child_financially_supported')
+    })
+    it('verify child adopted field', () => {
+      let relationShipField = minorChildCardComp.find('input[type="radio"]').at(2)
+      relationShipField.simulate('change', {target: {value: true}})
+      expect(onFieldChangeSpy).toHaveBeenCalledWith(0, true, 'child_adopted')
+    })
   })
 })

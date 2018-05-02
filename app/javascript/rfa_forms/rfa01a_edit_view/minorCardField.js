@@ -8,6 +8,7 @@ import {getDictionaryId, dictionaryNilSelect, dictionaryNilSelectValue, FormatDa
 import {yesNo} from 'constants/constants'
 import {setToWhomOptionList, handleToWhomValue, checkRelationshipFreeformPresence} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
+import YesNoRadioComponent from 'components/common/yesNoFields'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 
 const dateValidator = {rule: 'isValidDate', message: 'date is invalid'}
@@ -60,10 +61,11 @@ export class MinorCardField extends React.Component {
   }
 
   render () {
+    const isRequiredLabel = this.isRelationShipToApplicantObject() ? ' (required)' : ''
+    const index = this.props.index
     const minor = this.props.minorChild
-    const isRelationShipToApplicantObject = this.isRelationShipToApplicantObject()
     return (
-      <form>
+      <div className='col-md-12'>
         <InputComponent gridClassName='col-md-4'
           id={this.props.idPrefix + 'relationship_to_applicant_freeform'}
           value={checkRelationshipFreeformPresence(minor)}
@@ -73,12 +75,12 @@ export class MinorCardField extends React.Component {
           id='applicant_id'
           selectClassName='reusable-select'
           optionList={setToWhomOptionList(this.props.applicants)}
-          label={isRelationShipToApplicantObject ? 'To Whom (required)' : 'To Whom'}
+          label={'To Whom' + isRequiredLabel}
           value={handleToWhomValue(minor.relationship_to_applicants[0].applicant_id, this.props.applicants).id}
           onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, dictionaryNilSelectValue(event.target.options), 'applicant_id')} />
         <DateField gridClassName='col-md-4'
           id={this.props.idPrefix + 'date_of_birth'}
-          label={isRelationShipToApplicantObject ? 'Date of Birth (required)' : 'Date of Birth'}
+          label={'Date of Birth' + isRequiredLabel}
           value={FormatDateForDisplay(minor.date_of_birth)}
           errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}
           onChange={(event) => this.props.onFieldChange(this.props.index,
@@ -89,23 +91,23 @@ export class MinorCardField extends React.Component {
           selectClassName='reusable-select'
           optionList={this.props.genderTypes}
           value={getDictionaryId(minor.gender)}
-          label={isRelationShipToApplicantObject ? 'Gender (required)' : 'Gender'}
+          label={'Gender' + isRequiredLabel}
           onChange={(event) => this.props.onFieldChange(this.props.index, dictionaryNilSelect(event.target.options), 'gender')} />
-        <DropDownField gridClassName='col-md-4'
-          id='child_financially_supported'
+        <YesNoRadioComponent
+          label={'Do you financially support this child?' + isRequiredLabel}
+          idPrefix={'child_financially_supported' + index}
           value={minor.child_financially_supported}
           selectClassName={'reusable-select'}
           optionList={yesNo.items}
-          label={isRelationShipToApplicantObject ? 'Do you financially support this child? (required)' : 'Do you financially support this child?'}
-          onChange={(event) => this.props.onFieldChange(this.props.index, dictionaryNilSelectValue(event.target.options), 'child_financially_supported')} />
-        <DropDownField gridClassName='col-md-4'
-          id='child_adopted'
+          onFieldChange={(event) => this.props.onFieldChange(index, event.target.value, 'child_financially_supported')} />
+        <YesNoRadioComponent
+          idPrefix={'child_adopted' + index}
           value={minor.child_adopted}
           selectClassName={'reusable-select'}
           optionList={yesNo.items}
-          label={isRelationShipToApplicantObject ? 'Is this child adopted? (required)' : 'Is this child adopted?'}
-          onChange={(event) => this.props.onFieldChange(this.props.index, dictionaryNilSelectValue(event.target.options), 'child_adopted')} />
-      </form>
+          label={'Is this child adopted?' + isRequiredLabel}
+          onFieldChange={(event) => this.props.onFieldChange(index, event.target.value, 'child_adopted')} />
+      </div>
     )
   }
 }
@@ -122,5 +124,6 @@ MinorCardField.propTypes = {
 
 MinorCardField.defaultProps = {
   idPrefix: '',
+  index: 0,
   errors: {}
 }
