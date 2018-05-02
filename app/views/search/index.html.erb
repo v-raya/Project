@@ -1,10 +1,5 @@
 <div id="search_page">
-  <%= react_component('search', {
-  	user: @user,
-  	landingUrl: @landingPage_url,
-  	countyTypes: @dictionaries[:county_types],
-  	facilityTypes: @dictionaries[:facility_types]
-  }) %>
+  <%= react_component("search")%>
   <%= javascript_pack_tag 'search' %>
   <%= stylesheet_pack_tag 'search' %>
 </div>

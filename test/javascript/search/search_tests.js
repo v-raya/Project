@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 describe('Verify Search component', function () {
   let handleToggleSpy, searchComp, handleChangeSpy, handleInputChangeSpy, searchApiCallSpy,
-    handleResetFormSpy, handlePageNumberChangeSpy, handleDropDownAndPageNumberChangeSpy
+    handleResetFormSpy, handlePageNumberChangeSpy, handleDropDownAndPageNumberChangeSpy, searchDictionariesCallSpy
 
   beforeEach(() => {
     handleToggleSpy = jasmine.createSpy('handleToggle')
@@ -14,6 +14,7 @@ describe('Verify Search component', function () {
     handleInputChangeSpy = jasmine.createSpy('handleInputChange')
     handlePageNumberChangeSpy = jasmine.createSpy('handlePageNumberChange')
     handleDropDownAndPageNumberChangeSpy = jasmine.createSpy('handleDropDownAndPageNumberChange')
+    searchDictionariesCallSpy = jasmine.createSpy()
 
     const props = {
       totalNoOfResults: 0,
@@ -69,7 +70,8 @@ describe('Verify Search component', function () {
       searchApiCall: searchApiCallSpy,
       handleInputChange: handleInputChangeSpy,
       handlePageNumberChange: handlePageNumberChangeSpy,
-      handleDropDownAndPageNumberChange: handleDropDownAndPageNumberChangeSpy
+      handleDropDownAndPageNumberChange: handleDropDownAndPageNumberChangeSpy,
+      searchDictionariesCall: searchDictionariesCallSpy
     }
 
     searchComp = mount(<BrowserRouter><Search {...props} /></BrowserRouter>)
@@ -138,7 +140,8 @@ describe('Verify Search component', function () {
       ],
       searchResults: [],
       handlePageNumberChange: handlePageNumberChangeSpy,
-      searchApiCall: searchApiCallSpy
+      searchApiCall: searchApiCallSpy,
+      searchDictionariesCall: searchDictionariesCallSpy
 
     }
     searchComp = mount(<BrowserRouter><Search {...props} /></BrowserRouter>)

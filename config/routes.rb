@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     collection { post :facility }
   end
 
-  resources :search
+  resources :search do
+    collection { post :user_and_dictionaries}
+  end
 
   # heartbeat page
   get 'heartbeat', to: 'heartbeat#show'

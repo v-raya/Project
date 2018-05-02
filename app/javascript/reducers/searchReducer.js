@@ -1,3 +1,5 @@
+const SEARCH_DICTIONARIES_FETCH = 'SEARCH_DICTIONARIES/FETCH'
+const SEARCH_DICTIONARIES_FETCH_COMPLETE = 'SEARCH_DICTIONARIES/FETCH_COMPLETE'
 const SEARCH_RESULTS_FETCH = 'SEARCH_RESULTS/FETCH'
 const SEARCH_RESULTS_FETCH_COMPLETE = 'SEARCH_RESULTS/FETCH_COMPLETE'
 const HANDLE_INPUT_CHANGE = 'HANDLE_INPUT_CHANGE'
@@ -14,11 +16,20 @@ const initialState = {
   isToggled: true,
   sizeValue: 10,
   pageNumber: 1,
-  errors: {}
+  errors: {},
+  countyTypes: [],
+  facilityTypes: [],
+  user: {
+    county_code: ''
+  }
 }
 
 export const searchReducer = (state = initialState, action) => {
   switch (action.type) {
+    case SEARCH_DICTIONARIES_FETCH:
+      return {...state, countyTypes: [], facilityTypes: [], user: {county_code: ''}}
+    case SEARCH_DICTIONARIES_FETCH_COMPLETE:
+      return {...state, countyTypes: action.payload.countyTypes, facilityTypes: action.payload.facilityTypes, user: action.payload.user}
     case HANDLE_INPUT_CHANGE:
       return {...state, inputData: {...state.inputData, [action.payload.key]: action.payload.value}}
     case SEARCH_RESULTS_FETCH:

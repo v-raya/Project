@@ -1,5 +1,6 @@
 import React from 'react'
 import {GlobalHeader} from 'react-wood-duck'
+import {deleteState} from 'store/browserStorage'
 
 export default class HeaderComponent extends React.Component {
   constructor (props) {
@@ -12,6 +13,7 @@ export default class HeaderComponent extends React.Component {
   }
 
   logoutCallback () {
+    deleteState()
     this.redirectUrl(this.props.logoutUrl)
   }
 

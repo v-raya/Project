@@ -22,6 +22,9 @@ describe('Verify searchReducer', () => {
       isToggled: true,
       sizeValue: 10,
       pageNumber: 1,
+      countyTypes: [],
+      facilityTypes: [],
+      user: {county_code: ''},
       errors: {}
     }
   })
@@ -73,6 +76,9 @@ describe('Verify searchReducer', () => {
       sizeValue: 50,
       pageNumber: 2,
       isToggled: false,
+      countyTypes: [],
+      facilityTypes: [],
+      user: {county_code: ''},
       errors: {}
     }
 

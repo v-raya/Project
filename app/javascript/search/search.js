@@ -8,13 +8,17 @@ import SearchDetails from './searchDetails'
 import {fetchRequest} from '../helpers/http'
 import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 import {checkforNull, checkForValue} from 'search/common/commonUtils'
-import {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange} from 'actions/searchActions'
+import {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall} from 'actions/searchActions'
 import {connect} from 'react-redux'
 import {PageHeader} from 'react-wood-duck'
 import BreadCrumb from 'components/common/breadCrumb'
 import {getFromValue} from 'helpers/commonHelper.jsx'
 
 class Search extends React.Component {
+  componentDidMount () {
+    this.props.searchDictionariesCall()
+  }
+
   searchApiCallParams (fromValue, sizeValue) {
     const params = {
       'county.id': this.props.inputData.countyValue >= 0 ? this.props.inputData.countyValue : this.props.user.county_code,
@@ -96,6 +100,9 @@ Search.propTypes = {
 
 function mapStateToProps (state) {
   return {
+    countyTypes: state.searchReducer.countyTypes,
+    facilityTypes: state.searchReducer.facilityTypes,
+    user: state.searchReducer.user,
     inputData: state.searchReducer.inputData,
     searchResults: state.searchReducer.searchResults,
     totalNoOfResults: state.searchReducer.totalNoOfResults,
@@ -107,4 +114,4 @@ function mapStateToProps (state) {
 }
 
 export {Search}
-export default connect(mapStateToProps, {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange})(Search)
+export default connect(mapStateToProps, {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall})(Search)
