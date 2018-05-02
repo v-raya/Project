@@ -7853,9 +7853,9 @@ react-widgets@4.1.0:
     uncontrollable "^4.0.0"
     warning "^2.0.0"
 
-react-wood-duck@0.1.53:
-  version "0.1.53"
-  resolved "https://registry.yarnpkg.com/react-wood-duck/-/react-wood-duck-0.1.53.tgz#2ce1326753c1f919140a0747bc6001a0941e9b92"
+react-wood-duck@0.1.56:
+  version "0.1.56"
+  resolved "https://registry.yarnpkg.com/react-wood-duck/-/react-wood-duck-0.1.56.tgz#f83b17b543e2e1bda5913642de2a2e187a48133d"
   dependencies:
     babel-runtime "^6.6.1"
     bootstrap "^3.3.7"
