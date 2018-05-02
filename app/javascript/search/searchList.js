@@ -29,7 +29,7 @@ export const SearchList = ({
         {searchResults.map((result, index) => {
           return (
             <tr key={index}>
-              <td><Link to={'/facilities/' + result.id}>{result.name}</Link></td>
+              <td><Link to={urlPrefixHelper('/facilities/' + result.id)}>{result.name}</Link></td>
               <td>{result.license_number}</td>
               <td id={'facilities[' + index + '].' + 'type'}>{checkForNA(result.type) + ' / ' + checkValueForNull(result.facility_source)}</td>
               <td>{checkForNA(result.status)}</td>

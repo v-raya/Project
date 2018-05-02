@@ -36,7 +36,7 @@ class Facility extends React.Component {
           button={null}
         />
         <BreadCrumb
-          navigationElements={[<Link to={'/search'}>Facility Search</Link>]}
+          navigationElements={[<Link to={urlPrefixHelper('/search')}>Facility Search</Link>]}
         />
         <div className='header_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <div className='header-logo' />
