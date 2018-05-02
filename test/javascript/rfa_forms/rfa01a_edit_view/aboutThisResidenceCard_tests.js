@@ -132,32 +132,37 @@ describe('Verify Physical Address prefix, suffix, first name, middle name and la
     />)
   })
   it('verify prefix change', () => {
-    let relationShipField = residenceCardComp.find('#name_prefix').hostNodes()
+    let relationShipField = residenceCardComp.find(
+      'select').findWhere(n => n.props().id === 'residence.other_people_using_residence_as_mailing[0].name_prefix')
     residenceCardComp.update()
     relationShipField.simulate('change', {target: {options: {'4': {value: '4', text: 'Dr.'}, selectedIndex: 4}}})
     expect(AboutThisResidenceCard.prototype.onChange).toHaveBeenCalledWith('name_prefix', {id: '4', value: 'Dr.'}, 0)
   })
 
   it('verify first name', () => {
-    let relationShipField = residenceCardComp.find('#first_name').hostNodes()
+    let relationShipField = residenceCardComp.find(
+      'input[type="text"]').findWhere(n => n.props().id === 'residence.other_people_using_residence_as_mailing[0].first_name')
     residenceCardComp.update()
     relationShipField.simulate('change', {target: {value: 'text'}})
     expect(AboutThisResidenceCard.prototype.onChange).toHaveBeenCalledWith('first_name', 'text', 0)
   })
   it('verify middle name', () => {
-    let relationShipField = residenceCardComp.find('#middle_name').hostNodes()
+    let relationShipField = residenceCardComp.find(
+      'input[type="text"]').findWhere(n => n.props().id === 'residence.other_people_using_residence_as_mailing[0].middle_name')
     residenceCardComp.update()
     relationShipField.simulate('change', {target: {value: 'text'}})
     expect(AboutThisResidenceCard.prototype.onChange).toHaveBeenCalledWith('middle_name', 'text', 0)
   })
   it('verify last name', () => {
-    let relationShipField = residenceCardComp.find('#last_name').hostNodes()
+    let relationShipField = residenceCardComp.find(
+      'input[type="text"]').findWhere(n => n.props().id === 'residence.other_people_using_residence_as_mailing[0].last_name')
     residenceCardComp.update()
     relationShipField.simulate('change', {target: {value: 'text'}})
     expect(AboutThisResidenceCard.prototype.onChange).toHaveBeenCalledWith('last_name', 'text', 0)
   })
   it('verify suffix change', () => {
-    let relationShipField = residenceCardComp.find('#name_suffix').hostNodes()
+    let relationShipField = residenceCardComp.find(
+      'select').findWhere(n => n.props().id === 'residence.other_people_using_residence_as_mailing[0].name_suffix')
     residenceCardComp.update()
     relationShipField.simulate('change', {target: {options: {'2': {value: '2', text: 'II'}, selectedIndex: 2}}})
     expect(AboutThisResidenceCard.prototype.onChange).toHaveBeenCalledWith('name_suffix', {id: '2', value: 'II'}, 0)

@@ -117,7 +117,9 @@ RSpec.feature 'RFA01C', js: true do
     select 'Own', from: 'residenceTypes'
     find('#weaponsYes').click
     find('#body_of_water_existYes').click
-    find('#others_using_residence_as_mailingYes').click
+    find('#others_using_residence_as_mailingYes').click 
+    fill_in('residence.other_people_using_residence_as_mailing[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
+    fill_in('residence.other_people_using_residence_as_mailing[0].last_name', with: Faker::Name.first_name, match: :prefer_exact)
     page.find(:css, '.languages').click
     page.find(:css, '#react-select-4--option-0').click
     page.find(:css, '.languages').click

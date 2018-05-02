@@ -91,6 +91,7 @@ export default class AboutThisResidenceCard extends React.Component {
                       <a onClick={() => this.removeCard(index)}
                         className='pull-right remove-btn'>Remove</a>
                       <CompleteNameFields
+                        idPrefix={this.props.idPrefix + 'other_people_using_residence_as_mailing' + '[' + index + '].'}
                         index={index}
                         required={false}
                         firstName={person.first_name}
@@ -100,7 +101,8 @@ export default class AboutThisResidenceCard extends React.Component {
                         namePrefix={person.name_prefix}
                         onChange={this.onChange}
                         suffixTypes={this.props.suffixTypes}
-                        prefixTypes={this.props.prefixTypes} />
+                        prefixTypes={this.props.prefixTypes}
+                        validator={this.props.validator} />
                     </div>
                   )
                 })
