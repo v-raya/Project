@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
+import {Link} from 'react-router-dom'
 import {checkForNA, checkValueForNull, respectiveFullAddressOrNA, respectiveNumberOrNA,
   primaryPhoneRelation, alternativePhoneRelation, physicalAddressType} from './common/commonUtils'
 
@@ -28,7 +29,7 @@ export const SearchList = ({
         {searchResults.map((result, index) => {
           return (
             <tr key={index}>
-              <td><a href={urlPrefixHelper('/facilities/' + result.id)}>{result.name}</a></td>
+              <td><Link to={'/facilities/' + result.id}>{result.name}</Link></td>
               <td>{result.license_number}</td>
               <td id={'facilities[' + index + '].' + 'type'}>{checkForNA(result.type) + ' / ' + checkValueForNull(result.facility_source)}</td>
               <td>{checkForNA(result.status)}</td>

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import {checkforDateOrNa} from 'search/common/commonUtils'
 
 const FacilityComplaints = ({
-  facilityData
+  complaints
 }) => (
   <div className='facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12'>
     <div className='facility-children-block'>
       <div className='children-title'> <h3>Complaint History </h3> </div>
-      <table className='table'>
+      <table id='facility-complaints-table' className='table'>
         <thead>
           <tr>
             <th> ID </th>
@@ -21,7 +21,7 @@ const FacilityComplaints = ({
           </tr>
         </thead>
         <tbody >
-          {facilityData.complaints.map((complaint) => {
+          {complaints.map((complaint) => {
             return (
               <tr key={complaint.id} >
                 <td data-label='id'> {complaint.id} </td>
@@ -41,11 +41,11 @@ const FacilityComplaints = ({
 )
 
 FacilityComplaints.propTypes = {
-  facilityData: PropTypes.object.isRequired
+  complaints: PropTypes.array.isRequired
 }
 
 FacilityComplaints.defaultProps = {
-  facilityData: {}
+  complaints: []
 }
 
 export default FacilityComplaints

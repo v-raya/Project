@@ -4,20 +4,17 @@ import {mount} from 'enzyme'
 
 describe('Verify Complaints Component', function () {
   const props = {
-    facilityData: {
-      'count': 3,
-      'complaints': [
-        {
-          'id': 'dlf0245',
-          'complaint_date': '2016-09-27 00:00:00',
-          'assigned_worker': 'Harry Potter',
-          'control_number': '19-CR-20160927081411',
-          'priority_level': '2',
-          'status': 'Approved',
-          'approval_date': '2016-12-10 00:00:00'
-        }
-      ]
-    }
+    'complaints': [
+      {
+        'id': 'dlf0245',
+        'complaint_date': '2016-09-27 00:00:00',
+        'assigned_worker': 'Harry Potter',
+        'control_number': '19-CR-20160927081411',
+        'priority_level': '2',
+        'status': 'Approved',
+        'approval_date': '2016-12-10 00:00:00'
+      }
+    ]
   }
   const renderComplaintsComp = mount(<FacilityComplaints {...props} />)
   it('check Complaints table', () => {
@@ -48,20 +45,17 @@ describe('Verify Complaints Component', function () {
 
 describe('Verify Complaints Component with null values', function () {
   const props = {
-    facilityData: {
-      'count': 3,
-      'complaints': [
-        {
-          'id': 'dlf0245',
-          'complaint_date': null,
-          'assigned_worker': 'Harry Potter',
-          'control_number': '19-CR-20160927081411',
-          'priority_level': '2',
-          'status': 'Approved',
-          'approval_date': ' '
-        }
-      ]
-    }
+    'complaints': [
+      {
+        'id': 'dlf0245',
+        'complaint_date': null,
+        'assigned_worker': 'Harry Potter',
+        'control_number': '19-CR-20160927081411',
+        'priority_level': '2',
+        'status': 'Approved',
+        'approval_date': ' '
+      }
+    ]
   }
   const renderComplaintsComp = mount(<FacilityComplaints {...props} />)
   it('Verify complaint date to be N/A', function () {

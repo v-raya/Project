@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import SearchGrid from './searchGrid'
 import SearchInput from './searchInput'
 import SearchList from './searchList'
@@ -6,115 +7,33 @@ import SearchNotFound from './searchNotFound'
 import SearchDetails from './searchDetails'
 import {fetchRequest} from '../helpers/http'
 import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
+import {checkforNull, checkForValue} from 'search/common/commonUtils'
+import {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange} from 'actions/searchActions'
+import {connect} from 'react-redux'
 import {PageHeader} from 'react-wood-duck'
 import BreadCrumb from 'components/common/breadCrumb'
-import {checkForValue} from 'search/common/commonUtils'
 import {getFromValue} from 'helpers/commonHelper.jsx'
 
-export default class Search extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      isToggled: true,
-      inputData: props.inputData,
-      totalNoOfResults: 0,
-      searchResults: undefined,
-      pageNumber: props.pageNumber,
-      errors: {},
-      sizeValue: props.size
-    }
-    this.handleToggle = this.handleToggle.bind(this)
-    this.searchApiCall = this.searchApiCall.bind(this)
-    this.changePage = this.changePage.bind(this)
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.resetForm = this.resetForm.bind(this)
-    this.handleOnSubmit = this.handleOnSubmit.bind(this)
-  }
-
-  handleInputChange (key, value) {
-    let newInputData = this.state.inputData
-    newInputData[key] = value
-    this.setState({
-      inputData: newInputData
-    })
-  }
-
-  handleOnSubmit (event) {
-    event.preventDefault()
-    this.searchApiCall(0, this.state.sizeValue)
-  }
-
-  resetForm () {
-    this.setState({
-      inputData: {},
-      searchResults: undefined,
-      sizeValue: 10})
-  }
-
-  handleToggle () {
-    this.setState({isToggled: !this.state.isToggled})
-  }
-
-  searchApiCall (getFromValue, getSizeValue) {
+class Search extends React.Component {
+  searchApiCallParams (fromValue, sizeValue) {
     const params = {
-      'county.id': this.state.inputData.countyValue >= 0 ? this.state.inputData.countyValue : this.props.user.county_code,
-      'type.id': checkForValue(this.state.inputData.facilityTypeValue),
-      id: checkForValue(this.state.inputData.facilityIdValue),
-      name: checkForValue(this.state.inputData.facilityNameValue),
-      'addresses.address.street_address': checkForValue(this.state.inputData.facilityAddressValue)
+      'county.id': this.props.inputData.countyValue >= 0 ? this.props.inputData.countyValue : this.props.user.county_code,
+      'type.id': checkForValue(this.props.inputData.facilityTypeValue),
+      id: checkForValue(this.props.inputData.facilityIdValue),
+      name: checkForValue(this.props.inputData.facilityNameValue),
+      'addresses.address.street_address': checkForValue(this.props.inputData.facilityAddressValue)
     }
-
-    // for future use
-    const sortBy = ''
-    const orderBy = ''
-
-    // call http request function with arguments
-    let url = '/facilities/search' + '?from=' + getFromValue + '&size=' + getSizeValue + '&pageNumber=' + this.state.pageNumber + '&sort=' + sortBy + '&order=' + orderBy
-    fetchRequest(url, 'POST', params).then((response) => {
-      return response.json()
-    }).then((data) => {
-      if (!data.issue_details) {
-        this.setState({
-          searchResults: data.facilities,
-          totalNoOfResults: data.total,
-          sizeValue: getSizeValue,
-          pageNumber: getFromValue === 0 ? 1 : this.state.pageNumber,
-          errors: {}
-        })
-      } else {
-        this.setState({
-          errors: data,
-          searchResults: []
-        })
-      }
-    }).catch(error => {
-      console.log(error)
-      return this.setState({
-        searchResults: [],
-        errors: {}
-      })
-    })
-  }
-
-  componentDidMount () {
-    if (Object.keys(this.state.inputData).length !== 0) {
-      const fromValue = getFromValue(this.state.sizeValue, this.state.pageNumber)
-      this.searchApiCall(fromValue, this.state.sizeValue)
+    const urlParams = {
+      fromValue: fromValue,
+      sizeValue: sizeValue
     }
-  }
-
-  changePage (pageNumber) {
-    const fromValue = getFromValue(this.state.sizeValue, pageNumber)
-    this.setState({
-      pageNumber: pageNumber}, () => {
-      this.searchApiCall(fromValue, this.state.sizeValue)
-    })
+    this.props.searchApiCall(params, urlParams)
   }
 
   render () {
-    const initialLoad = this.state.searchResults === undefined
-    const searchResponseHasValues = this.state.searchResults && this.state.searchResults.length > 0
-    const countyValue = (this.state.inputData.countyValue || this.state.inputData.countyValue === '') ? this.state.inputData.countyValue : this.props.user.county_code
+    const initialLoad = this.props.searchResults === undefined
+    const searchResponseHasValues = this.props.searchResults && this.props.searchResults.length > 0
+    const countyValue = (this.props.inputData.countyValue || this.props.inputData.countyValue === '') ? this.props.inputData.countyValue : this.props.user.county_code
 
     return (
       <div className='search_page'>
@@ -125,32 +44,67 @@ export default class Search extends React.Component {
         <BreadCrumb />
         <div className='search-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <SearchInput
-            resetForm={this.resetForm}
-            handleOnSubmit={this.handleOnSubmit}
-            handleInputChange={this.handleInputChange}
+            resetForm={this.props.handleResetForm}
+            searchApiCall={this.searchApiCallParams.bind(this)}
+            handlePageNumberChange={this.props.handlePageNumberChange}
             countyList={this.props.countyTypes}
             facilityTypes={this.props.facilityTypes}
             countyValue={countyValue}
-            facilityTypeValue={checkForValue(this.state.inputData.facilityTypeValue)}
-            facilityIdValue={checkForValue(this.state.inputData.facilityIdValue)}
-            facilityNameValue={checkForValue(this.state.inputData.facilityNameValue)}
-            facilityAddressValue={checkForValue(this.state.inputData.facilityAddressValue)} />
+            facilityTypeValue={this.props.inputData.facilityTypeValue}
+            facilityIdValue={this.props.inputData.facilityIdValue}
+            facilityNameValue={this.props.inputData.facilityNameValue}
+            facilityAddressValue={this.props.inputData.facilityAddressValue}
+            handleInputChange={this.props.handleInputChange}
+            sizeValue={this.props.sizeValue}
+          />
         </div>
         {searchResponseHasValues &&
           <SearchDetails
-            totalNoOfFacilities={this.state.totalNoOfResults}
-            toggeledResult={this.state.isToggled}
-            sizeValue={this.state.sizeValue}
-            pageNumber={this.state.pageNumber}
-            searchApiCall={this.searchApiCall}
-            handleToggle={this.handleToggle}
-            changePage={this.changePage} />}
+            inputData={this.props.inputData}
+            totalNoOfFacilities={this.props.totalNoOfResults}
+            sizeValue={this.props.sizeValue}
+            handleDropDownAndPageNumberChange={this.props.handleDropDownAndPageNumberChange}
+            handlePageNumberChange={this.props.handlePageNumberChange}
+            pageNumber={this.props.pageNumber}
+            searchApiCall={this.searchApiCallParams.bind(this)}
+            handleToggle={this.props.handleToggle} />}
         <div className='result-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          {this.state.isToggled && <SearchGrid searchResults={this.state.searchResults} />}
-          {!this.state.isToggled && <SearchList searchResults={this.state.searchResults} />}
-          {(!searchResponseHasValues && !initialLoad) && <SearchNotFound errors={this.state.errors.issue_details}/>}
+          {this.props.isToggled && <SearchGrid searchResults={this.props.searchResults} />}
+          {!this.props.isToggled && <SearchList searchResults={this.props.searchResults} />}
+          {(!searchResponseHasValues && !initialLoad) && <SearchNotFound errors={this.props.errors.issue_details} />}
         </div>
       </div>
     )
   }
 }
+
+Search.propTypes = {
+  inputData: PropTypes.object,
+  searchResults: PropTypes.array,
+  totalNoOfResults: PropTypes.number,
+  isToggled: PropTypes.bool,
+  sizeValue: PropTypes.number,
+  pageNumber: PropTypes.number,
+  errors: PropTypes.object,
+  handleInputChange: PropTypes.func,
+  searchApiCall: PropTypes.func,
+  handleToggle: PropTypes.func,
+  handleResetForm: PropTypes.func,
+  handlePageNumberChange: PropTypes.func,
+  handleDropDownAndPageNumberChange: PropTypes.func
+}
+
+function mapStateToProps (state) {
+  return {
+    inputData: state.searchReducer.inputData,
+    searchResults: state.searchReducer.searchResults,
+    totalNoOfResults: state.searchReducer.totalNoOfResults,
+    isToggled: state.searchReducer.isToggled,
+    sizeValue: state.searchReducer.sizeValue,
+    pageNumber: state.searchReducer.pageNumber,
+    errors: state.searchReducer.errors
+  }
+}
+
+export {Search}
+export default connect(mapStateToProps, {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange})(Search)

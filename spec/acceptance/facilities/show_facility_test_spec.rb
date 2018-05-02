@@ -6,8 +6,6 @@ require 'vcr'
 RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
   before(:each) do
     allow_any_instance_of(SearchController).to receive(:user_from_session).and_return(FactoryGirl.build(:user))
-    allow_any_instance_of(FacilitiesController).to receive(:store_in_session).and_return(true)
-    # allow_any_instance_of(FacilitiesController).to receive(:store_facility_response_in_session).and_return(true)
   end
 
   scenario 'To get list of facilities from search results' do
@@ -43,12 +41,6 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     expect(page).to have_content('Facility Phone Number', minimum: 1)
     expect(find_field('dropdownFacilities').value).to eq '20'
   end
-
-  # scenario 'To test reset button' do
-  #   facilities_list
-  #   find_button('reset').click
-  #   expect(page).not_to have_selector('#next_button')
-  # end
 
   def facilities_list
     visit search_index_path

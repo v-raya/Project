@@ -3,11 +3,10 @@ Rails.application.routes.draw do
 
   resources :facilities do
     collection { post :search }
+    collection { post :facility }
   end
 
-  resources :search do
-    collection {post :index}
-  end
+  resources :search
 
   # heartbeat page
   get 'heartbeat', to: 'heartbeat#show'

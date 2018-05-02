@@ -4,24 +4,22 @@ import {mount} from 'enzyme'
 
 describe('Verify Children Component', function () {
   const props = {
-    facilityData: {
-      'count': 3,
-      'children': [{
-        'id': 2222,
-        'person': {
-          'age': 17,
-          'date_of_birth': '2000-05-28 00:00:00',
-          'first_name': 'Mei',
-          'gender': 'F',
-          'last_name': 'Takahashi'
-        },
-        'date_of_placement': '2003-01-03 00:00:00',
-        'assigned_worker': {
-          'first_name': 'Peter',
-          'last_name': 'Parker'
-        },
-        'county_of_origin': 'sacramento'
-      }]}
+    'children': [{
+      'id': 2222,
+      'person': {
+        'age': 17,
+        'date_of_birth': '2000-05-28 00:00:00',
+        'first_name': 'Mei',
+        'gender': 'F',
+        'last_name': 'Takahashi'
+      },
+      'date_of_placement': '2003-01-03 00:00:00',
+      'assigned_worker': {
+        'first_name': 'Peter',
+        'last_name': 'Parker'
+      },
+      'county_of_origin': 'sacramento'
+    }]
   }
   const renderChildComp = mount(<Children {...props} />)
   it('Verify Children table', () => {
@@ -58,24 +56,22 @@ describe('Verify Children Component', function () {
 
 describe('Verify Children Component for null values', function () {
   const props = {
-    facilityData: {
-      'count': 3,
-      'children': [{
-        'id': 2222,
-        'person': {
-          'age': 17,
-          'date_of_birth': null,
-          'first_name': 'Mei',
-          'gender': 'F',
-          'last_name': 'Takahashi'
-        },
-        'date_of_placement': null,
-        'assigned_worker': {
-          'first_name': 'Peter',
-          'last_name': 'Parker'
-        },
-        'county_of_origin': 'sacramento'
-      }]}
+    'children': [{
+      'id': 2222,
+      'person': {
+        'age': 17,
+        'date_of_birth': null,
+        'first_name': 'Mei',
+        'gender': 'F',
+        'last_name': 'Takahashi'
+      },
+      'date_of_placement': null,
+      'assigned_worker': {
+        'first_name': 'Peter',
+        'last_name': 'Parker'
+      },
+      'county_of_origin': 'sacramento'
+    }]
   }
   const renderChildComp = mount(<Children {...props} />)
   it('Verify date of placement for N/A', () => {

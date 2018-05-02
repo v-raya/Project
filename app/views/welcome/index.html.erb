@@ -5,7 +5,7 @@
       <%= button_to "Create RFA Application (Form 01)" , rfa_a01_index_path, :method=>:post, :disabled => DISABLE_RFA_APPLICATION %>
       <br/>
       <% if !@check_for_priviliges.empty? %>
-      <%= button_to "Search for Facilities", {:controller => "search", :action => "index"} , :method=>:post,  params: { search_params: 'yes'} %>
+      <%= button_to "Search for Facilities", search_index_path, :method=>:get %>
       <% end %>
     </div >
   </div>

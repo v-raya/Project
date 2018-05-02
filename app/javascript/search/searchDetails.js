@@ -7,10 +7,12 @@ const SearchDetails = ({
   totalNoOfFacilities,
   toggeledResult,
   sizeValue,
+  fromValue,
   pageNumber,
   searchApiCall,
   handleToggle,
-  changePage
+  handleDropDownAndPageNumberChange,
+  handlePageNumberChange
 }) => (
   <div className='search-toggle col-xs-12 col-sm-12 col-md-12 col-lg-12'>
     <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -21,7 +23,7 @@ const SearchDetails = ({
         className='search_dropdown'
         id='dropdownFacilities'
         value={sizeValue}
-        onChange={(event) => searchApiCall(0, parseInt(dictionaryNilSelectValue(event.target.options)))}>
+        onChange={(event) => { handleDropDownAndPageNumberChange(1, parseInt(dictionaryNilSelectValue(event.target.options))); searchApiCall(getFromValue(sizeValue, 1), parseInt(dictionaryNilSelectValue(event.target.options))) }}>
         {resultsPerPage.map((noOfResults) =>
           <option key={noOfResults} value={noOfResults}>{noOfResults}</option>
         )}
@@ -29,7 +31,7 @@ const SearchDetails = ({
       <button
         id='previous_button'
         disabled={getFromValue(sizeValue, pageNumber) - sizeValue < 0}
-        onClick={() => changePage(pageNumber - 1)}
+        onClick={() => { handlePageNumberChange(pageNumber - 1); searchApiCall(getFromValue(sizeValue, pageNumber - 1), sizeValue) }}
         className='previous btn btn-default'>
         <p>&#8249;</p>
       </button>
@@ -39,7 +41,7 @@ const SearchDetails = ({
       <button
         id='next_button'
         disabled={getFromValue(sizeValue, pageNumber) + sizeValue >= totalNoOfFacilities}
-        onClick={() => changePage(pageNumber + 1)}
+        onClick={() => { handlePageNumberChange(pageNumber + 1); searchApiCall(getFromValue(sizeValue, pageNumber + 1), sizeValue) }}
         className='next btn btn-default'>
         <p>&#8250;</p>
       </button>
@@ -68,7 +70,8 @@ SearchDetails.defaultProps = {
   toggeledResult: true,
   sizeValue: 10,
   facilityNameValue: '',
-  facilityIdValue: ''
+  facilityIdValue: '',
+  fromValue: 0
 }
 
 export default SearchDetails

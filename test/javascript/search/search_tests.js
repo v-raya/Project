@@ -1,17 +1,25 @@
 import React from 'react'
-import SearchApp from 'search/search'
+import {Search} from 'search/search'
 import {shallow, mount} from 'enzyme'
+import { BrowserRouter } from 'react-router-dom'
 
 describe('Verify Search component', function () {
-  let handleToggleSpy, searchComp, handleChangeSpy, handleInputChangeSpy, changePageSpy, searchApiCallSpy,
-    resetFormSpy, spyHandleOnSubmit
+  let handleToggleSpy, searchComp, handleChangeSpy, handleInputChangeSpy, searchApiCallSpy,
+    handleResetFormSpy, handlePageNumberChangeSpy, handleDropDownAndPageNumberChangeSpy
 
   beforeEach(() => {
+    handleToggleSpy = jasmine.createSpy('handleToggle')
+    handleResetFormSpy = jasmine.createSpy('handleResetForm')
+    searchApiCallSpy = jasmine.createSpy('searchApiCall')
+    handleInputChangeSpy = jasmine.createSpy('handleInputChange')
+    handlePageNumberChangeSpy = jasmine.createSpy('handlePageNumberChange')
+    handleDropDownAndPageNumberChangeSpy = jasmine.createSpy('handleDropDownAndPageNumberChange')
+
     const props = {
-      total: 0,
+      totalNoOfResults: 0,
       pageNumber: 2,
-      from: 0,
-      size: 20,
+      sizeValue: 20,
+      isToggled: true,
       inputData: {},
       facilityTypes: [
         {
@@ -20,26 +28,14 @@ describe('Verify Search component', function () {
         }
       ],
       user: {
-        county_name: 'Los Angeles'
+        county_code: '19'
       },
       countyTypes: [
         {
           id: '',
           value: ''
         }
-      ]
-    }
-
-    handleToggleSpy = spyOn(SearchApp.prototype, 'handleToggle').and.callThrough()
-    resetFormSpy = spyOn(SearchApp.prototype, 'resetForm').and.callThrough()
-    searchApiCallSpy = spyOn(SearchApp.prototype, 'searchApiCall').and.callThrough()
-    handleInputChangeSpy = spyOn(SearchApp.prototype, 'handleInputChange').and.callThrough()
-    changePageSpy = spyOn(SearchApp.prototype, 'changePage').and.callThrough()
-    spyHandleOnSubmit = spyOn(SearchApp.prototype, 'handleOnSubmit').and.callThrough()
-
-    searchComp = mount(<SearchApp {...props}
-    />)
-    searchComp.setState({
+      ],
       searchResults: [
         {
           assigned_worker: 'Kari Gutierrez',
@@ -67,9 +63,16 @@ describe('Verify Search component', function () {
           status: 'Licensed',
           type: 'Foster Family Home (Confidential - Do not release)'
         }
-      ]
+      ],
+      handleToggle: handleToggleSpy,
+      handleResetForm: handleResetFormSpy,
+      searchApiCall: searchApiCallSpy,
+      handleInputChange: handleInputChangeSpy,
+      handlePageNumberChange: handlePageNumberChangeSpy,
+      handleDropDownAndPageNumberChange: handleDropDownAndPageNumberChangeSpy
+    }
 
-    })
+    searchComp = mount(<BrowserRouter><Search {...props} /></BrowserRouter>)
   })
 
   it('Verify Search component render', () => {
@@ -80,16 +83,14 @@ describe('Verify Search component', function () {
     let searchFacility = searchComp.find('#search')
     searchFacility.simulate('submit')
     let handleToggleButton = searchComp.find('#toggle_button')
-    expect(searchComp.instance().state.isToggled).toBe(true)
     handleToggleButton.simulate('click')
     expect(handleToggleSpy).toHaveBeenCalled()
-    expect(searchComp.instance().state.isToggled).toBe(false)
   })
 
   it('verify dropDown value change number of facilities', () => {
     let dropdownForfacilitiesCount = searchComp.find('#dropdownFacilities')
     dropdownForfacilitiesCount.simulate('change', {target: {options: {'5': {id: '5', value: '5'}, selectedIndex: 5}}})
-    expect(searchApiCallSpy).toHaveBeenCalledWith(0, 5)
+    expect(searchApiCallSpy).toHaveBeenCalledWith({'county.id': '19', 'type.id': undefined, 'id': undefined, 'name': undefined, 'addresses.address.street_address': undefined}, {fromValue: 0, sizeValue: 5})
   })
 
   it('verify county dropdown value change ', () => {
@@ -100,27 +101,17 @@ describe('Verify Search component', function () {
   it('verify clicking reset button calls resetForm method', () => {
     let resetForm = searchComp.find('#reset')
     resetForm.simulate('click')
-    expect(resetFormSpy).toHaveBeenCalled()
-    expect(searchComp.state('inputData')).toEqual({})
-    expect(searchComp.state('searchResults')).toEqual(undefined)
-    let toggleButton = searchComp.find('#toggle_button')
-    expect(toggleButton.length).toBe(0)
+    expect(handleResetFormSpy).toHaveBeenCalled()
   })
-  it('verify clicking previous button calls changePage method', () => {
-    let changePage = searchComp.find('#previous_button')
-    changePage.simulate('click')
-    expect(changePageSpy).toHaveBeenCalledWith(1)
-  })
+
   it('verify clicking search button calls handleOnSubmit method', () => {
     let searchFacility = searchComp.find('#search')
     searchFacility.simulate('submit')
-    expect(spyHandleOnSubmit).toHaveBeenCalled()
-    expect(searchApiCallSpy).toHaveBeenCalledWith(0, 20)
+    expect(searchApiCallSpy).toHaveBeenCalledWith({'county.id': '19', 'type.id': undefined, 'id': undefined, 'name': undefined, 'addresses.address.street_address': undefined}, {fromValue: 0, sizeValue: 20})
   })
 
   it('verify error messages', () => {
-    let searchFacility = searchComp.find('#search')
-    searchComp.setState({
+    const props = {
       errors: {
         'issue_details': [ {
           'incident_id': '95100850-f514-4365-9b93-6cbd28adcf27',
@@ -130,8 +121,28 @@ describe('Verify Search component', function () {
           'stack_trace': 'gov.ca.cwds.rest.api.DoraException: Forbidden\\n\\'
         } ]
       },
-      searchResults: []
-    })
+      inputData: {
+        'countyValue': '10'
+      },
+      facilityTypes: [
+        {
+          id: '',
+          value: ''
+        }
+      ],
+      countyTypes: [
+        {
+          id: '',
+          value: ''
+        }
+      ],
+      searchResults: [],
+      handlePageNumberChange: handlePageNumberChangeSpy,
+      searchApiCall: searchApiCallSpy
+
+    }
+    searchComp = mount(<BrowserRouter><Search {...props} /></BrowserRouter>)
+    let searchFacility = searchComp.find('#search')
     searchFacility.simulate('submit')
     expect(searchComp.text()).toContain('Message: There was an error processing your request')
   })

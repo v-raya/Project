@@ -6,9 +6,7 @@ require 'vcr'
 RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
   before(:each) do
     allow_any_instance_of(SearchController).to receive(:user_from_session).and_return(FactoryGirl.build(:user))
-    allow_any_instance_of(FacilitiesController).to receive(:store_in_session).and_return(true)
     allow_any_instance_of(CalsBaseController).to receive(:check_for_priviliges).and_return(['Something Privilige'])
-    # allow_any_instance_of(FacilitiesController).to receive(:store_facility_response_in_session).and_return(true)
   end
 
   def facilities_list

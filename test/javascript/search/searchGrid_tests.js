@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchGrid from 'search/searchGrid'
 import ShallowRenderer from 'react-test-renderer/shallow'
+import { Switch, BrowserRouter } from 'react-router-dom'
 import {shallow, mount} from 'enzyme'
 
 describe('Render Search results to Grid', function () {
@@ -71,22 +72,19 @@ describe('Render Search results to Grid', function () {
       }
     ]
   }
-  let searchGridComp = new ShallowRenderer()
-  let searchGridRender = searchGridComp.render(<SearchGrid {...prop} />)
-  let gridElement = searchGridRender.props.children
+  const searchGridRender = mount(<BrowserRouter><SearchGrid searchResults={prop.searchResults} /></BrowserRouter>)
   it('Render Grid view block', function () {
-    expect(gridElement[0].props.className).toBe('grid_view_inner col-xs-12 col-sm-12 col-md-12 col-lg-12')
+    expect(searchGridRender.length).toBe(1)
   })
   it('verify loaded Facility ID', function () {
-    expect(gridElement[0].key).toEqual(indexValue)
+    expect(searchGridRender.find('GridInnerLayout[title="Facility ID / Approval #"]').props().value).toBe(193600008)
   })
-  const gridObjects = gridElement[0].props.children
-  const gridArrayChildElem = gridObjects[0].props.children
-  it('expect anchor Tag', function () {
-    expect(gridArrayChildElem.type).toBe('a')
+
+  it('expect loaded facility phone number', function () {
+    expect(searchGridRender.find('GridInnerLayout[title="Facility Phone Number"]').props().value).toBe('(831) 763-2735')
   })
   it('Verify Anchor Tag href value', function () {
-    expect(gridArrayChildElem.props.href).toEqual('/facilities/193600008')
+    expect(searchGridRender.find('GridInnerLayout[title="County"]').props().value).toBe('N/A')
   })
 })
 
@@ -102,7 +100,7 @@ describe('Search results to Grid', function () {
     ]
   }
 
-  const searchGridComp = mount(<SearchGrid {...props} />)
+  const searchGridComp = mount(<BrowserRouter><SearchGrid searchResults={props.searchResults} /></BrowserRouter>)
   it('Verify address to be N/A', () => {
     expect(searchGridComp.find('GridInnerLayout[title="Facility Address"]').props().value).toBe('N/A')
   })

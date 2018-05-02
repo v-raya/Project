@@ -3,10 +3,7 @@
   	user: @user,
   	landingUrl: @landingPage_url,
   	countyTypes: @dictionaries[:county_types],
-  	facilityTypes: @dictionaries[:facility_types],
-  	size: @size ? @size : 10,
-  	pageNumber: @page_number ? @page_number : 1,
-  	inputData: @input_data ? @input_data : {},
+  	facilityTypes: @dictionaries[:facility_types]
   }) %>
   <%= javascript_pack_tag 'search' %>
   <%= stylesheet_pack_tag 'search' %>

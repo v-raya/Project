@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import {checkfullNameorNA, checkforDateOrNa} from 'search/common/commonUtils'
 
 const FacilityChildren = ({
-  facilityData
+  children
 }) => (
   <div className='facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12'>
     <div className='facility-children-block'>
       <div className='children-title'> <h3>Children currently placed in facility</h3> </div>
-      <table className='table'>
+      <table id='facility-children-table' className='table'>
         <thead>
           <tr>
             <th> ID </th>
@@ -23,7 +23,7 @@ const FacilityChildren = ({
           </tr>
         </thead>
         <tbody >
-          {facilityData.children.map((child) => {
+          {children.map((child) => {
             return (
               <tr key={child.id} >
                 <td data-label='id'> {child.id} </td>
@@ -45,11 +45,11 @@ const FacilityChildren = ({
 )
 
 FacilityChildren.propTypes = {
-  facilityData: PropTypes.object.isRequired
+  children: PropTypes.array.isRequired
 }
 
 FacilityChildren.defaultProps = {
-  facilityData: {}
+  children: []
 }
 
 export default FacilityChildren

@@ -1,15 +1,19 @@
 import React from 'react'
 import InputDataBlock from './common/inputDataBlock.js'
 import {InputComponent} from 'components/common/inputFields'
-import {dictionaryNilSelectValue} from 'helpers/commonHelper.jsx'
+import {dictionaryNilSelectValue, getFromValue} from 'helpers/commonHelper.jsx'
 import {DropDownField} from 'components/common/dropDownField'
 import PropTypes from 'prop-types'
 
 const SearchInput = ({
   resetForm,
-  handleOnSubmit,
   handleInputChange,
+  handlePageNumberChange,
+  fromValue,
+  sizeValue,
+  pageNumber,
   countyList,
+  searchApiCall,
   facilityTypes,
   countyValue,
   facilityTypeValue,
@@ -19,7 +23,7 @@ const SearchInput = ({
 
 }) => (
   <div className='search_input col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-    <form onSubmit={handleOnSubmit}>
+    <form onSubmit={(event) => { handlePageNumberChange(pageNumber); searchApiCall(getFromValue(sizeValue, pageNumber), sizeValue); event.preventDefault() }}>
       <div className='field_input col-xs-12 col-sm-10 col-md-10 col-lg-10'>
         <div className='input_data col-xs-12 col-sm-2 col-md-2 col-lg-2'>
           <div>
@@ -106,7 +110,10 @@ SearchInput.defaultProps = {
   facilityTypeValue: '',
   facilityIdValue: '',
   facilityNameValue: '',
-  facilityAddressValue: ''
+  facilityAddressValue: '',
+  pageNumber: 1,
+  sizeValue: 10,
+  fromValue: 0
 }
 
 export default SearchInput

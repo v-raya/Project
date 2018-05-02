@@ -21,15 +21,21 @@ describe('Verify search input component', function () {
     facilityIdValue: '300665437',
     facilityNameValue: 'Lederhouse Transitions',
     facilityAddressValue: '36 Sequoia Dr, Aliso Viejo, CA 92656',
-    fromValue: 0
+    fromValue: 0,
+    sizeValue: 10
   }
 
   const spyHandleOnSubmit = jasmine.createSpy('handleOnSubmit')
   const spyHandleInputChange = jasmine.createSpy('handleInputChange')
+  const spyHandlePageNumberChange = jasmine.createSpy('handlePageNumberChange')
+  const spySearchApiCall = jasmine.createSpy('searchApiCall')
 
   const searchInputComp = mount(<SearchInput {...props}
     handleOnSubmit={spyHandleOnSubmit}
-    handleInputChange={spyHandleInputChange} />)
+    handleInputChange={spyHandleInputChange}
+    handlePageNumberChange={spyHandlePageNumberChange}
+    searchApiCall={spySearchApiCall}
+  />)
 
   it('verify component load', () => {
     expect(searchInputComp.length).toBe(1)
@@ -68,6 +74,6 @@ describe('Verify search input component', function () {
   it('verify clicking search button calls handleOnSubmit method', () => {
     let searchFacility = searchInputComp.find('#search')
     searchFacility.simulate('submit')
-    expect(spyHandleOnSubmit).toHaveBeenCalled()
+    expect(spySearchApiCall).toHaveBeenCalledWith(0, props.sizeValue)
   })
 })

@@ -5,6 +5,7 @@ import GridInnerLayout from './common/gridInnerLayout.js'
 import GridOuterLayout from './common/gridOuterLayout.js'
 import {checkForNA, checkValueForNull, respectiveNumberOrNA, respectiveFullAddressOrNA,
   primaryPhoneRelation, alternativePhoneRelation, physicalAddressType} from './common/commonUtils'
+import {Link} from 'react-router-dom'
 
 const SearchGrid = ({
   searchResults
@@ -21,7 +22,7 @@ const SearchGrid = ({
               <div>
                 <p className='block_label'>Facility Name </p>
                 <p className='block_text'>
-                  <a href={urlPrefixHelper('/facilities/' + result.id)}>{result.name}</a>
+                  <Link to={'/facilities/' + result.id}>{result.name}</Link>
                 </p>
               </div>
               <GridInnerLayout

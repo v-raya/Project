@@ -3,18 +3,17 @@ class FacilitiesController < CalsBaseController
 
   include Response
 
-  def show
-    @facility = facility_helper.find_by_id(params[:id])
-    @children = child_helper.find_by_facility(params[:id])
-    @complaints = complaint_helper.find_by_facility(params[:id])
-  rescue ApiError => e
-    @errors = {}
-    @errors['message'] = e.response
-    @errors['url'] = e.url
+  def facility
+    @facilities = {}
+    @facilities['facility'] = facility_helper.find_by_id(params[:id])
+    @facilities['children'] = child_helper.find_by_facility(params[:id])
+    @facilities['complaints'] = complaint_helper.find_by_facility(params[:id])
+    json_response @facilities
   end
 
+  def show; end
+
   def search
-    store_in_session(params)
     page_params = {}
     page_params['size_params'] = params[:size]
     page_params['from_params'] = params[:from]
@@ -41,17 +40,6 @@ class FacilitiesController < CalsBaseController
     json_response @facilities_response
   rescue ApiError => e
     render json: e.response, status: e.status
-  end
-
-  def store_in_session(params)
-    session[:size] = params['size'].to_i
-    session[:page_number] = params['pageNumber'].to_i
-    session[:input_data] = {}
-    session[:input_data]['countyValue'] = params['county.id']
-    session[:input_data]['facilityTypeValue'] = params['type.id']
-    session[:input_data]['facilityIdValue'] = params['id']
-    session[:input_data]['facilityNameValue'] = params['name']
-    session[:input_data]['facilityAddressValue'] = params['addresses.address.street_address']
   end
 
   private
