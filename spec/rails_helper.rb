@@ -29,6 +29,10 @@ RSpec.configure do |config|
     end
   end
 
+  config.after(:each, type: :feature) do
+    page.execute_script 'sessionStorage.clear()'
+  end
+
   def authenticate_user_by_filling_in_form
     if page.has_content?('Sign In')
       fill_in('username', with: USERNAME)

@@ -12,13 +12,13 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     facilities_list
   end
 
-  # scenario 'To click toggle result and validate facility name in list view' do
-  #   facilities_list
-  #   within(:css, '.toggle_result') do
-  #     page.find(:css, '.line_off-icon.navbar-brand').click
-  #   end
-  #   expect(page).to have_text('Facility Type / Facility Source')
-  # end
+  scenario 'To click toggle result and validate facility name in list view' do
+    facilities_list
+    within(:css, '.toggle_result') do
+      page.find(:css, '.line_off-icon.navbar-brand').click
+    end
+    expect(page).to have_text('Facility Type / Facility Source')
+  end
 
   scenario 'To select county dropdown and show search results' do
     visit search_index_path
@@ -47,4 +47,5 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     select 'Riverside', from: 'county_select'
     find_button('search').click
   end
+
 end
