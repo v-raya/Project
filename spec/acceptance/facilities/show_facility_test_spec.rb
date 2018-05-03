@@ -24,7 +24,7 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     visit search_index_path
     select 'Alameda', from: 'county_select'
     find_button('search').click
-    expect(page).to have_content('Facility Phone Number', minimum: 1)
+    expect(page).to have_content('Phone Number', minimum: 1)
   end
 
   scenario 'To select facility type dropdown and show search results' do
@@ -32,13 +32,13 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     select 'Orange', from: 'county_select'
     select 'Adoption Agency', from: 'facility_select'
     find_button('search').click
-    expect(page).to have_content('Facility Phone Number', minimum: 1)
+    expect(page).to have_content('Phone Number', minimum: 1)
   end
 
   scenario 'To test dropdown for number of facilities per page' do
     facilities_list
     select '20', from: 'dropdownFacilities'
-    expect(page).to have_content('Facility Phone Number', minimum: 1)
+    expect(page).to have_content('Phone Number', minimum: 1)
     expect(find_field('dropdownFacilities').value).to eq '20'
   end
 
