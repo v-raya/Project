@@ -162,6 +162,8 @@ node('cals-slave') {
             dockerStages(newTag)
 
             sshagent([GITHUB_CREDENTIALS_ID]) {
+                sh "git config user.email ratneshraval@gmail.com"
+                sh "git config user.name 'Ratnesh Raval'"
                 sh 'git remote set-url origin git@github.com:ca-cwds/CALS.git'
                 sh "git tag -a ${newTag} -m 'v${newTag}'"
                 sh "git push origin ${newTag}"
