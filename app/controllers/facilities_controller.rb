@@ -3,15 +3,20 @@ class FacilitiesController < CalsBaseController
 
   include Response
 
+  def show; end
+
   def facility
     @facilities = {}
     @facilities['facility'] = facility_helper.find_by_id(params[:id])
     @facilities['children'] = child_helper.find_by_facility(params[:id])
     @facilities['complaints'] = complaint_helper.find_by_facility(params[:id])
     json_response @facilities
+  rescue ApiError => e
+    @errors = {}
+    @errors['message'] = e.response
+    @errors['url'] = e.url
+    render json: @errors, status: e.status
   end
-
-  def show; end
 
   def search
     page_params = {}

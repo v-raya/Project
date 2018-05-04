@@ -1,6 +1,6 @@
 import {takeLatest, put, call} from 'redux-saga/effects'
 import {delay} from 'redux-saga'
-import {fetchRequest} from '../helpers/http'
+import {fetchRequest, fetchRequestWithErrors} from '../helpers/http'
 import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 import {FACILITY_RESULTS_FETCH, fetchSuccess, fetchFailure} from 'actions/facilityActions'
 
@@ -8,11 +8,11 @@ import {FACILITY_RESULTS_FETCH, fetchSuccess, fetchFailure} from 'actions/facili
 export function * fetchFacilityById (action) {
   try {
     const url = '/facilities/facility'
-    const response = yield call(fetchRequest, url, 'POST', action.payload.facilityParams)
-    const data = yield call([response, response.json])
-    yield put(fetchSuccess({facility: data.facility, children: data.children, complaints: data.complaints}))
+    const response = yield call(fetchRequestWithErrors, url, 'POST', action.payload.facilityParams)
+    yield put(fetchSuccess({facility: response.facility, children: response.children, complaints: response.complaints}))
   } catch (error) {
-    yield put(fetchFailure(error))
+    const errorResponse = yield call([error, error.json])
+    yield put(fetchFailure({errorResponse}))
   }
 }
 

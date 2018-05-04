@@ -21,16 +21,15 @@ describe('Verify Search component', function () {
       pageNumber: 2,
       sizeValue: 20,
       isToggled: true,
-      inputData: {},
+      inputData: {
+        'countyValue': '19'
+      },
       facilityTypes: [
         {
           id: '',
           value: ''
         }
       ],
-      user: {
-        county_code: '19'
-      },
       countyTypes: [
         {
           id: '',

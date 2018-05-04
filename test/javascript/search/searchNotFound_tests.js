@@ -1,6 +1,7 @@
 import React from 'react'
 import {shallow, mount} from 'enzyme'
 import SearchNotFound from 'search/searchNotFound'
+import {NoSearchResultsErrorMessage, NoSearchCriteriaMessage} from 'search/common/commonUtils'
 
 describe('Search Not Found with errors', function () {
   let errors = {
@@ -12,22 +13,32 @@ describe('Search Not Found with errors', function () {
       'stack_trace': 'gov.ca.cwds.rest.api.DoraException: Forbidden\\n\\'
     } ]
   }
-  let searchNotFoundShallow = shallow(<SearchNotFound errors={errors.issue_details}/>)
+  let searchNotFoundShallow = shallow(<SearchNotFound errors={errors.issue_details} errorMessage={undefined}/>)
   it('verify shallow component load with error props', function () {
     expect(searchNotFoundShallow.length).toBe(1)
   })
   it('verify mount component load with error props', function () {
-    let searchNotFoundMount = mount(<SearchNotFound errors={errors.issue_details}/>)
+    let searchNotFoundMount = mount(<SearchNotFound errors={errors.issue_details} errorMessage={undefined}/>)
     expect(searchNotFoundMount.text()).toContain('Message: There was an error processing your request')
   })
 })
 
-describe('Search Not Found with errors undefined', function () {
-  let searchNotFoundShallow = shallow(<SearchNotFound errors={undefined}/>)
+describe('Search Not Found with errors undefined and no search results found error message', function () {
+  let searchNotFoundShallow = shallow(<SearchNotFound errors={undefined} errorMessage={NoSearchResultsErrorMessage}/>)
   it('verify Component load with undefined props', function () {
     expect(searchNotFoundShallow.length).toBe(1)
   })
   it('verifies error message when props are undefined', function () {
-    expect(searchNotFoundShallow.text()).toContain('No results were found with the selected search criteria, please refine your search criteria and try again.')
+    expect(searchNotFoundShallow.text()).toContain(NoSearchResultsErrorMessage)
+  })
+})
+
+describe('Search Not Found with errors undefined and no search criteria error message', function () {
+  let searchNotFoundShallow = shallow(<SearchNotFound errors={undefined} errorMessage={NoSearchCriteriaMessage}/>)
+  it('verify Component load with undefined props', function () {
+    expect(searchNotFoundShallow.length).toBe(1)
+  })
+  it('verifies error message when props are undefined', function () {
+    expect(searchNotFoundShallow.text()).toContain(NoSearchCriteriaMessage)
   })
 })

@@ -75,6 +75,7 @@ describe('Verify Facility component', function () {
           facility={facilityProp}
           match={match}
           facilityApiCall={facilityApiCallSpy}
+          errors={null}
         />
       </BrowserRouter>)
 
@@ -89,6 +90,7 @@ describe('Verify Facility component', function () {
           match={match}
           children={null}
           complaints={null}
+          errors={null}
           facilityApiCall={facilityApiCallSpy}
         />
       </BrowserRouter>)
@@ -104,6 +106,7 @@ describe('Verify Facility component', function () {
           match={match}
           children={childrenProp}
           complaints={null}
+          errors={null}
           facilityApiCall={facilityApiCallSpy}
         />
       </BrowserRouter>)
@@ -118,6 +121,7 @@ describe('Verify Facility component', function () {
           match={match}
           children={null}
           complaints={complaintsProp}
+          errors={null}
           facilityApiCall={facilityApiCallSpy}
         />
       </BrowserRouter>)

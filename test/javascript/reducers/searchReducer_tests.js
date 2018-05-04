@@ -8,15 +8,18 @@ import {
   handleResetForm,
   handleToggle,
   fetchSuccess,
-  fetchFailure
+  fetchFailure,
+  fetchNoSearchCriteria
 } from 'actions/searchActions'
+
+import {NoSearchResultsErrorMessage, NoSearchCriteriaMessage} from 'search/common/commonUtils'
 
 describe('Verify searchReducer', () => {
   let initialState
 
   beforeEach(() => {
     initialState = {
-      inputData: {},
+      inputData: { },
       searchResults: undefined,
       totalNoOfResults: 0,
       isToggled: true,
@@ -24,8 +27,9 @@ describe('Verify searchReducer', () => {
       pageNumber: 1,
       countyTypes: [],
       facilityTypes: [],
-      user: {county_code: ''},
-      errors: {}
+      errors: {},
+      userCounty: '',
+      errorMessage: undefined
     }
   })
 
@@ -57,6 +61,55 @@ describe('Verify searchReducer', () => {
     expect(searchReducer(undefined, fetchSuccessAction)).toEqual(outputState)
   })
 
+  it('fetch call completion returns updated state no search results and a error message', () => {
+    const fetchSuccessAction = fetchSuccess({
+      searchResults: [],
+      total: undefined,
+      errorMessage: NoSearchResultsErrorMessage
+    })
+
+    let outputState = initialState
+    outputState.searchResults = []
+    outputState.totalNoOfResults = undefined
+    outputState.errorMessage = NoSearchResultsErrorMessage
+
+    expect(searchReducer(undefined, fetchSuccessAction)).toEqual(outputState)
+  })
+
+  it('fetch call failure returns updated state with api errors', () => {
+    let errorResponse = {
+      'issue_details': [ {
+        'incident_id': '95100850-f514-4365-9b93-6cbd28adcf27',
+        'type': 'unexpected_exception',
+        'user_message': 'There was an error processing your request. It has been logged with unique incident id',
+        'technical_message': 'Bad Request',
+        'stack_trace': 'gov.ca.cwds.rest.api.DoraException: Forbidden\\n\\'
+      } ]
+    }
+    const fetchFailureAction = fetchFailure({
+      errorResponse: errorResponse
+    })
+
+    let outputState = initialState
+    outputState.searchResults = []
+    outputState.errors = errorResponse
+    outputState.errorMessage = undefined
+
+    expect(searchReducer(undefined, fetchFailureAction)).toEqual(outputState)
+  })
+
+  it('fetch call failure returns updated state with no search search criteria and a error message', () => {
+    const fetchNoSearchCriteriaAction = fetchNoSearchCriteria({
+      errorMessage: NoSearchCriteriaMessage
+    })
+
+    let outputState = initialState
+    outputState.searchResults = []
+    outputState.errorMessage = NoSearchCriteriaMessage
+
+    expect(searchReducer(undefined, fetchNoSearchCriteriaAction)).toEqual(outputState)
+  })
+
   it('toggle returns new toggle state', () => {
     const handleToggleAction = handleToggle()
 
@@ -78,11 +131,26 @@ describe('Verify searchReducer', () => {
       isToggled: false,
       countyTypes: [],
       facilityTypes: [],
-      user: {county_code: ''},
-      errors: {}
+      userCounty: '',
+      errors: {},
+      errorMessage: undefined
     }
 
-    expect(searchReducer(inputState, handleResetFormAction)).toEqual(initialState)
+    const resetState = {
+      inputData: {countyValue: ''},
+      searchResults: undefined,
+      totalNoOfResults: 0,
+      isToggled: true,
+      sizeValue: 10,
+      pageNumber: 1,
+      countyTypes: [],
+      facilityTypes: [],
+      userCounty: '',
+      errors: {},
+      errorMessage: undefined
+    }
+
+    expect(searchReducer(inputState, handleResetFormAction)).toEqual(resetState)
   })
 
   it('page number change updates state page number', () => {

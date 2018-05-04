@@ -62,13 +62,13 @@ export const checkForNA = (object) => {
   return (object && object.value) ? object.value : 'N/A'
 }
 
-// export const checkUndefinedOrErrorMessage = (object) => {
-//   return object !== null ? object.message.issue_details : undefined
-// }
+export const checkUndefinedOrErrorMessage = (object) => {
+  return object !== null ? object.message.issue_details : undefined
+}
 
-// export const checkUndefinedOrErrorUrl = (object) => {
-//   return object !== null ? object.url : undefined
-// }
+export const checkUndefinedOrErrorUrl = (object) => {
+  return object !== null ? object.url : undefined
+}
 
 export const checkNameorNA = (object) => {
   return (object && object.name) ? object.name : 'N/A'
@@ -97,6 +97,10 @@ export const mailingAddressType = 'Mailing'
 export const listOfStatus = ['LICENSED', 'CERTIFIED/APPROVED', 'LICENSED(PENDING CAPACITY CHANGE)']
 
 export const resultsPerPage = ['10', '20', '30', '40', '50']
+
+export const NoSearchResultsErrorMessage = 'No results were found with the selected search criteria, please refine your search criteria and try again.'
+
+export const NoSearchCriteriaMessage = 'Please select search criteria and try again.'
 
 export const handleLicenseEffectiveDate = (result) => {
   if (result.status) {

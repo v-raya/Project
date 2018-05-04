@@ -42,7 +42,7 @@ class Facility extends React.Component {
           <div className='header-logo' />
         </div>
         <div className='body_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          {/* <ApiErrorMessages errors={checkUndefinedOrErrorMessage(errors)} url={checkUndefinedOrErrorUrl(errors)} /> */}
+          <ApiErrorMessages errors={checkUndefinedOrErrorMessage(errors)} url={checkUndefinedOrErrorUrl(errors)} />
 
           {facilityData && (
             <div>

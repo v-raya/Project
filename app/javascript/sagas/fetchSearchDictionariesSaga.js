@@ -10,7 +10,6 @@ export function * fetchSearchDictionaries (action) {
     const url = '/search/user_and_dictionaries'
     const response = yield call(fetchRequest, url, 'POST')
     const data = yield call([response, response.json])
-    console.log(data)
     yield put(fetchDictionarySuccess({countyTypes: data.countyTypes, facilityTypes: data.facilityTypes, user: data.user}))
   } catch (error) {
     yield put(fetchFailure(error))

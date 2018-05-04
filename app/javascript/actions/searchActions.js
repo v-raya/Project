@@ -2,6 +2,8 @@ export const SEARCH_DICTIONARIES_FETCH = 'SEARCH_DICTIONARIES/FETCH'
 export const SEARCH_DICTIONARIES_FETCH_COMPLETE = 'SEARCH_DICTIONARIES/FETCH_COMPLETE'
 export const SEARCH_RESULTS_FETCH = 'SEARCH_RESULTS/FETCH'
 export const SEARCH_RESULTS_FETCH_COMPLETE = 'SEARCH_RESULTS/FETCH_COMPLETE'
+export const SEARCH_RESULTS_FETCH_ERROR = 'SEARCH_RESULTS/FETCH_ERROR'
+export const NO_SEARCH_CRITERIA_ERROR = 'SEARCH_RESULTS/FETCH_NOTHING_ERROR'
 export const HANDLE_INPUT_CHANGE = 'HANDLE_INPUT_CHANGE'
 export const HANDLE_TOGGLE = 'HANDLE_TOGGLE'
 export const HANDLE_RESET_FORM = 'HANDLE_RESET_FORM'
@@ -56,8 +58,14 @@ export const fetchSuccess = (searchResult) => ({
   payload: searchResult
 })
 
-export const fetchFailure = (error) => ({
-  type: SEARCH_RESULTS_FETCH_COMPLETE,
-  payload: {error},
+export const fetchFailure = (errorResponse) => ({
+  type: SEARCH_RESULTS_FETCH_ERROR,
+  payload: errorResponse,
+  error: true
+})
+
+export const fetchNoSearchCriteria = (errorMessage) => ({
+  type: NO_SEARCH_CRITERIA_ERROR,
+  payload: errorMessage,
   error: true
 })

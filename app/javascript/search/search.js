@@ -21,7 +21,7 @@ class Search extends React.Component {
 
   searchApiCallParams (fromValue, sizeValue) {
     const params = {
-      'county.id': this.props.inputData.countyValue >= 0 ? this.props.inputData.countyValue : this.props.user.county_code,
+      'county.id': checkForValue(this.props.inputData.countyValue),
       'type.id': checkForValue(this.props.inputData.facilityTypeValue),
       id: checkForValue(this.props.inputData.facilityIdValue),
       name: checkForValue(this.props.inputData.facilityNameValue),
@@ -39,7 +39,6 @@ class Search extends React.Component {
   render () {
     const initialLoad = this.props.searchResults === undefined
     const searchResponseHasValues = this.props.searchResults && this.props.searchResults.length > 0
-    const countyValue = (this.props.inputData.countyValue || this.props.inputData.countyValue === '') ? this.props.inputData.countyValue : this.props.user.county_code
 
     return (
       <div className='search_page'>
@@ -55,7 +54,7 @@ class Search extends React.Component {
             handlePageNumberChange={this.props.handlePageNumberChange}
             countyList={this.props.countyTypes}
             facilityTypes={this.props.facilityTypes}
-            countyValue={countyValue}
+            countyValue={this.props.inputData.countyValue}
             facilityTypeValue={this.props.inputData.facilityTypeValue}
             facilityIdValue={this.props.inputData.facilityIdValue}
             facilityNameValue={this.props.inputData.facilityNameValue}
@@ -77,7 +76,7 @@ class Search extends React.Component {
         <div className='result-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           {this.props.isToggled && <SearchGrid searchResults={this.props.searchResults} />}
           {!this.props.isToggled && <SearchList searchResults={this.props.searchResults} />}
-          {(!searchResponseHasValues && !initialLoad) && <SearchNotFound errors={this.props.errors.issue_details} />}
+          {(!searchResponseHasValues && !initialLoad) && <SearchNotFound errors={this.props.errors.issue_details} errorMessage={this.props.errorMessage} />}
         </div>
       </div>
     )
@@ -100,18 +99,24 @@ Search.propTypes = {
   handleDropDownAndPageNumberChange: PropTypes.func
 }
 
+Search.defaultProps = {
+  errors: {
+    issue_details: undefined
+  }
+}
+
 function mapStateToProps (state) {
   return {
     countyTypes: state.searchReducer.countyTypes,
     facilityTypes: state.searchReducer.facilityTypes,
-    user: state.searchReducer.user,
     inputData: state.searchReducer.inputData,
     searchResults: state.searchReducer.searchResults,
     totalNoOfResults: state.searchReducer.totalNoOfResults,
     isToggled: state.searchReducer.isToggled,
     sizeValue: state.searchReducer.sizeValue,
     pageNumber: state.searchReducer.pageNumber,
-    errors: state.searchReducer.errors
+    errors: state.searchReducer.errors,
+    errorMessage: state.searchReducer.errorMessage
   }
 }
 

@@ -30,3 +30,16 @@ export const fetchRequest = (urlFromComponent, method, params, headerParams) => 
     body: JSON.stringify(params)
   })
 }
+
+function handleErrors (response) {
+  if (!response.ok) {
+    throw response
+  }
+  return response.json()
+}
+
+export const fetchRequestWithErrors = (url, method, body) => {
+  return fetchRequest(url, method, body)
+    .then(handleErrors)
+    .then(data => data)
+}
