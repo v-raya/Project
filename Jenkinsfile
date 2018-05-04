@@ -110,6 +110,7 @@ node('cals-slave') {
         deleteDir()
         stage ('Checkout Github') {
             checkout scm
+
         }
 
         // build the container from current code
@@ -160,6 +161,12 @@ node('cals-slave') {
             newTag = "0.${getBuildTag()}-${env.BUILD_ID}"
             dockerStages(newTag)
 
+            sshagent([GITHUB_CREDENTIALS_ID]) {
+                sh 'git remote set-url origin git@github.com:ca-cwds/CALS.git'
+                sh "git tag -a ${newTag} -m 'v${newTag}'"
+                sh "git push origin ${newTag}"
+            }
+
             stage('Deploy Preint') {
                 sh "curl -v 'http://${JENKINS_USER}:${JENKINS_API_TOKEN}@jenkins.mgmt.cwds.io:8080/job/preint/job/deploy-CALS/buildWithParameters" +
                     "?" + "token=${JENKINS_TRIGGER_TOKEN}" + "&" + "cause=Caused%20by%20Build%20${env.BUILD_ID}" +
@@ -171,7 +178,6 @@ node('cals-slave') {
             sh "docker images ${DOCKER_GROUP}/${DOCKER_APP_IMAGE} --filter \"before=${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:${env.BUILD_ID}\" -q | xargs docker rmi -f || true"
             sh "docker images ${DOCKER_GROUP}/${DOCKER_APP_IMAGE} --filter \"before=${DOCKER_GROUP}/${DOCKER_TEST_IMAGE}:${env.BUILD_ID}\" -q | xargs docker rmi -f || true"
         }
-
     }
     catch (e) {
         pipelineStatus = 'FAILED'
