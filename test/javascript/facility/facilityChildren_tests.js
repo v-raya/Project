@@ -18,7 +18,8 @@ describe('Verify Children Component', function () {
         'first_name': 'Peter',
         'last_name': 'Parker'
       },
-      'county_of_origin': 'sacramento'
+      'county_of_origin': 'sacramento',
+      'display_client_id': '2222-2222-2222-2222222'
     }]
   }
   const renderChildComp = mount(<Children {...props} />)
@@ -26,7 +27,7 @@ describe('Verify Children Component', function () {
     expect(renderChildComp.length).toBe(1)
   })
   it('Verify ID', () => {
-    expect(renderChildComp.find('td[data-label="id"]').props().children[1]).toBe(2222)
+    expect(renderChildComp.find('td[data-label="id"]').props().children[1]).toBe('2222-2222-2222-2222222')
   })
   it('Verify child first name', () => {
     expect(renderChildComp.find('td[data-label="first name"]').props().children[1]).toBe('Mei')

@@ -11,7 +11,7 @@ const FacilityChildren = ({
       <table id='facility-children-table' className='table'>
         <thead>
           <tr>
-            <th> ID </th>
+            <th> CLIENT ID </th>
             <th> FIRST NAME </th>
             <th> LAST NAME </th>
             <th> SEX </th>
@@ -26,7 +26,7 @@ const FacilityChildren = ({
           {children.map((child) => {
             return (
               <tr key={child.id} >
-                <td data-label='id'> {child.id} </td>
+                <td data-label='id'> {child.display_client_id} </td>
                 <td data-label='first name'> {child.person.first_name} </td>
                 <td data-label='last name'> {child.person.last_name} </td>
                 <td data-label='sex'> {child.person.gender} </td>
