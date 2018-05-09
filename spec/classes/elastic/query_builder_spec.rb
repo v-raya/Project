@@ -47,14 +47,14 @@ describe FacilitiesController do
       expected_output = {
         sort: [
           {
-            'name' =>
+            'name.for_sort' =>
             {
               order: 'asc'
             }
           }
         ]
       }
-      input = {"sort_params"=>"name", "order_params"=>"asc"}
+      input = {"sort_params"=>"name.for_sort", "order_params"=>"asc"}
       output = Elastic::QueryBuilder.sort_query(input)
       expect(output).to eq(expected_output)
     end
@@ -184,7 +184,7 @@ describe FacilitiesController do
         size:"5",
         sort: [
           {
-            'name' =>
+            'name.for_sort' =>
             {
               order: 'asc'
             }
@@ -194,7 +194,7 @@ describe FacilitiesController do
       query_array = [{"county.value"=>"Los Angeles", "type.value"=>"Adoption Agency", "id"=>"9jstosjaww", "name"=>"home", "addresses.address.street_address"=>"4140 Roxanne Street"},
                      {"county.value"=>"Los Angeles", "type.value"=>"Adoption Agency", "id"=>"9jstosjaww", "name"=>"home", "addresses.address.street_address"=>"  Los Angeles"},
                      {"county.value"=>"Los Angeles", "type.value"=>"Adoption Agency", "id"=>"9jstosjaww", "name"=>"home", "addresses.address.street_address"=>" CA 97777"}]
-      page_params = {"sort_params"=>"name", "order_params"=>"asc", "size_params"=>"5", "from_params"=>"0"}
+      page_params = {"sort_params"=>"name.for_sort", "order_params"=>"asc", "size_params"=>"5", "from_params"=>"0"}
       output = Elastic::QueryBuilder.facility_search_v1(query_array, page_params)
       expect(output).to eq(expected_output)
     end

@@ -30,7 +30,7 @@ class Search extends React.Component {
     const urlParams = {
       fromValue: fromValue,
       sizeValue: sizeValue,
-      sort: 'name',
+      sort: 'name.for_sort',
       order: 'asc'
     }
     this.props.searchApiCall(params, urlParams)

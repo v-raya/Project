@@ -92,7 +92,7 @@ describe('Verify Search component', function () {
   it('verify dropDown value change number of facilities', () => {
     let dropdownForfacilitiesCount = searchComp.find('#dropdownFacilities')
     dropdownForfacilitiesCount.simulate('change', {target: {options: {'5': {id: '5', value: '5'}, selectedIndex: 5}}})
-    expect(searchApiCallSpy).toHaveBeenCalledWith({'county.id': '19', 'type.id': undefined, 'id': undefined, 'name': undefined, 'addresses.address.street_address': undefined}, {fromValue: 0, sizeValue: 5, sort: 'name', order: 'asc'})
+    expect(searchApiCallSpy).toHaveBeenCalledWith({'county.id': '19', 'type.id': undefined, 'id': undefined, 'name': undefined, 'addresses.address.street_address': undefined}, {fromValue: 0, sizeValue: 5, sort: 'name.for_sort', order: 'asc'})
   })
 
   it('verify county dropdown value change ', () => {
@@ -109,7 +109,7 @@ describe('Verify Search component', function () {
   it('verify clicking search button calls handleOnSubmit method', () => {
     let searchFacility = searchComp.find('#search')
     searchFacility.simulate('submit')
-    expect(searchApiCallSpy).toHaveBeenCalledWith({'county.id': '19', 'type.id': undefined, 'id': undefined, 'name': undefined, 'addresses.address.street_address': undefined}, {fromValue: 0, sizeValue: 20, sort: 'name', order: 'asc'})
+    expect(searchApiCallSpy).toHaveBeenCalledWith({'county.id': '19', 'type.id': undefined, 'id': undefined, 'name': undefined, 'addresses.address.street_address': undefined}, {fromValue: 0, sizeValue: 20, sort: 'name.for_sort', order: 'asc'})
   })
 
   it('verify error messages', () => {
