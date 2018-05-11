@@ -17,12 +17,13 @@ export class MinorCardField extends React.Component {
   constructor (props) {
     super(props)
     this.isRelationShipToApplicantObject = this.isRelationShipToApplicantObject.bind(this)
+
     this.minorDOBId = this.props.idPrefix + 'date_of_birth'
     this.relationshipToApplicantID = this.props.idPrefix + 'relationship_to_applicants[0].relationship_to_applicant_freeform'
-    this.ApplicantIdID = this.props.idPrefix + 'relationship_to_applicants[0].applicant_id'
     this.genderID = this.props.idPrefix + 'gender'
-    this.childFinanciallySupportedID = this.props.idPrefix + 'child_financially_supported'
-    this.childAdoptedID = this.props.idPrefix + 'child_adopted'
+    this.childFinanciallySupportedID = this.props.idPrefix + 'relationship_to_applicants[0].child_financially_supported'
+    this.childAdoptedID = this.props.idPrefix + 'relationship_to_applicants[0].child_adopted'
+
     this.props.validator.addFieldValidation(this.minorDOBId, dateValidator)
     this.props.validator.addFieldValidation(this.minorDOBId,
       {rule: 'isRequiredIf',
@@ -30,10 +31,6 @@ export class MinorCardField extends React.Component {
         condition: () => this.isRelationShipToApplicantObject()})
     this.props.validator.addFieldValidation(this.relationshipToApplicantID,
       {rule: 'isRequiredIf',
-        message: 'required',
-        condition: () => this.isRelationShipToApplicantObject()})
-    this.props.validator.addFieldValidation(this.ApplicantIdID,
-      {rule: 'isRequiredNumberIf',
         message: 'required',
         condition: () => this.isRelationShipToApplicantObject()})
     this.props.validator.addFieldValidation(this.genderID,
@@ -61,52 +58,72 @@ export class MinorCardField extends React.Component {
   }
 
   render () {
+    let index = this.props.index
+    let minor = this.props.minorChild
+    let applicants = this.props.applicants
+
     const isRequiredLabel = this.isRelationShipToApplicantObject() ? ' (required)' : ''
-    const index = this.props.index
-    const minor = this.props.minorChild
+    const relationshipLabel = applicants.length > 1
+      ? 'Relationship to Applicants:' : 'Relationship to Applicant:'
+
     return (
-      <div className='col-md-12'>
-        <InputComponent gridClassName='col-md-4'
-          id={this.props.idPrefix + 'relationship_to_applicant_freeform'}
-          value={checkRelationshipFreeformPresence(minor)}
-          label={'Relationship to Applicant'}
-          onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, event.target.value, 'relationship_to_applicant_freeform')} />
-        <DropDownField gridClassName='col-md-4'
-          id='applicant_id'
-          selectClassName='reusable-select'
-          optionList={setToWhomOptionList(this.props.applicants)}
-          label={'To Whom' + isRequiredLabel}
-          value={handleToWhomValue(minor.relationship_to_applicants[0].applicant_id, this.props.applicants).id}
-          onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index, dictionaryNilSelectValue(event.target.options), 'applicant_id')} />
-        <DateField gridClassName='col-md-4'
-          id={this.props.idPrefix + 'date_of_birth'}
-          label={'Date of Birth' + isRequiredLabel}
-          value={FormatDateForDisplay(minor.date_of_birth)}
-          errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}
-          onChange={(event) => this.props.onFieldChange(this.props.index,
-            FormatDateForPersistance(event.target.value), 'date_of_birth')}
-          onBlur={(event) => this.props.validator.validateFieldSetErrorState(this.minorDOBId, event.target.value)} />
-        <DropDownField gridClassName='col-md-4'
-          id='minor_gender'
-          selectClassName='reusable-select'
-          optionList={this.props.genderTypes}
-          value={getDictionaryId(minor.gender)}
-          label={'Gender' + isRequiredLabel}
-          onChange={(event) => this.props.onFieldChange(this.props.index, dictionaryNilSelect(event.target.options), 'gender')} />
-        <YesNoRadioComponent
-          label={'Do you financially support this child?' + isRequiredLabel}
-          idPrefix={'child_financially_supported' + index}
-          value={minor.child_financially_supported}
-          selectClassName={'reusable-select'}
-          optionList={yesNo.items}
-          onFieldChange={(event) => this.props.onFieldChange(index, event.target.value, 'child_financially_supported')} />
-        <YesNoRadioComponent
-          idPrefix={'child_adopted' + index}
-          value={minor.child_adopted}
-          selectClassName={'reusable-select'}
-          optionList={yesNo.items}
-          label={'Is this child adopted?' + isRequiredLabel}
-          onFieldChange={(event) => this.props.onFieldChange(index, event.target.value, 'child_adopted')} />
+      <div>
+        <div className='col-md-12' >
+          <div>
+            <label>{relationshipLabel}</label>
+          </div>
+          {
+            applicants && applicants.map((applicant, subIndex) => {
+              return (
+                <div key={'child[' + index + '].applicant[' + subIndex + ']'} >
+                  <InputComponent
+                    gridClassName='col-md-4'
+                    id={'relationship_to_applicant' + index + 'child' + subIndex + 'relationship_to_applicant_freeform'}
+                    value={checkRelationshipFreeformPresence(minor, subIndex)}
+                    label={applicant.first_name + ' ' + applicant.last_name}
+                    placeholder=''
+                    onChange={(event) => this.props.handleRelationshipTypeChange(applicant, event.target.value, index, subIndex, 'relationship_to_applicant_freeform')} />
+                  <YesNoRadioComponent
+                    label={'Do you financially support this child?' + isRequiredLabel}
+                    idPrefix={'child_financially_supported' + index + 'child' + subIndex}
+                    value={minor.relationship_to_applicants[subIndex] && minor.relationship_to_applicants[subIndex].child_financially_supported}
+                    selectClassName={'reusable-select'}
+                    optionList={yesNo.items}
+                    onFieldChange={(event) => this.props.handleRelationshipTypeChange(applicant, event.target.value, index, subIndex, 'child_financially_supported')} />
+                  <YesNoRadioComponent
+                    idPrefix={'child_adopted' + index + 'child' + subIndex}
+                    value={minor.relationship_to_applicants[subIndex] && minor.relationship_to_applicants[subIndex].child_adopted}
+                    selectClassName={'reusable-select'}
+                    optionList={yesNo.items}
+                    label={'Is this child adopted?' + isRequiredLabel}
+                    onFieldChange={(event) => this.props.handleRelationshipTypeChange(applicant, event.target.value, index, subIndex, 'child_adopted')} />
+                </div>
+              )
+            })
+          }
+        </div>
+        <div className='col-md-12' >
+          <div>
+            <label>{'Child Information:'}</label>
+          </div>
+          <div className='col-md-12'>
+            <DateField gridClassName='col-md-3'
+              id={this.props.idPrefix + 'date_of_birth'}
+              label={'Date of Birth' + isRequiredLabel}
+              value={FormatDateForDisplay(minor.date_of_birth)}
+              errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}
+              onChange={(event) => this.props.onFieldChange(index,
+                FormatDateForPersistance(event.target.value), 'date_of_birth')}
+              onBlur={(event) => this.props.validator.validateFieldSetErrorState(this.minorDOBId, event.target.value)} />
+            <DropDownField gridClassName='col-md-3'
+              id={this.props.idPrefix + 'minor_gender'}
+              selectClassName='reusable-select'
+              optionList={this.props.genderTypes}
+              value={getDictionaryId(minor.gender)}
+              label={'Gender' + isRequiredLabel}
+              onChange={(event) => this.props.onFieldChange(index, dictionaryNilSelect(event.target.options), 'gender')} />
+          </div>
+        </div>
       </div>
     )
   }

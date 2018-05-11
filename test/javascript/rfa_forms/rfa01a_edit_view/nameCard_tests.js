@@ -49,7 +49,7 @@ describe('Name Card Component', () => {
     renderedDom = renderedDOM(renderedCard)
   })
   it('Verify First name Props', () => {
-    let firstNameValue = renderedDom.children[0].children[0].children[1].children[0].children[0].children[0].children[1]
+    let firstNameValue = renderedDom.children[0].children[0].children[1].children[0].children[0].children[1]
     expect(firstNameValue.value).toBe('John')
   })
   it('renders Only Default Name Fields and Button', () => {
@@ -80,7 +80,7 @@ describe('Name Card Component', () => {
 
   it('Change First Name in Name Card', () => {
     let firstName = 'myName'
-    let firstNameField = renderedDom.children[0].children[0].children[1].children[0].children[0].children[0].children[1]
+    let firstNameField = renderedDom.children[0].children[0].children[1].children[0].children[0].children[1]
     ReactDOM.findDOMNode(firstNameField).value = firstName
     TestUtils.Simulate.change(firstNameField, {target: {value: firstName}})
     expect(renderedCard.props.setParentState.args[0]).toEqual(['first_name', 'myName', undefined])
@@ -89,14 +89,14 @@ describe('Name Card Component', () => {
   })
   it('Change Middle Name in Name Card', () => {
     let middleName = 'Douglous'
-    let middleNameField = renderedDom.children[0].children[0].children[1].children[0].children[1].children[0].children[1]
+    let middleNameField = renderedDom.children[0].children[0].children[1].children[0].children[1].children[1]
     ReactDOM.findDOMNode(middleNameField).value = middleName
     TestUtils.Simulate.change(middleNameField, {target: {value: middleName}})
     expect(renderedCard.props.setParentState.called).toBe(true)
   })
   it('Change Last Name in Name Card', () => {
     let lastName = 'myLastName'
-    let lastNameField = renderedDom.children[0].children[0].children[1].children[0].children[2].children[0].children[1]
+    let lastNameField = renderedDom.children[0].children[0].children[1].children[0].children[2].children[1]
     TestUtils.Simulate.change(lastNameField, {target: {value: lastName}})
     expect(renderedCard.props.setParentState.called).toBe(true)
   })

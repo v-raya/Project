@@ -6,7 +6,7 @@ require 'faker'
 
 RSpec.feature 'RFA01A', js: true do
 
-  before(:each) do 
+  before(:each) do
     visit root_path
     end
     scenario 'Dashboard page', set_auth_header: true do
@@ -116,22 +116,42 @@ RSpec.feature 'RFA01A', js: true do
     page.find(:css, '#react-select-4--option-1').click
     expect(page).to have_button('Submit', disabled: false)
     expect(page).to have_content 'IV. Minor Children Residing in the Home'
-    fill_in('minor_children[0].relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
+
+    fill_in('relationship_to_applicant0child0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
     expect(page).to have_button('Submit', disabled: true)
-    select 'Geovanni Moen', from: 'applicant_id'
     fill_in('minor_children[0].date_of_birth', with: '11/11/1111', match: :prefer_exact)
-    find('#child_financially_supported0Yes').click
-    find('#child_adopted0Yes').click
-    select 'Male', from: 'minor_gender'
+    find('#child_financially_supported0child0Yes').click
+    find('#child_adopted0child0Yes').click
+    select 'Male', from: 'minor_children[0].minor_gender'
     expect(page).to have_button('Submit', disabled: false)
-    fill_in('other_adults[0].relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
+
+    click_button 'Add another minor +'
+    fill_in('relationship_to_applicant1child0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
     expect(page).to have_button('Submit', disabled: true)
-    select 'Geovanni Moen', from: 'other_adults[0].availableApplicants'
+    fill_in('minor_children[1].date_of_birth', with: '11/11/1111', match: :prefer_exact)
+    find('#child_financially_supported1child0Yes').click
+    find('#child_adopted1child0Yes').click
+    select 'Male', from: 'minor_children[1].minor_gender'
+    expect(page).to have_button('Submit', disabled: false)
+
+
+    fill_in('relationship_to_applicants0adult0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
+    expect(page).to have_button('Submit', disabled: true)
     fill_in('other_adults[0].date_of_birth', with: '12/12/1211', match: :prefer_exact)
     fill_in('other_adults[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
     expect(page).to have_button('Submit', disabled: true)
     fill_in('other_adults[0].last_name', with: Faker::Name.last_name, match: :prefer_exact)
+
     expect(page).to have_button('Submit', disabled: false)
+    click_button 'Add another Adult +'
+    fill_in('relationship_to_applicants1adult0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
+    expect(page).to have_button('Submit', disabled: true)
+    fill_in('other_adults[1].date_of_birth', with: '12/12/1211', match: :prefer_exact)
+    fill_in('other_adults[1].first_name', with: Faker::Name.first_name, match: :prefer_exact)
+    expect(page).to have_button('Submit', disabled: true)
+    fill_in('other_adults[1].last_name', with: Faker::Name.last_name, match: :prefer_exact)
+    expect(page).to have_button('Submit', disabled: false)
+
     click_button 'Submit'
     # DevNote: this test case will be updated to include more fields as submit
     # functionality is further fleshed out.
@@ -295,7 +315,7 @@ RSpec.feature 'RFA01A', js: true do
         expect(page).to have_content('ADD ANOTHER PERSON +')
         click_button('Add Another Person +')
         second_person = find(:xpath, '//*[@id="aboutResidence"]/div[2]/div/div/div/div/div[6]/div[2]')
-        within second_person do 
+        within second_person do
             select 'Miss', from: 'residence.other_people_using_residence_as_mailing[1].name_prefix'
             fill_in('residence.other_people_using_residence_as_mailing[1].first_name', with: Faker::Name.first_name, match: :prefer_exact)
             fill_in('residence.other_people_using_residence_as_mailing[1].last_name', with: Faker::Name.last_name, match: :prefer_exact)
@@ -333,16 +353,14 @@ RSpec.feature 'RFA01A', js: true do
     fill_in('applicants[0].middle_name', with: 'k', match: :prefer_exact)
     fill_in('applicants[0].last_name', with: applicant_1_last_name, match: :prefer_exact)
     expect(page).to have_content 'IV. Minor Children Residing in the Home'
-    fill_in('minor_children[0].relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
-    select applicant_1_full_name, from: 'applicant_id'
-    find('#child_financially_supported0Yes').click
-    find('#child_adopted0Yes').click
-    select 'Male', from: 'minor_gender'
+    fill_in('relationship_to_applicant0child0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
+
+    find('#child_financially_supported0child0Yes').click
+    find('#child_adopted0child0Yes').click
+    select 'Male', from: 'minor_children[0].minor_gender'
     click_button('Save Progress')
     visit page.driver.current_url
-    expect(find_field('minor_children[0].relationship_to_applicant_freeform').value).to eq 'child'
-    applicant_id_value = find(:select, 'applicant_id').value
-    expect(find_field('applicant_id').value).to eq applicant_id_value
+    expect(find_field('relationship_to_applicant0child0relationship_to_applicant_freeform').value).to eq 'child'
   end
 
   scenario 'validate Other Adults card', set_auth_header: true do
@@ -357,18 +375,16 @@ RSpec.feature 'RFA01A', js: true do
     fill_in('applicants[0].first_name', with: applicant_1_first_name, match: :prefer_exact)
     fill_in('applicants[0].middle_name', with: 'k', match: :prefer_exact)
     fill_in('applicants[0].last_name', with: applicant_1_last_name, match: :prefer_exact)
-    select applicant_1_full_name, from: 'other_adults[0].availableApplicants'
     expect(page).to have_content 'V.Other Adults Residing or Regularly Present in the Home'
 
-    fill_in('other_adults[0].relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
+    fill_in('relationship_to_applicants0adult0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
 
     fill_in('other_adults[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
     click_button('Save Progress')
     visit page.driver.current_url
 
-    expect(find_field('other_adults[0].relationship_to_applicant_freeform').value).to eq 'child'
-    availableApplicantId = find_field('other_adults[0].availableApplicants').value
-    expect(find_field('other_adults[0].availableApplicants').value).to eq availableApplicantId
+    expect(find_field('relationship_to_applicants0adult0relationship_to_applicant_freeform').value).to eq 'child'
+
   end
 
   scenario 'validate Marital History card', set_auth_header: true do
@@ -385,14 +401,11 @@ RSpec.feature 'RFA01A', js: true do
     fill_in('applicants[0].last_name', with: applicant_1_last_name, match: :prefer_exact)
     select applicant_1_full_name, from: 'applicantsHistory.former_spouses[0].applicant_id'
     expect(page).to have_content 'VI.Applicant\'s Marital History'
-    select 'Married', from: 'applicantsHistory.former_spouses[0].relationship_type'
 
     click_button('Save Progress')
-    expect(find_field('applicantsHistory.former_spouses[0].relationship_type').value).to eq '1'
     expect(find_field('applicantsHistory.former_spouses[0].applicant_id')).to have_content(applicant_1_full_name)
 
     visit page.driver.current_url
-    expect(find_field('applicantsHistory.former_spouses[0].relationship_type').value).to eq '1'
     expect(find_field('applicantsHistory.former_spouses[0].applicant_id')).to have_content(applicant_1_full_name)
   end
 
@@ -435,7 +448,7 @@ RSpec.feature 'RFA01A', js: true do
     click_button 'Create RFA Application (Form 01)'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
-    expect(page).to have_select('minor_gender', with_options: ['', 'Male', 'Female'])
+    expect(page).to have_select('minor_children[0].minor_gender', with_options: ['', 'Male', 'Female'])
     expect(page).to have_select('residenceTypes', with_options: %w[Own Rent Lease])
   end
 end

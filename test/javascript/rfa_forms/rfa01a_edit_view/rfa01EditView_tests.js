@@ -119,6 +119,12 @@ describe('Rfa01EditView test', () => {
     expect(_Rfa01EditView.length).toEqual(1)
   })
 
+  it('tests setFocusState', () => {
+    let minorsCard = _Rfa01EditView.find('#minorsSection').hostNodes()
+    minorsCard.simulate('click')
+    expect(setFocusStateSpy).toHaveBeenCalledWith('minorsSection')
+  })
+
   it('tests saveProgress', () => {
     let saveProgressBtn = _Rfa01EditView.find('#saveProgress')
     saveProgressBtn.simulate('click')

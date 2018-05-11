@@ -194,6 +194,7 @@ export default class Rfa01EditView extends React.Component {
               ethnicityTypes={this.props.ethnicityTypes}
               languageTypes={this.props.languageTypes}
               focusComponentName={this.state.focusComponentName}
+              application={this.state.application.toJS()}
               applicants={this.state.application.get('applicants') || undefined}
               setParentState={this.setApplicationState}
               setFocusState={this.setFocusState}
@@ -267,7 +268,8 @@ export default class Rfa01EditView extends React.Component {
               errors={this.state.errors.otherAdults}
               applicants={applicantsAsJs}
               otherAdults={(this.state.application.get('other_adults') && this.state.application.get('other_adults').toJS()) || undefined}
-              relationship_types={this.props.relationshipToApplicantTypes} />
+              suffixTypes={this.props.suffixTypes}
+              prefixTypes={this.props.prefixTypes} />
           </div>
         </ScrollSpy>
         <ScrollSpy onEnter={() => this.handleNavLinkClick('#marital-history-card')}>

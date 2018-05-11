@@ -115,8 +115,8 @@ class Rfa::A01Controller < CalsBaseController
       minor.permit!
       minor['relationship_to_applicants'][0] = set_relationship_to_applicants(minor['relationship_to_applicants'][0], @application_response[:applicants])
       ActionController::Parameters.new(minor.to_h).permit(
-        :id, :to_delete, :child_financially_supported, :date_of_birth, :child_adopted, gender: %i[id value],
-        relationship_to_applicants: [:applicant_id, :relationship_to_applicant_freeform, relationship_to_applicant: %i[id value]]
+        :id, :to_delete, :date_of_birth, gender: %i[id value],
+        relationship_to_applicants: [:applicant_id, :child_financially_supported, :child_adopted, :relationship_to_applicant_freeform, relationship_to_applicant: %i[id value]]
       )
     end
   end
@@ -127,6 +127,7 @@ class Rfa::A01Controller < CalsBaseController
       adult['relationship_to_applicants'][0] = set_relationship_to_applicants(adult['relationship_to_applicants'][0], @application_response[:applicants])
       ActionController::Parameters.new(adult.to_h).permit(
         :id, :to_delete, :first_name, :middle_name, :last_name, :date_of_birth,
+          { name_suffix: %i[id value] }, { name_prefix: %i[id value] },
         relationship_to_applicants: [:applicant_id, :relationship_to_applicant_freeform, relationship_to_applicant: %i[id value]]
       )
     end

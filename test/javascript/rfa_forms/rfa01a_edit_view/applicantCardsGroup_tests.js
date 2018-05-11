@@ -37,6 +37,7 @@ describe('Verify Applicant Card Group', () => {
     setParentState: isApplicantAdded,
     validator: new Validator({}),
     getFocusClassName: getFocusClassNameSpy
+
   }
   let applicantRender = TestUtils.renderIntoDocument(<ApplicantCardsGroup {...props} />)
   let renderedDOM = (componentToRender) => ReactDOM.findDOMNode(componentToRender)
