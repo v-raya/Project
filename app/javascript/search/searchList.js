@@ -15,7 +15,7 @@ export const SearchList = ({
           <th>Facility Name </th>
           <th>Facility ID / Approval #</th>
           <th>Facility Type / Facility Source</th>
-          <th>Status</th>
+          <th>License Status</th>
           <th>Licensee Name</th>
           <th>Facility Address</th>
           <th>County</th>
