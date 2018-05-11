@@ -451,4 +451,14 @@ RSpec.feature 'RFA01A', js: true do
     expect(page).to have_select('minor_children[0].minor_gender', with_options: ['', 'Male', 'Female'])
     expect(page).to have_select('residenceTypes', with_options: %w[Own Rent Lease])
   end
+
+  scenario 'verify breadcrumb nav', set_auth_header: true do
+    visit root_path
+    click_button 'Create RFA Application (Form 01)'
+    expect(page).to have_content 'Rfa-01A Section Summary'
+    page.find('#Rfa01AOverview').find('a.btn.btn-default').click
+    click_link  'RFA Application list'
+    expect(page).to have_content 'Welcome to Certification, Approval, and Licensing Services (CALS)'
+  end
+
 end
