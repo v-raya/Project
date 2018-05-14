@@ -36,7 +36,7 @@ const SearchGrid = ({
                 title='Facility Source'
                 value={checkValueForNull(result.facility_source)} />
               <GridInnerLayout
-                title='Status'
+                title='License Status'
                 value={checkForNA(result.status)} />
             </GridOuterLayout>
             <GridOuterLayout>
