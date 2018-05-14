@@ -9,8 +9,8 @@ describe FacilitiesController do
       expected_output = {
         bool: {
           must: [
-            { match_phrase: {'fac_co_nbr':'28'} },
-            { match_phrase:{'fac_name':'home'} }
+            { match: {'fac_co_nbr':'28'} },
+            { match:{'fac_name':'home'} }
           ]
       }}
 
@@ -28,8 +28,8 @@ describe FacilitiesController do
             should: [
               {bool:
                {must: [
-                  {match_phrase:{'fac_co_nbr':'28'}},
-                  {match_phrase:{'fac_name':'home'}}
+                  {match:{'fac_co_nbr':'28'}},
+                  {match:{'fac_name':'home'}}
                 ]
                 }
                }]
@@ -46,6 +46,7 @@ describe FacilitiesController do
 
       expected_output = {
         sort: [
+          '_score',
           {
             'name.for_sort' =>
             {
@@ -81,24 +82,24 @@ describe FacilitiesController do
             [{
                bool:
                {must:
-                [{match_phrase:
+                [{match:
                   {
                     "county.value":
                   "Los Angeles"}
                   },
                  {
-                   match_phrase:
+                   match:
                    {
                      "type.value":
                    "Resource Family Home"}
                  },
                  {
-                   match_phrase:
+                   match:
                    {
                      "id":"123124"
                  }},
                  {
-                   match_phrase:
+                   match:
                    {
                    "name":"home"}
                  }
@@ -110,17 +111,10 @@ describe FacilitiesController do
         },
         from:"0",
         size:"5",
-        sort: [
-          {
-            '_score' =>
-            {
-              order: 'asc'
-            }
-          }
-        ]
+        sort: []
       }
       query_array = [{"county.value"=>"Los Angeles", "type.value"=>"Resource Family Home", "id"=>"123124", "name"=>"home"}]
-      page_params = {"sort_params"=>"_score", "order_params"=>"asc", "size_params"=>"5", "from_params"=>"0"}
+      page_params = {"order_params"=>"asc", "size_params"=>"5", "from_params"=>"0"}
       output = Elastic::QueryBuilder.facility_search_v1(query_array, page_params)
       expect(output).to eq(expected_output)
     end
@@ -136,22 +130,22 @@ describe FacilitiesController do
             [{
                bool:
                {must:
-                [{match_phrase:
+                [{match:
                   {
                   "county.value": "Los Angeles"}
                   },
                  {
-                   match_phrase:
+                   match:
                    {
                    "type.value": "Adoption Agency"}
                  },
                  {
-                   match_phrase:
+                   match:
                    {
                      "id": "9jstosjaww"
                  }},
                  {
-                   match_phrase:
+                   match:
                    {
                    "name": "home"}
                  },
@@ -183,6 +177,7 @@ describe FacilitiesController do
         from:"0",
         size:"5",
         sort: [
+          '_score',
           {
             'name.for_sort' =>
             {

@@ -9,7 +9,7 @@ class Elastic::QueryBuilder
     a = []
 
     # each key is an attribute to query on
-    query_hash.each {|k, v| a << {match_phrase: {k.to_sym => v}}}
+    query_hash.each {|k, v| a << {match: {k.to_sym => v}}}
 
     # wrap array in a bool AND(must)
     return {
@@ -23,6 +23,7 @@ class Elastic::QueryBuilder
     if page_params['sort_params'].present? && page_params['order_params'].present?
       return {
         sort: [
+          '_score',
           {
             page_params['sort_params'] =>
             {
