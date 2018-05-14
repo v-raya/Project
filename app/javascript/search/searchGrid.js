@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 import GridInnerLayout from './common/gridInnerLayout.js'
 import GridOuterLayout from './common/gridOuterLayout.js'
-import {checkForNA, checkValueForNull, respectiveNumberOrNA, respectiveFullAddressOrNA,
+import {checkForNA, checkNullOrEmptyValue, respectiveNumberOrNA, respectiveFullAddressOrNA,
   primaryPhoneRelation, alternativePhoneRelation, physicalAddressType} from './common/commonUtils'
 import {Link} from 'react-router-dom'
 
@@ -15,7 +15,6 @@ const SearchGrid = ({
       searchResults.map((result, index) => {
         return (<div key={index} className='grid_view_inner col-xs-12 col-sm-12 col-md-12 col-lg-12' >
           <div className='col-xs-12 col-sm-1 col-md-1 col-lg-1'>
-            {/* <a href={urlPrefixHelper('/facilities/' + result.id)}><div className='home-icon' /></a> */}
             <Link to={urlPrefixHelper('/facilities/' + result.id)}><div className='home-icon' /></Link>
           </div>
           <div className='col-xs-12 col-sm-11 col-md-11 col-lg-11'>
@@ -23,7 +22,7 @@ const SearchGrid = ({
               <div>
                 <p className='block_label'>Facility Name </p>
                 <p className='block_text'>
-                  <Link to={urlPrefixHelper('/facilities/' + result.id)}>{result.name}</Link>
+                  <Link to={urlPrefixHelper('/facilities/' + result.id)}>{checkNullOrEmptyValue(result.name)}</Link>
                 </p>
               </div>
               <GridInnerLayout
@@ -34,7 +33,7 @@ const SearchGrid = ({
                 value={checkForNA(result.type)} />
               <GridInnerLayout
                 title='Facility Source'
-                value={checkValueForNull(result.facility_source)} />
+                value={checkNullOrEmptyValue(result.facility_source)} />
               <GridInnerLayout
                 title='License Status'
                 value={checkForNA(result.status)} />
@@ -51,7 +50,7 @@ const SearchGrid = ({
                 value={respectiveNumberOrNA(result.phones, primaryPhoneRelation)} />
               <GridInnerLayout
                 title='Facility Email'
-                value={checkValueForNull(result.email_address)} />
+                value={checkNullOrEmptyValue(result.email_address)} />
               <GridInnerLayout
                 title='Licensee Name'
                 value={result.licensee_name} />

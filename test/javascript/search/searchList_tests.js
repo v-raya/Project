@@ -82,7 +82,8 @@ describe('Render search list and each method', function () {
       county: null,
       phones: null,
       addresses: null,
-      type: null
+      type: '',
+      facility_source: null
     }]
   }
   let searchListComp = shallow(< SearchList { ...props} />)

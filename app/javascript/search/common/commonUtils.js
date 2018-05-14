@@ -82,8 +82,8 @@ export const fullName = (object) => {
   return object.first_name + ' ' + object.last_name
 }
 
-export const checkValueForNull = (value) => {
-  return value == null ? 'N/A' : value
+export const checkNullOrEmptyValue = (value) => {
+  return (value === null || value === '') ? 'N/A' : value
 }
 
 export const primaryPhoneRelation = 'primary'
