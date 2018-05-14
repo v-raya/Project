@@ -6,6 +6,8 @@ import RfaSideBar from 'rfa_forms/rfa_sidebar/index'
 import Button from 'components/common/button'
 import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
 import BreadCrumb from 'components/common/breadCrumb'
+import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
+
 const PageTemplate = ({
   headerLabel,
   pageSubHeader,
@@ -35,7 +37,7 @@ const PageTemplate = ({
       onSubmitClick={onSubmitClick} />
     <div>
       <BreadCrumb
-        navigationElements={[<a href='/'>RFA Application list</a>]} />
+        navigationElements={[<a href={urlPrefixHelper('/')}>RFA Application list</a>]} />
     </div>
     <div className='form-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
       <div className='left-content col-xs-3 col-sm-3 col-md-3 col-lg-3'>
