@@ -13,6 +13,7 @@ import {connect} from 'react-redux'
 import {PageHeader} from 'react-wood-duck'
 import BreadCrumb from 'components/common/breadCrumb'
 import {getFromValue} from 'helpers/commonHelper.jsx'
+import Pagination from './pagination'
 
 class Search extends React.Component {
   componentDidMount () {
@@ -65,7 +66,6 @@ class Search extends React.Component {
         </div>
         {searchResponseHasValues &&
           <SearchDetails
-            inputData={this.props.inputData}
             totalNoOfFacilities={this.props.totalNoOfResults}
             sizeValue={this.props.sizeValue}
             handleDropDownAndPageNumberChange={this.props.handleDropDownAndPageNumberChange}
@@ -78,6 +78,18 @@ class Search extends React.Component {
           {!this.props.isToggled && <SearchList searchResults={this.props.searchResults} />}
           {(!searchResponseHasValues && !initialLoad) && <SearchNotFound errors={this.props.errors.issue_details} errorMessage={this.props.errorMessage} />}
         </div>
+        {searchResponseHasValues &&
+        <div className='search_details col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+          <Pagination
+            paginationClassName='bottom_pagination'
+            totalNoOfFacilities={this.props.totalNoOfResults}
+            sizeValue={this.props.sizeValue}
+            handleDropDownAndPageNumberChange={this.props.handleDropDownAndPageNumberChange}
+            handlePageNumberChange={this.props.handlePageNumberChange}
+            pageNumber={this.props.pageNumber}
+            searchApiCall={this.searchApiCallParams.bind(this)} />
+        </div>
+        }
       </div>
     )
   }

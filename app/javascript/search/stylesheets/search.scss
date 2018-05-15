@@ -135,27 +135,29 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: bold;
 }
 
-.search_details p span {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.search_details p img {
-  margin-left: 20px;
-}
-
 .search_details button {
   padding: 0.25rem 0.45rem 0.25rem 0.45rem !important;
   margin: 6px;
   border: solid;
 }
 
+.toggle_result {
+  padding-top: 10px;
+}
+
 .search_dropdown {
   width: 100px;
-  cursor: pointer;
   margin-top: -35px;
   display: inline;
-  margin-left: 5px;
+}
+
+.top_pagination {
+  float: right;
+}
+
+.bottom_pagination {
+  float: right;
+  margin-right: 15rem
 }
 
 .page_number {
@@ -241,26 +243,19 @@ input[type=number]::-webkit-outer-spin-button {
 
 .line_off-icon {
   background: url(../images/line_off.png) no-repeat;
-  border: 0;
-  border-radius: 0;
-  height: 53px;
-  width: 50px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 28px;
 }
 
 .line_on-icon {
   background: url(../images/line_on.png) no-repeat;
-  border: 0;
-  border-radius: 0;
-  height: 53px;
-  width: 50px;
 }
 
 .grid_on-icon {
   background: url(../images/grid_on.png) no-repeat;
-  border: 0;
-  border-radius: 0;
-  height: 53px;
-  width: 50px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .grid_off-icon {

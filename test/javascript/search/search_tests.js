@@ -17,9 +17,9 @@ describe('Verify Search component', function () {
     searchDictionariesCallSpy = jasmine.createSpy()
 
     const props = {
-      totalNoOfResults: 0,
+      totalNoOfResults: 13,
       pageNumber: 2,
-      sizeValue: 20,
+      sizeValue: 5,
       isToggled: true,
       inputData: {
         'countyValue': '19'
@@ -89,7 +89,7 @@ describe('Verify Search component', function () {
   })
 
   it('verify dropDown value change number of facilities', () => {
-    let dropdownForfacilitiesCount = searchComp.find('#dropdownFacilities')
+    let dropdownForfacilitiesCount = searchComp.find('#dropdownFacilities_top_pagination')
     dropdownForfacilitiesCount.simulate('change', {target: {options: {'5': {id: '5', value: '5'}, selectedIndex: 5}}})
     expect(searchApiCallSpy).toHaveBeenCalledWith({'county.id': '19', 'type.id': undefined, 'license_number': undefined, 'name': undefined, 'addresses.address.street_address': undefined}, {fromValue: 0, sizeValue: 5, sort: 'name.for_sort', order: 'asc'})
   })
@@ -108,7 +108,7 @@ describe('Verify Search component', function () {
   it('verify clicking search button calls handleOnSubmit method', () => {
     let searchFacility = searchComp.find('#search')
     searchFacility.simulate('submit')
-    expect(searchApiCallSpy).toHaveBeenCalledWith({'county.id': '19', 'type.id': undefined, 'license_number': undefined, 'name': undefined, 'addresses.address.street_address': undefined}, {fromValue: 0, sizeValue: 20, sort: 'name.for_sort', order: 'asc'})
+    expect(searchApiCallSpy).toHaveBeenCalledWith({'county.id': '19', 'type.id': undefined, 'license_number': undefined, 'name': undefined, 'addresses.address.street_address': undefined}, {fromValue: 0, sizeValue: 5, sort: 'name.for_sort', order: 'asc'})
   })
 
   it('verify error messages', () => {

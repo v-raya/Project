@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {resultsPerPage} from './common/commonUtils'
 import {dictionaryNilSelectValue, floatToNextInt, getFromValue} from 'helpers/commonHelper.jsx'
+import Pagination from './pagination'
 
 const SearchDetails = ({
   totalNoOfFacilities,
   toggeledResult,
   sizeValue,
-  fromValue,
   pageNumber,
   searchApiCall,
   handleToggle,
@@ -15,43 +15,21 @@ const SearchDetails = ({
   handlePageNumberChange
 }) => (
   <div className='search-toggle col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-    <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-    </div>
-    <div className='search_details col-xs-12 col-sm-9 col-md-9 col-lg-9'>
+    <span className='search_details col-xs-12 col-sm-11 col-md-11 col-lg-11'>
       <p>Search Results:</p>
-      <select
-        className='search_dropdown'
-        id='dropdownFacilities'
-        value={sizeValue}
-        onChange={(event) => { handleDropDownAndPageNumberChange(1, parseInt(dictionaryNilSelectValue(event.target.options))); searchApiCall(getFromValue(sizeValue, 1), parseInt(dictionaryNilSelectValue(event.target.options))) }}>
-        {resultsPerPage.map((noOfResults) =>
-          <option key={noOfResults} value={noOfResults}>{noOfResults}</option>
-        )}
-      </select>
-      <button
-        id='previous_button'
-        disabled={getFromValue(sizeValue, pageNumber) - sizeValue < 0}
-        onClick={() => { handlePageNumberChange(pageNumber - 1); searchApiCall(getFromValue(sizeValue, pageNumber - 1), sizeValue) }}
-        className='previous btn btn-default'>
-        <p>&#8249;</p>
-      </button>
-      <span className='page_number'>{pageNumber}</span>
-      <span>of</span>
-      <span className='noOfPages'>{floatToNextInt(totalNoOfFacilities, sizeValue)}</span>
-      <button
-        id='next_button'
-        disabled={getFromValue(sizeValue, pageNumber) + sizeValue >= totalNoOfFacilities}
-        onClick={() => { handlePageNumberChange(pageNumber + 1); searchApiCall(getFromValue(sizeValue, pageNumber + 1), sizeValue) }}
-        className='next btn btn-default'>
-        <p>&#8250;</p>
-      </button>
-    </div>
-    <div className='toggle_result col-xs-12 col-sm-3 col-md-3 col-lg-3'>
-      <div className='pull-right'>
-        <div id='toggle_button' onClick={handleToggle} className={(toggeledResult ? 'line_off-icon' : 'line_on-icon') + ' ' + 'navbar-brand'} alt={'list'} />
-        <div onClick={handleToggle} className={(toggeledResult ? 'grid_on-icon' : 'grid_off-icon') + ' ' + 'navbar-brand'} alt={'grid'} />
-      </div>
-    </div>
+      <Pagination
+        paginationClassName='top_pagination'
+        searchApiCall={searchApiCall}
+        sizeValue={sizeValue}
+        pageNumber={pageNumber}
+        totalNoOfFacilities={totalNoOfFacilities}
+        handleDropDownAndPageNumberChange={handleDropDownAndPageNumberChange}
+        handlePageNumberChange={handlePageNumberChange} />
+    </span>
+    <span className='toggle_result col-xs-12 col-sm-1 col-md-1 col-lg-1'>
+      <span id='toggle_button' onClick={handleToggle} className={(toggeledResult ? 'line_off-icon' : 'line_on-icon') + ' ' + 'navbar-brand'} alt={'list'} />
+      <span onClick={handleToggle} className={(toggeledResult ? 'grid_on-icon' : 'grid_off-icon') + ' ' + 'navbar-brand'} alt={'grid'} />
+    </span>
   </div>
 )
 
