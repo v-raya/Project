@@ -10,18 +10,18 @@ RSpec.feature 'RFA01A', js: true do
     visit root_path
     end
     scenario 'Dashboard page', set_auth_header: true do
-        expect(page).to have_button('Create RFA Application (Form 01)')
+        expect(page).to have_button('Create RFA Application')
     end
 
   scenario 'validate applicant card', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
   end
 
   scenario 'validate full applicant card', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -63,7 +63,7 @@ RSpec.feature 'RFA01A', js: true do
   end
 
   scenario 'validate remove button, applicant card', set_auth_header: true do
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -84,7 +84,7 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'validate submit button functionality', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -159,7 +159,7 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'show error validation message on full Applicant Card', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -174,7 +174,7 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'remove error validation on full Applicant card', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -197,7 +197,7 @@ RSpec.feature 'RFA01A', js: true do
 
   # scenario 'remove leading spaces in the names', set_auth_header: true do
   #   visit root_path
-  #   click_button 'Create RFA Application (Form 01)'
+  #   click_button 'Create RFA Application'
   #   expect(page).to have_content 'Rfa-01A Section Summary'
   #   page.find('#Rfa01AOverview').find('a.btn.btn-default').click
   #   expect(page).to have_content 'Applicant 1 - Information'
@@ -210,7 +210,7 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'check for disabled save button when applicant names are empty', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -222,7 +222,7 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'prevent backspace navigation on IE', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -239,7 +239,7 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'validate dropdown focus select on Phone Card', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -248,7 +248,7 @@ RSpec.feature 'RFA01A', js: true do
   end
   scenario 'validate county use only card', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -259,7 +259,7 @@ RSpec.feature 'RFA01A', js: true do
   end
   scenario 'validate Relationship between Applicant', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -288,7 +288,7 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'validate Residence card', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -341,7 +341,7 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'validate Minor Children card', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
 
@@ -365,7 +365,7 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'validate Other Adults card', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -389,7 +389,7 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'validate Marital History card', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -411,7 +411,7 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'validate Foster Care card', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -429,7 +429,7 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'validate references card', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_content 'Applicant 1 - Information'
@@ -445,7 +445,7 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'RFA page dictionaries', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     expect(page).to have_select('minor_children[0].minor_gender', with_options: ['', 'Male', 'Female'])
@@ -454,11 +454,11 @@ RSpec.feature 'RFA01A', js: true do
 
   scenario 'verify breadcrumb nav', set_auth_header: true do
     visit root_path
-    click_button 'Create RFA Application (Form 01)'
+    click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'
     page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     click_link  'RFA Application list'
-    expect(page).to have_content 'Welcome to Certification, Approval, and Licensing Services (CALS)'
+    expect(page).to have_content 'RFA Applications'
   end
 
 end

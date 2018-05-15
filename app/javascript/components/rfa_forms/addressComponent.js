@@ -112,6 +112,7 @@ AddressComponent.propTypes = {
 
 AddressComponent.defaultProps = {
   addressType: physicalAddressType,
+  label: '',
   placeholder: '',
   addressTitle: 'Physical Address',
   suggestions: [],

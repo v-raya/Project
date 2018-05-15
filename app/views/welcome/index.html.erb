@@ -1,18 +1,8 @@
-<div class="col-xs-12">
-  <h3> Welcome to Certification, Approval, and Licensing Services (CALS)</h3>
-  <div class="col-xs-12 col-md-3 col-sm-3 col-lg-3">
-    <div id="links" class="container col-xs-12">
-      <%= button_to "Create RFA Application (Form 01)" , rfa_a01_index_path, :method=>:post, :disabled => DISABLE_RFA_APPLICATION %>
-      <br/>
-      <% if !@check_for_priviliges.empty? %>
-      <%= button_to "Search for Facilities", search_index_path, :method=>:get %>
-      <% end %>
-    </div >
-  </div>
+<div >
   <% if !DISABLE_RFA_APPLICATION %>
-    <div class="col-xs-12 col-md-8 col-sm-8 col-lg-8" id="applications_list">
+    <div id="applications_list">
       <%= react_component('rfa_forms/rfa01a_list', {
-          applications: @applications, user: @user}, {prerender: false}) %>
+          applications: @applications, user: @user, check_for_priviliges: @check_for_priviliges, disbaleRfaApplication: DISABLE_RFA_APPLICATION }, {prerender: false}) %>
       <%= javascript_pack_tag 'rfa_forms/rfa01a_list' %>
       <%= stylesheet_pack_tag 'rfa_forms/rfa01a_list' %>
     </div>

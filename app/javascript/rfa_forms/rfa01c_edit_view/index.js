@@ -78,7 +78,8 @@ export default class Rfa01cEditView extends React.Component {
   }
 
   submit () {
-    const url = '/rfa/a01/submit'
+    this.saveProgress()
+    const url = '/rfa/a01/' + this.state.rfa_a01_application.id + '/submit'
     this.fetchToRails(url, 'POST', this.state.rfa_a01_application)
   }
 

@@ -1,11 +1,13 @@
 import React from 'react'
 import {mount, shallow} from 'enzyme'
 import PageHeader from 'components/common/pageHeader'
+import Rfa01PageHeaderButtons from 'components/common/rfa01PageHeaderButtons'
 import Button from 'components/common/button'
 
 describe('Verify Page Header rendering', function () {
   const headerLabel = 'page title'
-  let headerComp = mount(<PageHeader />)
+
+  let headerComp = mount(<PageHeader pageHeaderButtons={<Rfa01PageHeaderButtons />} />)
 
   it('verify page header render', function () {
     expect(headerComp.length).toBe(1)

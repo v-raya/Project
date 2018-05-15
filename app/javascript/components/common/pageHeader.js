@@ -1,16 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Button from 'components/common/button'
+import rfa01PageHeaderbuttons from 'components/common/rfa01PageHeaderButtons'
 import Affix from 'react-overlays/lib/AutoAffix'
 
 const PageHeader = ({
   headerLabel,
   pageSubHeader,
-  disableSave,
-  onSaveProgressClick,
-  disableSubmit,
-  onSubmitClick,
-  buttonTextAlignment
+  pageHeaderButtons
 }) => (
   <div className='page-header-container'>
     <Affix affixStyle={{zIndex: 100}}>
@@ -25,24 +22,7 @@ const PageHeader = ({
                 {pageSubHeader}
               </div>
             </div>
-            <div className='col-xs-5'>
-              <div className='col-xs-7'>
-                <Button
-                  buttonId='saveProgress'
-                  disabled={disableSave}
-                  label='Save Progress'
-                  textAlignment={buttonTextAlignment}
-                  onClick={onSaveProgressClick} />
-              </div>
-              <div className='col-xs-5'>
-                <Button
-                  buttonId='submitApplication'
-                  disabled={disableSubmit}
-                  label='Submit'
-                  textAlignment={buttonTextAlignment}
-                  onClick={onSubmitClick} />
-              </div>
-            </div>
+            {pageHeaderButtons}
           </div>
         </div>
       </div>
@@ -59,6 +39,7 @@ PageHeader.propTypes = {
 
 PageHeader.defaultProps = {
   headerLabel: 'To implement',
+  rfa01PageHeaderButtons: '',
   buttonTextAlignment: 'center',
   disableSave: false,
   disableSubmit: false

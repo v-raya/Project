@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import LogoHeader from 'components/common/logoHeader'
 import PageHeader from 'components/common/pageHeader'
 import RfaSideBar from 'rfa_forms/rfa_sidebar/index'
+import Rfa01PageHeaderButtons from 'components/common/rfa01PageHeaderButtons'
 import Button from 'components/common/button'
 import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
 import BreadCrumb from 'components/common/breadCrumb'
@@ -23,6 +24,7 @@ const PageTemplate = ({
   childIdentified,
   isNavLinkActive,
   handleNavLinkClick,
+  pageHeaderButtons,
   errors,
   children
 }) => (
@@ -30,11 +32,15 @@ const PageTemplate = ({
     <LogoHeader />
     <PageHeader
       headerLabel={headerLabel}
-      disableSave={disableSave}
       pageSubHeader={pageSubHeader}
-      onSaveProgressClick={onSaveProgressClick}
-      disableSubmit={disableSubmit}
-      onSubmitClick={onSubmitClick} />
+      pageHeaderButtons={
+        <Rfa01PageHeaderButtons
+          disableSave={disableSave}
+          onSaveProgressClick={onSaveProgressClick}
+          disableSubmit={disableSubmit}
+          onSubmitClick={onSubmitClick}
+        />}
+    />
     <div>
       <BreadCrumb
         navigationElements={[<a href={urlPrefixHelper('/')}>RFA Application list</a>]} />
@@ -61,6 +67,7 @@ const PageTemplate = ({
 
 PageTemplate.propTypes = {
   headerLabel: PropTypes.string,
+  pageHeaderButtons: PropTypes.node,
   pageSubHeader: PropTypes.string,
   buttonId: PropTypes.string,
   buttonLabel: PropTypes.string,
