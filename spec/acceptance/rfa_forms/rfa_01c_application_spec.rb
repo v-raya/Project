@@ -91,7 +91,7 @@ RSpec.feature 'RFA01C', js: true do
     expect(page).to have_button('Submit', disabled: true)
   end
 
-  scenario 'validate submit disabled when Rfa-01A is not valid', set_auth_header: true do
+  scenario 'validate submit enabled when Rfa-01A is valid', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application'
     expect(page).to have_content 'Rfa-01A Section Summary'

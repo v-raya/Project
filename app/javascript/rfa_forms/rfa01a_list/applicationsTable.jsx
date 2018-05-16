@@ -1,36 +1,50 @@
 import React from 'react'
-import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
+import ApplicationsListRow from './applicationsListRow'
+import PropTypes from 'prop-types'
+import Immutable from 'immutable'
 
 export default class ApplicationsTable extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      applicationsList: this.props.applications
-    }
-  }
   render () {
-    const applicationList = this.state.applicationsList
+    const applicationsList = Immutable.fromJS(this.props.applications)
     return (
-      <div className='rfa01a-list col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-        <div className='table'>
-          <div className='table-row'>
-            <div className='table-cell'>Application Id</div>
-            <div className='table-cell'>First name</div>
-            <div className='table-cell'>Last name</div>
-          </div>
-          {
-            applicationList && applicationList.map((application, index) => {
-              return (
-                <a href={urlPrefixHelper('/rfa/a01/' + application.id + '/packet')} className='table-row' key={index}>
-                  <div className='table-cell'>{application.id}</div>
-                  <div className='table-cell'>{application.applicants && application.applicants[0].first_name}</div>
-                  <div className='table-cell'>{application.applicants && application.applicants[0].last_name}</div>
-                </a>
-              )
-            })
-          }
-        </div>
+      <div className='rfa01a-list table-responsive'>
+        <h3>Existing RFA Application</h3>
+        <table className='table table-hover'>
+          <thead>
+            <tr>
+              <th scope="col">Facility ID</th>
+              <th scope="col">Facility / Family Name</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Address</th>
+              <th scope="col">City</th>
+              <th scope="col">Zip</th>
+              <th scope="col">Status</th>
+              <th scope="col">Received Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              applicationsList.map((application, index) => {
+                return (
+                  <ApplicationsListRow
+                    key={index}
+                    familyName={application.get('resource_family_name')}
+                    facilityId={application.get('id')}
+                    applicantsInfo={application.get('applicants')}
+                    applicationStatus={application.get('status')}
+                    applicationReceivedDate={application.get('receivedDate')}
+                    applicationAddress={application.getIn(['residence', 'addresses'])}
+                  />
+                )
+              })
+            }
+          </tbody>
+        </table>
       </div>
     )
   }
+}
+
+ApplicationsTable.defaultProps = {
+  applications: []
 }

@@ -1,6 +1,6 @@
 class Rfa::Application < CalsBase
   include Concerns::Rfa::ApplicationApiProtocolProvider
-  attr_accessor :id, :is_initial_application, :is_other_type, :application_county,
+  attr_accessor :id, :is_initial_application, :is_other_type, :application_county, :resource_family_name,
                 :minor_children, :adoption_history, :applicants_relationship, :applicants_history,
                 :residence, :references, :foster_care_history, :child_desired, :other_adults,
                 :relationship_between_applicants, :rfa1c_forms, :other_type_description, :applicants_declaration,

@@ -1,6 +1,6 @@
 import React from 'react'
 import ApplicationTable from 'rfa_forms/rfa01a_list/applicationsTable.jsx'
-import ShallowRenderer from 'react-test-renderer/shallow'
+import {shallow, mount} from 'enzyme'
 
 describe('Verify Application List View', () => {
   const applicants = [{
@@ -24,7 +24,33 @@ describe('Verify Application List View', () => {
       minor_children: [],
       other_adults: [],
       rfa1b_forms: [],
-      rfa1c_forms: []
+      rfa1c_forms: [],
+      'residence': {
+        addresses: [
+          {
+            'street_address': '607 Third st',
+            'zip': '95442',
+            'city': 'Lower Lake',
+            'state': {
+              'value': 'California',
+              'id': 'CA'
+            },
+            'type': {
+              'value': 'Residential',
+              'id': 1
+            }
+          },
+          {
+            'street_address': '',
+            'zip': '',
+            'city': '',
+            'type': {
+              'value': 'Mailing',
+              'id': 3
+            }
+          }
+        ]
+      }
     },
     {
 
@@ -38,13 +64,17 @@ describe('Verify Application List View', () => {
       rfa1c_forms: []
     }
   ]
-  const AppListViewCard = new ShallowRenderer()
-  const listRendered = AppListViewCard.render(<ApplicationTable applications={applications} />)
+  const AppListViewCard = mount(<ApplicationTable applications={applications} />)
   it('To Load table', () => {
-    expect(listRendered.props.children.props.className).toBe('table')
+    expect(AppListViewCard.find('.rfa01a-list').length).toEqual(1)
+    expect(AppListViewCard.find('h3').props().children).toBe('Existing RFA Application')
+  })
+  it('To have table header\'s', () => {
+    expect(AppListViewCard.find('th').length).toEqual(8)
+    expect(AppListViewCard.find('th').first().props().children).toBe('Facility ID')
   })
   it('To have array of Items', () => {
-    let applicationTable = listRendered.props.children.props
-    expect(applicationTable.children[1].length).toEqual(2)
+    let applicationTable = AppListViewCard
+    expect(applicationTable.props().applications.length).toEqual(2)
   })
 })
