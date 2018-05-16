@@ -21,9 +21,9 @@ describe CalsBaseController do
   end
 
   it 'redirects when token invalid' do
-    allow(Cwds::Authentication).to receive(:authentication_url).with(AUTHENTICATION_API_BASE_URL, 'http://test.host/custom').and_return(false)
+    allow(Cwds::Authentication).to receive(:authentication_url).with(AUTHENTICATION_API_BASE_URL, 'http://test.host/custom').and_return('www.google.com')
     process :custom, method: :get
-    expect(response).to render_template('errors/invalid_login_page')
+    expect(response).to redirect_to 'www.google.com'
   end
 
 end
