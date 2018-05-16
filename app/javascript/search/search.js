@@ -23,7 +23,7 @@ class Search extends React.Component {
     const params = {
       'county.id': checkForValue(this.props.inputData.countyValue),
       'type.id': checkForValue(this.props.inputData.facilityTypeValue),
-      id: checkForValue(this.props.inputData.facilityIdValue),
+      'license_number': checkForValue(this.props.inputData.facilityIdValue),
       name: checkForValue(this.props.inputData.facilityNameValue),
       'addresses.address.street_address': checkForValue(this.props.inputData.facilityAddressValue)
     }
