@@ -91,12 +91,6 @@ describe('Verify Search component', function () {
     expect(handleToggleSpy).toHaveBeenCalled()
   })
 
-  it('verify dropDown value change number of facilities', () => {
-    let dropdownForfacilitiesCount = searchComp.find('#dropdownFacilities_top_pagination')
-    dropdownForfacilitiesCount.simulate('change', {target: {options: {'5': {id: '5', value: '5'}, selectedIndex: 5}}})
-    expect(searchApiCallSpy).toHaveBeenCalledWith({'county.id': '19', 'type.id': undefined, 'license_number': undefined, 'name': undefined, 'addresses.address.street_address': undefined}, {fromValue: 0, sizeValue: 5, sort: 'name.for_sort', order: 'asc'})
-  })
-
   it('verify county dropdown value change ', () => {
     let countyDropDownChange = searchComp.find('#county_select').hostNodes()
     countyDropDownChange.simulate('change', {target: {options: {'19': {id: '19', value: 'Los Angeles'}, selectedIndex: 19}}})
@@ -115,7 +109,7 @@ describe('Verify Search component', function () {
   })
 
   it('verify if the dropdown component is rendered or not', () => {
-    let dropDownComponent = searchComp.find('#dropdownFacilities_bottom_pagination')
+    let dropDownComponent = searchComp.find('#dropdownFacilities_top_pagination').at(1)
     expect(dropDownComponent.length).toBe(1)
     searchComp.setProps({isScrollBarVisible: false})
     searchComp.update()

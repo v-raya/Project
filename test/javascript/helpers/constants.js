@@ -571,6 +571,25 @@ const countyTypes = Object.freeze({
       'id': 5
     }]})
 
+const facilityTypes = Object.freeze({
+  'items': [
+    {'value': 'Adoption Agency', 'id': 1},
+    {'value': 'Community Treatment Facility', 'id': 11},
+    {'value': 'County Shelter/Receiving Home(Non EA/AFDC)', 'id': 16},
+    {'value': 'Court Specified Home', 'id': 17},
+    {'Value': 'Crisis Nursery', 'id': 7}
+  ]
+})
+
+const user = Object.freeze({
+  county_code: '56',
+  county_name: 'Ventura',
+  privileges: ['abc'],
+  roles: ['CWS-admin', 'Supervisor'],
+  staffId: '0X5',
+  user: 'RACFID'
+})
+
 export {siblingGroups, ageGroups, marriageTerminationReasons, relationshipToApplicantTypes,
   nameTypes, suffixTypes, prefixTypes, salaryTypes, relationshipTypes, applicantrelationTypes,
-  educationLevels, ethnicityTypes, genderTypes, schoolGrades, stateTypes, languageTypes, residenceTypes, countyTypes, selectedYes, phoneTypes, licenseTypes }
+  educationLevels, ethnicityTypes, genderTypes, schoolGrades, stateTypes, languageTypes, residenceTypes, countyTypes, facilityTypes, user, selectedYes, phoneTypes, licenseTypes }
