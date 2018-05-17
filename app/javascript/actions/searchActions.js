@@ -1,3 +1,5 @@
+import {checkIfScrollBarVisible} from 'search/common/commonUtils'
+
 export const SEARCH_DICTIONARIES_FETCH = 'SEARCH_DICTIONARIES/FETCH'
 export const SEARCH_DICTIONARIES_FETCH_COMPLETE = 'SEARCH_DICTIONARIES/FETCH_COMPLETE'
 export const SEARCH_RESULTS_FETCH = 'SEARCH_RESULTS/FETCH'
@@ -10,6 +12,7 @@ export const HANDLE_RESET_FORM = 'HANDLE_RESET_FORM'
 export const HANDLE_DROPDOWN_CHANGE = 'HANDLE_DROPDOWN_CHANGE'
 export const HANDLE_PAGENUMBER_CHANGE = 'HANDLE_PAGENUMBER_CHANGE'
 export const HANDLE_DROPDOWN_AND_PAGENUMBER_CHANGE = 'HANDLE_DROPDOWN_AND_PAGENUMBER_CHANGE'
+export const HANDLE_VISIBLE_SCROLLBAR_CHANGE = 'HANDLE_VISIBLE_SCROLLBAR_CHANGE'
 
 export const searchApiCall = (searchParams, urlParams) => ({
   type: SEARCH_RESULTS_FETCH,
@@ -46,6 +49,11 @@ export const handleResetForm = () => ({
 
 export const handleToggle = () => ({
   type: HANDLE_TOGGLE
+})
+
+export const handleScrollBarChange = () => ({
+  type: HANDLE_VISIBLE_SCROLLBAR_CHANGE,
+  payload: {isScrollBarVisible: checkIfScrollBarVisible(document.documentElement)}
 })
 
 export const fetchDictionarySuccess = (dictionaries) => ({

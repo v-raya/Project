@@ -13,7 +13,7 @@ const SearchGrid = ({
   <div className='grid_view col-xs-12 col-sm-12 col-md-12 col-lg-12'>
     {(
       searchResults.map((result, index) => {
-        return (<div key={index} className='grid_view_inner col-xs-12 col-sm-12 col-md-12 col-lg-12' >
+        return (<div key={index} className='grid_view_inner col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <div className='col-xs-12 col-sm-1 col-md-1 col-lg-1'>
             <Link to={urlPrefixHelper('/facilities/' + result.id)}><div className='home-icon' /></Link>
           </div>

@@ -10,6 +10,7 @@ const HANDLE_RESET_FORM = 'HANDLE_RESET_FORM'
 const HANDLE_DROPDOWN_CHANGE = 'HANDLE_DROPDOWN_CHANGE'
 const HANDLE_PAGENUMBER_CHANGE = 'HANDLE_PAGENUMBER_CHANGE'
 const HANDLE_DROPDOWN_AND_PAGENUMBER_CHANGE = 'HANDLE_DROPDOWN_AND_PAGENUMBER_CHANGE'
+const HANDLE_VISIBLE_SCROLLBAR_CHANGE = 'HANDLE_VISIBLE_SCROLLBAR_CHANGE'
 const initialState = {
   inputData: {},
   searchResults: undefined,
@@ -21,7 +22,8 @@ const initialState = {
   countyTypes: [],
   facilityTypes: [],
   userCounty: '',
-  errorMessage: undefined
+  errorMessage: undefined,
+  isScrollBarVisible: false
 }
 
 export const searchReducer = (state = initialState, action) => {
@@ -48,6 +50,8 @@ export const searchReducer = (state = initialState, action) => {
       return {...state, pageNumber: action.payload.pageNumber}
     case HANDLE_DROPDOWN_AND_PAGENUMBER_CHANGE:
       return {...state, sizeValue: action.payload.sizeValue, pageNumber: action.payload.pageNumber}
+    case HANDLE_VISIBLE_SCROLLBAR_CHANGE:
+      return {...state, isScrollBarVisible: action.payload.isScrollBarVisible}
     default:
       return state
   }

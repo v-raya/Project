@@ -8,7 +8,7 @@ import SearchDetails from './searchDetails'
 import {fetchRequest} from '../helpers/http'
 import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 import {checkforNull, checkForValue} from 'search/common/commonUtils'
-import {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall} from 'actions/searchActions'
+import {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall, handleScrollBarChange} from 'actions/searchActions'
 import {connect} from 'react-redux'
 import {PageHeader} from 'react-wood-duck'
 import BreadCrumb from 'components/common/breadCrumb'
@@ -18,6 +18,10 @@ import Pagination from './pagination'
 class Search extends React.Component {
   componentDidMount () {
     this.props.searchDictionariesCall()
+  }
+
+  componentDidUpdate () {
+    this.props.handleScrollBarChange()
   }
 
   searchApiCallParams (fromValue, sizeValue) {
@@ -78,7 +82,7 @@ class Search extends React.Component {
           {!this.props.isToggled && <SearchList searchResults={this.props.searchResults} />}
           {(!searchResponseHasValues && !initialLoad) && <SearchNotFound errors={this.props.errors.issue_details} errorMessage={this.props.errorMessage} />}
         </div>
-        {searchResponseHasValues &&
+        {searchResponseHasValues && this.props.isScrollBarVisible &&
         <div className='search_details col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <Pagination
             paginationClassName='bottom_pagination'
@@ -128,9 +132,10 @@ function mapStateToProps (state) {
     sizeValue: state.searchReducer.sizeValue,
     pageNumber: state.searchReducer.pageNumber,
     errors: state.searchReducer.errors,
-    errorMessage: state.searchReducer.errorMessage
+    errorMessage: state.searchReducer.errorMessage,
+    isScrollBarVisible: state.searchReducer.isScrollBarVisible
   }
 }
 
 export {Search}
-export default connect(mapStateToProps, {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall})(Search)
+export default connect(mapStateToProps, {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall, handleScrollBarChange})(Search)
