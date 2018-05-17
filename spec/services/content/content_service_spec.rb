@@ -32,7 +32,7 @@ module Content
         end
 
         it 'doesn\'t filter facility button when profile has \'CWS Case Management System\' or \'Resource Management\' privilege' do
-          profile = FactoryGirl.build(:user, roles: [], privileges: ['CWS Case Management System'])
+          profile = FactoryGirl.build(:user, roles: [], privileges: ['Facility-search-rollout'])
           actual_result = test_subject.filter_content(profile)
           filtered_result_size = actual_result[:services].select { |e| e['id'] == 'facility_search' }.size
           expect(filtered_result_size).to eq 1

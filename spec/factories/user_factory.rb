@@ -8,6 +8,6 @@ FactoryGirl.define do
     sequence(:roles) { ['Supervisor'] }
     sequence(:county_code) { '20' }
     sequence(:county_name) { 'Los Angeles' }
-    sequence(:privileges)  { ['CWS Case Management System'] }
+    sequence(:privileges)  { ['Facility-search-rollout'] }
   end
 end
