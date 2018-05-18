@@ -91,8 +91,26 @@ describe('Verify Search component', function () {
     expect(handleToggleSpy).toHaveBeenCalled()
   })
 
+  it('verify dropDown value change number of facilities', () => {
+    let dropdownForfacilitiesCount = searchComp.find('#dropdownFacilities_top_pagination').at(1)
+    dropdownForfacilitiesCount.simulate('change', {target: {options: {'5': {id: '5', value: '5'}, selectedIndex: 5}}})
+
+    const expectedQuery = {
+      'county.id': {query_type: 'term', value: '19'},
+      'type.id': {query_type: 'term', value: undefined},
+      'license_number': {query_type: 'match_phrase', value: undefined},
+      'name': {query_type: 'match', value: undefined},
+      'addresses.address.street_address': {query_type: 'match', value: undefined}
+    }
+
+    expect(searchApiCallSpy).toHaveBeenCalledWith(
+      expectedQuery,
+      {fromValue: 0, sizeValue: 5, sort: 'name.for_sort', order: 'asc'}
+    )
+  })
+
   it('verify county dropdown value change ', () => {
-    let countyDropDownChange = searchComp.find('#county_select').hostNodes()
+    const countyDropDownChange = searchComp.find('#county_select').hostNodes()
     countyDropDownChange.simulate('change', {target: {options: {'19': {id: '19', value: 'Los Angeles'}, selectedIndex: 19}}})
     expect(handleInputChangeSpy).toHaveBeenCalledWith('countyValue', 'Los Angeles')
   })
@@ -103,9 +121,21 @@ describe('Verify Search component', function () {
   })
 
   it('verify clicking search button calls handleOnSubmit method', () => {
-    let searchFacility = searchComp.find('#search')
+    const searchFacility = searchComp.find('#search')
     searchFacility.simulate('submit')
-    expect(searchApiCallSpy).toHaveBeenCalledWith({'county.id': '19', 'type.id': undefined, 'license_number': undefined, 'name': undefined, 'addresses.address.street_address': undefined}, {fromValue: 0, sizeValue: 5, sort: 'name.for_sort', order: 'asc'})
+
+    const expectedQuery = {
+      'county.id': {query_type: 'term', value: '19'},
+      'type.id': {query_type: 'term', value: undefined},
+      'license_number': {query_type: 'match_phrase', value: undefined},
+      'name': {query_type: 'match', value: undefined},
+      'addresses.address.street_address': {query_type: 'match', value: undefined}
+    }
+
+    expect(searchApiCallSpy).toHaveBeenCalledWith(
+      expectedQuery,
+      {fromValue: 0, sizeValue: 5, sort: 'name.for_sort', order: 'asc'}
+    )
   })
 
   it('verify if the dropdown component is rendered or not', () => {

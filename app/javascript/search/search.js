@@ -25,12 +25,28 @@ class Search extends React.Component {
 
   searchApiCallParams (fromValue, sizeValue) {
     const params = {
-      'county.id': checkForValue(this.props.inputData.countyValue),
-      'type.id': checkForValue(this.props.inputData.facilityTypeValue),
-      'license_number': checkForValue(this.props.inputData.facilityIdValue),
-      name: checkForValue(this.props.inputData.facilityNameValue),
-      'addresses.address.street_address': checkForValue(this.props.inputData.facilityAddressValue)
+      'county.id': {
+        query_type: 'term',
+        value: checkForValue(this.props.inputData.countyValue)
+      },
+      'type.id': {
+        query_type: 'term',
+        value: checkForValue(this.props.inputData.facilityTypeValue)
+      },
+      license_number: {
+        query_type: 'match_phrase',
+        value: checkForValue(this.props.inputData.facilityIdValue)
+      },
+      name: {
+        query_type: 'match',
+        value: checkForValue(this.props.inputData.facilityNameValue)
+      },
+      'addresses.address.street_address': {
+        query_type: 'match',
+        value: checkForValue(this.props.inputData.facilityAddressValue)
+      }
     }
+
     const urlParams = {
       fromValue: fromValue,
       sizeValue: sizeValue,
