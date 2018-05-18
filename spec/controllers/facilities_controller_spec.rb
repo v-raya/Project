@@ -6,7 +6,7 @@ describe FacilitiesController do
     allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
     allow_any_instance_of(CalsBaseController).to receive(:get_session_token).and_return(ENV['TOKEN'])
   end
-  
+
   describe 'GET show' do
     it 'renders the show template without requiring to check priviliges' do
       allow(controller).to receive(:check_for_priviliges).and_return(['Something Privilige'])
@@ -24,7 +24,9 @@ describe FacilitiesController do
     it 'renders search' do
       request.headers['Content-Type'] = 'application/json'
       request.headers['Accept'] = 'application/json'
-      post :search, {:params => {:name => ['home'], :sort=>[''], :order=>['']} }
+
+      post :search, body: {name: {query_type: 'match', value: ['xy']} }.to_json
+
       expect(response.status).to eq(200)
       expect(response.body.include?('TWEEDLE'))
     end

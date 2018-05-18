@@ -26,7 +26,7 @@ class FacilitiesController < CalsBaseController
     page_params['order_params'] = params[:order]
     post_data = request.body.read
 
-    query_hash = QueryPreprocessor.params_to_query_hash(JSON.parse(post_data))
+    query_hash = QueryPreprocessor.params_to_query_with_types(JSON.parse(post_data).deep_symbolize_keys)
     logger.info "query_hash: #{query_hash}"
     es_query_json = Elastic::QueryBuilder.facility_search_v1(query_hash, page_params).to_json
     logger.info "es query: #{es_query_json}"

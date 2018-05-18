@@ -3,40 +3,80 @@ require 'rails_helper'
 
 describe QueryPreprocessor do
 
-  describe '#search_query' do
-    context 'with more than 1 non empty arrays as values' do
-      it 'builds query with single element arrays as values' do
-        expected_output = [{:county=>'01', :type=>'02', :fac_name=>'home'}]
-        params = {'county': ['01'], 'type': ['02'], 'fac_nbr': [''], 'fac_name': ['home'], 'fac_addr': ['']}
-        output = QueryPreprocessor.params_to_query_hash(params)
+  describe 'params_to_query_with_types' do
+    it 'converts input params to hash with all combinations' do
+      input = {
+        'county.id': { query_type:'term', value: '4' },
+        'type.id': { query_type:'term', value: [90,99] },
+        id: { query_type:'match_phrase', value: '234' },
+        name: { query_type:'match', value: ''}
+      }
 
-        expect(output).to eq(expected_output)
-      end
+      expected_output = [
+        {
+          'county.id': { query_type:'term', value: '4' },
+          'type.id': { query_type:'term', value: 90 },
+          id: { query_type:'match_phrase', value: '234' }
+        },
+        {
+          'county.id': { query_type:'term', value: '4' },
+          'type.id': { query_type:'term', value: 99 },
+          id: { query_type:'match_phrase', value: '234' }
+        }
+      ]
 
-      it 'builds query with multiple element arrays as values' do
-        expected_output =[{:county=>'01', :type=>'2', :fac_nbr=>'80'},
-                          {:county=>'01', :type=>'2', :fac_nbr=>'90'},
-                          {:county=>'01', :type=>'4', :fac_nbr=>'80'},
-                          {:county=>'01', :type=>'4', :fac_nbr=>'90'},
-                          {:county=>'02', :type=>'2', :fac_nbr=>'80'},
-                          {:county=>'02', :type=>'2', :fac_nbr=>'90'},
-                          {:county=>'02', :type=>'4', :fac_nbr=>'80'},
-                          {:county=>'02', :type=>'4', :fac_nbr=>'90'}]
-        params = {'county': ['01', '02'], 'type': ['2', '4'], 'fac_nbr': ['80', '90']}
-        output = QueryPreprocessor.params_to_query_hash(params)
-
-        expect(output).to eq(expected_output)
-      end
-    end
-
-    context 'with only one multi element array as value' do
-      it 'builds query with one multiple element array as value' do
-        expected_output = [{:county=>'01'}, {:county=>'02'}, {:county=>'03'}]
-        params = {'county': ['01', '02', '03']}
-        output = QueryPreprocessor.params_to_query_hash(params)
-
-        expect(output).to eq(expected_output)
-      end
+      output = QueryPreprocessor.params_to_query_with_types(input)
+      expect(output).to eq(expected_output)
     end
   end
+
+  describe 'params_remove_blank_values' do
+    it 'converts values to array and removes blank values' do
+      input = {
+        'county.id': { query_type:'term', value: '4' },
+        'type.id': { query_type:'term', value: [90,99] },
+        id: { query_type:'match_phrase', value: '234' },
+        name: { query_type:'match', value: ''}
+      }
+
+      expected_output = {
+        'county.id': { query_type:'term', value: ['4'] },
+        'type.id': { query_type:'term', value: [90,99] },
+        id: { query_type:'match_phrase', value: ['234'] }
+      }
+
+      output = QueryPreprocessor.params_remove_blank_values(input)
+      expect(output).to eq(expected_output)
+    end
+
+  end
+
+  describe 'values_array_to_query_with_type' do
+    it 'generates query with all combinations' do
+      input_params = {
+        'county.id': { query_type:'term', value: ['4'] },
+        'type.id': { query_type:'term', value: [90,99] },
+        id: { query_type:'match_phrase', value: ['234'] }
+      }
+      input_values = [ ['4'], [90,99], ['234'] ]
+      input_query_types = ['term', 'term', 'match_phrase']
+
+      expected_output = [
+        {
+          'county.id': { query_type:'term', value: '4' },
+          'type.id': { query_type:'term', value: 90 },
+          id: { query_type:'match_phrase', value: '234' }
+        },
+        {
+          'county.id': { query_type:'term', value: '4' },
+          'type.id': { query_type:'term', value: 99 },
+          id: { query_type:'match_phrase', value: '234' }
+        }
+      ]
+
+      output = QueryPreprocessor.values_array_to_query_with_type(input_params, input_values, input_query_types)
+      expect(output).to eq(expected_output)
+    end
+  end
+
 end
