@@ -19,7 +19,8 @@ describe('Rfa01BEditView test', () => {
       applicant_first_name: '',
       applicant_last_name: '',
       applicant_middle_name: '',
-      metadata: {submit_enabled: true}
+      metadata: {submit_enabled: true},
+      resource_family_name: 'Peterson'
     }
     props = {
       user: {county_code: 1},
