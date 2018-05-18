@@ -17,7 +17,7 @@ const NameCommonFields = ({
         gridClassName='col-md-4'
         id={idPrefix + 'first_name'}
         value={firstName}
-        maxLength='21'
+        maxLength='20'
         label={index === undefined ? 'Legal First Name (required)' : 'First Name (required)'}
         placeholder='Enter First Name'
         type='text'
@@ -26,7 +26,7 @@ const NameCommonFields = ({
         gridClassName='col-md-4'
         id={idPrefix + 'middle_name'}
         value={middleName}
-        maxLength='21'
+        maxLength='20'
         label={index === undefined ? 'Legal Middle Name' : 'Middle Name'}
         placeholder='Enter Middle Name'
         type='text'
@@ -35,7 +35,7 @@ const NameCommonFields = ({
         gridClassName='col-md-4'
         id={idPrefix + 'last_name'}
         value={lastName}
-        maxLength='26'
+        maxLength='25'
         label={index === undefined ? 'Legal Last Name (required)' : 'Last Name (required)'}
         placeholder='Enter Last Name'
         type='text'

@@ -59,4 +59,16 @@ describe('Verify Complete Name Field Component', () => {
     suffixDropDown.simulate('change', {target: {options: {'2': {value: '2', text: 'Legal'}, selectedIndex: 2}}})
     expect(onChangeSpy).toHaveBeenCalledWith('name_type', {id: '2', value: 'Legal'}, 0)
   })
+  it('Make sure inputted text is equal to the restricted max length', () => {
+    const result = component.find('#first_name').hostNodes()
+    expect(result.props().maxLength).toEqual('20')
+  })
+  it('Make sure inputted text is equal to the restricted max length', () => {
+    const result = component.find('#middle_name').hostNodes()
+    expect(result.props().maxLength).toEqual('20')
+  })
+  it('Make sure inputted text is equal to the restricted max length', () => {
+    const result = component.find('#last_name').hostNodes()
+    expect(result.props().maxLength).toEqual('25')
+  })
 })
