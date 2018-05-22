@@ -72,4 +72,16 @@ describe('Verify other adultsFields', function () {
     lastNameField.simulate('change', {target: {value: 'test'}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'test', 'last_name')
   })
+  it('Make sure inputted text is equal to the restricted max length', () => {
+    const result = otherAdultsCardComp.find('#first_name').hostNodes()
+    expect(result.props().maxLength).toEqual('20')
+  })
+  it('Make sure inputted text is equal to the restricted max length', () => {
+    const result = otherAdultsCardComp.find('#middle_name').hostNodes()
+    expect(result.props().maxLength).toEqual('20')
+  })
+  it('Make sure inputted text is equal to the restricted max length', () => {
+    const result = otherAdultsCardComp.find('#last_name').hostNodes()
+    expect(result.props().maxLength).toEqual('25')
+  })
 })

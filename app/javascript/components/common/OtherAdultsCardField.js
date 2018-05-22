@@ -111,6 +111,7 @@ export class OtherAdultsCardField extends React.Component {
             id={this.otherAdultFirstNameID}
             value={adult.first_name}
             label={'First Name' + isRequiredLabel}
+            maxLength='20'
             placeholder='Enter First Name'
             type='text'
             onChange={(event, id) => this.props.onFieldChange(index, event.target.value, ('first_name'))} />
@@ -118,6 +119,7 @@ export class OtherAdultsCardField extends React.Component {
             id={this.otherAdultMiddleNameID}
             value={adult.middle_name}
             label='Middle Name'
+            maxLength='20'
             placeholder='Enter Middle Name'
             type='text'
             onChange={(event, id) => this.props.onFieldChange(index, event.target.value, ('middle_name'))} />
@@ -125,6 +127,7 @@ export class OtherAdultsCardField extends React.Component {
             id={this.otherAdultLastNameID}
             value={adult.last_name}
             label={'Last Name' + isRequiredLabel}
+            maxLength='25'
             placeholder='Enter Last Name'
             type='text'
             onChange={(event, id) => this.props.onFieldChange(index, event.target.value, ('last_name'))} />
