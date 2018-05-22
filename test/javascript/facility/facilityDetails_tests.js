@@ -8,22 +8,14 @@ describe('Verify Facility Details', function () {
       'href': 'facilities/300665437',
       'id': '300665437',
       'licensee_name': 'Lederhouse Transitions Inc.',
-      'assigned_worker': {
-        'value': 'Chewalah Inc.'
-      },
-      'district_office': {
-        'number': '19',
-        'name': 'PACIFIC INLAND CR'
-      },
+      'assigned_worker': 'Chewalah Inc.',
+      'district_office': 'PACIFIC INLAND CR',
       'license_number': '300665437',
-      'status': {
-        'id': '5',
-        'value': 'LICENSED'
-      },
+      'status': 'LICENSED',
       'capacity': 10,
-      'capacity_last_changed': '2012-10-01 00:00:00',
-      'license_effective_date': '2012-10-01 00:00:00',
-      'original_application_recieved_date': '2012-07-18 00:00:00'
+      'capacity_last_changed': '10/01/2012',
+      'license_effective_date': '10/01/2012',
+      'original_application_recieved_date': '07/18/2012'
     }
   }
   let detailsCompShallow = shallow(<FacilityDetails {...props} />)
@@ -62,20 +54,14 @@ describe('Verify Facility Details with Null Value', function () {
       'href': 'facilities/300665437',
       'id': '300665437',
       'licensee_name': null,
-      'assigned_worker': {},
-      'district_office': {
-        'number': '19',
-        'name': null
-      },
+      'assigned_worker': 'N/A',
+      'district_office': 'N/A',
       'license_number': '300665437',
-      'status': {
-        'id': '5',
-        'value': 'PROBATIONARY LICENSE'
-      },
+      'status': 'PROBATIONARY LICENSE',
       'capacity': 10,
-      'capacity_last_changed': null,
-      'license_effective_date': null,
-      'original_application_recieved_date': null
+      'capacity_last_changed': 'N/A',
+      'license_effective_date': 'N/A',
+      'original_application_recieved_date': 'N/A'
     }
   }
   let detailsCompShallow = shallow(<FacilityDetails {...props} />)

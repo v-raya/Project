@@ -1,17 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {SmallInnerBlockDetails} from './smallInnerBlockDetails.js'
+import {SmallInnerBlockDetails} from './smallInnerBlockDetails'
+import {FacilityTypeDetails} from './facilityTypeDetails'
 import {checkForNA, checkforDateOrNa, checkNameorNA, handleLicenseEffectiveDate} from 'search/common/commonUtils'
+import {facilityDetailsDefaults} from 'constants/defaultFields'
 
 const FacilityDetails = ({facilityData}) => (
   <div className='facility-details grid_view col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-    <div>
-      <div>
-        <h3>
-                      FACILITY TYPE : {' ' + checkForNA(facilityData.type)}
-        </h3>
-      </div>
-    </div>
+    <FacilityTypeDetails
+      value={facilityData.type}
+    />
     <div className='headliner col-xs-12 col-sm-12 col-md-12 col-lg-12' />
     <div className='facility_blocks col-xs-12 col-sm-12 col-md-12 col-lg-12'>
       <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
@@ -21,10 +19,10 @@ const FacilityDetails = ({facilityData}) => (
             value={facilityData.licensee_name} />
           <SmallInnerBlockDetails
             title='APPROVAL / LICENSING WORKER'
-            value={checkForNA(facilityData.assigned_worker)} />
+            value={facilityData.assigned_worker} />
           <SmallInnerBlockDetails
             title='ASSIGNED OVERSIGHT AGENCY'
-            value={checkNameorNA(facilityData.district_office)} />
+            value={facilityData.district_office} />
         </div>
       </div>
       <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
@@ -34,20 +32,20 @@ const FacilityDetails = ({facilityData}) => (
             value={facilityData.license_number} />
           <SmallInnerBlockDetails
             title='LICENSE STATUS'
-            value={checkForNA(facilityData.status)} />
+            value={facilityData.status} />
           <SmallInnerBlockDetails
             title='CAPACITY / CAPACITY LAST CHANGED'
-            value={facilityData.capacity + ' / ' + checkforDateOrNa(facilityData.capacity_last_changed)} />
+            value={facilityData.capacity + ' / ' + facilityData.capacity_last_changed} />
         </div>
       </div>
       <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
         <div className='inner_block'>
           <SmallInnerBlockDetails
             title='LICENSE EFFECTIVE DATE'
-            value={handleLicenseEffectiveDate(facilityData)} />
+            value={facilityData.license_effective_date} />
           <SmallInnerBlockDetails
             title='APPLICATION RECEIVED DATE'
-            value={checkforDateOrNa(facilityData.original_application_recieved_date)} />
+            value={facilityData.original_application_recieved_date} />
         </div>
       </div>
     </div>
@@ -60,7 +58,7 @@ FacilityDetails.propTypes = {
 }
 
 FacilityDetails.defaultProps = {
-  facilityData: {}
+  facilityData: facilityDetailsDefaults
 }
 
 export default FacilityDetails

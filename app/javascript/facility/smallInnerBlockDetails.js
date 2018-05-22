@@ -14,4 +14,8 @@ const SmallInnerBlockDetails = ({
   )
 }
 
+SmallInnerBlockDetails.defaultProps = {
+  value: ''
+}
+
 export {SmallInnerBlockDetails}

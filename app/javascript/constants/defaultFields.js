@@ -23,9 +23,36 @@ export const phoneDefaults = Object.freeze({
   number: ''
 })
 
+const facilityDataAddressDefaults = Object.freeze({
+  physicalStreetAddress: '',
+  physicalAddressCityZipState: '',
+  mailingStreetAddress: '',
+  mailingAddressCityZipState: ''
+})
+
+const facilityDataPhoneDefaults = Object.freeze({
+  primaryPhoneNumber: '',
+  alternativePhoneNumber: ''
+})
+
+export const facilityDetailsDefaults = Object.freeze({
+  type: '',
+  capacity: '',
+  assigned_worker: '',
+  district_office: '',
+  capacity_last_changed: '',
+  license_number: '',
+  status: '',
+  license_effective_date: '',
+  original_application_recieved_date: ''
+})
+
 export const facilityDataDefaults = Object.freeze({
-  addresses: [addressDefaults],
-  phones: [phoneDefaults]
+  addresses: facilityDataAddressDefaults,
+  phones: facilityDataPhoneDefaults,
+  county: '',
+  last_visit_date: '',
+  last_visit_reason: ''
 })
 
 export const relationshipToApplicantDefaults = Object.freeze({

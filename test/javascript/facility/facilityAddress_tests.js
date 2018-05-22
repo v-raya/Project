@@ -5,47 +5,19 @@ import {shallow, mount} from 'enzyme'
 describe('Verify Facility Address', function () {
   const props = {
     facilityData: {
-      'last_visit_date': '2017-04-14 00:00:00',
-      'last_visit_reason': {
-        'id': '10',
-        'value': 'CASELOAD MANAGEMENT'
+      'last_visit_date': '04/14/2017',
+      'last_visit_reason': 'CASELOAD MANAGEMENT',
+      'county': 'ORANGE',
+      'phones': {
+        primaryPhoneNumber: '(949) 448-0118',
+        alternativePhoneNumber: '(945) 432-1234'
       },
-      'county': {
-        'id': '30',
-        'value': 'ORANGE'
-      },
-      'phones': [
-        {
-          'relation': 'primary',
-          'type': 'Cell',
-          'number': '9494480118'
-        },
-        {
-          'relation': 'alternate',
-          'type': 'Cell',
-          'number': '9454321234'
-        }
-      ],
-      'addresses': [
-        {
-          'type': 'Residential',
-          'address': {
-            'street_address': '36 Sequoia Dr',
-            'city': 'Aliso Viejo',
-            'state': 'CA',
-            'zip_code': '92656'
-          }
-        },
-        {
-          'type': 'Mailing',
-          'address': {
-            'street_address': '36 Sequoia Dr',
-            'city': 'Aliso Viejo',
-            'state': 'CA',
-            'zip_code': '92656'
-          }
-        }
-      ]
+      'addresses': {
+        'physicalStreetAddress': '36 Sequoia Dr,',
+        'physicalAddressCityZipState': 'Aliso Viejo, CA 92656',
+        'mailingStreetAddress': '36 Sequoia Dr,',
+        'mailingAddressCityZipState': 'Aliso Viejo, CA 92656'
+      }
     }
   }
   let AddressCompShallow = shallow(<FacilityAddress {...props} />)
@@ -93,11 +65,19 @@ describe('Verify Facility Address', function () {
 describe('Verify Facility Address with null object returned', function () {
   const props = {
     facilityData: {
-      'last_visit_date': null,
-      'last_visit_reason': null,
-      'county': null,
-      'phones': null,
-      'addresses': null
+      'last_visit_date': 'N/A',
+      'last_visit_reason': 'N/A',
+      'county': 'N/A',
+      'phones': {
+        primaryPhoneNumber: 'N/A',
+        alternativePhoneNumber: 'N/A'
+      },
+      'addresses': {
+        'physicalStreetAddress': 'N/A',
+        'physicalAddressCityZipState': 'N/A',
+        'mailingStreetAddress': 'N/A',
+        'mailingAddressCityZipState': 'N/A'
+      }
     }
   }
   let AddressCompShallow = shallow(<FacilityAddress {...props} />)
@@ -135,89 +115,6 @@ describe('Verify Facility Address with null object returned', function () {
   it('verify Facility Last Visit Date Value to be N/A', function () {
     let lastVisitDateValue = AddressCompShallow.props().children.props.children[2].props.children.props.children[0].props.value
     expect(lastVisitDateValue).toBe('N/A')
-  })
-  it('verify Facility Last Visit Reason to be N/A', function () {
-    let lastVisitReasonValue = AddressCompShallow.props().children.props.children[2].props.children.props.children[1].props.value
-    expect(lastVisitReasonValue).toBe('N/A')
-  })
-})
-
-describe('Verify Facility Address with null values', function () {
-  const props = {
-    facilityData: {
-      'last_visit_date': '2018-18',
-      'last_visit_reason': {
-        'id': '10',
-        'value': null
-      },
-      'county': {
-        'id': '30',
-        'value': null
-      },
-      'phones': [
-        {
-          'relation': 'primary',
-          'type': 'Cell',
-          'number': null
-        }
-      ],
-      'addresses': [
-        {
-          'type': 'Residential',
-          'address': {
-            'street_address': null,
-            'city': null,
-            'state': null,
-            'zip_code': null
-          }
-        },
-        {
-          'type': 'Mailing',
-          'address': {
-            'street_address': null,
-            'city': null,
-            'state': null,
-            'zip_code': null
-          }
-        }
-      ]
-    }
-  }
-  let AddressCompShallow = shallow(<FacilityAddress {...props} />)
-  it('verify Facility Address fields', function () {
-    expect(AddressCompShallow.find('.facility-address').length).toEqual(1)
-  })
-  it('verify Facility Address street and apartment to be N/A', function () {
-    let physicalAddressStreetApt = AddressCompShallow.props().children.props.children[0].props.children.props.children[0].props.streetApt
-    expect(physicalAddressStreetApt).toBe('N/A')
-  })
-  it('verify Facility Address city and state to be empty', function () {
-    let physicalAddressCityCounty = AddressCompShallow.props().children.props.children[0].props.children.props.children[0].props.cityCountry
-    expect(physicalAddressCityCounty).toBe('')
-  })
-  it('verify Facility Address county name to be N/A', function () {
-    let countyNameValue = AddressCompShallow.props().children.props.children[0].props.children.props.children[1].props.value
-    expect(countyNameValue).toBe('N/A')
-  })
-  it('verify Facility Address primary phone number to be N/A', function () {
-    let primaryPhoneValue = AddressCompShallow.props().children.props.children[0].props.children.props.children[2].props.value
-    expect(primaryPhoneValue).toBe('N/A')
-  })
-  it('verify Postal Address street and apartment to be N/A', function () {
-    let postalAddressStreetApt = AddressCompShallow.props().children.props.children[1].props.children.props.children[0].props.streetApt
-    expect(postalAddressStreetApt).toBe('N/A')
-  })
-  it('verify Postal Address city and country to be empty', function () {
-    let postalAddressCityCounty = AddressCompShallow.props().children.props.children[1].props.children.props.children[0].props.cityCountry
-    expect(postalAddressCityCounty).toBe('')
-  })
-  it('verify alternative phone number value to be N/A', function () {
-    let alternativeNumberValue = AddressCompShallow.props().children.props.children[1].props.children.props.children[1].props.value
-    expect(alternativeNumberValue).toBe('N/A')
-  })
-  it('verify Facility Last Visit Date Value with invalid data', function () {
-    let lastVisitDateValue = AddressCompShallow.props().children.props.children[2].props.children.props.children[0].props.value
-    expect(lastVisitDateValue).toBe('2018-18')
   })
   it('verify Facility Last Visit Reason to be N/A', function () {
     let lastVisitReasonValue = AddressCompShallow.props().children.props.children[2].props.children.props.children[1].props.value

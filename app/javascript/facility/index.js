@@ -4,17 +4,11 @@ import FacilityDetails from './facilityDetails.jsx'
 import FacilityAddress from './facilityAddress.jsx'
 import FacilityChildren from './facilityChildren.jsx'
 import FacilityComplaints from './facilityComplaints.jsx'
-import {PageHeader} from 'react-wood-duck'
-import Button from 'components/common/button'
-import {fetchRequest} from '../helpers/http'
-import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
-import BreadCrumb from 'components/common/breadCrumb'
+import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
+import {PageHeaderWrapper} from './pageHeaderWrapper'
 import {connect} from 'react-redux'
 import {facilityApiCall} from 'actions/facilityActions'
-import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
-import {checkUndefinedOrErrorMessage, checkUndefinedOrErrorUrl, checkNameorNA} from 'search/common/commonUtils'
-import {Link} from 'react-router-dom'
-// import './stylesheets/facility.scss'
+import {getFacilityData, getFacilityChildren, getFacilityComplaints} from 'selectors/facilityDataSelectors'
 
 class Facility extends React.Component {
   componentDidMount () {
@@ -25,32 +19,18 @@ class Facility extends React.Component {
   }
 
   render () {
-    const facilityData = this.props.facility
-    const facilityChildren = this.props.children
-    const facilityComplaints = this.props.complaints
-    const errors = this.props.errors
+    const {facility, facilityChildren, facilityComplaints, errors} = this.props
     return (
       <div className='main_page'>
-        <PageHeader
-          pageTitle={checkNameorNA(facilityData)}
-          button={null}
-        />
-        <BreadCrumb
-          navigationElements={[<Link to={urlPrefixHelper('/search')}>Facility Search</Link>]}
-        />
-        <div className='header_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <div className='header-logo' />
-        </div>
+        <PageHeaderWrapper facility={facility}/>
         <div className='body_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <ApiErrorMessages errors={checkUndefinedOrErrorMessage(errors)} url={checkUndefinedOrErrorUrl(errors)} />
-
-          {facilityData && (
+          <ApiErrorMessages errors={errors.message.issue_details} url={errors.url} />
+          {facility && (
             <div>
-              <FacilityDetails facilityData={facilityData} />
-              <FacilityAddress facilityData={facilityData} />
+              <FacilityDetails facilityData={facility} />
+              <FacilityAddress facilityData={facility} />
             </div>
           )}
-
           {facilityChildren && <FacilityChildren children={facilityChildren.children} />}
           {facilityComplaints && <FacilityComplaints complaints={facilityComplaints.complaints} />}
         </div>
@@ -61,20 +41,35 @@ class Facility extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    facility: state.facilityReducer.facility,
-    children: state.facilityReducer.children,
-    complaints: state.facilityReducer.complaints,
+    facility: getFacilityData(state),
+    facilityChildren: getFacilityChildren(state),
+    facilityComplaints: getFacilityComplaints(state),
     errors: state.facilityReducer.errors
   }
 }
 
 Facility.propTypes = {
   facility: PropTypes.object,
-  children: PropTypes.object,
-  complaints: PropTypes.object,
+  facilityChildren: PropTypes.object,
+  FacilityComplaints: PropTypes.object,
   match: PropTypes.object,
   errors: PropTypes.object,
   facilityApiCall: PropTypes.func
+}
+
+Facility.defaultProps = {
+  facilityChildren: {
+    children: undefined
+  },
+  facilityComplaints: {
+    complaints: undefined
+  },
+  errors: {
+    message: {
+      issue_details: undefined
+    },
+    url: undefined
+  }
 }
 
 export {Facility}

@@ -62,14 +62,6 @@ export const checkForNA = (object) => {
   return (object && object.value) ? object.value : 'N/A'
 }
 
-export const checkUndefinedOrErrorMessage = (object) => {
-  return object !== null ? object.message.issue_details : undefined
-}
-
-export const checkUndefinedOrErrorUrl = (object) => {
-  return object !== null ? object.url : undefined
-}
-
 export const checkNameorNA = (object) => {
   return (object && object.name) ? object.name : 'N/A'
 }
