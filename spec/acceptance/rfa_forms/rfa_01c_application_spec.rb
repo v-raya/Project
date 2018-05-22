@@ -48,30 +48,6 @@ RSpec.feature 'RFA01C', js: true do
     expect(find_field('identified_children[0].date_of_birth').value).to eq '01/01/2000'
   end
 
-  scenario 'show error validation message on RFA01C', set_auth_header: true do
-    visit root_path
-    click_button 'Create RFA Application'
-    expect(page).to have_content 'Rfa-01A Section Summary'
-    page.find('#Rfa01AOverview').find('a.btn.btn-default').click
-    expect(page).to have_content 'Applicant 1 - Information'
-    first_name = 'Kim'
-    last_name = 'RReily'
-    fill_in('applicants[0].first_name', with: first_name, match: :prefer_exact)
-    fill_in('applicants[0].middle_name', with: 'k', match: :prefer_exact)
-    fill_in('applicants[0].last_name', with: last_name, match: :prefer_exact)
-    find('#child_identifiedYes').click
-    find('#child_in_homeYes').click
-    click_button('Save Progress')
-    visit current_url
-    click_link('child identified')
-
-    fill_in('identified_children[0].first_name', with: first_name, match: :prefer_exact)
-    fill_in('identified_children[0].middle_name', with: 'k', match: :prefer_exact)
-    fill_in('identified_children[0].last_name', with: '12345678901234567890123456', match: :prefer_exact)
-    click_button('Save Progress')
-    expect(page).to have_content 'Message: 12345678901234567890123456 exceeds maximum length of 25'
-  end
-
   scenario 'validate submit disabled when Rfa-01A is not valid', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application'
