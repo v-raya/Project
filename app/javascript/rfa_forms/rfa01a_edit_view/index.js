@@ -148,9 +148,8 @@ export default class Rfa01EditView extends React.Component {
   render () {
     const stateApplicationJS = this.state.application.toJS()
     const applicantsAsJs = (this.state.application.get('applicants') && this.state.application.get('applicants').toJS()) || []
-    const hideRelationshipBetweenApplicants = applicantsAsJs.length === 2 ? 'cards-section' + 'col-xs-12 col-sm-12 col-md-12 col-lg-12' : 'hidden'
-    return (
 
+    return (
       <PageTemplate
         headerLabel='Resource Family Application - Confidential (RFA 01A)'
         saveProgressId='saveProgress'
@@ -222,23 +221,27 @@ export default class Rfa01EditView extends React.Component {
               validator={this.validator} />
           </div>
         </ScrollSpy>
-        <ScrollSpy onEnter={() => this.handleNavLinkClick('#relationship-between-applicants-card')}>
-          <div className={hideRelationshipBetweenApplicants}
-            id='relationship-between-applicants-card'>
-            <h3>III.<span>Relationship Between Applicant</span></h3>
-            <RelationshipBetweenApplicantsCardMain
-              focusComponentName={this.state.focusComponentName}
-              relationshipBetweenApplicants={(this.state.application.get('applicants_relationship') && this.state.application.get('applicants_relationship').toJS()) || undefined}
-              getFocusClassName={this.getFocusClassName}
-              setParentState={this.setApplicationState}
-              setFocusState={this.setFocusState}
-              stateTypes={this.props.stateTypes}
-              relationshipTypes={this.props.relationshipTypes}
-              validator={this.validator}
-              errors={this.state.errors.relationshipBetweenApplicants}
-              applicants={applicantsAsJs} />
-          </div>
-        </ScrollSpy>
+
+        { applicantsAsJs.length >= 2
+          ? <ScrollSpy onEnter={() => this.handleNavLinkClick('#relationship-between-applicants-card')}>
+            <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'
+              id='relationship-between-applicants-card'>
+              <h3>III.<span>Relationship Between Applicant</span></h3>
+              <RelationshipBetweenApplicantsCardMain
+                focusComponentName={this.state.focusComponentName}
+                relationshipBetweenApplicants={(this.state.application.get('applicants_relationship') && this.state.application.get('applicants_relationship').toJS()) || undefined}
+                getFocusClassName={this.getFocusClassName}
+                setParentState={this.setApplicationState}
+                setFocusState={this.setFocusState}
+                stateTypes={this.props.stateTypes}
+                relationshipTypes={this.props.relationshipTypes}
+                validator={this.validator}
+                errors={this.state.errors.relationshipBetweenApplicants}
+                applicants={applicantsAsJs} />
+            </div>
+          </ScrollSpy>
+          : null
+        }
         <ScrollSpy onEnter={() => this.handleNavLinkClick('#minor-child-card')}>
           <div className='cards-section col-xs-12 col-sm-12 col-md-12 col-lg-12'
             id='minor-child-card'>

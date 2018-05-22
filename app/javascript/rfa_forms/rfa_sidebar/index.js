@@ -11,7 +11,7 @@ import C01SideBar from './c01SideBar'
 
 export default class RfaSideBar extends React.Component {
   render () {
-    const showRelationshipBetweenApplicants = (this.props.applicants !== null && this.props.applicants.length === 2)
+    const showRelationshipBetweenApplicants = (this.props.applicants !== null && this.props.applicants.length >= 2)
     let rfa01cForms = Array.isArray(this.props.rfa01cForms) ? this.props.rfa01cForms[0] : this.props.rfa01cForms
 
     return (

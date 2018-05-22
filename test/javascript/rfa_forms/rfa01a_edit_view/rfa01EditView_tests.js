@@ -139,4 +139,18 @@ describe('Rfa01EditView test', () => {
     // _Rfa01BEditView.instance().setApplicationState('application_county', { value: 'Alameda', id: 1 })
     expect(setApplicationStateSpy).toHaveBeenCalledWith('application_county', { id: '2', value: 'Alpine' })
   })
+
+  it('tests sidebar links to be 8 before applicant is added', () => {
+    let sideBar = _Rfa01EditView.find('.side-barrfa01a').hostNodes()
+    let navLinks = sideBar.find('.navlink')
+    expect(navLinks.length).toEqual(8)
+    _Rfa01EditView.find('#addAnotherApplicant').simulate('click')
+    sideBar = _Rfa01EditView.find('.side-barrfa01a').hostNodes()
+    navLinks = sideBar.find('.navlink')
+    expect(navLinks.length).toEqual(9)
+    _Rfa01EditView.find('#addAnotherApplicant').simulate('click')
+    sideBar = _Rfa01EditView.find('.side-barrfa01a').hostNodes()
+    navLinks = sideBar.find('.navlink')
+    expect(navLinks.length).toEqual(9)
+  })
 })
