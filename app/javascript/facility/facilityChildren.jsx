@@ -18,7 +18,7 @@ const FacilityChildren = ({
             <th> AGE </th>
             <th> DATE OF BIRTH </th>
             <th> DATE OF PLACEMENT </th>
-            <th> ASSIGNED WORKER </th>
+            <th> CHILD'S SOCIAL WORKER </th>
             <th> COUNTY OF ORIGIN </th>
           </tr>
         </thead>

@@ -21,7 +21,7 @@ export const SearchList = ({
           <th>County</th>
           <th>Phone Number</th>
           <th>Facility Email</th>
-          <th>Assigned Worker</th>
+          <th>Approval / Licensing Worker</th>
           <th>Alternative Number</th>
         </tr>
       </thead>}

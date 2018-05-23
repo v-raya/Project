@@ -57,7 +57,7 @@ const SearchGrid = ({
             </GridOuterLayout>
             <GridOuterLayout>
               <GridInnerLayout
-                title='Assigned Worker'
+                title='Approval / Licensing Worker'
                 value={checkForNA(result.assigned_worker)} />
               <GridInnerLayout
                 title='Alternative Number'
