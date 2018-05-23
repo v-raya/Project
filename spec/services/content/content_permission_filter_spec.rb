@@ -27,16 +27,16 @@ module Content
         expect(test_subject.permitted?(service, profile)).to eq true
       end
 
-      it 'returns true when permitted privilege exists in profile' do
+      it 'returns false when permitted privilege exists in profile' do
         service = { 'roles' => [], 'privileges' => ['1', '100'] }
         profile = FactoryGirl.build(:user, roles: ['A', 'B'], privileges: ['1', '2'])
-        expect(test_subject.permitted?(service, profile)).to eq true
+        expect(test_subject.permitted?(service, profile)).to eq false
       end
 
-      it 'returns true when permitted privilege exists in profile and no permitted roles' do
+      it 'returns false when permitted privilege exists in profile and no permitted roles' do
         service = { 'roles' => ['Z'], 'privileges' => ['1', '100'] }
         profile = FactoryGirl.build(:user, roles: ['A', 'B'], privileges: ['1', '2'])
-        expect(test_subject.permitted?(service, profile)).to eq true
+        expect(test_subject.permitted?(service, profile)).to eq false
       end
 
       it 'returns false when no permitted roles in profile' do
