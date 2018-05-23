@@ -83,6 +83,22 @@ describe('Verify Search component', function () {
     expect(searchComp.length).toBe(1)
   })
 
+  it('verify page number input element is rendered', () => {
+    expect(searchComp.find('.page_number').length).toBe(2)
+  })
+
+  it('verify handlePageNumberChange with no input  ', () => {
+    let pageNumber = searchComp.find('.page_number').at(0)
+    pageNumber.simulate('keydown', {which: 13, target: {value: ''}})
+    expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(1)
+  })
+
+  it('verify handlePageNumberChange with page number higher than available ', () => {
+    let pageNumber = searchComp.find('.page_number').at(0)
+    pageNumber.simulate('keydown', {which: 13, target: {value: '122'}})
+    expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(3)
+  })
+
   it('verify onclick for toggle button', () => {
     let searchFacility = searchComp.find('#search')
     searchFacility.simulate('submit')

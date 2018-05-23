@@ -11,7 +11,7 @@ import {handleInputChange, searchApiCall, handleToggle, handleResetForm, handleP
 import {connect} from 'react-redux'
 import {PageHeader} from 'react-wood-duck'
 import BreadCrumb from 'components/common/breadCrumb'
-import {getFromValue} from 'helpers/commonHelper.jsx'
+import {getFromValue, floatToNextInt} from 'helpers/commonHelper.jsx'
 import Pagination from './pagination'
 
 class Search extends React.Component {
@@ -56,6 +56,18 @@ class Search extends React.Component {
     this.props.searchApiCall(params, urlParams)
   }
 
+  onPageNumberInputChange (value) {
+    const resultedPageNumbers = floatToNextInt(this.props.totalNoOfResults, this.props.sizeValue)
+    if (value === '') {
+      value = 1
+      this.props.handlePageNumberChange(value)
+    } else if (value > resultedPageNumbers) {
+      value = resultedPageNumbers
+      this.props.handlePageNumberChange(value)
+    }
+    this.searchApiCallParams(getFromValue(this.props.sizeValue, value), this.props.sizeValue)
+  }
+
   render () {
     const initialLoad = this.props.searchResults === undefined
     const searchResponseHasValues = this.props.searchResults && this.props.searchResults.length > 0
@@ -67,7 +79,8 @@ class Search extends React.Component {
       handleDropDownAndPageNumberChange={this.props.handleDropDownAndPageNumberChange}
       handlePageNumberChange={this.props.handlePageNumberChange}
       pageNumber={this.props.pageNumber}
-      searchApiCall={this.searchApiCallParams.bind(this)} />
+      searchApiCall={this.searchApiCallParams.bind(this)}
+      onPageNumberInputChange={this.onPageNumberInputChange.bind(this)} />
 
     return (
       <div className='search_page'>
@@ -89,8 +102,7 @@ class Search extends React.Component {
             facilityNameValue={this.props.inputData.facilityNameValue}
             facilityAddressValue={this.props.inputData.facilityAddressValue}
             handleInputChange={this.props.handleInputChange}
-            sizeValue={this.props.sizeValue}
-          />
+            sizeValue={this.props.sizeValue} />
         </div>
         {searchResponseHasValues &&
           (
@@ -131,7 +143,10 @@ Search.propTypes = {
   totalNoOfResults: PropTypes.number,
   isToggled: PropTypes.bool,
   sizeValue: PropTypes.number,
-  pageNumber: PropTypes.number,
+  pageNumber: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   errors: PropTypes.object,
   handleInputChange: PropTypes.func,
   searchApiCall: PropTypes.func,

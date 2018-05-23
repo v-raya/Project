@@ -10,7 +10,8 @@ const Pagination = ({
   pageNumber,
   totalNoOfFacilities,
   handleDropDownAndPageNumberChange,
-  handlePageNumberChange
+  handlePageNumberChange,
+  onPageNumberInputChange
 }) => (
   <span className={paginationClassName}>
     <select
@@ -29,7 +30,13 @@ const Pagination = ({
       className='previous btn btn-default'>
       <p>&#8249;</p>
     </button>
-    <span className='page_number'>{pageNumber}</span>
+    <input id='pageNumber'
+      placeholder='Page #'
+      className='page_number'
+      value={pageNumber}
+      type='number'
+      onChange={(event) => { handlePageNumberChange(event.target.value) }}
+      onKeyDown={(event) => { if (event.which === 9 || event.which === 13) { onPageNumberInputChange(event.target.value); window.scrollTo(0, 0) } } }/>
     <span>of</span>
     <span className='noOfPages'>{floatToNextInt(totalNoOfFacilities, sizeValue)}</span>
     <button
@@ -46,8 +53,12 @@ Pagination.propTypes = {
   paginationClassName: PropTypes.string,
   totalNoOfFacilities: PropTypes.number,
   sizeValue: PropTypes.number,
-  pageNumber: PropTypes.number,
+  pageNumber: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   searchApiCall: PropTypes.func,
+  onPageNumberInputChange: PropTypes.func,
   handleDropDownAndPageNumberChange: PropTypes.func,
   handlePageNumberChange: PropTypes.func
 }

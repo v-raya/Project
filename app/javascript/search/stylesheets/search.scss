@@ -141,8 +141,17 @@ input[type=number]::-webkit-outer-spin-button {
   border: solid;
 }
 
+.page_number {
+  width: 60px;
+  display: inline;
+}
+
 .toggle_result {
   padding-top: 10px;
+  display: inline;
+  width: 75px;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 
 .search_dropdown {
