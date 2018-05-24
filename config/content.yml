@@ -3,7 +3,10 @@ services:
     id: facility_search
     enabled: true
     roles: []
-    privileges: ['CWS Case Management System', 'Resource Management', 'Facility-search-rollout']
+    privileges: 
+      - ['Resource Management', 'Facility-search-rollout']
+      - ['CWS Case Management System', 'Facility-search-rollout']
+      - ['CWS Case Management System', 'Resource Management', 'Facility-search-rollout']
     summary: >
       Search for Facility
     href: /search

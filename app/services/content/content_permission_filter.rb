@@ -9,7 +9,8 @@ module Content
       return true if roles.blank? && privileges.blank?
 
       permitted_by_roles = !(profile.roles & roles).empty?
-      permitted_by_privileges = !(profile.privileges & privileges == privileges ? profile.privileges & privileges : []).empty?
+
+      permitted_by_privileges = privileges.any? { |i| i.sort & profile.privileges.sort == i.sort }
 
       permitted_by_roles || permitted_by_privileges
     end
