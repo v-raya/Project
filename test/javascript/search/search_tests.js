@@ -100,7 +100,7 @@ describe('Verify Search component', function () {
       'type.id': {query_type: 'term', value: undefined},
       'license_number': {query_type: 'match_phrase', value: undefined},
       'name': {query_type: 'match', value: undefined},
-      'addresses.address.street_address': {query_type: 'match', value: undefined}
+      'addresses.address': {query_type: 'match', value: undefined}
     }
 
     expect(searchApiCallSpy).toHaveBeenCalledWith(
@@ -129,7 +129,7 @@ describe('Verify Search component', function () {
       'type.id': {query_type: 'term', value: undefined},
       'license_number': {query_type: 'match_phrase', value: undefined},
       'name': {query_type: 'match', value: undefined},
-      'addresses.address.street_address': {query_type: 'match', value: undefined}
+      'addresses.address': {query_type: 'match', value: undefined}
     }
 
     expect(searchApiCallSpy).toHaveBeenCalledWith(

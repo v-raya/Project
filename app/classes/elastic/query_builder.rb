@@ -76,10 +76,10 @@ class Elastic::QueryBuilder
   end
 
   def self.facility_search_v1(query_array, page_params)
-    address_params = query_array.map {|param| param['addresses.address.street_address']}.first
+    address_params = query_array.map {|param| param[:'addresses.address']}.first
 
     if address_params
-      query_array_without_address = [query_array.first.except('addresses.address.street_address')]
+      query_array_without_address = [query_array.first.except(:'addresses.address')]
       search_query = match_boolean(query_array_without_address).merge(paginate_query(page_params)).merge(sort_query(page_params))
       search_query[:query][:bool][:should].first[:bool][:must] << address_query(address_params[:value])
       return search_query
@@ -90,16 +90,10 @@ class Elastic::QueryBuilder
 
   def self.address_query(address_params)
     return {
-      nested: {
-        path: 'addresses',
-        score_mode: 'avg',
-        query: {
-          multi_match: {
-            query: address_params,
-            type: 'phrase',
-            fields: ['addresses.address.street_address', 'addresses.address.state', 'addresses.address.city', 'addresses.address.zip_code']
-          }
-        }
+      multi_match: {
+        query: address_params,
+        type: 'best_fields',
+        fields: %w[full_residential_address full_mailing_address]
       }
     }
   end

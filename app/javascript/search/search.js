@@ -41,7 +41,7 @@ class Search extends React.Component {
         query_type: 'match',
         value: checkForValue(this.props.inputData.facilityNameValue)
       },
-      'addresses.address.street_address': {
+      'addresses.address': {
         query_type: 'match',
         value: checkForValue(this.props.inputData.facilityAddressValue)
       }
