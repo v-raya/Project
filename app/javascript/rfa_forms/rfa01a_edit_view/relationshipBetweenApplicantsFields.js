@@ -67,7 +67,7 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
         <div className={hideOtherRelationship}>
           <TextAreaComponent gridClassName='col-md-12' id='other_relationship'
             value={relationship.other_relationship}
-            label='Please provide details of other_relationship (required)' placeholder=''
+            label='Please provide details of other relationship (required)' placeholder=''
             onChange={(event) => this.props.setParentState('other_relationship', event.target.value)} />
 
         </div>

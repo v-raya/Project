@@ -20,18 +20,18 @@ describe('Verify relation card', function () {
 
   const applicants = [{first_name: 'thing'}, {first_name: 'thing'}]
 
-  let setParentStateSpy, componentMount, setFocusStateSpy
+  let setParentStateSpy, setStateSpy, componentMount, setFocusStateSpy
 
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
-    let setStateSpy = jasmine.createSpy('setState')
+    setStateSpy = jasmine.createSpy('setState')
     let getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
     let validator = new Validator({})
 
     componentMount = mount(<RelationshipBetweenApplicantsCard relationshipTypes={applicantrelationTypes}
       relationshipBetweenApplicants={blankValues}
-      setParentState={setParentStateSpy}
+      setParentState={setStateSpy}
       getFocusClassName={getFocusClassNameSpy}
       applicants={applicants}
       stateTypes={stateTypes.items}
@@ -44,6 +44,11 @@ describe('Verify relation card', function () {
       let relationShipField = componentMount.find('#RelationshipBetweenApplicantsCardSection')
       relationShipField.simulate('click')
       expect(setFocusStateSpy).toHaveBeenCalledWith('RelationshipBetweenApplicantsCard')
+    })
+    it('verify relationship_type', () => {
+      let relationshipField = componentMount.find('#relationship_type').hostNodes()
+      relationshipField.simulate('change', {target: {options: {'1': {value: '1', text: 'Married'}, selectedIndex: 1}}})
+      expect(setStateSpy).toHaveBeenCalledWith('applicants_relationship', { relationship_type: { id: '1', value: 'Married' }, date_of_relationship: '', place_of_relationship_city: '', place_of_relationship_state: null, other_relationship: '' })
     })
   })
 })
