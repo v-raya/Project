@@ -21,7 +21,7 @@ export default class Rfa01ListView extends React.Component {
     data.then(function (result) {
       return result
     }).then(function (result) {
-      window.location.href = urlPrefixHelper('/rfa/a01/' + result.id + '/packet')
+      window.location.href = urlPrefixHelper('/rfa/a01/' + result.id + '/edit')
     })
   }
 

@@ -28,7 +28,7 @@ const ApplicationsListRow = ({
   return (
     <tr>
       <td>{facilityId}</td>
-      <td><a href={urlPrefixHelper('/rfa/a01/' + facilityId + '/packet')}>{familyName}</a></td>
+      <td><a href={urlPrefixHelper('/rfa/a01/' + facilityId + '/edit')}>{familyName}</a></td>
       <td>{getPhoneNumber(applicantsInfo.getIn([0, 'phones']))}</td>
       <td>{getAddress(applicationAddress, 'street_address')}</td>
       <td>{getAddress(applicationAddress, 'city')}</td>

@@ -22,7 +22,6 @@ Rails.application.routes.draw do
          post :submit, on: :member
         resources :applicant, only: [:index, :create, :edit]
         resource :residence, only: [:show, :create, :edit]
-        resources :packet
         resources :c01
       end
       resources :b01

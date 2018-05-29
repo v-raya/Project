@@ -9,8 +9,6 @@ RSpec.feature 'RFA', js: true do
   scenario '01A - validate scrollspy', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application'
-    expect(page).to have_content 'Rfa-01A Section Summary'
-    page.find('#Rfa01AOverview').find('a.btn.btn-default').click
     page.execute_script "document.getElementById('applicants-card').scrollIntoView()"
     page.execute_script 'window.scrollBy(0,20)'
     expect(find('a.link.active').text).to eq '1. Applicant Information'
