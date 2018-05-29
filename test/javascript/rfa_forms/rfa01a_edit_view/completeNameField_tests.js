@@ -1,6 +1,7 @@
 import React from 'react'
 import {shallow, mount} from 'enzyme'
 import {prefixTypes, suffixTypes, nameTypes} from './../../helpers/constants'
+import Validator from 'helpers/validator'
 import CompleteNameField from 'rfa_forms/rfa01a_edit_view/completeNameField.jsx'
 
 describe('Verify Complete Name Field Component', () => {
@@ -34,6 +35,7 @@ describe('Verify Complete Name Field Component', () => {
       prefixTypes={prefixTypes.items}
       nameTypes={nameTypes.items}
       suffixTypes={suffixTypes.items}
+      validator={new Validator({})}
       onChange={onChangeSpy} />)
   })
   it('onChange event on Prefix dropdown', () => {
@@ -58,6 +60,12 @@ describe('Verify Complete Name Field Component', () => {
     let suffixDropDown = addedNameComponent.find('#name_type').hostNodes()
     suffixDropDown.simulate('change', {target: {options: {'2': {value: '2', text: 'Legal'}, selectedIndex: 2}}})
     expect(onChangeSpy).toHaveBeenCalledWith('name_type', {id: '2', value: 'Legal'}, 0)
+  })
+  it('verifies component did unmount', () => {
+    let instance = component.instance()
+    expect(instance.props.validator.validations.size).toEqual(2)
+    component.unmount()
+    expect(instance.props.validator.validations.size).toEqual(0)
   })
   it('Make sure inputted text is equal to the restricted max length', () => {
     const result = component.find('#first_name').hostNodes()

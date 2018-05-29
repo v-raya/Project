@@ -165,4 +165,11 @@ describe('Preferred logic', () => {
     const tmpData = phoneNumbers.setIn([0, 'phone_type'], newType)
     expect(setParentStateSpy).toHaveBeenCalledWith('phones', tmpData)
   })
+
+  it('verifies component did unmount', () => {
+    let instance = component.instance()
+    expect(instance.props.validator.validations.size).toEqual(1)
+    component.unmount()
+    expect(instance.props.validator.validations.size).toEqual(0)
+  })
 })

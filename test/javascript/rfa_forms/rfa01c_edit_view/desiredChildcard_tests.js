@@ -176,5 +176,12 @@ describe('Verify RFA 01C child desired', function () {
       addressObj['street_address'] = '2870 Gateway Oaks Dr'
       expect(setParentStateSpy).toHaveBeenCalledWith(1, 'school_address', addressObj)
     })
+
+    it('verifies component did unmount', () => {
+      let instance = childCardComp.instance()
+      expect(instance.props.validator.validations.size).toEqual(8)
+      childCardComp.unmount()
+      expect(instance.props.validator.validations.size).toEqual(4)
+    })
   })
 })

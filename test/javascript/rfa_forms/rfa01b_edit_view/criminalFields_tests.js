@@ -54,5 +54,11 @@ describe('Verify criminal fields card', function () {
       applicantDetails.simulate('change', {target: {value: 'new details'}})
       expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'offense_details', 'new details')
     })
+    it('verifies component did unmount', () => {
+      let instance = componentMount.instance()
+      expect(instance.props.validator.validations.size).toEqual(4)
+      componentMount.unmount()
+      expect(instance.props.validator.validations.size).toEqual(0)
+    })
   })
 })
