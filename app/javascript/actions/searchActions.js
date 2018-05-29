@@ -40,7 +40,7 @@ export const handleDropDownAndPageNumberChange = (pageNumber, value) => ({
 
 export const handlePageNumberChange = (pageNumber) => ({
   type: HANDLE_PAGENUMBER_CHANGE,
-  payload: {pageNumber}
+  payload: {pageNumber: pageNumber === '' ? pageNumber : parseInt(pageNumber)}
 })
 
 export const handleResetForm = () => ({
