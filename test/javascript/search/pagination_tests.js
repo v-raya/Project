@@ -45,6 +45,14 @@ describe('Facility Search pagination', function () {
     expect(handlePageNumberChangeSpy).toHaveBeenCalledWith('2')
   })
 
+  it('verify pagination input element is restricted to max length of 5 digits ', () => {
+    let pageNumberInput = paginationCompRendered.find('.page_number').at(0)
+    pageNumberInput.simulate('change', {target: {value: '12345'}})
+    expect(handlePageNumberChangeSpy).toHaveBeenCalledWith('12345')
+    pageNumberInput.simulate('change', {target: {value: '123456'}})
+    expect(handlePageNumberChangeSpy).toHaveBeenCalledWith('12345')
+  })
+
   it('verify onPageNumberInputChange on tab key down ', () => {
     let pageNumber = paginationCompRendered.find('.page_number').at(0)
     pageNumber.simulate('keydown', {which: 9, target: {value: '2'}})

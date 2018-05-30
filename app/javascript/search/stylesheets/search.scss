@@ -259,12 +259,17 @@ input[type=number]::-webkit-outer-spin-button {
 
 .line_on-icon {
   background: url(../images/line_on.png) no-repeat;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 28px;
 }
 
 .grid_on-icon {
   background: url(../images/grid_on.png) no-repeat;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  border: 0;
+  border-radius: 0;
+  height: 53px;
+  width: 29px;
 }
 
 .grid_off-icon {
@@ -272,7 +277,7 @@ input[type=number]::-webkit-outer-spin-button {
   border: 0;
   border-radius: 0;
   height: 53px;
-  width: 50px;
+  width: 29px;
 }
 
 .cross-icon {

@@ -84,7 +84,7 @@ describe('Verify Search component', function () {
   })
 
   it('verify page number input element is rendered', () => {
-    expect(searchComp.find('.page_number').length).toBe(2)
+    expect(searchComp.find('.page_number').hostNodes().length).toBe(2)
   })
 
   it('verify handlePageNumberChange with no input  ', () => {

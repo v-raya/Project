@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {resultsPerPage} from './common/commonUtils'
+import Cleave from 'cleave.js/react'
 import {dictionaryNilSelectValue, floatToNextInt, getFromValue} from 'helpers/commonHelper.jsx'
 
 const Pagination = ({
@@ -30,11 +31,13 @@ const Pagination = ({
       className='previous btn btn-default'>
       <p>&#8249;</p>
     </button>
-    <input id='pageNumber'
-      placeholder='Page #'
+    <Cleave
+      id='pageNumber'
       className='page_number'
+      type='text'
       value={pageNumber}
-      type='number'
+      options={{blocks: [5], numericOnly: true}}
+      placeholder='Page #'
       onChange={(event) => { handlePageNumberChange(event.target.value) }}
       onKeyDown={(event) => { if (event.which === 9 || event.which === 13) { onPageNumberInputChange(event.target.value); window.scrollTo(0, 0) } } }/>
     <span>of</span>
