@@ -6,7 +6,20 @@ import HeaderComponent from 'header/index'
 describe('Header Component', () => {
   let logoutCallbackSpy, header
   beforeEach(() => {
-    header = mount(<HeaderComponent logoutUrl="/logout" />)
+    const props = {
+      logoutUrl: '/logout',
+      user: {
+        'county_code': '19',
+        'county_name': 'Ventura',
+        'first_name': 'peter',
+        'last_name': 'parker',
+        'privileges': ['CWS Case Management', 'Resource Management', 'Sealed'],
+        'roles': ['CWS-admin', 'Supervisor'],
+        'staffId': '0X5',
+        'user': 'RACFID'
+      }
+    }
+    header = mount(<HeaderComponent {...props} />)
     spyOn(header.instance(), 'redirectUrl')
   })
 
@@ -24,5 +37,46 @@ describe('Header Component', () => {
     logOutLink.simulate('click')
     expect(header.instance().redirectUrl.calls.any()).toEqual(true)
     expect(header.instance().redirectUrl).toHaveBeenCalledWith('/logout')
+  })
+
+  it('Renders user full name', function () {
+    const userName = header.find('a[href="#/"]').at(0)
+    expect(userName.props().children).toBe('peter parker')
+  })
+
+  it('Renders "Not Available" when first and last name are not available', () => {
+    const props = {
+      user: {
+        'first_name': '',
+        'last_name': ''
+      }
+    }
+    header = mount(<HeaderComponent {...props} />)
+    const userName = header.find('a[href="#/"]').at(0)
+    expect(userName.props().children).toBe('Not Available')
+  })
+
+  it('Renders only first name and last name as unknown', () => {
+    const props = {
+      user: {
+        'first_name': 'Jhon',
+        'last_name': ''
+      }
+    }
+    header = mount(<HeaderComponent {...props} />)
+    const userName = header.find('a[href="#/"]').at(0)
+    expect(userName.props().children).toBe('Jhon (Unknown last name)')
+  })
+
+  it('Renders only last name and first name as unknown', () => {
+    const props = {
+      user: {
+        'first_name': '',
+        'last_name': 'Wick'
+      }
+    }
+    header = mount(<HeaderComponent {...props} />)
+    const userName = header.find('a[href="#/"]').at(0)
+    expect(userName.props().children).toBe('(Unknown first name) Wick')
   })
 })

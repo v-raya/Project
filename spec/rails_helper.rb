@@ -42,7 +42,7 @@ RSpec.configure do |config|
   end
 
   def stub_auth_tokens
-    allow_any_instance_of(WelcomeController).to receive(:user_from_session).and_return(FactoryGirl.build(:user))
+    allow_any_instance_of(CalsBaseController).to receive(:user_from_session).and_return(FactoryGirl.build(:user))
     allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
     allow_any_instance_of(CalsBaseController).to receive(:get_session_token).and_return(ENV['TOKEN'])
     allow_any_instance_of(CalsBaseController).to receive(:store_token_in_redis).and_return(ENV['TOKEN'])

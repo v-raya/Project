@@ -1,4 +1,4 @@
 <div id="edit_page">
-  <%= react_component('headerComponent', {logoutUrl: logout_path},{prerender: false}) %>
+  <%= react_component('headerComponent', {logoutUrl: logout_path, user: user_from_session},{prerender: false}) %>
   <%= javascript_pack_tag 'headerComponent' %>
 </div>

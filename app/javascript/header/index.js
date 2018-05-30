@@ -1,6 +1,7 @@
 import React from 'react'
 import {GlobalHeader} from 'react-wood-duck'
 import {deleteState} from 'store/browserStorage'
+import {userNameFormatter} from 'helpers/commonHelper'
 
 export default class HeaderComponent extends React.Component {
   constructor (props) {
@@ -18,12 +19,12 @@ export default class HeaderComponent extends React.Component {
   }
 
   render () {
+    const userFullName = userNameFormatter(this.props.user.first_name, this.props.user.last_name)
     return (
       <div>
         <GlobalHeader
           logoutUrl={this.props.logoutUrl}
-          profileName='Profile Name'
-          profileAvatar='PN'
+          profileName={userFullName}
           logoutCallback={this.logoutCallback} />
       </div>
     )

@@ -81,3 +81,14 @@ export const getCountyValue = (application, user) => {
 export const checkSubmitEnabledForForms = (form) => {
   return form.metadata && form.metadata.submit_enabled
 }
+
+export const userNameFormatter = (firstName, lastName) => {
+  if (firstName || lastName) {
+    const names = [firstName || '(Unknown first name)']
+    names.push(lastName || '(Unknown last name)')
+    const userFullName = names.join(' ')
+    return userFullName
+  } else {
+    return 'Not Available'
+  }
+}

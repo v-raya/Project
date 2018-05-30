@@ -4,6 +4,7 @@ class CalsBaseController < ApplicationController
   include AuthenticationProvider
   include RedisHelper
   before_action :authenticate_with_cwds # , unless: 'Rails.env.development?'
+  helper_method :user_from_session
 
   def logout
     delete_user_from_session
