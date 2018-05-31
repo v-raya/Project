@@ -71,8 +71,8 @@ export default class ReferencesCard extends React.Component {
             blurPlaceholder=''
             focusPlaceholder='(___)___-____'
             options={{
-              delimiters: ['(', ')', '-'],
-              blocks: [0, 3, 3, 4],
+              delimiters: ['(', ')', ' ', '-'],
+              blocks: [0, 3, 0, 3, 4],
               numericOnly: true}}
             type='text'
             errors={fieldErrorsAsImmutableSet(this.props.errors.phone_number)}
