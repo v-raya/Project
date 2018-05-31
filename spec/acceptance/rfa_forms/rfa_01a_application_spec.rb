@@ -154,7 +154,6 @@ RSpec.feature 'RFA01A', js: true do
   scenario 'show error validation message on full Applicant Card', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application'
-    expect(page).to have_content 'Applicant 1 - Information'
     fill_in('applicants[0].first_name', with: 'Geovanni', match: :prefer_exact)
     fill_in('applicants[0].last_name', with: 'Moen', match: :prefer_exact)
     click_button('Add Another Applicant +')
@@ -303,7 +302,6 @@ RSpec.feature 'RFA01A', js: true do
   scenario 'validate Residence card', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application'
-    expect(page).to have_content 'Applicant 1 - Information'
     fill_in('applicants[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
     fill_in('applicants[0].middle_name', with: 'k', match: :prefer_exact)
     fill_in('applicants[0].last_name', with: Faker::Name.last_name, match: :prefer_exact)
@@ -352,9 +350,7 @@ RSpec.feature 'RFA01A', js: true do
   end
 
   scenario 'validate Minor Children card', set_auth_header: true do
-    visit root_path
     click_button 'Create RFA Application'
-    expect(page).to have_content 'Applicant 1 - Information'
     applicant_1_first_name = Faker::Name.first_name
     applicant_1_last_name  = Faker::Name.last_name
     applicant_1_full_name  = applicant_1_first_name + ' ' + 'k' + ' ' + applicant_1_last_name
@@ -375,7 +371,6 @@ RSpec.feature 'RFA01A', js: true do
   scenario 'validate Other Adults card', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application'
-    expect(page).to have_content 'Applicant 1 - Information'
     applicant_1_first_name = Faker::Name.first_name
     applicant_1_last_name  = Faker::Name.last_name
     applicant_1_full_name  = applicant_1_first_name + ' ' + 'k' + ' ' + applicant_1_last_name
@@ -383,7 +378,6 @@ RSpec.feature 'RFA01A', js: true do
     fill_in('applicants[0].middle_name', with: 'k', match: :prefer_exact)
     fill_in('applicants[0].last_name', with: applicant_1_last_name, match: :prefer_exact)
     expect(page).to have_content 'V.Other Adults Residing or Regularly Present in the Home'
-
     fill_in('relationship_to_applicants0adult0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
 
     fill_in('other_adults[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)

@@ -9,7 +9,6 @@ RSpec.feature 'RFA01C', js: true do
   scenario 'validate rfa01c', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application'
-    expect(page).to have_content 'Applicant 1 - Information'
     first_name = 'Kimberley'
     last_name = 'RReily'
     fill_in('applicants[0].first_name', with: first_name, match: :prefer_exact)
@@ -49,7 +48,6 @@ RSpec.feature 'RFA01C', js: true do
   scenario 'validate submit disabled when Rfa-01A is not valid', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application'
-    expect(page).to have_content 'Applicant 1 - Information'
     first_name = 'Dillonish'
     last_name = 'Wisozkish'
     fill_in('applicants[0].first_name', with: first_name, match: :prefer_exact)
@@ -66,7 +64,6 @@ RSpec.feature 'RFA01C', js: true do
   scenario 'validate submit enabled when Rfa-01A is valid', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application'
-    expect(page).to have_content 'Applicant 1 - Information'
     first_name = 'Paul'
     last_name = 'Smit'
     fill_in('applicants[0].first_name', with: first_name, match: :prefer_exact)

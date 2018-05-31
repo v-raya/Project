@@ -10,8 +10,7 @@ RSpec.feature 'GlobalHeader', js: true do
 
   scenario 'successful logout', set_auth_header: true do
     visit root_path
-    expect(page).to have_link('PN')
-    click_link 'PN'
+    page.find(:css, '.fa').click
     expect(page).to have_content('Logout')
     click_link 'Logout'
     expect(current_path).to eql(logout_path)
