@@ -5,11 +5,11 @@ import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 import {Link} from 'react-router-dom'
 
 const PageHeaderWrapper = ({
-  facility
+  facilityName
 }) => (
   <div>
     <PageHeader
-      pageTitle={facility.name}
+      pageTitle={facilityName}
       button={null}
     />
     <BreadCrumb
@@ -22,9 +22,7 @@ const PageHeaderWrapper = ({
 )
 
 PageHeaderWrapper.defaultProps = {
-  facility: {
-    name: 'N/A'
-  }
+  facilityName: 'N/A'
 }
 
 export {PageHeaderWrapper}

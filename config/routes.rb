@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :facilities do
-    collection { post :search }
-    collection { post :facility }
+  resources :facilities, only: [:show] do
+    get 'profile'
+    collection do
+      post :search
+    end
   end
 
   resources :search do
@@ -19,7 +21,7 @@ Rails.application.routes.draw do
   namespace :rfa do
     constraints lambda{ |request| !DISABLE_RFA_APPLICATION } do
       resources :a01 do
-         post :submit, on: :member
+        post :submit, on: :member
         resources :applicant, only: [:index, :create, :edit]
         resource :residence, only: [:show, :create, :edit]
         resources :c01

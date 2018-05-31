@@ -4,20 +4,20 @@ import {shallow, mount} from 'enzyme'
 
 describe('Verify Facility Address', function () {
   const props = {
-    facilityData: {
-      'last_visit_date': '04/14/2017',
-      'last_visit_reason': 'CASELOAD MANAGEMENT',
-      'county': 'ORANGE',
-      'phones': {
-        primaryPhoneNumber: '(949) 448-0118',
-        alternativePhoneNumber: '(945) 432-1234'
-      },
-      'addresses': {
-        'physicalStreetAddress': '36 Sequoia Dr,',
-        'physicalAddressCityZipState': 'Aliso Viejo, CA 92656',
-        'mailingStreetAddress': '36 Sequoia Dr,',
-        'mailingAddressCityZipState': 'Aliso Viejo, CA 92656'
-      }
+    facilityAddress: {
+      'physicalStreetAddress': '36 Sequoia Dr,',
+      'physicalAddressCityZipState': 'Aliso Viejo, CA 92656',
+      'mailingStreetAddress': '36 Sequoia Dr,',
+      'mailingAddressCityZipState': 'Aliso Viejo, CA 92656'
+    },
+    facilityPhones: {
+      primaryPhoneNumber: '(949) 448-0118',
+      alternativePhoneNumber: '(945) 432-1234'
+    },
+    otherFacilityData: {
+      'lastVisitDate': '04/14/2017',
+      'lastVisitReason': 'CASELOAD MANAGEMENT',
+      'county': 'ORANGE'
     }
   }
   let AddressCompShallow = shallow(<FacilityAddress {...props} />)
@@ -64,20 +64,20 @@ describe('Verify Facility Address', function () {
 
 describe('Verify Facility Address with null object returned', function () {
   const props = {
-    facilityData: {
-      'last_visit_date': 'N/A',
-      'last_visit_reason': 'N/A',
-      'county': 'N/A',
-      'phones': {
-        primaryPhoneNumber: 'N/A',
-        alternativePhoneNumber: 'N/A'
-      },
-      'addresses': {
-        'physicalStreetAddress': 'N/A',
-        'physicalAddressCityZipState': 'N/A',
-        'mailingStreetAddress': 'N/A',
-        'mailingAddressCityZipState': 'N/A'
-      }
+    facilityAddress: {
+      'physicalStreetAddress': 'N/A',
+      'physicalAddressCityZipState': 'N/A',
+      'mailingStreetAddress': 'N/A',
+      'mailingAddressCityZipState': 'N/A'
+    },
+    facilityPhones: {
+      primaryPhoneNumber: 'N/A',
+      alternativePhoneNumber: 'N/A'
+    },
+    otherFacilityData: {
+      'lastVisitDate': 'N/A',
+      'lastVisitReason': 'N/A',
+      'county': 'N/A'
     }
   }
   let AddressCompShallow = shallow(<FacilityAddress {...props} />)

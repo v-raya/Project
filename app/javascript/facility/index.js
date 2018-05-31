@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import FacilityDetails from './facilityDetails.jsx'
-import FacilityAddress from './facilityAddress.jsx'
-import FacilityChildren from './facilityChildren.jsx'
-import FacilityComplaints from './facilityComplaints.jsx'
-import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
-import {PageHeaderWrapper} from './pageHeaderWrapper'
+import FacilityDetailsContainer from 'containers/facilityDetailsContainer'
+import FacilityAddressContainer from 'containers/facilityAddressContainer'
+import PageHeaderWrapperContainer from 'containers/pageHeaderWrapperContainer'
+// import FacilityChildren from './facilityChildren.jsx'
+// import FacilityComplaints from './facilityComplaints.jsx'
 import {connect} from 'react-redux'
 import {facilityApiCall} from 'actions/facilityActions'
-import {getFacilityData, getFacilityChildren, getFacilityComplaints} from 'selectors/facilityDataSelectors'
+import {getFacilityData} from 'selectors/facilityDataSelectors'
 
 class Facility extends React.Component {
   componentDidMount () {
@@ -19,58 +18,33 @@ class Facility extends React.Component {
   }
 
   render () {
-    const {facility, facilityChildren, facilityComplaints, errors} = this.props
     return (
       <div className='main_page'>
-        <PageHeaderWrapper facility={facility}/>
+        <PageHeaderWrapperContainer />
         <div className='body_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <ApiErrorMessages errors={errors.message.issue_details} url={errors.url} />
-          {facility && (
-            <div>
-              <FacilityDetails facilityData={facility} />
-              <FacilityAddress facilityData={facility} />
+          {this.props.isFetching ? <div className="loading-icon"></div>
+            : <div>
+              <FacilityDetailsContainer />
+              <FacilityAddressContainer />
             </div>
-          )}
-          {facilityChildren && <FacilityChildren children={facilityChildren.children} />}
-          {facilityComplaints && <FacilityComplaints complaints={facilityComplaints.complaints} />}
+
+          }
+          {/* {facilityChildren && <FacilityChildren children={facilityChildren.children} />}
+          {facilityComplaints && <FacilityComplaints complaints={facilityComplaints.complaints} />} */}
         </div>
       </div>
     )
   }
 }
 
-function mapStateToProps (state) {
-  return {
-    facility: getFacilityData(state),
-    facilityChildren: getFacilityChildren(state),
-    facilityComplaints: getFacilityComplaints(state),
-    errors: state.facilityReducer.errors
-  }
-}
-
 Facility.propTypes = {
-  facility: PropTypes.object,
-  facilityChildren: PropTypes.object,
-  FacilityComplaints: PropTypes.object,
   match: PropTypes.object,
-  errors: PropTypes.object,
   facilityApiCall: PropTypes.func
 }
 
-Facility.defaultProps = {
-  facilityChildren: {
-    children: undefined
-  },
-  facilityComplaints: {
-    complaints: undefined
-  },
-  errors: {
-    message: {
-      issue_details: undefined
-    },
-    url: undefined
-  }
-}
+const mapStateToProps = (state) => ({
+  isFetching: state.facilityReducer.isFetching
+})
 
 export {Facility}
 export default connect(mapStateToProps, {facilityApiCall})(Facility)

@@ -1,7 +1,11 @@
 import {
   getFacilityData,
   getFacilityChildren,
-  getFacilityComplaints
+  getFacilityComplaints,
+  getFacilityAddresses,
+  getFacilityPhones,
+  getFacilityName,
+  getOtherFacilityData
 } from 'selectors/facilityDataSelectors'
 describe('facilityDataSelectors', () => {
   describe('getFacilityDataSelector', () => {
@@ -62,30 +66,145 @@ describe('facilityDataSelectors', () => {
         }
       }
       expect(getFacilityData(state)).toEqual({
-        addresses: {
-          physicalStreetAddress: '123 Main St.,',
-          physicalAddressCityZipState: ', CA ',
-          mailingStreetAddress: 'N/A',
-          mailingAddressCityZipState: ', CA '
-        },
         assigned_worker: 'N/A',
         capacity: 'N/A',
         capacity_last_changed: 'N/A',
-        county: 'RIVERSIDE',
         district_office: 'PACIFIC INLAND CR',
-        last_visit_date: 'N/A',
-        last_visit_reason: 'N/A',
         licensee_name: 'Ananya Nandi',
         license_number: '100000299',
         license_effective_date: 'N/A',
-        name: 'Little Dreams Home',
         original_application_recieved_date: 'N/A',
-        phones: {
-          primaryPhoneNumber: '(916) 299-0000',
-          alternativePhoneNumber: 'N/A'
-        },
         type: 'Foster Family Home',
         status: 'APPLICATION WITHDRWN'
+      })
+    })
+  })
+  describe('getFacilityAddressesSelector', () => {
+    it('should return undefined when passed in null', () => {
+      const state = {
+        facilityReducer: {
+          facility: {
+            addresses: null
+          }
+        }
+      }
+      expect(getFacilityAddresses(state)).toEqual({
+        physicalStreetAddress: 'N/A',
+        physicalAddressCityZipState: 'N/A',
+        mailingStreetAddress: 'N/A',
+        mailingAddressCityZipState: 'N/A'
+      })
+    })
+    it('should return facility Addresses', () => {
+      const state = {
+        facilityReducer: {
+          facility: {
+            addresses: [ {
+              'type': 'Residential',
+              'address': {
+                'street_address': '3186 Wild Horse Court',
+                'city': 'Thousand Oaks',
+                'state': 'CA',
+                'zip_code': '91360'
+              }
+            } ]
+          }
+        }
+      }
+      expect(getFacilityAddresses(state)).toEqual({
+        physicalStreetAddress: '3186 Wild Horse Court,',
+        physicalAddressCityZipState: 'Thousand Oaks, CA 91360',
+        mailingStreetAddress: 'N/A',
+        mailingAddressCityZipState: 'N/A'
+      })
+    })
+  })
+  describe('getFacilityPhonesSelector', () => {
+    it('should return undefined when passed in null', () => {
+      const state = {
+        facilityReducer: {
+          facility: {
+            phones: null
+          }
+        }
+      }
+      expect(getFacilityPhones(state)).toEqual({
+        primaryPhoneNumber: 'N/A',
+        alternativePhoneNumber: 'N/A'
+      })
+    })
+    it('should return facility phones', () => {
+      const state = {
+        facilityReducer: {
+          facility: {
+            phones: [ {
+              'relation': 'primary',
+              'number': '8054926944'
+            }, {
+              'relation': 'alternate',
+              'number': '8054926944'
+            } ]
+          }
+        }
+      }
+      expect(getFacilityPhones(state)).toEqual({
+        primaryPhoneNumber: '(805) 492-6944',
+        alternativePhoneNumber: '(805) 492-6944'
+      })
+    })
+  })
+  describe('getFacilityNameSelector', () => {
+    it('should return undefined when passed in null', () => {
+      const state = {
+        facilityReducer: {
+          facility: {
+            name: null
+          }
+        }
+      }
+      expect(getFacilityName(state)).toEqual('N/A')
+    })
+    it('should return facility name', () => {
+      const state = {
+        facilityReducer: {
+          facility: {
+            name: 'Claire Dale'
+          }
+        }
+      }
+      expect(getFacilityName(state)).toEqual('Claire Dale')
+    })
+  })
+  describe('getFacilityOtherDataSelector', () => {
+    it('should return undefined when passed in null', () => {
+      const state = {
+        facilityReducer: {
+          facility: {}
+        }
+      }
+      expect(getOtherFacilityData(state)).toEqual({
+        county: 'N/A',
+        lastVisitDate: 'N/A',
+        lastVisitReason: 'N/A'
+      })
+    })
+    it('should return other facility data', () => {
+      const state = {
+        facilityReducer: {
+          facility: {
+            county: {
+              id: '56',
+              value: 'Ventura'
+            },
+            last_visit_date: '12/22/2222',
+            last_visit_reason: 'Something'
+          }
+        }
+      }
+      expect(getOtherFacilityData(state)).toEqual({
+        county: 'Ventura',
+        lastVisitDate: '12/22/2222',
+        lastVisitReason: 'N/A'
       })
     })
   })

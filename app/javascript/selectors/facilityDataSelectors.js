@@ -19,33 +19,33 @@ const facilityChildrenSelector = (state) => state.facilityReducer.facilityChildr
 
 const facilityComplaintsSelector = (state) => state.facilityReducer.facilityComplaints
 
-const getFacilityAddresses = (addresses) => ({
+const getAddressesOfFacility = (addresses) => ({
   physicalStreetAddress: respectiveStreetAddressOrNA(addresses, physicalAddressType),
   physicalAddressCityZipState: cityStateZipOfRespectiveAddressOrNA(addresses, physicalAddressType),
   mailingStreetAddress: respectiveStreetAddressOrNA(addresses, mailingAddressType),
   mailingAddressCityZipState: cityStateZipOfRespectiveAddressOrNA(addresses, mailingAddressType)
 })
 
-const getFacilityPhones = (phones) => ({
+const getPhonesOfFacility = (phones) => ({
   primaryPhoneNumber: respectiveNumberOrNA(phones, primaryPhoneRelation),
   alternativePhoneNumber: respectiveNumberOrNA(phones, alternativePhoneRelation)
 })
 
+const getOtherDataOfFacility = (facilityState) => ({
+  county: checkForNA(facilityState.county),
+  lastVisitDate: checkforDateOrNa(facilityState.last_visit_date),
+  lastVisitReason: checkForNA(facilityState.last_visit_reason)
+})
+
 const getFacilityDetails = (facilityState) => ({
-  addresses: getFacilityAddresses(facilityState.addresses),
   assigned_worker: checkForNA(facilityState.assigned_worker),
   capacity: facilityState.capacity || 'N/A',
   capacity_last_changed: checkforDateOrNa(facilityState.capacity_last_changed),
-  county: checkForNA(facilityState.county),
   district_office: checkNameorNA(facilityState.district_office),
-  last_visit_date: checkforDateOrNa(facilityState.last_visit_date),
-  last_visit_reason: checkForNA(facilityState.last_visit_reason),
   licensee_name: facilityState.licensee_name,
   license_number: facilityState.license_number || 'N/A',
   license_effective_date: handleLicenseEffectiveDate(facilityState),
-  name: checkNameorNA(facilityState),
   original_application_recieved_date: checkforDateOrNa(facilityState.original_application_recieved_date),
-  phones: getFacilityPhones(facilityState.phones),
   type: checkForNA(facilityState.type),
   status: checkForNA(facilityState.status)
 })
@@ -77,6 +77,34 @@ const getFacilityComplaintsData = (facilityComplaintsState) => {
     status: complaint.status
   })
   )
+}
+
+export const getFacilityName = (state) => {
+  const facilityState = facilitySelector(state)
+  if (facilityState !== null) {
+    return facilityState.name || 'N/A'
+  }
+}
+
+export const getOtherFacilityData = (state) => {
+  const facilityState = facilitySelector(state)
+  if (facilityState !== null) {
+    return getOtherDataOfFacility(facilityState)
+  }
+}
+
+export const getFacilityAddresses = (state) => {
+  const facilityState = facilitySelector(state)
+  if (facilityState !== null) {
+    return getAddressesOfFacility(facilityState.addresses)
+  }
+}
+
+export const getFacilityPhones = (state) => {
+  const facilityState = facilitySelector(state)
+  if (facilityState !== null) {
+    return getPhonesOfFacility(facilityState.phones)
+  }
 }
 
 export const getFacilityData = (state) => {

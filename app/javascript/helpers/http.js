@@ -23,12 +23,13 @@ export const getMethod = (url, method, query) => {
 }
 export const fetchRequest = (urlFromComponent, method, params, headerParams) => {
   let url = urlPrefixHelper(urlFromComponent)
-  return fetch(url, {
+  let options = {
     method: method,
     headers: myHeaders,
-    credentials: 'same-origin',
-    body: JSON.stringify(params)
-  })
+    credentials: 'same-origin'
+  }
+  params && (options.body = JSON.stringify(params))
+  return fetch(url, options)
 }
 
 function handleErrors (response) {

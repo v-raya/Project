@@ -7,9 +7,9 @@ import {FACILITY_RESULTS_FETCH, fetchSuccess, fetchFailure} from 'actions/facili
 // worker saga: makes the api call when watcher saga sees the action
 export function * fetchFacilityById (action) {
   try {
-    const url = '/facilities/facility'
-    const response = yield call(fetchRequestWithErrors, url, 'POST', action.payload.facilityParams)
-    yield put(fetchSuccess({facility: response.facility, children: response.children, complaints: response.complaints}))
+    const url = '/facilities/' + action.payload.facilityParams.id + '/profile'
+    const response = yield call(fetchRequestWithErrors, url, 'GET', null)
+    yield put(fetchSuccess({facility: response}))
   } catch (error) {
     const errorResponse = yield call([error, error.json])
     yield put(fetchFailure({errorResponse}))

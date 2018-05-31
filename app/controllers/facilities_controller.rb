@@ -5,12 +5,22 @@ class FacilitiesController < CalsBaseController
 
   def show; end
 
-  def facility
-    @facilities = {}
-    @facilities['facility'] = facility_helper.find_by_id(params[:id])
-    @facilities['children'] = child_helper.find_by_facility(params[:id])
-    @facilities['complaints'] = complaint_helper.find_by_facility(params[:id])
-    json_response @facilities
+  # def facility
+  #   @facilities = {}
+  #   @facilities['facility'] = facility_helper.find_by_id(params[:id])
+  #   @facilities['children'] = child_helper.find_by_facility(params[:id])
+  #   @facilities['complaints'] = complaint_helper.find_by_facility(params[:id])
+  #   json_response @facilities
+  # rescue ApiError => e
+  #   @errors = {}
+  #   @errors['message'] = e.response
+  #   @errors['url'] = e.url
+  #   render json: @errors, status: e.status
+  # end
+
+  def profile
+    @facility = facility_helper.find_by_id(params[:facility_id])
+    json_response @facility
   rescue ApiError => e
     @errors = {}
     @errors['message'] = e.response

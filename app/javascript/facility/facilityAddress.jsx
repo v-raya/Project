@@ -5,7 +5,9 @@ import {InnerBlockAddressTitles} from './innerBlockAddressTitles.js'
 import {facilityDataDefaults} from 'constants/defaultFields'
 
 const FacilityAddress = ({
-  facilityData
+  facilityAddress,
+  facilityPhones,
+  otherFacilityData
 }) => (
   <div className='facility-address col-xs-12 col-sm-12 col-md-12 col-lg-12'>
     <div className='facility-address-block col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -13,36 +15,36 @@ const FacilityAddress = ({
         <div className='inner_block'>
           <InnerBlockAddressTitles
             title='PHYSICAL ADDRESS'
-            streetApt={facilityData.addresses.physicalStreetAddress}
-            cityCountry={facilityData.addresses.physicalAddressCityZipState} />
+            streetApt={facilityAddress.physicalStreetAddress}
+            cityCountry={facilityAddress.physicalAddressCityZipState} />
           <SmallInnerBlockDetails
             title='COUNTY NAME'
-            value={facilityData.county} />
+            value={otherFacilityData.county} />
           <SmallInnerBlockDetails
             title='PRIMARY PHONE'
-            value={facilityData.phones.primaryPhoneNumber} />
+            value={facilityPhones.primaryPhoneNumber} />
         </div>
       </div>
       <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
         <div className='inner_block'>
           <InnerBlockAddressTitles
             title='POSTAL ADDRESS'
-            streetApt={facilityData.addresses.mailingStreetAddress}
-            cityCountry={facilityData.addresses.mailingAddressCityZipState} />
+            streetApt={facilityAddress.mailingStreetAddress}
+            cityCountry={facilityAddress.mailingAddressCityZipState} />
           <SmallInnerBlockDetails
             classNameTitle=''
             title='ALTERNATIVE PHONE'
-            value={facilityData.phones.alternativePhoneNumber} />
+            value={facilityPhones.alternativePhoneNumber} />
         </div>
       </div>
       <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
         <div className='inner_block'>
           <SmallInnerBlockDetails
             title='LAST VISIT DATE'
-            value={facilityData.last_visit_date} />
+            value={otherFacilityData.lastVisitDate} />
           <SmallInnerBlockDetails
             title='LAST VISIT REASON'
-            value={facilityData.last_visit_reason} />
+            value={otherFacilityData.lastVisitReason} />
         </div>
       </div>
     </div>
@@ -50,11 +52,27 @@ const FacilityAddress = ({
 )
 
 FacilityAddress.propTypes = {
-  facilityData: PropTypes.object.isRequired
+  facilityAddress: PropTypes.object,
+  facilityPhones: PropTypes.object,
+  otherFacilityData: PropTypes.object
 }
 
 FacilityAddress.defaultProps = {
-  facilityData: facilityDataDefaults
+  facilityAddress: {
+    physicalStreetAddress: '',
+    physicalAddressCityZipState: '',
+    mailingStreetAddress: '',
+    mailingAddressCityZipState: ''
+  },
+  facilityPhones: {
+    primaryPhoneNumber: '',
+    alternativePhoneNumber: ''
+  },
+  otherFacilityData: {
+    county: '',
+    lastVisitDate: '',
+    lastVisitReason: ''
+  }
 }
 
 export default FacilityAddress
