@@ -28,11 +28,12 @@ export default class ReferenceMain extends React.Component {
   setReferencesState (key, value, referencesIndex) {
     let newData = Immutable.fromJS(this.props.references)
     newData = newData.update(referencesIndex, x => x.set(key, value))
-    this.props.setParentState('references', newData.toJS())
+    let itemsArray = Immutable.fromJS({'items': []})
+    itemsArray = itemsArray.set('items', newData)
+    this.props.setParentState('references', itemsArray.toJS())
   }
   render () {
-    const references = Array.isArray(this.props.references)
-      ? this.props.references : this.props.references.items
+    const references = this.props.references
     return (
       <div className='reference_main'>
         <div>Please list the name, telephone number(s), and address of three individuals who have knowledge of your home environment, lifestyle, and

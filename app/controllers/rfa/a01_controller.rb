@@ -156,12 +156,9 @@ class Rfa::A01Controller < CalsBaseController
   end
 
   def references_params
-    permitted_params = params.permit(:to_delete, references: [:first_name, :middle_name, :last_name, :phone_number, :email,
-                                                              mailing_address: [:street_address, :zip, :city, state: %i[id value]],
-                                                              name_prefix: %i[id value], name_suffix: %i[id value]])
-
-    permitted_params[:items] = permitted_params.delete(:references)
-    permitted_params
+    params.require(:references).permit(:to_delete, items: [:first_name, :middle_name, :last_name, :phone_number, :email,
+                                                            mailing_address: [:street_address, :zip, :city, state: %i[id value]],
+                                                            name_prefix: %i[id value], name_suffix: %i[id value]])
   end
 
   def rfa_application_helper

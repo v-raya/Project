@@ -1,5 +1,8 @@
 require "simplecov"
 require 'selenium/webdriver'
+require 'chromedriver/helper'
+
+Chromedriver.set_version('2.38')
 
 SimpleCov.start 'rails' do
   coverage_dir 'reports/coverage/rspec/'

@@ -25,7 +25,7 @@ describe('Verify References Main', () => {
     email: ''
   }
 
-  let feildObjectRefValues = {
+  let fieldObjectRefValues = {
     items: [fieldRefValues]
   }
   beforeEach(() => {
@@ -52,7 +52,7 @@ describe('Verify References Main', () => {
     referenceMainFieldObjectComp = mount(<ReferenceMain
       index={0}
       focusComponentName={getFocusClassNameSpy}
-      references={feildObjectRefValues}
+      references={[fieldRefValues]}
       setParentState={setApplicationStateSpy}
       getFocusClassName={getFocusClassNameSpy}
       setFocusState={setFocusStateSpy}
@@ -70,7 +70,7 @@ describe('Verify References Main', () => {
     let firstNameFieldChange = referenceMainComp.find('#first_name').hostNodes()
     fieldRefValues.first_name = 'First Name'
     firstNameFieldChange.simulate('change', {target: {value: 'First Name'}})
-    expect(setApplicationStateSpy).toHaveBeenCalledWith('references', [fieldRefValues])
+    expect(setApplicationStateSpy).toHaveBeenCalledWith('references', {'items': [fieldRefValues]})
   })
   it('verify reference card to check focus', () => {
     let firstNameFieldChange = referenceMainComp.find('#first_name').hostNodes()
