@@ -46,7 +46,8 @@ export class OtherAdultsCardField extends React.Component {
   }
 
   isRelationshipToApplicantObject () {
-    const val = this.props.otherAdults.relationship_to_applicants[0].relationship_to_applicant_freeform
+    const relationToApplicant = this.props.otherAdults && this.props.otherAdults.relationship_to_applicants
+    const val = relationToApplicant && relationToApplicant[0].relationship_to_applicant_freeform
     return !_.isEmpty(val)
   }
 

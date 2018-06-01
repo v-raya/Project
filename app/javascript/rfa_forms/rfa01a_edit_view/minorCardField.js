@@ -47,7 +47,8 @@ export class MinorCardField extends React.Component {
         condition: () => this.isRelationShipToApplicantObject()})
   }
   isRelationShipToApplicantObject () {
-    const val = this.props.minorChild.relationship_to_applicants[0].relationship_to_applicant_freeform
+    const relationToApplicant = this.props.minorChild && this.props.minorChild.relationship_to_applicants
+    const val = relationToApplicant && relationToApplicant[0].relationship_to_applicant_freeform
     return !_.isEmpty(val)
   }
 
