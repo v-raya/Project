@@ -1,36 +1,19 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import FacilityDetailsContainer from 'containers/facilityDetailsContainer'
-import FacilityAddressContainer from 'containers/facilityAddressContainer'
 import PageHeaderWrapperContainer from 'containers/pageHeaderWrapperContainer'
-// import FacilityChildren from './facilityChildren.jsx'
+import FacilityWrapperContainer from 'containers/facilityWrapperContainer'
+import FacilityChildrenContainer from 'containers/facilityChildrenContainer'
 // import FacilityComplaints from './facilityComplaints.jsx'
-import {connect} from 'react-redux'
-import {facilityApiCall} from 'actions/facilityActions'
-import {getFacilityData} from 'selectors/facilityDataSelectors'
 
-class Facility extends React.Component {
-  componentDidMount () {
-    const params = {
-      'id': this.props.match.params.id
-    }
-    this.props.facilityApiCall(params)
-  }
-
+export default class Facility extends React.Component {
   render () {
     return (
       <div className='main_page'>
         <PageHeaderWrapperContainer />
         <div className='body_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          {this.props.isFetching ? <div className="loading-icon"></div>
-            : <div>
-              <FacilityDetailsContainer />
-              <FacilityAddressContainer />
-            </div>
-
-          }
-          {/* {facilityChildren && <FacilityChildren children={facilityChildren.children} />}
-          {facilityComplaints && <FacilityComplaints complaints={facilityComplaints.complaints} />} */}
+          <FacilityWrapperContainer match={this.props.match}/>
+          <FacilityChildrenContainer match={this.props.match}/>
+          {/* {facilityComplaints && <FacilityComplaints complaints={facilityComplaints.complaints} />} */}
         </div>
       </div>
     )
@@ -38,13 +21,5 @@ class Facility extends React.Component {
 }
 
 Facility.propTypes = {
-  match: PropTypes.object,
-  facilityApiCall: PropTypes.func
+  match: PropTypes.object
 }
-
-const mapStateToProps = (state) => ({
-  isFetching: state.facilityReducer.isFetching
-})
-
-export {Facility}
-export default connect(mapStateToProps, {facilityApiCall})(Facility)

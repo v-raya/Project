@@ -3,9 +3,8 @@ Rails.application.routes.draw do
 
   resources :facilities, only: [:show] do
     get 'profile'
-    collection do
-      post :search
-    end
+    get 'facility_children'
+    collection { post :search }
   end
 
   resources :search do

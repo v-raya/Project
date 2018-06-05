@@ -36,14 +36,14 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
   #   expect(page).to have_text('Complaint History')
   # end
 
-  # scenario 'To click into facility and validate Children' do
-  #   visit search_index_path
-  #   fill_in 'Enter Facility ID #', with: '250000004'
-  #   select 'Alpine', from: 'county_select'
-  #   find_button('search').click
-  #   click_link('Peace Blossoms Home')
-  #   expect(page).to have_text('Children currently placed in facility')
-  # end
+  scenario 'To click into facility and validate Children' do
+    visit search_index_path
+    fill_in 'Enter Facility ID #', with: '250000004'
+    select 'Alpine', from: 'county_select'
+    find_button('search').click
+    click_link('Peace Blossoms Home')
+    expect(page).to have_text('Children currently placed in facility')
+  end
 
   scenario 'To test pagination' do
     visit search_index_path

@@ -80,7 +80,7 @@ describe('facilityDataSelectors', () => {
     })
   })
   describe('getFacilityAddressesSelector', () => {
-    it('should return undefined when passed in null', () => {
+    it('should return address attributes with N/A when passed in null', () => {
       const state = {
         facilityReducer: {
           facility: {
@@ -120,7 +120,7 @@ describe('facilityDataSelectors', () => {
     })
   })
   describe('getFacilityPhonesSelector', () => {
-    it('should return undefined when passed in null', () => {
+    it('should return phone attributes with N/A when passed in null', () => {
       const state = {
         facilityReducer: {
           facility: {
@@ -154,7 +154,7 @@ describe('facilityDataSelectors', () => {
     })
   })
   describe('getFacilityNameSelector', () => {
-    it('should return undefined when passed in null', () => {
+    it('should return N/A when passed in null', () => {
       const state = {
         facilityReducer: {
           facility: {
@@ -176,7 +176,7 @@ describe('facilityDataSelectors', () => {
     })
   })
   describe('getFacilityOtherDataSelector', () => {
-    it('should return undefined when passed in null', () => {
+    it('should return other attributes with N/A when passed in null', () => {
       const state = {
         facilityReducer: {
           facility: {}
@@ -209,17 +209,19 @@ describe('facilityDataSelectors', () => {
     })
   })
   describe('getChildrenDataSelector', () => {
-    it('should return undefined when passed in null', () => {
+    it('should return empty array when passed in null', () => {
       const state = {
-        facilityReducer: {
-          facilityChildren: null
+        facilityChildrenReducer: {
+          facilityChildren: {
+            'children': []
+          }
         }
       }
-      expect(getFacilityChildren(state)).toEqual(null)
+      expect(getFacilityChildren(state)).toEqual([])
     })
     it('should return children array', () => {
       const state = {
-        facilityReducer: {
+        facilityChildrenReducer: {
           facilityChildren: {
             'children': [{
               'id': '2q6FdWU03k',
@@ -241,24 +243,23 @@ describe('facilityDataSelectors', () => {
           }
         }
       }
-      expect(getFacilityChildren(state)).toEqual({
-        children: [{
-          age: 29,
-          assigned_worker: 'Wayne Fehlberg',
-          county_of_origin: 'Modoc',
-          date_of_birth: '08/08/1988',
-          date_of_placement: '08/04/1998',
-          display_client_id: '0161-3317-6329-8000232',
-          first_name: 'boy F',
-          gender: 'M',
-          id: '2q6FdWU03k',
-          last_name: 'Cavy'
-        }]
-      })
+      expect(getFacilityChildren(state)).toEqual([{
+        age: 29,
+        assigned_worker: 'Wayne Fehlberg',
+        county_of_origin: 'Modoc',
+        date_of_birth: '08/08/1988',
+        date_of_placement: '08/04/1998',
+        display_client_id: '0161-3317-6329-8000232',
+        first_name: 'boy F',
+        gender: 'M',
+        id: '2q6FdWU03k',
+        last_name: 'Cavy'
+      }]
+      )
     })
   })
   describe('getComplaintsDataSelector', () => {
-    it('should return undefined when passed in null', () => {
+    it('should return null when passed in null', () => {
       const state = {
         facilityReducer: {
           facilityComplaints: null

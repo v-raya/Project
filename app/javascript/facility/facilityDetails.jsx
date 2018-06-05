@@ -7,13 +7,13 @@ import {facilityDetailsDefaults} from 'constants/defaultFields'
 
 const FacilityDetails = ({facilityData, errors}) => (
   <div>
-    <ApiErrorMessages errors={errors.message.issue_details} url={errors.url} />
     <div className='facility-details grid_view col-xs-12 col-sm-12 col-md-12 col-lg-12'>
       <FacilityTypeDetails
         value={facilityData.type}
       />
       <div className='headliner col-xs-12 col-sm-12 col-md-12 col-lg-12' />
       <div className='facility_blocks col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+        <ApiErrorMessages errors={errors.issue_details}/>
         <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
           <div className='inner_block'>
             <SmallInnerBlockDetails
@@ -57,17 +57,16 @@ const FacilityDetails = ({facilityData, errors}) => (
 )
 
 FacilityDetails.propTypes = {
-  facilityData: PropTypes.object.isRequired
+  facilityData: PropTypes.object,
+  errors: PropTypes.object
 }
 
 FacilityDetails.defaultProps = {
   facilityData: facilityDetailsDefaults,
   errors: {
-    message: {
-      issue_details: undefined
-    },
-    url: undefined
+    issue_details: undefined
   }
+
 }
 
 export default FacilityDetails

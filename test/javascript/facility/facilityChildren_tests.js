@@ -15,9 +15,21 @@ describe('Verify Children Component', function () {
       'assigned_worker': 'Peter Parker',
       'county_of_origin': 'sacramento',
       'display_client_id': '2222-2222-2222-2222222'
-    }]
+    }],
+    'match': {
+      'params': {
+        'id': 'SouUlov56F'
+      }
+    }
   }
-  const renderChildComp = shallow(<Children children = {props.children} />)
+
+  let facilityChildrenApiCallSpy = jasmine.createSpy('facilityChildrenApiCall')
+
+  const renderChildComp = shallow(
+    <Children
+      {...props}
+      facilityChildrenApiCall={facilityChildrenApiCallSpy}
+    />)
   it('Verify Children table', () => {
     expect(renderChildComp.length).toBe(1)
   })

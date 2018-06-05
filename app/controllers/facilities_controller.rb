@@ -5,27 +5,20 @@ class FacilitiesController < CalsBaseController
 
   def show; end
 
-  # def facility
-  #   @facilities = {}
-  #   @facilities['facility'] = facility_helper.find_by_id(params[:id])
-  #   @facilities['children'] = child_helper.find_by_facility(params[:id])
-  #   @facilities['complaints'] = complaint_helper.find_by_facility(params[:id])
-  #   json_response @facilities
-  # rescue ApiError => e
-  #   @errors = {}
-  #   @errors['message'] = e.response
-  #   @errors['url'] = e.url
-  #   render json: @errors, status: e.status
-  # end
+  # @facilities['complaints'] = complaint_helper.find_by_facility(params[:id])
 
   def profile
     @facility = facility_helper.find_by_id(params[:facility_id])
     json_response @facility
   rescue ApiError => e
-    @errors = {}
-    @errors['message'] = e.response
-    @errors['url'] = e.url
-    render json: @errors, status: e.status
+    render json: e.response, status: e.status
+  end
+
+  def facility_children
+    @facility_children = child_helper.find_by_facility(params[:facility_id])
+    json_response @facility_children
+  rescue ApiError => e
+    render json: e.response, status: e.status
   end
 
   def search

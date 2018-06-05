@@ -15,7 +15,7 @@ import {
 
 const facilitySelector = (state) => state.facilityReducer.facility
 
-const facilityChildrenSelector = (state) => state.facilityReducer.facilityChildren
+const facilityChildrenSelector = (state) => state.facilityChildrenReducer.facilityChildren
 
 const facilityComplaintsSelector = (state) => state.facilityReducer.facilityComplaints
 
@@ -117,11 +117,8 @@ export const getFacilityData = (state) => {
 export const getFacilityChildren = (state) => {
   const facilityChildrenState = facilityChildrenSelector(state)
   if (facilityChildrenState !== null) {
-    return {
-      children: getFacilityChildrenData(facilityChildrenState)
-    }
+    return getFacilityChildrenData(facilityChildrenState)
   }
-  return null
 }
 
 export const getFacilityComplaints = (state) => {

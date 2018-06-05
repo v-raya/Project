@@ -14,7 +14,7 @@ export default class SearchMain extends React.Component {
         <BrowserRouter>
           <Switch>
             <Route exact path={urlPrefixHelper('/search')} component={Search}/>
-            <Route path={urlPrefixHelper('/facilities/:id')} component={Facility}/>
+            <Route path={urlPrefixHelper('/facilities/:facility_id')} component={Facility}/>
           </Switch>
         </BrowserRouter>
       </Provider>
