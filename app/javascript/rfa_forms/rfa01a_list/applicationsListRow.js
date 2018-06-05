@@ -13,7 +13,7 @@ const getPhoneNumber = (phonesList) => {
 }
 
 const getAddress = (address, key) => {
-  const residentialAddress = address.get(0)
+  const residentialAddress = address && address.size > 0 ? address.get(0) : Immutable.fromJS(addressDefaults)
   return residentialAddress.get(key)
 }
 

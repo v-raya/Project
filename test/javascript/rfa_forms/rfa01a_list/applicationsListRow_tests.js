@@ -65,3 +65,30 @@ describe('Verify Application List Rows', () => {
     expect(AppListViewCard.find('td').at(2).props().children).toBe('(530) 555-5555')
   })
 })
+
+describe('Verify Application List Corner Cases', () => {
+  const application = Immutable.fromJS([{
+    'phones': []
+  }])
+  const address = Immutable.fromJS([
+  ])
+  const props = {
+    key: 0,
+    facilityId: undefined,
+    familyName: undefined,
+    applicationStatus: undefined,
+    applicationReceivedDate: undefined,
+    applicantsInfo: application,
+    applicationAddress: address
+  }
+  const AppListViewCard = shallow(<ApplicationsListRow {...props} />)
+  it('To Return table Row', () => {
+    expect(AppListViewCard.find('tr').length).toEqual(1)
+  })
+  it('To have default address when address array is empty', () => {
+    expect(AppListViewCard.find('td').length).toEqual(8)
+    expect(AppListViewCard.find('td').at(3).props().children).toBe('')
+    expect(AppListViewCard.find('td').at(4).props().children).toBe('')
+    expect(AppListViewCard.find('td').at(5).props().children).toBe('')
+  })
+})
