@@ -158,7 +158,7 @@ node('cals-slave') {
             // }
 
             // push to docker
-            newTag = "0.${getBuildTag()}-${env.BUILD_ID}"
+            newTag = "1.${getBuildTag()}.${env.BUILD_ID}"
             dockerStages(newTag)
 
             sshagent([GITHUB_CREDENTIALS_ID]) {
