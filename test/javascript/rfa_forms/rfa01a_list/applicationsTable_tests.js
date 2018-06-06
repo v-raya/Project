@@ -70,7 +70,7 @@ describe('Verify Application List View', () => {
     expect(AppListViewCard.find('h3').props().children).toBe('Existing RFA Application')
   })
   it('To have table header\'s', () => {
-    expect(AppListViewCard.find('th').length).toEqual(8)
+    expect(AppListViewCard.find('th').length).toEqual(9)
     expect(AppListViewCard.find('th').first().props().children).toBe('Facility ID')
   })
   it('To have array of Items', () => {
@@ -124,7 +124,7 @@ describe('Verify Application List View with Empty address', () => {
     expect(AppListViewCard.find('h3').props().children).toBe('Existing RFA Application')
   })
   it('To have table header\'s', () => {
-    expect(AppListViewCard.find('th').length).toEqual(8)
+    expect(AppListViewCard.find('th').length).toEqual(9)
     expect(AppListViewCard.find('th').first().props().children).toBe('Facility ID')
   })
   it('To have array of Items', () => {

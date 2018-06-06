@@ -60,9 +60,9 @@ describe('Verify Application List Rows', () => {
     expect(AppListViewCard.find('tr').length).toEqual(1)
   })
   it('To have array of table data', () => {
-    expect(AppListViewCard.find('td').length).toEqual(8)
+    expect(AppListViewCard.find('td').length).toEqual(9)
     expect(AppListViewCard.find('td').first().props().children).toBe('380037218')
-    expect(AppListViewCard.find('td').at(2).props().children).toBe('(530) 555-5555')
+    expect(AppListViewCard.find('td').at(3).props().children).toBe('(530) 555-5555')
   })
 })
 
@@ -86,7 +86,7 @@ describe('Verify Application List Corner Cases', () => {
     expect(AppListViewCard.find('tr').length).toEqual(1)
   })
   it('To have default address when address array is empty', () => {
-    expect(AppListViewCard.find('td').length).toEqual(8)
+    expect(AppListViewCard.find('td').length).toEqual(9)
     expect(AppListViewCard.find('td').at(3).props().children).toBe('')
     expect(AppListViewCard.find('td').at(4).props().children).toBe('')
     expect(AppListViewCard.find('td').at(5).props().children).toBe('')

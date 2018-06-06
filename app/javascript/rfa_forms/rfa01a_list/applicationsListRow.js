@@ -20,15 +20,21 @@ const getAddress = (address, key) => {
 const ApplicationsListRow = ({
   facilityId,
   familyName,
+  trackingId,
   applicantsInfo,
   applicationAddress,
   applicationStatus,
   applicationReceivedDate
 }) => {
+  let trackingUrl = trackingId
+    ? urlPrefixHelper('/rfa/a01/' + facilityId + '/tracking/' + trackingId + '/edit')
+    : urlPrefixHelper('/rfa/a01/' + facilityId + '/tracking/')
+
   return (
     <tr>
       <td>{facilityId}</td>
       <td><a href={urlPrefixHelper('/rfa/a01/' + facilityId + '/edit')}>{familyName}</a></td>
+      <td className='tracking'><a href={trackingUrl} >tracking</a></td>
       <td>{getPhoneNumber(applicantsInfo.getIn([0, 'phones']))}</td>
       <td>{getAddress(applicationAddress, 'street_address')}</td>
       <td>{getAddress(applicationAddress, 'city')}</td>
