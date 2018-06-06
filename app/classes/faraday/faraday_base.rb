@@ -42,7 +42,7 @@ class Faraday::FaradayBase
       req.url url
       req.headers = default_headers(auth_header)
       req.body = body if method.in?(BODY_METHODS)
-      req.options.timeout = 5
+      req.options.timeout = 10
     end
 
     return response
