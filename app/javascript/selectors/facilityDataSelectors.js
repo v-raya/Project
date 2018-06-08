@@ -2,6 +2,7 @@ import {
   checkForNA,
   checkforDateOrNa,
   checkfullNameorNA,
+  checkPhoneNumberOrNA,
   checkNameorNA,
   handleLicenseEffectiveDate,
   cityStateZipOfRespectiveAddressOrNA,
@@ -37,8 +38,12 @@ const getOtherDataOfFacility = (facilityState) => ({
   lastVisitReason: checkForNA(facilityState.last_visit_reason)
 })
 
+const getAssignedWorkerData = (assignedWorker) => ({
+  assigned_worker_full_name: checkForNA(assignedWorker),
+  assigned_worker_phone_number: checkPhoneNumberOrNA(assignedWorker, primaryPhoneRelation)
+})
+
 const getFacilityDetails = (facilityState) => ({
-  assigned_worker: checkForNA(facilityState.assigned_worker),
   capacity: facilityState.capacity || 'N/A',
   capacity_last_changed: checkforDateOrNa(facilityState.capacity_last_changed),
   district_office: checkNameorNA(facilityState.district_office),
@@ -83,6 +88,13 @@ export const getFacilityName = (state) => {
   const facilityState = facilitySelector(state)
   if (facilityState !== null) {
     return facilityState.name || 'N/A'
+  }
+}
+
+export const getFacilityAssignedWorker = (state) => {
+  const facilityState = facilitySelector(state)
+  if (facilityState !== null) {
+    return getAssignedWorkerData(facilityState.assigned_worker)
   }
 }
 

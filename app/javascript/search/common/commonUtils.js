@@ -66,11 +66,15 @@ export const checkNameorNA = (object) => {
   return (object && object.name) ? object.name : 'N/A'
 }
 
+export const checkPhoneNumberOrNA = (object, objectPhoneNumberRelation) => {
+  return object ? respectiveNumberOrNA(object.phones, objectPhoneNumberRelation) : 'N/A'
+}
+
 export const checkfullNameorNA = (object) => {
   return object ? fullName(object) : 'N/A'
 }
 
-export const fullName = (object) => {
+const fullName = (object) => {
   return object.first_name + ' ' + object.last_name
 }
 

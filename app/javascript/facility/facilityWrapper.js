@@ -12,7 +12,7 @@ class FacilityWrapper extends React.Component {
   }
 
   render () {
-    const {facilityData, facilityAddress, facilityPhones, otherFacilityData, isFetching, errors} = this.props
+    const {facilityData, facilityAddress, facilityPhones, otherFacilityData, facilityAssignedWorker, isFetching, errors} = this.props
     return (
       <div>
         {isFetching ? <div className="loading-icon"></div>
@@ -21,7 +21,9 @@ class FacilityWrapper extends React.Component {
             <FacilityAddress
               facilityAddress={facilityAddress}
               facilityPhones={facilityPhones}
-              otherFacilityData={otherFacilityData} />
+              otherFacilityData={otherFacilityData}
+              facilityAssignedWorker={facilityAssignedWorker}
+            />
           </div>
         }
       </div>

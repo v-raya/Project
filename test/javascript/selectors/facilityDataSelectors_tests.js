@@ -5,7 +5,8 @@ import {
   getFacilityAddresses,
   getFacilityPhones,
   getFacilityName,
-  getOtherFacilityData
+  getOtherFacilityData,
+  getFacilityAssignedWorker
 } from 'selectors/facilityDataSelectors'
 describe('facilityDataSelectors', () => {
   describe('getFacilityDataSelector', () => {
@@ -30,7 +31,9 @@ describe('facilityDataSelectors', () => {
             'name': 'Little Dreams Home',
             'licensee_name': 'Ananya Nandi',
             'license_type': 'A',
-            'assigned_worker': {},
+            'assigned_worker': {
+              value: 'Ananya Nandi'
+            },
             'district_office': {
               'number': '19',
               'name': 'PACIFIC INLAND CR'
@@ -66,7 +69,6 @@ describe('facilityDataSelectors', () => {
         }
       }
       expect(getFacilityData(state)).toEqual({
-        assigned_worker: 'N/A',
         capacity: 'N/A',
         capacity_last_changed: 'N/A',
         district_office: 'PACIFIC INLAND CR',
@@ -208,6 +210,45 @@ describe('facilityDataSelectors', () => {
       })
     })
   })
+  describe('getFacilityAssignedWorkerSelector', () => {
+    it('should return other attributes with N/A when passed in null', () => {
+      const state = {
+        facilityReducer: {
+          facility: {}
+        }
+      }
+      expect(getFacilityAssignedWorker(state)).toEqual({
+        assigned_worker_full_name: 'N/A',
+        assigned_worker_phone_number: 'N/A'
+      })
+    })
+    it('should return assigned worker data', () => {
+      const state = {
+        facilityReducer: {
+          facility: {
+            assigned_worker: {
+              value: 'Ananya Nandi',
+              'phones': [
+                {
+                  'relation': 'primary',
+                  'number': '9164578228'
+                },
+                {
+                  'relation': 'alternate',
+                  'number': '9164578228'
+                }
+              ]
+            }
+          }
+        }
+      }
+      expect(getFacilityAssignedWorker(state)).toEqual({
+        assigned_worker_full_name: 'Ananya Nandi',
+        assigned_worker_phone_number: '(916) 457-8228'
+      })
+    })
+  })
+
   describe('getChildrenDataSelector', () => {
     it('should return empty array when passed in null', () => {
       const state = {

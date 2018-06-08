@@ -38,7 +38,6 @@ const facilityDataPhoneDefaults = Object.freeze({
 export const facilityDetailsDefaults = Object.freeze({
   type: '',
   capacity: '',
-  assigned_worker: '',
   district_office: '',
   capacity_last_changed: '',
   license_number: '',
