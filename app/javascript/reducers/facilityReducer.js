@@ -1,6 +1,4 @@
-const FACILITY_RESULTS_FETCH = 'FACILITY_RESULTS/FETCH'
-const FACILITY_RESULTS_FETCH_COMPLETE = 'FACILITY_RESULTS/FETCH_COMPLETE'
-const FACILITY_RESULTS_FETCH_ERROR = 'FACILITY_RESULTS/FETCH_ERROR'
+import * as Constants from 'constants/actionTypes'
 
 const initialState = {
   facility: null,
@@ -10,11 +8,11 @@ const initialState = {
 
 export const facilityReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FACILITY_RESULTS_FETCH:
+    case Constants.FACILITY_RESULTS_FETCH:
       return {...state, facility: null, errors: undefined, isFetching: true}
-    case FACILITY_RESULTS_FETCH_COMPLETE:
+    case Constants.FACILITY_RESULTS_FETCH_COMPLETE:
       return {...state, facility: action.payload.facility, errors: undefined, isFetching: false}
-    case FACILITY_RESULTS_FETCH_ERROR:
+    case Constants.FACILITY_RESULTS_FETCH_ERROR:
       return {...state, facility: null, errors: action.payload.errorResponse, isFetching: false}
     default:
       return state

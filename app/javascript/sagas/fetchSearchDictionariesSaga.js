@@ -2,7 +2,8 @@ import {takeLatest, put, call} from 'redux-saga/effects'
 import {delay} from 'redux-saga'
 import {fetchRequest} from '../helpers/http'
 import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
-import {SEARCH_DICTIONARIES_FETCH, fetchDictionarySuccess, fetchFailure} from 'actions/searchActions'
+import {fetchDictionarySuccess, fetchFailure} from 'actions/searchActions'
+import {SEARCH_DICTIONARIES_FETCH} from 'constants/actionTypes'
 
 // worker saga: makes the api call when watcher saga sees the action
 export function * fetchSearchDictionaries (action) {
