@@ -262,7 +262,7 @@ describe('facilityDataSelectors', () => {
     it('should return null when passed in null', () => {
       const state = {
         facilityComplaints: {
-          facilityComplaints: null
+          complaints: null
         }
       }
       expect(getFacilityComplaints(state)).toEqual(undefined)
@@ -270,24 +270,22 @@ describe('facilityDataSelectors', () => {
     it('should return complaints array', () => {
       const state = {
         facilityComplaints: {
-          facilityComplaints: {
-            'complaints': [{
-              'id': '19-CR-195002-20041019105945',
-              'complaint_date': '2004-10-19 00:00:00',
-              'assigned_worker': 'Saritha Reddy',
-              'control_number': '198952',
-              'status': 'Approved',
-              'pre_investigation_comments': 'PO Zamora not in today - contact made with Janice Featherston as described above.',
-              'post_investigation_comments': 'Left message on her voicemail informing her of the outcome of the investigation.',
-              'contact_summary': 'Assigned to LPA Jeffers.\r\nComplaint originally written on 10/15/04, under the wrong Olive Crest home.  LPA Jeffers re-wrote the complaint under the same control #.\r\n"10-day" visit completed 10/21/04.\r\nInterviews conducted with the 3 clients in placement at the time, with the staff alleged to be the perpetrator.',
-              'followup_comments': 'None at this time.',
-              'allegations': [{
-                'complaint_code': '3',
-                'allegation': 'Staff Meena Desai marks clients Alexzena Webb and Dizirea Goodwin with a ballpoint pen while they are sleeping.',
-                'resolution_code_unsub': 'U'
-              }]
+          'complaints': [{
+            'id': '19-CR-195002-20041019105945',
+            'complaint_date': '2004-10-19 00:00:00',
+            'assigned_worker': 'Saritha Reddy',
+            'control_number': '198952',
+            'status': 'Approved',
+            'pre_investigation_comments': 'PO Zamora not in today - contact made with Janice Featherston as described above.',
+            'post_investigation_comments': 'Left message on her voicemail informing her of the outcome of the investigation.',
+            'contact_summary': 'Assigned to LPA Jeffers.\r\nComplaint originally written on 10/15/04, under the wrong Olive Crest home.  LPA Jeffers re-wrote the complaint under the same control #.\r\n"10-day" visit completed 10/21/04.\r\nInterviews conducted with the 3 clients in placement at the time, with the staff alleged to be the perpetrator.',
+            'followup_comments': 'None at this time.',
+            'allegations': [{
+              'complaint_code': '3',
+              'allegation': 'Staff Meena Desai marks clients Alexzena Webb and Dizirea Goodwin with a ballpoint pen while they are sleeping.',
+              'resolution_code_unsub': 'U'
             }]
-          }
+          }]
         }
       }
       expect(getFacilityComplaints(state)).toEqual(

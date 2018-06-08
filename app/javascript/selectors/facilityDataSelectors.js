@@ -17,7 +17,7 @@ const facilitySelector = (state) => state.facilityReducer.facility
 
 const facilityChildrenSelector = (state) => state.facilityChildrenReducer.facilityChildren
 
-const facilityComplaintsSelector = (state) => state.facilityComplaints.facilityComplaints
+const facilityComplaintsSelector = (state) => state.facilityComplaints.complaints
 
 const getAddressesOfFacility = (addresses) => ({
   physicalStreetAddress: respectiveStreetAddressOrNA(addresses, physicalAddressType),
@@ -66,8 +66,8 @@ const getFacilityChildrenData = (facilityChildrenState) => {
   )
 }
 
-const getFacilityComplaintsData = (facilityComplaintsState) => {
-  return facilityComplaintsState.complaints.map((complaint) => ({
+const getFacilityComplaintsData = (facilityComplaints) => {
+  return facilityComplaints.map((complaint) => ({
     id: complaint.id,
     approval_date: checkforDateOrNa(complaint.approval_date),
     assigned_worker: complaint.assigned_worker,
@@ -122,8 +122,8 @@ export const getFacilityChildren = (state) => {
 }
 
 export const getFacilityComplaints = (state) => {
-  const facilityComplaintsState = facilityComplaintsSelector(state)
-  if (facilityComplaintsState !== null) {
-    return getFacilityComplaintsData(facilityComplaintsState)
+  const facilityComplaints = facilityComplaintsSelector(state)
+  if (facilityComplaints !== null) {
+    return getFacilityComplaintsData(facilityComplaints)
   }
 }
