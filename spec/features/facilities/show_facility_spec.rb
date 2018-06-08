@@ -27,14 +27,14 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     expect(page).to have_content('FACILITY TYPE :', minimum: 1)
   end
 
-  # scenario 'To click into facility and validate Complaints' do
-  #   visit search_index_path
-  #   select 'Riverside', from: 'county_select'
-  #   fill_in 'Enter Facility ID #', with: '100000299'
-  #   find_button('search').click
-  #   click_link('Little Dreams Home')
-  #   expect(page).to have_text('Complaint History')
-  # end
+  scenario 'To click into facility and validate Complaints' do
+    visit search_index_path
+    select 'Riverside', from: 'county_select'
+    fill_in 'Enter Facility ID #', with: '100000299'
+    find_button('search').click
+    click_link('Little Dreams Home')
+    expect(page).to have_text('Complaint History')
+  end
 
   scenario 'To click into facility and validate Children' do
     visit search_index_path
@@ -50,7 +50,7 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     select 'Los Angeles', from: 'county_select'
     find_button('search').click
     within(:css, '.search-toggle') do
-      select '10', from: 'dropdownFacilities_top_pagination'      
+      select '10', from: 'dropdownFacilities_top_pagination'
       expect(find_field('dropdownFacilities_top_pagination').value).to eq '10'
     end
     expect(page).to have_content('Facility Phone Number', minimum: 1)

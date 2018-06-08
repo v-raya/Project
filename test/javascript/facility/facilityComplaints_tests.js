@@ -1,6 +1,6 @@
 import React from 'react'
 import FacilityComplaints from 'facility/facilityComplaints.jsx'
-import {mount} from 'enzyme'
+import {mount, shallow} from 'enzyme'
 
 describe('Verify Complaints Component', function () {
   const props = {
@@ -14,9 +14,19 @@ describe('Verify Complaints Component', function () {
         'status': 'Approved',
         'approval_date': '12/10/2016'
       }
-    ]
+    ],
+    'match': {
+      'params': {
+        'id': 'SouUlov56F'
+      }
+    }
   }
-  const renderComplaintsComp = mount(<FacilityComplaints {...props} />)
+
+  let facilityComplaintsApiCallSpy = jasmine.createSpy('facilityComplaintsApiCall')
+
+  const renderComplaintsComp = shallow(
+    <FacilityComplaints {...props} facilityComplaintsApiCall={facilityComplaintsApiCallSpy}
+    />)
   it('check Complaints table', () => {
     expect(renderComplaintsComp.length).toBe(1)
   })
@@ -40,28 +50,5 @@ describe('Verify Complaints Component', function () {
   })
   it('Verify complaint approval date', function () {
     expect(renderComplaintsComp.find('td[data-label="approval date"]').props().children[1]).toBe('12/10/2016')
-  })
-})
-
-describe('Verify Complaints Component with null values', function () {
-  const props = {
-    'complaints': [
-      {
-        'id': 'dlf0245',
-        'complaint_date': 'N/A',
-        'assigned_worker': 'Harry Potter',
-        'control_number': '19-CR-20160927081411',
-        'priority_level': '2',
-        'status': 'Approved',
-        'approval_date': ''
-      }
-    ]
-  }
-  const renderComplaintsComp = mount(<FacilityComplaints {...props} />)
-  it('Verify complaint date to be N/A', function () {
-    expect(renderComplaintsComp.find('td[data-label="complaint date"]').props().children[1]).toBe('N/A')
-  })
-  it('Verify complaint approval date to be invalid date', function () {
-    expect(renderComplaintsComp.find('td[data-label="approval date"]').props().children[1]).toBe('')
   })
 })

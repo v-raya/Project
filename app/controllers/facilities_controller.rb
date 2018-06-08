@@ -1,11 +1,8 @@
 class FacilitiesController < CalsBaseController
   before_action -> { require_privilege(method(:show)) }, only: [:show]
-
   include Response
 
   def show; end
-
-  # @facilities['complaints'] = complaint_helper.find_by_facility(params[:id])
 
   def profile
     @facility = facility_helper.find_by_id(params[:facility_id])
@@ -50,9 +47,5 @@ class FacilitiesController < CalsBaseController
 
   def child_helper
     Helpers::Child.new(auth_header: get_session_token)
-  end
-
-  def complaint_helper
-    Helpers::Complaint.new(auth_header: get_session_token)
   end
 end

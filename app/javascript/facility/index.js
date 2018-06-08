@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import PageHeaderWrapperContainer from 'containers/pageHeaderWrapperContainer'
 import FacilityWrapperContainer from 'containers/facilityWrapperContainer'
 import FacilityChildrenContainer from 'containers/facilityChildrenContainer'
-// import FacilityComplaints from './facilityComplaints.jsx'
+import FacilityComplaintsContainer from 'containers/facilityComplaintsContainer'
 
 export default class Facility extends React.Component {
   render () {
@@ -13,7 +13,7 @@ export default class Facility extends React.Component {
         <div className='body_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <FacilityWrapperContainer match={this.props.match}/>
           <FacilityChildrenContainer match={this.props.match}/>
-          {/* {facilityComplaints && <FacilityComplaints complaints={facilityComplaints.complaints} />} */}
+          <FacilityComplaintsContainer match={this.props.match}/>
         </div>
       </div>
     )

@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/facilities/100000299/complaints
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 4ae8a64c-9af2-4f75-a592-2283141a7844
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Mon, 11 Jun 2018 17:20:50 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 10-Jun-2018 17:20:50
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '622'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "complaints" : [ {
+            "id" : "19-CR-195002-20041019105945",
+            "complaint_date" : "2004-10-19 00:00:00",
+            "assigned_worker" : "Saritha Reddy",
+            "control_number" : "198952",
+            "priority_level" : "",
+            "status" : "Approved",
+            "pre_investigation_comments" : "PO Zamora not in today - contact made with Janice Featherston as described above.",
+            "post_investigation_comments" : "Left message on her voicemail informing her of the outcome of the investigation.",
+            "contact_summary" : "Assigned to LPA Jeffers.\r\nComplaint originally written on 10/15/04, under the wrong Olive Crest home.  LPA Jeffers re-wrote the complaint under the same control #.\r\n\"10-day\" visit completed 10/21/04.\r\nInterviews conducted with the 3 clients in placement at the time, with the staff alleged to be the perpetrator.",
+            "followup_comments" : "None at this time.",
+            "allegations" : [ {
+              "complaint_code" : "3",
+              "allegation" : "Staff Meena Desai marks clients Alexzena Webb and Dizirea Goodwin with a ballpoint pen while they are sleeping.",
+              "resolution_code_sub" : "",
+              "resolution_code_insub" : "",
+              "resolution_code_unsub" : "U"
+            } ]
+          } ]
+        }
+    http_version: 
+  recorded_at: Mon, 11 Jun 2018 17:20:53 GMT
+recorded_with: VCR 3.0.3

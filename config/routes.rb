@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     get 'profile'
     get 'facility_children'
     collection { post :search }
+
+    resources :complaints, only: [:index], controller: 'facilities/complaints'
   end
 
   resources :search do

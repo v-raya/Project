@@ -17,7 +17,7 @@ const facilitySelector = (state) => state.facilityReducer.facility
 
 const facilityChildrenSelector = (state) => state.facilityChildrenReducer.facilityChildren
 
-const facilityComplaintsSelector = (state) => state.facilityReducer.facilityComplaints
+const facilityComplaintsSelector = (state) => state.facilityComplaints.facilityComplaints
 
 const getAddressesOfFacility = (addresses) => ({
   physicalStreetAddress: respectiveStreetAddressOrNA(addresses, physicalAddressType),
@@ -124,9 +124,6 @@ export const getFacilityChildren = (state) => {
 export const getFacilityComplaints = (state) => {
   const facilityComplaintsState = facilityComplaintsSelector(state)
   if (facilityComplaintsState !== null) {
-    return {
-      complaints: getFacilityComplaintsData(facilityComplaintsState)
-    }
+    return getFacilityComplaintsData(facilityComplaintsState)
   }
-  return null
 }

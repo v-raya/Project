@@ -261,15 +261,15 @@ describe('facilityDataSelectors', () => {
   describe('getComplaintsDataSelector', () => {
     it('should return null when passed in null', () => {
       const state = {
-        facilityReducer: {
+        facilityComplaints: {
           facilityComplaints: null
         }
       }
-      expect(getFacilityComplaints(state)).toEqual(null)
+      expect(getFacilityComplaints(state)).toEqual(undefined)
     })
     it('should return complaints array', () => {
       const state = {
-        facilityReducer: {
+        facilityComplaints: {
           facilityComplaints: {
             'complaints': [{
               'id': '19-CR-195002-20041019105945',
@@ -290,8 +290,8 @@ describe('facilityDataSelectors', () => {
           }
         }
       }
-      expect(getFacilityComplaints(state)).toEqual({
-        complaints: [{
+      expect(getFacilityComplaints(state)).toEqual(
+        [{
           id: '19-CR-195002-20041019105945',
           approval_date: 'N/A',
           assigned_worker: 'Saritha Reddy',
@@ -300,7 +300,7 @@ describe('facilityDataSelectors', () => {
           priority_level: undefined,
           status: 'Approved'
         }]
-      })
+      )
     })
   })
 })

@@ -1,4 +1,5 @@
 export {fetchSearchResultsSaga} from './fetchSearchResultsSaga'
 export {fetchFacilityByIdSaga} from './fetchFacilityByIdSaga'
 export {fetchFacilityChildrenByIdSaga} from './fetchFacilityChildrenByIdSaga'
+export {fetchFacilityComplaintsByIdSaga} from './fetchFacilityComplaintsByIdSaga'
 export {fetchSearchDictionariesSaga} from './fetchSearchDictionariesSaga'
