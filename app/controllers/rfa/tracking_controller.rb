@@ -13,14 +13,31 @@ class Rfa::TrackingController < CalsBaseController
   end
 
   def update
-    # TODO: impl
+    @tracking_id = params[:id]
+    @application_id = params[:rfa_1a_id]
+    tracking_helper.update(@application_id, @tracking_id, tracking_params.to_json)
+    render json: tracking_helper.find_by_id(@tracking_id, @application_id)
+  rescue ApiError => e
+    render json: e.response, status: e.status
   end
-
-  def delete; end
 
   private
 
-  def tracking_params; end
+  def tracking_params
+    params.require(:tracking).permit(:id, :facility_name, :license_number, :rfa_1a_id,
+                                     tracking_documents: [
+                                       facility_documents:
+                                       [family_documents: [items: %i[title received_date notes checked]],
+                                        tasks_and_trainings: [items: %i[title completed_date notes checked]],
+                                        assessments: [items: %i[title submitted_date approved_date notes checked]]],
+                                       people_documents: [:person_id, :person_name, :person_type,
+                                                          person_documents: [
+                                                            individual_documents: [items: %i[title completed_date notes checked]],
+                                                            trainings: [items: %i[title expiration_date notes checked]],
+                                                            clearances: [items: %i[title start_date completion_date notes checked]]
+                                                          ]]
+                                     ])
+  end
 
   def rfa_application_helper
     Helpers::Rfa::ApplicationHelper.new(auth_header: get_session_token)
