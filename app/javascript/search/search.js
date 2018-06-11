@@ -58,7 +58,7 @@ class Search extends React.Component {
 
   onPageNumberInputChange (value) {
     const resultedPageNumbers = floatToNextInt(this.props.totalNoOfResults, this.props.sizeValue)
-    if (value === '') {
+    if (value === '' || value === '0') {
       value = 1
       this.props.handlePageNumberChange(value)
     } else if (value > resultedPageNumbers) {
