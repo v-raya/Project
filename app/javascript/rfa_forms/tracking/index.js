@@ -12,16 +12,24 @@ export default class TrackingList extends React.Component {
   constructor (props) {
     super(props)
     this.saveProgress = this.saveProgress.bind(this)
+    this.editSaveToggle = this.editSaveToggle.bind(this)
+    this.editProgress = this.editProgress.bind(this)
 
     this.state = {
       user: this.props.user,
-      rfa_application: this.props.rfa_application,
+      rfaApplication: this.props.rfaApplication,
       tracking: this.props.tracking,
-      CardBeingedited: ''
+      cardBeingEdited: false
     }
   }
-  saveProgress () {
-    const url = '/rfa/a01/' + this.state.rfa_application.id + '/tracking/' + this.state.tracking.id
+
+  editProgress (event) {
+    this.setState({ cardBeingEdited: true })
+  }
+
+  saveProgress (event) {
+    this.setState({ cardBeingEdited: false })
+    const url = '/rfa/a01/' + this.state.rfaApplication.id + '/tracking/' + this.state.tracking.id
     fetchRequest(url, 'PUT', this.state.tracking)
       .then((response) => {
         return response.json()
@@ -32,24 +40,41 @@ export default class TrackingList extends React.Component {
       })
   }
 
+  editSaveToggle () {
+    const { cardBeingEdited, tracking } = this.state
+    return cardBeingEdited ? <div>tracking id: {tracking.id}</div> : <div>rfa_1a_id: {tracking.rfa_1a_id}</div>
+  }
+
   render () {
     return (
       <div className='tracking_page'>
         <PageHeader
           headerLabel='RFA Tracking'
           pageHeaderButtons={
-            <Button
-              buttonId='saveProgress'
-              label='Save '
-              textAlignment='right'
-              onClick={this.saveProgress}
-            />}
+            <div>
+              <div className='col-lg-2 col-md-2 col-sm-2 col-xs-2'>
+                <Button
+                  buttonId='saveProgress'
+                  label='Save '
+                  textAlignment='right'
+                  onClick={this.saveProgress}
+                />
+              </div>
+              {/* This button will be moved to card header */}
+              <div className='col-lg-2 col-md-2 col-sm-2 col-xs-2'>
+                <Button
+                  buttonId='editProgress'
+                  label='Edit '
+                  textAlignment='left'
+                  onClick={this.editProgress}
+                />
+              </div>
+            </div>}
         />
         <BreadCrumb
           navigationElements={[<a href={urlPrefixHelper('/')}>RFA Application list</a>]} />
         <CardsGroupLayout>
-          <div>tracking id: {this.state.tracking.id}</div>
-          <div>rfa_1a_id: {this.state.tracking.rfa_1a_id}</div>
+          {this.editSaveToggle()}
         </CardsGroupLayout>
       </div>
     )
@@ -58,5 +83,5 @@ export default class TrackingList extends React.Component {
 
 TrackingList.defaultProps = {
   tracking: {},
-  rfa_application: {}
+  rfaApplication: {}
 }
