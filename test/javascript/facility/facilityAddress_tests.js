@@ -18,10 +18,6 @@ describe('Verify Facility Address', function () {
       'lastVisitDate': '04/14/2017',
       'lastVisitReason': 'CASELOAD MANAGEMENT',
       'county': 'ORANGE'
-    },
-    facilityAssignedWorker: {
-      'assigned_worker_full_name': 'Ananya Nandi',
-      'assigned_worker_phone_number': '(945) 432-1234'
     }
   }
   let AddressCompShallow = shallow(<FacilityAddress {...props} />)
@@ -54,11 +50,5 @@ describe('Verify Facility Address', function () {
   })
   it('verify Facility Last Visit Reason', function () {
     expect(AddressCompShallow.find('SmallInnerBlockDetails[title="LAST VISIT REASON"]').props().value).toBe('CASELOAD MANAGEMENT')
-  })
-  it('verify Facility Assigned Worker Full Name', function () {
-    expect(AddressCompShallow.find('SmallInnerBlockDetails[title="APPROVAL / LICENSING WORKER"]').props().value).toBe('Ananya Nandi')
-  })
-  it('verify Facility Assigned Worker Phone Number', function () {
-    expect(AddressCompShallow.find('SmallInnerBlockDetails[title="APPROVAL / LICENSING WORKER PHONE NUMBER"]').props().value).toBe('(945) 432-1234')
   })
 })

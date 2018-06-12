@@ -2,13 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {SmallInnerBlockDetails} from './smallInnerBlockDetails.js'
 import {InnerBlockAddressTitles} from './innerBlockAddressTitles.js'
-import {facilityDataDefaults} from 'constants/defaultFields'
 
 const FacilityAddress = ({
   facilityAddress,
   facilityPhones,
-  otherFacilityData,
-  facilityAssignedWorker
+  otherFacilityData
 }) => (
   <div>
     <div className='facility-address col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -51,18 +49,6 @@ const FacilityAddress = ({
         </div>
       </div>
     </div>
-    <div className='facility-details grid_view col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-      <div className='facility_blocks col-xs-12 col-sm-4 col-md-4 col-lg-4'>
-        <SmallInnerBlockDetails
-          title='APPROVAL / LICENSING WORKER'
-          value={facilityAssignedWorker.assigned_worker_full_name} />
-      </div>
-      <div className='facility_blocks col-xs-12 col-sm-4 col-md-4 col-lg-4'>
-        <SmallInnerBlockDetails
-          title='APPROVAL / LICENSING WORKER PHONE NUMBER'
-          value={facilityAssignedWorker.assigned_worker_phone_number} />
-      </div>
-    </div>
   </div>
 )
 
@@ -87,10 +73,6 @@ FacilityAddress.defaultProps = {
     county: '',
     lastVisitDate: '',
     lastVisitReason: ''
-  },
-  facilityAssignedWorker: {
-    assigned_worker_full_name: '',
-    assigned_worker_phone_number: ''
   }
 }
 

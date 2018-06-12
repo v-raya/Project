@@ -1,5 +1,6 @@
 import {
   checkForNA,
+  checkForObjectAndValue,
   checkforDateOrNa,
   checkfullNameorNA,
   checkPhoneNumberOrNA,
@@ -39,8 +40,9 @@ const getOtherDataOfFacility = (facilityState) => ({
 })
 
 const getAssignedWorkerData = (assignedWorker) => ({
-  assigned_worker_full_name: checkForNA(assignedWorker),
-  assigned_worker_phone_number: checkPhoneNumberOrNA(assignedWorker, primaryPhoneRelation)
+  assignedWorkerFullName: checkForObjectAndValue(assignedWorker, 'full_name'),
+  assignedWorkerPhoneNumber: checkPhoneNumberOrNA(assignedWorker, primaryPhoneRelation),
+  assignedWorkerEmail: checkForObjectAndValue(assignedWorker, 'email')
 })
 
 const getFacilityDetails = (facilityState) => ({

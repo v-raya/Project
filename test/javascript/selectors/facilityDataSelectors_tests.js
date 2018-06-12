@@ -32,7 +32,7 @@ describe('facilityDataSelectors', () => {
             'licensee_name': 'Ananya Nandi',
             'license_type': 'A',
             'assigned_worker': {
-              value: 'Ananya Nandi'
+              'full_name': 'Ananya Nandi'
             },
             'district_office': {
               'number': '19',
@@ -218,8 +218,9 @@ describe('facilityDataSelectors', () => {
         }
       }
       expect(getFacilityAssignedWorker(state)).toEqual({
-        assigned_worker_full_name: 'N/A',
-        assigned_worker_phone_number: 'N/A'
+        assignedWorkerFullName: 'N/A',
+        assignedWorkerPhoneNumber: 'N/A',
+        assignedWorkerEmail: 'N/A'
       })
     })
     it('should return assigned worker data', () => {
@@ -227,7 +228,7 @@ describe('facilityDataSelectors', () => {
         facilityReducer: {
           facility: {
             assigned_worker: {
-              value: 'Ananya Nandi',
+              'full_name': 'Ananya Nandi',
               'phones': [
                 {
                   'relation': 'primary',
@@ -237,14 +238,16 @@ describe('facilityDataSelectors', () => {
                   'relation': 'alternate',
                   'number': '9164578228'
                 }
-              ]
+              ],
+              'email': 'email@gmail.com'
             }
           }
         }
       }
       expect(getFacilityAssignedWorker(state)).toEqual({
-        assigned_worker_full_name: 'Ananya Nandi',
-        assigned_worker_phone_number: '(916) 457-8228'
+        assignedWorkerFullName: 'Ananya Nandi',
+        assignedWorkerPhoneNumber: '(916) 457-8228',
+        assignedWorkerEmail: 'email@gmail.com'
       })
     })
   })
