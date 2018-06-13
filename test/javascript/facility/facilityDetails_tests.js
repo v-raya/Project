@@ -19,7 +19,7 @@ describe('Verify Facility Details', function () {
   }
   let detailsCompShallow = shallow(<FacilityDetails {...props} />)
   it('verify Facility Details fields', function () {
-    expect(detailsCompShallow.find('.grid_view').length).toEqual(1)
+    expect(detailsCompShallow.find('.facility-details').length).toEqual(1)
   })
   it('Verify Name of Licensee / Parents', function () {
     expect(detailsCompShallow.find('SmallInnerBlockDetails[title="NAME OF LICENSEE / PARENTS"]').props().value).toBe('Lederhouse Transitions Inc.')

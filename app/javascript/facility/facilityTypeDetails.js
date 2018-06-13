@@ -4,11 +4,9 @@ const FacilityTypeDetails = ({
   value
 }) => (
   <div>
-    <div>
-      <h3>
+    <h3>
            FACILITY TYPE : {' ' + value}
-      </h3>
-    </div>
+    </h3>
   </div>
 )
 

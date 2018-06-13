@@ -12,8 +12,8 @@ export default class FacilityChildren extends React.Component {
   render () {
     const {children, errors, isFetching} = this.props
     return (
-      <div className='facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-        <div className='facility-children-block'>
+      <div className='facility-children'>
+        <div className='facility-children-block col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <div className='children-title'> <h3>Children currently placed in facility</h3> </div>
           <ApiErrorMessages errors={errors.issue_details}/>
           {isFetching ? <div className="loading-icon"></div>

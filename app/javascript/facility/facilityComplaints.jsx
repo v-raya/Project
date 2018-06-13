@@ -13,8 +13,8 @@ export default class FacilityComplaints extends React.Component {
   render () {
     const {complaints, errors, isFetching} = this.props
     return (
-      <div className='facility-children col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-        <div className='facility-children-block'>
+      <div className='facility-children'>
+        <div className='facility-children-block col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <div className='children-title'> <h3>Complaint History </h3> </div>
           <ApiErrorMessages errors={errors.issue_details}/>
 

@@ -75,11 +75,7 @@ export const checkPhoneNumberOrNA = (object, objectPhoneNumberRelation) => {
 }
 
 export const checkfullNameorNA = (object) => {
-  return object ? fullName(object) : 'N/A'
-}
-
-const fullName = (object) => {
-  return object.first_name + ' ' + object.last_name
+  return object ? `${object.first_name} ${object.last_name}` : 'N/A'
 }
 
 export const checkNullOrEmptyValue = (value) => {
