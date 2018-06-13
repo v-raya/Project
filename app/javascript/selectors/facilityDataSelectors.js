@@ -80,7 +80,7 @@ const getFacilityComplaintsData = (facilityComplaints) => {
     assigned_worker: complaint.assigned_worker,
     complaint_date: checkforDateOrNa(complaint.complaint_date),
     control_number: complaint.control_number,
-    priority_level: complaint.priority_level,
+    priority_level: complaint.priority_level || 'N/A',
     status: complaint.status
   })
   )

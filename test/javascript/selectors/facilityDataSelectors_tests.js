@@ -335,7 +335,7 @@ describe('facilityDataSelectors', () => {
           assigned_worker: 'Saritha Reddy',
           complaint_date: '10/19/2004',
           control_number: '198952',
-          priority_level: undefined,
+          priority_level: 'N/A',
           status: 'Approved'
         }]
       )
