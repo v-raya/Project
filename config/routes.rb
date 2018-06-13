@@ -3,9 +3,8 @@ Rails.application.routes.draw do
 
   resources :facilities, only: [:show] do
     get 'profile'
-    get 'facility_children'
     collection { post :search }
-
+    resources :children, only: [:index], controller: 'facilities/children'
     resources :complaints, only: [:index], controller: 'facilities/complaints'
   end
 

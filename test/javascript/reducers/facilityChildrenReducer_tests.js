@@ -1,11 +1,11 @@
-import {facilityChildrenReducer} from 'reducers/facilityChildrenReducer'
+import {facilityChildren} from 'reducers/facilityChildren'
 import {facilityChildrenApiCall, fetchSuccess, fetchFailure} from 'actions/facilityChildrenActions'
 
 describe('Verify facilityChildrenReducer', () => {
   describe('on default', () => {
     it('returns initial state', () => {
-      expect(facilityChildrenReducer(undefined, {})).toEqual({
-        facilityChildren: null,
+      expect(facilityChildren(undefined, {})).toEqual({
+        children: null,
         errors: undefined,
         isFetching: false
       })
@@ -13,7 +13,7 @@ describe('Verify facilityChildrenReducer', () => {
   })
   describe('on FACILITY_CHILDREN_RESULTS_FETCH', () => {
     it('returns current state', () => {
-      const facilityChildren = {
+      const children = {
         'children': [{
           'id': '2q6FdWU03k',
           'person': {
@@ -33,75 +33,71 @@ describe('Verify facilityChildrenReducer', () => {
         }]
       }
       const inputState = {
-        facilityChildren: null,
+        children: null,
         errors: undefined,
         isFetching: true
       }
-      const facilityChildrenApiCallAction = facilityChildrenApiCall(facilityChildren)
+      const facilityChildrenApiCallAction = facilityChildrenApiCall(children)
 
-      expect(facilityChildrenReducer(inputState, facilityChildrenApiCallAction)).toEqual(inputState)
+      expect(facilityChildren(inputState, facilityChildrenApiCallAction)).toEqual(inputState)
     })
   })
 
   describe('on FACILITY_CHILDREN_RESULTS_FETCH_COMPLETE', () => {
     it('returns the new state with facility children info', () => {
       const inputState = {
-        facilityChildren: {
-          'children': [{
-            'id': '2q6FdWU03k',
-            'person': {
-              'gender': 'M',
-              'age': 29,
-              'first_name': 'boy F',
-              'last_name': 'Cavy',
-              'date_of_birth': '1988-08-08'
-            },
-            'date_of_placement': '1998-08-04',
-            'assigned_worker': {
-              'first_name': 'Wayne',
-              'last_name': 'Fehlberg'
-            },
-            'county_of_origin': 'Modoc',
-            'display_client_id': '0161-3317-6329-8000232'
-          }]
-        },
+        'children': [{
+          'id': '2q6FdWU03k',
+          'person': {
+            'gender': 'M',
+            'age': 29,
+            'first_name': 'boy F',
+            'last_name': 'Cavy',
+            'date_of_birth': '1988-08-08'
+          },
+          'date_of_placement': '1998-08-04',
+          'assigned_worker': {
+            'first_name': 'Wayne',
+            'last_name': 'Fehlberg'
+          },
+          'county_of_origin': 'Modoc',
+          'display_client_id': '0161-3317-6329-8000232'
+        }],
         errors: undefined,
         isFetching: false
       }
 
       const facilityChildrenAction = fetchSuccess({
-        facilityChildren: {
-          'children': [{
-            'id': 'Ayr2w4rw',
-            'person': {
-              'gender': 'F',
-              'age': 25,
-              'first_name': 'girl F',
-              'last_name': 'Alicia',
-              'date_of_birth': '1994-05-03'
-            },
-            'date_of_placement': '1996-04-01',
-            'assigned_worker': {
-              'first_name': 'Dwayne',
-              'last_name': 'Jhonson'
-            },
-            'county_of_origin': 'Sacramento',
-            'display_client_id': '1111-6547-1234-5111323'
-          }]
-        }
+        'children': [{
+          'id': 'Ayr2w4rw',
+          'person': {
+            'gender': 'F',
+            'age': 25,
+            'first_name': 'girl F',
+            'last_name': 'Alicia',
+            'date_of_birth': '1994-05-03'
+          },
+          'date_of_placement': '1996-04-01',
+          'assigned_worker': {
+            'first_name': 'Dwayne',
+            'last_name': 'Jhonson'
+          },
+          'county_of_origin': 'Sacramento',
+          'display_client_id': '1111-6547-1234-5111323'
+        }]
       })
 
       let outputState = {}
-      outputState.facilityChildren = facilityChildrenAction.payload.facilityChildren
+      outputState.children = facilityChildrenAction.payload.children
       outputState.errors = undefined
       outputState.isFetching = false
-      expect(facilityChildrenReducer(inputState, facilityChildrenAction)).toEqual(outputState)
+      expect(facilityChildren(inputState, facilityChildrenAction)).toEqual(outputState)
     })
   })
   describe('on FACILITY_CHILDREN_RESULTS_FETCH_ERROR', () => {
     it('returns the new state with facility children info', () => {
       const inputState = {
-        facilityChildren: null,
+        children: null,
         errors: undefined,
         isFetching: false
       }
@@ -121,11 +117,11 @@ describe('Verify facilityChildrenReducer', () => {
       })
 
       let outputState = {}
-      outputState.facilityChildren = null
+      outputState.children = null
       outputState.isFetching = false
       outputState.errors = facilityChildrenFailure.payload.error
 
-      expect(facilityChildrenReducer(inputState, facilityChildrenFailure)).toEqual(outputState)
+      expect(facilityChildren(inputState, facilityChildrenFailure)).toEqual(outputState)
     })
   })
 })

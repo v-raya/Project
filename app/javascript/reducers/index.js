@@ -1,13 +1,13 @@
 import {combineReducers} from 'redux'
 import { searchReducer } from 'reducers/searchReducer'
 import {facilityReducer} from 'reducers/facilityReducer'
-import {facilityChildrenReducer} from 'reducers/facilityChildrenReducer'
+import {facilityChildren} from 'reducers/facilityChildren'
 import {facilityComplaints} from 'reducers/facilityComplaints'
 
 const rootReducer = combineReducers({
   searchReducer,
   facilityReducer,
-  facilityChildrenReducer,
+  facilityChildren,
   facilityComplaints
 })
 

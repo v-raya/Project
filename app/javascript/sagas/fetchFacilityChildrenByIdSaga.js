@@ -5,9 +5,9 @@ import {FACILITY_CHILDREN_RESULTS_FETCH, fetchSuccess, fetchFailure} from 'actio
 // worker saga: makes the api call when watcher saga sees the action
 export function * fetchFacilityChildrenById (action) {
   try {
-    const url = '/facilities/' + action.payload.facilityParams.id + '/facility_children'
+    const url = '/facilities/' + action.payload.facilityParams.id + '/children'
     const response = yield call(fetchRequestWithErrors, url, 'GET', null)
-    yield put(fetchSuccess({facilityChildren: response}))
+    yield put(fetchSuccess(response))
   } catch (error) {
     const errorResponse = yield call([error, error.json])
     yield put(fetchFailure({errorResponse}))

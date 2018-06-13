@@ -255,36 +255,32 @@ describe('facilityDataSelectors', () => {
   describe('getChildrenDataSelector', () => {
     it('should return empty array when passed in null', () => {
       const state = {
-        facilityChildrenReducer: {
-          facilityChildren: {
-            'children': []
-          }
+        facilityChildren: {
+          'children': []
         }
       }
       expect(getFacilityChildren(state)).toEqual([])
     })
     it('should return children array', () => {
       const state = {
-        facilityChildrenReducer: {
-          facilityChildren: {
-            'children': [{
-              'id': '2q6FdWU03k',
-              'person': {
-                'gender': 'M',
-                'age': 29,
-                'first_name': 'boy F',
-                'last_name': 'Cavy',
-                'date_of_birth': '1988-08-08'
-              },
-              'date_of_placement': '1998-08-04',
-              'assigned_worker': {
-                'first_name': 'Wayne',
-                'last_name': 'Fehlberg'
-              },
-              'county_of_origin': 'Modoc',
-              'display_client_id': '0161-3317-6329-8000232'
-            }]
-          }
+        facilityChildren: {
+          'children': [{
+            'id': '2q6FdWU03k',
+            'person': {
+              'gender': 'M',
+              'age': 29,
+              'first_name': 'boy F',
+              'last_name': 'Cavy',
+              'date_of_birth': '1988-08-08'
+            },
+            'date_of_placement': '1998-08-04',
+            'assigned_worker': {
+              'first_name': 'Wayne',
+              'last_name': 'Fehlberg'
+            },
+            'county_of_origin': 'Modoc',
+            'display_client_id': '0161-3317-6329-8000232'
+          }]
         }
       }
       expect(getFacilityChildren(state)).toEqual([{

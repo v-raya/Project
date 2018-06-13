@@ -11,13 +11,6 @@ class FacilitiesController < CalsBaseController
     render json: e.response, status: e.status
   end
 
-  def facility_children
-    @facility_children = child_helper.find_by_facility(params[:facility_id])
-    json_response @facility_children
-  rescue ApiError => e
-    render json: e.response, status: e.status
-  end
-
   def search
     page_params = {}
     page_params['size_params'] = params[:size]
@@ -44,8 +37,5 @@ class FacilitiesController < CalsBaseController
   def facility_helper
     Helpers::Facility.new(auth_header: get_session_token)
   end
-
-  def child_helper
-    Helpers::Child.new(auth_header: get_session_token)
-  end
+  
 end

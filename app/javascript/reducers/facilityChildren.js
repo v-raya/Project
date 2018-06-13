@@ -3,23 +3,23 @@ const FACILITY_CHILDREN_RESULTS_FETCH_COMPLETE = 'FACILITY_CHILDREN_RESULTS/FETC
 const FACILITY_CHILDREN_RESULTS_FETCH_ERROR = 'FACILITY_CHILDREN_RESULTS/FETCH_ERROR'
 
 const initialState = {
-  facilityChildren: null,
+  children: null,
   errors: undefined,
   isFetching: false
 }
 
-export const facilityChildrenReducer = (state = initialState, action) => {
+export const facilityChildren = (state = initialState, action) => {
   switch (action.type) {
     case FACILITY_CHILDREN_RESULTS_FETCH:
       return {...state,
-        facilityChildren: null,
+        children: null,
         errors: undefined,
         isFetching: true}
     case FACILITY_CHILDREN_RESULTS_FETCH_COMPLETE:
-      return {...state, facilityChildren: action.payload.facilityChildren, errors: undefined, isFetching: false}
+      return {...state, children: action.payload.children, errors: undefined, isFetching: false}
     case FACILITY_CHILDREN_RESULTS_FETCH_ERROR:
       return {...state,
-        facilityChildren: null,
+        children: null,
         errors: action.payload.errorResponse,
         isFetching: false}
     default:

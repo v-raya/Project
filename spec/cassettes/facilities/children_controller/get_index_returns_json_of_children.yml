@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/facilities/250000004/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 62e381e8-4c6a-4530-b8e2-d3064e6406bb
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 12 Jun 2018 16:36:33 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 11-Jun-2018 16:36:33
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '253'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "children" : [ {
+            "id" : "2q6FdWU03k",
+            "person" : {
+              "gender" : "M",
+              "age" : 29,
+              "first_name" : "boy F",
+              "last_name" : "Cavy",
+              "date_of_birth" : "1988-08-08"
+            },
+            "date_of_placement" : "1998-08-04",
+            "assigned_worker" : {
+              "first_name" : "Wayne",
+              "last_name" : "Fehlberg"
+            },
+            "county_of_origin" : "Modoc",
+            "display_client_id" : "0161-3317-6329-8000232"
+          } ]
+        }
+    http_version: 
+  recorded_at: Tue, 12 Jun 2018 16:36:32 GMT
+recorded_with: VCR 3.0.3

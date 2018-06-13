@@ -6,8 +6,8 @@ import {facilityChildrenApiCall} from 'actions/facilityChildrenActions'
 const mapStateToProps = (state, ownProps) => ({
   children: getFacilityChildren(state),
   match: ownProps.match,
-  isFetching: state.facilityChildrenReducer.isFetching,
-  errors: state.facilityChildrenReducer.errors
+  isFetching: state.facilityChildren.isFetching,
+  errors: state.facilityChildren.errors
 
 })
 

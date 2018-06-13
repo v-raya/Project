@@ -17,7 +17,7 @@ import {
 
 const facilitySelector = (state) => state.facilityReducer.facility
 
-const facilityChildrenSelector = (state) => state.facilityChildrenReducer.facilityChildren
+const facilityChildrenSelector = (state) => state.facilityChildren.children
 
 const facilityComplaintsSelector = (state) => state.facilityComplaints.complaints
 
@@ -57,8 +57,8 @@ const getFacilityDetails = (facilityState) => ({
   status: checkForNA(facilityState.status)
 })
 
-const getFacilityChildrenData = (facilityChildrenState) => {
-  return facilityChildrenState.children.map((child) => ({
+const getFacilityChildrenData = (facilityChildren) => {
+  return facilityChildren.map((child) => ({
     age: child.person.age,
     assigned_worker: checkfullNameorNA(child.assigned_worker),
     county_of_origin: child.county_of_origin,
@@ -129,9 +129,9 @@ export const getFacilityData = (state) => {
 }
 
 export const getFacilityChildren = (state) => {
-  const facilityChildrenState = facilityChildrenSelector(state)
-  if (facilityChildrenState !== null) {
-    return getFacilityChildrenData(facilityChildrenState)
+  const facilityChildren = facilityChildrenSelector(state)
+  if (facilityChildren !== null) {
+    return getFacilityChildrenData(facilityChildren)
   }
 }
 
