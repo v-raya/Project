@@ -38,8 +38,8 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
   scenario 'To test dropdown for number of facilities per page' do
     facilities_list
     within(:css, '.search-toggle') do
-      select '20', from: 'dropdownFacilities_top_pagination'
-      expect(find_field('dropdownFacilities_top_pagination').value).to eq '20'
+      select '20', from: 'noOfFacilities'
+      expect(find_field('noOfFacilities').value).to eq '20'
     end
     expect(page).to have_content('Facility Phone Number', minimum: 1)
   end

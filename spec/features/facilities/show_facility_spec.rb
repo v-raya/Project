@@ -50,15 +50,15 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     select 'Los Angeles', from: 'county_select'
     find_button('search').click
     within(:css, '.search-toggle') do
-      select '10', from: 'dropdownFacilities_top_pagination'
-      expect(find_field('dropdownFacilities_top_pagination').value).to eq '10'
+      select '10', from: 'noOfFacilities'
+      expect(find_field('noOfFacilities').value).to eq '10'
     end
     expect(page).to have_content('Facility Phone Number', minimum: 1)
     expect(page).to have_css(:span, text: '1')
     within(:css, '.search-toggle') do
-      find(:css, '#next_button_top_pagination').click
+      find(:css, '#nextButton').click
       expect(page).to have_text('2')
-      find(:css, '#previous_button_top_pagination').click
+      find(:css, '#previousButton').click
       expect(page).to have_text('1')
     end
     expect(page).to have_content('Facility Phone Number', minimum: 1)

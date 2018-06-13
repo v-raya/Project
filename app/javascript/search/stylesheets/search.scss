@@ -154,14 +154,15 @@ input[type=number]::-webkit-outer-spin-button {
   padding-left: 0px;
 }
 
-.search_dropdown {
+.no_of_facilities {
   width: 100px;
   margin-top: -35px;
   display: inline;
 }
 
-.top_pagination {
+.pagination {
   float: right;
+  margin-top: 0px;
 }
 
 .bottom_pagination {

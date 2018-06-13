@@ -108,7 +108,7 @@ describe('Verify Search component', function () {
   })
 
   it('verify dropDown value change number of facilities', () => {
-    let dropdownForfacilitiesCount = searchComp.find('#dropdownFacilities_top_pagination').at(1)
+    let dropdownForfacilitiesCount = searchComp.find('#noOfFacilities').at(1)
     dropdownForfacilitiesCount.simulate('change', {target: {options: {'5': {id: '5', value: '5'}, selectedIndex: 5}}})
 
     const expectedQuery = {
@@ -155,7 +155,7 @@ describe('Verify Search component', function () {
   })
 
   it('verify if the dropdown component is rendered or not', () => {
-    let dropDownComponent = searchComp.find('#dropdownFacilities_top_pagination').at(1)
+    let dropDownComponent = searchComp.find('#noOfFacilities').at(1)
     expect(dropDownComponent.length).toBe(1)
     searchComp.setProps({isScrollBarVisible: false})
     searchComp.update()

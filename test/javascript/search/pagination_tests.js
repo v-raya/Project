@@ -28,13 +28,13 @@ describe('Facility Search pagination', function () {
   })
 
   it('verify pagination component render', () => {
-    const paginationClassName = paginationCompRendered.find('.top_pagination')
+    const paginationClassName = paginationCompRendered.find('.pagination')
     expect(paginationClassName.length).toBe(1)
     expect(paginationCompRendered.length).toBe(1)
   })
 
   it('verify number of facilities dropdown after component render', () => {
-    let dropDownFacilities = paginationCompRendered.find('.search_dropdown')
+    let dropDownFacilities = paginationCompRendered.find('.no_of_facilities')
     dropDownFacilities.simulate('change', {target: {options: {'5': {id: '5', value: '5'}, selectedIndex: 5}}})
     expect(handleDropDownAndPageNumberChangeSpy).toHaveBeenCalledWith(1, 5)
   })
@@ -70,21 +70,21 @@ describe('Facility Search pagination', function () {
   })
 
   it('verify dropDown value change number of facilities', () => {
-    let dropdownForfacilitiesCount = paginationCompRendered.find('#dropdownFacilities_top_pagination')
+    let dropdownForfacilitiesCount = paginationCompRendered.find('#noOfFacilities')
     dropdownForfacilitiesCount.simulate('change', {target: {options: {'5': {id: '5', value: '5'}, selectedIndex: 5}}})
     expect(handleDropDownAndPageNumberChangeSpy).toHaveBeenCalledWith(1, 5)
     expect(searchApiCallSpy).toHaveBeenCalledWith(0, 5)
   })
 
   it('verify clicking next button ', () => {
-    let searchFacility = paginationCompRendered.find('#next_button_top_pagination')
+    let searchFacility = paginationCompRendered.find('#nextButton')
     searchFacility.simulate('click')
     expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(3)
     expect(searchApiCallSpy).toHaveBeenCalledWith(10, 5)
   })
 
   it('verify clicking previous button ', () => {
-    let searchFacility = paginationCompRendered.find('#previous_button_top_pagination')
+    let searchFacility = paginationCompRendered.find('#previousButton')
     searchFacility.simulate('click')
     expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(1)
     expect(searchApiCallSpy).toHaveBeenCalledWith(0, 5)
