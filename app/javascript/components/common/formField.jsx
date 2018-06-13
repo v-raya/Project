@@ -10,9 +10,9 @@ const FormField = ({children, errors, gridClassName, labelClassName, id, label, 
     ClassNames(labelClassName, {'input-error-label': hasErrors}, {required: required})
   return (
     <div className={gridClassNames}>
-      <label htmlFor={id} className={labelClassNames}>
+      {label && <label htmlFor={id} className={labelClassNames}>
         {label}
-      </label>
+      </label>}
       {children}
       <ErrorMessages id={id} errors={errors} />
     </div>
@@ -27,7 +27,7 @@ FormField.propTypes = {
   errors: PropTypes.object,
   gridClassName: PropTypes.string,
   id: PropTypes.string,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   labelClassName: PropTypes.string,
   required: PropTypes.bool
 }

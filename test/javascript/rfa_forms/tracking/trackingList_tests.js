@@ -2,9 +2,8 @@ import React from 'react'
 import TrackingList from 'rfa_forms/tracking'
 import {shallow, mount} from 'enzyme'
 
-describe('Rfa01CEditView test', () => {
-  let trackingListView, saveProgressSpy, editProgressSpy, trackingListViewNoProps
-
+describe('Tracking Page test', () => {
+  let trackingListView, saveProgressSpy, editProgressSpy
   beforeEach(() => {
     const props = {
       user: {county_code: 1},
@@ -192,7 +191,6 @@ describe('Rfa01CEditView test', () => {
     saveProgressSpy = spyOn(TrackingList.prototype, 'saveProgress').and.callThrough()
     editProgressSpy = spyOn(TrackingList.prototype, 'editProgress').and.callThrough()
     trackingListView = mount(<TrackingList {...props} />)
-    trackingListViewNoProps = mount(<TrackingList />)
   })
 
   it('tests tracking List View renders page', () => {
@@ -209,11 +207,5 @@ describe('Rfa01CEditView test', () => {
     let editProgressBtn = trackingListView.find('#editProgress')
     editProgressBtn.simulate('click')
     expect(editProgressSpy).toHaveBeenCalled()
-  })
-
-  it('tests save with no props', () => {
-    let saveProgressBtn = trackingListViewNoProps.find('#saveProgress')
-    saveProgressBtn.simulate('click')
-    expect(saveProgressSpy).toHaveBeenCalled()
   })
 })

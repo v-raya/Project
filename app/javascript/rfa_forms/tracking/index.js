@@ -1,5 +1,6 @@
 import React from 'react'
 import Immutable from 'immutable'
+import TrackingDocument from './trackingDocument'
 import CardsGroupLayout from 'components/common/cardsGroupLayout.js'
 import Button from 'components/common/button'
 import LogoHeader from 'components/common/logoHeader'
@@ -14,7 +15,6 @@ export default class TrackingList extends React.Component {
     this.saveProgress = this.saveProgress.bind(this)
     this.editSaveToggle = this.editSaveToggle.bind(this)
     this.editProgress = this.editProgress.bind(this)
-
     this.state = {
       user: this.props.user,
       rfaApplication: this.props.rfaApplication,
@@ -46,6 +46,7 @@ export default class TrackingList extends React.Component {
   }
 
   render () {
+    const trackingDocuments = this.state.tracking.tracking_documents
     return (
       <div className='tracking_page'>
         <PageHeader
@@ -75,6 +76,10 @@ export default class TrackingList extends React.Component {
           navigationElements={[<a href={urlPrefixHelper('/')}>RFA Application list</a>]} />
         <CardsGroupLayout>
           {this.editSaveToggle()}
+          <TrackingDocument
+            trackingDocuments={trackingDocuments}
+            editMode={this.state.cardBeingEdited}
+          />
         </CardsGroupLayout>
       </div>
     )
