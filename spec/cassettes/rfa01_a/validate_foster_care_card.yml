@@ -9856,7 +9856,7 @@ http_interactions:
   recorded_at: Tue, 17 Apr 2018 20:24:30 GMT
 - request:
     method: put
-    uri: https://calsapi.preint.cwds.io//5785/adoptionhistories
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/5785/adoption-history
     body:
       encoding: UTF-8
       string: '{"was_subject_for_exclusion_order_q7":"","foster_care_licenses_q1":{"was_previously_licensed":"true","agencies":[{"name":"","type":{}}]},"applications_for_adoption_q2":{"have_applied_for_adoption":"","facilities":[""]},"facility_operation_licenses_q3":{"was_previously_licensed":"","agencies":[{"name":"","type":{}}]},"employment_in_facilities_q4":{"was_employed_or_volunteered":"","facilities":[""]},"denial_history_q5":{"had_denials":"","agencies":[{"name":"","type":{}}]},"suspension_revocation_history_q6":{"had_suspensions_revocations":"","agencies":[{"name":"","type":{}}]}}'

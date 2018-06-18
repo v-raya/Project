@@ -4,6 +4,14 @@ attr_accessor :id, :foster_care_licenses_q1, :applications_for_adoption_q2,
 :facility_operation_licenses_q3, :employment_in_facilities_q4, :denial_history_q5,
 :suspension_revocation_history_q6, :was_subject_for_exclusion_order_q7
 
+  def self.parent_path
+    'rfa-1a-forms'
+  end
+
+  def self.api_resource_path
+    'adoption-history'
+  end
+
 # {
 #   'foster_care_licenses_q1': {
 #     'was_previously_licensed': '',
