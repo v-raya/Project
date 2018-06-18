@@ -71,7 +71,6 @@ def pushToDocker(imageLocation, args, docker_credential_id) {
     withEnv(["DOCKER_CREDENTIALS_ID=${docker_credential_id}"]) {
         withDockerRegistry([credentialsId: docker_credential_id]) {
             app.push()
-            app.push('latest')
         }
     }
 }
