@@ -15,11 +15,15 @@ describe('Verify Facility Details', function () {
       'capacity_last_changed': '10/01/2012',
       'license_effective_date': '10/01/2012',
       'original_application_recieved_date': '07/18/2012'
-    }
+    },
+    facilityName: 'Ananya Nandi'
   }
   let detailsCompShallow = shallow(<FacilityDetails {...props} />)
   it('verify Facility Details fields', function () {
     expect(detailsCompShallow.find('.facility-details').length).toEqual(1)
+  })
+  it('Verify Facility Name', function () {
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="FACILITY NAME"]').props().value).toBe('Ananya Nandi')
   })
   it('Verify Name of Licensee / Parents', function () {
     expect(detailsCompShallow.find('SmallInnerBlockDetails[title="NAME OF LICENSEE / PARENTS"]').props().value).toBe('Lederhouse Transitions Inc.')

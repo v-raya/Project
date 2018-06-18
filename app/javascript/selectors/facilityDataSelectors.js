@@ -49,7 +49,7 @@ const getFacilityDetails = (facilityState) => ({
   capacity: facilityState.capacity || 'N/A',
   capacity_last_changed: checkforDateOrNa(facilityState.capacity_last_changed),
   district_office: checkNameorNA(facilityState.district_office),
-  licensee_name: facilityState.licensee_name,
+  licensee_name: facilityState.licensee_name || 'N/A',
   license_number: facilityState.license_number || 'N/A',
   license_effective_date: handleLicenseEffectiveDate(facilityState),
   original_application_recieved_date: checkforDateOrNa(facilityState.original_application_recieved_date),

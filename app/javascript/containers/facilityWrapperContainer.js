@@ -1,10 +1,11 @@
 import {connect} from 'react-redux'
 import FacilityWrapper from 'facility/facilityWrapper'
 import {facilityApiCall} from 'actions/facilityActions'
-import {getFacilityData, getFacilityAddresses, getFacilityPhones, getOtherFacilityData, getFacilityAssignedWorker} from 'selectors/facilityDataSelectors'
+import {getFacilityData, getFacilityName, getFacilityAddresses, getFacilityPhones, getOtherFacilityData, getFacilityAssignedWorker} from 'selectors/facilityDataSelectors'
 
 const mapStateToProps = (state, ownProps) => ({
   facilityData: getFacilityData(state),
+  facilityName: getFacilityName(state),
   facilityAddress: getFacilityAddresses(state),
   facilityPhones: getFacilityPhones(state),
   facilityAssignedWorker: getFacilityAssignedWorker(state),

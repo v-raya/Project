@@ -5,7 +5,11 @@ import {FacilityTypeDetails} from './facilityTypeDetails'
 import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
 import {facilityDetailsDefaults} from 'constants/defaultFields'
 
-const FacilityDetails = ({facilityData, errors}) => (
+const FacilityDetails = ({
+  facilityData,
+  facilityName,
+  errors
+}) => (
   <div className='facility-details'>
     <FacilityTypeDetails
       value={facilityData.type}
@@ -16,18 +20,21 @@ const FacilityDetails = ({facilityData, errors}) => (
       <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
         <div className='inner_block'>
           <SmallInnerBlockDetails
+            title='FACILITY NAME'
+            value={facilityName} />
+          <SmallInnerBlockDetails
             title='NAME OF LICENSEE / PARENTS'
             value={facilityData.licensee_name} />
           <SmallInnerBlockDetails
             title='ASSIGNED OVERSIGHT AGENCY'
             value={facilityData.district_office} />
-          <SmallInnerBlockDetails
-            title='FACILITY LICENSE NUMBER'
-            value={facilityData.license_number} />
         </div>
       </div>
       <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
         <div className='inner_block'>
+          <SmallInnerBlockDetails
+            title='FACILITY LICENSE NUMBER'
+            value={facilityData.license_number} />
           <SmallInnerBlockDetails
             title='LICENSE STATUS'
             value={facilityData.status} />
