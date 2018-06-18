@@ -64,7 +64,7 @@ remote_capabilities(Capybara)
 
 # wait increased to 5 seconds to avoid random failures.
 # default wait is 2 seconds.
-Capybara.default_max_wait_time = 5
+Capybara.default_max_wait_time = 10
 
 case selenium_browser
 when :chrome, :headless_chrome
