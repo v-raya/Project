@@ -151,32 +151,32 @@ RSpec.feature 'RFA01A', js: true do
     # functionality is further fleshed out.
   end
 
-   scenario 'validate applicant-2 removal', set_auth_header: true do
-    visit root_path
-    click_button 'Create RFA Application'
-    expect(page).to have_content 'Applicant 1 - Information'
-    fill_in('applicants[0].first_name', with: 'Claudine', match: :prefer_exact)
-    fill_in('applicants[0].last_name', with: Faker::Name.last_name, match: :prefer_exact)
-    expect(page).not_to have_content 'III.Relationship Between Applicant'
-    click_button('Add Another Applicant +')
-    fill_in('applicants[1].first_name', with: Faker::Name.first_name, match: :prefer_exact)
-    fill_in('applicants[1].last_name', with: Faker::Name.last_name, match: :prefer_exact)
-    click_button 'Save Progress'
-    fill_in('relationship_to_applicant0child0relationship_to_applicant_freeform', with: 'Son', match: :prefer_exact)
-    find('#child_financially_supported0child0Yes').click
-    find('#child_adopted0child0Yes').click
-    fill_in('relationship_to_applicant0child1relationship_to_applicant_freeform', with: 'Son', match: :prefer_exact)
-    find('#child_financially_supported0child1Yes').click
-    find('#child_adopted0child1Yes').click
-    fill_in('minor_children[0].date_of_birth', with: '10/11/1999', match: :prefer_exact)
-    select 'Male', from: 'minor_children[0].minor_gender'
-    click_button 'Save Progress'
-    applicant_cards = page.all('#applicants-card')
-    applicant_cards[2].find('.applicant-list-remove-btn').click
-    click_button 'Save Progress'
-    expect(page).not_to have_content('I. Applicant 2 - Information')
-    expect(page).to have_content('Claudine')
-  end 
+  #  scenario 'validate applicant-2 removal', set_auth_header: true do
+  #   visit root_path
+  #   click_button 'Create RFA Application'
+  #   expect(page).to have_content 'Applicant 1 - Information'
+  #   fill_in('applicants[0].first_name', with: 'Claudine', match: :prefer_exact)
+  #   fill_in('applicants[0].last_name', with: Faker::Name.last_name, match: :prefer_exact)
+  #   expect(page).not_to have_content 'III.Relationship Between Applicant'
+  #   click_button('Add Another Applicant +')
+  #   fill_in('applicants[1].first_name', with: Faker::Name.first_name, match: :prefer_exact)
+  #   fill_in('applicants[1].last_name', with: Faker::Name.last_name, match: :prefer_exact)
+  #   click_button 'Save Progress'
+  #   fill_in('relationship_to_applicant0child0relationship_to_applicant_freeform', with: 'Son', match: :prefer_exact)
+  #   find('#child_financially_supported0child0Yes').click
+  #   find('#child_adopted0child0Yes').click
+  #   fill_in('relationship_to_applicant0child1relationship_to_applicant_freeform', with: 'Son', match: :prefer_exact)
+  #   find('#child_financially_supported0child1Yes').click
+  #   find('#child_adopted0child1Yes').click
+  #   fill_in('minor_children[0].date_of_birth', with: '10/11/1999', match: :prefer_exact)
+  #   select 'Male', from: 'minor_children[0].minor_gender'
+  #   click_button 'Save Progress'
+  #   applicant_cards = page.all('#applicants-card')
+  #   applicant_cards[2].find('.applicant-list-remove-btn').click
+  #   click_button 'Save Progress'
+  #   expect(page).not_to have_content('I. Applicant 2 - Information')
+  #   expect(page).to have_content('Claudine')
+  # end 
 
   scenario 'show error validation message on full Applicant Card', set_auth_header: true do
     visit root_path
