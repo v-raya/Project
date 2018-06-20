@@ -126,7 +126,7 @@ class Rfa::A01Controller < CalsBaseController
       adult.permit!
       adult['relationship_to_applicants'][0] = set_relationship_to_applicants(adult['relationship_to_applicants'][0], @application_response[:applicants])
       ActionController::Parameters.new(adult.to_h).permit(
-        :id, :to_delete, :first_name, :middle_name, :last_name, :date_of_birth,
+        :id, :to_delete, :first_name, :middle_name, :last_name, :date_of_birth, :is_residing_in_home,
           { name_suffix: %i[id value] }, { name_prefix: %i[id value] },
         relationship_to_applicants: [:applicant_id, :relationship_to_applicant_freeform, relationship_to_applicant: %i[id value]]
       )

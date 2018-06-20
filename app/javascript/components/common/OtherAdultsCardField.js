@@ -7,6 +7,7 @@ import {valuePresent, dictionaryNilSelect, dictionaryNilSelectValue, getDictiona
 import {setToWhomOptionList, handleToWhomValue, checkRelationshipFreeformPresence} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
+import YesNoRadioComponent from 'components/common/yesNoFields'
 
 const dateValidator = {rule: 'isValidDate', message: 'date is invalid'}
 
@@ -17,6 +18,7 @@ export class OtherAdultsCardField extends React.Component {
 
     this.relationshipToApplicantID = this.props.idPrefix + 'relationship_to_applicants[0].relationship_to_applicant_freeform'
     this.ApplicantIdID = this.props.idPrefix + 'relationship_to_applicants[0].applicant_id'
+    this.isResidingInHome = this.props.idPrefix + 'is_residing_in_home'
     this.otherAdultDOBId = this.props.idPrefix + 'date_of_birth'
     this.otherAdultFirstNameID = this.props.idPrefix + 'first_name'
     this.otherAdultMiddleNameID = this.props.idPrefix + 'middle_name'
@@ -83,12 +85,26 @@ export class OtherAdultsCardField extends React.Component {
                     label={applicant.first_name + ' ' + applicant.last_name}
                     placeholder=''
                     onChange={(event) => this.props.handleRelationshipTypeChange(applicant, event.target.value, index, subIndex, 'relationship_to_applicant_freeform')} />
+
                 </div>
               )
             })
           }
         </div>
         <div className='col-md-12 other-adult-date-of-birth'>
+
+        </div>
+        <div className='col-md-12'>
+          <YesNoRadioComponent
+            label='is this an Adult Residing or Regularly Present in the Home?'
+            idPrefix={this.isResidingInHome}
+            value={adult.is_residing_in_home}
+            selectClassName='reusable-select'
+            labelDefaultYes='Residing'
+            labelDefaultNo='Regularly Present'
+            onFieldChange={(event) => this.props.onFieldChange(index, event.target.value, 'is_residing_in_home')} />
+        </div>
+        <div className='col-md-12'>
           <DateField gridClassName='col-md-4'
             id={this.otherAdultDOBId}
             label={'Date of Birth' + isRequiredLabel}

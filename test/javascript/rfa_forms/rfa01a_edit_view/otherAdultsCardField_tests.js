@@ -21,6 +21,7 @@ describe('Verify other adultsFields', function () {
         }
       }
     ],
+    is_residing_in_home: false,
     index: 0,
     to_delete: false,
     'first_name': '',
@@ -50,6 +51,16 @@ describe('Verify other adultsFields', function () {
     let relationShipField = otherAdultsCardComp.find('.col-md-12').find('#relationship_to_applicants0adult0relationship_to_applicant_freeform').hostNodes()
     relationShipField.simulate('change', {target: {value: 'Sibling'}})
     expect(handleRelationshipTypeChangeSpy).toHaveBeenCalledWith({ first_name: 'gdfghfhgv', last_name: 'hgbhg', middle_name: '' }, 'Sibling', 0, 0, 'relationship_to_applicant_freeform')
+  })
+  it('verify is residing in Home', () => {
+    let relationShipField = otherAdultsCardComp.find('#is_residing_in_hometrue').hostNodes()
+    relationShipField.simulate('change', {target: {value: 'true'}})
+    expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'true', 'is_residing_in_home')
+  })
+  it('verify is not residing in Home', () => {
+    let relationShipField = otherAdultsCardComp.find('#is_residing_in_hometrue').hostNodes()
+    relationShipField.simulate('change', {target: {value: 'false'}})
+    expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'false', 'is_residing_in_home')
   })
 
   it('verifies date of birth', () => {

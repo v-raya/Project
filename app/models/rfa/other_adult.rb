@@ -1,6 +1,6 @@
 class Rfa::OtherAdult < CalsBase
   include Concerns::Rfa::ApplicationOtherAdultsApiProtocolProvider
-  attr_accessor :id, :first_name, :middle_name, :last_name, :date_of_birth,
+  attr_accessor :id, :first_name, :middle_name, :last_name, :date_of_birth, :is_residing_in_home,
   :relationship_to_applicants, :applicant_id, :relationship_to_applicant
 
 

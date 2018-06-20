@@ -6,7 +6,9 @@ const YesNoRadioComponent = ({
   idPrefix,
   value,
   onFieldChange,
-  label
+  label,
+  labelDefaultYes,
+  labelDefaultNo
 }) => (
   <div className='col-md-12' style={yesNoMarginStyle}>
     <label>{label}</label>
@@ -17,7 +19,7 @@ const YesNoRadioComponent = ({
       type='radio'
       value='true'
       checked={value === true || value === 'true'}
-      label='Yes'
+      label={labelDefaultYes}
       onChange={onFieldChange} />
     <BinarySelectorField
       gridClassName='col-md-4'
@@ -26,7 +28,7 @@ const YesNoRadioComponent = ({
       type='radio'
       value='false'
       checked={value === false || value === 'false'}
-      label='No'
+      label={labelDefaultNo}
       onChange={onFieldChange} />
   </div>
 )
@@ -36,7 +38,14 @@ YesNoRadioComponent.propTypes = {
   onFieldChange: PropTypes.func,
   idPrefix: PropTypes.string,
   checked: PropTypes.bool,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  labelDefaultYes: PropTypes.string,
+  labelDefaultNo: PropTypes.string
+}
+
+YesNoRadioComponent.defaultProps = {
+  labelDefaultYes: 'Yes',
+  labelDefaultNo: 'No'
 }
 
 export default YesNoRadioComponent
