@@ -96,7 +96,7 @@ export class OtherAdultsCardField extends React.Component {
         </div>
         <div className='col-md-12'>
           <YesNoRadioComponent
-            label='is this an Adult Residing or Regularly Present in the Home?'
+            label='Is this an adult residing or regularly present in the home?'
             idPrefix={this.isResidingInHome}
             value={adult.is_residing_in_home}
             selectClassName='reusable-select'
