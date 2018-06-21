@@ -4,7 +4,7 @@ require 'rails_helper'
 require 'vcr'
 require 'faker'
 
-RSpec.feature 'RFA01B', js: true do
+RSpec.feature 'RFA01B', js: true, inaccessible: true do
 
   scenario 'validate rfa01b creation and fields', set_auth_header: true do
     visit root_path

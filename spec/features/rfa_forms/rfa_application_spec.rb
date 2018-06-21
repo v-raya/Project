@@ -4,7 +4,7 @@ require 'rails_helper'
 require 'vcr'
 require 'faker'
 
-RSpec.feature 'RFA', js: true do
+RSpec.feature 'RFA', js: true, inaccessible: true do
 
   scenario '01A - validate scrollspy', set_auth_header: true do
     visit root_path

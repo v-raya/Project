@@ -15,6 +15,7 @@ const Pagination = ({
 }) => (
   <span className='pagination'>
     <select
+      aria-label='Number of Facilities'
       className='no_of_facilities'
       id='noOfFacilities'
       value={sizeValue}
@@ -31,6 +32,7 @@ const Pagination = ({
       <p>&#8249;</p>
     </button>
     <Cleave
+      aria-label='Page Number Input'
       className='page_number'
       type='text'
       value={pageNumber}

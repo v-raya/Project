@@ -29,6 +29,10 @@ RSpec.configure do |config|
     end
   end
 
+  config.around(:each, inaccessible: true) do |example|
+    Capybara::Accessible.skip_audit { example.run }
+  end
+
   config.after(:each, type: :feature) do
     page.execute_script 'sessionStorage.clear()'
   end

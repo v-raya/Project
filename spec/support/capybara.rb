@@ -1,9 +1,9 @@
 require 'capybara/rspec'
 require 'capybara/poltergeist'
+require 'capybara/accessible'
 require 'selenium/webdriver'
 
 selenium_browser = ENV['SELENIUM_BROWSER'].downcase.to_sym
-
 
 def remote_capabilities(capybara_config)
   # app host is used to test against the app deployed to a remote URL
@@ -27,9 +27,9 @@ end
 
 def register_internet_explorer(capybara_config, selenium_browser)
   selenium_server = ENV['SELENIUM_SERVER'] || 'localhost:4444'
-  
+
   capybara_config.register_driver selenium_browser do |app|
-  
+
     capabilities = Selenium::WebDriver::Remote::Capabilities.internet_explorer(
       native_events: false,
       javascript_enabled: true,
@@ -48,15 +48,18 @@ end
 def registar_chrome(capybara_config, selenium_browser)
   capability_options = selenium_browser == :headless_chrome ? %w[headless disable-gpu no-sandbox] : []
 
-  capybara_config.register_driver selenium_browser do |app|
+  capybara_config.register_driver :accessible_selenium do |app|
     capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
       chromeOptions: {args: capability_options}
     )
-    Capybara::Selenium::Driver.new app,
-      browser: :chrome,
-      desired_capabilities: capabilities
+    driver = Capybara::Selenium::Driver.new(app,
+                                            browser: :chrome,
+                                            desired_capabilities: capabilities
+                                            )
+    adaptor = Capybara::Accessible::SeleniumDriverAdapter.new
+    Capybara::Accessible.setup(driver, adaptor)
   end
-  capybara_config.javascript_driver = selenium_browser
+  capybara_config.javascript_driver = :accessible_selenium
 
 end
 
@@ -78,3 +81,18 @@ else
 end
 
 Capybara.app = Rack::Builder.parse_file(File.expand_path('../../../config.ru', __FILE__)).first
+
+module Capybara
+  module Accessible
+    class SeleniumDriverAdapter
+      def modal_dialog_present?(driver)
+        driver.browser.switch_to.alert
+        true
+      rescue ::Selenium::WebDriver::Error::UnhandledAlertError,
+          ::Selenium::WebDriver::Error::NoSuchAlertError,
+          ::NoMethodError
+        false
+      end
+    end
+  end
+end

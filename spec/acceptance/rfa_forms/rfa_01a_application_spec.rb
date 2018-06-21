@@ -4,7 +4,7 @@ require 'rails_helper'
 require 'vcr'
 require 'faker'
 
-RSpec.feature 'RFA01A', js: true do
+RSpec.feature 'RFA01A', js: true, inaccessible: true do
 
   before(:each) do
     visit root_path

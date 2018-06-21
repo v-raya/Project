@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/ca-cwds/capybara-accessible.git
+  revision: 2a0e6a73d445de5938e6174d3d1970633c94fbed
+  specs:
+    capybara-accessible (0.2.1)
+      capybara (~> 2.0)
+
+GIT
   remote: https://github.com/ca-cwds/cwds-authentication.git
   revision: 82c1dcfa303576ce9744e77522540ae8c321d292
   ref: 82c1dcf
@@ -330,6 +337,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
   capybara (~> 2.7)
+  capybara-accessible!
   chromedriver-helper
   codeclimate-test-reporter (~> 1.0.0)
   cwds-authentication!

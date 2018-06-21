@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const DropDownField = ({gridClassName, id, value, disable, disableNullVal, selectClassName, optionList, onChange, label}) => (
   <div className={gridClassName}>
-    <label>{label}</label>
+    <label htmlFor={id}>{label}</label>
     <select value={value} id={id} disabled={disable} onChange={onChange} className={selectClassName}>
       {!disable}
       { !disableNullVal && <option key='' value='' />}

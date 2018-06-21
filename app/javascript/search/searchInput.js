@@ -26,35 +26,27 @@ const SearchInput = ({
     <form onSubmit={(event) => { handlePageNumberChange(pageNumber); searchApiCall(getFromValue(sizeValue, pageNumber), sizeValue); event.preventDefault() }}>
       <div className='field_input col-xs-12 col-sm-10 col-md-10 col-lg-10'>
         <div className='input_data col-xs-12 col-sm-2 col-md-2 col-lg-2'>
-          <div>
-            <span>County</span>
-          </div>
-          <div>
-            <DropDownField
-              id='county_select'
-              selectClassName='searchSelect'
-              value={countyValue}
-              optionList={countyList}
-              onChange={(event) => handleInputChange('countyValue', dictionaryNilSelectValue(event.target.options))} />
-          </div>
+          <DropDownField
+            label='County Type'
+            id='county_select'
+            selectClassName='searchSelect'
+            value={countyValue}
+            optionList={countyList}
+            onChange={(event) => handleInputChange('countyValue', dictionaryNilSelectValue(event.target.options))} />
         </div>
         <div className='input_data col-xs-12 col-sm-2 col-md-2 col-lg-2'>
-          <div>
-            <span>Facility Type</span>
-          </div>
-          <div>
-            <DropDownField
-              id='facility_select'
-              selectClassName='searchSelect'
-              value={facilityTypeValue}
-              optionList={facilityTypes}
-              onChange={(event) => handleInputChange('facilityTypeValue', dictionaryNilSelectValue(event.target.options))} />
-          </div>
+          <DropDownField
+            label='Facility Type'
+            id='facility_select'
+            selectClassName='searchSelect'
+            value={facilityTypeValue}
+            optionList={facilityTypes}
+            onChange={(event) => handleInputChange('facilityTypeValue', dictionaryNilSelectValue(event.target.options))} />
         </div>
         <InputDataBlock
-          title='Facility ID #'
           columnWidth={2}>
           <InputComponent id='facilityIdValue'
+            label='Facility ID #'
             fieldClassName='form-control'
             value={facilityIdValue}
             placeholder='Enter Facility ID #'
@@ -62,9 +54,9 @@ const SearchInput = ({
             onChange={(event) => handleInputChange('facilityIdValue', event.target.value)}/>
         </InputDataBlock>
         <InputDataBlock
-          title='Facility Name'
           columnWidth={3}>
           <InputComponent id='facilityNameValue'
+            label='Facility Name'
             fieldClassName='form-control'
             value={facilityNameValue}
             placeholder='Enter Facility Name'
@@ -72,9 +64,9 @@ const SearchInput = ({
             onChange={(event) => handleInputChange('facilityNameValue', event.target.value)} />
         </InputDataBlock>
         <InputDataBlock
-          title='Facility Address'
           columnWidth={3}>
           <InputComponent id='facilityAddressValue'
+            label='Facility Address'
             fieldClassName='form-control'
             value={facilityAddressValue}
             placeholder='Enter Facility Address'
