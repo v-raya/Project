@@ -198,13 +198,15 @@ describe('Tracking Page test', () => {
   })
 
   it('tests save', () => {
-    let saveProgressBtn = trackingListView.find('#saveProgress')
+    let editProgressBtn = trackingListView.find('#editTracking')
+    editProgressBtn.simulate('click')
+    let saveProgressBtn = trackingListView.find('#saveTracking')
     saveProgressBtn.simulate('click')
     expect(saveProgressSpy).toHaveBeenCalled()
   })
 
   it('tests Edit', () => {
-    let editProgressBtn = trackingListView.find('#editProgress')
+    let editProgressBtn = trackingListView.find('#editTracking')
     editProgressBtn.simulate('click')
     expect(editProgressSpy).toHaveBeenCalled()
   })

@@ -6,6 +6,7 @@ import Button from 'components/common/button'
 import LogoHeader from 'components/common/logoHeader'
 import PageHeader from 'components/common/pageHeader'
 import BreadCrumb from 'components/common/breadCrumb'
+import TrackingButtons from 'components/common/pageHeaderButtons/trackingButtons'
 import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 import {fetchRequest} from 'helpers/http'
 
@@ -13,8 +14,10 @@ export default class TrackingList extends React.Component {
   constructor (props) {
     super(props)
     this.saveProgress = this.saveProgress.bind(this)
-    this.editSaveToggle = this.editSaveToggle.bind(this)
     this.editProgress = this.editProgress.bind(this)
+    this.cancelProgress = this.cancelProgress.bind(this)
+    this.setApplicationState = this.setApplicationState.bind(this)
+
     this.state = {
       user: this.props.user,
       rfaApplication: this.props.rfaApplication,
@@ -25,6 +28,10 @@ export default class TrackingList extends React.Component {
 
   editProgress (event) {
     this.setState({ cardBeingEdited: true })
+  }
+
+  cancelProgress (event) {
+    this.setState({ cardBeingEdited: false })
   }
 
   saveProgress (event) {
@@ -40,47 +47,40 @@ export default class TrackingList extends React.Component {
       })
   }
 
-  editSaveToggle () {
-    const { cardBeingEdited, tracking } = this.state
-    return cardBeingEdited ? <div>tracking id: {tracking.id}</div> : <div>rfa_1a_id: {tracking.rfa_1a_id}</div>
+  setApplicationState (key, value) {
+    let newState = Immutable.fromJS(this.state)
+    newState = newState.setIn(['tracking', 'tracking_documents', 'facility_documents', key], value)
+    this.setState(newState.toJS())
   }
 
   render () {
     const trackingDocuments = this.state.tracking.tracking_documents
+    const facilityName = this.state.tracking.facility_name ? this.state.tracking.facility_name : ''
+
     return (
-      <div className='tracking_page'>
+      <div className='main_page'>
         <PageHeader
-          headerLabel='RFA Tracking'
+          headerLabel={facilityName + '-RFA Application'}
           pageHeaderButtons={
-            <div>
-              <div className='col-lg-2 col-md-2 col-sm-2 col-xs-2'>
-                <Button
-                  buttonId='saveProgress'
-                  label='Save '
-                  textAlignment='right'
-                  onClick={this.saveProgress}
-                />
-              </div>
-              {/* This button will be moved to card header */}
-              <div className='col-lg-2 col-md-2 col-sm-2 col-xs-2'>
-                <Button
-                  buttonId='editProgress'
-                  label='Edit '
-                  textAlignment='left'
-                  onClick={this.editProgress}
-                />
-              </div>
-            </div>}
-        />
+            <TrackingButtons
+              editMode={this.state.cardBeingEdited}
+              cancelProgress={this.cancelProgress}
+              saveProgress={this.saveProgress}
+              editProgress={this.editProgress} />} />
         <BreadCrumb
           navigationElements={[<a href={urlPrefixHelper('/')}>RFA Application list</a>]} />
-        <CardsGroupLayout>
-          {this.editSaveToggle()}
-          <TrackingDocument
-            trackingDocuments={trackingDocuments}
-            editMode={this.state.cardBeingEdited}
-          />
-        </CardsGroupLayout>
+        <div className='form-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+          <div className='left-content col-xs-2 col-sm-2 col-md-2 col-lg-2'>
+            side bar placeholder
+          </div>
+          <div className='col-xs-10 col-sm-10 col-md-10 col-lg-10'>
+            <TrackingDocument
+              facilityName={facilityName}
+              setParentState={this.setApplicationState}
+              trackingDocuments={trackingDocuments}
+              editMode={this.state.cardBeingEdited} />
+          </div>
+        </div>
       </div>
     )
   }

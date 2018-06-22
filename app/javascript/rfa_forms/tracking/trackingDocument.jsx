@@ -7,13 +7,14 @@ import TrackPeopleDocs from './trackPeopleDocs'
 export default class TrackingDocument extends React.Component {
   render () {
     return (
-      <div className='tracking-edit'>
-        <div className='facility_documents'>
-          <TrackFaciltyDocs
-            trackingDocuments={this.props.trackingDocuments.facility_documents}
-            editMode={this.props.editMode}
-          />
+      <div className='rfa01a-list'>
+        <div className='tracking-card-header'>
+          <h3>{this.props.facilityName + ' Family RFA Documents'}</h3>
         </div>
+        <TrackFaciltyDocs
+          setParentState={this.props.setParentState}
+          trackingDocuments={this.props.trackingDocuments.facility_documents}
+          editMode={this.props.editMode} />
         {/* <div className='people_documents'>
           {
             peopleDocuments.map((docs, index) => {
@@ -26,6 +27,7 @@ export default class TrackingDocument extends React.Component {
             })
           }
         </div> */}
+        {/* </div> */}
       </div>
     )
   }

@@ -1,72 +1,37 @@
 import React from 'react'
 import TrackingTable from 'rfa_forms/tracking/trackingTable.jsx'
+import FamilyDocRow from 'rfa_forms/tracking/tableRows/familyDocRow'
 import {shallow, mount} from 'enzyme'
 
 describe('Tracking Table test', () => {
-  let trackingTableView, props
+  let trackingTableView, rowsComponent, CardHeader, changeSpy, trackingDocuments
   beforeEach(() => {
-    props = {
-      CardHeader: 'RFA Tacking List',
-      editMode: true,
-      trackingDocuments: [
-        {
-          'notes': '',
-          'title': 'RFA Application (RFA 01A)',
-          'checked': false,
-          'received_date': ''
-        }, {
-          'notes': '',
-          'title': 'Verification of Income',
-          'checked': false,
-          'received_date': ''
-        }, {
-          'notes': '',
-          'title': 'Disclosure of Expenses',
-          'checked': false,
-          'received_date': ''
-        }, {
-          'notes': '',
-          'title': 'Verification of Property',
-          'checked': false,
-          'received_date': ''
-        }, {
-          'notes': '',
-          'title': 'Home Environment Checklist (RFA-03)',
-          'checked': false,
-          'received_date': ''
-        }, {
-          'notes': '',
-          'title': 'Reference Letter #1',
-          'checked': false,
-          'received_date': ''
-        }, {
-          'notes': '',
-          'title': 'Reference Letter #2',
-          'checked': false,
-          'received_date': ''
-        }, {
-          'notes': '',
-          'title': 'Reference Letter #3 (if applicable)',
-          'checked': false,
-          'received_date': ''
-        }
-      ]
-    }
+    changeSpy = jasmine.createSpy('handleChange')
+    trackingDocuments = {
+      items: [ {
+        'notes': 'testing',
+        'title': 'Family Evaluation',
+        'checked': false,
+        'received_date': '1978-01-21'
 
-    trackingTableView = shallow(<TrackingTable {...props}/>)
+      }]
+    }
+    CardHeader = 'RFA Tacking List'
+    trackingTableView = mount(<TrackingTable
+      colHeaders={['Family Documents', '', 'Received', 'Notes']}
+      rowsComponent={
+        <FamilyDocRow
+          editMode
+          handleChange={changeSpy}
+          trackingDocuments={trackingDocuments} />
+      } />)
   })
 
   it('Table load', () => {
     expect(trackingTableView.length).toBe(1)
   })
-  it('edit Mode inactive', () => {
+  it('row components', () => {
     const tableBody = trackingTableView.find('tbody')
-    expect(tableBody.props().children.length).toBe(8)
-    expect(trackingTableView.find('input[type="text"]').length).toEqual(0)
-  })
-  it('edit Mode active', () => {
-    trackingTableView.setProps({ editMode: true })
-    trackingTableView = mount(<TrackingTable {...props}/>)
-    expect(trackingTableView.find('input[type="text"]').length).toEqual(8)
+    expect(tableBody.props().children.props.trackingDocuments).toEqual(trackingDocuments)
   })
 })

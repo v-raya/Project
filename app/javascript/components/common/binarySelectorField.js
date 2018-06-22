@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BinarySelectorField = ({gridClassName, type, label, id, value, checked, disabled, onChange, labelId}) => (
+const BinarySelectorField = ({gridClassName, defaultChecked, type, label, id, value, checked, disabled, onChange, labelId}) => (
   <div className={gridClassName}>
     <input
       type={type}
@@ -8,6 +8,7 @@ const BinarySelectorField = ({gridClassName, type, label, id, value, checked, di
       value={value}
       label={label}
       checked={checked}
+      defaultChecked={defaultChecked}
       disabled={disabled}
       onChange={onChange} />
     <label htmlFor={id} id={labelId}>{label}</label>
