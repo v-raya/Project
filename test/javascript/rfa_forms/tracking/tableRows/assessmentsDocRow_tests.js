@@ -34,22 +34,22 @@ describe('Tracking Show mode', () => {
   it('edit text area', () => {
     let textAreaField = editAssessmentDocRow.find('textarea')
     textAreaField.simulate('change', {target: {value: 'text input'}})
-    expect(changeSpy).toHaveBeenCalledWith('notes', 'text input', 0, 'assessments', { items: [ { notes: 'testing', title: 'Family Evaluation', checked: false, approved_date: '1978-01-21', submitted_date: '1969-01-21' } ] })
+    expect(changeSpy).toHaveBeenCalledWith('notes', 'text input', 0)
   })
   it('edit checkbox', () => {
     let checkBoxField = editAssessmentDocRow.find('input[type="checkbox"]')
     checkBoxField.simulate('change', {target: {checked: true}})
-    expect(changeSpy).toHaveBeenCalledWith('checked', true, 0, 'assessments', { items: [ { notes: 'testing', title: 'Family Evaluation', checked: false, approved_date: '1978-01-21', submitted_date: '1969-01-21' } ] })
+    expect(changeSpy).toHaveBeenCalledWith('checked', true, 0)
   })
   it('edit date field', () => {
     let textAreaField = editAssessmentDocRow.find('#assessmentEditApprovedDate0').hostNodes()
     textAreaField.simulate('change', {target: {value: '01/20/1980'}})
-    expect(changeSpy).toHaveBeenCalledWith('approved_date', '1980-01-20', 0, 'assessments', { items: [ { notes: 'testing', title: 'Family Evaluation', checked: false, approved_date: '1978-01-21', submitted_date: '1969-01-21' } ] })
+    expect(changeSpy).toHaveBeenCalledWith('approved_date', '1980-01-20', 0)
   })
   it('edit date field', () => {
     let textAreaField = editAssessmentDocRow.find('#assessmentEditSubmittedDate0').hostNodes()
     textAreaField.simulate('change', {target: {value: '01/20/1981'}})
-    expect(changeSpy).toHaveBeenCalledWith('submitted_date', '1981-01-20', 0, 'assessments', { items: [ { notes: 'testing', title: 'Family Evaluation', checked: false, approved_date: '1978-01-21', submitted_date: '1969-01-21' } ] })
+    expect(changeSpy).toHaveBeenCalledWith('submitted_date', '1981-01-20', 0)
   })
 
   it('loads the row ', () => {

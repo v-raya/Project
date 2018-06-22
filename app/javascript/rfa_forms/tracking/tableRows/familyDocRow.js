@@ -23,7 +23,7 @@ const FamilyDocRow = ({
               labelId={'checkLabel' + index}
               label={docs.title}
               gridClassName='col-xs-12'
-              onChange={(event) => handleChange('checked', event.target.checked, index, 'family_documents', trackingDocuments)}
+              onChange={(event) => handleChange('checked', event.target.checked, index)}
               defaultChecked={docs.checked}
             />
             </td>
@@ -32,13 +32,13 @@ const FamilyDocRow = ({
               <DateField
                 id={'familyEditRecievedDate' + index}
                 value={FormatDateForDisplay(docs.received_date)}
-                onChange={(event) => handleChange('received_date', FormatDateForPersistance(event.target.value), index, 'family_documents', trackingDocuments)} />
+                onChange={(event) => handleChange('received_date', FormatDateForPersistance(event.target.value), index)} />
             </td>
             <td>
               <TextAreaComponent
                 id={'familyEditNotes' + index}
                 value={docs.notes}
-                onChange={(event) => handleChange('notes', event.target.value, index, 'family_documents', trackingDocuments)} />
+                onChange={(event) => handleChange('notes', event.target.value, index)} />
             </td>
           </tr>
         )
@@ -71,7 +71,6 @@ FamilyDocRow.defaultProps = {
   'notes': '',
   'title': '',
   'checked': false,
-  'approved_date': '',
-  'submitted_date': ''
+  'received_date': ''
 }
 export default FamilyDocRow

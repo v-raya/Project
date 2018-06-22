@@ -23,7 +23,7 @@ const taskAndTrainingDocRow = ({
               labelId={'checkLabel' + index}
               label={docs.title}
               gridClassName='col-xs-12'
-              onChange={(event) => handleChange('checked', event.target.checked, index, 'tasks_and_trainings', trackingDocuments)}
+              onChange={(event) => handleChange('checked', event.target.checked, index)}
               defaultChecked={docs.checked}
             />
             </td>
@@ -32,13 +32,13 @@ const taskAndTrainingDocRow = ({
               <DateField
                 id={'taskAndTrainingEditCompletedDate' + index}
                 value={FormatDateForDisplay(docs.completed_date)}
-                onChange={(event) => handleChange('completed_date', FormatDateForPersistance(event.target.value), index, 'tasks_and_trainings', trackingDocuments)} />
+                onChange={(event) => handleChange('completed_date', FormatDateForPersistance(event.target.value), index)} />
             </td>
             <td>
               <TextAreaComponent
                 id={'taskAndTrainingEditNotes' + index}
                 value={docs.notes}
-                onChange={(event) => handleChange('notes', event.target.value, index, 'tasks_and_trainings', trackingDocuments)} />
+                onChange={(event) => handleChange('notes', event.target.value, index)} />
             </td>
           </tr>
         )
@@ -72,7 +72,6 @@ taskAndTrainingDocRow.defaultProps = {
   'notes': '',
   'title': '',
   'checked': false,
-  'approved_date': '',
-  'submitted_date': ''
+  'completed_date': ''
 }
 export default taskAndTrainingDocRow

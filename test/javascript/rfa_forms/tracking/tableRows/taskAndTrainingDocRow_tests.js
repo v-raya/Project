@@ -34,19 +34,18 @@ describe('Tracking Show mode', () => {
   it('edit text area', () => {
     let textAreaField = editTaskAndTrainingDocRow.find('textarea')
     textAreaField.simulate('change', {target: {value: 'text input'}})
-    expect(changeSpy).toHaveBeenCalledWith('notes', 'text input', 0, 'tasks_and_trainings', { items: [ { notes: 'testing', title: 'Family Evaluation', checked: false, completed_date: '1978-01-21' } ] })
+    expect(changeSpy).toHaveBeenCalledWith('notes', 'text input', 0)
   })
   it('edit checkbox', () => {
     let checkBoxField = editTaskAndTrainingDocRow.find('input[type="checkbox"]')
     checkBoxField.simulate('change', {target: {checked: true}})
-    expect(changeSpy).toHaveBeenCalledWith('checked', true, 0, 'tasks_and_trainings', { items: [ { notes: 'testing', title: 'Family Evaluation', checked: false, completed_date: '1978-01-21' } ] })
+    expect(changeSpy).toHaveBeenCalledWith('checked', true, 0)
   })
   it('edit date field', () => {
     let textAreaField = editTaskAndTrainingDocRow.find('#taskAndTrainingEditCompletedDate0').hostNodes()
     textAreaField.simulate('change', {target: {value: '01/20/1981'}})
-    expect(changeSpy).toHaveBeenCalledWith('completed_date', '1981-01-20', 0, 'tasks_and_trainings', { items: [ { notes: 'testing', title: 'Family Evaluation', checked: false, completed_date: '1978-01-21' } ] })
+    expect(changeSpy).toHaveBeenCalledWith('completed_date', '1981-01-20', 0)
   })
-
   it('loads the row ', () => {
     expect(showTaskAndTrainingDocRow.length).toBe(1)
   })

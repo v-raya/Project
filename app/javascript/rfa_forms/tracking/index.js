@@ -55,7 +55,7 @@ export default class TrackingList extends React.Component {
 
   render () {
     const trackingDocuments = this.state.tracking.tracking_documents
-    const facilityName = this.state.tracking.facility_name ? this.state.tracking.facility_name : ''
+    const facilityName = this.state.tracking.facility_name || ''
 
     return (
       <div className='main_page'>

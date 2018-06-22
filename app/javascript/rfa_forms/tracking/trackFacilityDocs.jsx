@@ -8,7 +8,7 @@ import TaskAndTrainingDocRow from './tableRows/taskAndTrainingDocRow'
 import AssessmentsDocRow from './tableRows/assessmentsDocRow'
 import CardsGroupLayout from 'components/common/cardsGroupLayout.js'
 
-export default class TrackFaciltyDocs extends React.Component {
+export default class TrackFacilityDocs extends React.Component {
   constructor (props) {
     super(props)
     this.handleAssessmentDocsChange = this.handleAssessmentDocsChange.bind(this)
@@ -77,6 +77,6 @@ export default class TrackFaciltyDocs extends React.Component {
   }
 }
 
-TrackFaciltyDocs.defaultProps = {
+TrackFacilityDocs.defaultProps = {
   trackingDocuments: []
 }
