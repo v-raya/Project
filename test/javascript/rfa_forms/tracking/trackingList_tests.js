@@ -3,7 +3,8 @@ import TrackingList from 'rfa_forms/tracking'
 import {shallow, mount} from 'enzyme'
 
 describe('Tracking Page test', () => {
-  let trackingListView, saveProgressSpy, editProgressSpy
+  let trackingListView, saveProgressSpy, editProgressSpy, cancelProgressSpy,
+    setApplicationStateSpy, setPeopleDocumentsStateSpy
   beforeEach(() => {
     const props = {
       user: {county_code: 1},
@@ -16,7 +17,71 @@ describe('Tracking Page test', () => {
         'facility_name': '',
         'rfa_1a_id': 744,
         'tracking_documents': {
-          'people_documents': [ ],
+          'people_documents': [ {
+            'person_id': 155,
+            'person_name': 'test tracking',
+            'person_type': 'Resident Adult',
+            'person_documents': {
+              'clearances': {
+                'items': [
+                  {
+                    'notes': '',
+                    'title': 'Criminal Background Checklist (RFA-02)',
+                    'checked': false
+                  },
+                  {
+                    'notes': '',
+                    'title': 'DMV Reports',
+                    'checked': false
+                  },
+                  {
+                    'notes': '',
+                    'title': 'Exemption Needed (if applicable)',
+                    'checked': false
+                  },
+                  {
+                    'notes': '',
+                    'title': 'Previous Associations (if applicable)',
+                    'checked': false
+                  },
+                  {
+                    'notes': '',
+                    'title': 'Legal Consult Needed (if applicable)',
+                    'checked': false
+                  }
+                ]
+              },
+              'individual_documents': {
+                'items': [
+                  {
+                    'notes': '',
+                    'title': 'Criminal Record Statement (RFA-01B)',
+                    'checked': false
+                  },
+                  {
+                    'notes': '',
+                    'title': 'Health Questionnaire (RFA-07)',
+                    'checked': false
+                  },
+                  {
+                    'notes': '',
+                    'title': 'TB Questionnaire (RFA-08)',
+                    'checked': false
+                  },
+                  {
+                    'notes': '',
+                    'title': 'Employment Verification',
+                    'checked': false
+                  },
+                  {
+                    'notes': '',
+                    'title': 'Proof of Identity',
+                    'checked': false
+                  }
+                ]
+              }
+            }
+          } ],
           'facility_documents': {
             'assessments': {
               'items': [ {
@@ -190,6 +255,9 @@ describe('Tracking Page test', () => {
     }
     saveProgressSpy = spyOn(TrackingList.prototype, 'saveProgress').and.callThrough()
     editProgressSpy = spyOn(TrackingList.prototype, 'editProgress').and.callThrough()
+    cancelProgressSpy = spyOn(TrackingList.prototype, 'cancelProgress').and.callThrough()
+    setApplicationStateSpy = spyOn(TrackingList.prototype, 'setApplicationState').and.callThrough()
+    setPeopleDocumentsStateSpy = spyOn(TrackingList.prototype, 'setPeopleDocumentsState').and.callThrough()
     trackingListView = mount(<TrackingList {...props} />)
   })
 
@@ -209,5 +277,24 @@ describe('Tracking Page test', () => {
     let editProgressBtn = trackingListView.find('#editTracking')
     editProgressBtn.simulate('click')
     expect(editProgressSpy).toHaveBeenCalled()
+  })
+  it('test cancel', () => {
+    let editProgressBtn = trackingListView.find('#editTracking')
+    editProgressBtn.simulate('click')
+    let cancelProgressLink = trackingListView.find('#CancelTracking')
+    cancelProgressLink.simulate('click')
+    expect(cancelProgressSpy).toHaveBeenCalled()
+  })
+  it('call setApplicationState', () => {
+    trackingListView.find('#editTracking').simulate('click')
+    let familyDocReceivedDate = trackingListView.find('input#familyEditRecievedDate0')
+    familyDocReceivedDate.simulate('change', {target: {value: '12/12/1997'}})
+    expect(setApplicationStateSpy).toHaveBeenCalled()
+  })
+  it('call setPeopleDocumentsState', () => {
+    trackingListView.find('#editTracking').simulate('click')
+    let familyDocReceivedDate = trackingListView.find('input#clearance0EditStartDate1')
+    familyDocReceivedDate.simulate('change', {target: {value: '12/12/1990'}})
+    expect(setPeopleDocumentsStateSpy).toHaveBeenCalled()
   })
 })

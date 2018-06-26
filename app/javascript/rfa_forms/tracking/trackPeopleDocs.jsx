@@ -63,10 +63,12 @@ export default class TrackPeopleDocs extends React.Component {
     const peopleDocuments = trackingDocuments.people_documents
 
     return (
-
       peopleDocuments.map((peopleDoc, peopleIndex) => {
         return (
-          <div key = {peopleIndex}>
+          <div className='tracking-card' key={peopleIndex}>
+            <div className='tracking-card-header people_documents'>
+              <h3>{peopleDoc.person_type + ': ' + peopleDoc.person_name + ' RFA Documents'}</h3>
+            </div>
             <TrackingTable
               colHeaders={['Individual Documents', 'Started', 'Completed', 'Notes']}
               rowsComponent={
@@ -76,7 +78,7 @@ export default class TrackPeopleDocs extends React.Component {
                   individualDocuments={peopleDoc.person_documents.individual_documents}
                   editMode={editMode} />
               } />
-            <TrackingTable
+            { peopleDoc.person_documents.trainings && <TrackingTable
               colHeaders={['Training', '', 'Expiration', 'Notes']}
               rowsComponent={
                 <TrainingDocRow
@@ -84,7 +86,7 @@ export default class TrackPeopleDocs extends React.Component {
                   handleChange={this.handleTrainingsDocsChange}
                   trainingDocuments={peopleDoc.person_documents.trainings}
                   editMode={editMode} />
-              } />
+              } />}
             <TrackingTable
               colHeaders={['Clearances', 'Started', 'Completed', 'Notes']}
               rowsComponent={

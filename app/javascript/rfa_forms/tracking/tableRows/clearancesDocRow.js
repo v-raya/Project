@@ -77,7 +77,7 @@ const ClearancesDocRow = ({
 }
 
 ClearancesDocRow.defaultProps = {
-  trackingDocuments: {
+  clearanceDocuments: {
     'notes': '',
     'title': '',
     'checked': false,

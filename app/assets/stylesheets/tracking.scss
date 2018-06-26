@@ -1,5 +1,13 @@
 .tracking-card-header{
-	box-shadow:0 0.2rem 0 rgba(0, 0, 0, 0.1)
+	box-shadow:0 0.2rem 0 rgba(0, 0, 0, 0.1);
+	padding: 1.8rem;
+}
+.tracking-card {
+	background: #fff;
+	margin-bottom: 3rem;
+}
+.tracking-table {
+	padding: 0rem 2rem 2rem 2rem;	
 }
 .inlineBlock {
 	display: inline-block

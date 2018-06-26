@@ -69,9 +69,11 @@ const taskAndTrainingDocRow = ({
 }
 
 taskAndTrainingDocRow.defaultProps = {
-  'notes': '',
-  'title': '',
-  'checked': false,
-  'completed_date': ''
+  trackingDocuments: {
+    'notes': '',
+    'title': '',
+    'checked': false,
+    'completed_date': ''
+  }
 }
 export default taskAndTrainingDocRow

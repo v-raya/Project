@@ -47,7 +47,10 @@ export default class TrackFacilityDocs extends React.Component {
     const taskAndTrainingDocuments = facilityDocuments.tasks_and_trainings
 
     return (
-      <div >
+      <div className='tracking-card'>
+        <div className='tracking-card-header'>
+          <h3>{this.props.facilityName + ' Family RFA Documents'}</h3>
+        </div>
         <TrackingTable
           colHeaders={['Family Documents', '', 'Received', 'Notes']}
           rowsComponent={

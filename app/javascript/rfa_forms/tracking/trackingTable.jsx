@@ -8,8 +8,7 @@ const TrackingTable = ({
   CardHeader
 }) => {
   return (
-
-    <div className='rfa01a-list table-responsive'>
+    <div className='tracking-table table-responsive'>
       <h3>{CardHeader}</h3>
       <table className='table table-hover'>
         <thead>

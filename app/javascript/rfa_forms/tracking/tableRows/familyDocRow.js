@@ -68,9 +68,11 @@ const FamilyDocRow = ({
 }
 
 FamilyDocRow.defaultProps = {
-  'notes': '',
-  'title': '',
-  'checked': false,
-  'received_date': ''
+  trackingDocuments: {
+    'notes': '',
+    'title': '',
+    'checked': false,
+    'received_date': ''
+  }
 }
 export default FamilyDocRow

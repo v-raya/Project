@@ -94,4 +94,25 @@ RSpec.feature 'RFATracking', js: true, inaccessible: true do
     expect(page).to have_content '12/14/1987'
     expect(page).to have_content 'testing'
   end
+  scenario 'visit tracking page from dashboard and Edit Other Adults Row', set_auth_header: true do
+    visit root_path
+    first('.tracking').click_link
+    expect(page).to have_button 'Edit Checklist'
+    click_button 'Edit Checklist'
+    expect(page).to have_button 'Save'
+    expect(page).to have_button 'Cancel'
+    fill_in('individual1EditStartDate0', with: '12/11/1997', match: :prefer_exact)
+    fill_in('individual1EditApprovedDate0', with: '12/11/1997', match: :prefer_exact)
+    fill_in('individual1EditText0', with: 'Other Adutls Residing testing', match: :prefer_exact)
+    fill_in('clearance1EditStartDate0', with: '12/13/1997', match: :prefer_exact)
+    fill_in('clearance1EditCompleteDate0', with: '12/14/1997', match: :prefer_exact)
+    fill_in('clearance1EditText0', with: 'Other Adutls Residing testing', match: :prefer_exact)
+    click_button 'Save'
+    expect(page).to have_content '12/11/1997'
+    expect(page).to have_content '12/11/1997'
+    expect(page).to have_content 'Other Adutls Residing testing'
+    expect(page).to have_content '12/13/1997'
+    expect(page).to have_content '12/14/1997'
+    expect(page).to have_content 'Other Adutls Residing testing'
+  end  
 end

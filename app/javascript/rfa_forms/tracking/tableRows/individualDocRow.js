@@ -79,7 +79,7 @@ const IndividualDocRow = ({
 }
 
 IndividualDocRow.defaultProps = {
-  trackingDocuments: {
+  individualDocuments: {
     'notes': '',
     'title': '',
     'checked': false,
