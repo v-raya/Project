@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
+import Spinner from 'facility/common/spinner'
 
 export default class FacilityChildren extends React.Component {
   componentDidMount () {
@@ -16,7 +17,7 @@ export default class FacilityChildren extends React.Component {
         <div className='facility-children-block col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <div className='children-title'> <h3>Children currently placed in facility</h3> </div>
           <ApiErrorMessages errors={errors.issue_details}/>
-          {isFetching ? <div className="loading-icon"></div>
+          {isFetching ? <Spinner/>
             : <table id='facility-children-table' className='table'>
               <thead>
                 <tr>

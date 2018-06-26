@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
+import Spinner from 'facility/common/spinner'
 
 export default class FacilityComplaints extends React.Component {
   componentDidMount () {
@@ -19,7 +20,7 @@ export default class FacilityComplaints extends React.Component {
           <ApiErrorMessages errors={errors.issue_details}/>
 
           {isFetching
-            ? <div className="loading-icon"></div>
+            ? <Spinner/>
             : <table id='facility-complaints-table' className='table'>
               <thead>
                 <tr>
