@@ -15,6 +15,18 @@ export default class TrackingDocument extends React.Component {
           setParentState={this.props.setParentState}
           trackingDocuments={this.props.trackingDocuments.facility_documents}
           editMode={this.props.editMode} />
+        <div className='tracking-card-header people_documents'>
+          <h3>{'Applicant: ' + this.props.facilityName + ' RFA Documents'}</h3>
+        </div>
+
+        {
+          <TrackPeopleDocs
+            setParentState={this.props.setPeopleDocumentsState}
+            trackingDocuments={this.props.trackingDocuments}
+            editMode={this.props.editMode}
+          />
+        }
+
         {/* <div className='people_documents'>
           {
             peopleDocuments.map((docs, index) => {

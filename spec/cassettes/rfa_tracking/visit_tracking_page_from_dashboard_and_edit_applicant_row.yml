@@ -1,0 +1,737 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms?expanded=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - c7b9a54f-75f4-4213-b550-ba111d4c1804
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Mon, 25 Jun 2018 16:36:12 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 24-Jun-2018 16:36:12
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '272'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "id" : 5971,
+            "application_county" : {
+              "value" : "Ventura",
+              "id" : 56
+            },
+            "applicants" : [ {
+              "id" : 3690,
+              "first_name" : "Nasar",
+              "middle_name" : "",
+              "last_name" : "Khan",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "tracking_id" : 170,
+            "resource_family_name" : "Khan, Nasar",
+            "is_initial_application" : false
+          }, {
+            "id" : 5972,
+            "application_county" : {
+              "value" : "Ventura",
+              "id" : 56
+            },
+            "applicants" : [ {
+              "id" : 3691,
+              "first_name" : "Peter",
+              "middle_name" : "",
+              "last_name" : "Pan",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "resource_family_name" : "Pan, Peter",
+            "is_initial_application" : false
+          } ]
+        }
+    http_version: 
+  recorded_at: Mon, 25 Jun 2018 16:36:12 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/5971?expanded=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - c7b9a54f-75f4-4213-b550-ba111d4c1804
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Mon, 25 Jun 2018 16:36:18 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 24-Jun-2018 16:36:19
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '221'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id" : 5971,
+          "application_county" : {
+            "value" : "Ventura",
+            "id" : 56
+          },
+          "applicants" : [ {
+            "id" : 3690,
+            "first_name" : "Nasar",
+            "middle_name" : "",
+            "last_name" : "Khan",
+            "other_names" : [ ],
+            "driver_license_number" : "",
+            "email" : ""
+          } ],
+          "tracking_id" : 170,
+          "resource_family_name" : "Khan, Nasar",
+          "is_initial_application" : false
+        }
+    http_version: 
+  recorded_at: Mon, 25 Jun 2018 16:36:19 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/5971/tracking/170
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - c7b9a54f-75f4-4213-b550-ba111d4c1804
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Mon, 25 Jun 2018 16:36:19 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 24-Jun-2018 16:36:19
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '733'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id" : 170,
+          "facility_name" : "Khan, Nasar",
+          "rfa_1a_id" : 5971,
+          "tracking_documents" : {
+            "facility_documents" : {
+              "family_documents" : {
+                "items" : [ {
+                  "title" : "RFA Application (RFA 01A)",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Verification of Income",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Disclosure of Expenses",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Verification of Property",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Home Environment Checklist (RFA-03)",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Reference Letter #1",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Reference Letter #2",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Reference Letter #3 (if applicable)",
+                  "notes" : "",
+                  "checked" : false
+                } ]
+              },
+              "tasks_and_trainings" : {
+                "items" : [ {
+                  "title" : "Attended Orientation Meeting",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Risk Assessment",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Home Environment Checklist (RFA-03)",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Pre-Service Training",
+                  "notes" : "",
+                  "checked" : false
+                } ]
+              },
+              "assessments" : {
+                "items" : [ {
+                  "title" : "Family Evaluation",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Written Report",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Acknowledgement of Written Report",
+                  "notes" : "",
+                  "checked" : false
+                } ]
+              }
+            },
+            "people_documents" : [ {
+              "person_id" : 3690,
+              "person_name" : "Nasar Khan",
+              "person_type" : "Applicant",
+              "person_documents" : {
+                "individual_documents" : {
+                  "items" : [ {
+                    "title" : "Criminal Record Statement (RFA-01B)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Health Questionnaire (RFA-07)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "TB Questionnaire (RFA-08)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Employment Verification",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Proof of Identity",
+                    "notes" : "",
+                    "checked" : false
+                  } ]
+                },
+                "trainings" : {
+                  "items" : [ {
+                    "title" : "CPR Training",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "First Aid Training",
+                    "notes" : "",
+                    "checked" : false
+                  } ]
+                },
+                "clearances" : {
+                  "items" : [ {
+                    "title" : "Criminal Background Checklist (RFA-02)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "DMV Reports",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Exemption Needed (if applicable)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Previous Associations (if applicable)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Legal Consult Needed (if applicable)",
+                    "notes" : "",
+                    "checked" : false
+                  } ]
+                }
+              }
+            } ]
+          },
+          "create_datetime" : "2018-06-25 09:23:29",
+          "create_user_id" : "RACFID1",
+          "update_datetime" : "2018-06-25 09:23:29",
+          "update_user_id" : "RACFID1"
+        }
+    http_version: 
+  recorded_at: Mon, 25 Jun 2018 16:36:19 GMT
+- request:
+    method: put
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/5971/tracking/170
+    body:
+      encoding: UTF-8
+      string: '{"id":170,"facility_name":"Khan, Nasar","rfa_1a_id":5971,"tracking_documents":{"facility_documents":{"family_documents":{"items":[{"title":"RFA
+        Application (RFA 01A)","notes":"","checked":false},{"title":"Verification
+        of Income","notes":"","checked":false},{"title":"Disclosure of Expenses","notes":"","checked":false},{"title":"Verification
+        of Property","notes":"","checked":false},{"title":"Home Environment Checklist
+        (RFA-03)","notes":"","checked":false},{"title":"Reference Letter #1","notes":"","checked":false},{"title":"Reference
+        Letter #2","notes":"","checked":false},{"title":"Reference Letter #3 (if applicable)","notes":"","checked":false}]},"tasks_and_trainings":{"items":[{"title":"Attended
+        Orientation Meeting","notes":"","checked":false},{"title":"Risk Assessment","notes":"","checked":false},{"title":"Home
+        Environment Checklist (RFA-03)","notes":"","checked":false},{"title":"Pre-Service
+        Training","notes":"","checked":false}]},"assessments":{"items":[{"title":"Family
+        Evaluation","notes":"","checked":false},{"title":"Written Report","notes":"","checked":false},{"title":"Acknowledgement
+        of Written Report","notes":"","checked":false}]}},"people_documents":[{"person_id":3690,"person_name":"Nasar
+        Khan","person_type":"Applicant","person_documents":{"individual_documents":{"items":[{"title":"Criminal
+        Record Statement (RFA-01B)","start_date":"1987-12-11","completed_date":"1987-12-11","notes":"testing","checked":false},{"title":"Health
+        Questionnaire (RFA-07)","notes":"","checked":false},{"title":"TB Questionnaire
+        (RFA-08)","notes":"","checked":false},{"title":"Employment Verification","notes":"","checked":false},{"title":"Proof
+        of Identity","notes":"","checked":false}]},"trainings":{"items":[{"title":"CPR
+        Training","expiration_date":"1987-12-12","notes":"testing","checked":false},{"title":"First
+        Aid Training","notes":"","checked":false}]},"clearances":{"items":[{"title":"Criminal
+        Background Checklist (RFA-02)","start_date":"1987-12-13","completion_date":"1987-12-14","notes":"testing","checked":false},{"title":"DMV
+        Reports","notes":"","checked":false},{"title":"Exemption Needed (if applicable)","notes":"","checked":false},{"title":"Previous
+        Associations (if applicable)","notes":"","checked":false},{"title":"Legal
+        Consult Needed (if applicable)","notes":"","checked":false}]}}}]}}'
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - c7b9a54f-75f4-4213-b550-ba111d4c1804
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Mon, 25 Jun 2018 16:36:24 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 24-Jun-2018 16:36:24
+        GMT
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '4240'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id" : 170,
+          "facility_name" : "Khan, Nasar",
+          "rfa_1a_id" : 5971,
+          "tracking_documents" : {
+            "facility_documents" : {
+              "family_documents" : {
+                "items" : [ {
+                  "title" : "RFA Application (RFA 01A)",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Verification of Income",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Disclosure of Expenses",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Verification of Property",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Home Environment Checklist (RFA-03)",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Reference Letter #1",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Reference Letter #2",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Reference Letter #3 (if applicable)",
+                  "notes" : "",
+                  "checked" : false
+                } ]
+              },
+              "tasks_and_trainings" : {
+                "items" : [ {
+                  "title" : "Attended Orientation Meeting",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Risk Assessment",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Home Environment Checklist (RFA-03)",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Pre-Service Training",
+                  "notes" : "",
+                  "checked" : false
+                } ]
+              },
+              "assessments" : {
+                "items" : [ {
+                  "title" : "Family Evaluation",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Written Report",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Acknowledgement of Written Report",
+                  "notes" : "",
+                  "checked" : false
+                } ]
+              }
+            },
+            "people_documents" : [ {
+              "person_id" : 3690,
+              "person_name" : "Nasar Khan",
+              "person_type" : "Applicant",
+              "person_documents" : {
+                "individual_documents" : {
+                  "items" : [ {
+                    "title" : "Criminal Record Statement (RFA-01B)",
+                    "notes" : "testing",
+                    "checked" : false,
+                    "completed_date" : "1987-12-11",
+                    "start_date" : "1987-12-11"
+                  }, {
+                    "title" : "Health Questionnaire (RFA-07)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "TB Questionnaire (RFA-08)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Employment Verification",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Proof of Identity",
+                    "notes" : "",
+                    "checked" : false
+                  } ]
+                },
+                "trainings" : {
+                  "items" : [ {
+                    "title" : "CPR Training",
+                    "notes" : "testing",
+                    "checked" : false,
+                    "expiration_date" : "1987-12-12"
+                  }, {
+                    "title" : "First Aid Training",
+                    "notes" : "",
+                    "checked" : false
+                  } ]
+                },
+                "clearances" : {
+                  "items" : [ {
+                    "title" : "Criminal Background Checklist (RFA-02)",
+                    "notes" : "testing",
+                    "checked" : false,
+                    "start_date" : "1987-12-13",
+                    "completion_date" : "1987-12-14"
+                  }, {
+                    "title" : "DMV Reports",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Exemption Needed (if applicable)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Previous Associations (if applicable)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Legal Consult Needed (if applicable)",
+                    "notes" : "",
+                    "checked" : false
+                  } ]
+                }
+              }
+            } ]
+          },
+          "create_datetime" : "2018-06-25 09:23:29",
+          "create_user_id" : "RACFID1",
+          "update_datetime" : "2018-06-25 09:36:24",
+          "update_user_id" : "RACFID1"
+        }
+    http_version: 
+  recorded_at: Mon, 25 Jun 2018 16:36:25 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/5971/tracking/170
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - c7b9a54f-75f4-4213-b550-ba111d4c1804
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Mon, 25 Jun 2018 16:36:25 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 24-Jun-2018 16:36:25
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '802'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id" : 170,
+          "facility_name" : "Khan, Nasar",
+          "rfa_1a_id" : 5971,
+          "tracking_documents" : {
+            "facility_documents" : {
+              "family_documents" : {
+                "items" : [ {
+                  "title" : "RFA Application (RFA 01A)",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Verification of Income",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Disclosure of Expenses",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Verification of Property",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Home Environment Checklist (RFA-03)",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Reference Letter #1",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Reference Letter #2",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Reference Letter #3 (if applicable)",
+                  "notes" : "",
+                  "checked" : false
+                } ]
+              },
+              "tasks_and_trainings" : {
+                "items" : [ {
+                  "title" : "Attended Orientation Meeting",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Risk Assessment",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Home Environment Checklist (RFA-03)",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Pre-Service Training",
+                  "notes" : "",
+                  "checked" : false
+                } ]
+              },
+              "assessments" : {
+                "items" : [ {
+                  "title" : "Family Evaluation",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Written Report",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Acknowledgement of Written Report",
+                  "notes" : "",
+                  "checked" : false
+                } ]
+              }
+            },
+            "people_documents" : [ {
+              "person_id" : 3690,
+              "person_name" : "Nasar Khan",
+              "person_type" : "Applicant",
+              "person_documents" : {
+                "individual_documents" : {
+                  "items" : [ {
+                    "title" : "Criminal Record Statement (RFA-01B)",
+                    "notes" : "testing",
+                    "checked" : false,
+                    "completed_date" : "1987-12-11",
+                    "start_date" : "1987-12-11"
+                  }, {
+                    "title" : "Health Questionnaire (RFA-07)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "TB Questionnaire (RFA-08)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Employment Verification",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Proof of Identity",
+                    "notes" : "",
+                    "checked" : false
+                  } ]
+                },
+                "trainings" : {
+                  "items" : [ {
+                    "title" : "CPR Training",
+                    "notes" : "testing",
+                    "checked" : false,
+                    "expiration_date" : "1987-12-12"
+                  }, {
+                    "title" : "First Aid Training",
+                    "notes" : "",
+                    "checked" : false
+                  } ]
+                },
+                "clearances" : {
+                  "items" : [ {
+                    "title" : "Criminal Background Checklist (RFA-02)",
+                    "notes" : "testing",
+                    "checked" : false,
+                    "start_date" : "1987-12-13",
+                    "completion_date" : "1987-12-14"
+                  }, {
+                    "title" : "DMV Reports",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Exemption Needed (if applicable)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Previous Associations (if applicable)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Legal Consult Needed (if applicable)",
+                    "notes" : "",
+                    "checked" : false
+                  } ]
+                }
+              }
+            } ]
+          },
+          "create_datetime" : "2018-06-25 09:23:29",
+          "create_user_id" : "RACFID1",
+          "update_datetime" : "2018-06-25 09:36:24",
+          "update_user_id" : "RACFID1"
+        }
+    http_version: 
+  recorded_at: Mon, 25 Jun 2018 16:36:25 GMT
+recorded_with: VCR 3.0.3

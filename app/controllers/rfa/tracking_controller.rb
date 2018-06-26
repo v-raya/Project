@@ -32,7 +32,7 @@ class Rfa::TrackingController < CalsBaseController
                                         assessments: [items: %i[title submitted_date approved_date notes checked]]],
                                        people_documents: [:person_id, :person_name, :person_type,
                                                           person_documents: [
-                                                            individual_documents: [items: %i[title completed_date notes checked]],
+                                                            individual_documents: [items: %i[title start_date completed_date notes checked]],
                                                             trainings: [items: %i[title expiration_date notes checked]],
                                                             clearances: [items: %i[title start_date completion_date notes checked]]
                                                           ]]

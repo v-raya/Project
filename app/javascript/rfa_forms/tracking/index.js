@@ -17,6 +17,7 @@ export default class TrackingList extends React.Component {
     this.editProgress = this.editProgress.bind(this)
     this.cancelProgress = this.cancelProgress.bind(this)
     this.setApplicationState = this.setApplicationState.bind(this)
+    this.setPeopleDocumentsState = this.setPeopleDocumentsState.bind(this)
 
     this.state = {
       user: this.props.user,
@@ -53,6 +54,12 @@ export default class TrackingList extends React.Component {
     this.setState(newState.toJS())
   }
 
+  setPeopleDocumentsState (key, value) {
+    let newState = Immutable.fromJS(this.state)
+    let stateUpdate = newState.setIn(['tracking', 'tracking_documents', key], value)
+    this.setState(stateUpdate.toJS())
+  }
+
   render () {
     const trackingDocuments = this.state.tracking.tracking_documents
     const facilityName = this.state.tracking.facility_name || ''
@@ -77,6 +84,7 @@ export default class TrackingList extends React.Component {
             <TrackingDocument
               facilityName={facilityName}
               setParentState={this.setApplicationState}
+              setPeopleDocumentsState={this.setPeopleDocumentsState}
               trackingDocuments={trackingDocuments}
               editMode={this.state.cardBeingEdited} />
           </div>
