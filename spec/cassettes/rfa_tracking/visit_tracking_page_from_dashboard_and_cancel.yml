@@ -1,0 +1,3494 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms?expanded=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 73e12aab-896c-4e66-9e10-76c2bacaaf13
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 26 Jun 2018 17:09:45 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 25-Jun-2018 17:09:45
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "items" : [ {
+            "id" : 6189,
+            "other_type_description" : "otherDescription",
+            "application_county" : {
+              "value" : "Sacramento",
+              "id" : 34
+            },
+            "applicants" : [ {
+              "id" : 3835,
+              "name_prefix" : {
+                "value" : "Ms.",
+                "id" : 2
+              },
+              "first_name" : "AFn",
+              "middle_name" : "N",
+              "last_name" : "ALn",
+              "name_suffix" : {
+                "value" : "Jr",
+                "id" : 5
+              },
+              "other_names" : [ {
+                "name_prefix" : {
+                  "value" : "Ms.",
+                  "id" : 2
+                },
+                "first_name" : "AOnFn",
+                "middle_name" : "N.",
+                "last_name" : "AOnLn",
+                "name_suffix" : {
+                  "value" : "Jr",
+                  "id" : 5
+                },
+                "name_type" : {
+                  "value" : "Maiden",
+                  "id" : 2
+                }
+              } ],
+              "highest_education_level" : {
+                "value" : "High School or Equivalent",
+                "id" : 3
+              },
+              "date_of_birth" : "1981-12-26",
+              "gender" : {
+                "value" : "Female",
+                "id" : 2
+              },
+              "race" : {
+                "value" : "American Indian or Alaska Native",
+                "id" : 1
+              },
+              "ethnicity" : {
+                "value" : "Alaskan Native",
+                "id" : 1
+              },
+              "driver_license_number" : "A1234567",
+              "driver_license_state" : {
+                "value" : "California",
+                "id" : "CA"
+              },
+              "email" : "anna.smith@gmail.com",
+              "employment" : {
+                "employer_name" : "HSH Inc.",
+                "occupation" : "Sr. Analyst",
+                "income" : 98000.00,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "1702 Redoak Ct.",
+                  "city" : "Rocklin",
+                  "state" : {
+                    "value" : "CA - California",
+                    "id" : "AL"
+                  },
+                  "zip" : "98123"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Cell",
+                  "id" : 1
+                },
+                "number" : "5347589802"
+              }, {
+                "phone_type" : {
+                  "value" : "Work",
+                  "id" : 3
+                },
+                "number" : "5347589803",
+                "extension" : "1234567",
+                "preferred" : true
+              } ],
+              "rfa1b_form" : {
+                "application_county" : {
+                  "value" : "Sacramento",
+                  "id" : 34
+                },
+                "lived_in_other_state" : true,
+                "other_states_of_living" : [ {
+                  "value" : "Texas",
+                  "id" : "TX"
+                }, {
+                  "value" : "Nevada",
+                  "id" : "NV"
+                } ],
+                "convicted_in_california" : false,
+                "convicted_in_another_state" : false,
+                "arrested_for_crime" : false,
+                "resource_family_name" : "Peterson",
+                "applicant_name_prefix" : {
+                  "value" : "Ms.",
+                  "id" : 2
+                },
+                "applicant_first_name" : "Anna",
+                "applicant_middle_name" : "M.",
+                "applicant_last_name" : "Peterson",
+                "applicant_name_suffix" : {
+                  "value" : "Jr",
+                  "id" : 5
+                },
+                "residence_address" : {
+                  "street_address" : "1702 Redoak Ct.",
+                  "zip" : "98123",
+                  "city" : "Rocklin",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "type" : {
+                    "value" : "Residential",
+                    "id" : 1
+                  }
+                },
+                "ssn" : "464942323",
+                "date_of_birth" : "1981-12-26",
+                "driver_license" : "MD123-1234-585-121",
+                "driver_license_state" : {
+                  "value" : "Maryland",
+                  "id" : "MD"
+                },
+                "signature" : "Anna Peterson",
+                "application_date" : "2017-07-02",
+                "convicted_in_california_disclosures" : [ {
+                  "offense" : "Offense description Offense description Offense description Offense description Offense description Offense description Offense description Offense description Offense description ",
+                  "offense_city" : "Sacramento",
+                  "offense_state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "offense_date" : "2014-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence ",
+                  "signature" : "Anna Peterson",
+                  "application_date" : "2017-07-02"
+                } ],
+                "convicted_in_another_state_disclosures" : [ {
+                  "offense" : "Offense description Offense description ",
+                  "offense_city" : "City",
+                  "offense_state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  },
+                  "offense_date" : "2014-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence ",
+                  "signature" : "Signature",
+                  "application_date" : "2017-07-02"
+                } ],
+                "arrested_for_crime_disclosures" : [ {
+                  "offense" : "Offense description Offense description ",
+                  "offense_city" : "Sacramento",
+                  "offense_state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  },
+                  "offense_date" : "2011-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence ",
+                  "signature" : "Signature 2",
+                  "application_date" : "2017-07-02"
+                } ],
+                "metadata" : {
+                  "submit_enabled" : true
+                }
+              },
+              "lic198b_form" : {
+                "id" : 370,
+                "requestor_info" : {
+                  "name" : {
+                    "name_prefix" : {
+                      "value" : "Ms.",
+                      "id" : 2
+                    },
+                    "first_name" : "AFn",
+                    "middle_name" : "N",
+                    "last_name" : "ALn",
+                    "name_suffix" : {
+                      "value" : "Jr",
+                      "id" : 5
+                    }
+                  },
+                  "phone" : {
+                    "phone_type" : {
+                      "value" : "Cell",
+                      "id" : 1
+                    },
+                    "number" : "5555555555"
+                  },
+                  "fax" : {
+                    "phone_type" : {
+                      "value" : "Fax",
+                      "id" : 5
+                    },
+                    "number" : "5555555556"
+                  },
+                  "email" : "example@mail.mail"
+                },
+                "identifying_data" : {
+                  "person_name" : {
+                    "name_prefix" : {
+                      "value" : "Ms.",
+                      "id" : 2
+                    },
+                    "first_name" : "BFn",
+                    "middle_name" : "BMn",
+                    "last_name" : "BLn",
+                    "name_suffix" : {
+                      "value" : "Jr",
+                      "id" : 5
+                    }
+                  },
+                  "other_names" : [ {
+                    "last_name" : "MaidenName",
+                    "name_type" : {
+                      "value" : "Maiden",
+                      "id" : 4
+                    }
+                  }, {
+                    "last_name" : "AliasName",
+                    "name_type" : {
+                      "value" : "AKA",
+                      "id" : 1
+                    }
+                  } ],
+                  "phone_number" : {
+                    "phone_type" : {
+                      "value" : "Cell",
+                      "id" : 1
+                    },
+                    "number" : "5555555557"
+                  },
+                  "email" : "example1@mail.mail",
+                  "date_of_birth" : "2000-11-20",
+                  "state_of_birth" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  },
+                  "gender" : {
+                    "value" : "Male",
+                    "id" : 1
+                  },
+                  "race" : {
+                    "value" : "American Indian or Alaska Native",
+                    "id" : 1
+                  },
+                  "ethnicity" : {
+                    "value" : "Alaskan Native",
+                    "id" : 1
+                  },
+                  "ssn" : "999999999",
+                  "driver_license_number" : "AS123456789012345678",
+                  "driver_license_state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  }
+                },
+                "last_five_years_addresses" : [ {
+                  "street_address" : "1111 Street St.",
+                  "city" : "City",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "zip" : "99999"
+                }, {
+                  "street_address" : "1112 Street St.",
+                  "city" : "City",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "zip" : "99999"
+                } ],
+                "has_been_perpetrator" : true,
+                "perpetration_episodes" : [ {
+                  "date" : "2011-11-20",
+                  "city" : "City",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "county" : "County",
+                  "circumstances" : "Some Circumstances"
+                }, {
+                  "date" : "2011-11-21",
+                  "city" : "City",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "county" : "County",
+                  "circumstances" : "Other Circumstances"
+                } ],
+                "signatures" : {
+                  "signature_of_applicant" : "Applicant Signature",
+                  "sign_date_of_applicants" : "2017-11-20",
+                  "signature_of_witness" : "Witness signature",
+                  "sign_date_of_witness" : "2017-11-20"
+                },
+                "responding_state" : {
+                  "reports" : [ {
+                    "report_date" : "2011-11-20",
+                    "report_number" : "123-QWE",
+                    "local_contact" : {
+                      "name_prefix" : {
+                        "value" : "Ms.",
+                        "id" : 2
+                      },
+                      "first_name" : "CFn",
+                      "middle_name" : "CMn",
+                      "last_name" : "CLn",
+                      "name_suffix" : {
+                        "value" : "Jr",
+                        "id" : 5
+                      }
+                    },
+                    "phone" : {
+                      "phone_type" : {
+                        "value" : "Cell",
+                        "id" : 1
+                      },
+                      "number" : "5555555558"
+                    }
+                  }, {
+                    "report_date" : "2011-11-21",
+                    "report_number" : "567-ASD",
+                    "local_contact" : {
+                      "name_prefix" : {
+                        "value" : "Ms.",
+                        "id" : 2
+                      },
+                      "first_name" : "DFn",
+                      "middle_name" : "DMn",
+                      "last_name" : "DLn",
+                      "name_suffix" : {
+                        "value" : "Jr",
+                        "id" : 5
+                      }
+                    },
+                    "phone" : {
+                      "phone_type" : {
+                        "value" : "Cell",
+                        "id" : 1
+                      },
+                      "number" : "5555555559"
+                    }
+                  } ],
+                  "contact_name" : {
+                    "name_prefix" : {
+                      "value" : "Ms.",
+                      "id" : 2
+                    },
+                    "first_name" : "EFn",
+                    "middle_name" : "EMn",
+                    "last_name" : "ELn",
+                    "name_suffix" : {
+                      "value" : "Jr",
+                      "id" : 5
+                    }
+                  },
+                  "agency" : "AGENCY",
+                  "phone" : {
+                    "phone_type" : {
+                      "value" : "Work",
+                      "id" : 3
+                    },
+                    "number" : "5555555565",
+                    "extension" : "4321"
+                  },
+                  "email" : "example@email.mail"
+                }
+              }
+            } ],
+            "tracking_id" : 177,
+            "resource_family_name" : "ALn, AFn",
+            "is_initial_application" : false
+          }, {
+            "id" : 6187,
+            "applicants" : [ {
+              "id" : 3833,
+              "name_prefix" : {
+                "value" : "Ms.",
+                "id" : 2
+              },
+              "first_name" : "AFn",
+              "middle_name" : "N",
+              "last_name" : "ALn",
+              "name_suffix" : {
+                "value" : "Jr",
+                "id" : 5
+              },
+              "other_names" : [ {
+                "name_prefix" : {
+                  "value" : "Ms.",
+                  "id" : 2
+                },
+                "first_name" : "AOnFn",
+                "middle_name" : "N.",
+                "last_name" : "AOnLn",
+                "name_suffix" : {
+                  "value" : "Jr",
+                  "id" : 5
+                },
+                "name_type" : {
+                  "value" : "Maiden",
+                  "id" : 2
+                }
+              } ],
+              "highest_education_level" : {
+                "value" : "High School or Equivalent",
+                "id" : 3
+              },
+              "date_of_birth" : "1981-12-26",
+              "gender" : {
+                "value" : "Female",
+                "id" : 2
+              },
+              "race" : {
+                "value" : "American Indian or Alaska Native",
+                "id" : 1
+              },
+              "ethnicity" : {
+                "value" : "Alaskan Native",
+                "id" : 1
+              },
+              "driver_license_number" : "A1234567",
+              "driver_license_state" : {
+                "value" : "California",
+                "id" : "CA"
+              },
+              "email" : "anna.smith@gmail.com",
+              "employment" : {
+                "employer_name" : "HSH Inc.",
+                "occupation" : "Sr. Analyst",
+                "income" : 98000.00,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "1702 Redoak Ct.",
+                  "city" : "Rocklin",
+                  "state" : {
+                    "value" : "CA - California",
+                    "id" : "AL"
+                  },
+                  "zip" : "98123"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Cell",
+                  "id" : 1
+                },
+                "number" : "5347589802"
+              }, {
+                "phone_type" : {
+                  "value" : "Work",
+                  "id" : 3
+                },
+                "number" : "5347589803",
+                "extension" : "1234567",
+                "preferred" : true
+              } ]
+            } ],
+            "resource_family_name" : "ALn, AFn",
+            "is_initial_application" : false
+          }, {
+            "id" : 6188,
+            "other_type_description" : "otherDescription",
+            "application_county" : {
+              "value" : "Sacramento",
+              "id" : 34
+            },
+            "applicants" : [ {
+              "id" : 3834,
+              "name_prefix" : {
+                "value" : "Ms.",
+                "id" : 2
+              },
+              "first_name" : "AFn",
+              "middle_name" : "N",
+              "last_name" : "ALn",
+              "name_suffix" : {
+                "value" : "Jr",
+                "id" : 5
+              },
+              "other_names" : [ {
+                "name_prefix" : {
+                  "value" : "Ms.",
+                  "id" : 2
+                },
+                "first_name" : "AOnFn",
+                "middle_name" : "N.",
+                "last_name" : "AOnLn",
+                "name_suffix" : {
+                  "value" : "Jr",
+                  "id" : 5
+                },
+                "name_type" : {
+                  "value" : "Maiden",
+                  "id" : 2
+                }
+              } ],
+              "highest_education_level" : {
+                "value" : "High School or Equivalent",
+                "id" : 3
+              },
+              "date_of_birth" : "1981-12-26",
+              "gender" : {
+                "value" : "Female",
+                "id" : 2
+              },
+              "race" : {
+                "value" : "American Indian or Alaska Native",
+                "id" : 1
+              },
+              "ethnicity" : {
+                "value" : "Alaskan Native",
+                "id" : 1
+              },
+              "driver_license_number" : "A1234567",
+              "driver_license_state" : {
+                "value" : "California",
+                "id" : "CA"
+              },
+              "email" : "anna.smith@gmail.com",
+              "employment" : {
+                "employer_name" : "HSH Inc.",
+                "occupation" : "Sr. Analyst",
+                "income" : 98000.00,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "1702 Redoak Ct.",
+                  "city" : "Rocklin",
+                  "state" : {
+                    "value" : "CA - California",
+                    "id" : "AL"
+                  },
+                  "zip" : "98123"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Cell",
+                  "id" : 1
+                },
+                "number" : "5347589802"
+              }, {
+                "phone_type" : {
+                  "value" : "Work",
+                  "id" : 3
+                },
+                "number" : "5347589803",
+                "extension" : "1234567",
+                "preferred" : true
+              } ],
+              "rfa1b_form" : {
+                "application_county" : {
+                  "value" : "Sacramento",
+                  "id" : 34
+                },
+                "lived_in_other_state" : true,
+                "other_states_of_living" : [ {
+                  "value" : "Texas",
+                  "id" : "TX"
+                }, {
+                  "value" : "Nevada",
+                  "id" : "NV"
+                } ],
+                "convicted_in_california" : false,
+                "convicted_in_another_state" : false,
+                "arrested_for_crime" : false,
+                "resource_family_name" : "Peterson",
+                "applicant_name_prefix" : {
+                  "value" : "Ms.",
+                  "id" : 2
+                },
+                "applicant_first_name" : "Anna",
+                "applicant_middle_name" : "M.",
+                "applicant_last_name" : "Peterson",
+                "applicant_name_suffix" : {
+                  "value" : "Jr",
+                  "id" : 5
+                },
+                "residence_address" : {
+                  "street_address" : "1702 Redoak Ct.",
+                  "zip" : "98123",
+                  "city" : "Rocklin",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "type" : {
+                    "value" : "Residential",
+                    "id" : 1
+                  }
+                },
+                "ssn" : "464942323",
+                "date_of_birth" : "1981-12-26",
+                "driver_license" : "MD123-1234-585-121",
+                "driver_license_state" : {
+                  "value" : "Maryland",
+                  "id" : "MD"
+                },
+                "signature" : "Anna Peterson",
+                "application_date" : "2017-07-02",
+                "convicted_in_california_disclosures" : [ {
+                  "offense" : "Offense description Offense description Offense description Offense description Offense description Offense description Offense description Offense description Offense description ",
+                  "offense_city" : "Sacramento",
+                  "offense_state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "offense_date" : "2014-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence ",
+                  "signature" : "Anna Peterson",
+                  "application_date" : "2017-07-02"
+                } ],
+                "convicted_in_another_state_disclosures" : [ {
+                  "offense" : "Offense description Offense description ",
+                  "offense_city" : "City",
+                  "offense_state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  },
+                  "offense_date" : "2014-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence ",
+                  "signature" : "Signature",
+                  "application_date" : "2017-07-02"
+                } ],
+                "arrested_for_crime_disclosures" : [ {
+                  "offense" : "Offense description Offense description ",
+                  "offense_city" : "Sacramento",
+                  "offense_state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  },
+                  "offense_date" : "2011-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence ",
+                  "signature" : "Signature 2",
+                  "application_date" : "2017-07-02"
+                } ],
+                "metadata" : {
+                  "submit_enabled" : true
+                }
+              },
+              "lic198b_form" : {
+                "id" : 369,
+                "requestor_info" : {
+                  "name" : {
+                    "name_prefix" : {
+                      "value" : "Ms.",
+                      "id" : 2
+                    },
+                    "first_name" : "AFn",
+                    "middle_name" : "N",
+                    "last_name" : "ALn",
+                    "name_suffix" : {
+                      "value" : "Jr",
+                      "id" : 5
+                    }
+                  },
+                  "phone" : {
+                    "phone_type" : {
+                      "value" : "Cell",
+                      "id" : 1
+                    },
+                    "number" : "5555555555"
+                  },
+                  "fax" : {
+                    "phone_type" : {
+                      "value" : "Fax",
+                      "id" : 5
+                    },
+                    "number" : "5555555556"
+                  },
+                  "email" : "example@mail.mail"
+                },
+                "identifying_data" : {
+                  "person_name" : {
+                    "name_prefix" : {
+                      "value" : "Ms.",
+                      "id" : 2
+                    },
+                    "first_name" : "BFn",
+                    "middle_name" : "BMn",
+                    "last_name" : "BLn",
+                    "name_suffix" : {
+                      "value" : "Jr",
+                      "id" : 5
+                    }
+                  },
+                  "other_names" : [ {
+                    "last_name" : "MaidenName",
+                    "name_type" : {
+                      "value" : "Maiden",
+                      "id" : 4
+                    }
+                  }, {
+                    "last_name" : "AliasName",
+                    "name_type" : {
+                      "value" : "AKA",
+                      "id" : 1
+                    }
+                  } ],
+                  "phone_number" : {
+                    "phone_type" : {
+                      "value" : "Cell",
+                      "id" : 1
+                    },
+                    "number" : "5555555557"
+                  },
+                  "email" : "example1@mail.mail",
+                  "date_of_birth" : "2000-11-20",
+                  "state_of_birth" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  },
+                  "gender" : {
+                    "value" : "Male",
+                    "id" : 1
+                  },
+                  "race" : {
+                    "value" : "American Indian or Alaska Native",
+                    "id" : 1
+                  },
+                  "ethnicity" : {
+                    "value" : "Alaskan Native",
+                    "id" : 1
+                  },
+                  "ssn" : "999999999",
+                  "driver_license_number" : "AS123456789012345678",
+                  "driver_license_state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  }
+                },
+                "last_five_years_addresses" : [ {
+                  "street_address" : "1111 Street St.",
+                  "city" : "City",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "zip" : "99999"
+                }, {
+                  "street_address" : "1112 Street St.",
+                  "city" : "City",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "zip" : "99999"
+                } ],
+                "has_been_perpetrator" : true,
+                "perpetration_episodes" : [ {
+                  "date" : "2011-11-20",
+                  "city" : "City",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "county" : "County",
+                  "circumstances" : "Some Circumstances"
+                }, {
+                  "date" : "2011-11-21",
+                  "city" : "City",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "county" : "County",
+                  "circumstances" : "Other Circumstances"
+                } ],
+                "signatures" : {
+                  "signature_of_applicant" : "Applicant Signature",
+                  "sign_date_of_applicants" : "2017-11-20",
+                  "signature_of_witness" : "Witness signature",
+                  "sign_date_of_witness" : "2017-11-20"
+                },
+                "responding_state" : {
+                  "reports" : [ {
+                    "report_date" : "2011-11-20",
+                    "report_number" : "123-QWE",
+                    "local_contact" : {
+                      "name_prefix" : {
+                        "value" : "Ms.",
+                        "id" : 2
+                      },
+                      "first_name" : "CFn",
+                      "middle_name" : "CMn",
+                      "last_name" : "CLn",
+                      "name_suffix" : {
+                        "value" : "Jr",
+                        "id" : 5
+                      }
+                    },
+                    "phone" : {
+                      "phone_type" : {
+                        "value" : "Cell",
+                        "id" : 1
+                      },
+                      "number" : "5555555558"
+                    }
+                  }, {
+                    "report_date" : "2011-11-21",
+                    "report_number" : "567-ASD",
+                    "local_contact" : {
+                      "name_prefix" : {
+                        "value" : "Ms.",
+                        "id" : 2
+                      },
+                      "first_name" : "DFn",
+                      "middle_name" : "DMn",
+                      "last_name" : "DLn",
+                      "name_suffix" : {
+                        "value" : "Jr",
+                        "id" : 5
+                      }
+                    },
+                    "phone" : {
+                      "phone_type" : {
+                        "value" : "Cell",
+                        "id" : 1
+                      },
+                      "number" : "5555555559"
+                    }
+                  } ],
+                  "contact_name" : {
+                    "name_prefix" : {
+                      "value" : "Ms.",
+                      "id" : 2
+                    },
+                    "first_name" : "EFn",
+                    "middle_name" : "EMn",
+                    "last_name" : "ELn",
+                    "name_suffix" : {
+                      "value" : "Jr",
+                      "id" : 5
+                    }
+                  },
+                  "agency" : "AGENCY",
+                  "phone" : {
+                    "phone_type" : {
+                      "value" : "Work",
+                      "id" : 3
+                    },
+                    "number" : "5555555565",
+                    "extension" : "4321"
+                  },
+                  "email" : "example@email.mail"
+                }
+              }
+            } ],
+            "resource_family_name" : "ALn, AFn",
+            "is_initial_application" : false
+          }, {
+            "id" : 6190,
+            "other_type_description" : "otherDescription",
+            "application_county" : {
+              "value" : "Sacramento",
+              "id" : 34
+            },
+            "applicants" : [ {
+              "id" : 3836,
+              "name_prefix" : {
+                "value" : "Ms.",
+                "id" : 2
+              },
+              "first_name" : "AFn",
+              "middle_name" : "N",
+              "last_name" : "ALn",
+              "name_suffix" : {
+                "value" : "Jr",
+                "id" : 5
+              },
+              "other_names" : [ {
+                "name_prefix" : {
+                  "value" : "Ms.",
+                  "id" : 2
+                },
+                "first_name" : "AOnFn",
+                "middle_name" : "N.",
+                "last_name" : "AOnLn",
+                "name_suffix" : {
+                  "value" : "Jr",
+                  "id" : 5
+                },
+                "name_type" : {
+                  "value" : "Maiden",
+                  "id" : 2
+                }
+              } ],
+              "highest_education_level" : {
+                "value" : "High School or Equivalent",
+                "id" : 3
+              },
+              "date_of_birth" : "1981-12-26",
+              "gender" : {
+                "value" : "Female",
+                "id" : 2
+              },
+              "race" : {
+                "value" : "American Indian or Alaska Native",
+                "id" : 1
+              },
+              "ethnicity" : {
+                "value" : "Alaskan Native",
+                "id" : 1
+              },
+              "driver_license_number" : "A1234567",
+              "driver_license_state" : {
+                "value" : "California",
+                "id" : "CA"
+              },
+              "email" : "anna.smith@gmail.com",
+              "employment" : {
+                "employer_name" : "HSH Inc.",
+                "occupation" : "Sr. Analyst",
+                "income" : 98000.00,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "1702 Redoak Ct.",
+                  "city" : "Rocklin",
+                  "state" : {
+                    "value" : "CA - California",
+                    "id" : "AL"
+                  },
+                  "zip" : "98123"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Cell",
+                  "id" : 1
+                },
+                "number" : "5347589802"
+              }, {
+                "phone_type" : {
+                  "value" : "Work",
+                  "id" : 3
+                },
+                "number" : "5347589803",
+                "extension" : "1234567",
+                "preferred" : true
+              } ],
+              "rfa1b_form" : {
+                "application_county" : {
+                  "value" : "Sacramento",
+                  "id" : 34
+                },
+                "lived_in_other_state" : true,
+                "other_states_of_living" : [ {
+                  "value" : "Texas",
+                  "id" : "TX"
+                }, {
+                  "value" : "Nevada",
+                  "id" : "NV"
+                } ],
+                "convicted_in_california" : false,
+                "convicted_in_another_state" : false,
+                "arrested_for_crime" : false,
+                "resource_family_name" : "Peterson",
+                "applicant_name_prefix" : {
+                  "value" : "Ms.",
+                  "id" : 2
+                },
+                "applicant_first_name" : "Anna",
+                "applicant_middle_name" : "M.",
+                "applicant_last_name" : "Peterson",
+                "applicant_name_suffix" : {
+                  "value" : "Jr",
+                  "id" : 5
+                },
+                "residence_address" : {
+                  "street_address" : "1702 Redoak Ct.",
+                  "zip" : "98123",
+                  "city" : "Rocklin",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "type" : {
+                    "value" : "Residential",
+                    "id" : 1
+                  }
+                },
+                "ssn" : "464942323",
+                "date_of_birth" : "1981-12-26",
+                "driver_license" : "MD123-1234-585-121",
+                "driver_license_state" : {
+                  "value" : "Maryland",
+                  "id" : "MD"
+                },
+                "signature" : "Anna Peterson",
+                "application_date" : "2017-07-02",
+                "convicted_in_california_disclosures" : [ {
+                  "offense" : "Offense description Offense description Offense description Offense description Offense description Offense description Offense description Offense description Offense description ",
+                  "offense_city" : "Sacramento",
+                  "offense_state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "offense_date" : "2014-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence ",
+                  "signature" : "Anna Peterson",
+                  "application_date" : "2017-07-02"
+                } ],
+                "convicted_in_another_state_disclosures" : [ {
+                  "offense" : "Offense description Offense description ",
+                  "offense_city" : "City",
+                  "offense_state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  },
+                  "offense_date" : "2014-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence ",
+                  "signature" : "Signature",
+                  "application_date" : "2017-07-02"
+                } ],
+                "arrested_for_crime_disclosures" : [ {
+                  "offense" : "Offense description Offense description ",
+                  "offense_city" : "Sacramento",
+                  "offense_state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  },
+                  "offense_date" : "2011-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence ",
+                  "signature" : "Signature 2",
+                  "application_date" : "2017-07-02"
+                } ],
+                "metadata" : {
+                  "submit_enabled" : true
+                }
+              },
+              "lic198b_form" : {
+                "id" : 371,
+                "requestor_info" : {
+                  "name" : {
+                    "name_prefix" : {
+                      "value" : "Ms.",
+                      "id" : 2
+                    },
+                    "first_name" : "AFn",
+                    "middle_name" : "N",
+                    "last_name" : "ALn",
+                    "name_suffix" : {
+                      "value" : "Jr",
+                      "id" : 5
+                    }
+                  },
+                  "phone" : {
+                    "phone_type" : {
+                      "value" : "Cell",
+                      "id" : 1
+                    },
+                    "number" : "5555555555"
+                  },
+                  "fax" : {
+                    "phone_type" : {
+                      "value" : "Fax",
+                      "id" : 5
+                    },
+                    "number" : "5555555556"
+                  },
+                  "email" : "example@mail.mail"
+                },
+                "identifying_data" : {
+                  "person_name" : {
+                    "name_prefix" : {
+                      "value" : "Ms.",
+                      "id" : 2
+                    },
+                    "first_name" : "Petya",
+                    "middle_name" : "BMn",
+                    "last_name" : "BLn",
+                    "name_suffix" : {
+                      "value" : "Jr",
+                      "id" : 5
+                    }
+                  },
+                  "other_names" : [ {
+                    "last_name" : "MaidenName",
+                    "name_type" : {
+                      "value" : "Maiden",
+                      "id" : 4
+                    }
+                  }, {
+                    "last_name" : "AliasName",
+                    "name_type" : {
+                      "value" : "AKA",
+                      "id" : 1
+                    }
+                  } ],
+                  "phone_number" : {
+                    "phone_type" : {
+                      "value" : "Cell",
+                      "id" : 1
+                    },
+                    "number" : "5555555557"
+                  },
+                  "email" : "example1@mail.mail",
+                  "date_of_birth" : "2000-11-20",
+                  "state_of_birth" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  },
+                  "gender" : {
+                    "value" : "Male",
+                    "id" : 1
+                  },
+                  "race" : {
+                    "value" : "American Indian or Alaska Native",
+                    "id" : 1
+                  },
+                  "ethnicity" : {
+                    "value" : "Alaskan Native",
+                    "id" : 1
+                  },
+                  "ssn" : "999999999",
+                  "driver_license_number" : "AS123456789012345678",
+                  "driver_license_state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  }
+                },
+                "last_five_years_addresses" : [ {
+                  "street_address" : "1111 Street St.",
+                  "city" : "City",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "zip" : "99999"
+                }, {
+                  "street_address" : "1112 Street St.",
+                  "city" : "City",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "zip" : "99999"
+                } ],
+                "has_been_perpetrator" : true,
+                "perpetration_episodes" : [ {
+                  "date" : "2011-11-20",
+                  "city" : "City",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "county" : "County",
+                  "circumstances" : "Some Circumstances"
+                }, {
+                  "date" : "2011-11-21",
+                  "city" : "City",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "county" : "County",
+                  "circumstances" : "Other Circumstances"
+                } ],
+                "signatures" : {
+                  "signature_of_applicant" : "Applicant Signature",
+                  "sign_date_of_applicants" : "2017-11-20",
+                  "signature_of_witness" : "Witness signature",
+                  "sign_date_of_witness" : "2017-11-20"
+                },
+                "responding_state" : {
+                  "reports" : [ {
+                    "report_date" : "2011-11-20",
+                    "report_number" : "123-QWE",
+                    "local_contact" : {
+                      "name_prefix" : {
+                        "value" : "Ms.",
+                        "id" : 2
+                      },
+                      "first_name" : "CFn",
+                      "middle_name" : "CMn",
+                      "last_name" : "CLn",
+                      "name_suffix" : {
+                        "value" : "Jr",
+                        "id" : 5
+                      }
+                    },
+                    "phone" : {
+                      "phone_type" : {
+                        "value" : "Cell",
+                        "id" : 1
+                      },
+                      "number" : "5555555558"
+                    }
+                  }, {
+                    "report_date" : "2011-11-21",
+                    "report_number" : "567-ASD",
+                    "local_contact" : {
+                      "name_prefix" : {
+                        "value" : "Ms.",
+                        "id" : 2
+                      },
+                      "first_name" : "DFn",
+                      "middle_name" : "DMn",
+                      "last_name" : "DLn",
+                      "name_suffix" : {
+                        "value" : "Jr",
+                        "id" : 5
+                      }
+                    },
+                    "phone" : {
+                      "phone_type" : {
+                        "value" : "Cell",
+                        "id" : 1
+                      },
+                      "number" : "5555555559"
+                    }
+                  } ],
+                  "contact_name" : {
+                    "name_prefix" : {
+                      "value" : "Ms.",
+                      "id" : 2
+                    },
+                    "first_name" : "EFn",
+                    "middle_name" : "EMn",
+                    "last_name" : "ELn",
+                    "name_suffix" : {
+                      "value" : "Jr",
+                      "id" : 5
+                    }
+                  },
+                  "agency" : "AGENCY",
+                  "phone" : {
+                    "phone_type" : {
+                      "value" : "Work",
+                      "id" : 3
+                    },
+                    "number" : "5555555565",
+                    "extension" : "4321"
+                  },
+                  "email" : "example@email.mail"
+                }
+              }
+            } ],
+            "resource_family_name" : "ALn, AFn",
+            "is_initial_application" : false
+          }, {
+            "id" : 6185,
+            "other_type_description" : "otherDescription",
+            "application_county" : {
+              "value" : "Sacramento",
+              "id" : 34
+            },
+            "residence" : {
+              "addresses" : [ {
+                "street_address" : "1702 Redoak Ct.",
+                "zip" : "98123",
+                "zip_extension" : "1111",
+                "city" : "Rocklin",
+                "state" : {
+                  "value" : "California",
+                  "id" : "CA"
+                },
+                "longitude" : -121.25118,
+                "lattitude" : 38.74037,
+                "deliverable" : true,
+                "type" : {
+                  "value" : "Residential",
+                  "id" : 1
+                }
+              }, {
+                "street_address" : "1702 Redoak Ct.",
+                "zip" : "98123",
+                "city" : "Rocklin",
+                "state" : {
+                  "value" : "California",
+                  "id" : "CA"
+                },
+                "type" : {
+                  "value" : "Mailing",
+                  "id" : 3
+                }
+              } ],
+              "physical_mailing_similar" : false,
+              "residence_ownership" : {
+                "value" : "Own",
+                "id" : 1
+              },
+              "weapon_in_home" : true,
+              "body_of_water_exist" : true,
+              "body_of_water_description" : "Spa pool",
+              "others_using_residence_as_mailing" : true,
+              "other_people_using_residence_as_mailing" : [ {
+                "name_prefix" : {
+                  "value" : "Mr.",
+                  "id" : 1
+                },
+                "first_name" : "string",
+                "middle_name" : "string",
+                "last_name" : "string",
+                "name_suffix" : {
+                  "value" : "Jr",
+                  "id" : 5
+                }
+              } ],
+              "directions_to_home" : "Directions here",
+              "home_languages" : [ {
+                "value" : "English",
+                "id" : 6
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 3831,
+              "name_prefix" : {
+                "value" : "Ms.",
+                "id" : 2
+              },
+              "first_name" : "AFn",
+              "middle_name" : "N",
+              "last_name" : "ALn",
+              "name_suffix" : {
+                "value" : "Jr",
+                "id" : 5
+              },
+              "other_names" : [ {
+                "name_prefix" : {
+                  "value" : "Ms.",
+                  "id" : 2
+                },
+                "first_name" : "AOnFn",
+                "middle_name" : "N.",
+                "last_name" : "AOnLn",
+                "name_suffix" : {
+                  "value" : "Jr",
+                  "id" : 5
+                },
+                "name_type" : {
+                  "value" : "Maiden",
+                  "id" : 2
+                }
+              } ],
+              "highest_education_level" : {
+                "value" : "High School or Equivalent",
+                "id" : 3
+              },
+              "date_of_birth" : "1981-12-26",
+              "gender" : {
+                "value" : "Female",
+                "id" : 2
+              },
+              "race" : {
+                "value" : "American Indian or Alaska Native",
+                "id" : 1
+              },
+              "ethnicity" : {
+                "value" : "Alaskan Native",
+                "id" : 1
+              },
+              "driver_license_number" : "A1234567",
+              "driver_license_state" : {
+                "value" : "California",
+                "id" : "CA"
+              },
+              "email" : "anna.smith@gmail.com",
+              "employment" : {
+                "employer_name" : "HSH Inc.",
+                "occupation" : "Sr. Analyst",
+                "income" : 98000.00,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "1702 Redoak Ct.",
+                  "city" : "Rocklin",
+                  "state" : {
+                    "value" : "CA - California",
+                    "id" : "AL"
+                  },
+                  "zip" : "98123"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Cell",
+                  "id" : 1
+                },
+                "number" : "5347589802"
+              }, {
+                "phone_type" : {
+                  "value" : "Work",
+                  "id" : 3
+                },
+                "number" : "5347589803",
+                "extension" : "1234567",
+                "preferred" : true
+              } ],
+              "rfa1b_form" : {
+                "id" : 644,
+                "application_county" : {
+                  "value" : "Sacramento",
+                  "id" : 34
+                },
+                "lived_in_other_state" : true,
+                "other_states_of_living" : [ {
+                  "value" : "Texas",
+                  "id" : "TX"
+                }, {
+                  "value" : "Nevada",
+                  "id" : "NV"
+                } ],
+                "convicted_in_california" : false,
+                "convicted_in_another_state" : false,
+                "arrested_for_crime" : false,
+                "resource_family_name" : "Peterson",
+                "applicant_name_prefix" : {
+                  "value" : "Ms.",
+                  "id" : 2
+                },
+                "applicant_first_name" : "AFn",
+                "applicant_middle_name" : "N",
+                "applicant_last_name" : "ALn",
+                "applicant_name_suffix" : {
+                  "value" : "Jr",
+                  "id" : 5
+                },
+                "residence_address" : {
+                  "street_address" : "1702 Redoak Ct.",
+                  "zip" : "98123",
+                  "zip_extension" : "1111",
+                  "city" : "Rocklin",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "longitude" : -121.25118,
+                  "lattitude" : 38.74037,
+                  "deliverable" : true,
+                  "type" : {
+                    "value" : "Residential",
+                    "id" : 1
+                  }
+                },
+                "ssn" : "464942323",
+                "date_of_birth" : "1981-12-26",
+                "driver_license" : "A1234567",
+                "driver_license_state" : {
+                  "value" : "California",
+                  "id" : "CA"
+                },
+                "signature" : "Anna Peterson",
+                "application_date" : "2017-07-02",
+                "convicted_in_california_disclosures" : [ {
+                  "offense" : "Offense description Offense description Offense description Offense description Offense description Offense description Offense description Offense description Offense description ",
+                  "offense_city" : "Sacramento",
+                  "offense_state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "offense_date" : "2014-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence ",
+                  "signature" : "Anna Peterson",
+                  "application_date" : "2017-07-02"
+                } ],
+                "convicted_in_another_state_disclosures" : [ {
+                  "offense" : "Offense description Offense description ",
+                  "offense_city" : "City",
+                  "offense_state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  },
+                  "offense_date" : "2014-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence ",
+                  "signature" : "Signature",
+                  "application_date" : "2017-07-02"
+                } ],
+                "arrested_for_crime_disclosures" : [ {
+                  "offense" : "Offense description Offense description ",
+                  "offense_city" : "Sacramento",
+                  "offense_state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  },
+                  "offense_date" : "2011-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence ",
+                  "signature" : "Signature 2",
+                  "application_date" : "2017-07-02"
+                } ],
+                "metadata" : {
+                  "submit_enabled" : true
+                }
+              }
+            }, {
+              "id" : 3832,
+              "name_prefix" : {
+                "value" : "Ms.",
+                "id" : 2
+              },
+              "first_name" : "John",
+              "middle_name" : "N",
+              "last_name" : "ALn",
+              "name_suffix" : {
+                "value" : "Jr",
+                "id" : 5
+              },
+              "other_names" : [ {
+                "name_prefix" : {
+                  "value" : "Ms.",
+                  "id" : 2
+                },
+                "first_name" : "AOnFn",
+                "middle_name" : "N.",
+                "last_name" : "AOnLn",
+                "name_suffix" : {
+                  "value" : "Jr",
+                  "id" : 5
+                },
+                "name_type" : {
+                  "value" : "Maiden",
+                  "id" : 2
+                }
+              } ],
+              "highest_education_level" : {
+                "value" : "High School or Equivalent",
+                "id" : 3
+              },
+              "date_of_birth" : "1981-12-26",
+              "gender" : {
+                "value" : "Female",
+                "id" : 2
+              },
+              "race" : {
+                "value" : "American Indian or Alaska Native",
+                "id" : 1
+              },
+              "ethnicity" : {
+                "value" : "American Indian",
+                "id" : 2
+              },
+              "driver_license_number" : "A1234567",
+              "driver_license_state" : {
+                "value" : "Maryland",
+                "id" : "MD"
+              },
+              "email" : "anna.smith@gmail.com",
+              "employment" : {
+                "employer_name" : "HSH Inc.",
+                "occupation" : "Sr. Analyst",
+                "income" : 98000.00,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "1702 Redoak Ct.",
+                  "city" : "Rocklin",
+                  "state" : {
+                    "value" : "CA - California",
+                    "id" : "AL"
+                  },
+                  "zip" : "98123"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Cell",
+                  "id" : 1
+                },
+                "number" : "5347589802"
+              }, {
+                "phone_type" : {
+                  "value" : "Work",
+                  "id" : 3
+                },
+                "number" : "5347589803",
+                "extension" : "1234567",
+                "preferred" : true
+              } ],
+              "rfa1b_form" : {
+                "application_county" : {
+                  "value" : "Sacramento",
+                  "id" : 34
+                },
+                "lived_in_other_state" : true,
+                "other_states_of_living" : [ {
+                  "value" : "Texas",
+                  "id" : "TX"
+                }, {
+                  "value" : "Nevada",
+                  "id" : "NV"
+                } ],
+                "convicted_in_california" : false,
+                "convicted_in_another_state" : false,
+                "arrested_for_crime" : false,
+                "resource_family_name" : "Peterson",
+                "applicant_name_prefix" : {
+                  "value" : "Ms.",
+                  "id" : 2
+                },
+                "applicant_first_name" : "Anna",
+                "applicant_middle_name" : "M.",
+                "applicant_last_name" : "Peterson",
+                "applicant_name_suffix" : {
+                  "value" : "Jr",
+                  "id" : 5
+                },
+                "residence_address" : {
+                  "street_address" : "1702 Redoak Ct.",
+                  "zip" : "98123",
+                  "city" : "Rocklin",
+                  "state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "type" : {
+                    "value" : "Residential",
+                    "id" : 1
+                  }
+                },
+                "ssn" : "464942323",
+                "date_of_birth" : "1981-12-26",
+                "driver_license" : "MD123-1234-585-121",
+                "driver_license_state" : {
+                  "value" : "Maryland",
+                  "id" : "MD"
+                },
+                "signature" : "Anna Peterson",
+                "application_date" : "2017-07-02",
+                "convicted_in_california_disclosures" : [ {
+                  "offense" : "Offense description Offense description Offense description Offense description Offense description Offense description Offense description Offense description Offense description ",
+                  "offense_city" : "Sacramento",
+                  "offense_state" : {
+                    "value" : "California",
+                    "id" : "CA"
+                  },
+                  "offense_date" : "2014-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence ",
+                  "signature" : "Anna Peterson",
+                  "application_date" : "2017-07-02"
+                } ],
+                "convicted_in_another_state_disclosures" : [ {
+                  "offense" : "Offense description Offense description ",
+                  "offense_city" : "City",
+                  "offense_state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  },
+                  "offense_date" : "2014-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence ",
+                  "signature" : "Signature",
+                  "application_date" : "2017-07-02"
+                } ],
+                "arrested_for_crime_disclosures" : [ {
+                  "offense" : "Offense description Offense description ",
+                  "offense_city" : "Sacramento",
+                  "offense_state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  },
+                  "offense_date" : "2011-03-12",
+                  "when_offense_happen" : "free form text",
+                  "offense_details" : "More details about offence ",
+                  "signature" : "Signature 2",
+                  "application_date" : "2017-07-02"
+                } ],
+                "metadata" : {
+                  "submit_enabled" : true
+                }
+              }
+            } ],
+            "minor_children" : [ {
+              "id" : 1040,
+              "relationship_to_applicants" : [ {
+                "applicant_id" : 3831,
+                "child_financially_supported" : true,
+                "child_adopted" : false,
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ],
+              "other_relative" : true,
+              "other_relative_name_prefix" : {
+                "value" : "Ms.",
+                "id" : 2
+              },
+              "other_relative_first_name" : "McOrfn0",
+              "other_relative_middle_name" : "",
+              "other_relative_last_name" : "McOrln0",
+              "other_relative_name_suffix" : {
+                "value" : "Jr",
+                "id" : 5
+              },
+              "date_of_birth" : "2008-06-26",
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              }
+            }, {
+              "id" : 1041,
+              "relationship_to_applicants" : [ {
+                "applicant_id" : 3831,
+                "child_financially_supported" : true,
+                "child_adopted" : false,
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ],
+              "other_relative" : true,
+              "other_relative_name_prefix" : {
+                "value" : "Ms.",
+                "id" : 2
+              },
+              "other_relative_first_name" : "McOrfn1",
+              "other_relative_middle_name" : "",
+              "other_relative_last_name" : "McOrln1",
+              "other_relative_name_suffix" : {
+                "value" : "Jr",
+                "id" : 5
+              },
+              "date_of_birth" : "2008-06-26",
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              }
+            } ],
+            "other_adults" : [ {
+              "id" : 1421,
+              "name_prefix" : {
+                "value" : "Ms.",
+                "id" : 2
+              },
+              "first_name" : "OaFn0",
+              "middle_name" : "L.",
+              "last_name" : "OaLn0",
+              "name_suffix" : {
+                "value" : "Jr",
+                "id" : 5
+              },
+              "date_of_birth" : "1995-07-14",
+              "relationship_to_applicants" : [ {
+                "applicant_id" : 3832,
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ],
+              "is_residing_in_home" : true
+            }, {
+              "id" : 1422,
+              "name_prefix" : {
+                "value" : "Ms.",
+                "id" : 2
+              },
+              "first_name" : "OaFn1",
+              "middle_name" : "L.",
+              "last_name" : "OaLn1",
+              "name_suffix" : {
+                "value" : "Jr",
+                "id" : 5
+              },
+              "date_of_birth" : "1995-07-14",
+              "relationship_to_applicants" : [ {
+                "applicant_id" : 3832,
+                "relationship_to_applicant" : {
+                  "value" : "Child",
+                  "id" : 1
+                }
+              } ],
+              "is_residing_in_home" : true
+            } ],
+            "resource_family_name" : "ALn, AFn & John",
+            "is_initial_application" : false
+          }, {
+            "id" : 6163,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 3814,
+              "first_name" : "Nyah",
+              "middle_name" : "k",
+              "last_name" : "Bergstrom",
+              "other_names" : [ ],
+              "highest_education_level" : {
+                "value" : "Some High School",
+                "id" : 2
+              },
+              "ethnicity" : {
+                "value" : "Black",
+                "id" : 4
+              },
+              "driver_license_number" : "ABC123",
+              "driver_license_state" : {
+                "value" : "Alaska",
+                "id" : "AK"
+              },
+              "email" : "test@test.com",
+              "employment" : {
+                "employer_name" : "Employer Name",
+                "occupation" : "Front End Developer",
+                "income" : 10,
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 Gateway",
+                  "city" : "Sacremento",
+                  "zip" : "94403"
+                }
+              },
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Home",
+                  "id" : 2
+                },
+                "number" : "2012222345",
+                "preferred" : false
+              } ]
+            } ],
+            "tracking_id" : 176,
+            "resource_family_name" : "Bergstrom, Nyah",
+            "is_initial_application" : false
+          }, {
+            "id" : 6180,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 3827,
+              "first_name" : "alpha0",
+              "middle_name" : "",
+              "last_name" : "beta0",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            }, {
+              "id" : 3828,
+              "first_name" : "alpha1",
+              "middle_name" : "",
+              "last_name" : "beta1",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "other_adults" : [ {
+              "id" : 1420,
+              "first_name" : "alpha2",
+              "middle_name" : "",
+              "last_name" : "beta2",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant_freeform" : ""
+              } ]
+            } ],
+            "resource_family_name" : "beta0, alpha0 & beta1, alpha1",
+            "is_initial_application" : false
+          }, {
+            "id" : 6165,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 3816,
+              "first_name" : "Emilio",
+              "middle_name" : "k",
+              "last_name" : "Bosco",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "minor_children" : [ {
+              "id" : 1037,
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant_freeform" : "child",
+                "child_financially_supported" : true,
+                "child_adopted" : true
+              } ],
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              }
+            } ],
+            "resource_family_name" : "Bosco, Emilio",
+            "is_initial_application" : false
+          }, {
+            "id" : 6164,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 3815,
+              "first_name" : "Violette",
+              "middle_name" : "k",
+              "last_name" : "Corkery",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "other_adults" : [ {
+              "id" : 1417,
+              "first_name" : "Andreanne",
+              "middle_name" : "",
+              "last_name" : "",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant_freeform" : "child"
+              } ]
+            } ],
+            "resource_family_name" : "Corkery, Violette",
+            "is_initial_application" : false
+          }, {
+            "id" : 6173,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants_history" : {
+              "former_spouses" : [ {
+                "first_name" : "Sam",
+                "middle_name" : "",
+                "last_name" : "",
+                "place_of_marriage_city" : "",
+                "place_of_marriage_end_city" : ""
+              } ],
+              "adult_children" : [ {
+                "first_name" : "",
+                "middle_name" : "",
+                "last_name" : "",
+                "relationship_to_applicants" : [ { } ],
+                "address" : {
+                  "street_address" : "",
+                  "zip" : "",
+                  "city" : ""
+                }
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 3821,
+              "first_name" : "Art",
+              "middle_name" : "k",
+              "last_name" : "Homenick",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "resource_family_name" : "Homenick, Art",
+            "is_initial_application" : false
+          }, {
+            "id" : 6168,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants_history" : {
+              "former_spouses" : [ {
+                "applicant_id" : 3818,
+                "first_name" : "",
+                "middle_name" : "",
+                "last_name" : "",
+                "place_of_marriage_city" : "",
+                "place_of_marriage_end_city" : ""
+              } ],
+              "adult_children" : [ {
+                "first_name" : "",
+                "middle_name" : "",
+                "last_name" : "",
+                "relationship_to_applicants" : [ { } ],
+                "address" : {
+                  "street_address" : "",
+                  "zip" : "",
+                  "city" : ""
+                }
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 3818,
+              "first_name" : "Super",
+              "middle_name" : "k",
+              "last_name" : "Man",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "resource_family_name" : "Man, Super",
+            "is_initial_application" : false
+          }, {
+            "id" : 6179,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "residence" : {
+              "addresses" : [ {
+                "street_address" : "2870 something else",
+                "zip" : "12345",
+                "city" : "Sacremento",
+                "state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                },
+                "type" : {
+                  "value" : "Residential",
+                  "id" : 1
+                }
+              }, {
+                "street_address" : "",
+                "zip" : "",
+                "city" : "",
+                "type" : {
+                  "value" : "Mailing",
+                  "id" : 3
+                }
+              } ],
+              "physical_mailing_similar" : true,
+              "residence_ownership" : {
+                "value" : "Own",
+                "id" : 1
+              },
+              "weapon_in_home" : true,
+              "body_of_water_exist" : true,
+              "body_of_water_description" : "",
+              "others_using_residence_as_mailing" : true,
+              "other_people_using_residence_as_mailing" : [ {
+                "first_name" : "Jeanie",
+                "middle_name" : "",
+                "last_name" : "Rosetta"
+              } ],
+              "directions_to_home" : "",
+              "home_languages" : [ {
+                "value" : "American Sign Language",
+                "id" : 1
+              }, {
+                "value" : "Armenian",
+                "id" : 3
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 3826,
+              "first_name" : "Geovanni",
+              "middle_name" : "",
+              "last_name" : "Moen",
+              "other_names" : [ ],
+              "date_of_birth" : "1111-11-11",
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Home",
+                  "id" : 2
+                },
+                "number" : "2012222345",
+                "preferred" : false
+              } ],
+              "rfa1b_form" : {
+                "id" : 641,
+                "application_county" : {
+                  "value" : "Los Angeles",
+                  "id" : 19
+                },
+                "convicted_in_california" : true,
+                "convicted_in_another_state" : true,
+                "arrested_for_crime" : true,
+                "resource_family_name" : "test",
+                "applicant_first_name" : "first name",
+                "applicant_middle_name" : "",
+                "applicant_last_name" : "last name",
+                "residence_address" : {
+                  "street_address" : "2870 something else2870 something else",
+                  "zip" : "12345",
+                  "city" : "Sacremento",
+                  "state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  }
+                },
+                "date_of_birth" : "1111-11-11",
+                "driver_license" : "",
+                "convicted_in_california_disclosures" : [ {
+                  "offense" : "test offense",
+                  "offense_city" : "test offense city",
+                  "when_offense_happen" : "date of offense",
+                  "offense_details" : "offense details"
+                } ],
+                "convicted_in_another_state_disclosures" : [ {
+                  "offense" : "outside test offense",
+                  "offense_city" : "outside test offense city",
+                  "when_offense_happen" : "outside date of offense",
+                  "offense_details" : "outside offense details"
+                } ],
+                "arrested_for_crime_disclosures" : [ {
+                  "offense" : "cohab test offense",
+                  "offense_city" : "cohab test offense city",
+                  "when_offense_happen" : "cohab date of offense",
+                  "offense_details" : "cohab offense details"
+                } ],
+                "metadata" : {
+                  "submit_enabled" : true
+                }
+              }
+            } ],
+            "metadata" : {
+              "submit_enabled" : true
+            },
+            "resource_family_name" : "Moen, Geovanni",
+            "is_initial_application" : false
+          }, {
+            "id" : 6169,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "residence" : {
+              "addresses" : [ {
+                "street_address" : "2870 something else",
+                "zip" : "12345",
+                "city" : "Sacremento",
+                "state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                },
+                "type" : {
+                  "value" : "Residential",
+                  "id" : 1
+                }
+              }, {
+                "street_address" : "",
+                "zip" : "",
+                "city" : "",
+                "type" : {
+                  "value" : "Mailing",
+                  "id" : 3
+                }
+              } ],
+              "physical_mailing_similar" : true,
+              "residence_ownership" : {
+                "value" : "Own",
+                "id" : 1
+              },
+              "weapon_in_home" : true,
+              "body_of_water_exist" : true,
+              "body_of_water_description" : "",
+              "others_using_residence_as_mailing" : true,
+              "other_people_using_residence_as_mailing" : [ {
+                "first_name" : "Shaylee",
+                "middle_name" : "",
+                "last_name" : "Providenci"
+              } ],
+              "directions_to_home" : "",
+              "home_languages" : [ {
+                "value" : "American Sign Language",
+                "id" : 1
+              }, {
+                "value" : "Armenian",
+                "id" : 3
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 3819,
+              "first_name" : "Geovanni",
+              "middle_name" : "",
+              "last_name" : "Moen",
+              "other_names" : [ ],
+              "date_of_birth" : "1111-11-11",
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Home",
+                  "id" : 2
+                },
+                "number" : "2012222345",
+                "preferred" : false
+              } ]
+            } ],
+            "minor_children" : [ {
+              "id" : 1038,
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant_freeform" : "child",
+                "child_financially_supported" : true,
+                "child_adopted" : true
+              } ],
+              "date_of_birth" : "1111-11-11",
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              }
+            }, {
+              "id" : 1039,
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant_freeform" : "child",
+                "child_financially_supported" : true,
+                "child_adopted" : true
+              } ],
+              "date_of_birth" : "1111-11-11",
+              "gender" : {
+                "value" : "Male",
+                "id" : 1
+              }
+            } ],
+            "other_adults" : [ {
+              "id" : 1418,
+              "first_name" : "Jayde",
+              "middle_name" : "",
+              "last_name" : "Witting",
+              "date_of_birth" : "1211-12-12",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant_freeform" : "child"
+              } ]
+            }, {
+              "id" : 1419,
+              "first_name" : "Afton",
+              "middle_name" : "",
+              "last_name" : "Powlowski",
+              "date_of_birth" : "1211-12-12",
+              "relationship_to_applicants" : [ {
+                "relationship_to_applicant_freeform" : "child"
+              } ]
+            } ],
+            "metadata" : {
+              "submit_enabled" : true
+            },
+            "resource_family_name" : "Moen, Geovanni",
+            "is_initial_application" : false
+          }, {
+            "id" : 6155,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 3809,
+              "first_name" : "Geovanni",
+              "middle_name" : "",
+              "last_name" : "Moen",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "resource_family_name" : "Moen, Geovanni",
+            "is_initial_application" : false
+          }, {
+            "id" : 6156,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants_relationship" : {
+              "relationship_type" : {
+                "value" : "Cohabitants",
+                "id" : 4
+              },
+              "other_relationship" : "",
+              "place_of_relationship_city" : ""
+            },
+            "applicants" : [ {
+              "id" : 3810,
+              "first_name" : "Brown",
+              "middle_name" : "",
+              "last_name" : "Moore",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            }, {
+              "id" : 3811,
+              "first_name" : "Paris",
+              "middle_name" : "",
+              "last_name" : "Nicolas",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "resource_family_name" : "Moore, Brown & Nicolas, Paris",
+            "is_initial_application" : false
+          }, {
+            "id" : 6177,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 3824,
+              "first_name" : "Kimberley",
+              "middle_name" : "k",
+              "last_name" : "RReily",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "rfa1c_forms" : [ {
+              "id" : 396,
+              "application_county" : {
+                "value" : "Los Angeles",
+                "id" : 19
+              },
+              "child_identified" : false,
+              "identified_children" : [ {
+                "first_name" : "Kimberley",
+                "middle_name" : "k",
+                "last_name" : "RReily",
+                "name_suffix" : {
+                  "value" : "Sr",
+                  "id" : 6
+                },
+                "date_of_birth" : "2000-01-01",
+                "gender" : {
+                  "value" : "Male",
+                  "id" : 1
+                },
+                "relationship_to_applicants" : [ {
+                  "relationship_to_applicant_freeform" : ""
+                } ],
+                "school_grade" : {
+                  "value" : "TK",
+                  "id" : 1
+                },
+                "school_name" : "School name",
+                "school_address" : {
+                  "street_address" : "address here",
+                  "zip" : "12345",
+                  "city" : "",
+                  "state" : {
+                    "value" : "Alabama",
+                    "id" : "AL"
+                  }
+                }
+              } ]
+            } ],
+            "child_desired" : {
+              "child_identified" : true,
+              "child_in_home" : true,
+              "preferred_ages" : [ ]
+            },
+            "resource_family_name" : "RReily, Kimberley",
+            "is_initial_application" : false
+          }, {
+            "id" : 6162,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 3813,
+              "first_name" : "Laurie",
+              "middle_name" : "k",
+              "last_name" : "Ruecker",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "resource_family_name" : "Ruecker, Laurie",
+            "is_initial_application" : false
+          }, {
+            "id" : 6174,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "residence" : {
+              "addresses" : [ {
+                "street_address" : "",
+                "zip" : "",
+                "city" : "",
+                "type" : {
+                  "value" : "Residential",
+                  "id" : 1
+                }
+              }, {
+                "street_address" : "mailing address here",
+                "zip" : "12345",
+                "city" : "secondary city",
+                "type" : {
+                  "value" : "Mailing",
+                  "id" : 3
+                }
+              } ],
+              "physical_mailing_similar" : false,
+              "residence_ownership" : {
+                "value" : "Own",
+                "id" : 1
+              },
+              "weapon_in_home" : true,
+              "body_of_water_exist" : true,
+              "body_of_water_description" : "",
+              "others_using_residence_as_mailing" : true,
+              "other_people_using_residence_as_mailing" : [ {
+                "name_prefix" : {
+                  "value" : "Mr.",
+                  "id" : 1
+                },
+                "first_name" : "Eliza",
+                "middle_name" : "",
+                "last_name" : "Schultz",
+                "name_suffix" : {
+                  "value" : "II",
+                  "id" : 2
+                }
+              }, {
+                "name_prefix" : {
+                  "value" : "Miss",
+                  "id" : 5
+                },
+                "first_name" : "Jerald",
+                "middle_name" : "",
+                "last_name" : "Stracke",
+                "name_suffix" : {
+                  "value" : "MD",
+                  "id" : 7
+                }
+              } ],
+              "directions_to_home" : "directions goes here",
+              "home_languages" : [ {
+                "value" : "American Sign Language",
+                "id" : 1
+              }, {
+                "value" : "Armenian",
+                "id" : 3
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 3822,
+              "first_name" : "Caleb",
+              "middle_name" : "k",
+              "last_name" : "Runolfsdottir",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "employment" : {
+                "employer_name" : "",
+                "occupation" : "",
+                "income_type" : {
+                  "value" : "yearly",
+                  "id" : 1
+                },
+                "physical_address" : {
+                  "street_address" : "2870 something else",
+                  "city" : "",
+                  "zip" : "12345"
+                }
+              }
+            } ],
+            "resource_family_name" : "Runolfsdottir, Caleb",
+            "is_initial_application" : false
+          }, {
+            "id" : 6178,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "residence" : {
+              "addresses" : [ {
+                "street_address" : "2870 something else",
+                "zip" : "12345",
+                "city" : "Sacremento",
+                "state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                },
+                "type" : {
+                  "value" : "Residential",
+                  "id" : 1
+                }
+              }, {
+                "street_address" : "",
+                "zip" : "",
+                "city" : "",
+                "type" : {
+                  "value" : "Mailing",
+                  "id" : 3
+                }
+              } ],
+              "physical_mailing_similar" : true,
+              "residence_ownership" : {
+                "value" : "Own",
+                "id" : 1
+              },
+              "weapon_in_home" : true,
+              "body_of_water_exist" : true,
+              "body_of_water_description" : "",
+              "others_using_residence_as_mailing" : true,
+              "other_people_using_residence_as_mailing" : [ {
+                "first_name" : "Margarette",
+                "middle_name" : "",
+                "last_name" : "Era"
+              } ],
+              "directions_to_home" : "",
+              "home_languages" : [ {
+                "value" : "American Sign Language",
+                "id" : 1
+              }, {
+                "value" : "Armenian",
+                "id" : 3
+              } ]
+            },
+            "applicants" : [ {
+              "id" : 3825,
+              "first_name" : "Paul",
+              "middle_name" : "k",
+              "last_name" : "Smit",
+              "other_names" : [ ],
+              "date_of_birth" : "1111-11-11",
+              "driver_license_number" : "",
+              "email" : "",
+              "phones" : [ {
+                "phone_type" : {
+                  "value" : "Home",
+                  "id" : 2
+                },
+                "number" : "2012222345",
+                "preferred" : false
+              } ],
+              "rfa1b_form" : {
+                "id" : 640,
+                "application_county" : {
+                  "value" : "Los Angeles",
+                  "id" : 19
+                },
+                "resource_family_name" : "test",
+                "applicant_first_name" : "first name",
+                "applicant_middle_name" : "k",
+                "applicant_last_name" : "last name",
+                "residence_address" : {
+                  "street_address" : "2870 something else2870 something else",
+                  "zip" : "12345",
+                  "city" : "Sacremento",
+                  "state" : {
+                    "value" : "Alaska",
+                    "id" : "AK"
+                  }
+                },
+                "date_of_birth" : "1111-11-11",
+                "driver_license" : "",
+                "metadata" : {
+                  "submit_enabled" : true
+                }
+              }
+            } ],
+            "rfa1c_forms" : [ {
+              "id" : 397,
+              "application_county" : {
+                "value" : "Los Angeles",
+                "id" : 19
+              },
+              "child_identified" : false,
+              "identified_children" : [ {
+                "first_name" : "Paul",
+                "middle_name" : "k",
+                "last_name" : "Smit",
+                "date_of_birth" : "2000-01-01",
+                "relationship_to_applicants" : [ {
+                  "relationship_to_applicant_freeform" : ""
+                } ],
+                "school_name" : "",
+                "school_address" : {
+                  "street_address" : "",
+                  "zip" : "",
+                  "city" : ""
+                },
+                "child_in_home" : true
+              } ],
+              "metadata" : {
+                "submit_enabled" : true
+              }
+            } ],
+            "child_desired" : {
+              "child_identified" : true,
+              "child_in_home" : true,
+              "preferred_ages" : [ ]
+            },
+            "metadata" : {
+              "submit_enabled" : true
+            },
+            "resource_family_name" : "Smit, Paul",
+            "is_initial_application" : false
+          }, {
+            "id" : 6158,
+            "application_county" : {
+              "value" : "Kings",
+              "id" : 16
+            },
+            "applicants" : [ {
+              "id" : 3812,
+              "first_name" : "Araceli",
+              "middle_name" : "",
+              "last_name" : "Torp",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "resource_family_name" : "Torp, Araceli",
+            "is_initial_application" : false
+          }, {
+            "id" : 6166,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 3817,
+              "first_name" : "Adonis",
+              "middle_name" : "k",
+              "last_name" : "Waelchi",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "adoption_history" : {
+              "foster_care_licenses_q1" : {
+                "was_previously_licensed" : true,
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "applications_for_adoption_q2" : {
+                "facilities" : [ "" ]
+              },
+              "facility_operation_licenses_q3" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "employment_in_facilities_q4" : {
+                "facilities" : [ "" ]
+              },
+              "denial_history_q5" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              },
+              "suspension_revocation_history_q6" : {
+                "agencies" : [ {
+                  "name" : "",
+                  "type" : { }
+                } ]
+              }
+            },
+            "resource_family_name" : "Waelchi, Adonis",
+            "is_initial_application" : false
+          }, {
+            "id" : 6181,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 3829,
+              "first_name" : "Dillon",
+              "middle_name" : "",
+              "last_name" : "Wisozk",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "rfa1b_form" : {
+                "id" : 642,
+                "application_county" : {
+                  "value" : "Los Angeles",
+                  "id" : 19
+                },
+                "convicted_in_california" : true,
+                "convicted_in_another_state" : true,
+                "arrested_for_crime" : true,
+                "resource_family_name" : "test",
+                "applicant_first_name" : "Dillon",
+                "applicant_middle_name" : "",
+                "applicant_last_name" : "Wisozk",
+                "ssn" : "123-45-6789",
+                "driver_license" : "D123",
+                "driver_license_state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                },
+                "convicted_in_california_disclosures" : [ {
+                  "offense" : "test offense",
+                  "offense_city" : "test offense city",
+                  "when_offense_happen" : "date of offense",
+                  "offense_details" : "offense details"
+                } ],
+                "convicted_in_another_state_disclosures" : [ {
+                  "offense" : "outside test offense",
+                  "offense_city" : "outside test offense city",
+                  "when_offense_happen" : "outside date of offense",
+                  "offense_details" : "outside offense details"
+                } ],
+                "arrested_for_crime_disclosures" : [ {
+                  "offense" : "cohab test offense",
+                  "offense_city" : "cohab test offense city",
+                  "when_offense_happen" : "cohab date of offense",
+                  "offense_details" : "cohab offense details"
+                } ]
+              }
+            } ],
+            "child_desired" : {
+              "child_identified" : true,
+              "child_in_home" : true,
+              "preferred_ages" : [ ]
+            },
+            "resource_family_name" : "Wisozk, Dillon",
+            "is_initial_application" : false
+          }, {
+            "id" : 6182,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 3830,
+              "first_name" : "Dillonish",
+              "middle_name" : "",
+              "last_name" : "Wisozkish",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : "",
+              "rfa1b_form" : {
+                "id" : 643,
+                "application_county" : {
+                  "value" : "Los Angeles",
+                  "id" : 19
+                },
+                "applicant_first_name" : "Dillonish",
+                "applicant_middle_name" : "",
+                "applicant_last_name" : "Wisozkish",
+                "driver_license" : ""
+              }
+            } ],
+            "resource_family_name" : "Wisozkish, Dillonish",
+            "is_initial_application" : false
+          }, {
+            "id" : 6176,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 3823,
+              "first_name" : "Dillonish",
+              "middle_name" : "k",
+              "last_name" : "Wisozkish",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "rfa1c_forms" : [ {
+              "id" : 395,
+              "application_county" : {
+                "value" : "Los Angeles",
+                "id" : 19
+              },
+              "child_identified" : false
+            } ],
+            "child_desired" : {
+              "child_identified" : true,
+              "child_in_home" : true,
+              "preferred_ages" : [ ]
+            },
+            "resource_family_name" : "Wisozkish, Dillonish",
+            "is_initial_application" : false
+          }, {
+            "id" : 6171,
+            "application_county" : {
+              "value" : "Los Angeles",
+              "id" : 19
+            },
+            "applicants" : [ {
+              "id" : 3820,
+              "first_name" : "Trisha",
+              "middle_name" : "",
+              "last_name" : "Shields",
+              "other_names" : [ ],
+              "driver_license_number" : "",
+              "email" : ""
+            } ],
+            "is_initial_application" : false
+          } ]
+        }
+    http_version: 
+  recorded_at: Tue, 26 Jun 2018 17:09:46 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/6189?expanded=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 73e12aab-896c-4e66-9e10-76c2bacaaf13
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 26 Jun 2018 17:09:47 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 25-Jun-2018 17:09:47
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id" : 6189,
+          "other_type_description" : "otherDescription",
+          "application_county" : {
+            "value" : "Sacramento",
+            "id" : 34
+          },
+          "applicants" : [ {
+            "id" : 3835,
+            "name_prefix" : {
+              "value" : "Ms.",
+              "id" : 2
+            },
+            "first_name" : "AFn",
+            "middle_name" : "N",
+            "last_name" : "ALn",
+            "name_suffix" : {
+              "value" : "Jr",
+              "id" : 5
+            },
+            "other_names" : [ {
+              "name_prefix" : {
+                "value" : "Ms.",
+                "id" : 2
+              },
+              "first_name" : "AOnFn",
+              "middle_name" : "N.",
+              "last_name" : "AOnLn",
+              "name_suffix" : {
+                "value" : "Jr",
+                "id" : 5
+              },
+              "name_type" : {
+                "value" : "Maiden",
+                "id" : 2
+              }
+            } ],
+            "highest_education_level" : {
+              "value" : "High School or Equivalent",
+              "id" : 3
+            },
+            "date_of_birth" : "1981-12-26",
+            "gender" : {
+              "value" : "Female",
+              "id" : 2
+            },
+            "race" : {
+              "value" : "American Indian or Alaska Native",
+              "id" : 1
+            },
+            "ethnicity" : {
+              "value" : "Alaskan Native",
+              "id" : 1
+            },
+            "driver_license_number" : "A1234567",
+            "driver_license_state" : {
+              "value" : "California",
+              "id" : "CA"
+            },
+            "email" : "anna.smith@gmail.com",
+            "employment" : {
+              "employer_name" : "HSH Inc.",
+              "occupation" : "Sr. Analyst",
+              "income" : 98000.00,
+              "income_type" : {
+                "value" : "yearly",
+                "id" : 1
+              },
+              "physical_address" : {
+                "street_address" : "1702 Redoak Ct.",
+                "city" : "Rocklin",
+                "state" : {
+                  "value" : "CA - California",
+                  "id" : "AL"
+                },
+                "zip" : "98123"
+              }
+            },
+            "phones" : [ {
+              "phone_type" : {
+                "value" : "Cell",
+                "id" : 1
+              },
+              "number" : "5347589802"
+            }, {
+              "phone_type" : {
+                "value" : "Work",
+                "id" : 3
+              },
+              "number" : "5347589803",
+              "extension" : "1234567",
+              "preferred" : true
+            } ],
+            "rfa1b_form" : {
+              "application_county" : {
+                "value" : "Sacramento",
+                "id" : 34
+              },
+              "lived_in_other_state" : true,
+              "other_states_of_living" : [ {
+                "value" : "Texas",
+                "id" : "TX"
+              }, {
+                "value" : "Nevada",
+                "id" : "NV"
+              } ],
+              "convicted_in_california" : false,
+              "convicted_in_another_state" : false,
+              "arrested_for_crime" : false,
+              "resource_family_name" : "Peterson",
+              "applicant_name_prefix" : {
+                "value" : "Ms.",
+                "id" : 2
+              },
+              "applicant_first_name" : "Anna",
+              "applicant_middle_name" : "M.",
+              "applicant_last_name" : "Peterson",
+              "applicant_name_suffix" : {
+                "value" : "Jr",
+                "id" : 5
+              },
+              "residence_address" : {
+                "street_address" : "1702 Redoak Ct.",
+                "zip" : "98123",
+                "city" : "Rocklin",
+                "state" : {
+                  "value" : "California",
+                  "id" : "CA"
+                },
+                "type" : {
+                  "value" : "Residential",
+                  "id" : 1
+                }
+              },
+              "ssn" : "464942323",
+              "date_of_birth" : "1981-12-26",
+              "driver_license" : "MD123-1234-585-121",
+              "driver_license_state" : {
+                "value" : "Maryland",
+                "id" : "MD"
+              },
+              "signature" : "Anna Peterson",
+              "application_date" : "2017-07-02",
+              "convicted_in_california_disclosures" : [ {
+                "offense" : "Offense description Offense description Offense description Offense description Offense description Offense description Offense description Offense description Offense description ",
+                "offense_city" : "Sacramento",
+                "offense_state" : {
+                  "value" : "California",
+                  "id" : "CA"
+                },
+                "offense_date" : "2014-03-12",
+                "when_offense_happen" : "free form text",
+                "offense_details" : "More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence ",
+                "signature" : "Anna Peterson",
+                "application_date" : "2017-07-02"
+              } ],
+              "convicted_in_another_state_disclosures" : [ {
+                "offense" : "Offense description Offense description ",
+                "offense_city" : "City",
+                "offense_state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                },
+                "offense_date" : "2014-03-12",
+                "when_offense_happen" : "free form text",
+                "offense_details" : "More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence More details about offence ",
+                "signature" : "Signature",
+                "application_date" : "2017-07-02"
+              } ],
+              "arrested_for_crime_disclosures" : [ {
+                "offense" : "Offense description Offense description ",
+                "offense_city" : "Sacramento",
+                "offense_state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                },
+                "offense_date" : "2011-03-12",
+                "when_offense_happen" : "free form text",
+                "offense_details" : "More details about offence ",
+                "signature" : "Signature 2",
+                "application_date" : "2017-07-02"
+              } ],
+              "metadata" : {
+                "submit_enabled" : true
+              }
+            },
+            "lic198b_form" : {
+              "id" : 370,
+              "requestor_info" : {
+                "name" : {
+                  "name_prefix" : {
+                    "value" : "Ms.",
+                    "id" : 2
+                  },
+                  "first_name" : "AFn",
+                  "middle_name" : "N",
+                  "last_name" : "ALn",
+                  "name_suffix" : {
+                    "value" : "Jr",
+                    "id" : 5
+                  }
+                },
+                "phone" : {
+                  "phone_type" : {
+                    "value" : "Cell",
+                    "id" : 1
+                  },
+                  "number" : "5555555555"
+                },
+                "fax" : {
+                  "phone_type" : {
+                    "value" : "Fax",
+                    "id" : 5
+                  },
+                  "number" : "5555555556"
+                },
+                "email" : "example@mail.mail"
+              },
+              "identifying_data" : {
+                "person_name" : {
+                  "name_prefix" : {
+                    "value" : "Ms.",
+                    "id" : 2
+                  },
+                  "first_name" : "BFn",
+                  "middle_name" : "BMn",
+                  "last_name" : "BLn",
+                  "name_suffix" : {
+                    "value" : "Jr",
+                    "id" : 5
+                  }
+                },
+                "other_names" : [ {
+                  "last_name" : "MaidenName",
+                  "name_type" : {
+                    "value" : "Maiden",
+                    "id" : 4
+                  }
+                }, {
+                  "last_name" : "AliasName",
+                  "name_type" : {
+                    "value" : "AKA",
+                    "id" : 1
+                  }
+                } ],
+                "phone_number" : {
+                  "phone_type" : {
+                    "value" : "Cell",
+                    "id" : 1
+                  },
+                  "number" : "5555555557"
+                },
+                "email" : "example1@mail.mail",
+                "date_of_birth" : "2000-11-20",
+                "state_of_birth" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                },
+                "gender" : {
+                  "value" : "Male",
+                  "id" : 1
+                },
+                "race" : {
+                  "value" : "American Indian or Alaska Native",
+                  "id" : 1
+                },
+                "ethnicity" : {
+                  "value" : "Alaskan Native",
+                  "id" : 1
+                },
+                "ssn" : "999999999",
+                "driver_license_number" : "AS123456789012345678",
+                "driver_license_state" : {
+                  "value" : "Alaska",
+                  "id" : "AK"
+                }
+              },
+              "last_five_years_addresses" : [ {
+                "street_address" : "1111 Street St.",
+                "city" : "City",
+                "state" : {
+                  "value" : "California",
+                  "id" : "CA"
+                },
+                "zip" : "99999"
+              }, {
+                "street_address" : "1112 Street St.",
+                "city" : "City",
+                "state" : {
+                  "value" : "California",
+                  "id" : "CA"
+                },
+                "zip" : "99999"
+              } ],
+              "has_been_perpetrator" : true,
+              "perpetration_episodes" : [ {
+                "date" : "2011-11-20",
+                "city" : "City",
+                "state" : {
+                  "value" : "California",
+                  "id" : "CA"
+                },
+                "county" : "County",
+                "circumstances" : "Some Circumstances"
+              }, {
+                "date" : "2011-11-21",
+                "city" : "City",
+                "state" : {
+                  "value" : "California",
+                  "id" : "CA"
+                },
+                "county" : "County",
+                "circumstances" : "Other Circumstances"
+              } ],
+              "signatures" : {
+                "signature_of_applicant" : "Applicant Signature",
+                "sign_date_of_applicants" : "2017-11-20",
+                "signature_of_witness" : "Witness signature",
+                "sign_date_of_witness" : "2017-11-20"
+              },
+              "responding_state" : {
+                "reports" : [ {
+                  "report_date" : "2011-11-20",
+                  "report_number" : "123-QWE",
+                  "local_contact" : {
+                    "name_prefix" : {
+                      "value" : "Ms.",
+                      "id" : 2
+                    },
+                    "first_name" : "CFn",
+                    "middle_name" : "CMn",
+                    "last_name" : "CLn",
+                    "name_suffix" : {
+                      "value" : "Jr",
+                      "id" : 5
+                    }
+                  },
+                  "phone" : {
+                    "phone_type" : {
+                      "value" : "Cell",
+                      "id" : 1
+                    },
+                    "number" : "5555555558"
+                  }
+                }, {
+                  "report_date" : "2011-11-21",
+                  "report_number" : "567-ASD",
+                  "local_contact" : {
+                    "name_prefix" : {
+                      "value" : "Ms.",
+                      "id" : 2
+                    },
+                    "first_name" : "DFn",
+                    "middle_name" : "DMn",
+                    "last_name" : "DLn",
+                    "name_suffix" : {
+                      "value" : "Jr",
+                      "id" : 5
+                    }
+                  },
+                  "phone" : {
+                    "phone_type" : {
+                      "value" : "Cell",
+                      "id" : 1
+                    },
+                    "number" : "5555555559"
+                  }
+                } ],
+                "contact_name" : {
+                  "name_prefix" : {
+                    "value" : "Ms.",
+                    "id" : 2
+                  },
+                  "first_name" : "EFn",
+                  "middle_name" : "EMn",
+                  "last_name" : "ELn",
+                  "name_suffix" : {
+                    "value" : "Jr",
+                    "id" : 5
+                  }
+                },
+                "agency" : "AGENCY",
+                "phone" : {
+                  "phone_type" : {
+                    "value" : "Work",
+                    "id" : 3
+                  },
+                  "number" : "5555555565",
+                  "extension" : "4321"
+                },
+                "email" : "example@email.mail"
+              }
+            }
+          } ],
+          "tracking_id" : 177,
+          "resource_family_name" : "ALn, AFn",
+          "is_initial_application" : false
+        }
+    http_version: 
+  recorded_at: Tue, 26 Jun 2018 17:09:47 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/rfa-1a-forms/6189/tracking/177
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 73e12aab-896c-4e66-9e10-76c2bacaaf13
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Tue, 26 Jun 2018 17:09:47 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 25-Jun-2018 17:09:47
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '727'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id" : 177,
+          "facility_name" : "ALn, AFn",
+          "rfa_1a_id" : 6189,
+          "tracking_documents" : {
+            "facility_documents" : {
+              "family_documents" : {
+                "items" : [ {
+                  "title" : "RFA Application (RFA 01A)",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Verification of Income",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Disclosure of Expenses",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Verification of Property",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Home Environment Checklist (RFA-03)",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Reference Letter #1",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Reference Letter #2",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Reference Letter #3 (if applicable)",
+                  "notes" : "",
+                  "checked" : false
+                } ]
+              },
+              "tasks_and_trainings" : {
+                "items" : [ {
+                  "title" : "Attended Orientation Meeting",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Risk Assessment",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Home Environment Checklist (RFA-03)",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Pre-Service Training",
+                  "notes" : "",
+                  "checked" : false
+                } ]
+              },
+              "assessments" : {
+                "items" : [ {
+                  "title" : "Family Evaluation",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Written Report",
+                  "notes" : "",
+                  "checked" : false
+                }, {
+                  "title" : "Acknowledgement of Written Report",
+                  "notes" : "",
+                  "checked" : false
+                } ]
+              }
+            },
+            "people_documents" : [ {
+              "person_id" : 3835,
+              "person_name" : "AFn ALn",
+              "person_type" : "Applicant",
+              "person_documents" : {
+                "individual_documents" : {
+                  "items" : [ {
+                    "title" : "Criminal Record Statement (RFA-01B)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Health Questionnaire (RFA-07)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "TB Questionnaire (RFA-08)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Employment Verification",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Proof of Identity",
+                    "notes" : "",
+                    "checked" : false
+                  } ]
+                },
+                "trainings" : {
+                  "items" : [ {
+                    "title" : "CPR Training",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "First Aid Training",
+                    "notes" : "",
+                    "checked" : false
+                  } ]
+                },
+                "clearances" : {
+                  "items" : [ {
+                    "title" : "Criminal Background Checklist (RFA-02)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "DMV Reports",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Exemption Needed (if applicable)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Previous Associations (if applicable)",
+                    "notes" : "",
+                    "checked" : false
+                  }, {
+                    "title" : "Legal Consult Needed (if applicable)",
+                    "notes" : "",
+                    "checked" : false
+                  } ]
+                }
+              }
+            } ]
+          },
+          "create_datetime" : "2018-06-26 10:04:27",
+          "create_user_id" : "RACFID",
+          "update_datetime" : "2018-06-26 10:04:27",
+          "update_user_id" : "RACFID"
+        }
+    http_version: 
+  recorded_at: Tue, 26 Jun 2018 17:09:47 GMT
+recorded_with: VCR 3.0.3

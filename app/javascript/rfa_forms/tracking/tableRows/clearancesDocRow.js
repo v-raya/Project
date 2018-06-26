@@ -37,8 +37,8 @@ const ClearancesDocRow = ({
             <td>
               <DateField
                 id={'clearance' + peopleIndex + 'EditCompleteDate' + itemIndex}
-                value={FormatDateForDisplay(peopleDoc.completion_date)}
-                onChange={(event) => handleChange('completion_date', FormatDateForPersistance(event.target.value), peopleIndex, itemIndex)} />
+                value={FormatDateForDisplay(peopleDoc.completed_date)}
+                onChange={(event) => handleChange('completed_date', FormatDateForPersistance(event.target.value), peopleIndex, itemIndex)} />
             </td>
             <td>
               <TextAreaComponent
@@ -65,7 +65,7 @@ const ClearancesDocRow = ({
               {FormatDateForDisplay(peopleDoc.start_date)}
             </td>
             <td id={'clearance' + peopleIndex + 'ShowCompleteDate' + index}>
-              {FormatDateForDisplay(peopleDoc.completion_date)}
+              {FormatDateForDisplay(peopleDoc.completed_date)}
             </td>
             <td id={'clearanceShowText' + index}>
               {peopleDoc.notes}
@@ -82,7 +82,7 @@ ClearancesDocRow.defaultProps = {
     'title': '',
     'checked': false,
     'start_date': '',
-    'completion_date': ''
+    'completed_date': ''
   }
 }
 

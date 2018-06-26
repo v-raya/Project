@@ -34,7 +34,7 @@ class Rfa::TrackingController < CalsBaseController
                                                           person_documents: [
                                                             individual_documents: [items: %i[title start_date completed_date notes checked]],
                                                             trainings: [items: %i[title expiration_date notes checked]],
-                                                            clearances: [items: %i[title start_date completion_date notes checked]]
+                                                            clearances: [items: %i[title start_date completed_date notes checked]]
                                                           ]]
                                      ])
   end

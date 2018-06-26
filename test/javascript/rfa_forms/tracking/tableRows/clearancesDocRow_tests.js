@@ -12,7 +12,7 @@ describe('Test Tracking For Clearances Table', () => {
         'title': 'Family Evaluation',
         'checked': false,
         'start_date': '1978-01-21',
-        'completion_date': '1969-01-21'
+        'completed_date': '1969-01-21'
       }]
     }
 
@@ -51,7 +51,7 @@ describe('Test Tracking For Clearances Table', () => {
   it('edit date field', () => {
     let textAreaField = editClearanceDocRow.find('#clearance0EditCompleteDate0').hostNodes()
     textAreaField.simulate('change', {target: {value: '01/20/1981'}})
-    expect(changeSpy).toHaveBeenCalledWith('completion_date', '1981-01-20', 0, 0)
+    expect(changeSpy).toHaveBeenCalledWith('completed_date', '1981-01-20', 0, 0)
   })
 
   it('loads the row ', () => {
