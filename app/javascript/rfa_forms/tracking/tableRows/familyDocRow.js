@@ -45,7 +45,7 @@ const FamilyDocRow = ({
       })
       : trackingDocuments.items.map((docs, index) => {
         return (
-          <tr key={'familyEdit' + index}>
+          <tr key={'familyShow' + index}>
             <td><BinarySelectorField
               type='checkbox'
               key={index}
