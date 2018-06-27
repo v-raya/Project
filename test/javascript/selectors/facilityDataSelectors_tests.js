@@ -321,9 +321,11 @@ describe('facilityDataSelectors', () => {
             'contact_summary': 'Assigned to LPA Jeffers.\r\nComplaint originally written on 10/15/04, under the wrong Olive Crest home.  LPA Jeffers re-wrote the complaint under the same control #.\r\n"10-day" visit completed 10/21/04.\r\nInterviews conducted with the 3 clients in placement at the time, with the staff alleged to be the perpetrator.',
             'followup_comments': 'None at this time.',
             'allegations': [{
-              'complaint_code': '3',
+              'complaint_type_code': '10',
+              'complaint_type_description': 'Neglect/Lack of Supervision',
               'allegation': 'Staff Meena Desai marks clients Alexzena Webb and Dizirea Goodwin with a ballpoint pen while they are sleeping.',
-              'resolution_code_unsub': 'U'
+              'resolution_type_code': 'U',
+              'resolution_type_description': 'Unsubstantiated'
             }]
           }]
         }
@@ -336,7 +338,13 @@ describe('facilityDataSelectors', () => {
           complaint_date: '10/19/2004',
           control_number: '198952',
           priority_level: 'N/A',
-          status: 'Approved'
+          status: 'Approved',
+          allegations: [{
+            'index_subcomponent': '1.',
+            'type_code': '10 - Neglect/Lack of Supervision',
+            'allegation': 'Staff Meena Desai marks clients Alexzena Webb and Dizirea Goodwin with a ballpoint pen while they are sleeping.',
+            'resolution_type_description': 'Unsubstantiated'
+          }]
         }]
       )
     })

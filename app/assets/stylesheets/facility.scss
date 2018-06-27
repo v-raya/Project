@@ -107,6 +107,30 @@
     background-color: #f5f5f5;
 }
 
+
+.facility-children .ReactTable .rt-table .rt-tbody .-odd {
+    background-color: #ffffff;
+}
+
+.facility-children .ReactTable .rt-table .rt-tbody {
+    margin-top: 2px;
+}
+
+.facility-children .ReactTable .rt-thead .rt-tr {
+    color: #000;
+    border-top: 1px solid #ddd;
+    text-align: initial;
+}
+
+.facility-children .ReactTable {
+    border-top-width: 0px;
+}
+
+.facility-children .ReactTable .rt-thead .rt-tr .rt-th{
+    font-family: 'Source Sans Pro Bold', sans-serif;
+    font-weight: bold;
+}
+
 .facility-children .table>tbody tr:last-child {
     padding-bottom: 25px;
     border-bottom: 1px solid #ddd;
@@ -162,4 +186,20 @@
     .small_inner_block {
         margin-bottom: 0px;
     }
+}
+
+.sub-component{
+    padding: 20px;
+}
+
+.rt-noData {
+    opacity: 0;
+}
+
+.rt-td {
+    white-space: normal !important
+}
+  
+.ReactTable .rt-td:first-child {
+ text-align: end; 
 }

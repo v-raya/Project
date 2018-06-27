@@ -43,6 +43,7 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
     "react-select": "^1.0.0-rc.10",
+    "react-table": "^6.8.6",
     "react-waypoint": "^8.0.0",
     "react-widgets": "4.1.0",
     "react-widgets-moment": "^4.0.4",

@@ -81,9 +81,19 @@ const getFacilityComplaintsData = (facilityComplaints) => {
     complaint_date: checkforDateOrNa(complaint.complaint_date),
     control_number: complaint.control_number,
     priority_level: complaint.priority_level || 'N/A',
-    status: complaint.status
+    status: complaint.status,
+    allegations: getComplaintAllegations(complaint.allegations)
   })
   )
+}
+
+const getComplaintAllegations = (allegations) => {
+  return allegations.map((allegation, index) => ({
+    index_subcomponent: `${index + 1}.`,
+    type_code: `${allegation.complaint_type_code} - ${allegation.complaint_type_description}`,
+    allegation: allegation.allegation,
+    resolution_type_description: allegation.resolution_type_description
+  }))
 }
 
 export const getFacilityName = (state) => {
