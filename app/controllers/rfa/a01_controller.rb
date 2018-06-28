@@ -1,4 +1,5 @@
 class Rfa::A01Controller < CalsBaseController
+  before_action -> { require_rfa_privilege(method(:edit)) }, only: [:edit]
   #include AuthenticationProvider
 
   def create

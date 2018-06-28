@@ -5,7 +5,7 @@ require 'vcr'
 
 RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
   before(:each) do
-    allow_any_instance_of(CalsBaseController).to receive(:check_for_priviliges).and_return(['Something Privilige'])
+    allow_any_instance_of(CalsBaseController).to receive(:require_search_privilege).and_return(['Something Privilige'])
   end
 
   def facilities_list

@@ -1,4 +1,5 @@
 class Rfa::B01Controller < CalsBaseController
+  before_action -> { require_rfa_privilege(method(:edit)) }, only: [:edit]
   def index
     rfa_b01_response = rfa_b01_application_helper.create_application(params[:application_id],
                                                                      params[:adult_id], params[:api_url_path])

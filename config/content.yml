@@ -10,3 +10,14 @@ services:
     summary: >
       Search for Facility
     href: /search
+  - name: CALS (RFA)
+    id: cals_rfa
+    enabled: true
+    roles: []
+    privileges: 
+      - ['RFA-rollout']
+    summary: >
+      RFA
+    href: /
+
+

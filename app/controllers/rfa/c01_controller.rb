@@ -1,4 +1,5 @@
 class Rfa::C01Controller < CalsBaseController
+  before_action -> { require_rfa_privilege(method(:edit)) }, only: [:edit]
   def index
     @rfa_c01_application = rfa_c01_application_helper.create(params[:a01_id], '{}')
     redirect_to edit_rfa_a01_c01_path(id: @rfa_c01_application.id, a01_id: params[:a01_id])

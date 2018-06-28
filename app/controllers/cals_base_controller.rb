@@ -25,8 +25,18 @@ class CalsBaseController < ApplicationController
     @content[:services]
   end
 
-  def require_privilege(method)
-    if !check_for_priviliges.empty?
+  def require_rfa_privilege(method)
+    rfa_service = check_for_priviliges.select { |service| service if service['id'] == 'cals_rfa' }
+    if !rfa_service.empty?
+      method
+    else
+      render 'errors/forbidden_page'
+    end
+  end
+
+  def require_search_privilege(method)
+    search_service = check_for_priviliges.select { |service| service if service['id'] == 'facility_search' }
+    if !search_service.empty?
       method
     else
       render 'errors/forbidden_page'

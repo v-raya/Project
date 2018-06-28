@@ -1,5 +1,5 @@
 class FacilitiesController < CalsBaseController
-  before_action -> { require_privilege(method(:show)) }, only: [:show]
+  before_action -> { require_search_privilege(method(:show)) }, only: [:show]
   include Response
 
   def show; end

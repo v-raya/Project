@@ -1,5 +1,5 @@
 class SearchController < CalsBaseController
-  before_action -> { require_privilege(method(:index)) }
+  before_action -> { require_search_privilege(method(:index)) }
   include Response
 
   def index; end

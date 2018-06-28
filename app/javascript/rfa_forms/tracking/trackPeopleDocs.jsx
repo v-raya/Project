@@ -84,7 +84,7 @@ export default class TrackPeopleDocs extends React.Component {
                       editMode={editMode} />
                   } />
                 { peopleDoc.person_documents.trainings && <TrackingTable
-                  colHeaders={['Training', '', 'Expiration', 'Notes']}
+                  colHeaders={['Trainings', '', 'Expiration', 'Notes']}
                   rowsComponent={
                     <TrainingDocRow
                       peopleIndex={peopleIndex}
