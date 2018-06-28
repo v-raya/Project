@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Rfa::TrackingController < CalsBaseController
+  before_action -> { require_rfa_privilege(method(:edit)) }, only: [:edit]
   def index
     tracking_response = tracking_helper.create_tracking(params[:a01_id])
     redirect_to edit_rfa_a01_tracking_path(id: tracking_response['id'], a01_id: params[:a01_id])
