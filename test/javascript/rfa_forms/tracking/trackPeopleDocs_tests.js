@@ -3,7 +3,8 @@ import TrackPeopleDocs from 'rfa_forms/tracking/trackPeopleDocs.jsx'
 import {shallow, mount} from 'enzyme'
 
 describe('Tracking People Documents test', () => {
-  let trackPeopleDocsView, props, handleIndividualDocRowChangeSpy, handleTrainingsDocsChangeSpy, handleClearancesDocsChangeSpy, setApplicationStateSpy
+  let trackPeopleDocsView, props, handleHrefClickSpy, handleIndividualDocRowChangeSpy,
+    handleTrainingsDocsChangeSpy, handleClearancesDocsChangeSpy, setApplicationStateSpy
   beforeEach(() => {
     let trackingDocuments = {
 
@@ -95,11 +96,13 @@ describe('Tracking People Documents test', () => {
     handleTrainingsDocsChangeSpy = jasmine.createSpy('handleTrainingsDocsChange')
     handleClearancesDocsChangeSpy = jasmine.createSpy('handleClearancesDocsChange')
     setApplicationStateSpy = jasmine.createSpy('setParentState')
+    handleHrefClickSpy = jasmine.createSpy('handleHrefClick')
 
     trackPeopleDocsView = mount(<TrackPeopleDocs
       trackingDocuments={trackingDocuments}
       editMode={false}
       setParentState={setApplicationStateSpy}
+      handleHrefClick={handleHrefClickSpy}
 
     />)
   })

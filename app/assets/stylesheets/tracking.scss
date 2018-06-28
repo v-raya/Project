@@ -1,34 +1,92 @@
-.tracking-card-header{
-	box-shadow:0 0.2rem 0 rgba(0, 0, 0, 0.1);
-	padding: 1.8rem;
+//@import './sidebar.scss';
+.tracking-main-page{
+.nav-menu {
+  font-style: pull-right;
+}
+
+.nav-link {
+  a.link {
+    text-align: center;
+    font-size: 12px;
+    margin: 10px;
+  }
+}
+
+li.navlink {
+  a.link {
+    text-decoration: none;
+      color: #214F75;
+    display: inline-block;
+    font-size: 12px;
+    margin: 10px;
+  }
+
+  a.link:hover, a.link:active {
+    color: #214F75;
+    font-weight: normal;
+    text-decoration: underline;
+  }
+}
+
+.tracking-card-header {
+  box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.1);
+  margin: 2rem;
+  padding:2px;
 }
 .tracking-card {
-	background: #fff;
-	margin-bottom: 3rem;
+       background: #fff;
+       margin-bottom: 3rem;
 }
+
 .tracking-table {
-	padding: 0rem 2rem 2rem 2rem;	
+       padding: 0rem 2rem 2rem 2rem;
 }
 .inlineBlock {
-	display: inline-block
+  display: inline-block;
 }
-.tracking-button{
-	.btn{
-			margin-left:5rem;
-			background: none;
-			border: 2px solid white;
-			color: white;
 
-	}
+.tracking-button {
+  .btn {
+    margin-left: 5rem;
+    background: none;
+    border: 2px solid white;
+    color: white;
+  }
 }
-.tracking-cancel{
-	.btn{
-		background: none;
-		border: none;
-		color:white;
-	}
+
+.tracking-cancel {
+  .btn {
+    background: none;
+    border: none;
+    color: white;
+  }
 }
-table { table-layout: fixed;
-	input[type="checkbox"] +label {
-	}
- }
+
+.tracking-sidenav-title {
+  font-size: 16px;
+  color: #284b6a;
+  font-weight: bold;
+  margin: 5px;
+  li.navlink {
+  a.link:hover, a.link:active {
+    color: #214F75;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+}
+.tracking-sidenav-label {
+  font-size: 14px;
+  color: #707070;
+  white-space: nowrap;
+  margin: 5px;
+}
+
+table {
+  table-layout: fixed;
+
+  input[type="checkbox"] +label {
+    white-space: nowrap;
+  }
+}
+}

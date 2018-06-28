@@ -7,6 +7,7 @@ import FamilyDocRow from './tableRows/familyDocRow'
 import TaskAndTrainingDocRow from './tableRows/taskAndTrainingDocRow'
 import AssessmentsDocRow from './tableRows/assessmentsDocRow'
 import CardsGroupLayout from 'components/common/cardsGroupLayout.js'
+import ScrollSpy from 'components/common/scrollSpy'
 
 export default class TrackFacilityDocs extends React.Component {
   constructor (props) {
@@ -47,35 +48,37 @@ export default class TrackFacilityDocs extends React.Component {
     const taskAndTrainingDocuments = facilityDocuments.tasks_and_trainings
 
     return (
-      <div className='tracking-card'>
-        <div className='tracking-card-header'>
-          <h3>{this.props.facilityName + ' Family RFA Documents'}</h3>
+      <ScrollSpy onEnter={() => this.props.handleHrefClick('#facility-card')}>
+        <div className='tracking-card' id='facility-card'>
+          <div className='tracking-card-header'>
+            <h3>{this.props.facilityName + ' Family RFA Documents'}</h3>
+          </div>
+          <TrackingTable
+            colHeaders={['Family Documents', '', 'Received', 'Notes']}
+            rowsComponent={
+              <FamilyDocRow
+                editMode={this.props.editMode}
+                handleChange={this.handleFamilyDocumentsChange}
+                trackingDocuments={familyDocuments} />
+            } />
+          <TrackingTable
+            colHeaders={['Tasks and Trainings', '', 'Completed', 'Notes']}
+            rowsComponent={
+              <TaskAndTrainingDocRow
+                handleChange={this.handleTaskAndTrainingChange}
+                trackingDocuments={taskAndTrainingDocuments}
+                editMode={this.props.editMode} />
+            } />
+          <TrackingTable
+            colHeaders={['Assessments', 'Submitted', 'Approved', 'Notes']}
+            rowsComponent={
+              <AssessmentsDocRow
+                handleChange={this.handleAssessmentDocsChange}
+                trackingDocuments={assessmentDocuments}
+                editMode={this.props.editMode} />
+            } />
         </div>
-        <TrackingTable
-          colHeaders={['Family Documents', '', 'Received', 'Notes']}
-          rowsComponent={
-            <FamilyDocRow
-              editMode={this.props.editMode}
-              handleChange={this.handleFamilyDocumentsChange}
-              trackingDocuments={familyDocuments} />
-          } />
-        <TrackingTable
-          colHeaders={['Tasks and Trainings', '', 'Completed', 'Notes']}
-          rowsComponent={
-            <TaskAndTrainingDocRow
-              handleChange={this.handleTaskAndTrainingChange}
-              trackingDocuments={taskAndTrainingDocuments}
-              editMode={this.props.editMode} />
-          } />
-        <TrackingTable
-          colHeaders={['Assessments', 'Submitted', 'Approved', 'Notes']}
-          rowsComponent={
-            <AssessmentsDocRow
-              handleChange={this.handleAssessmentDocsChange}
-              trackingDocuments={assessmentDocuments}
-              editMode={this.props.editMode} />
-          } />
-      </div>
+      </ScrollSpy>
     )
   }
 }

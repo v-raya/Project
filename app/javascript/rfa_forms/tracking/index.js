@@ -7,6 +7,7 @@ import LogoHeader from 'components/common/logoHeader'
 import PageHeader from 'components/common/pageHeader'
 import BreadCrumb from 'components/common/breadCrumb'
 import TrackingButtons from 'components/common/pageHeaderButtons/trackingButtons'
+import TrackingSideBar from './trackingSideBar'
 import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 import {fetchRequest} from 'helpers/http'
 
@@ -18,12 +19,14 @@ export default class TrackingList extends React.Component {
     this.cancelProgress = this.cancelProgress.bind(this)
     this.setApplicationState = this.setApplicationState.bind(this)
     this.setPeopleDocumentsState = this.setPeopleDocumentsState.bind(this)
-
+    this.handleHrefClick = this.handleHrefClick.bind(this)
+    this.isNavLinkActive = this.isNavLinkActive.bind(this)
     this.state = {
       user: this.props.user,
       rfaApplication: this.props.rfaApplication,
       tracking: this.props.tracking,
-      cardBeingEdited: false
+      cardBeingEdited: false,
+      activeNavLinkHref: ''
     }
   }
 
@@ -63,12 +66,19 @@ export default class TrackingList extends React.Component {
     this.setState(stateUpdate.toJS())
   }
 
+  handleHrefClick (href) {
+    this.setState({ activeNavLinkHref: href })
+  }
+
+  isNavLinkActive (href) {
+    return this.state.activeNavLinkHref === href
+  }
+
   render () {
     const trackingDocuments = this.state.tracking.tracking_documents
     const facilityName = this.state.tracking.facility_name || ''
-
     return (
-      <div className='main_page'>
+      <div className='tracking-main-page'>
         <PageHeader
           headerLabel={facilityName + '-RFA Application'}
           pageHeaderButtons={
@@ -79,20 +89,31 @@ export default class TrackingList extends React.Component {
               editProgress={this.editProgress} />} />
         <BreadCrumb
           navigationElements={[<a href={urlPrefixHelper('/')}>RFA Application list</a>]} />
-        <div className='form-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <div className='left-content col-xs-2 col-sm-2 col-md-2 col-lg-2'>
-            side bar placeholder
-          </div>
-          <div className='col-xs-10 col-sm-10 col-md-10 col-lg-10'>
-            <TrackingDocument
-              facilityName={facilityName}
-              setParentState={this.setApplicationState}
-              setPeopleDocumentsState={this.setPeopleDocumentsState}
-              trackingDocuments={trackingDocuments}
-              editMode={this.state.cardBeingEdited} />
+        <div className='container'>
+          <div className='row'>
+
+            <div className='form-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+              <div className='left-content col-xs-3 col-sm-3 col-md-3 col-lg-3'>
+                <TrackingSideBar
+                  handleHrefClick={this.handleHrefClick}
+                  facilityName={facilityName}
+                  tracking={trackingDocuments} />
+              </div>
+              <div className='col-xs-9 col-sm-9 col-md-9 col-lg-9'>
+                <TrackingDocument
+                  facilityName={facilityName}
+                  setParentState={this.setApplicationState}
+                  setPeopleDocumentsState={this.setPeopleDocumentsState}
+                  trackingDocuments={trackingDocuments}
+                  editMode={this.state.cardBeingEdited}
+                  handleHrefClick={this.handleHrefClick}
+                  isNavLinkActive={this.isNavLinkActive} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
     )
   }
 }

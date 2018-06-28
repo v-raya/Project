@@ -120,4 +120,11 @@ RSpec.feature 'RFATracking', js: true, inaccessible: true do
     expect(page).to have_content '12/14/1997'
     expect(page).to have_content 'Other Adutls Residing testing'
   end
+
+  scenario 'verify tracking sidebar render', set_auth_header: true do
+    expect(page).to have_content 'Applicants'
+    expect(page).to have_content 'James 123Monteo'
+    expect(page).to have_content 'Adults Residing in the Home'
+    expect(page).to have_content 'Adults Regularly Present'
+  end
 end

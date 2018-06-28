@@ -9,16 +9,20 @@ export default class TrackingDocument extends React.Component {
     return (
       <div className='rfa-tracking'>
         <TrackFacilityDocs
-          facilityName={this.props.facilityName }
+          facilityName={this.props.facilityName}
           setParentState={this.props.setParentState}
           trackingDocuments={this.props.trackingDocuments.facility_documents}
-          editMode={this.props.editMode} />
+          editMode={this.props.editMode}
+          handleHrefClick={this.props.handleHrefClick}
+          isNavLinkActive={this.props.isNavLinkActive} />
 
         {
           <TrackPeopleDocs
             setParentState={this.props.setPeopleDocumentsState}
             trackingDocuments={this.props.trackingDocuments}
             editMode={this.props.editMode}
+            handleHrefClick={this.props.handleHrefClick}
+            isNavLinkActive={this.props.isNavLinkActive}
           />
         }
       </div>

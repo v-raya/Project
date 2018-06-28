@@ -7,7 +7,7 @@ export default class ScrollSpy extends React.Component {
   render () {
     return (
       <Waypoint
-        fireOnRapidScroll = {false}
+        fireOnRapidScroll={false}
         scrollableAncestor={window}
         onEnter={this.props.onEnter}
         bottomOffset='90%' >
