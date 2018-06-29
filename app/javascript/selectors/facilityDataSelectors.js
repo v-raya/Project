@@ -75,7 +75,6 @@ const getFacilityChildrenData = (facilityChildren) => {
 
 const getFacilityComplaintsData = (facilityComplaints) => {
   return facilityComplaints.map((complaint) => ({
-    id: complaint.id,
     approval_date: checkforDateOrNa(complaint.approval_date),
     assigned_worker: complaint.assigned_worker,
     complaint_date: checkforDateOrNa(complaint.complaint_date),

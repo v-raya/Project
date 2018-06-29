@@ -332,7 +332,6 @@ describe('facilityDataSelectors', () => {
       }
       expect(getFacilityComplaints(state)).toEqual(
         [{
-          id: '19-CR-195002-20041019105945',
           approval_date: 'N/A',
           assigned_worker: 'Saritha Reddy',
           complaint_date: '10/19/2004',

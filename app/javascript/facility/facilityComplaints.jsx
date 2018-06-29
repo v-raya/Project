@@ -15,10 +15,6 @@ export default class FacilityComplaints extends React.Component {
   render () {
     const complaintsColumns = [
       {
-        Header: 'ID',
-        accessor: 'id'
-      },
-      {
         Header: 'COMPLAINT DATE',
         accessor: 'complaint_date'
       },

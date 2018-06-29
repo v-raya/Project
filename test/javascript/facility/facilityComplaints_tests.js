@@ -5,7 +5,6 @@ import {mount, shallow} from 'enzyme'
 describe('Verify Complaints Component', function () {
   const props = {
     'complaints': [{
-      'id': 'dlf0245',
       'complaint_date': '09/27/2016',
       'assigned_worker': 'Harry Potter',
       'control_number': '19-CR-20160927081411',
@@ -42,9 +41,6 @@ describe('Verify Complaints Component', function () {
     />)
   it('check Complaints table', () => {
     expect(renderComplaintsComp.length).toBe(1)
-  })
-  it('Verify Complaint ID', function () {
-    expect(renderComplaintsComp.find('.table').props().data[0].id).toBe('dlf0245')
   })
   it('Verify complaint date', function () {
     expect(renderComplaintsComp.find('.table').props().data[0].complaint_date).toBe('09/27/2016')
