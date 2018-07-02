@@ -16,8 +16,6 @@ class CalsBaseController < ApplicationController
     User.new(JSON.parse(session[:user_details])) if session[:user_details].present?
   end
 
-
-
   private
 
   def check_for_priviliges
@@ -67,10 +65,11 @@ class CalsBaseController < ApplicationController
   end
 
   def set_relationship_to_applicants(parameters, applicants)
-    applicants = applicants.reject { |a| !a.present? }
-    applicant_names = applicants.map { |app| app.present? ? [app.id, "#{app.first_name} #{app.middle_name} #{app.last_name}".squish] : nil }.to_h
-    if 0.eql?(parameters['applicant_id'].to_i)
-      parameters.merge!(ActionController::Parameters.new('applicant_id' => applicant_names.key(parameters['applicant_id'])).permit!)
+    applicants = applicants.select(&:present?)
+    parameters.each_with_index do |param, index|
+      if 0.eql?(param['applicant_id'].to_i)
+        param.merge!(ActionController::Parameters.new('applicant_id' => applicants[index].id).permit!)
+      end
     end
     parameters
   end

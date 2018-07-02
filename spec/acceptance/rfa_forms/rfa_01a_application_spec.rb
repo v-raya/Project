@@ -176,7 +176,7 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
   #   click_button 'Save Progress'
   #   expect(page).not_to have_content('I. Applicant 2 - Information')
   #   expect(page).to have_content('Claudine')
-  # end 
+  # end
 
   scenario 'show error validation message on full Applicant Card', set_auth_header: true do
     visit root_path
@@ -248,7 +248,7 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     find('#addAnotherApplicant').send_keys :backspace
     expect(page).to have_content 'Applicant 1 - Information'
   end
- 
+
   scenario 'validate dropdown focus select on Phone Card', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application'
@@ -476,6 +476,82 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     click_button 'Create RFA Application'
     click_link  'RFA Application list'
     expect(page).to have_content 'RFA Applications'
+  end
+
+
+  scenario 'Other adult and minor information are saved with reference to applicant',  set_auth_header: true do
+    visit root_path
+    click_button 'Create RFA Application'
+
+    applicant_0_first_name = 'rick'
+    applicant_0_last_name = 'sanchez'
+
+    fill_in('applicants[0].first_name', with: applicant_0_first_name, match: :prefer_exact)
+    fill_in('applicants[0].last_name', with: applicant_0_last_name, match: :prefer_exact)
+    fill_in('applicants[0].date_of_birth', with: '11/11/1111', match: :prefer_exact)
+    fill_in 'applicants[0].phones[0].number', with: '201-222-2345'
+
+    applicant_1_first_name = 'jon'
+    applicant_1_last_name = 'abernathy'
+    click_button 'Add Another Applicant +'
+    expect(page).to have_content('Applicant 2 - Information')
+    fill_in('applicants[1].first_name', with: applicant_1_first_name, match: :prefer_exact)
+    fill_in('applicants[1].last_name', with:   applicant_1_last_name, match: :prefer_exact)
+    fill_in('applicants[1].date_of_birth', with: '11/11/1111', match: :prefer_exact)
+    fill_in 'applicants[1].phones[0].number', with: '201-222-2345'
+
+    page.find('#residentAddress').fill_in('Residentialstreet_address', with: '2870 something else', match: :prefer_exact)
+    page.find('#residentAddress').fill_in('Residentialzip', with: '12345', match: :prefer_exact)
+    page.find('#residentAddress').fill_in('Residentialcity', with: 'Sacremento', match: :prefer_exact)
+    find('#react-select-3--value').click
+    find('#react-select-3--option-1').click
+    find('#mailing_similarYes').click
+    select 'Own', from: 'residenceTypes'
+    find('#weaponsYes').click
+    find('#body_of_water_existYes').click
+    find('#others_using_residence_as_mailingYes').click
+    fill_in('residence.other_people_using_residence_as_mailing[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
+    fill_in('residence.other_people_using_residence_as_mailing[0].last_name', with: Faker::Name.first_name, match: :prefer_exact)
+    page.find(:css, '.languages').click
+    page.find(:css, '#react-select-4--option-0').click
+    page.find(:css, '.languages').click
+    page.find(:css, '#react-select-4--option-1').click
+    expect(page).to have_content 'IV. Minor Children Residing in the Home'
+
+    fill_in('relationship_to_applicant0child0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
+    fill_in('minor_children[0].date_of_birth', with: '11/11/1111', match: :prefer_exact)
+    find('#child_financially_supported0child0Yes').click
+    find('#child_adopted0child0Yes').click
+    select 'Male', from: 'minor_children[0].minor_gender'
+
+    other_adult_first_name = 'hiro'
+    other_adult_last_name = 'protaganist'
+    fill_in('relationship_to_applicants0adult0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
+    fill_in('other_adults[0].date_of_birth', with: '12/12/1211', match: :prefer_exact)
+    fill_in('other_adults[0].first_name', with: other_adult_first_name, match: :prefer_exact)
+    fill_in('other_adults[0].last_name', with: other_adult_last_name, match: :prefer_exact)
+
+    click_button('Save Progress')
+    visit page.driver.current_url
+    click_link("#{applicant_0_first_name} #{applicant_0_last_name}")
+    fill_in('NameOfResourceFamily', with: 'Name 0', match: :prefer_exact)
+    click_button('Save Progress')
+    click_link("1. Applicant Information")
+
+    click_link("#{applicant_1_first_name} #{applicant_1_last_name}")
+    fill_in('NameOfResourceFamily', with: 'Name 1', match: :prefer_exact)
+    click_button('Save Progress')
+    click_link("1. Applicant Information")
+
+    click_link("#{other_adult_first_name} #{other_adult_last_name}")
+    fill_in('NameOfResourceFamily', with: 'Name 2', match: :prefer_exact)
+    click_button('Save Progress')
+    click_link("1. Applicant Information")
+
+    click_button('Submit')
+    expect(page).not_to have_content('has no reference to any applicant')
+    expect(page).not_to have_content('an exception occured: form-submission-validation')
+    visit page.driver.current_url
   end
 
 end

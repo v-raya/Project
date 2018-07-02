@@ -114,7 +114,7 @@ class Rfa::A01Controller < CalsBaseController
   def minor_children_params
     params.require(:minor_children).map do |minor|
       minor.permit!
-      minor['relationship_to_applicants'][0] = set_relationship_to_applicants(minor['relationship_to_applicants'][0], @application_response[:applicants])
+      minor['relationship_to_applicants'] = set_relationship_to_applicants(minor['relationship_to_applicants'], @application_response[:applicants])
       ActionController::Parameters.new(minor.to_h).permit(
         :id, :to_delete, :date_of_birth, gender: %i[id value],
         relationship_to_applicants: [:applicant_id, :child_financially_supported, :child_adopted, :relationship_to_applicant_freeform, relationship_to_applicant: %i[id value]]
@@ -125,7 +125,7 @@ class Rfa::A01Controller < CalsBaseController
   def other_adults_params
     params.require(:other_adults).map do |adult|
       adult.permit!
-      adult['relationship_to_applicants'][0] = set_relationship_to_applicants(adult['relationship_to_applicants'][0], @application_response[:applicants])
+      adult['relationship_to_applicants'] = set_relationship_to_applicants(adult['relationship_to_applicants'], @application_response[:applicants])
       ActionController::Parameters.new(adult.to_h).permit(
         :id, :to_delete, :first_name, :middle_name, :last_name, :date_of_birth, :is_residing_in_home,
           { name_suffix: %i[id value] }, { name_prefix: %i[id value] },
