@@ -7,6 +7,7 @@ import Affix from 'react-overlays/lib/AutoAffix'
 const PageHeader = ({
   headerLabel,
   pageSubHeader,
+  HeaderTextClass,
   pageHeaderButtons
 }) => (
   <div className='page-header-container'>
@@ -14,7 +15,7 @@ const PageHeader = ({
       <div className='page-header-mast'>
         <div className='container'>
           <div className='row'>
-            <div className='col-xs-7'>
+            <div className={HeaderTextClass}>
               <div className='page-title text-left'>
                 {headerLabel}
               </div>
@@ -38,6 +39,7 @@ PageHeader.propTypes = {
 }
 
 PageHeader.defaultProps = {
+  HeaderTextClass: 'col-xs-12 col-sm-7 col-lg-7',
   headerLabel: 'To implement',
   rfa01PageHeaderButtons: '',
   buttonTextAlignment: 'center',

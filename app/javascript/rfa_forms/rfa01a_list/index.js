@@ -34,9 +34,11 @@ export default class Rfa01ListView extends React.Component {
     return (
       <div>
         <PageHeader
+          HeaderTextClass='col-xs-12 col-sm-5 col-lg-6'
           headerLabel='RFA Applications'
           pageHeaderButtons = {
             <RfaListPageHeaderButtons
+              buttonWrapClass='col-xs-12 col-sm-7 col-lg-6'
               disbaleRfaApplication= {this.props.disbaleRfaApplication}
               submit= {this.submit}
               checkForPriviliges={checkForPriviliges}

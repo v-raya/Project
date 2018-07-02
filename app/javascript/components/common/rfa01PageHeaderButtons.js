@@ -7,10 +7,11 @@ const Rfa01PageHeaderButtons = ({
   disableSave,
   onSaveProgressClick,
   disableSubmit,
+  buttonWrapClass,
   onSubmitClick,
   buttonTextAlignment
 }) => (
-  <div className='col-xs-5'>
+  <div className={buttonWrapClass}>
     <div className='col-xs-7'>
       <Button
         buttonId='saveProgress'
@@ -38,6 +39,7 @@ Rfa01PageHeaderButtons.propTypes = {
 
 Rfa01PageHeaderButtons.defaultProps = {
   buttonTextAlignment: 'center',
+  buttonWrapClass: 'col-xs-12 col-sm-5 col-lg-5',
   disableSave: false,
   disableSubmit: false
 }

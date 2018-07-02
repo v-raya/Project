@@ -35,6 +35,7 @@ const PageTemplate = ({
       pageSubHeader={pageSubHeader}
       pageHeaderButtons={
         <Rfa01PageHeaderButtons
+          buttonWrapClass='col-xs-12 col-sm-5'
           disableSave={disableSave}
           onSaveProgressClick={onSaveProgressClick}
           disableSubmit={disableSubmit}
