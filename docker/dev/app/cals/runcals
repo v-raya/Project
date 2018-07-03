@@ -1,1 +1,0 @@
-docker run -td -p 3000:3000 --net dev-cs-cals --hostname cals --name cals cals:latest

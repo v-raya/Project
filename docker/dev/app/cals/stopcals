@@ -1,2 +1,0 @@
-docker stop cals
-docker rm cals
