@@ -5,7 +5,7 @@ class Facilities::ChildrenController < CalsBaseController
 
   def index
     children = child_helper.find_by_facility(params[:facility_id])
-    json_response children.nil? ? { "children": [] } : children
+    json_response children
   rescue ApiError => e
     render json: e.response, status: e.status
   end
