@@ -8,6 +8,7 @@ import {valuePresent, getDictionaryId, dictionaryNilSelect, dictionaryNilSelectV
 import Validator from 'helpers/validator'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 import Cleave from 'cleave.js/react'
+import {RfaCommon} from 'constants/rfaText'
 
 export default class AboutApplicant extends React.Component {
   constructor (props) {
@@ -16,6 +17,7 @@ export default class AboutApplicant extends React.Component {
     this.dateOfBirthId = this.props.idPrefix + 'date_of_birth'
     this.driversLicenseNumberId = this.props.idPrefix + 'driver_license_number'
     this.driversLicenseStateId = this.props.idPrefix + 'driver_license_state'
+    this.genderId = this.props.idPrefix + 'gender'
 
     this.props.validator.addNewValidation(
       {
@@ -27,6 +29,10 @@ export default class AboutApplicant extends React.Component {
           message: 'date is required'}
 
         ],
+        [this.genderId]: [{
+          rule: 'isRequiredBoolean',
+          message: 'Gender is required'
+        }],
         [this.driversLicenseStateId]: [{
           rule: 'isRequiredIf',
           message: 'State is required',
@@ -57,7 +63,7 @@ export default class AboutApplicant extends React.Component {
   }
 
   componentWillUnmount () {
-    const rulesToRemove = [this.dateOfBirthId, this.driversLicenseStateId, this.driversLicenseNumberId]
+    const rulesToRemove = [this.dateOfBirthId, this.genderId, this.driversLicenseStateId, this.driversLicenseNumberId]
     this.props.validator.removeValidations(rulesToRemove)
   }
 
@@ -83,12 +89,14 @@ export default class AboutApplicant extends React.Component {
                 onChange={(event) => this.props.setParentState('date_of_birth', FormatDateForPersistance(event.target.value))}
                 onBlur={(event) => this.props.validator.validateFieldSetErrorState(this.dateOfBirthId, event.target.value)} />
 
-              <DropDownField gridClassName='col-md-4' id='gender'
+              <DropDownField gridClassName='col-md-4' id={this.genderId}
                 selectClassName='reusable-select'
                 value={getDictionaryId(aboutApplicantFields.gender)}
+                errors={fieldErrorsAsImmutableSet(this.props.errors.gender)}
                 optionList={this.props.genderTypes}
-                label='Gender'
-                onChange={(event) => this.props.setParentState('gender', dictionaryNilSelect(event.target.options))} />
+                label={'Gender' + RfaCommon.requiredIndicator}
+                onChange={(event) => this.props.setParentState('gender', dictionaryNilSelect(event.target.options))}
+                onBlur={(event) => this.props.validator.validateFieldSetErrorState(this.genderId, event.target.value)} />
             </div>
             <div className='col-md-12'>
               <DropDownField gridClassName='col-md-4' id='ethnicity'

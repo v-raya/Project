@@ -72,6 +72,7 @@ RSpec.feature 'RFA01C', js: true, inaccessible: true do
     find('#child_identifiedYes').click
     find('#child_in_homeYes').click
     fill_in('applicants[0].date_of_birth', with: '11/11/1111', match: :prefer_exact)
+    select 'Male', from: 'applicants[0].gender'
     expect(page).to have_content 'Phone Number'
     fill_in 'applicants[0].phones[0].number', with: '201-222-2345'
     page.find('#residentAddress').fill_in('Residentialstreet_address', with: '2870 something else', match: :prefer_exact)

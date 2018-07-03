@@ -119,6 +119,7 @@ RSpec.feature 'RFA01B', js: true, inaccessible: true do
       expect(page).to have_button('Save Progress', disabled: false)
       expect(page).to have_button('Submit', disabled: true)
       fill_in('applicants[0].date_of_birth', with: '11/11/1111', match: :prefer_exact)
+      select 'Male', from: 'applicants[0].gender'
       expect(page).to have_content 'Phone Number'
       fill_in 'applicants[0].phones[0].number', with: '201-222-2345'
       page.find('#residentAddress').fill_in('Residentialstreet_address', with: '2870 something else', match: :prefer_exact)

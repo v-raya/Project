@@ -89,6 +89,7 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     expect(page).to have_button('Save Progress', disabled: false)
     expect(page).to have_button('Submit', disabled: true)
     fill_in('applicants[0].date_of_birth', with: '11/11/1111', match: :prefer_exact)
+    select 'Male', from: 'applicants[0].gender'
     expect(page).to have_content 'Phone Number'
     fill_in 'applicants[0].phones[0].number', with: '201-222-2345'
     page.find('#residentAddress').fill_in('Residentialstreet_address', with: '2870 something else', match: :prefer_exact)
@@ -114,6 +115,7 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     fill_in('relationship_to_applicant0child0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
     expect(page).to have_button('Submit', disabled: true)
     fill_in('minor_children[0].date_of_birth', with: '11/11/1111', match: :prefer_exact)
+    select 'Male', from: 'applicants[0].gender'
     find('#child_financially_supported0child0Yes').click
     find('#child_adopted0child0Yes').click
     select 'Male', from: 'minor_children[0].minor_gender'
@@ -123,6 +125,7 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     fill_in('relationship_to_applicant1child0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
     expect(page).to have_button('Submit', disabled: true)
     fill_in('minor_children[1].date_of_birth', with: '11/11/1111', match: :prefer_exact)
+    select 'Male', from: 'applicants[0].gender'
     find('#child_financially_supported1child0Yes').click
     find('#child_adopted1child0Yes').click
     select 'Male', from: 'minor_children[1].minor_gender'
@@ -132,6 +135,7 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     fill_in('relationship_to_applicants0adult0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
     expect(page).to have_button('Submit', disabled: true)
     fill_in('other_adults[0].date_of_birth', with: '12/12/1211', match: :prefer_exact)
+    select 'Male', from: 'applicants[0].gender'
     fill_in('other_adults[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
     expect(page).to have_button('Submit', disabled: true)
     fill_in('other_adults[0].last_name', with: Faker::Name.last_name, match: :prefer_exact)
@@ -141,6 +145,7 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     fill_in('relationship_to_applicants1adult0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)
     expect(page).to have_button('Submit', disabled: true)
     fill_in('other_adults[1].date_of_birth', with: '12/12/1211', match: :prefer_exact)
+    select 'Male', from: 'applicants[0].gender'
     fill_in('other_adults[1].first_name', with: Faker::Name.first_name, match: :prefer_exact)
     expect(page).to have_button('Submit', disabled: true)
     fill_in('other_adults[1].last_name', with: Faker::Name.last_name, match: :prefer_exact)
@@ -489,6 +494,7 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     fill_in('applicants[0].first_name', with: applicant_0_first_name, match: :prefer_exact)
     fill_in('applicants[0].last_name', with: applicant_0_last_name, match: :prefer_exact)
     fill_in('applicants[0].date_of_birth', with: '11/11/1111', match: :prefer_exact)
+    select 'Male', from: 'applicants[0].gender'
     fill_in 'applicants[0].phones[0].number', with: '201-222-2345'
 
     applicant_1_first_name = 'jon'
@@ -498,6 +504,7 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     fill_in('applicants[1].first_name', with: applicant_1_first_name, match: :prefer_exact)
     fill_in('applicants[1].last_name', with:   applicant_1_last_name, match: :prefer_exact)
     fill_in('applicants[1].date_of_birth', with: '11/11/1111', match: :prefer_exact)
+    select 'Male', from: 'applicants[0].gender'
     fill_in 'applicants[1].phones[0].number', with: '201-222-2345'
 
     page.find('#residentAddress').fill_in('Residentialstreet_address', with: '2870 something else', match: :prefer_exact)

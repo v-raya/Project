@@ -59,7 +59,7 @@ describe('Verify More About Applican', () => {
     expect(setCardState).toHaveBeenCalledWith('date_of_birth', '2000-01-03')
   })
   it('Gender DropDown Change', () => {
-    let genderField = aboutApplicantComp.find('#gender')
+    let genderField = aboutApplicantComp.find('#applicant0gender')
     genderField.simulate('change', {target: {options: {'2': {value: '2', text: 'Female'}, selectedIndex: 2}}})
     expect(setCardState).toHaveBeenCalledWith('gender', {id: '2', value: 'Female'})
   })
@@ -86,7 +86,7 @@ describe('Verify More About Applican', () => {
 
   it('expects the component to unmount', () => {
     let instance = aboutApplicantComp.instance()
-    expect(instance.props.validator.validations.size).toEqual(3)
+    expect(instance.props.validator.validations.size).toEqual(4)
     aboutApplicantComp.unmount()
     expect(instance.props.validator.validations.size).toEqual(0)
   })
