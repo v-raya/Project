@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 import {Link} from 'react-router-dom'
-import {checkForNA, checkNullOrEmptyValue, respectiveFullAddressOrNA, respectiveNumberOrNA,
+import {checkForNA, checkfullNameorNA, checkNullOrEmptyValue, respectiveFullAddressOrNA, respectiveNumberOrNA,
   primaryPhoneRelation, alternativePhoneRelation, physicalAddressType} from './common/commonUtils'
 
 export const SearchList = ({
@@ -38,7 +38,7 @@ export const SearchList = ({
               <td id={'facilities[' + index + '].' + 'county'}>{checkForNA(result.county)}</td>
               <td id={'facilities[' + index + '].' + 'primary_phone'}>{respectiveNumberOrNA(result.phones, primaryPhoneRelation)}</td>
               <td>{checkNullOrEmptyValue(result.email_address)}</td>
-              <td>{checkForNA(result.assigned_worker)}</td>
+              <td>{checkfullNameorNA(result.assigned_worker)}</td>
               <td>{respectiveNumberOrNA(result.phones, alternativePhoneRelation)}</td>
             </tr>
           )

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
 import GridInnerLayout from './common/gridInnerLayout.js'
 import GridOuterLayout from './common/gridOuterLayout.js'
-import {checkForNA, checkNullOrEmptyValue, respectiveNumberOrNA, respectiveFullAddressOrNA,
+import {checkForNA, checkfullNameorNA, checkNullOrEmptyValue, respectiveNumberOrNA, respectiveFullAddressOrNA,
   primaryPhoneRelation, alternativePhoneRelation, physicalAddressType} from './common/commonUtils'
 import {Link} from 'react-router-dom'
 
@@ -58,7 +58,7 @@ const SearchGrid = ({
             <GridOuterLayout>
               <GridInnerLayout
                 title='Approval / Licensing Worker'
-                value={checkForNA(result.assigned_worker)} />
+                value={checkfullNameorNA(result.assigned_worker)} />
               <GridInnerLayout
                 title='Alternative Number'
                 value={respectiveNumberOrNA(result.phones, alternativePhoneRelation)} />
