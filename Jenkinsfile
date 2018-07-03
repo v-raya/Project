@@ -60,7 +60,7 @@ def dockerStages(newTag) {
         curStage = 'Docker Test Build Publish'
         pushToDocker(
             "${DOCKER_GROUP}/${DOCKER_TEST_IMAGE}:${newTag}",
-            "-f ./docker/dev/app/cals-acceptance-tests/Dockerfile .",
+            "-f ./docker/acceptance-tests/Dockerfile .",
             DOCKER_CREDENTIALS_ID
             )
     }
