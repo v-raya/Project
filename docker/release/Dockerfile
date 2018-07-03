@@ -1,4 +1,4 @@
-FROM ratneshraval/cals-base:0.6
+FROM ratneshraval/cals-base:0.7
 
 COPY . /cals
 
@@ -6,7 +6,7 @@ WORKDIR /cals
 
 RUN cd /cals \
   && bundle install \
-  && yarn install --frozen-lockfile --production=false
+  && yarn install --frozen-lockfile
 
 ENV RAILS_ENV=production \
   NODE_ENV=production \
