@@ -504,7 +504,7 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     fill_in('applicants[1].first_name', with: applicant_1_first_name, match: :prefer_exact)
     fill_in('applicants[1].last_name', with:   applicant_1_last_name, match: :prefer_exact)
     fill_in('applicants[1].date_of_birth', with: '11/11/1111', match: :prefer_exact)
-    select 'Male', from: 'applicants[0].gender'
+    select 'Male', from: 'applicants[1].gender'
     fill_in 'applicants[1].phones[0].number', with: '201-222-2345'
 
     page.find('#residentAddress').fill_in('Residentialstreet_address', with: '2870 something else', match: :prefer_exact)
