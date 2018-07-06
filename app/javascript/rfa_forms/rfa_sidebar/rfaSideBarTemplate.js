@@ -11,7 +11,7 @@ const RfaSideBarTemplate = ({
   children
 }) => {
   return (
-    <div className='col-lg-10' >
+    <div>
       <div className={'side-bar' + idPrefix} aria-label='Side Bar'>
         <Collapsible trigger={<h1>{label}</h1>} open>
           <NavLinks>

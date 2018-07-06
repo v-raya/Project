@@ -17,7 +17,7 @@ describe('RFA 01a side bar ', () => {
   })
 
   it('renders the div wrapper', () => {
-    expect(component.find('div.col-lg-10').exists()).toBe(true)
+    expect(component.find('div').exists()).toBe(true)
   })
 
   it('renders a link to the Applicant Information card', () => {

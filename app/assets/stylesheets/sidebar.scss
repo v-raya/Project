@@ -20,6 +20,8 @@ li.navlink {
     color: black;
     display: inline-block;
     font-size: 0.76vw;
+    text-align:justify;
+    margin-left: 15px;
   }
 
 
@@ -64,9 +66,8 @@ hr.vertical
   display: block;
   position: relative;
   cursor: pointer;
-  
   h1 {
-   text-align:right;
+   text-align:center;
    font-size:2vw;
    }
 

@@ -8,6 +8,7 @@ RSpec.feature 'RFA01B', js: true, inaccessible: true do
 
   scenario 'validate rfa01b creation and fields', set_auth_header: true do
     visit root_path
+    page.driver.browser.manage.window.resize_to 1200, 800
     click_button 'Create RFA Application'
     first_name = 'Dillon'
     last_name = 'Wisozk'
@@ -68,6 +69,7 @@ RSpec.feature 'RFA01B', js: true, inaccessible: true do
 
   scenario 'validate rfa01b sideNav', set_auth_header: true do
     visit root_path
+    page.driver.browser.manage.window.resize_to 1200, 800
     click_button 'Create RFA Application'
 
     first_name = 'alpha0'
@@ -97,6 +99,7 @@ RSpec.feature 'RFA01B', js: true, inaccessible: true do
 
     scenario 'validate submit disabled when 01a is not valid', set_auth_header: true do
       visit root_path
+      page.driver.browser.manage.window.resize_to 1200, 800
       click_button 'Create RFA Application'
       first_name = 'Dillonish'
       last_name = 'Wisozkish'
@@ -111,6 +114,7 @@ RSpec.feature 'RFA01B', js: true, inaccessible: true do
 
     scenario 'validate submit enabled functionality', set_auth_header: true do
       visit root_path
+      page.driver.browser.manage.window.resize_to 1200, 800
       click_button 'Create RFA Application'
       fill_in('applicants[0].first_name', with: 'Geovanni', match: :prefer_exact)
       expect(page).to have_button('Save Progress', disabled: true)
