@@ -44,7 +44,6 @@ export default class AboutThisResidenceCard extends React.Component {
     const othersMailing = aboutResidence.other_people_using_residence_as_mailing || [othersUsingAddressMailing]
 
     const hiddenBodyOfWater = (aboutResidence.body_of_water_exist !== undefined && aboutResidence.body_of_water_exist.toString() === 'true') ? '' : 'hidden'
-
     return (
       <div className='card-body'>
         <div className='row'>
@@ -80,7 +79,7 @@ export default class AboutThisResidenceCard extends React.Component {
               label='Does any person not listed in this document use the residence as their mailing address? (required)'
               idPrefix='others_using_residence_as_mailing'
               value={(aboutResidence.others_using_residence_as_mailing)}
-              onFieldChange={(event) => this.props.handleClearOnConditionalChange('others_using_residence_as_mailing', 'other_people_using_residence_as_mailing', event.target.value, [othersUsingAddressMailing])} />
+              onFieldChange={(event) => this.props.handleDeleteOnConditionalChange('others_using_residence_as_mailing', 'other_people_using_residence_as_mailing', event.target.value, [othersUsingAddressMailing])} />
           </div>
           {isTrue(aboutResidence.others_using_residence_as_mailing)
             ? <div className={'row'} >
@@ -135,6 +134,7 @@ AboutThisResidenceCard.propTypes = {
   idPrefix: PropTypes.string,
   aboutResidence: PropTypes.object.isRequired,
   handleClearOnConditionalChange: PropTypes.func,
+  handleDeleteOnConditionalChange: PropTypes.func,
   validator: PropTypes.object
 }
 

@@ -137,13 +137,13 @@ describe('Verify Residence main', function () {
       expect(setParentStateSpy).toHaveBeenCalledWith('residence', Object({ addresses: [ Object({ street_address: 'gate way oaks', zip: '', city: '', state: null, type: Object({ id: '1', value: 'Residential' }) }), Object({ street_address: '', zip: '', city: '', state: null, type: Object({ id: '3', value: 'Mailing' }) }) ], body_of_water_exist: '', body_of_water_description: '', others_using_residence_as_mailing: '', physical_mailing_similar: true, weapon_in_home: '', residence_ownership: Object({ id: 0, value: 'Own' }), directions_to_home: '', home_languages: [ Object({ id: '', value: '' }) ] }))
     })
 
-    it('tests handleClearOnConditionalChange', () => {
+    it('tests handleDeleteOnConditionalChange', () => {
       let relationShipField = componentMount.find('#others_using_residence_as_mailingtrue').hostNodes()
       relationShipField.simulate('change', {target: {value: 'true'}})
       expect(setParentStateSpy).toHaveBeenCalledWith('residence', Object({ addresses: [ ], body_of_water_exist: '', body_of_water_description: '', others_using_residence_as_mailing: 'true', physical_mailing_similar: true, other_people_using_residence_as_mailing: [othersUsingAddressMailing], weapon_in_home: '', residence_ownership: Object({ id: 0, value: 'Own' }), directions_to_home: '', home_languages: [ Object({ id: '', value: '' }) ] }))
     })
 
-    it('tests handleClearOnConditionalChange', () => {
+    it('tests handleDeleteOnConditionalChange', () => {
       let relationShipField = componentMount.find('#others_using_residence_as_mailingtrue').hostNodes()
       relationShipField.simulate('change', {target: {value: 'false'}})
       expect(setParentStateSpy).toHaveBeenCalledWith('residence', Object({ addresses: [ ], body_of_water_exist: '', body_of_water_description: '', others_using_residence_as_mailing: 'true', physical_mailing_similar: true, other_people_using_residence_as_mailing: [othersUsingAddressMailing], weapon_in_home: '', residence_ownership: Object({ id: 0, value: 'Own' }), directions_to_home: '', home_languages: [ Object({ id: '', value: '' }) ] }))
@@ -151,6 +151,12 @@ describe('Verify Residence main', function () {
 
     it('tests handleClearOnConditionalChange', () => {
       let relationShipField = componentMountWithAddress.find('#mailing_similarfalse').hostNodes()
+      relationShipField.simulate('change', {target: {value: 'true'}})
+      expect(setParentStateSpy).toHaveBeenCalledWith('residence', Object({ addresses: [ ], body_of_water_exist: '', body_of_water_description: '', others_using_residence_as_mailing: 'true', physical_mailing_similar: true, other_people_using_residence_as_mailing: [othersUsingAddressMailing], weapon_in_home: '', residence_ownership: Object({ id: 0, value: 'Own' }), directions_to_home: '', home_languages: [ Object({ id: '', value: '' }) ] }))
+    })
+
+    it('tests handleClearOnConditionalChange on false', () => {
+      let relationShipField = componentMountWithAddress.find('#body_of_water_existfalse').hostNodes()
       relationShipField.simulate('change', {target: {value: 'true'}})
       expect(setParentStateSpy).toHaveBeenCalledWith('residence', Object({ addresses: [ ], body_of_water_exist: '', body_of_water_description: '', others_using_residence_as_mailing: 'true', physical_mailing_similar: true, other_people_using_residence_as_mailing: [othersUsingAddressMailing], weapon_in_home: '', residence_ownership: Object({ id: 0, value: 'Own' }), directions_to_home: '', home_languages: [ Object({ id: '', value: '' }) ] }))
     })

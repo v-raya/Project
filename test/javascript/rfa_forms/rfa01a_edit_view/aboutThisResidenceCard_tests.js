@@ -29,13 +29,16 @@ describe('Verify Physical Address', function () {
     }]
   })
 
-  let setParentStateSpy, residenceCardComp, handleClearOnConditionalChangeSpy, validator
+  let setParentStateSpy, residenceCardComp, handleClearOnConditionalChangeSpy,
+    validator, handleDeleteOnConditionalChangeSpy
   validator = new Validator({})
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
+    handleDeleteOnConditionalChangeSpy = jasmine.createSpy('handleDeleteOnConditionalChange')
     residenceCardComp = shallow(<AboutThisResidenceCard
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
+      handleDeleteOnConditionalChange={handleDeleteOnConditionalChangeSpy}
       languageTypes={languageTypes.items}
       residenceTypes={residenceTypes.items}
       aboutResidence={blankAboutThisResidenceFields}
@@ -50,12 +53,15 @@ describe('Verify Physical Address', function () {
     expect(setParentStateSpy).toHaveBeenCalledWith('directions_to_home', 'gate way oaks')
   })
   describe('#YesNoRadioComponent', () => {
-    let setParentStateSpy, residenceCardComp, handleClearOnConditionalChangeSpy
+    let setParentStateSpy, residenceCardComp, handleClearOnConditionalChangeSpy,
+      handleDeleteOnConditionalChangeSpy
     beforeEach(() => {
       setParentStateSpy = jasmine.createSpy('setParentState')
       handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
+      handleDeleteOnConditionalChangeSpy = jasmine.createSpy('handleDeleteOnConditionalChange')
       residenceCardComp = mount(<AboutThisResidenceCard
         handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
+        handleDeleteOnConditionalChange={handleDeleteOnConditionalChangeSpy}
         languageTypes={languageTypes.items}
         residenceTypes={residenceTypes.items}
         aboutResidence={blankAboutThisResidenceFields}
@@ -76,12 +82,12 @@ describe('Verify Physical Address', function () {
     it('verify other using residence as mailing change', () => {
       let relationShipField = residenceCardComp.find('#others_using_residence_as_mailingtrue').hostNodes()
       relationShipField.simulate('change', {target: {value: 'false'}})
-      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('others_using_residence_as_mailing', 'other_people_using_residence_as_mailing', 'false', [othersUsingAddressMailing])
+      expect(handleDeleteOnConditionalChangeSpy).toHaveBeenCalledWith('others_using_residence_as_mailing', 'other_people_using_residence_as_mailing', 'false', [othersUsingAddressMailing])
     })
     it('verify other using residence as mailing change', () => {
       let relationShipField = residenceCardComp.find('#others_using_residence_as_mailingtrue').hostNodes()
       relationShipField.simulate('change', {target: {value: 'true'}})
-      expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('others_using_residence_as_mailing', 'other_people_using_residence_as_mailing', 'true', [othersUsingAddressMailing])
+      expect(handleDeleteOnConditionalChangeSpy).toHaveBeenCalledWith('others_using_residence_as_mailing', 'other_people_using_residence_as_mailing', 'true', [othersUsingAddressMailing])
     })
   })
   it('verify body of water description', () => {
@@ -113,10 +119,11 @@ describe('Verify Physical Address prefix, suffix, first name, middle name and la
     other_people_using_residence_as_mailing: [othersUsingAddressMailing]
   }
 
-  let setParentStateSpy, residenceCardComp, handleClearOnConditionalChangeSpy
+  let setParentStateSpy, residenceCardComp, handleClearOnConditionalChangeSpy, handleDeleteOnConditionalChangeSpy
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
+    handleDeleteOnConditionalChangeSpy = jasmine.createSpy('handleDeleteOnConditionalChange')
     spyOn(AboutThisResidenceCard.prototype, 'onChange')
     spyOn(AboutThisResidenceCard.prototype, 'addCard').and.callThrough()
     spyOn(AboutThisResidenceCard.prototype, 'removeCard').and.callThrough()
@@ -124,6 +131,7 @@ describe('Verify Physical Address prefix, suffix, first name, middle name and la
       suffixTypes={suffixTypes.items}
       prefixTypes={prefixTypes.items}
       handleClearOnConditionalChange={handleClearOnConditionalChangeSpy}
+      handleDeleteOnConditionalChange={handleDeleteOnConditionalChangeSpy}
       languageTypes={languageTypes.items}
       residenceTypes={residenceTypes.items}
       aboutResidence={blankAboutThisResidenceFields}

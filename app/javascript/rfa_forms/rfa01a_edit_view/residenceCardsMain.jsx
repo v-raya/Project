@@ -12,6 +12,7 @@ export default class ResidenceCards extends React.Component {
     super(props)
     this.setResidenceState = this.setResidenceState.bind(this)
     this.handleClearOnConditionalChange = this.handleClearOnConditionalChange.bind(this)
+    this.handleDeleteOnConditionalChange = this.handleDeleteOnConditionalChange.bind(this)
   }
 
   setResidenceState (key, value) {
@@ -20,9 +21,21 @@ export default class ResidenceCards extends React.Component {
     this.props.setParentState('residence', newData.toJS())
   }
 
-  handleClearOnConditionalChange (key, hiddenKey, value, hiddenDefaultValue) {
+  handleDeleteOnConditionalChange (key, hiddenKey, value, hiddenDefaultValue) {
+    let residence = Immutable.fromJS(this.props.residence)
+    residence = residence.set(key, value)
     if (value === 'true') {
-      let residence = Immutable.fromJS(this.props.residence)
+      residence = residence.set(hiddenKey, hiddenDefaultValue)
+      this.props.setParentState('residence', residence.toJS())
+    } else {
+      let newResidence = residence.delete(hiddenKey)
+      this.props.setParentState('residence', newResidence.toJS())
+    }
+  }
+
+  handleClearOnConditionalChange (key, hiddenKey, value, hiddenDefaultValue) {
+    let residence = Immutable.fromJS(this.props.residence)
+    if (value === 'true') {
       residence = residence.set(key, value)
       if (hiddenKey === 'addresses') {
         // if value from the conditional is true, we want to clear the entered data
@@ -78,6 +91,7 @@ export default class ResidenceCards extends React.Component {
             suffixTypes={this.props.suffixTypes}
             prefixTypes={this.props.prefixTypes}
             setParentState={this.setResidenceState}
+            handleDeleteOnConditionalChange={this.handleDeleteOnConditionalChange}
             handleClearOnConditionalChange={this.handleClearOnConditionalChange}
             validator={this.props.validator} />
         </CardLayout>
