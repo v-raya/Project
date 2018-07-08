@@ -176,8 +176,10 @@ node('cals-slave') {
         }
 
         stage('Clean Up') {
-            sh "docker images ${DOCKER_GROUP}/${DOCKER_APP_IMAGE} --filter \"before=${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:${env.BUILD_ID}\" -q | xargs docker rmi -f || true"
-            sh "docker images ${DOCKER_GROUP}/${DOCKER_APP_IMAGE} --filter \"before=${DOCKER_GROUP}/${DOCKER_TEST_IMAGE}:${env.BUILD_ID}\" -q | xargs docker rmi -f || true"
+            sh "docker rmi `docker images ${DOCKER_GROUP}/${DOCKER_APP_IMAGE} --filter 'before=${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:test' -q` -f || true"
+            sh "docker rmi `docker images ${DOCKER_GROUP}/${DOCKER_TEST_IMAGE} --filter 'before=${DOCKER_GROUP}/${DOCKER_TEST_IMAGE}:${newTag}' -q` -f || true"
+            sh "docker rmi ${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:test -f || true"
+            sh "docker rmi `docker images --filter 'dangling=true' -q` -f || true"
         }
     }
     catch (e) {
