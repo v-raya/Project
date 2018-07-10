@@ -9,7 +9,6 @@ describe('Render Search results to Grid', function () {
   const prop = {
     searchResults: [
       {
-        assigned_worker: 'Kari Gutierrez',
         county: 'Marin',
         district_office: 'NO. CAL SC/RES',
         fac_capacity: 7,
@@ -25,6 +24,17 @@ describe('Render Search results to Grid', function () {
         name: "DEPUTY DOG'S GROUP HOME",
         license_number: 193600008,
         id: 193600008,
+        assigned_worker: {
+          'phones': [
+            {
+              'relation': 'primary',
+              'number': '9165672124'
+            }
+          ],
+          'email': null,
+          'full_name': 'Wayne Fehlberg',
+          'id': null
+        },
         fac_orig_appl_rec_date: '1983-02-02',
         addresses: [
           {
@@ -86,6 +96,9 @@ describe('Render Search results to Grid', function () {
   it('Verify Anchor Tag href value', function () {
     expect(searchGridRender.find('GridInnerLayout[title="County"]').props().value).toBe('N/A')
   })
+  it('Verify Approval / Licensing worker is rendered', function () {
+    expect(searchGridRender.find('GridInnerLayout[title="Approval / Licensing Worker"]').props().value).toBe('Wayne Fehlberg')
+  })
 })
 
 describe('Search results to Grid', function () {
@@ -93,6 +106,12 @@ describe('Search results to Grid', function () {
   const props = {
     searchResults: [
       {
+        assigned_worker: {
+          'phones': [],
+          'email': null,
+          'full_name': null,
+          'id': null
+        },
         addresses: [],
         licensee_name: 'Ananya Nandi',
         email_address: 'test@test.com'
@@ -109,5 +128,8 @@ describe('Search results to Grid', function () {
   })
   it('Verify licensee name', function () {
     expect(searchGridComp.find('GridInnerLayout[title="Licensee Name"]').props().value).toBe('Ananya Nandi')
+  })
+  it('Verify Approval / Licensing worker is N/A', function () {
+    expect(searchGridComp.find('GridInnerLayout[title="Approval / Licensing Worker"]').props().value).toBe('N/A')
   })
 })
