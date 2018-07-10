@@ -20,7 +20,7 @@ RSpec.feature 'RFA01B', js: true, inaccessible: true do
 
     click_button('Save Progress')
     visit page.driver.current_url
-    expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(2) > div > div > div > div > nav > ul > div > div:nth-child(1) > li > a').text).to eq("#{first_name} #{last_name}")
+    expect(page).to have_content "#{first_name} #{last_name}"
 
     click_link("#{first_name} #{last_name}")
     fill_in('NameOfResourceFamily', with: 'test', match: :prefer_exact)
@@ -91,10 +91,9 @@ RSpec.feature 'RFA01B', js: true, inaccessible: true do
     fill_in('other_adults[0].last_name', with: other_adult_last_name, match: :prefer_exact)
     click_button('Save Progress')
     visit page.driver.current_url
-
-    expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(2) > div > div > div > div > nav > ul > div > div:nth-child(1) > li > a').text).to eq('alpha0 beta0')
-    expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(2) > div > div > div > div > nav > ul > div > div:nth-child(2) > li > a').text).to eq('alpha1 beta1')
-    expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(2) > div > div > div > div > nav > ul > div > div:nth-child(3) > li > a').text).to eq('alpha2 beta2')
+    expect(page).to have_content 'alpha0 beta0'
+    expect(page).to have_content 'alpha1 beta1'
+    expect(page).to have_content 'alpha2 beta2'
   end
 
     scenario 'validate submit disabled when 01a is not valid', set_auth_header: true do
@@ -107,7 +106,7 @@ RSpec.feature 'RFA01B', js: true, inaccessible: true do
       fill_in('applicants[0].last_name', with: last_name, match: :prefer_exact)
       click_button('Save Progress')
       visit page.driver.current_url
-      expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(2) > div > div > div > div > nav > ul > div > div:nth-child(1) > li > a').text).to eq("#{first_name} #{last_name}")
+      expect(page).to have_content "#{first_name} #{last_name}"
       click_link("#{first_name} #{last_name}")
       expect(page).to have_button('Submit', disabled: true)
     end

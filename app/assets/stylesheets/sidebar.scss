@@ -2,6 +2,11 @@
   overflow: scroll;
 }
 
+.collapsible-label{
+  font-size: 2.0rem;
+  margin-left: 20px;
+  display: inline;
+}
 .nav-menu {
    height: 100vh;
    overflow: auto;
@@ -13,15 +18,15 @@
   font-size:0.5vw;
   }
 }
-
 li.navlink {
   a.link {
     text-decoration:none;
     color: black;
     display: inline-block;
-    font-size: 0.76vw;
+    font-size: 1.4rem;
     text-align:justify;
-    margin-left: 15px;
+    margin-left: 30px;
+    padding-bottom: 10px;
   }
 
 
@@ -63,26 +68,20 @@ hr.vertical
 
 //The link which when clicked opens the collapsable area
 .Collapsible__trigger {
-  display: block;
-  position: relative;
+  display: inline-table;
   cursor: pointer;
-  h1 {
-   text-align:center;
-   font-size:2vw;
-   }
 
-  &:after {
+  &:before {
     font-family: 'FontAwesome';
     content: '\f107';
-    position: absolute;
     left: 10px;
-    top: 5px;
-    display: inline-block;
+    top: 10px;
+    display: inline-table;
     transition: transform 300ms;
   }
 
   &.is-open {
-    &:after {
+    &:before {
       transform: rotateZ(180deg);
     }
   }

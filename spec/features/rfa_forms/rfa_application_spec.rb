@@ -8,6 +8,7 @@ RSpec.feature 'RFA', js: true, inaccessible: true do
 
   scenario '01A - validate scrollspy', set_auth_header: true do
     visit root_path
+    page.driver.browser.manage.window.resize_to 1200, 800
     click_button 'Create RFA Application'
     page.execute_script "document.getElementById('applicants-card').scrollIntoView()"
     page.execute_script 'window.scrollBy(0,20)'

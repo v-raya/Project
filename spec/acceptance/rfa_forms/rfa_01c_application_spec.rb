@@ -21,7 +21,7 @@ RSpec.feature 'RFA01C', js: true, inaccessible: true do
     click_button('Save Progress')
     visit current_url
     page.driver.browser.manage.window.resize_to 1200, 800
-    expect(page.find('#edit_page > div > div > div > div.left-content.col-xs-3.col-sm-3.col-md-3.col-lg-3 > div > div.nav-menu.col-sm-10 > div > div.nav-menu > div:nth-child(3) > div > div > div > div > nav > ul > div > li > a').text).to eq('child identified')
+    expect(page).to have_content 'child identified'
     click_link('child identified')
     fill_in('identified_children[0].first_name', with: first_name, match: :prefer_exact)
     fill_in('identified_children[0].middle_name', with: 'k', match: :prefer_exact)

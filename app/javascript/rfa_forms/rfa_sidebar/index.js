@@ -15,41 +15,35 @@ export default class RfaSideBar extends React.Component {
     let rfa01cForms = Array.isArray(this.props.rfa01cForms) ? this.props.rfa01cForms[0] : this.props.rfa01cForms
 
     return (
+      <div>
+        { /* affixStyles are in PX by default */}
+        <Affix
+          viewportOffsetTop={35}
+          bottomStyle={{position: 'fixed', top: 120}}
+          affixStyle={{top: 120}}>
+          <div className='nav-menu'>
+            <A01SideBar
+              isNavLinkActive={this.props.isNavLinkActive}
+              handleNavLinkClick={this.props.handleNavLinkClick}
+              onRfa01AForm={this.props.onRfa01AForm}
+              rfa01aApplicationId={this.props.rfa01aApplicationId}
+              showRelationshipBetweenApplicants={showRelationshipBetweenApplicants} />
 
-      <div className='col-sm-12'>
-        <div className='nav-menu col-sm-10'>
-          {/* affixStyles are in PX by default */}
-          <Affix viewportOffsetTop={105} affixStyle={{top: 80}}>
-            <div className='nav-menu'>
-              <A01SideBar
-                isNavLinkActive={this.props.isNavLinkActive}
-                handleNavLinkClick={this.props.handleNavLinkClick}
-                onRfa01AForm={this.props.onRfa01AForm}
-                rfa01aApplicationId={this.props.rfa01aApplicationId}
-                showRelationshipBetweenApplicants={showRelationshipBetweenApplicants} />
+            <B01SideBar
+              isNavLinkActive={this.props.isNavLinkActive}
+              handleNavLinkClick={this.props.handleNavLinkClick}
+              applicants={this.props.applicants}
+              otherAdults={this.props.otherAdults}
+              rfa01aApplicationId={this.props.rfa01aApplicationId} />
 
-              <B01SideBar
-                isNavLinkActive={this.props.isNavLinkActive}
-                handleNavLinkClick={this.props.handleNavLinkClick}
-                applicants={this.props.applicants}
-                otherAdults={this.props.otherAdults}
-                rfa01aApplicationId={this.props.rfa01aApplicationId} />
-
-              <C01SideBar
-                isNavLinkActive={this.props.isNavLinkActive}
-                handleNavLinkClick={this.props.handleNavLinkClick}
-                rfa01aApplicationId={this.props.rfa01aApplicationId}
-                childIdentified={this.props.childIdentified}
-                rfa01cForm={rfa01cForms} />
-            </div>
-          </Affix>
-        </div>
-
-        <div className='col-sm-2'>
-          <Affix>
-            <hr className='vertical' />
-          </Affix>
-        </div>
+            <C01SideBar
+              isNavLinkActive={this.props.isNavLinkActive}
+              handleNavLinkClick={this.props.handleNavLinkClick}
+              rfa01aApplicationId={this.props.rfa01aApplicationId}
+              childIdentified={this.props.childIdentified}
+              rfa01cForm={rfa01cForms} />
+          </div>
+        </Affix>
       </div>
     )
   }

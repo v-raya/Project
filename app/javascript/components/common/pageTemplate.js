@@ -46,21 +46,25 @@ const PageTemplate = ({
       <BreadCrumb
         navigationElements={[<a href={urlPrefixHelper('/')}>RFA Application list</a>]} />
     </div>
-    <div className='form-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-      <div className='left-content col-xs-3 col-sm-3 col-md-3 col-lg-3'>
-        <RfaSideBar
-          rfa01aApplicationId={rfa01aApplicationId}
-          rfa01cForms={rfa01cForms}
-          otherAdults={otherAdults}
-          applicants={applicants}
-          onRfa01AForm={onRfa01AForm}
-          childIdentified={childIdentified}
-          isNavLinkActive={isNavLinkActive}
-          handleNavLinkClick={handleNavLinkClick} />
-      </div>
-      <div className='col-xs-9 col-sm-9 col-md-9 col-lg-9'>
-        <ApiErrorMessages errors={errors} />
-        {children}
+    <div className='container'>
+      <div className='row'>
+        <div className='form-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+          <div className='left-content col-xs-4 col-md-3'>
+            <RfaSideBar
+              rfa01aApplicationId={rfa01aApplicationId}
+              rfa01cForms={rfa01cForms}
+              otherAdults={otherAdults}
+              applicants={applicants}
+              onRfa01AForm={onRfa01AForm}
+              childIdentified={childIdentified}
+              isNavLinkActive={isNavLinkActive}
+              handleNavLinkClick={handleNavLinkClick} />
+          </div>
+          <div className='col-xs-8 col-md-9'>
+            <ApiErrorMessages errors={errors} />
+            {children}
+          </div>
+        </div>
       </div>
     </div>
   </div>
