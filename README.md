@@ -6,9 +6,13 @@
 A React front end with a Rails backend serving up assets through webpacker for the state of california CWDS project.
 
 ## System
-Ruby version: `2.4.2`
+Ruby version: `2.5.1`
 
-Rails version: `5.1.x`
+Rails version: `5.1.6`
+
+Node version: `>= 8.11.3`
+
+Yarn version: `>= 1.7.0`
 
 ## Configuration
 Make sure homebrew is up to date and xcode is installed.
@@ -52,23 +56,23 @@ this command will install all necessary redis files.
 
 to run linting on the project:
 
-`yarn run lint`
+`yarn lint`
 
 ### run all tests instructions
 to run all tests and output code coverage:
 
-`yarn run all-tests`
+`yarn all-tests`
 
 ### Karma tests instructions
 To run the karma tests, from the root folder run:
-`npm run karma` (with reports), `npm run karma-ci` (without reports)
+`yarn karma` (with reports), `yarn karma-ci` (without reports)
 
 this command will run the automated tests and open a browser with the results.
 
 ### Rspec tests instructions
  rspec tests live in the root spec/ folder. you can run all tests with either of the following commands
 
- `yarn run spec`
+ `yarn spec`
  `rspec spec`
 
 
