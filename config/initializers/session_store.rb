@@ -8,5 +8,5 @@ Cals::Application.config.session_store :redis_store, {
       namespace: "cals:session"
     }
   ],
-  expire_after: 25.minutes
+  expire_after: 4.hours
 }
