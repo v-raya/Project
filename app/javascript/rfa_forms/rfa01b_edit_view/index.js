@@ -13,7 +13,7 @@ import RfaSideBar from 'rfa_forms/rfa_sidebar/index.js'
 import {CountyUseOnlyCard} from 'components/rfa_forms/countyUseOnlyCard.js'
 import {getDictionaryId, dictionaryNilSelect, checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import CardsGroupLayout from 'components/common/cardsGroupLayout.js'
-import {addCardAsJS, getFocusClassName, removeCard, checkForNameValidation, checkFieldsForSubmit} from 'helpers/cardsHelper.jsx'
+import {addCardAsJS, getFocusClassName, removeCard, checkForNameValidation, checkFieldsForSubmit, validateStatus} from 'helpers/cardsHelper.jsx'
 
 import Validator from 'helpers/validator'
 import PageTemplate from 'components/common/pageTemplate'
@@ -40,6 +40,7 @@ export default class Rfa01bEditView extends React.Component {
     this.props.rfa_a01_application.metadata.submit_enabled &&
     this.props.rfa_b01_application.metadata &&
     this.props.rfa_b01_application.metadata.submit_enabled
+    const submitStatus = this.props.rfa_a01_application.status
 
     if (submitEnabled === undefined) {
       submitEnabled = false
@@ -54,7 +55,7 @@ export default class Rfa01bEditView extends React.Component {
       focusComponentName: '',
       errors: {},
       disableSave: !checkForNameValidation(this.props.rfa_a01_application.applicants),
-      disableSubmit: !submitEnabled
+      disableSubmit: !submitEnabled || validateStatus(submitStatus)
     }
 
     if (!this.props.rfa_b01_application.application_county) {
@@ -120,7 +121,8 @@ export default class Rfa01bEditView extends React.Component {
         if (!data.issue_details) {
           this.setState({
             application: data,
-            errors: {}
+            errors: {},
+            disableSubmit: validateStatus(data.status)
           })
         } else {
           this.setState({

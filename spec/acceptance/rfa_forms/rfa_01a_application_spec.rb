@@ -157,6 +157,50 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     # functionality is further fleshed out.
   end
 
+  scenario 'validate submit button functionality on submitting the form', set_auth_header: true do
+    visit root_path
+    click_button 'Create RFA Application'
+    expect(page).to have_content 'Applicant 1 - Information'
+    fill_in('applicants[0].first_name', with: 'Geovanni', match: :prefer_exact)
+    expect(page).to have_button('Save Progress', disabled: true)
+    expect(page).to have_button('Submit', disabled: true)
+    fill_in('applicants[0].last_name', with: 'Moen', match: :prefer_exact)
+    expect(page).to have_button('Save Progress', disabled: false)
+    expect(page).to have_button('Submit', disabled: true)
+    fill_in('applicants[0].date_of_birth', with: '11/11/1986', match: :prefer_exact)
+    select 'Male', from: 'applicants[0].gender'
+    expect(page).to have_content 'Phone Number'
+    fill_in 'applicants[0].phones[0].number', with: '201-222-2345'
+    page.find('#residentAddress').fill_in('Residentialstreet_address', with: '2870 something else', match: :prefer_exact)
+    page.find('#residentAddress').fill_in('Residentialzip', with: '12345', match: :prefer_exact)
+    page.find('#residentAddress').fill_in('Residentialcity', with: 'Sacremento', match: :prefer_exact)
+    find('#react-select-3--value').click
+    find('#react-select-3--option-5').click
+    find('#mailing_similarYes').click
+    expect(page).to have_content 'About This Residence'
+    select 'Own', from: 'residenceTypes'
+    find('#weaponsYes').click
+    find('#body_of_water_existYes').click
+    find('#others_using_residence_as_mailingYes').click
+    fill_in('residence.other_people_using_residence_as_mailing[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
+    fill_in('residence.other_people_using_residence_as_mailing[0].last_name', with: Faker::Name.first_name, match: :prefer_exact)
+    page.find(:css, '.languages').click
+    page.find(:css, '#react-select-4--option-0').click
+    page.find(:css, '.languages').click
+    page.find(:css, '#react-select-4--option-1').click
+    # expect(page).to have_button('Submit', disabled: false)
+    # expect(page).to have_content 'IV. Minor Children Residing in the Home'
+    click_button('Save Progress')
+    visit page.driver.current_url
+    click_link('Geovanni Moen')
+    fill_in('NameOfResourceFamily', with: 'test', match: :prefer_exact)
+    click_button('Save Progress')
+    visit page.driver.current_url
+    click_link('Applicant Information')
+    click_button 'Submit'
+    expect(page).to have_button('Submit', disabled: true)
+  end
+
   #  scenario 'validate applicant-2 removal', set_auth_header: true do
   #   visit root_path
   #   click_button 'Create RFA Application'

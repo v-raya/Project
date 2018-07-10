@@ -15,7 +15,7 @@ import RfaSideBar from 'rfa_forms/rfa_sidebar/index.js'
 import PageTemplate from 'components/common/pageTemplate'
 import {fetchRequest} from 'helpers/http'
 import {getDictionaryId, dictionaryNilSelect, checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
-import {checkForNameValidation, checkFieldsForSubmit} from 'helpers/cardsHelper.jsx'
+import {checkForNameValidation, checkFieldsForSubmit, validateStatus} from 'helpers/cardsHelper.jsx'
 import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 import Validator from 'helpers/validator'
 import ScrollSpy from 'components/common/scrollSpy'
@@ -37,6 +37,7 @@ export default class Rfa01EditView extends React.Component {
 
     const submitEnabled = this.props.application.metadata && this.props.application.metadata.submit_enabled
     const DataValidForSave = !checkForNameValidation(this.props.application.applicants)
+    const submitStatus = this.props.application.status
 
     this.state = {
       focusComponentName: '',
@@ -44,9 +45,8 @@ export default class Rfa01EditView extends React.Component {
       application: Immutable.fromJS(this.props.application),
       errors: {},
       disableSave: DataValidForSave,
-      disableSubmit: !submitEnabled
+      disableSubmit: !submitEnabled || validateStatus(submitStatus)
     }
-
     if (!this.state.application.get('application_county')) {
       const countyValue = (this.props.user && this.props.user.county_code)
       this.state.application = this.state.application.set('application_county', Immutable.fromJS(this.props.countyTypes.find(countyType => countyType.id === parseInt(countyValue))))
@@ -108,7 +108,8 @@ export default class Rfa01EditView extends React.Component {
         if (!data.issue_details) {
           this.setState({
             application: Immutable.fromJS(data),
-            errors: {}
+            errors: {},
+            disableSubmit: validateStatus(data.status)
           })
         } else {
           this.setState({

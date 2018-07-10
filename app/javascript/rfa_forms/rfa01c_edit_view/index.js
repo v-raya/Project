@@ -4,7 +4,7 @@ import _ from 'lodash'
 import DesiredChildCardGroup from 'rfa_forms/rfa01c_edit_view/desiredChildCardGroup'
 import {CountyUseOnlyCard} from 'components/rfa_forms/countyUseOnlyCard'
 import {fetchRequest} from 'helpers/http'
-import {checkForNameValidation} from 'helpers/cardsHelper.jsx'
+import {checkForNameValidation, validateStatus} from 'helpers/cardsHelper.jsx'
 import Validator from 'helpers/validator'
 import CardsGroupLayout from 'components/common/cardsGroupLayout'
 import PageTemplate from 'components/common/pageTemplate'
@@ -30,6 +30,7 @@ export default class Rfa01cEditView extends React.Component {
      this.props.rfa_b01_applications.every(checkSubmitEnabledForForms)
     let submitEnabled = submitEnabledForA && submitEnabledForB
     const submitEnabledForAll = submitEnabled && checkSubmitEnabledForForms(this.props.rfa_c1_application)
+    const submitStatus = this.props.rfa_a01_application.status
 
     this.state = {
       focusComponentName: '',
@@ -37,7 +38,7 @@ export default class Rfa01cEditView extends React.Component {
       rfa_a01_application: this.props.rfa_a01_application,
       activeNavLinkId: this.props.rfa_c1_application.id,
       errors: {},
-      disableSubmit: !submitEnabledForAll,
+      disableSubmit: !submitEnabledForAll || validateStatus(submitStatus),
       disableSubmitAB: submitEnabled
     }
   }
@@ -91,7 +92,8 @@ export default class Rfa01cEditView extends React.Component {
         if (!data.issue_details) {
           this.setState({
             application: data,
-            errors: {}
+            errors: {},
+            disableSubmit: validateStatus(data.status)
           })
         } else {
           this.setState({

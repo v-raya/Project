@@ -83,7 +83,7 @@ RSpec.feature 'RFA01C', js: true, inaccessible: true do
     page.find('#residentAddress').fill_in('Residentialzip', with: '12345', match: :prefer_exact)
     page.find('#residentAddress').fill_in('Residentialcity', with: 'Sacremento', match: :prefer_exact)
     find('#react-select-3--value').click
-    find('#react-select-3--option-1').click
+    find('#react-select-3--option-5').click
     find('#mailing_similarYes').click
     expect(page).to have_content 'About This Residence'
     select 'Own', from: 'residenceTypes'
@@ -109,7 +109,7 @@ RSpec.feature 'RFA01C', js: true, inaccessible: true do
     fill_in('Residentialzip', with: '12345', match: :prefer_exact)
     fill_in('Residentialcity', with: 'Sacremento', match: :prefer_exact)
     find('#react-select-2--value').click
-    find('#react-select-2--option-1').click
+    find('#react-select-2--option-5').click
     expect(page).to have_button('Submit', disabled: false)
     click_button('Save Progress')
     click_link('child identified')
@@ -122,5 +122,6 @@ RSpec.feature 'RFA01C', js: true, inaccessible: true do
     expect(find_field('identified_children[0].date_of_birth').value).to eq '01/01/2000'
     expect(page).to have_button('Submit', disabled: false)
     click_button 'Submit'
+    expect(page).to have_button('Submit', disabled: true)
     end
 end
