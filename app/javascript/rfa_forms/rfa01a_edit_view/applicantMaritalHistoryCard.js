@@ -30,8 +30,8 @@ export default class ApplicantMaritalHistoryCard extends React.PureComponent {
             selectClassName='reusable-select'
             label='Select Applicant (required)'
             optionList={setToWhomOptionList(this.props.applicants)}
-            value={handleToWhomValue(maritalHistory.applicant_id, this.props.applicants).id}
-            onChange={(event) => this.props.changeMaritalHistory('applicant_id',
+            value={handleToWhomValue(maritalHistory.applicant_name, this.props.applicants).id}
+            onChange={(event) => this.props.changeMaritalHistory('applicant_name',
               dictionaryNilSelect(event.target.options).id, this.props.index)} />
 
           <DropDownField

@@ -33,9 +33,9 @@ export default class AdultChildrenFields extends React.Component {
             label='To Whom'
             id={this.props.idPrefix + 'available_applicants'}
             optionList={setToWhomOptionList(this.props.applicants)}
-            value={handleToWhomValue(adultChild.relationship_to_applicants[0].applicant_id, this.props.applicants).id}
+            value={handleToWhomValue(adultChild.relationship_to_applicants[0].applicant_name, this.props.applicants).id}
             onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index,
-              event.target.value, 'applicant_id')} />
+              event.target.value, 'applicant_name')} />
         </div>
         <div>
           <CompleteNameFields

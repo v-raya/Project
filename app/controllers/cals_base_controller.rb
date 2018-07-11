@@ -43,37 +43,6 @@ class CalsBaseController < ApplicationController
 
   protected
 
-  def process_items_for_persistance(items, helper, parent_id)
-    result = []
-    if items.is_a?(Array)
-      items.each do |item|
-        result << create_update_or_delete(item, helper, parent_id)
-      end
-      result.reject(&:blank?)
-    else
-      result = create_update_or_delete(items, helper, parent_id)
-    end
-    result
-  end
-
-  def create_update_or_delete(item, helper, parent_id)
-    if item[:to_delete]
-      helper.delete(parent_id, item[:id])
-    else
-      item[:id] ? helper.update(parent_id, item[:id], item.to_json) : helper.create(parent_id, item.to_json)
-    end
-  end
-
-  def set_relationship_to_applicants(parameters, applicants)
-    applicants = applicants.select(&:present?)
-    parameters.each_with_index do |param, index|
-      if 0.eql?(param['applicant_id'].to_i)
-        param.merge!(ActionController::Parameters.new('applicant_id' => applicants[index].id).permit!)
-      end
-    end
-    parameters
-  end
-
   def authenticate_with_cwds
     token = Cwds::Authentication.token_generation(params[:accessCode], AUTHENTICATION_API_BASE_URL) if session[:user_details].blank?
     session.delete(:token) if token.present?

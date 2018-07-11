@@ -40,7 +40,7 @@ describe('applicant Marital History Card', () => {
   it('change applicant dropdown', () => {
     let applicantSelected = applicantHistoryComponent.find('#applicant_id')
     applicantSelected.simulate('change', {target: {options: {'1': {id: '1', value: 'My Middle Name'}, selectedIndex: 1}}})
-    expect(setParentStateSpy).toHaveBeenCalledWith('applicant_id', 'My Middle Name', 0)
+    expect(setParentStateSpy).toHaveBeenCalledWith('applicant_name', 'My Middle Name', 0)
   })
   it('change relationship type dropdown', () => {
     let applicantSelected = applicantHistoryComponent.find('#relationship_type')

@@ -56,6 +56,7 @@ export const facilityDataDefaults = Object.freeze({
 
 export const relationshipToApplicantDefaults = Object.freeze({
   applicant_id: '',
+  applicant_name: '',
   relationship_to_applicant: null,
   relationship_to_applicant_freeform: ''
 })
@@ -95,6 +96,7 @@ export const blankIdentifiedChild = Object.freeze({
 
 export const relationshipToAdultsDefaults = Object.freeze({
   applicant_id: '',
+  applicant_name: '',
   relationship_to_applicant: null
 })
 
@@ -114,6 +116,7 @@ export const adultChildrenDefaults = Object.freeze({
 export const formerSpousesDefaults = Object.freeze({
   relationship_type: null,
   applicant_id: '',
+  applicant_name: '',
   name_prefix: null,
   first_name: '',
   middle_name: '',
@@ -221,6 +224,7 @@ export const minorDefaults = Object.freeze({
     {
       relationship_to_applicant_freeform: '',
       applicant_id: '',
+      applicant_name: '',
       relationship_to_applicant: null,
       child_adopted: '',
       child_financially_supported: ''
@@ -233,6 +237,7 @@ export const otherAdultsDefaults = Object.freeze({
     {
       relationship_to_applicant_freeform: '',
       applicant_id: '',
+      applicant_name: '',
       relationship_to_applicant: null
     }
   ],

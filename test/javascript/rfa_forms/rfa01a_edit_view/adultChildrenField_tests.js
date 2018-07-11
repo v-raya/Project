@@ -107,7 +107,7 @@ describe('Adult Children Component', () => {
   it('Available applicants type DropDown Change', () => {
     let selectApplicant = adultChildComponent.find('select').at(1)
     selectApplicant.simulate('change', {target: {value: '35', text: 'David Smith'}})
-    expect(onChangeSpy).toHaveBeenCalledWith(0, '35', 'applicant_id')
+    expect(onChangeSpy).toHaveBeenCalledWith(0, '35', 'applicant_name')
   })
   it('Child Name Prefix type DropDown Change', () => {
     let selectNamePrefix = adultChildComponent.find('select').at(2)

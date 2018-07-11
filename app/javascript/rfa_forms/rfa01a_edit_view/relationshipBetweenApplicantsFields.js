@@ -48,10 +48,10 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
             gridClassName='col-md-4'
             label='Date (required)'
             id={'date_of_relationship'}
-            value={FormatDateForDisplay(relationship.date_of_relationship || '')}
+            value={relationship.date_of_relationship}
             errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_relationship)}
             onChange={(event) => this.props.setParentState('date_of_relationship',
-              FormatDateForPersistance(event.target.value || ''))}
+              FormatDateForPersistance(event.target.value))}
             onBlur={(event) => this.props.validator.validateField(relationshipId, event.target.value)} />
           <InputComponent gridClassName='col-md-4' id='place_of_relationship_city'
             value={relationship.place_of_relationship_city}

@@ -12,7 +12,6 @@ class CalsBase
   end
 
   def self.parent_path
-    ''
   end
 
   def self.new(*attributes)
