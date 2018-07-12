@@ -114,7 +114,7 @@ node('cals-slave') {
 
         // build the container from current code
         stage('Build Docker Image') {
-            appDockerImage = docker.build("${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:test",
+            appDockerImage = docker.build("${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:test-${env.BUILD_ID}",
                 "-f ./docker/test/Dockerfile .")
         }
 
@@ -176,9 +176,8 @@ node('cals-slave') {
         }
 
         stage('Clean Up') {
-            sh "docker rmi `docker images ${DOCKER_GROUP}/${DOCKER_APP_IMAGE} --filter 'before=${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:test' -q` -f || true"
+            sh "docker rmi `docker images ${DOCKER_GROUP}/${DOCKER_APP_IMAGE} --filter 'before=${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:test-${env.BUILD_ID}' -q` -f || true"
             sh "docker rmi `docker images ${DOCKER_GROUP}/${DOCKER_TEST_IMAGE} --filter 'before=${DOCKER_GROUP}/${DOCKER_TEST_IMAGE}:${newTag}' -q` -f || true"
-            sh "docker rmi ${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:test -f || true"
             sh "docker rmi `docker images --filter 'dangling=true' -q` -f || true"
         }
     }
