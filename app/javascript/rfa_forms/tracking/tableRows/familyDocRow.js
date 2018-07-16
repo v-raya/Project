@@ -47,6 +47,7 @@ const FamilyDocRow = ({
         return (
           <tr key={'familyShow' + index}>
             <td><BinarySelectorField
+              id={'familyShowCheckbox' + index}
               type='checkbox'
               key={index}
               labelId={'checkLabel' + index}

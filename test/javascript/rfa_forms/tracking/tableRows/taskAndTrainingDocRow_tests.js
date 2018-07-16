@@ -2,7 +2,7 @@ import React from 'react'
 import TaskAndTrainingDocRow from 'rfa_forms/tracking/tableRows/taskAndTrainingDocRow'
 import {shallow, mount} from 'enzyme'
 
-describe('Tracking Show mode', () => {
+describe('Tracking Task And Training Document test', () => {
   let editTaskAndTrainingDocRow, showTaskAndTrainingDocRow, trackingDocuments, changeSpy
   beforeEach(() => {
     changeSpy = jasmine.createSpy('handleChange')
@@ -16,12 +16,12 @@ describe('Tracking Show mode', () => {
       }]
     }
 
-    editTaskAndTrainingDocRow = mount(<TaskAndTrainingDocRow
+    editTaskAndTrainingDocRow = shallow(<TaskAndTrainingDocRow
       trackingDocuments={trackingDocuments}
       editMode
       handleChange={changeSpy}
     />)
-    showTaskAndTrainingDocRow = mount(<TaskAndTrainingDocRow
+    showTaskAndTrainingDocRow = shallow(<TaskAndTrainingDocRow
       trackingDocuments={trackingDocuments}
       editMode={false}
       handleChange={changeSpy}
@@ -32,33 +32,33 @@ describe('Tracking Show mode', () => {
     expect(editTaskAndTrainingDocRow.length).toBe(1)
   })
   it('edit text area', () => {
-    let textAreaField = editTaskAndTrainingDocRow.find('textarea')
+    let textAreaField = editTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingEditNotes0')
     textAreaField.simulate('change', {target: {value: 'text input'}})
     expect(changeSpy).toHaveBeenCalledWith('notes', 'text input', 0)
   })
   it('edit checkbox', () => {
-    let checkBoxField = editTaskAndTrainingDocRow.find('input[type="checkbox"]')
+    let checkBoxField = editTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingEditCheckbox0')
     checkBoxField.simulate('change', {target: {checked: true}})
     expect(changeSpy).toHaveBeenCalledWith('checked', true, 0)
   })
   it('edit date field', () => {
-    let textAreaField = editTaskAndTrainingDocRow.find('#taskAndTrainingEditCompletedDate0').hostNodes()
+    let textAreaField = editTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingEditCompletedDate0')
     textAreaField.simulate('change', {target: {value: '01/20/1981'}})
     expect(changeSpy).toHaveBeenCalledWith('completed_date', '1981-01-20', 0)
   })
   it('loads the row ', () => {
     expect(showTaskAndTrainingDocRow.length).toBe(1)
   })
-  it('edit text area', () => {
-    let textAreaField = showTaskAndTrainingDocRow.find('#taskAndTrainingShowNotes0').hostNodes()
+  it('show text area', () => {
+    let textAreaField = showTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingShowNotes0')
     expect(textAreaField.text()).toEqual('testing')
   })
-  it('edit checkbox', () => {
-    let checkBoxField = showTaskAndTrainingDocRow.find('input[type="checkbox"]')
-    expect(checkBoxField.text()).toEqual('')
+  it('show checkbox', () => {
+    let checkBoxField = showTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingShowCheckbox0')
+    expect(checkBoxField.length).toEqual(1)
   })
-  it('edit date field', () => {
-    let approvedDateField = showTaskAndTrainingDocRow.find('#taskAndTrainingShowCompletedDate0').hostNodes()
+  it('show date field', () => {
+    let approvedDateField = showTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingShowCompletedDate0')
     expect(approvedDateField.text()).toEqual('01/21/1978')
   })
 })

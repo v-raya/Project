@@ -16,13 +16,13 @@ describe('Test Tracking For Clearances Table', () => {
       }]
     }
 
-    editClearanceDocRow = mount(<ClearancesDocRow
+    editClearanceDocRow = shallow(<ClearancesDocRow
       peopleIndex={0}
       clearanceDocuments={clearanceDocuments}
       editMode
       handleChange={changeSpy}
     />)
-    showClearanceDocRow = mount(<ClearancesDocRow
+    showClearanceDocRow = shallow(<ClearancesDocRow
       peopleIndex={0}
       clearanceDocuments={clearanceDocuments}
       editMode={false}
@@ -34,22 +34,22 @@ describe('Test Tracking For Clearances Table', () => {
     expect(editClearanceDocRow.length).toBe(1)
   })
   it('edit text area', () => {
-    let textAreaField = editClearanceDocRow.find('textarea')
+    let textAreaField = editClearanceDocRow.at(0).shallow().find('#clearance0EditText0')
     textAreaField.simulate('change', {target: {value: 'text input'}})
     expect(changeSpy).toHaveBeenCalledWith('notes', 'text input', 0, 0)
   })
   it('edit checkbox', () => {
-    let checkBoxField = editClearanceDocRow.find('input[type="checkbox"]')
+    let checkBoxField = editClearanceDocRow.at(0).shallow().find('#clearance0EditCheckbox0')
     checkBoxField.simulate('change', {target: {checked: true}})
     expect(changeSpy).toHaveBeenCalledWith('checked', true, 0, 0)
   })
   it('edit date field', () => {
-    let textAreaField = editClearanceDocRow.find('#clearance0EditStartDate0').hostNodes()
+    let textAreaField = editClearanceDocRow.at(0).shallow().find('#clearance0EditStartDate0')
     textAreaField.simulate('change', {target: {value: '01/20/1981'}})
     expect(changeSpy).toHaveBeenCalledWith('start_date', '1981-01-20', 0, 0)
   })
   it('edit date field', () => {
-    let textAreaField = editClearanceDocRow.find('#clearance0EditCompleteDate0').hostNodes()
+    let textAreaField = editClearanceDocRow.at(0).shallow().find('#clearance0EditCompleteDate0')
     textAreaField.simulate('change', {target: {value: '01/20/1981'}})
     expect(changeSpy).toHaveBeenCalledWith('completed_date', '1981-01-20', 0, 0)
   })
@@ -58,19 +58,19 @@ describe('Test Tracking For Clearances Table', () => {
     expect(showClearanceDocRow.length).toBe(1)
   })
   it('Show text area', () => {
-    let textAreaField = showClearanceDocRow.find('#clearanceShowText0').hostNodes()
+    let textAreaField = showClearanceDocRow.at(0).shallow().find('#clearanceShowText0')
     expect(textAreaField.text()).toEqual('testing')
   })
   it('Show checkbox', () => {
-    let checkBoxField = showClearanceDocRow.find('input[type="checkbox"]')
-    expect(checkBoxField.text()).toEqual('')
+    let checkBoxField = showClearanceDocRow.at(0).shallow().find('#clearanceShowCheckbox0')
+    expect(checkBoxField.length).toEqual(1)
   })
   it('Show start date field', () => {
-    let submittedDateField = showClearanceDocRow.find('#clearance0ShowStartDate0').hostNodes()
+    let submittedDateField = showClearanceDocRow.at(0).shallow().find('#clearance0ShowStartDate0')
     expect(submittedDateField.text()).toEqual('01/21/1978')
   })
   it('Show complete date field', () => {
-    let submittedDateField = showClearanceDocRow.find('#clearance0ShowCompleteDate0').hostNodes()
+    let submittedDateField = showClearanceDocRow.at(0).shallow().find('#clearance0ShowCompleteDate0')
     expect(submittedDateField.text()).toEqual('01/21/1969')
   })
 })

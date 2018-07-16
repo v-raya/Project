@@ -48,8 +48,9 @@ const TrainingDocRow = ({
       : trainingDocuments.items.map((peopleDoc, index) => {
         return (
           <tr key={'training' + peopleIndex + 'Show' + index}>
-            <td id={'trainingShowCheckbox' + index}>
+            <td id={'training' + peopleIndex + 'ShowCheckbox' + index}>
               <BinarySelectorField
+                id={'trainingShowCheckbox' + index}
                 type='checkbox'
                 key={index}
                 labelId={'checkLabel' + index}

@@ -48,6 +48,7 @@ const taskAndTrainingDocRow = ({
         return (
           <tr key={'taskAndTrainingShow' + index}>
             <td><BinarySelectorField
+              id={'taskAndTrainingShowCheckbox' + index}
               type='checkbox'
               key={index}
               labelId={'checkLabel' + index}

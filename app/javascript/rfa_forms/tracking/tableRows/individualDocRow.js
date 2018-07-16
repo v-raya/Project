@@ -54,8 +54,9 @@ const IndividualDocRow = ({
       : individualDocuments.items.map((peopleDoc, index) => {
         return (
           <tr key={'individual' + peopleIndex + 'Show' + index}>
-            <td id={'individualShowCheckbox' + index}>
+            <td>
               <BinarySelectorField
+                id={'individual' + peopleIndex + 'ShowCheckbox' + index}
                 type='checkbox'
                 key={index}
                 labelId={'checkLabel' + index}

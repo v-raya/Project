@@ -16,13 +16,13 @@ describe('Test Tracking For Individual Table', () => {
       }]
     }
 
-    editIndividualDocRow = mount(<IndividualDocRow
+    editIndividualDocRow = shallow(<IndividualDocRow
       peopleIndex={0}
       individualDocuments={individualDocuments}
       editMode
       handleChange={changeSpy}
     />)
-    showIndividualDocRow = mount(<IndividualDocRow
+    showIndividualDocRow = shallow(<IndividualDocRow
       peopleIndex={0}
       individualDocuments={individualDocuments}
       editMode={false}
@@ -34,22 +34,22 @@ describe('Test Tracking For Individual Table', () => {
     expect(editIndividualDocRow.length).toBe(1)
   })
   it('Edit text area', () => {
-    let textAreaField = editIndividualDocRow.find('textarea')
+    let textAreaField = editIndividualDocRow.at(0).shallow().find('#individual0EditText0')
     textAreaField.simulate('change', {target: {value: 'text input'}})
     expect(changeSpy).toHaveBeenCalledWith('notes', 'text input', 0, 0)
   })
   it('Edit checkbox', () => {
-    let checkBoxField = editIndividualDocRow.find('input[type="checkbox"]')
+    let checkBoxField = editIndividualDocRow.at(0).shallow().find('#individual0EditCheckbox0')
     checkBoxField.simulate('change', {target: {checked: true}})
     expect(changeSpy).toHaveBeenCalledWith('checked', true, 0, 0)
   })
   it('Edit date field', () => {
-    let textAreaField = editIndividualDocRow.find('#individual0EditStartDate0').hostNodes()
+    let textAreaField = editIndividualDocRow.at(0).shallow().find('#individual0EditStartDate0')
     textAreaField.simulate('change', {target: {value: '01/20/1980'}})
     expect(changeSpy).toHaveBeenCalledWith('start_date', '1980-01-20', 0, 0)
   })
   it('Edit date field', () => {
-    let textAreaField = editIndividualDocRow.find('#individual0EditApprovedDate0').hostNodes()
+    let textAreaField = editIndividualDocRow.at(0).shallow().find('#individual0EditApprovedDate0')
     textAreaField.simulate('change', {target: {value: '01/20/1981'}})
     expect(changeSpy).toHaveBeenCalledWith('completed_date', '1981-01-20', 0, 0)
   })
@@ -58,19 +58,19 @@ describe('Test Tracking For Individual Table', () => {
     expect(showIndividualDocRow.length).toBe(1)
   })
   it('Show text area', () => {
-    let textAreaField = showIndividualDocRow.find('#individual0ShowText0').hostNodes()
+    let textAreaField = showIndividualDocRow.at(0).shallow().find('#individual0ShowText0')
     expect(textAreaField.text()).toEqual('testing')
   })
   it('Show checkbox', () => {
-    let checkBoxField = showIndividualDocRow.find('input[type="checkbox"]')
-    expect(checkBoxField.text()).toEqual('')
+    let checkBoxField = showIndividualDocRow.at(0).shallow().find('#individual0ShowCheckbox0')
+    expect(checkBoxField.length).toEqual(1)
   })
   it('Show date field', () => {
-    let approvedDateField = showIndividualDocRow.find('#individual0showStartDate0').hostNodes()
+    let approvedDateField = showIndividualDocRow.at(0).shallow().find('#individual0showStartDate0')
     expect(approvedDateField.text()).toEqual('01/21/1978')
   })
   it('Show date field', () => {
-    let submittedDateField = showIndividualDocRow.find('#individual0ShowApprovedDate0').hostNodes()
+    let submittedDateField = showIndividualDocRow.at(0).shallow().find('#individual0ShowApprovedDate0')
     expect(submittedDateField.text()).toEqual('01/21/1969')
   })
 })

@@ -2,7 +2,7 @@ import React from 'react'
 import FamilyDocRow from 'rfa_forms/tracking/tableRows/familyDocRow'
 import {shallow, mount} from 'enzyme'
 
-describe('Tracking Show mode', () => {
+describe('Test Tracking For Family Documents Table', () => {
   let editFamilyDocRow, showFamilyDocRow, trackingDocuments, changeSpy
   beforeEach(() => {
     changeSpy = jasmine.createSpy('handleChange')
@@ -16,12 +16,12 @@ describe('Tracking Show mode', () => {
       }]
     }
 
-    editFamilyDocRow = mount(<FamilyDocRow
+    editFamilyDocRow = shallow(<FamilyDocRow
       trackingDocuments={trackingDocuments}
       editMode
       handleChange={changeSpy}
     />)
-    showFamilyDocRow = mount(<FamilyDocRow
+    showFamilyDocRow = shallow(<FamilyDocRow
       trackingDocuments={trackingDocuments}
       editMode={false}
       handleChange={changeSpy}
@@ -32,17 +32,17 @@ describe('Tracking Show mode', () => {
     expect(editFamilyDocRow.length).toBe(1)
   })
   it('edit text area', () => {
-    let textAreaField = editFamilyDocRow.find('textarea')
+    let textAreaField = editFamilyDocRow.at(0).shallow().find('#familyEditNotes0')
     textAreaField.simulate('change', {target: {value: 'text input'}})
     expect(changeSpy).toHaveBeenCalledWith('notes', 'text input', 0)
   })
   it('edit checkbox', () => {
-    let checkBoxField = editFamilyDocRow.find('input[type="checkbox"]')
+    let checkBoxField = editFamilyDocRow.at(0).shallow().find('#familyEditCheckbox0')
     checkBoxField.simulate('change', {target: {checked: true}})
     expect(changeSpy).toHaveBeenCalledWith('checked', true, 0)
   })
   it('edit date field', () => {
-    let textAreaField = editFamilyDocRow.find('#familyEditRecievedDate0').hostNodes()
+    let textAreaField = editFamilyDocRow.at(0).shallow().find('#familyEditRecievedDate0')
     textAreaField.simulate('change', {target: {value: '01/20/1981'}})
     expect(changeSpy).toHaveBeenCalledWith('received_date', '1981-01-20', 0)
   })
@@ -50,16 +50,16 @@ describe('Tracking Show mode', () => {
   it('loads the row ', () => {
     expect(showFamilyDocRow.length).toBe(1)
   })
-  it('edit text area', () => {
-    let textAreaField = showFamilyDocRow.find('#familyShowNotes0').hostNodes()
+  it('Show text area', () => {
+    let textAreaField = showFamilyDocRow.at(0).shallow().find('#familyShowNotes0')
     expect(textAreaField.text()).toEqual('testing')
   })
-  it('edit checkbox', () => {
-    let checkBoxField = showFamilyDocRow.find('input[type="checkbox"]')
-    expect(checkBoxField.text()).toEqual('')
+  it('Show checkbox', () => {
+    let checkBoxField = showFamilyDocRow.at(0).shallow().find('#familyShowCheckbox0')
+    expect(checkBoxField.length).toEqual(1)
   })
-  it('edit date field', () => {
-    let approvedDateField = showFamilyDocRow.find('#familyShowRecievedDate0').hostNodes()
+  it('Show date field', () => {
+    let approvedDateField = showFamilyDocRow.at(0).shallow().find('#familyShowRecievedDate0')
     expect(approvedDateField.text()).toEqual('01/21/1978')
   })
 })
