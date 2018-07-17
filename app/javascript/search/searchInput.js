@@ -22,67 +22,69 @@ const SearchInput = ({
   facilityAddressValue
 
 }) => (
-  <div className='search_input col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-    <form onSubmit={(event) => { handlePageNumberChange(pageNumber); searchApiCall(getFromValue(sizeValue, pageNumber), sizeValue); event.preventDefault() }}>
-      <div className='field_input col-xs-12 col-sm-10 col-md-10 col-lg-10'>
-        <div className='input_data col-xs-12 col-sm-2 col-md-2 col-lg-2'>
-          <DropDownField
-            label='County Type'
-            id='county_select'
-            selectClassName='searchSelect'
-            value={countyValue}
-            optionList={countyList}
-            onChange={(event) => handleInputChange('countyValue', dictionaryNilSelectValue(event.target.options))} />
+  <div className='search-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+    <div className='search_input col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+      <form onSubmit={(event) => { handlePageNumberChange(pageNumber); searchApiCall(getFromValue(sizeValue, pageNumber), sizeValue); event.preventDefault() }}>
+        <div className='field_input col-xs-12 col-sm-10 col-md-10 col-lg-10'>
+          <div className='input_data col-xs-12 col-sm-2 col-md-2 col-lg-2'>
+            <DropDownField
+              label='County Type'
+              id='county_select'
+              selectClassName='searchSelect'
+              value={countyValue}
+              optionList={countyList}
+              onChange={(event) => handleInputChange('countyValue', dictionaryNilSelectValue(event.target.options))} />
+          </div>
+          <div className='input_data col-xs-12 col-sm-2 col-md-2 col-lg-2'>
+            <DropDownField
+              label='Facility Type'
+              id='facility_select'
+              selectClassName='searchSelect'
+              value={facilityTypeValue}
+              optionList={facilityTypes}
+              onChange={(event) => handleInputChange('facilityTypeValue', dictionaryNilSelectValue(event.target.options))} />
+          </div>
+          <InputDataBlock
+            columnWidth={2}>
+            <InputComponent id='facilityIdValue'
+              label='Facility ID #'
+              fieldClassName='form-control'
+              value={facilityIdValue}
+              placeholder='Enter Facility ID #'
+              type='text'
+              onChange={(event) => handleInputChange('facilityIdValue', event.target.value)}/>
+          </InputDataBlock>
+          <InputDataBlock
+            columnWidth={3}>
+            <InputComponent id='facilityNameValue'
+              label='Facility Name'
+              fieldClassName='form-control'
+              value={facilityNameValue}
+              placeholder='Enter Facility Name'
+              type='text'
+              onChange={(event) => handleInputChange('facilityNameValue', event.target.value)} />
+          </InputDataBlock>
+          <InputDataBlock
+            columnWidth={3}>
+            <InputComponent id='facilityAddressValue'
+              label='Facility Address'
+              fieldClassName='form-control'
+              value={facilityAddressValue}
+              placeholder='Enter Facility Address'
+              type='text'
+              onChange={(event) => handleInputChange('facilityAddressValue', event.target.value)} />
+          </InputDataBlock>
         </div>
-        <div className='input_data col-xs-12 col-sm-2 col-md-2 col-lg-2'>
-          <DropDownField
-            label='Facility Type'
-            id='facility_select'
-            selectClassName='searchSelect'
-            value={facilityTypeValue}
-            optionList={facilityTypes}
-            onChange={(event) => handleInputChange('facilityTypeValue', dictionaryNilSelectValue(event.target.options))} />
+        <div className='field_search col-xs-12 col-sm-2 col-md-2 col-lg-2'>
+          <div className='search_block '>
+            <button id='search' type='submit' className= 'btn btn-primary'>Search</button>
+          </div>
+          <div className='search_block '>
+            <button id='reset' type='button' onClick= {resetForm} className= 'btn btn-primary'>Reset</button>
+          </div>
         </div>
-        <InputDataBlock
-          columnWidth={2}>
-          <InputComponent id='facilityIdValue'
-            label='Facility ID #'
-            fieldClassName='form-control'
-            value={facilityIdValue}
-            placeholder='Enter Facility ID #'
-            type='text'
-            onChange={(event) => handleInputChange('facilityIdValue', event.target.value)}/>
-        </InputDataBlock>
-        <InputDataBlock
-          columnWidth={3}>
-          <InputComponent id='facilityNameValue'
-            label='Facility Name'
-            fieldClassName='form-control'
-            value={facilityNameValue}
-            placeholder='Enter Facility Name'
-            type='text'
-            onChange={(event) => handleInputChange('facilityNameValue', event.target.value)} />
-        </InputDataBlock>
-        <InputDataBlock
-          columnWidth={3}>
-          <InputComponent id='facilityAddressValue'
-            label='Facility Address'
-            fieldClassName='form-control'
-            value={facilityAddressValue}
-            placeholder='Enter Facility Address'
-            type='text'
-            onChange={(event) => handleInputChange('facilityAddressValue', event.target.value)} />
-        </InputDataBlock>
-      </div>
-      <div className='field_search col-xs-12 col-sm-2 col-md-2 col-lg-2'>
-        <div className='search_block '>
-          <button id='search' type='submit' className= 'btn btn-primary'>Search</button>
-        </div>
-        <div className='search_block '>
-          <button id='reset' type='button' onClick= {resetForm} className= 'btn btn-primary'>Reset</button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 )
 

@@ -5,9 +5,7 @@ import SearchInput from './searchInput'
 import SearchList from './searchList'
 import AdvancedSearch from './advancedSearch'
 import SearchNotFound from './searchNotFound'
-import {fetchRequest} from '../helpers/http'
-import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
-import {checkforNull, checkForValue} from 'search/common/commonUtils'
+import {checkForValue, checkAndSplitValue} from 'search/common/commonUtils'
 import {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall, handleScrollBarChange} from 'actions/searchActions'
 import {connect} from 'react-redux'
 import {PageHeader} from 'react-wood-duck'
@@ -39,12 +37,12 @@ class Search extends React.Component {
         value: checkForValue(this.props.inputData.facilityIdValue)
       },
       name: {
-        query_type: 'match',
-        value: checkForValue(this.props.inputData.facilityNameValue)
+        query_type: 'query_string',
+        value: checkAndSplitValue(this.props.inputData.facilityNameValue)
       },
       'addresses.address': {
-        query_type: 'match',
-        value: checkForValue(this.props.inputData.facilityAddressValue)
+        query_type: 'query_string',
+        value: checkAndSplitValue(this.props.inputData.facilityAddressValue)
       }
     }
 
@@ -89,29 +87,25 @@ class Search extends React.Component {
           button={null}
         />
         <BreadCrumb />
-        <div className='search-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <SearchInput
-            resetForm={this.props.handleResetForm}
-            searchApiCall={this.searchApiCallParams.bind(this)}
-            handlePageNumberChange={this.props.handlePageNumberChange}
-            countyList={this.props.countyTypes}
-            facilityTypes={this.props.facilityTypes}
-            countyValue={this.props.inputData.countyValue}
-            facilityTypeValue={this.props.inputData.facilityTypeValue}
-            facilityIdValue={this.props.inputData.facilityIdValue}
-            facilityNameValue={this.props.inputData.facilityNameValue}
-            facilityAddressValue={this.props.inputData.facilityAddressValue}
-            handleInputChange={this.props.handleInputChange}
-            sizeValue={this.props.sizeValue} />
-        </div>
+        <SearchInput
+          resetForm={this.props.handleResetForm}
+          searchApiCall={this.searchApiCallParams.bind(this)}
+          handlePageNumberChange={this.props.handlePageNumberChange}
+          countyList={this.props.countyTypes}
+          facilityTypes={this.props.facilityTypes}
+          countyValue={this.props.inputData.countyValue}
+          facilityTypeValue={this.props.inputData.facilityTypeValue}
+          facilityIdValue={this.props.inputData.facilityIdValue}
+          facilityNameValue={this.props.inputData.facilityNameValue}
+          facilityAddressValue={this.props.inputData.facilityAddressValue}
+          handleInputChange={this.props.handleInputChange}
+          sizeValue={this.props.sizeValue} />
         {searchResponseHasValues &&
           (
-            <div className='search-toggle col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-              <AdvancedSearch
-                paginationRender= {paginationRender}
-                handleToggle= {this.props.handleToggle}
-                isToggled={this.props.isToggled} />
-            </div>
+            <AdvancedSearch
+              paginationRender= {paginationRender}
+              handleToggle= {this.props.handleToggle}
+              isToggled={this.props.isToggled} />
           )
         }
         <div className='result-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>

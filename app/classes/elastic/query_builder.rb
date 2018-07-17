@@ -3,13 +3,20 @@ class Elastic::QueryBuilder
 
   def self.leaf_queries(query_hash)
     query_leaves = []
-
     # each key is an attribute to query on
     query_hash.each do |k, v|
-      query_leaves << { v[:query_type].to_sym => { k.to_sym => v[:value] } }
+      query_leaves << query_by_type(k, v)
     end
 
     return query_leaves
+  end
+
+  def self.query_by_type(k, v)
+    if v[:query_type] == 'query_string'
+      { v[:query_type].to_sym => { 'default_field' => k.to_sym, 'query' => v[:value] } }
+    else
+      { v[:query_type].to_sym => { k.to_sym => v[:value] } }
+    end
   end
 
   # wrap individual leaf queries in bool must
@@ -90,9 +97,8 @@ class Elastic::QueryBuilder
 
   def self.address_query(address_params)
     return {
-      multi_match: {
+      query_string: {
         query: address_params,
-        type: 'best_fields',
         fields: %w[full_residential_address full_mailing_address]
       }
     }

@@ -27,6 +27,13 @@ export const checkForValue = (value) => {
   return value || undefined
 }
 
+export const checkAndSplitValue = (value) => {
+  if (value !== undefined || '') {
+    const filteredSet = ['*', '']
+    return value.split(' ').filter((val) => !filteredSet.includes(val)).map((val) => '*' + val + '*').join(' ')
+  }
+}
+
 export const respectiveNumberOrNA = (phones, phoneRelation) => {
   const phoneObject = phones && phones.find(o => o.relation === phoneRelation)
   if (phoneObject && Boolean(phoneObject.number)) {
