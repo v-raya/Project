@@ -4,14 +4,17 @@ class SearchController < CalsBaseController
 
   def index; end
 
-  def user_and_dictionaries
+  def search_dictionaries
     dictionaries = dictionaries_helper.facilities_dictionaries
+    search_dictionaries = {}
+    search_dictionaries['countyTypes'] = dictionaries[:county_types]
+    search_dictionaries['facilityTypes'] = dictionaries[:facility_types]
+    json_response search_dictionaries
+  end
+
+  def user_data
     user = user_from_session
-    user_dictionaries = {}
-    user_dictionaries['countyTypes'] = dictionaries[:county_types]
-    user_dictionaries['facilityTypes'] = dictionaries[:facility_types]
-    user_dictionaries['user'] = user
-    json_response user_dictionaries
+    json_response user
   end
 
   private

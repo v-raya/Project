@@ -2,7 +2,9 @@ import {searchReducer} from 'reducers/searchReducer'
 import {countyTypes, facilityTypes, user} from '../helpers/constants'
 import {
   searchApiCall,
+  searchUserDataCall,
   fetchDictionarySuccess,
+  fetchUserDataSuccess,
   searchDictionariesCall,
   handleInputChange,
   handleDropDownChange,
@@ -66,27 +68,39 @@ describe('Verify searchReducer', () => {
     expect(searchReducer(undefined, fetchSuccessAction)).toEqual(outputState)
   })
 
-  it('Search dictionary fetch call returns empty countyTypes and facilityTypes', () => {
+  it('Search dictionary fetch call returns initial state', () => {
     const searchDictionariesCallAction = searchDictionariesCall()
 
     let outputState = initialState
-    outputState.countyTypes = []
-    outputState.facilityTypes = []
     expect(searchReducer(undefined, searchDictionariesCallAction)).toEqual(outputState)
   })
 
+  it('Search user data fetch call returns initial state', () => {
+    const searchUserDataCallAction = searchUserDataCall()
+
+    let outputState = initialState
+    expect(searchReducer(undefined, searchUserDataCallAction)).toEqual(outputState)
+  })
+
+  it('Search user data fetch call success returns user data', () => {
+    const fetchUserDataSuccessAction = fetchUserDataSuccess({user})
+    let outputState = initialState
+
+    outputState.inputData = {'countyValue': user.county_code}
+    outputState.userCounty = user.county_code
+    expect(searchReducer(undefined, fetchUserDataSuccessAction)).toEqual(outputState)
+  })
+
   it('Search dictionary fetch call success returns countyTypes and facilityTypes', () => {
-    const fetchDictionarySuccessAction = fetchDictionarySuccess({countyTypes, facilityTypes, user})
+    const fetchDictionarySuccessAction = fetchDictionarySuccess({countyTypes, facilityTypes})
 
     let outputState = initialState
     outputState.countyTypes = countyTypes
     outputState.facilityTypes = facilityTypes
-    outputState.inputData = {countyValue: '56'}
     outputState.isToggled = true
     outputState.pageNumber = 1
     outputState.sizeValue = 10
     outputState.totalNoOfResults = 0
-    outputState.userCounty = '56'
 
     expect(searchReducer(undefined, fetchDictionarySuccessAction)).toEqual(outputState)
   })

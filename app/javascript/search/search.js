@@ -6,7 +6,7 @@ import SearchList from './searchList'
 import AdvancedSearch from './advancedSearch'
 import SearchNotFound from './searchNotFound'
 import {checkForValue, checkAndSplitValue} from 'search/common/commonUtils'
-import {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall, handleScrollBarChange} from 'actions/searchActions'
+import {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall, searchUserDataCall, handleScrollBarChange} from 'actions/searchActions'
 import {connect} from 'react-redux'
 import {PageHeader} from 'react-wood-duck'
 import BreadCrumb from 'components/common/breadCrumb'
@@ -16,6 +16,7 @@ import Pagination from './pagination'
 class Search extends React.Component {
   componentDidMount () {
     this.props.searchDictionariesCall()
+    this.props.searchUserDataCall()
   }
 
   componentDidUpdate () {
@@ -169,4 +170,4 @@ function mapStateToProps (state) {
 }
 
 export {Search}
-export default connect(mapStateToProps, {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall, handleScrollBarChange})(Search)
+export default connect(mapStateToProps, {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall, handleScrollBarChange, searchUserDataCall})(Search)

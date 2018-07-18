@@ -9,17 +9,18 @@ Rails.application.routes.draw do
   end
 
   resources :search do
-    collection { post :user_and_dictionaries}
+    collection do
+      get :search_dictionaries
+      get :user_data
+    end
   end
 
   # heartbeat page
   get 'heartbeat', to: 'heartbeat#show'
-  get 'logout',   to: 'cals_base#logout'
-
-
+  get 'logout', to: 'cals_base#logout'
 
   namespace :rfa do
-    constraints lambda{ |request| !DISABLE_RFA_APPLICATION } do
+    constraints lambda { |request| !DISABLE_RFA_APPLICATION } do
       resources :a01 do
         post :submit, on: :member
         resources :applicant, only: [:index, :create, :edit]
@@ -29,9 +30,8 @@ Rails.application.routes.draw do
       end
       resources :b01
     end
-
   end
-  #get 'geoservice', to: 'geoservice#show'
+
   resources :geoservice, only: [:create] do
     collection { post :validate }
   end

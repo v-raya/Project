@@ -20,4 +20,8 @@ const DropDownField = ({gridClassName, id, value, disable, disableNullVal, selec
 DropDownField.propTypes = {
   value: PropTypes.any
 }
+
+DropDownField.defaultProps = {
+  optionList: []
+}
 export {DropDownField}

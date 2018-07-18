@@ -10,6 +10,10 @@ export const searchDictionariesCall = () => ({
   type: Constants.SEARCH_DICTIONARIES_FETCH
 })
 
+export const searchUserDataCall = () => ({
+  type: Constants.SEARCH_USER_DATA_FETCH
+})
+
 export const handleInputChange = (key, value) => ({
   type: Constants.HANDLE_INPUT_CHANGE,
   payload: {key, value}
@@ -46,6 +50,11 @@ export const handleScrollBarChange = () => ({
 export const fetchDictionarySuccess = (dictionaries) => ({
   type: Constants.SEARCH_DICTIONARIES_FETCH_COMPLETE,
   payload: dictionaries
+})
+
+export const fetchUserDataSuccess = (user) => ({
+  type: Constants.SEARCH_USER_DATA_FETCH_COMPLETE,
+  payload: user
 })
 
 export const fetchSuccess = (searchResult) => ({

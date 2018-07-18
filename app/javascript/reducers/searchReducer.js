@@ -17,13 +17,15 @@ const initialState = {
 export const searchReducer = (state = initialState, action) => {
   switch (action.type) {
     case Constants.SEARCH_DICTIONARIES_FETCH:
-      return {...state,
-        countyTypes: [],
-        facilityTypes: []}
+      return state
     case Constants.SEARCH_DICTIONARIES_FETCH_COMPLETE:
       return {...state,
         countyTypes: action.payload.countyTypes,
-        facilityTypes: action.payload.facilityTypes,
+        facilityTypes: action.payload.facilityTypes}
+    case Constants.SEARCH_USER_DATA_FETCH:
+      return state
+    case Constants.SEARCH_USER_DATA_FETCH_COMPLETE:
+      return {...state,
         inputData: {...state.inputData, 'countyValue': state.inputData.countyValue === undefined ? action.payload.user.county_code : state.inputData.countyValue},
         userCounty: action.payload.user.county_code}
     case Constants.SEARCH_RESULTS_FETCH:
