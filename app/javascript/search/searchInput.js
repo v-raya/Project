@@ -1,4 +1,5 @@
 import React from 'react'
+import MultiSelect from 'components/common/multiSelect'
 import InputDataBlock from './common/inputDataBlock.js'
 import {InputComponent} from 'components/common/inputFields'
 import {dictionaryNilSelectValue, getFromValue} from 'helpers/commonHelper.jsx'
@@ -9,14 +10,15 @@ const SearchInput = ({
   resetForm,
   handleInputChange,
   handlePageNumberChange,
-  fromValue,
   sizeValue,
   pageNumber,
   countyList,
   searchApiCall,
   facilityTypes,
+  licenseStatuses,
   countyValue,
   facilityTypeValue,
+  licenseStatusValue,
   facilityIdValue,
   facilityNameValue,
   facilityAddressValue
@@ -25,7 +27,7 @@ const SearchInput = ({
   <div className='search-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
     <div className='search_input col-xs-12 col-sm-12 col-md-12 col-lg-12'>
       <form onSubmit={(event) => { handlePageNumberChange(pageNumber); searchApiCall(getFromValue(sizeValue, pageNumber), sizeValue); event.preventDefault() }}>
-        <div className='field_input col-xs-12 col-sm-10 col-md-10 col-lg-10'>
+        <div className='field_input col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <div className='input_data col-xs-12 col-sm-2 col-md-2 col-lg-2'>
             <DropDownField
               label='County Type'
@@ -35,7 +37,7 @@ const SearchInput = ({
               optionList={countyList}
               onChange={(event) => handleInputChange('countyValue', dictionaryNilSelectValue(event.target.options))} />
           </div>
-          <div className='input_data col-xs-12 col-sm-2 col-md-2 col-lg-2'>
+          <div className='input_data col-xs-12 col-sm-3 col-md-3 col-lg-3'>
             <DropDownField
               label='Facility Type'
               id='facility_select'
@@ -44,6 +46,25 @@ const SearchInput = ({
               optionList={facilityTypes}
               onChange={(event) => handleInputChange('facilityTypeValue', dictionaryNilSelectValue(event.target.options))} />
           </div>
+          <div className='input_data col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+            <MultiSelect
+              label='License Status'
+              placeholder=''
+              values={licenseStatusValue}
+              searchable={true}
+              className='searchSelect'
+              optionList={licenseStatuses}
+              onChange={(event) => handleInputChange('licenseStatusValue', event.map((e) => ({id: e.id, value: e.value})))} />
+          </div>
+          <div className='input_data col-xs-12 col-sm-2 col-md-2 col-lg-2' >
+
+          </div>
+          <div className='search_block  col-xs-12 col-sm-2 col-md-2 col-lg-2'>
+            <button id='search' type='submit' className= 'btn btn-primary'>Search</button>
+          </div>
+
+        </div>
+        <div className='field_input col-xs-12 col-sm-12 col-md-12 col-lg-12'>
           <InputDataBlock
             columnWidth={2}>
             <InputComponent id='facilityIdValue'
@@ -65,7 +86,7 @@ const SearchInput = ({
               onChange={(event) => handleInputChange('facilityNameValue', event.target.value)} />
           </InputDataBlock>
           <InputDataBlock
-            columnWidth={3}>
+            columnWidth={5}>
             <InputComponent id='facilityAddressValue'
               label='Facility Address'
               fieldClassName='form-control'
@@ -74,15 +95,13 @@ const SearchInput = ({
               type='text'
               onChange={(event) => handleInputChange('facilityAddressValue', event.target.value)} />
           </InputDataBlock>
-        </div>
-        <div className='field_search col-xs-12 col-sm-2 col-md-2 col-lg-2'>
-          <div className='search_block '>
-            <button id='search' type='submit' className= 'btn btn-primary'>Search</button>
-          </div>
-          <div className='search_block '>
+          <div className='search_block  col-xs-12 col-sm-2 col-md-2 col-lg-2'>
             <button id='reset' type='button' onClick= {resetForm} className= 'btn btn-primary'>Reset</button>
           </div>
         </div>
+        {/* <div className='field_search col-xs-12 col-sm-2 col-md-2 col-lg-2'>
+
+      </div> */}
       </form>
     </div>
   </div>
@@ -91,6 +110,7 @@ const SearchInput = ({
 SearchInput.propTypes = {
   countyValue: PropTypes.string,
   facilityTypeValue: PropTypes.string,
+  licenseStatusValue: PropTypes.array,
   facilityIdValue: PropTypes.string,
   facilityNameValue: PropTypes.string,
   facilityAddressValue: PropTypes.string,
@@ -102,6 +122,7 @@ SearchInput.propTypes = {
 SearchInput.defaultProps = {
   countyValue: '',
   facilityTypeValue: '',
+  licenseStatusValue: [],
   facilityIdValue: '',
   facilityNameValue: '',
   facilityAddressValue: '',

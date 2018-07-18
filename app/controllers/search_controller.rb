@@ -9,6 +9,7 @@ class SearchController < CalsBaseController
     search_dictionaries = {}
     search_dictionaries['countyTypes'] = dictionaries[:county_types]
     search_dictionaries['facilityTypes'] = dictionaries[:facility_types]
+    search_dictionaries['licenseStatuses'] = dictionaries[:license_status_types]
     json_response search_dictionaries
   end
 

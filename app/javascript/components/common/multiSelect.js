@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 const MultiSelect = ({
   label,
   values,
+  searchable,
   optionList,
   className,
   placeholder,
@@ -17,7 +18,7 @@ const MultiSelect = ({
         className={className}
         tabSelectsValue={false}
         multi
-        searchable={false}
+        searchable={searchable}
         value={values.map((val) => val.value)}
         options={optionList.map((type) => ({label: type.value, value: type.value, id: type.id}))}
         onChange={onChange}

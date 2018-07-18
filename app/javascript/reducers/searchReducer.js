@@ -9,6 +9,7 @@ const initialState = {
   errors: {},
   countyTypes: [],
   facilityTypes: [],
+  licenseStatuses: [],
   userCounty: '',
   errorMessage: undefined,
   isScrollBarVisible: false
@@ -21,7 +22,8 @@ export const searchReducer = (state = initialState, action) => {
     case Constants.SEARCH_DICTIONARIES_FETCH_COMPLETE:
       return {...state,
         countyTypes: action.payload.countyTypes,
-        facilityTypes: action.payload.facilityTypes}
+        facilityTypes: action.payload.facilityTypes,
+        licenseStatuses: action.payload.licenseStatuses}
     case Constants.SEARCH_USER_DATA_FETCH:
       return state
     case Constants.SEARCH_USER_DATA_FETCH_COMPLETE:

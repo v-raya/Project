@@ -10,7 +10,7 @@ import {handleInputChange, searchApiCall, handleToggle, handleResetForm, handleP
 import {connect} from 'react-redux'
 import {PageHeader} from 'react-wood-duck'
 import BreadCrumb from 'components/common/breadCrumb'
-import {getFromValue, floatToNextInt} from 'helpers/commonHelper.jsx'
+import {getFromValue, floatToNextInt, getArrayOfId} from 'helpers/commonHelper.jsx'
 import Pagination from './pagination'
 
 class Search extends React.Component {
@@ -32,6 +32,10 @@ class Search extends React.Component {
       'type.id': {
         query_type: 'term',
         value: checkForValue(this.props.inputData.facilityTypeValue)
+      },
+      'status.id': {
+        query_type: 'term',
+        value: getArrayOfId(this.props.inputData.licenseStatusValue)
       },
       license_number: {
         query_type: 'match_phrase',
@@ -94,8 +98,10 @@ class Search extends React.Component {
           handlePageNumberChange={this.props.handlePageNumberChange}
           countyList={this.props.countyTypes}
           facilityTypes={this.props.facilityTypes}
+          licenseStatuses={this.props.licenseStatuses}
           countyValue={this.props.inputData.countyValue}
           facilityTypeValue={this.props.inputData.facilityTypeValue}
+          licenseStatusValue={this.props.inputData.licenseStatusValue}
           facilityIdValue={this.props.inputData.facilityIdValue}
           facilityNameValue={this.props.inputData.facilityNameValue}
           facilityAddressValue={this.props.inputData.facilityAddressValue}
@@ -157,6 +163,7 @@ function mapStateToProps (state) {
   return {
     countyTypes: state.searchReducer.countyTypes,
     facilityTypes: state.searchReducer.facilityTypes,
+    licenseStatuses: state.searchReducer.licenseStatuses,
     inputData: state.searchReducer.inputData,
     searchResults: state.searchReducer.searchResults,
     totalNoOfResults: state.searchReducer.totalNoOfResults,
@@ -170,4 +177,14 @@ function mapStateToProps (state) {
 }
 
 export {Search}
-export default connect(mapStateToProps, {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall, handleScrollBarChange, searchUserDataCall})(Search)
+export default connect(mapStateToProps, {
+  handleInputChange,
+  searchApiCall,
+  handleToggle,
+  handleResetForm,
+  handlePageNumberChange,
+  handleDropDownAndPageNumberChange,
+  searchDictionariesCall,
+  handleScrollBarChange,
+  searchUserDataCall
+})(Search)

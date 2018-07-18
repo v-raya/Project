@@ -25,7 +25,7 @@ class QueryPreprocessor
   def self.values_array_to_query_with_type(query_params, values, query_types)
     # if more than 1 field selected, we need to generate combinations
     combinations = values[0].product(*values[1..-1])
-
+    
     queries = combinations.map do |c|
       c.map.with_index do |c1, i|
         { query_type: query_types[i], value: c1 }

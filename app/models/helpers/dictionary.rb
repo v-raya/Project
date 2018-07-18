@@ -82,6 +82,10 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     Dictionaries::FacilityType.all(auth_header)
   end
 
+  def license_status_types
+    Dictionaries::LicenseStatusType.all(auth_header)
+  end
+
   def school_grades
     Dictionaries::SchoolGrade.all(auth_header)
   end
@@ -90,6 +94,7 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     dictionaries = {}
     dictionaries[:county_types] = county_types
     dictionaries[:facility_types] = facility_types
+    dictionaries[:license_status_types] = license_status_types
     return dictionaries
   end
 

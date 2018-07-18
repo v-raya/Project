@@ -9,7 +9,7 @@ export function * fetchSearchDictionaries (action) {
   try {
     const url = '/search/search_dictionaries'
     const response = yield call(fetchRequestWithErrors, url, 'GET', null)
-    yield put(fetchDictionarySuccess({countyTypes: response.countyTypes, facilityTypes: response.facilityTypes}))
+    yield put(fetchDictionarySuccess({countyTypes: response.countyTypes, facilityTypes: response.facilityTypes, licenseStatuses: data.licenseStatuses}))
   } catch (error) {
     console.log(error)
   }

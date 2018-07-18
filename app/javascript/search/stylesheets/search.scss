@@ -65,6 +65,24 @@ input[type=number]::-webkit-outer-spin-button {
   vertical-align: middle;
 }
 
+.Select--multi{
+  margin-top: 7.5px;
+}
+
+.Select-control {
+  height: 28px;
+}
+
+.Select-multi-value-wrapper {
+  height: 22px;
+}
+
+.searchSelect {
+  height: 28px;
+  padding: 0px;
+  border: 0px;
+}
+
 .search_page .table>thead>tr {
   background-color: #8b8b8b;
   color: #fff;
@@ -115,18 +133,8 @@ input[type=number]::-webkit-outer-spin-button {
   padding-bottom: 20px;
 }
 
-.field_search .search_block {
-  margin: 17px 10px 10px 10px;
-}
-
-.field_search .search_block button {
-  padding: 15px;
-  width: 100%;
-}
-
-.field_search .search_block button img {
-  width: 100%;
-  height: 30px;
+.search_block {
+ top: 25px;
 }
 
 .search_details p {
@@ -289,11 +297,6 @@ input[type=number]::-webkit-outer-spin-button {
   height: 20px;
   width: 50px;
   margin-left: 20px;
-}
-
-.searchSelect {
-  background-color: white !important;
-  padding: 0.5rem 0.7rem;
 }
 
 .main_table .rt-table {
