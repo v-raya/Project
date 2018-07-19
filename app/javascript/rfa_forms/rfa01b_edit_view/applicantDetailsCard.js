@@ -83,7 +83,7 @@ export default class ApplicantDetailsCard extends React.Component {
           <InputComponent
             gridClassName='col-md-12'
             id='NameOfResourceFamily'
-            value={application.resource_family_name}
+            value={this.props.resourceFamily}
             label={'Name of Resource Family' + RfaCommon.requiredIndicator}
             type='text'
             onChange={(event) => this.props.setParentState('resource_family_name', event.target.value)} />
@@ -164,6 +164,7 @@ export default class ApplicantDetailsCard extends React.Component {
 }
 ApplicantDetailsCard.propTypes = {
   focusComponentName: PropTypes.string,
+  resourceFamily: PropTypes.string,
   getFocusClassName: PropTypes.func,
   setFocusState: PropTypes.func,
   setParentState: PropTypes.func,
@@ -172,6 +173,7 @@ ApplicantDetailsCard.propTypes = {
   nameSuffixTypes: PropTypes.array
 }
 ApplicantDetailsCard.defaultProps = {
+  resourceFamily: '',
   application: rfa01BapplicantDefaults,
   errors: []
 }

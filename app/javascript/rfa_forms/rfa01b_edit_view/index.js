@@ -289,6 +289,7 @@ export default class Rfa01bEditView extends React.Component {
           <h2><span>Applicant or Other Adult </span></h2>
           <ApplicantDetailsCard
             application={this.state.application}
+            resourceFamily={this.state.application.resource_family_name}
             validator={this.validator}
             focusComponentName={this.state.focusComponentName}
             getFocusClassName={this.getFocusClassName}
