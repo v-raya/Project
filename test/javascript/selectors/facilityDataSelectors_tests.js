@@ -297,6 +297,35 @@ describe('facilityDataSelectors', () => {
       }]
       )
     })
+    it('should return children array with N/A values', () => {
+      const state = {
+        facilityChildren: {
+          'children': [{
+            'id': '2q6FdWU03k',
+            'person': {
+              'gender': 'M',
+              'age': 29,
+              'first_name': 'boy F',
+              'last_name': 'Cavy'
+            },
+            'display_client_id': '0161-3317-6329-8000232'
+          }]
+        }
+      }
+      expect(getFacilityChildren(state)).toEqual([{
+        age: 29,
+        assigned_worker: 'N/A',
+        county_of_origin: 'N/A',
+        date_of_birth: 'N/A',
+        date_of_placement: 'N/A',
+        display_client_id: '0161-3317-6329-8000232',
+        first_name: 'boy F',
+        gender: 'M',
+        id: '2q6FdWU03k',
+        last_name: 'Cavy'
+      }]
+      )
+    })
   })
   describe('getComplaintsDataSelector', () => {
     it('should return null when passed in null', () => {

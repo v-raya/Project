@@ -61,7 +61,7 @@ const getFacilityChildrenData = (facilityChildren) => {
   return facilityChildren.map((child) => ({
     age: child.person.age,
     assigned_worker: checkfullNameorNA(child.assigned_worker),
-    county_of_origin: child.county_of_origin,
+    county_of_origin: child.county_of_origin || 'N/A',
     date_of_birth: checkforDateOrNa(child.person.date_of_birth),
     date_of_placement: checkforDateOrNa(child.date_of_placement),
     display_client_id: child.display_client_id,
