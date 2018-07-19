@@ -24,7 +24,7 @@ export default class FacilityChildren extends React.Component {
                   <th> CLIENT ID </th>
                   <th> FIRST NAME </th>
                   <th> LAST NAME </th>
-                  <th> SEX </th>
+                  <th> GENDER </th>
                   <th> AGE </th>
                   <th> DATE OF BIRTH </th>
                   <th> DATE OF PLACEMENT </th>
