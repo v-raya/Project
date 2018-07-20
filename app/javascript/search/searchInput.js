@@ -2,6 +2,7 @@ import React from 'react'
 import MultiSelect from 'components/common/multiSelect'
 import InputDataBlock from './common/inputDataBlock.js'
 import {InputComponent} from 'components/common/inputFields'
+import {BinarySelectorField} from 'components/common/binarySelectorField'
 import {dictionaryNilSelectValue, getFromValue} from 'helpers/commonHelper.jsx'
 import {DropDownField} from 'components/common/dropDownField'
 import PropTypes from 'prop-types'
@@ -19,6 +20,7 @@ const SearchInput = ({
   countyValue,
   facilityTypeValue,
   licenseStatusValue,
+  isAllActive,
   facilityIdValue,
   facilityNameValue,
   facilityAddressValue
@@ -37,7 +39,7 @@ const SearchInput = ({
               optionList={countyList}
               onChange={(event) => handleInputChange('countyValue', dictionaryNilSelectValue(event.target.options))} />
           </div>
-          <div className='input_data col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+          <div className='input_data col-xs-12 col-sm-4 col-md-4 col-lg-4'>
             <DropDownField
               label='Facility Type'
               id='facility_select'
@@ -48,16 +50,28 @@ const SearchInput = ({
           </div>
           <div className='input_data col-xs-12 col-sm-3 col-md-3 col-lg-3'>
             <MultiSelect
+              gridClassName='licenseStatus'
               label='License Status'
-              placeholder=''
+              className='my-react-select'
+              disabled={isAllActive}
+              clearable={true}
               values={licenseStatusValue}
+              valueRenderer={(option) => (licenseStatusValue.length < 2 ? option.label : <span> {licenseStatusValue.length} Items Selected</span>)}
+              removeSelected={false}
               searchable={true}
-              className='searchSelect'
               optionList={licenseStatuses}
               onChange={(event) => handleInputChange('licenseStatusValue', event.map((e) => ({id: e.id, value: e.value})))} />
           </div>
-          <div className='input_data col-xs-12 col-sm-2 col-md-2 col-lg-2' >
-
+          <div className='input_data col-xs-12 col-sm-1 col-md-1 col-lg-1' >
+            <BinarySelectorField
+              type='checkbox'
+              id='all_active'
+              gridClassName='allActive'
+              label='All Active'
+              value={isAllActive}
+              checked={isAllActive}
+              onChange={(event) => (isAllActive ? (handleInputChange('isAllActive', false)) : (handleInputChange('isAllActive', true)))}
+            />
           </div>
           <div className='search_block  col-xs-12 col-sm-2 col-md-2 col-lg-2'>
             <button id='search' type='submit' className= 'btn btn-primary'>Search</button>
@@ -76,7 +90,7 @@ const SearchInput = ({
               onChange={(event) => handleInputChange('facilityIdValue', event.target.value)}/>
           </InputDataBlock>
           <InputDataBlock
-            columnWidth={3}>
+            columnWidth={4}>
             <InputComponent id='facilityNameValue'
               label='Facility Name'
               fieldClassName='form-control'
@@ -86,7 +100,7 @@ const SearchInput = ({
               onChange={(event) => handleInputChange('facilityNameValue', event.target.value)} />
           </InputDataBlock>
           <InputDataBlock
-            columnWidth={5}>
+            columnWidth={4}>
             <InputComponent id='facilityAddressValue'
               label='Facility Address'
               fieldClassName='form-control'
@@ -111,6 +125,7 @@ SearchInput.propTypes = {
   countyValue: PropTypes.string,
   facilityTypeValue: PropTypes.string,
   licenseStatusValue: PropTypes.array,
+  isAllActive: PropTypes.bool,
   facilityIdValue: PropTypes.string,
   facilityNameValue: PropTypes.string,
   facilityAddressValue: PropTypes.string,
@@ -123,6 +138,7 @@ SearchInput.defaultProps = {
   countyValue: '',
   facilityTypeValue: '',
   licenseStatusValue: [],
+  isAllActive: false,
   facilityIdValue: '',
   facilityNameValue: '',
   facilityAddressValue: '',

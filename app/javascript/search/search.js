@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import SearchGrid from './searchGrid'
 import SearchInput from './searchInput'
@@ -13,7 +13,7 @@ import BreadCrumb from 'components/common/breadCrumb'
 import {getFromValue, floatToNextInt, getArrayOfId} from 'helpers/commonHelper.jsx'
 import Pagination from './pagination'
 
-class Search extends React.Component {
+class Search extends Component {
   componentDidMount () {
     this.props.searchDictionariesCall()
     this.props.searchUserDataCall()
@@ -35,7 +35,11 @@ class Search extends React.Component {
       },
       'status.id': {
         query_type: 'term',
-        value: getArrayOfId(this.props.inputData.licenseStatusValue)
+        value: this.props.inputData.isAllActive ? '' : getArrayOfId(this.props.inputData.licenseStatusValue)
+      },
+      'status.active': {
+        query_type: 'term',
+        value: this.props.inputData.isAllActive
       },
       license_number: {
         query_type: 'match_phrase',
@@ -102,6 +106,7 @@ class Search extends React.Component {
           countyValue={this.props.inputData.countyValue}
           facilityTypeValue={this.props.inputData.facilityTypeValue}
           licenseStatusValue={this.props.inputData.licenseStatusValue}
+          isAllActive={this.props.inputData.isAllActive}
           facilityIdValue={this.props.inputData.facilityIdValue}
           facilityNameValue={this.props.inputData.facilityNameValue}
           facilityAddressValue={this.props.inputData.facilityAddressValue}

@@ -52,6 +52,7 @@ export default class OutOfStateDisclosureCard extends React.Component {
         {livedInOtherState === 'true'
           ? <div>
             <MultiSelect
+              gridClassName='col-md-12'
               label={Rfa01bOutOfStateDisclosureCardText.identifyStates + RfaCommon.requiredIndicator}
               values={this.props.otherStatesOfLiving}
               optionList={this.props.stateTypes}

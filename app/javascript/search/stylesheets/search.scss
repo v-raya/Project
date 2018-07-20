@@ -65,23 +65,52 @@ input[type=number]::-webkit-outer-spin-button {
   vertical-align: middle;
 }
 
-.Select--multi{
-  margin-top: 7.5px;
+.Select-value{
+  margin-top: 3.1px !important;
 }
 
 .Select-control {
-  height: 28px;
+  height: 31px;
+}
+
+.Select-clear-zone {
+  display: inline !important;
+}
+
+.Select-clear {
+  display: inline;
 }
 
 .Select-multi-value-wrapper {
-  height: 22px;
+  height: 28px;
 }
 
-.searchSelect {
-  height: 28px;
-  padding: 0px;
-  border: 0px;
+#facility_select, #county_select {
+    height: 28px;
+    padding: 0px;
+    border: 0px;
 }
+
+.allActive {
+  margin-top: 3rem;
+}
+
+.my-react-select .Select-value:first-child .Select-value-icon,
+.my-react-select .Select-value:nth-child(n+2) {
+  display: none;
+}
+
+.is-selected {
+  background-color: #ccdde0 !important;
+}
+
+.Select-menu-outer {
+  max-height: 90rem;
+  }
+  
+  .Select-menu {
+  max-height: 85rem;
+  }
 
 .search_page .table>thead>tr {
   background-color: #8b8b8b;

@@ -3,26 +3,34 @@ import Select from 'react-select'
 import PropTypes from 'prop-types'
 
 const MultiSelect = ({
+  gridClassName,
   label,
   values,
+  disabled,
   searchable,
+  clearable,
   optionList,
+  valueRenderer,
+  removeSelected,
   className,
   placeholder,
   onChange
 }) => {
   return (
-    <div className='col-md-12'>
+    <div className={gridClassName}>
       <label>{label}</label>
       <Select
         className={className}
         tabSelectsValue={false}
+        disabled={disabled}
         multi
         searchable={searchable}
+        clearable={clearable}
+        removeSelected={removeSelected}
         value={values.map((val) => val.value)}
+        valueRenderer={valueRenderer}
         options={optionList.map((type) => ({label: type.value, value: type.value, id: type.id}))}
         onChange={onChange}
-        clearable={false}
         placeholder={placeholder}
       />
     </div>

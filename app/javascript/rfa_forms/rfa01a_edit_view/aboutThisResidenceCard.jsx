@@ -119,6 +119,7 @@ export default class AboutThisResidenceCard extends React.Component {
             onChange={(event) => this.props.setParentState('directions_to_home', event.target.value)} />
 
           <MultiSelect
+            gridClassName='col-md-12'
             label='Language(s) spoken in the home (required)'
             values={aboutResidence.home_languages}
             className='languages'
