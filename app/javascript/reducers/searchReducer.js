@@ -39,7 +39,7 @@ export const searchReducer = (state = initialState, action) => {
     case Constants.SEARCH_RESULTS_FETCH_ERROR:
       return {...state,
         searchResults: [],
-        errors: action.payload.errorResponse,
+        errors: action.payload.error,
         errorMessage: undefined}
     case Constants.NO_SEARCH_CRITERIA_ERROR:
       return {...state,

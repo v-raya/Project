@@ -1,5 +1,5 @@
 import {takeLatest, put, call} from 'redux-saga/effects'
-import {fetchRequestWithErrors} from '../helpers/http'
+import {fetchRequestWithErrors} from 'helpers/http'
 import {fetchSuccess, fetchFailure} from 'actions/facilityActions'
 import {FACILITY_RESULTS_FETCH} from 'constants/actionTypes'
 
@@ -10,8 +10,7 @@ export function * fetchFacilityById (action) {
     const response = yield call(fetchRequestWithErrors, url, 'GET', null)
     yield put(fetchSuccess({facility: response}))
   } catch (error) {
-    const errorResponse = yield call([error, error.json])
-    yield put(fetchFailure({errorResponse}))
+    yield put(fetchFailure({error}))
   }
 }
 

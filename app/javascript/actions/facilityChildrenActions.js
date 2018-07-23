@@ -10,8 +10,8 @@ export const fetchSuccess = (facilityChildren) => ({
   payload: facilityChildren
 })
 
-export const fetchFailure = (errorResponse) => ({
+export const fetchFailure = (error) => ({
   type: Constants.FACILITY_CHILDREN_RESULTS_FETCH_ERROR,
-  payload: errorResponse,
+  payload: error,
   error: true
 })

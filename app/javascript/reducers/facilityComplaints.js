@@ -20,7 +20,7 @@ export const facilityComplaints = (state = initialState, action) => {
     case FACILITY_COMPLAINTS_RESULTS_FETCH_ERROR:
       return {...state,
         complaints: null,
-        errors: action.payload.errorResponse,
+        errors: action.payload.error,
         isFetching: false}
     default:
       return state

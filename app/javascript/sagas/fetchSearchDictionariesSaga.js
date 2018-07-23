@@ -1,7 +1,6 @@
 import {takeLatest, put, call} from 'redux-saga/effects'
-import {delay} from 'redux-saga'
-import {fetchRequest} from '../helpers/http'
-import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
+import {fetchRequestWithErrors} from 'helpers/http'
+import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 import {fetchDictionarySuccess, fetchFailure} from 'actions/searchActions'
 import {SEARCH_DICTIONARIES_FETCH} from 'constants/actionTypes'
 
@@ -9,11 +8,10 @@ import {SEARCH_DICTIONARIES_FETCH} from 'constants/actionTypes'
 export function * fetchSearchDictionaries (action) {
   try {
     const url = '/search/search_dictionaries'
-    const response = yield call(fetchRequest, url, 'GET')
-    const data = yield call([response, response.json])
-    yield put(fetchDictionarySuccess({countyTypes: data.countyTypes, facilityTypes: data.facilityTypes}))
+    const response = yield call(fetchRequestWithErrors, url, 'GET', null)
+    yield put(fetchDictionarySuccess({countyTypes: response.countyTypes, facilityTypes: response.facilityTypes}))
   } catch (error) {
-    yield put(fetchFailure(error))
+    console.log(error)
   }
 }
 

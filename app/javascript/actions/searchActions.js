@@ -62,9 +62,9 @@ export const fetchSuccess = (searchResult) => ({
   payload: searchResult
 })
 
-export const fetchFailure = (errorResponse) => ({
+export const fetchFailure = (error) => ({
   type: Constants.SEARCH_RESULTS_FETCH_ERROR,
-  payload: errorResponse,
+  payload: error,
   error: true
 })
 

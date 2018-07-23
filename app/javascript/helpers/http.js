@@ -34,7 +34,7 @@ export const fetchRequest = (urlFromComponent, method, params, headerParams) => 
 
 function handleErrors (response) {
   if (!response.ok) {
-    throw response
+    return response.json().then(err => { throw err })
   }
   return response.json()
 }

@@ -12,8 +12,8 @@ export const fetchSuccess = (facilityComplaints) => ({
   payload: facilityComplaints
 })
 
-export const fetchFailure = (errorResponse) => ({
+export const fetchFailure = (error) => ({
   type: FACILITY_COMPLAINTS_RESULTS_FETCH_ERROR,
-  payload: errorResponse,
+  payload: error,
   error: true
 })

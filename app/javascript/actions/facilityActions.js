@@ -10,8 +10,8 @@ export const fetchSuccess = (facility) => ({
   payload: facility
 })
 
-export const fetchFailure = (errorResponse) => ({
+export const fetchFailure = (error) => ({
   type: Constants.FACILITY_RESULTS_FETCH_ERROR,
-  payload: errorResponse,
+  payload: error,
   error: true
 })

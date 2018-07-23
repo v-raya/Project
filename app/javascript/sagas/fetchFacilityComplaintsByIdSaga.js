@@ -1,5 +1,5 @@
 import {takeLatest, put, call} from 'redux-saga/effects'
-import {fetchRequestWithErrors} from '../helpers/http'
+import {fetchRequestWithErrors} from 'helpers/http'
 import {FACILITY_COMPLAINTS_RESULTS_FETCH, fetchSuccess, fetchFailure} from 'actions/facilityComplaintsActions'
 
 // worker saga: makes the api call when watcher saga sees the action
@@ -9,8 +9,7 @@ export function * fetchFacilityComplaintsById (action) {
     const response = yield call(fetchRequestWithErrors, url, 'GET', null)
     yield put(fetchSuccess(response))
   } catch (error) {
-    const errorResponse = yield call([error, error.json])
-    yield put(fetchFailure({errorResponse}))
+    yield put(fetchFailure({error}))
   }
 }
 

@@ -1,7 +1,6 @@
 import {takeLatest, put, call} from 'redux-saga/effects'
-import {delay} from 'redux-saga'
-import {fetchRequest, fetchRequestWithErrors} from '../helpers/http'
-import {urlPrefixHelper} from '../helpers/url_prefix_helper.js.erb'
+import {fetchRequestWithErrors} from 'helpers/http'
+import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 import {fetchSuccess, fetchFailure, fetchNoSearchCriteria} from 'actions/searchActions'
 import {SEARCH_RESULTS_FETCH} from 'constants/actionTypes'
 import {NoSearchResultsErrorMessage, NoSearchCriteriaMessage} from 'search/common/commonUtils'
@@ -17,9 +16,8 @@ export function * fetchSearchResults (action) {
       total: response.total,
       errorMessage: response.facilities.length > 0 ? '' : NoSearchResultsErrorMessage}))
   } catch (error) {
-    if (error.statusText !== 'Internal Server Error') {
-      const errorResponse = yield call([error, error.json])
-      yield put(fetchFailure({errorResponse}))
+    if (error.issue_details) {
+      yield put(fetchFailure({error}))
     } else {
       yield put(fetchNoSearchCriteria({errorMessage: NoSearchCriteriaMessage}))
     }

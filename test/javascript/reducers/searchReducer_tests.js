@@ -131,7 +131,7 @@ describe('Verify searchReducer', () => {
       } ]
     }
     const fetchFailureAction = fetchFailure({
-      errorResponse: errorResponse
+      error: errorResponse
     })
 
     let outputState = initialState
