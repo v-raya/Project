@@ -18,14 +18,6 @@ export const dictionaryNilSelectValue = (object) => {
   return object[object.selectedIndex].value
 }
 
-export const getArrayOfId = (array) => {
-  if (array && array.length > 0) {
-    return array.map((e) => (e.id))
-  } else {
-    return undefined
-  }
-}
-
 export const dictionaryNilSelectText = (object) => {
   return object[object.selectedIndex].text
 }

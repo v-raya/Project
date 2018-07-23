@@ -115,6 +115,8 @@ describe FacilitiesController do
                   must: [
                     { match: { 'county.value': 'Los Angeles' } },
                     { term: { 'type.value': 'Resource Family Home' } },
+                    { term: { 'status.value': 'Pending' } },
+                    { term: { 'status.active': true }},
                     { match_phrase: { 'id': '123124' } },
                     { query_string: { 'default_field' => :name, 'query' => 'home' } }
                   ]
@@ -131,6 +133,8 @@ describe FacilitiesController do
       query_array = [
         { 'county.value': { query_type: 'match', value: 'Los Angeles' },
           'type.value': { query_type: 'term', value: 'Resource Family Home' },
+          'status.value': { query_type: 'term', value: 'Pending' },
+          'status.active': { query_type: 'term', value: true },
           'id': { query_type: 'match_phrase', value: '123124' },
           'name': { query_type: 'query_string', value: 'home' } }
       ]

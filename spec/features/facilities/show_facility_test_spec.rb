@@ -10,19 +10,19 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
 
   def facilities_list
     visit search_index_path
-    select 'Riverside', from: 'county_select'
+    select 'Alameda', from: 'county_select'
     find_button('search').click
   end
 
   scenario 'To check facility name in facility after clicking facility name from list of facility search results' do
     facilities_list
-    click_link('Guadalupe, Swan')
-    expect(page).to have_text('Guadalupe, Swan')
+    click_link('Allen, Alberta')
+    expect(page).to have_text('Allen, Alberta')
   end
 
   scenario 'To check faclilty list after refresh' do
     facilities_list
-    click_link('Guadalupe, Swan')
+    click_link('Allen, Alberta')
     page.evaluate_script('window.location.reload()')
     expect(page).to have_content('FACILITY TYPE :', minimum: 1)
   end
@@ -39,9 +39,9 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
   scenario 'To click into facility and validate Children' do
     visit search_index_path
     fill_in 'Enter Facility ID #', with: '250000004'
-    select 'Alpine', from: 'county_select'
+    select 'Modoc', from: 'county_select'
     find_button('search').click
-    click_link('Peace Blossoms Home')
+    click_link("Alturas Annie's Place")
     expect(page).to have_text('Children currently placed in facility')
   end
 
@@ -74,8 +74,8 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
 
   scenario 'find facilties by entering facility ID with alpha characters' do
     visit search_index_path
-    select 'Sacramento', from: 'county_select'
-    fill_in 'Enter Facility ID #', with: 'GmbHwyg0NM'
+    select 'Alameda', from: 'county_select'
+    fill_in 'Enter Facility ID #', with: 'A5b6c7d8'
     find_button('search').click
     expect(page).to have_content('Facility Phone Number', minimum: 1)
   end

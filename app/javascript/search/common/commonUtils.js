@@ -34,6 +34,16 @@ export const checkAndSplitValue = (value) => {
   }
 }
 
+export const getArrayOfId = (array) => {
+  if (array && array.length > 0) {
+    return array.map((e) => (e.id))
+  }
+}
+
+export const checkForLicenseStatus = (isAllActive, statusValue) => {
+  return isAllActive ? '' : getArrayOfId(statusValue)
+}
+
 export const respectiveNumberOrNA = (phones, phoneRelation) => {
   const phoneObject = phones && phones.find(o => o.relation === phoneRelation)
   if (phoneObject && Boolean(phoneObject.number)) {

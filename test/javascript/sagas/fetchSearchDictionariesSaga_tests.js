@@ -18,7 +18,8 @@ describe('fetchSearchDictionaries', () => {
     const gen = fetchSearchDictionaries(action)
     const countyTypes = {id: '1', value: 'Madera'}
     const facilityTypes = {id: '1', value: 'Adoption History'}
-    const response = { countyTypes: countyTypes, facilityTypes: facilityTypes }
+    const licenseStatuses = {id: '2', value: 'Pending'}
+    const response = { countyTypes: countyTypes, facilityTypes: facilityTypes, licenseStatuses: licenseStatuses }
     expect(gen.next().value).toEqual(call(fetchRequestWithErrors, url, 'GET', null))
     expect(gen.next(response).value).toEqual(put(fetchDictionarySuccess(response)))
   })

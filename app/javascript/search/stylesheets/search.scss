@@ -32,19 +32,6 @@ input[type=number]::-webkit-outer-spin-button {
   pointer-events: none;
 }
 
-.input_data input {
-  width: 100%;
-  height: 30px;
-  padding: 5px;
-  -webkit-appearance: none;
-}
-
-.input_data input::-webkit-contacts-auto-fill-button {
-  visibility: hidden;
-  display: none !important;
-  pointer-events: none;
-}
-
 .styled-select span:before {
   color: #ffffff;
 }
@@ -85,10 +72,15 @@ input[type=number]::-webkit-outer-spin-button {
   height: 28px;
 }
 
-#facility_select, #county_select {
-    height: 28px;
-    padding: 0px;
-    border: 0px;
+.searchSelect {
+  height: 28px;
+  padding: 2px;
+  border: 0px;
+  background-color: #ffff; 
+}
+
+.my-react-select {
+  margin-top: 6px;
 }
 
 .allActive {
@@ -105,12 +97,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .Select-menu-outer {
-  max-height: 90rem;
+  max-height: 45rem;
   }
   
-  .Select-menu {
-  max-height: 85rem;
-  }
+.Select-menu {
+  max-height: 40rem;
+}
 
 .search_page .table>thead>tr {
   background-color: #8b8b8b;
@@ -136,25 +128,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .search-section {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.search-section .search_input {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border: 1px solid #ddd;
+  padding: 25px;
+  margin: 20px;
   background: #ddd;
-}
-
-.search-section .search_input .input_lable {
-  margin-bottom: -2px;
-}
-
-.search-section .search_input .input_lable span {
-  padding: 0px 15px;
-  background: #8b8b8b;
-  color: #fff;
 }
 
 .search-toggle {
@@ -163,7 +139,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .search_block {
- top: 25px;
+ margin-top: 18px;
 }
 
 .search_details p {
@@ -181,6 +157,9 @@ input[type=number]::-webkit-outer-spin-button {
 .page_number {
   width: 60px;
   display: inline;
+  padding: 2px;
+  border: ridge;
+  margin-right: 6px;
 }
 
 .toggle_result {
@@ -207,19 +186,8 @@ input[type=number]::-webkit-outer-spin-button {
   margin-right: 15rem
 }
 
-.page_number {
-  padding: 2px;
-  border: ridge;
-  margin-right: 6px;
-}
-
 .noOfPages {
   margin-left: 6px;
-}
-
-.field_input {
-  padding-left: 0px;
-  padding-right: 0px;
 }
 
 .field_search {

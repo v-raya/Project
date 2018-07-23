@@ -569,7 +569,8 @@ const countyTypes = Object.freeze({
     {
       'value': 'Calaveras',
       'id': 5
-    }]})
+    }]
+})
 
 const facilityTypes = Object.freeze({
   'items': [
@@ -579,6 +580,30 @@ const facilityTypes = Object.freeze({
     {'value': 'Court Specified Home', 'id': 17},
     {'Value': 'Crisis Nursery', 'id': 7}
   ]
+})
+
+const licenseStatuses = Object.freeze({
+  'items': [
+    {
+      'value': 'Licensed',
+      'id': 1
+    },
+    {
+      'value': 'RFA Approved',
+      'id': 2
+    },
+    {
+      'value': 'Certified',
+      'id': 3
+    },
+    {
+      'value': 'Pending',
+      'id': 4
+    },
+    {
+      'value': 'RFA Pending',
+      'id': 5
+    }]
 })
 
 const user = Object.freeze({
@@ -592,4 +617,4 @@ const user = Object.freeze({
 
 export {siblingGroups, ageGroups, marriageTerminationReasons, relationshipToApplicantTypes,
   nameTypes, suffixTypes, prefixTypes, salaryTypes, relationshipTypes, applicantrelationTypes,
-  educationLevels, ethnicityTypes, genderTypes, schoolGrades, stateTypes, languageTypes, residenceTypes, countyTypes, facilityTypes, user, selectedYes, phoneTypes, licenseTypes }
+  educationLevels, ethnicityTypes, genderTypes, schoolGrades, stateTypes, languageTypes, residenceTypes, countyTypes, facilityTypes, licenseStatuses, user, selectedYes, phoneTypes, licenseTypes }

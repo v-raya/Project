@@ -1,5 +1,5 @@
 import {searchReducer} from 'reducers/searchReducer'
-import {countyTypes, facilityTypes, user} from '../helpers/constants'
+import {countyTypes, facilityTypes, licenseStatuses, user} from '../helpers/constants'
 import {
   searchApiCall,
   searchUserDataCall,
@@ -33,6 +33,7 @@ describe('Verify searchReducer', () => {
       pageNumber: 1,
       countyTypes: [],
       facilityTypes: [],
+      licenseStatuses: [],
       errors: {},
       userCounty: '',
       errorMessage: undefined,
@@ -91,12 +92,13 @@ describe('Verify searchReducer', () => {
     expect(searchReducer(undefined, fetchUserDataSuccessAction)).toEqual(outputState)
   })
 
-  it('Search dictionary fetch call success returns countyTypes and facilityTypes', () => {
-    const fetchDictionarySuccessAction = fetchDictionarySuccess({countyTypes, facilityTypes})
+  it('Search dictionary fetch call success returns countyTypes, facilityTypes, licenseStatuses', () => {
+    const fetchDictionarySuccessAction = fetchDictionarySuccess({countyTypes, facilityTypes, licenseStatuses})
 
     let outputState = initialState
     outputState.countyTypes = countyTypes
     outputState.facilityTypes = facilityTypes
+    outputState.licenseStatuses = licenseStatuses
     outputState.isToggled = true
     outputState.pageNumber = 1
     outputState.sizeValue = 10
@@ -175,6 +177,7 @@ describe('Verify searchReducer', () => {
       isToggled: false,
       countyTypes: [],
       facilityTypes: [],
+      licenseStatuses: [],
       userCounty: '',
       errors: {},
       errorMessage: undefined
@@ -189,6 +192,7 @@ describe('Verify searchReducer', () => {
       pageNumber: 1,
       countyTypes: [],
       facilityTypes: [],
+      licenseStatuses: [],
       userCounty: '',
       errors: {},
       errorMessage: undefined

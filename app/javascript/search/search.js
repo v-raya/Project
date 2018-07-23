@@ -5,12 +5,12 @@ import SearchInput from './searchInput'
 import SearchList from './searchList'
 import AdvancedSearch from './advancedSearch'
 import SearchNotFound from './searchNotFound'
-import {checkForValue, checkAndSplitValue} from 'search/common/commonUtils'
+import {checkForValue, checkAndSplitValue, checkForLicenseStatus} from 'search/common/commonUtils'
 import {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall, searchUserDataCall, handleScrollBarChange} from 'actions/searchActions'
 import {connect} from 'react-redux'
 import {PageHeader} from 'react-wood-duck'
 import BreadCrumb from 'components/common/breadCrumb'
-import {getFromValue, floatToNextInt, getArrayOfId} from 'helpers/commonHelper.jsx'
+import {getFromValue, floatToNextInt} from 'helpers/commonHelper.jsx'
 import Pagination from './pagination'
 
 class Search extends Component {
@@ -35,7 +35,7 @@ class Search extends Component {
       },
       'status.id': {
         query_type: 'term',
-        value: this.props.inputData.isAllActive ? '' : getArrayOfId(this.props.inputData.licenseStatusValue)
+        value: checkForLicenseStatus(this.props.inputData.isAllActive, this.props.inputData.licenseStatusValue)
       },
       'status.active': {
         query_type: 'term',

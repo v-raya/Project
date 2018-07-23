@@ -39,6 +39,12 @@ describe('Verify Search component', function () {
           value: ''
         }
       ],
+      licenseStatuses: [
+        {
+          id: '',
+          value: ''
+        }
+      ],
       searchResults: [
         {
           assigned_worker: 'Kari Gutierrez',
@@ -116,6 +122,8 @@ describe('Verify Search component', function () {
     const expectedQuery = {
       'county.id': {query_type: 'term', value: '19'},
       'type.id': {query_type: 'term', value: undefined},
+      'status.id': { query_type: 'term', value: undefined },
+      'status.active': { query_type: 'term', value: undefined },
       'license_number': {query_type: 'match_phrase', value: undefined},
       'name': {query_type: 'query_string', value: undefined},
       'addresses.address': {query_type: 'query_string', value: undefined}
@@ -145,6 +153,8 @@ describe('Verify Search component', function () {
     const expectedQuery = {
       'county.id': {query_type: 'term', value: '19'},
       'type.id': {query_type: 'term', value: undefined},
+      'status.id': { query_type: 'term', value: undefined },
+      'status.active': { query_type: 'term', value: undefined },
       'license_number': {query_type: 'match_phrase', value: undefined},
       'name': {query_type: 'query_string', value: undefined},
       'addresses.address': {query_type: 'query_string', value: undefined}
@@ -185,6 +195,12 @@ describe('Verify Search component', function () {
         }
       ],
       countyTypes: [
+        {
+          id: '',
+          value: ''
+        }
+      ],
+      licenseStatuses: [
         {
           id: '',
           value: ''

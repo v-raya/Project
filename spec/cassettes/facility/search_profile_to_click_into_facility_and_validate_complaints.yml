@@ -10,7 +10,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
+      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
   response:
     status:
       code: 200
@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 29 Mar 2018 18:18:59 GMT
+      - Mon, 23 Jul 2018 23:51:34 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 28-Mar-2018 18:18:59
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:35
         GMT
       vary:
       - Accept-Encoding
@@ -34,7 +34,7 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '596'
+      - '597'
       connection:
       - keep-alive
     body:
@@ -193,7 +193,7 @@ http_interactions:
             "id" : 50
           }, {
             "value" : "State of California",
-            "id" : 59
+            "id" : 99
           }, {
             "value" : "Sutter",
             "id" : 51
@@ -221,7 +221,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 29 Mar 2018 18:18:59 GMT
+  recorded_at: Mon, 23 Jul 2018 23:51:35 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
@@ -232,7 +232,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
+      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
   response:
     status:
       code: 200
@@ -243,9 +243,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 29 Mar 2018 18:18:59 GMT
+      - Mon, 23 Jul 2018 23:51:35 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 28-Mar-2018 18:18:59
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:35
         GMT
       vary:
       - Accept-Encoding
@@ -256,7 +256,7 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '494'
+      - '473'
       connection:
       - keep-alive
     body:
@@ -264,120 +264,84 @@ http_interactions:
       string: |-
         {
           "items" : [ {
-            "value" : "Foster Family Agency Certified Home",
-            "id" : 9
-          }, {
             "value" : "Adoption Agency",
-            "id" : 400
-          }, {
-            "value" : "Resource Family Home",
-            "id" : 403
-          }, {
-            "value" : "Foster Family Agency",
-            "id" : 430
-          }, {
-            "value" : "Foster Family AG-Sub",
-            "id" : 431
-          }, {
-            "value" : "Small Family Home",
-            "id" : 710
-          }, {
-            "value" : "Foster Family Home",
-            "id" : 711
-          }, {
-            "value" : "Crisis Nursery",
-            "id" : 720
-          }, {
-            "value" : "Temporary Shelter Care Facility",
-            "id" : 721
-          }, {
-            "value" : "Transitional Shelter Care",
-            "id" : 722
-          }, {
-            "value" : "Transitional Housing Placement Program",
-            "id" : 726
+            "id" : 1
           }, {
             "value" : "Community Treatment Facility",
-            "id" : 728
-          }, {
-            "value" : "GH-Enhanced Behavioral Supports Home",
-            "id" : 729
-          }, {
-            "value" : "Group Home",
-            "id" : 730
-          }, {
-            "value" : "Out Of State GH",
-            "id" : 731
-          }, {
-            "value" : "Runaway And Homeless Youth Shelter-GH",
-            "id" : 732
-          }, {
-            "value" : "Short Term Residential Therapeutic Program",
-            "id" : 733
+            "id" : 11
           }, {
             "value" : "County Shelter/Receiving Home(Non EA/AFDC)",
-            "id" : 790
+            "id" : 16
           }, {
             "value" : "Court Specified Home",
-            "id" : 791
+            "id" : 17
           }, {
-            "value" : "Relative/NREFM Home",
-            "id" : 793
-          }, {
-            "value" : "Tribe Specified Home",
-            "id" : 795
-          }, {
-            "value" : "Guardian Home",
-            "id" : 796
-          }, {
-            "value" : "Supervised Independent Living Placement",
-            "id" : 800
+            "value" : "Crisis Nursery",
+            "id" : 7
           }, {
             "value" : "Foster Fam Agency Cert Resource Fam Home",
-            "id" : 808
+            "id" : 23
+          }, {
+            "value" : "Foster Family Agency",
+            "id" : 3
+          }, {
+            "value" : "Foster Family Agency Certified Home",
+            "id" : 22
+          }, {
+            "value" : "Foster Family AG-Sub",
+            "id" : 4
+          }, {
+            "value" : "Foster Family Home",
+            "id" : 6
+          }, {
+            "value" : "GH-Enhanced Behavioral Supports Home",
+            "id" : 12
+          }, {
+            "value" : "Group Home",
+            "id" : 13
+          }, {
+            "value" : "Guardian Home",
+            "id" : 19
+          }, {
+            "value" : "Out Of State GH",
+            "id" : 14
+          }, {
+            "value" : "Relative/NREFM Home",
+            "id" : 20
+          }, {
+            "value" : "Resource Family Home",
+            "id" : 2
+          }, {
+            "value" : "Runaway And Homeless Youth Shelter-GH",
+            "id" : 24
+          }, {
+            "value" : "Short Term Residential Therapeutic Program",
+            "id" : 15
+          }, {
+            "value" : "Small Family Home",
+            "id" : 5
+          }, {
+            "value" : "Supervised Independent Living Placement",
+            "id" : 21
+          }, {
+            "value" : "Temporary Shelter Care Facility",
+            "id" : 8
+          }, {
+            "value" : "Transitional Housing Placement Program",
+            "id" : 10
+          }, {
+            "value" : "Transitional Shelter Care",
+            "id" : 9
+          }, {
+            "value" : "Tribe Specified Home",
+            "id" : 18
           } ]
         }
     http_version: 
-  recorded_at: Thu, 29 Mar 2018 18:18:59 GMT
-- request:
-    method: post
-    uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
-    body:
-      encoding: UTF-8
-      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"match_phrase":{"county.id":"33"}},{"match_phrase":{"id":"100000299"}}]}}]}},"from":"0","size":"10","sort":[]}'
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      content-type:
-      - application/json
-      date:
-      - Thu, 29 Mar 2018 18:19:00 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 28-Mar-2018 18:19:00
-        GMT
-      content-length:
-      - '1451'
-      connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"took":4,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":1,"max_score":10.0999365,"hits":[{"_index":"facilities","_type":"facility","_id":"100000299","_score":10.0999365,"_source":{"href":null,"id":"100000299","capacity_last_changed":null,"type":{"id":"711","value":"FOSTER
-        FAMILY HOME"},"name":"Little Dreams Home","licensee_name":"Ananya Nandi","license_type":"A","assigned_worker":{"id":null,"value":null},"district_office":{"number":"19","name":"PACIFIC
-        INLAND CR"},"license_number":"100000299","status":{"id":"7","value":"APPLICATION
-        WITHDRWN"},"capacity":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"33","value":"RIVERSIDE","lis_code":null},"phones":[{"id":null,"relation":"primary","type":"Cell","number":"9162990000"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"123
-        Main St.","city":null,"state":"CA","zip_code":null,"zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":null,"city":null,"state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":null,"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"}}]}}'
-    http_version: 
-  recorded_at: Thu, 29 Mar 2018 18:19:00 GMT
+  recorded_at: Mon, 23 Jul 2018 23:51:35 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/facilities/100000299
+    uri: https://calsapi.preint.cwds.io/dictionaries/license-status-types
     body:
       encoding: US-ASCII
       string: ''
@@ -385,7 +349,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
+      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
   response:
     status:
       code: 200
@@ -396,9 +360,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 29 Mar 2018 18:19:01 GMT
+      - Mon, 23 Jul 2018 23:51:35 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 28-Mar-2018 18:19:01
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:35
         GMT
       vary:
       - Accept-Encoding
@@ -409,57 +373,177 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '397'
+      - '505'
       connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "href" : "facilities/100000299",
-          "id" : "100000299",
-          "type" : {
-            "id" : "711",
-            "value" : "FOSTER FAMILY HOME"
-          },
-          "name" : "Little Dreams Home",
-          "licensee_name" : "Ananya Nandi",
-          "license_type" : "A",
-          "assigned_worker" : { },
-          "district_office" : {
-            "number" : "19",
-            "name" : "PACIFIC INLAND CR"
-          },
-          "license_number" : "100000299",
-          "status" : {
-            "id" : "7",
-            "value" : "APPLICATION WITHDRWN"
-          },
-          "county" : {
-            "id" : "33",
-            "value" : "RIVERSIDE"
-          },
-          "phones" : [ {
-            "relation" : "primary",
-            "type" : "Cell",
-            "number" : "9162990000"
-          } ],
-          "addresses" : [ {
-            "type" : "Residential",
-            "address" : {
-              "street_address" : "123 Main St.",
-              "state" : "CA"
-            }
+          "items" : [ {
+            "value" : "Application Denied",
+            "id" : 8,
+            "active" : false
           }, {
-            "type" : "Mailing",
-            "address" : {
-              "state" : "CA"
-            }
-          } ],
-          "facility_source" : "LIS"
+            "value" : "Application Withdrawn",
+            "id" : 7,
+            "active" : false
+          }, {
+            "value" : "Certified (CFH, RFH & OSGHC)",
+            "id" : 12,
+            "active" : true
+          }, {
+            "value" : "Closed Non-payment",
+            "id" : 13,
+            "active" : false
+          }, {
+            "value" : "Closed, Agency Initiated",
+            "id" : 10,
+            "active" : false
+          }, {
+            "value" : "Closed, Change of Location",
+            "id" : 15,
+            "active" : false
+          }, {
+            "value" : "Closed, Change of Ownership",
+            "id" : 14,
+            "active" : false
+          }, {
+            "value" : "Closed, Unlicensed Facility",
+            "id" : 11,
+            "active" : false
+          }, {
+            "value" : "Closed,License Initiated",
+            "id" : 9,
+            "active" : false
+          }, {
+            "value" : "Decertified (CFH), Rescinded (RFH)",
+            "id" : 16,
+            "active" : false
+          }, {
+            "value" : "Inactive",
+            "id" : 18,
+            "active" : false
+          }, {
+            "value" : "Incomplete Application",
+            "id" : 17,
+            "active" : false
+          }, {
+            "value" : "Licensed",
+            "id" : 3,
+            "active" : true
+          }, {
+            "value" : "Licensed Pendng Incr in Capacty/Toddlers",
+            "id" : 19,
+            "active" : false
+          }, {
+            "value" : "Licensed/Pending Increase",
+            "id" : 6,
+            "active" : true
+          }, {
+            "value" : "Licensee initiated closure",
+            "id" : 20,
+            "active" : false
+          }, {
+            "value" : "Pending",
+            "id" : 2,
+            "active" : true
+          }, {
+            "value" : "Probationary License",
+            "id" : 5,
+            "active" : true
+          }, {
+            "value" : "Provisional License",
+            "id" : 4,
+            "active" : true
+          }, {
+            "value" : "RFA Approved",
+            "id" : 30,
+            "active" : true
+          }, {
+            "value" : "RFA Denied",
+            "id" : 24,
+            "active" : false
+          }, {
+            "value" : "RFA Discontinued",
+            "id" : 25,
+            "active" : false
+          }, {
+            "value" : "RFA Pending",
+            "id" : 26,
+            "active" : true
+          }, {
+            "value" : "RFA Probationary",
+            "id" : 27,
+            "active" : true
+          }, {
+            "value" : "RFA Suspended",
+            "id" : 28,
+            "active" : false
+          }, {
+            "value" : "RFA Withdrawal",
+            "id" : 29,
+            "active" : false
+          }, {
+            "value" : "Revoked",
+            "id" : 21,
+            "active" : false
+          }, {
+            "value" : "Suspended",
+            "id" : 23,
+            "active" : false
+          }, {
+            "value" : "Unlicensed",
+            "id" : 1,
+            "active" : false
+          }, {
+            "value" : "Unlicensed Facility Closure",
+            "id" : 22,
+            "active" : false
+          } ]
         }
     http_version: 
-  recorded_at: Thu, 29 Mar 2018 18:19:01 GMT
+  recorded_at: Mon, 23 Jul 2018 23:51:35 GMT
+- request:
+    method: post
+    uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
+    body:
+      encoding: UTF-8
+      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"term":{"county.id":"33"}},{"match_phrase":{"license_number":"100000299"}}]}}]}},"from":"0","size":"10","sort":["_score",{"name.for_sort":{"order":"asc"}}]}'
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-type:
+      - application/json
+      date:
+      - Mon, 23 Jul 2018 23:51:40 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:40
+        GMT
+      content-length:
+      - '1622'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"took":5,"timed_out":false,"_shards":{"total":1,"successful":1,"failed":0},"hits":{"total":1,"max_score":null,"hits":[{"_index":"facilities","_type":"facility","_id":"100000299","_score":8.524694,"_source":{"href":null,"id":"100000299","capacity_last_changed":null,"type":{"id":"6","value":"Foster
+        Family Home"},"adoption_home_only_indicator":null,"name":"Little Dreams Home","licensee_name":"Ananya
+        Nandi","license_type":"A","assigned_worker":{"phones":[],"email":null,"full_name":null,"id":null},"district_office":{"number":"19","name":"PACIFIC
+        INLAND CR"},"license_number":"100000299","status":{"active":false,"id":"7","value":"Application
+        Withdrawn"},"capacity":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"123
+        Main St. CA","full_mailing_address":"CA","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"33","value":"RIVERSIDE","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"(916)
+        299-"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"123
+        Main St.","city":null,"state":"CA","zip_code":null,"zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":null,"city":null,"state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[8.524694,"little
+        dreams home"]}]}}'
+    http_version: 
+  recorded_at: Mon, 23 Jul 2018 23:51:40 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/100000299/children
@@ -470,59 +554,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
-  response:
-    status:
-      code: 404
-      message: 
-    headers:
-      cache-control:
-      - must-revalidate,no-cache,no-store
-      content-security-policy:
-      - default-src 'self' 'unsafe-inline';
-      content-type:
-      - text/html;charset=iso-8859-1
-      date:
-      - Thu, 29 Mar 2018 18:19:01 GMT
-      set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 28-Mar-2018 18:19:01
-        GMT
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - deny
-      x-xss-protection:
-      - 1; mode=block
-      content-length:
-      - '261'
-      connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: |
-        <html>
-        <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-        <title>Error 404 Not Found</title>
-        </head>
-        <body><h2>HTTP ERROR 404</h2>
-        <p>Problem accessing /facilities/100000299/children. Reason:
-        <pre>    Not Found</pre></p>
-        </body>
-        </html>
-    http_version: 
-  recorded_at: Thu, 29 Mar 2018 18:19:02 GMT
-- request:
-    method: get
-    uri: https://calsapi.preint.cwds.io/facilities/100000299/complaints
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-type:
-      - application/json
-      Authorization:
-      - 5b156e0c-7d96-462d-b6c3-edcd112a81c5
+      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
   response:
     status:
       code: 200
@@ -533,9 +565,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 29 Mar 2018 18:19:02 GMT
+      - Mon, 23 Jul 2018 23:51:40 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 28-Mar-2018 18:19:02
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:41
         GMT
       vary:
       - Accept-Encoding
@@ -546,7 +578,121 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '622'
+      - '22'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "children" : [ ]
+        }
+    http_version: 
+  recorded_at: Mon, 23 Jul 2018 23:51:41 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/facilities/100000299/complaints
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Security-Policy:
+      - default-src 'self' 'unsafe-inline';
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 23 Jul 2018 23:51:40 GMT
+      Set-Cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:40
+        GMT
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '644'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "complaints" : [ {
+            "id" : "19-CR-195002-20041019105945",
+            "complaint_date" : "2004-10-19 00:00:00",
+            "assigned_worker" : "Saritha Reddy",
+            "control_number" : "198952",
+            "priority_level" : "",
+            "status" : "Approved",
+            "pre_investigation_comments" : "PO Zamora not in today - contact made with Janice Featherston as described above.",
+            "post_investigation_comments" : "Left message on her voicemail informing her of the outcome of the investigation.",
+            "contact_summary" : "Assigned to LPA Jeffers.\r\nComplaint originally written on 10/15/04, under the wrong Olive Crest home.  LPA Jeffers re-wrote the complaint under the same control #.\r\n\"10-day\" visit completed 10/21/04.\r\nInterviews conducted with the 3 clients in placement at the time, with the staff alleged to be the perpetrator.",
+            "followup_comments" : "None at this time.",
+            "allegations" : [ {
+              "complaint_type_code" : "3",
+              "complaint_type_description" : "Personal Rights",
+              "allegation" : "Staff Meena Desai marks clients Alexzena Webb and Dizirea Goodwin with a ballpoint pen while they are sleeping.",
+              "resolution_type_code" : "U",
+              "resolution_type_description" : "Unfounded"
+            } ]
+          } ]
+        }
+    http_version: 
+  recorded_at: Mon, 23 Jul 2018 23:51:41 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/facilities/100000299/complaints
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Mon, 23 Jul 2018 23:51:40 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:40
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '644'
       connection:
       - keep-alive
     body:
@@ -565,14 +711,202 @@ http_interactions:
             "contact_summary" : "Assigned to LPA Jeffers.\r\nComplaint originally written on 10/15/04, under the wrong Olive Crest home.  LPA Jeffers re-wrote the complaint under the same control #.\r\n\"10-day\" visit completed 10/21/04.\r\nInterviews conducted with the 3 clients in placement at the time, with the staff alleged to be the perpetrator.",
             "followup_comments" : "None at this time.",
             "allegations" : [ {
-              "complaint_code" : "3",
+              "complaint_type_code" : "3",
+              "complaint_type_description" : "Personal Rights",
               "allegation" : "Staff Meena Desai marks clients Alexzena Webb and Dizirea Goodwin with a ballpoint pen while they are sleeping.",
-              "resolution_code_sub" : "",
-              "resolution_code_insub" : "",
-              "resolution_code_unsub" : "U"
+              "resolution_type_code" : "U",
+              "resolution_type_description" : "Unfounded"
             } ]
           } ]
         }
     http_version: 
-  recorded_at: Thu, 29 Mar 2018 18:19:02 GMT
+  recorded_at: Mon, 23 Jul 2018 23:51:41 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/facilities/100000299
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Security-Policy:
+      - default-src 'self' 'unsafe-inline';
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 23 Jul 2018 23:51:40 GMT
+      Set-Cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:40
+        GMT
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '441'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "href" : "facilities/100000299",
+          "id" : "100000299",
+          "type" : {
+            "id" : "6",
+            "value" : "Foster Family Home"
+          },
+          "name" : "Little Dreams Home",
+          "licensee_name" : "Ananya Nandi",
+          "license_type" : "A",
+          "assigned_worker" : {
+            "phones" : [ ]
+          },
+          "district_office" : {
+            "number" : "19",
+            "name" : "PACIFIC INLAND CR"
+          },
+          "license_number" : "100000299",
+          "status" : {
+            "active" : false,
+            "id" : "7",
+            "value" : "Application Withdrawn"
+          },
+          "full_residential_address" : "123 Main St. CA",
+          "full_mailing_address" : "CA",
+          "county" : {
+            "id" : "33",
+            "value" : "RIVERSIDE"
+          },
+          "phones" : [ {
+            "relation" : "primary",
+            "type" : "Cell",
+            "number" : "(916) 299-"
+          } ],
+          "addresses" : [ {
+            "type" : "Residential",
+            "address" : {
+              "street_address" : "123 Main St.",
+              "state" : "CA"
+            }
+          }, {
+            "type" : "Mailing",
+            "address" : {
+              "state" : "CA"
+            }
+          } ],
+          "visits" : [ ],
+          "facility_source" : "LIS"
+        }
+    http_version: 
+  recorded_at: Mon, 23 Jul 2018 23:51:41 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/facilities/100000299
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Mon, 23 Jul 2018 23:51:40 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:40
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '441'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "href" : "facilities/100000299",
+          "id" : "100000299",
+          "type" : {
+            "id" : "6",
+            "value" : "Foster Family Home"
+          },
+          "name" : "Little Dreams Home",
+          "licensee_name" : "Ananya Nandi",
+          "license_type" : "A",
+          "assigned_worker" : {
+            "phones" : [ ]
+          },
+          "district_office" : {
+            "number" : "19",
+            "name" : "PACIFIC INLAND CR"
+          },
+          "license_number" : "100000299",
+          "status" : {
+            "active" : false,
+            "id" : "7",
+            "value" : "Application Withdrawn"
+          },
+          "full_residential_address" : "123 Main St. CA",
+          "full_mailing_address" : "CA",
+          "county" : {
+            "id" : "33",
+            "value" : "RIVERSIDE"
+          },
+          "phones" : [ {
+            "relation" : "primary",
+            "type" : "Cell",
+            "number" : "(916) 299-"
+          } ],
+          "addresses" : [ {
+            "type" : "Residential",
+            "address" : {
+              "street_address" : "123 Main St.",
+              "state" : "CA"
+            }
+          }, {
+            "type" : "Mailing",
+            "address" : {
+              "state" : "CA"
+            }
+          } ],
+          "visits" : [ ],
+          "facility_source" : "LIS"
+        }
+    http_version: 
+  recorded_at: Mon, 23 Jul 2018 23:51:41 GMT
 recorded_with: VCR 3.0.3
