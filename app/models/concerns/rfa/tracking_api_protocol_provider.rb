@@ -10,13 +10,13 @@ module Concerns::Rfa::TrackingApiProtocolProvider
       JSON.parse(response.body)
     end
 
-    def update(auth_header, application_id, id, body)
+    def update(auth_header, id, application_id, body)
       response = FaradayCals.put("/#{parent_path}/#{application_id}/#{api_resource_path}/#{id}", auth_header, body)
       new(JSON.parse(response.body))
     end
 
-    def find_by_id(auth_header, id, application_id)
-      response = FaradayCals.get("/#{parent_path}/#{application_id}/#{api_resource_path}/#{id}", auth_header)
+    def find_by_id(auth_header, id)
+      response = FaradayCals.get("/trackings/#{id}", auth_header)
       new(JSON.parse(response.body))
     end
   end

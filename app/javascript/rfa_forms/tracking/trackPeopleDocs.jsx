@@ -63,6 +63,9 @@ export default class TrackPeopleDocs extends React.Component {
     const trackingDocuments = this.props.trackingDocuments
     const peopleDocuments = trackingDocuments.people_documents
 
+    const Rfa02Link = this.props.rfa02Id
+      ? ('/trackings/' + this.props.trackingId + '/a02/' + String(this.props.rfa02Id) + '/edit')
+      : ('/trackings/' + this.props.trackingId + '/a02/')
     return (
       peopleDocuments.map((peopleDoc, peopleIndex) => {
         const hrefId = peopleDoc.person_type.replace(/\s+/g, '') + peopleIndex + '-tracking-card'
@@ -96,6 +99,8 @@ export default class TrackPeopleDocs extends React.Component {
                   colHeaders={['Clearances', 'Started', 'Completed', 'Notes']}
                   rowsComponent={
                     <ClearancesDocRow
+                      trackingId={this.props.trackingId}
+                      rfa02Link={Rfa02Link}
                       peopleIndex={peopleIndex}
                       handleChange={this.handleClearancesDocsChange}
                       clearanceDocuments={peopleDoc.person_documents.clearances}

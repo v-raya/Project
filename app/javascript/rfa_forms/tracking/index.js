@@ -101,6 +101,8 @@ export default class TrackingList extends React.Component {
               </div>
               <div className='col-xs-9 col-sm-9 col-md-9 col-lg-9'>
                 <TrackingDocument
+                  trackingId={this.state.tracking.id}
+                  rfa02Id={this.state.tracking.rfa_02_id}
                   facilityName={facilityName}
                   setParentState={this.setApplicationState}
                   setPeopleDocumentsState={this.setPeopleDocumentsState}

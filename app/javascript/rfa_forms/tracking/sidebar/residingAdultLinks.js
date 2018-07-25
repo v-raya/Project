@@ -6,7 +6,8 @@ import {NavLink} from 'react-wood-duck'
 const ResidingAdultLinks = ({
   residingAdults,
   clickHandler,
-  hrefPrefix
+  hrefPrefix,
+  idSuffix
 }) => {
   let indexes = residingAdults.indexes
   residingAdults = residingAdults.adults

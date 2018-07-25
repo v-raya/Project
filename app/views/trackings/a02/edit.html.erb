@@ -1,0 +1,10 @@
+<div id="edit_page">
+      <%= react_component('rfa_forms/rfa02_edit', {
+         user: @user,
+         tracking: @tracking,
+         rfa02: @rfa02},
+        {prerender: false}) %>
+
+    <%= javascript_pack_tag 'rfa_forms/rfa02_edit' %>
+    <%#= stylesheet_pack_tag 'rfa_forms/rfa01a_edit' %>
+</div>

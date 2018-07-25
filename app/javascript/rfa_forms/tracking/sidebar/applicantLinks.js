@@ -6,7 +6,8 @@ import {NavLink} from 'react-wood-duck'
 const ApplicantLinks = ({
   applicants,
   clickHandler,
-  hrefPrefix
+  hrefPrefix,
+  idSuffix
 }) => {
   let indexes = applicants.indexes
   applicants = applicants.apps

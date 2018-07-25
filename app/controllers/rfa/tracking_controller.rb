@@ -10,14 +10,14 @@ class Rfa::TrackingController < CalsBaseController
   def edit
     @user = user_from_session
     @rfa_application = rfa_application_helper.find_by_application_id(params[:a01_id])
-    @tracking = tracking_helper.find_by_id(params[:id], params[:a01_id])
+    @tracking = tracking_helper.find_by_id(params[:id])
   end
 
   def update
     @tracking_id = params[:id]
     @application_id = params[:rfa_1a_id]
-    tracking_helper.update(@application_id, @tracking_id, tracking_params.to_json)
-    render json: tracking_helper.find_by_id(@tracking_id, @application_id)
+    tracking_helper.update(@tracking_id, params[:rfa_1a_id], tracking_params.to_json)
+    render json: tracking_helper.find_by_id(@tracking_id)
   rescue ApiError => e
     render json: e.response, status: e.status
   end
@@ -25,6 +25,7 @@ class Rfa::TrackingController < CalsBaseController
   private
 
   def tracking_params
+
     params.require(:tracking).permit(:id, :facility_name, :license_number, :rfa_1a_id,
                                      tracking_documents: [
                                        facility_documents:
