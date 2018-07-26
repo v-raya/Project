@@ -27,8 +27,6 @@ RSpec.feature 'RFA02', js: true, inaccessible: true do
   end
 
   scenario 'visit RFA02 page from Tracking and validate edit and save', set_auth_header: true do
-    expect(page).to have_button 'Edit Checklist'
-    click_button 'Edit Checklist'
     expect(page).to have_button 'Save'
     expect(page).to have_button 'Cancel'
     click_button 'Save'

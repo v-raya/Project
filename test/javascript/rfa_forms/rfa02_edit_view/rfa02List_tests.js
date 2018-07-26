@@ -6,6 +6,10 @@ describe('Rfa02EditView Page test', () => {
   let saveProgressSpy, editProgressSpy, cancelProgressSpy, rfa02ListView
   beforeEach(() => {
     const props = {
+      tracking: {
+        id: 12,
+        rfa_1a_id: 121
+      },
       rfa02: {
         'id': 525,
         'tracking_id': 50,
@@ -95,9 +99,6 @@ describe('Rfa02EditView Page test', () => {
             }
           }
         ]
-      },
-      tracking: {
-        'rfa_1a_id': 724
       }
     }
     saveProgressSpy = spyOn(Rfa02EditView.prototype, 'saveProgress').and.callThrough()
@@ -111,23 +112,22 @@ describe('Rfa02EditView Page test', () => {
   })
 
   it('tests save', () => {
-    let editProgressBtn = rfa02ListView.find('#editTracking')
-    editProgressBtn.simulate('click')
-    let saveProgressBtn = rfa02ListView.find('#saveTracking')
+    let saveProgressBtn = rfa02ListView.find('#saveTracking').hostNodes()
     saveProgressBtn.simulate('click')
     expect(saveProgressSpy).toHaveBeenCalled()
   })
 
-  it('tests Edit', () => {
-    let editProgressBtn = rfa02ListView.find('#editTracking')
-    editProgressBtn.simulate('click')
-    expect(editProgressSpy).toHaveBeenCalled()
-  })
   it('test cancel', () => {
-    let editProgressBtn = rfa02ListView.find('#editTracking')
-    editProgressBtn.simulate('click')
-    let cancelProgressLink = rfa02ListView.find('#CancelTracking')
+    let cancelProgressLink = rfa02ListView.find('#CancelTracking').hostNodes()
     cancelProgressLink.simulate('click')
     expect(cancelProgressSpy).toHaveBeenCalled()
+  })
+
+  it('tests Edit', () => {
+    let cancelProgressLink = rfa02ListView.find('#CancelTracking').hostNodes()
+    cancelProgressLink.simulate('click')
+    let editProgressBtn = rfa02ListView.find('#editTracking').hostNodes()
+    editProgressBtn.simulate('click')
+    expect(editProgressSpy).toHaveBeenCalled()
   })
 })

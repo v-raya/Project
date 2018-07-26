@@ -247,3 +247,38 @@ export const otherAdultsDefaults = Object.freeze({
   middle_name: '',
   last_name: ''
 })
+
+export const emergencyPlacementTable = Object.freeze({
+  is_emergency: true,
+  items: [
+    {
+      'title': 'CLETS',
+      'date': '',
+      'notes': '',
+      'checked': false
+    },
+    {
+      'title': 'CACI',
+      'date': '',
+      'notes': '',
+      'checked': false
+    }
+  ]
+})
+
+export const outOfStateRegistry = Object.freeze({
+  items: [
+    {
+      'title': 'Requested Arizona State info',
+      'date': '',
+      'notes': '',
+      'checked': false
+    },
+    {
+      'title': 'Received Arizona State info',
+      'date': '',
+      'notes': '',
+      'checked': false
+    }
+  ]
+})
