@@ -17,7 +17,7 @@ class Trackings::A02Controller < CalsBaseController
   def update
     @a02_id = params[:id]
     @tracking_id = params[:tracking_id]
-    rfa02_helper.update(@tracking_id, @a02_id, params[:a02].to_json)
+    rfa02_helper.update(@tracking_id, @a02_id, a02_params.to_json)
     render json: rfa02_helper.find_by_id(@tracking_id, @a02_id)
   rescue ApiError => e
     render json: e.response, status: e.status
@@ -26,8 +26,7 @@ class Trackings::A02Controller < CalsBaseController
   private
 
   def a02_params
-    # TODO: once api is up finish permitted_params
-    params.require(:a02).permit(:id)
+    params.require(:a02)
   end
 
   def tracking_helper

@@ -7,20 +7,24 @@ const ApplicantLinks = ({
   applicants,
   clickHandler,
   hrefPrefix,
-  idSuffix
+  idSuffix,
+  isNavLinkActive
 }) => {
   let indexes = applicants.indexes
   applicants = applicants.apps
   return (
     applicants.map((applicant, index) => {
+      let href = '#Applicant' + indexes[index] + '-tracking-card'
       return (
         <div key={index}>
           <NavLink
             key={index}
             text={applicant.person_name}
-            clickHandler={() => clickHandler('#Applicant' + indexes[index] + '-tracking-card')}
-            href={hrefPrefix + '#Applicant' + indexes[index] + '-tracking-card'}
-            preIcon='fa fa-user' />
+            clickHandler={() => clickHandler(href)}
+            href={hrefPrefix + href}
+            preIcon='fa fa-user'
+            active={isNavLinkActive(href)}
+          />
         </div>
       )
     })
@@ -32,6 +36,7 @@ ApplicantLinks.propTypes = {
 }
 
 ApplicantLinks.defaultProps = {
-  hrefPrefix: ''
+  hrefPrefix: '',
+  isNavLinkActive: () => false
 }
 export default ApplicantLinks

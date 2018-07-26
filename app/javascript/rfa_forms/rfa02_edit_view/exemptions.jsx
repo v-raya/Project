@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import Immutable from 'immutable'
 import {isTrue} from 'helpers/commonHelper'
 import YesNoRadioComponent from 'components/common/yesNoFields'
-import YesNoFieldShow from './common/yesNoFieldShow'
-import DateNoteFields from './common/dateNoteFields'
+import YesNoFieldShow from 'components/common/yesNoFieldShow'
+import DateNoteFields from 'components/common/dateNoteFields'
 
 export default class Exemptions extends React.Component {
   constructor (props) {

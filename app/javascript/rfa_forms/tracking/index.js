@@ -97,7 +97,9 @@ export default class TrackingList extends React.Component {
                 <TrackingSideBar
                   handleHrefClick={this.handleHrefClick}
                   facilityName={facilityName}
-                  tracking={trackingDocuments} />
+                  titleSuffix={'Family RFA Documents'}
+                  people={trackingDocuments.people_documents}
+                  isNavLinkActive={this.isNavLinkActive} />
               </div>
               <div className='col-xs-9 col-sm-9 col-md-9 col-lg-9'>
                 <TrackingDocument

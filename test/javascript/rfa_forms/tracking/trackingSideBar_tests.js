@@ -357,7 +357,8 @@ describe('Tracking Page test', () => {
       <TrackingSideBar
         handleHrefClick={handleHrefClickSpy}
         facilityName={facilityName}
-        tracking={trackingDocuments} />)
+        people={trackingDocuments.people_documents}
+        isNavLinkActive={() => true} />)
   })
 
   it('tests sidebar renders', () => {

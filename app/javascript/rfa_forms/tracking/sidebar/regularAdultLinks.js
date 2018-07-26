@@ -7,20 +7,23 @@ const RegularAdultLinks = ({
   regularAdults,
   clickHandler,
   hrefPrefix,
-  idSuffix
+  idSuffix,
+  isNavLinkActive
 }) => {
   let indexes = regularAdults.indexes
   regularAdults = regularAdults.adults
   return (
     regularAdults.map((regularAdult, index) => {
+      let href = '#PresentAdult' + indexes[index] + '-tracking-card'
       return (
         <div key={index}>
           <NavLink
             key={index}
             text={regularAdult.person_name}
-            clickHandler={() => clickHandler('#PresentAdult' + indexes[index] + '-tracking-card')}
-            href={hrefPrefix + '#PresentAdult' + indexes[index] + '-tracking-card'}
-            preIcon='fa fa-user' />
+            clickHandler={() => clickHandler(href)}
+            href={hrefPrefix + href}
+            preIcon='fa fa-user'
+            active={isNavLinkActive(href)} />
         </div>
       )
     })
@@ -31,6 +34,7 @@ RegularAdultLinks.propTypes = {
 }
 
 RegularAdultLinks.defaultProps = {
-  hrefPrefix: ''
+  hrefPrefix: '',
+  isNavLinkActive: () => false
 }
 export default RegularAdultLinks

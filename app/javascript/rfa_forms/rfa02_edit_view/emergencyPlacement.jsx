@@ -6,7 +6,7 @@ import {emergencyPlacementTable} from 'constants/defaultFields'
 import YesNoRadioComponent from 'components/common/yesNoFields'
 import TrackingTable from '../tracking/trackingTable'
 import CheckListRow from './backGroundCheckRows/checkListRow'
-import YesNoFieldShow from './common/yesNoFieldShow'
+import YesNoFieldShow from 'components/common/yesNoFieldShow'
 
 const emergencyPlacementDefaults = Immutable.fromJS(emergencyPlacementTable)
 

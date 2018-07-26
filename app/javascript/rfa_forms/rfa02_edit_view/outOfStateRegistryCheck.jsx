@@ -4,10 +4,10 @@ import Immutable from 'immutable'
 import {isTrue} from 'helpers/commonHelper'
 import YesNoRadioComponent from 'components/common/yesNoFields'
 import {outOfStateRegistry} from 'constants/defaultFields'
-import DateNoteFields from './common/dateNoteFields'
+import DateNoteFields from 'components/common/dateNoteFields'
 import TrackingTable from '../tracking/trackingTable'
 import CheckListRow from './backGroundCheckRows/checkListRow'
-import YesNoFieldShow from './common/yesNoFieldShow'
+import YesNoFieldShow from 'components/common/yesNoFieldShow'
 
 const outOfStateRegistryDefaults = Immutable.fromJS(outOfStateRegistry)
 

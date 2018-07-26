@@ -112,21 +112,27 @@ describe('Rfa02EditView Page test', () => {
   })
 
   it('tests save', () => {
+    let editProgressBtn = rfa02ListView.find('#editTracking').hostNodes()
+    editProgressBtn.simulate('click')
     let saveProgressBtn = rfa02ListView.find('#saveTracking').hostNodes()
     saveProgressBtn.simulate('click')
     expect(saveProgressSpy).toHaveBeenCalled()
   })
 
   it('test cancel', () => {
+    let editProgressBtn = rfa02ListView.find('#editTracking').hostNodes()
+    editProgressBtn.simulate('click')
     let cancelProgressLink = rfa02ListView.find('#CancelTracking').hostNodes()
     cancelProgressLink.simulate('click')
     expect(cancelProgressSpy).toHaveBeenCalled()
   })
 
   it('tests Edit', () => {
+    let editProgressBtn = rfa02ListView.find('#editTracking').hostNodes()
+    editProgressBtn.simulate('click')
     let cancelProgressLink = rfa02ListView.find('#CancelTracking').hostNodes()
     cancelProgressLink.simulate('click')
-    let editProgressBtn = rfa02ListView.find('#editTracking').hostNodes()
+    editProgressBtn = rfa02ListView.find('#editTracking').hostNodes()
     editProgressBtn.simulate('click')
     expect(editProgressSpy).toHaveBeenCalled()
   })

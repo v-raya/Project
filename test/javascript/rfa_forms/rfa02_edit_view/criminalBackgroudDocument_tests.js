@@ -4,12 +4,14 @@ import CriminalBackgroudDocument from 'rfa_forms/rfa02_edit_view/criminalBackgro
 import {mount} from 'enzyme'
 
 describe('RFA 02 test Criminal background Page', () => {
-  let criminalBackgroudComp, setStateSpy, setParentStateSpy, criminalBackgroudWithProps
+  let criminalBackgroudComp, setStateSpy, setParentStateSpy, criminalBackgroudWithProps, handleHrefClickSpy
   beforeEach(() => {
     setStateSpy = jasmine.createSpy('setState')
+    handleHrefClickSpy = jasmine.createSpy('handleHrefClick')
     const props = {
       editMode: true,
       setState: setStateSpy,
+      handleHrefClick: handleHrefClickSpy,
       people: Immutable.fromJS([
         {
           'person_id': -1,

@@ -38,8 +38,8 @@ const LiveScanRow = ({
             <td>
               <DateField
                 id={id + 'approveDateEdit' + index}
-                value={FormatDateForDisplay(docs.get('date_approved'))}
-                onChange={(event) => handleChange('date_approved', FormatDateForPersistance(event.target.value), index)} />
+                value={FormatDateForDisplay(docs.get('date_received'))}
+                onChange={(event) => handleChange('date_received', FormatDateForPersistance(event.target.value), index)} />
 
             </td>
             <td>
@@ -67,7 +67,7 @@ const LiveScanRow = ({
               {FormatDateForDisplay(docs.get('date_submitted'))}
             </td>
             <td id={id + 'approveDateShow' + index}>
-              {FormatDateForDisplay(docs.get('date_approved'))}
+              {FormatDateForDisplay(docs.get('date_received'))}
             </td>
             <td id={id + 'textAreaShow' + index}>
               {docs.get('notes')}
@@ -83,7 +83,7 @@ LiveScanRow.defaultProps = {
     'notes': '',
     'title': '',
     'checked': false,
-    'date_approved': '',
+    'date_received': '',
     'date_submitted': ''
   }
 }

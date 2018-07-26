@@ -7,7 +7,7 @@ import LogoHeader from 'components/common/logoHeader'
 import PageHeader from 'components/common/pageHeader'
 import BreadCrumb from 'components/common/breadCrumb'
 import TrackingButtons from 'components/common/pageHeaderButtons/trackingButtons'
-// import a02SideBar from './a02SideBar'
+import TrackingSideBar from '../tracking/trackingSideBar'
 import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 import {fetchRequest} from 'helpers/http'
 
@@ -17,15 +17,17 @@ export default class Rfa02EditView extends React.Component {
     this.saveProgress = this.saveProgress.bind(this)
     this.editProgress = this.editProgress.bind(this)
     this.cancelProgress = this.cancelProgress.bind(this)
+    this.handleHrefClick = this.handleHrefClick.bind(this)
+    this.isNavLinkActive = this.isNavLinkActive.bind(this)
     this.setApplicationState = this.setApplicationState.bind(this)
     this.state = {
       user: this.props.user,
       tracking: this.props.tracking,
       rfa02: Immutable.fromJS(this.props.rfa02),
-      cardBeingEdited: true
+      cardBeingEdited: false,
+      activeNavLinkHref: ''
     }
   }
-
   editProgress (event) {
     this.setState({ cardBeingEdited: true })
   }
@@ -58,7 +60,16 @@ export default class Rfa02EditView extends React.Component {
       })
   }
 
+  handleHrefClick (href) {
+    this.setState({ activeNavLinkHref: href })
+  }
+
+  isNavLinkActive (href) {
+    return this.state.activeNavLinkHref === href
+  }
+
   render () {
+    const facilityName = this.state.tracking.facility_name || ''
     return (
       <div id='rfa-02-edit' className='tracking-main-page'>
         <PageHeader
@@ -77,21 +88,20 @@ export default class Rfa02EditView extends React.Component {
           ]} />
         <div className='container'>
           <div className='row'>
-
             <div className='form-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
               <div className='left-content col-xs-3 col-sm-3 col-md-3 col-lg-3'>
-                {/* <TrackingSideBar
-                handleHrefClick={this.handleHrefClick}
-                facilityName={facilityName}
-                tracking={trackingDocuments} />
-              */}
+                <TrackingSideBar
+                  handleHrefClick={this.handleHrefClick}
+                  facilityName={facilityName}
+                  people={this.state.rfa02.get('people').toJS()}
+                  isNavLinkActive={this.isNavLinkActive} />
               </div>
               <div className='col-xs-9 col-sm-9 col-md-9 col-lg-9'>
                 <CriminalBackgroudDocument
                   setState={this.setApplicationState}
                   people={this.state.rfa02.get('people')}
                   editMode={this.state.cardBeingEdited}
-                />
+                  handleHrefClick={this.handleHrefClick} />
               </div>
             </div>
           </div>
