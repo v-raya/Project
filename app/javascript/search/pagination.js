@@ -19,7 +19,10 @@ const Pagination = ({
       className='no_of_facilities'
       id='noOfFacilities'
       value={sizeValue}
-      onChange={(event) => { handleDropDownAndPageNumberChange(1, parseInt(dictionaryNilSelectValue(event.target.options))); searchApiCall(getFromValue(sizeValue, 1), parseInt(dictionaryNilSelectValue(event.target.options))) }}>
+      onChange={(event) => {
+        handleDropDownAndPageNumberChange(1, parseInt(dictionaryNilSelectValue(event.target.options)))
+        searchApiCall(getFromValue(sizeValue, 1), parseInt(dictionaryNilSelectValue(event.target.options)))
+      }}>
       {resultsPerPage.map((noOfResults) =>
         <option key={noOfResults} value={noOfResults}>{noOfResults}</option>
       )}
@@ -67,7 +70,7 @@ Pagination.propTypes = {
 Pagination.defaultProps = {
   totalNoOfFacilities: 0,
   pageNumber: 1,
-  sizeValue: 10
+  sizeValue: 5
 }
 
 export default Pagination

@@ -119,7 +119,7 @@ export const mailingAddressType = 'Mailing'
 
 export const listOfStatus = ['LICENSED', 'CERTIFIED/APPROVED', 'LICENSED(PENDING CAPACITY CHANGE)']
 
-export const resultsPerPage = ['10', '20', '30', '40', '50']
+export const resultsPerPage = ['5', '10', '25', '50', '100']
 
 export const NoSearchResultsErrorMessage = 'No results were found with the selected search criteria, please refine your search criteria and try again.'
 

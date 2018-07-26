@@ -4,7 +4,7 @@ const initialState = {
   searchResults: undefined,
   totalNoOfResults: 0,
   isToggled: true,
-  sizeValue: 10,
+  sizeValue: 5,
   pageNumber: 1,
   errors: {},
   countyTypes: [],
@@ -57,7 +57,7 @@ export const searchReducer = (state = initialState, action) => {
         inputData: {'countyValue': state.userCounty},
         searchResults: undefined,
         totalNoOfResults: 0,
-        sizeValue: 10,
+        sizeValue: 5,
         pageNumber: 1,
         isToggled: true}
     case Constants.HANDLE_PAGENUMBER_CHANGE:
