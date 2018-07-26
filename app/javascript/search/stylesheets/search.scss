@@ -138,8 +138,13 @@ input[type=number]::-webkit-outer-spin-button {
   padding-bottom: 20px;
 }
 
-.search_block {
+.search-btn, .reset-btn {
  margin-top: 18px;
+}
+
+.search-btn{
+  padding-left: 28px;
+  padding-right: 28px;
 }
 
 .search_details p {
