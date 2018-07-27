@@ -117,17 +117,16 @@ class Search extends Component {
               isToggled={this.props.isToggled} />
           )
           }
-          <div className='result-section row'>
+          <div className='result-section'>
             {this.props.isToggled && <SearchGrid searchResults={this.props.searchResults} />}
             {!this.props.isToggled && <SearchList searchResults={this.props.searchResults} />}
             {(!searchResponseHasValues && !initialLoad) && <SearchNotFound errors={this.props.errors.issue_details} errorMessage={this.props.errorMessage} />}
           </div>
           {searchResponseHasValues &&
             (
-              <div className='bottom-pagination row'>
+              <div className='bottom-pagination'>
                 {paginationRender}
               </div>
-
             )
           }
         </div>

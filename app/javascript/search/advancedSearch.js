@@ -6,7 +6,7 @@ const AdvancedSearch = ({
   handleToggle,
   isToggled
 }) => (
-  <div className='advance-search row'>
+  <div className='advance-search'>
     <p className='search-results-label'>Search Results:</p>
     {paginationRender}
     <span className='toggle_result'>

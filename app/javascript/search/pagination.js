@@ -31,8 +31,8 @@ const Pagination = ({
       id='previousButton'
       disabled={getFromValue(sizeValue, pageNumber) - sizeValue < 0}
       onClick={() => { handlePageNumberChange(pageNumber - 1); searchApiCall(getFromValue(sizeValue, pageNumber - 1), sizeValue); window.scrollTo(0, 0) }}
-      className='previous btn btn-default'>
-      <span className='glyphicon glyphicon-chevron-left' />
+      className='fs-previous btn btn-default'>
+      <p>&#8249;</p>
     </button>
     <Cleave
       aria-label='Page Number Input'
@@ -49,8 +49,8 @@ const Pagination = ({
       id='nextButton'
       disabled={getFromValue(sizeValue, pageNumber) + sizeValue >= totalNoOfFacilities}
       onClick={() => { handlePageNumberChange(pageNumber + 1); searchApiCall(getFromValue(sizeValue, pageNumber + 1), sizeValue); window.scrollTo(0, 0) }}
-      className='next btn btn-default'>
-      <span className='glyphicon glyphicon-chevron-right' />
+      className='fs-next btn btn-default'>
+      <p>&#8250;</p>
     </button>
   </span>
 )
@@ -70,7 +70,7 @@ Pagination.propTypes = {
 Pagination.defaultProps = {
   totalNoOfFacilities: 0,
   pageNumber: 1,
-  sizeValue: 5
+  sizeValue: 50
 }
 
 export default Pagination

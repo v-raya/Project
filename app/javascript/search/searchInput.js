@@ -26,7 +26,7 @@ const SearchInput = ({
   facilityAddressValue
 
 }) => (
-  <form onSubmit={(event) => { handlePageNumberChange(pageNumber); searchApiCall(getFromValue(sizeValue, pageNumber), sizeValue); event.preventDefault() }} className='search-section'>
+  <form className='search-section' onSubmit={(event) => { handlePageNumberChange(pageNumber); searchApiCall(getFromValue(sizeValue, pageNumber), sizeValue); event.preventDefault() }}>
     <div className='row'>
       <div className='col-xs-12 col-sm-2 col-md-2 col-lg-2'>
         <DropDownField
@@ -70,7 +70,7 @@ const SearchInput = ({
         />
       </div>
       <div className='col-xs-2 col-sm-2 col-md-2 col-lg-2'>
-        <button id='search' type='submit' className= ' search_block btn btn-primary'>Search</button>
+        <button id='search' type='submit' className= ' search-btn btn btn-primary'>Search</button>
       </div>
     </div>
     <div className='row'>
@@ -105,11 +105,10 @@ const SearchInput = ({
           onChange={(event) => handleInputChange('facilityAddressValue', event.target.value)} />
       </InputDataBlock>
       <div className='col-xs-12 col-sm-2 col-md-2 col-lg-2'>
-        <button id='reset' type='button' onClick= {resetForm} className= 'search_block btn btn-primary'>Reset</button>
+        <button id='reset' type='button' onClick= {resetForm} className= 'reset-btn btn btn-primary'>Reset</button>
       </div>
     </div>
   </form>
-  // </div>
 )
 
 SearchInput.propTypes = {

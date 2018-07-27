@@ -124,6 +124,11 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: #fff;
 }
 
+.result-section {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .search-section {
   padding: 25px;
   margin: 20px;
@@ -139,21 +144,26 @@ input[type=number]::-webkit-outer-spin-button {
 
 .search-btn, .reset-btn {
  margin-top: 18px;
+ width: 12rem;
 }
 
-.search-btn{
-  padding-left: 28px;
-  padding-right: 28px;
-}
 .search-results-label {
   order: -1;
   font-size: 20px;
   font-weight: bold;
 }
 
-.previous, .next {
+.fs-pagination p{
+  font-size: 2rem;
+  margin: 1px;
+}
+
+.fs-previous, .fs-next {
   padding: 0.25rem 0.45rem 0.25rem 0.45rem !important;
   margin: 6px;
+  background-color: #e8e9e8;
+  border-color: #e8e9e8;
+  border: solid;
 }
 
 .bottom-pagination{

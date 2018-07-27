@@ -11,7 +11,7 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
   def facilities_list
     visit search_index_path
     select 'Alameda', from: 'county_select'
-    find_button('search').click
+    find_button('Search').click
   end
 
   scenario 'To check facility name in facility after clicking facility name from list of facility search results' do
@@ -31,7 +31,7 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     visit search_index_path
     select 'Riverside', from: 'county_select'
     fill_in 'Enter Facility ID #', with: '100000299'
-    find_button('search').click
+    find_button('Search').click
     click_link('Little Dreams Home')
     expect(page).to have_text('Complaint History')
   end
@@ -40,7 +40,7 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     visit search_index_path
     fill_in 'Enter Facility ID #', with: '250000004'
     select 'Modoc', from: 'county_select'
-    find_button('search').click
+    find_button('Search').click
     click_link("Alturas Annie's Place")
     expect(page).to have_text('Children currently placed in facility')
   end
@@ -48,7 +48,7 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
   scenario 'To test pagination' do
     visit search_index_path
     select 'Los Angeles', from: 'county_select'
-    find_button('search').click
+    find_button('Search').click
     within(:css, '.advance-search') do
       select '10', from: 'noOfFacilities'
       expect(find_field('noOfFacilities').value).to eq '10'
@@ -68,7 +68,7 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     visit search_index_path
     select 'Los Angeles', from: 'county_select'
     fill_in 'Enter Facility ID #', with: '100000538'
-    find_button('search').click
+    find_button('Search').click
     expect(page).to have_content('Facility Phone Number', minimum: 1)
   end
 
@@ -76,7 +76,7 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     visit search_index_path
     select 'Alameda', from: 'county_select'
     fill_in 'Enter Facility ID #', with: 'A5b6c7d8'
-    find_button('search').click
+    find_button('Search').click
     expect(page).to have_content('Facility Phone Number', minimum: 1)
   end
 end

@@ -28,7 +28,7 @@ describe('Verify searchReducer', () => {
       searchResults: undefined,
       totalNoOfResults: 0,
       isToggled: true,
-      sizeValue: 10,
+      sizeValue: 50,
       pageNumber: 1,
       countyTypes: [],
       facilityTypes: [],
@@ -99,7 +99,7 @@ describe('Verify searchReducer', () => {
     outputState.licenseStatuses = licenseStatuses
     outputState.isToggled = true
     outputState.pageNumber = 1
-    outputState.sizeValue = 10
+    outputState.sizeValue = 50
     outputState.totalNoOfResults = 0
 
     expect(searchReducer(undefined, fetchDictionarySuccessAction)).toEqual(outputState)
@@ -170,7 +170,7 @@ describe('Verify searchReducer', () => {
       inputData: {facilityNameValue: 'good home'},
       searchResults: {id: 5, name: 'John'},
       totalNoOfResults: 200,
-      sizeValue: 50,
+      sizeValue: 10,
       pageNumber: 2,
       isToggled: false,
       countyTypes: [],
@@ -186,7 +186,7 @@ describe('Verify searchReducer', () => {
       searchResults: undefined,
       totalNoOfResults: 0,
       isToggled: true,
-      sizeValue: 10,
+      sizeValue: 50,
       pageNumber: 1,
       countyTypes: [],
       facilityTypes: [],

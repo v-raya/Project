@@ -23,7 +23,7 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
   scenario 'To select county dropdown and show search results' do
     visit search_index_path
     select 'Alameda', from: 'county_select'
-    find_button('search').click
+    find_button('Search').click
     expect(page).to have_content('Facility Phone Number', minimum: 1)
   end
 
@@ -31,15 +31,15 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     visit search_index_path
     select 'Orange', from: 'county_select'
     select 'Adoption Agency', from: 'facility_select'
-    find_button('search').click
+    find_button('Search').click
     expect(page).to have_content('Facility Phone Number', minimum: 1)
   end
 
   scenario 'To test dropdown for number of facilities per page' do
     facilities_list
     within(:css, '.advance-search') do
-      select '20', from: 'noOfFacilities'
-      expect(find_field('noOfFacilities').value).to eq '20'
+      select '10', from: 'noOfFacilities'
+      expect(find_field('noOfFacilities').value).to eq '10'
     end
     expect(page).to have_content('Facility Phone Number', minimum: 1)
   end
@@ -47,7 +47,7 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
   def facilities_list
     visit search_index_path
     select 'Riverside', from: 'county_select'
-    find_button('search').click
+    find_button('Search').click
   end
 
 end
