@@ -11,8 +11,7 @@ const initialState = {
   facilityTypes: [],
   licenseStatuses: [],
   userCounty: '',
-  errorMessage: undefined,
-  isScrollBarVisible: false
+  errorMessage: undefined
 }
 
 export const searchReducer = (state = initialState, action) => {
@@ -64,8 +63,6 @@ export const searchReducer = (state = initialState, action) => {
       return {...state, pageNumber: action.payload.pageNumber}
     case Constants.HANDLE_DROPDOWN_AND_PAGENUMBER_CHANGE:
       return {...state, sizeValue: action.payload.sizeValue, pageNumber: action.payload.pageNumber}
-    case Constants.HANDLE_VISIBLE_SCROLLBAR_CHANGE:
-      return {...state, isScrollBarVisible: action.payload.isScrollBarVisible}
     default:
       return state
   }

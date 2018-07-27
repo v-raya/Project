@@ -49,13 +49,13 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     visit search_index_path
     select 'Los Angeles', from: 'county_select'
     find_button('search').click
-    within(:css, '.search-toggle') do
+    within(:css, '.advance-search') do
       select '10', from: 'noOfFacilities'
       expect(find_field('noOfFacilities').value).to eq '10'
     end
     expect(page).to have_content('Facility Phone Number', minimum: 1)
     expect(page).to have_css(:span, text: '1')
-    within(:css, '.search-toggle') do
+    within(:css, '.advance-search') do
       find(:css, '#nextButton').click
       expect(page).to have_text('2')
       find(:css, '#previousButton').click

@@ -73,14 +73,15 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .searchSelect {
-  height: 28px;
-  padding: 2px;
+  height: 29px;
+  padding: 5px;
   border: 0px;
   background-color: #ffff; 
 }
 
 .my-react-select {
-  margin-top: 6px;
+  margin-top: 7px;
+  height: 27px;
 }
 
 .allActive {
@@ -109,10 +110,6 @@ input[type=number]::-webkit-outer-spin-button {
   color: #fff;
 }
 
-.search-toggle>div {
-  vertical-align: middle;
-}
-
 .result-section .grid_view .grid_view_inner {
   border: 1px solid #ddd;
   border-radius: 15px;
@@ -133,9 +130,11 @@ input[type=number]::-webkit-outer-spin-button {
   background: #ddd;
 }
 
-.search-toggle {
-  padding-top: 20px;
-  padding-bottom: 20px;
+.advance-search {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .search-btn, .reset-btn {
@@ -146,19 +145,26 @@ input[type=number]::-webkit-outer-spin-button {
   padding-left: 28px;
   padding-right: 28px;
 }
-
-.search_details p {
-  display: inline;
+.search-results-label {
+  order: -1;
   font-size: 20px;
   font-weight: bold;
 }
 
-.search_details button {
+.previous, .next {
   padding: 0.25rem 0.45rem 0.25rem 0.45rem !important;
   margin: 6px;
-  border: solid;
 }
 
+.bottom-pagination{
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-pagination .fs-pagination {
+  margin-left: 8rem;
+}
 .page_number {
   width: 60px;
   display: inline;
@@ -168,22 +174,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .toggle_result {
-  padding-top: 10px;
-  display: inline;
-  width: 75px;
-  padding-right: 0px;
-  padding-left: 0px;
+  padding-top: 28px;
+  order: 1;
 }
 
 .no_of_facilities {
   width: 100px;
-  margin-top: -35px;
   display: inline;
-}
-
-.pagination {
-  float: right;
-  margin-top: 0px;
 }
 
 .bottom_pagination {
@@ -263,32 +260,18 @@ input[type=number]::-webkit-outer-spin-button {
 
 .line_off-icon {
   background: url(../images/line_off.png) no-repeat;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-right: 28px;
 }
 
 .line_on-icon {
   background: url(../images/line_on.png) no-repeat;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-right: 28px;
 }
 
 .grid_on-icon {
   background: url(../images/grid_on.png) no-repeat;
-  border: 0;
-  border-radius: 0;
-  height: 53px;
-  width: 29px;
 }
 
 .grid_off-icon {
   background: url(../images/grid_off.png) no-repeat;
-  border: 0;
-  border-radius: 0;
-  height: 53px;
-  width: 29px;
 }
 
 .cross-icon {

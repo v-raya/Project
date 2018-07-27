@@ -13,7 +13,7 @@ const Pagination = ({
   handlePageNumberChange,
   onPageNumberInputChange
 }) => (
-  <span className='pagination'>
+  <span className='fs-pagination'>
     <select
       aria-label='Number of Facilities'
       className='no_of_facilities'
@@ -32,7 +32,7 @@ const Pagination = ({
       disabled={getFromValue(sizeValue, pageNumber) - sizeValue < 0}
       onClick={() => { handlePageNumberChange(pageNumber - 1); searchApiCall(getFromValue(sizeValue, pageNumber - 1), sizeValue); window.scrollTo(0, 0) }}
       className='previous btn btn-default'>
-      <p>&#8249;</p>
+      <span className='glyphicon glyphicon-chevron-left' />
     </button>
     <Cleave
       aria-label='Page Number Input'
@@ -50,7 +50,7 @@ const Pagination = ({
       disabled={getFromValue(sizeValue, pageNumber) + sizeValue >= totalNoOfFacilities}
       onClick={() => { handlePageNumberChange(pageNumber + 1); searchApiCall(getFromValue(sizeValue, pageNumber + 1), sizeValue); window.scrollTo(0, 0) }}
       className='next btn btn-default'>
-      <p>&#8250;</p>
+      <span className='glyphicon glyphicon-chevron-right' />
     </button>
   </span>
 )

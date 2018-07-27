@@ -1,4 +1,3 @@
-import {checkIfScrollBarVisible} from 'search/common/commonUtils'
 import * as Constants from 'constants/actionTypes'
 
 export const searchApiCall = (searchParams, urlParams) => ({
@@ -40,11 +39,6 @@ export const handleResetForm = () => ({
 
 export const handleToggle = () => ({
   type: Constants.HANDLE_TOGGLE
-})
-
-export const handleScrollBarChange = () => ({
-  type: Constants.HANDLE_VISIBLE_SCROLLBAR_CHANGE,
-  payload: {isScrollBarVisible: checkIfScrollBarVisible(document.documentElement)}
 })
 
 export const fetchDictionarySuccess = (dictionaries) => ({

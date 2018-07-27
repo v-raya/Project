@@ -6,7 +6,7 @@ import SearchList from './searchList'
 import AdvancedSearch from './advancedSearch'
 import SearchNotFound from './searchNotFound'
 import {checkForValue, checkAndSplitValue, checkForLicenseStatus} from 'search/common/commonUtils'
-import {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall, searchUserDataCall, handleScrollBarChange} from 'actions/searchActions'
+import {handleInputChange, searchApiCall, handleToggle, handleResetForm, handlePageNumberChange, handleDropDownAndPageNumberChange, searchDictionariesCall, searchUserDataCall} from 'actions/searchActions'
 import {connect} from 'react-redux'
 import {PageHeader} from 'react-wood-duck'
 import BreadCrumb from 'components/common/breadCrumb'
@@ -17,10 +17,6 @@ class Search extends Component {
   componentDidMount () {
     this.props.searchDictionariesCall()
     this.props.searchUserDataCall()
-  }
-
-  componentDidUpdate () {
-    this.props.handleScrollBarChange()
   }
 
   searchApiCallParams (fromValue, sizeValue) {
@@ -96,44 +92,45 @@ class Search extends Component {
           button={null}
         />
         <BreadCrumb />
-        <SearchInput
-          resetForm={this.props.handleResetForm}
-          searchApiCall={this.searchApiCallParams.bind(this)}
-          handlePageNumberChange={this.props.handlePageNumberChange}
-          countyList={this.props.countyTypes}
-          facilityTypes={this.props.facilityTypes}
-          licenseStatuses={this.props.licenseStatuses}
-          countyValue={this.props.inputData.countyValue}
-          facilityTypeValue={this.props.inputData.facilityTypeValue}
-          licenseStatusValue={this.props.inputData.licenseStatusValue}
-          isAllActive={this.props.inputData.isAllActive}
-          facilityIdValue={this.props.inputData.facilityIdValue}
-          facilityNameValue={this.props.inputData.facilityNameValue}
-          facilityAddressValue={this.props.inputData.facilityAddressValue}
-          handleInputChange={this.props.handleInputChange}
-          sizeValue={this.props.sizeValue} />
-        {searchResponseHasValues &&
+        <div className='container-fluid'>
+          <SearchInput
+            resetForm={this.props.handleResetForm}
+            searchApiCall={this.searchApiCallParams.bind(this)}
+            handlePageNumberChange={this.props.handlePageNumberChange}
+            countyList={this.props.countyTypes}
+            facilityTypes={this.props.facilityTypes}
+            licenseStatuses={this.props.licenseStatuses}
+            countyValue={this.props.inputData.countyValue}
+            facilityTypeValue={this.props.inputData.facilityTypeValue}
+            licenseStatusValue={this.props.inputData.licenseStatusValue}
+            isAllActive={this.props.inputData.isAllActive}
+            facilityIdValue={this.props.inputData.facilityIdValue}
+            facilityNameValue={this.props.inputData.facilityNameValue}
+            facilityAddressValue={this.props.inputData.facilityAddressValue}
+            handleInputChange={this.props.handleInputChange}
+            sizeValue={this.props.sizeValue} />
+          {searchResponseHasValues &&
           (
             <AdvancedSearch
               paginationRender= {paginationRender}
               handleToggle= {this.props.handleToggle}
               isToggled={this.props.isToggled} />
           )
-        }
-        <div className='result-section col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          {this.props.isToggled && <SearchGrid searchResults={this.props.searchResults} />}
-          {!this.props.isToggled && <SearchList searchResults={this.props.searchResults} />}
-          {(!searchResponseHasValues && !initialLoad) && <SearchNotFound errors={this.props.errors.issue_details} errorMessage={this.props.errorMessage} />}
-        </div>
-        {searchResponseHasValues && this.props.isScrollBarVisible &&
+          }
+          <div className='result-section row'>
+            {this.props.isToggled && <SearchGrid searchResults={this.props.searchResults} />}
+            {!this.props.isToggled && <SearchList searchResults={this.props.searchResults} />}
+            {(!searchResponseHasValues && !initialLoad) && <SearchNotFound errors={this.props.errors.issue_details} errorMessage={this.props.errorMessage} />}
+          </div>
+          {searchResponseHasValues &&
             (
-              <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-                <span className='search_details col-xs-12 col-sm-11 col-md-11 col-lg-11'>
-                  {paginationRender}
-                </span>
+              <div className='bottom-pagination row'>
+                {paginationRender}
               </div>
+
             )
-        }
+          }
+        </div>
       </div>
     )
   }
@@ -176,8 +173,7 @@ function mapStateToProps (state) {
     sizeValue: state.searchReducer.sizeValue,
     pageNumber: state.searchReducer.pageNumber,
     errors: state.searchReducer.errors,
-    errorMessage: state.searchReducer.errorMessage,
-    isScrollBarVisible: state.searchReducer.isScrollBarVisible
+    errorMessage: state.searchReducer.errorMessage
   }
 }
 
@@ -190,6 +186,5 @@ export default connect(mapStateToProps, {
   handlePageNumberChange,
   handleDropDownAndPageNumberChange,
   searchDictionariesCall,
-  handleScrollBarChange,
   searchUserDataCall
 })(Search)

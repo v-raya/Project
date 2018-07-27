@@ -105,10 +105,6 @@ export const checkNullOrEmptyValue = (value) => {
   return (value === null || value === '') ? 'N/A' : value
 }
 
-export const checkIfScrollBarVisible = (object) => {
-  return object.scrollHeight > object.clientHeight
-}
-
 export const primaryPhoneRelation = 'primary'
 
 export const alternativePhoneRelation = 'alternate'

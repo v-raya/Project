@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 describe('Verify Search component', function () {
   let handleToggleSpy, searchComp, handleChangeSpy, handleInputChangeSpy, searchApiCallSpy,
-    handleResetFormSpy, handlePageNumberChangeSpy, handleDropDownAndPageNumberChangeSpy, searchDictionariesCallSpy, handleScrollBarChangeSpy, searchUserDataCallSpy
+    handleResetFormSpy, handlePageNumberChangeSpy, handleDropDownAndPageNumberChangeSpy, searchDictionariesCallSpy, searchUserDataCallSpy
 
   beforeEach(() => {
     handleToggleSpy = jasmine.createSpy('handleToggle')
@@ -15,7 +15,6 @@ describe('Verify Search component', function () {
     handlePageNumberChangeSpy = jasmine.createSpy('handlePageNumberChange')
     handleDropDownAndPageNumberChangeSpy = jasmine.createSpy('handleDropDownAndPageNumberChange')
     searchDictionariesCallSpy = jasmine.createSpy()
-    handleScrollBarChangeSpy = jasmine.createSpy()
     searchUserDataCallSpy = jasmine.createSpy()
 
     const props = {
@@ -26,7 +25,6 @@ describe('Verify Search component', function () {
       inputData: {
         'countyValue': '19'
       },
-      isScrollBarVisible: true,
       facilityTypes: [
         {
           id: '',
@@ -80,8 +78,7 @@ describe('Verify Search component', function () {
       handlePageNumberChange: handlePageNumberChangeSpy,
       handleDropDownAndPageNumberChange: handleDropDownAndPageNumberChangeSpy,
       searchDictionariesCall: searchDictionariesCallSpy,
-      searchUserDataCall: searchUserDataCallSpy,
-      handleScrollBarChange: handleScrollBarChangeSpy
+      searchUserDataCall: searchUserDataCallSpy
     }
 
     searchComp = mount(<BrowserRouter><Search {...props} /></BrowserRouter>)
@@ -164,14 +161,6 @@ describe('Verify Search component', function () {
       expectedQuery,
       {fromValue: 0, sizeValue: 5, sort: 'name.for_sort', order: 'asc'}
     )
-  })
-
-  it('verify if the dropdown component is rendered or not', () => {
-    let dropDownComponent = searchComp.find('#noOfFacilities').at(1)
-    expect(dropDownComponent.length).toBe(1)
-    searchComp.setProps({isScrollBarVisible: false})
-    searchComp.update()
-    expect(handleScrollBarChangeSpy).toHaveBeenCalled()
   })
 
   it('verify error messages', () => {

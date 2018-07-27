@@ -9,7 +9,6 @@ import {
   handleInputChange,
   handleDropDownChange,
   handleDropDownAndPageNumberChange,
-  handleScrollBarChange,
   handlePageNumberChange,
   handleResetForm,
   handleToggle,
@@ -36,8 +35,7 @@ describe('Verify searchReducer', () => {
       licenseStatuses: [],
       errors: {},
       userCounty: '',
-      errorMessage: undefined,
-      isScrollBarVisible: false
+      errorMessage: undefined
     }
   })
 
@@ -218,14 +216,5 @@ describe('Verify searchReducer', () => {
     outputState.pageNumber = 2
 
     expect(searchReducer(undefined, handleDropDownAndPageNumberChangeAction)).toEqual(outputState)
-  })
-
-  it('scroll bar visible change', () => {
-    const handleScrollBarChangeAction = handleScrollBarChange()
-
-    let outputState = initialState
-    outputState.isScrollBarVisible = false
-
-    expect(searchReducer(undefined, handleScrollBarChangeAction)).toEqual(outputState)
   })
 })

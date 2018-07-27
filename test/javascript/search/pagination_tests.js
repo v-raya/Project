@@ -28,7 +28,7 @@ describe('Facility Search pagination', function () {
   })
 
   it('verify pagination component render', () => {
-    const paginationClassName = paginationCompRendered.find('.pagination')
+    const paginationClassName = paginationCompRendered.find('.fs-pagination')
     expect(paginationClassName.length).toBe(1)
     expect(paginationCompRendered.length).toBe(1)
   })
