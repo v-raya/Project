@@ -96,6 +96,8 @@ export default class OutOfStateRegistryCheck extends React.Component {
                   }
                   <DateNoteFields
                     id='outOfStateRegistry'
+                    dateFieldClass='col-xs-4 no-padding'
+                    textFieldClass='col-xs-12 no-padding'
                     subKey={index}
                     dateValue={outOfStateData.getIn(['registry_info', 'date'])}
                     notesValue={outOfStateData.getIn(['registry_info', 'notes'])}

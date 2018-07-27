@@ -63,6 +63,25 @@ RSpec.feature 'RFA02', js: true, inaccessible: true do
     expect(page).to have_content('Hello!')
   end
 
+  scenario 'visit RFA02 page from Tracking and validate cancel', set_auth_header: true do
+    visit root_path
+    page.find("a", :text =>"123Monteo, James", match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'tracking').click
+    page.find("a", :text => 'Criminal Background Checklist (RFA-02)', match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'Criminal Background Checklist (RFA-02)').click
+    expect(page).to have_button 'Edit Checklist'
+    click_button 'Edit Checklist'
+    fill_in('liveScan0textAreaEdit0', with: 'Hello!', match: :prefer_exact)
+    expect(page).to have_button 'Save'
+    click_button 'Save'
+    expect(page).to have_button 'Edit Checklist'
+    click_button 'Edit Checklist'
+    fill_in('liveScan0textAreaEdit0', with: '121', match: :prefer_exact)
+    expect(page).not_to have_content('Hello!')
+    expect(page).to have_button 'Cancel'
+    click_button 'Cancel'
+    expect(page).to have_button 'Edit Checklist'
+    expect(page).to have_content('Hello!')
+  end
+
   scenario 'visit RFA02 page from Tracking and and handle api error', set_auth_header: true do
     visit root_path
     expect(page).to have_content("123Monteo, James")

@@ -7,6 +7,8 @@ import {FormatDateForDisplay, FormatDateForPersistance} from 'helpers/commonHelp
 const DateNoteFields = ({
   containerClass,
   editMode,
+  dateFieldClass,
+  textFieldClass,
   id,
   subKey,
   dateValue,
@@ -16,20 +18,32 @@ const DateNoteFields = ({
   return (
     editMode
       ? <div className={containerClass}>
-        <DateField
-          id={id + 'date' + subKey}
-          value={FormatDateForDisplay(dateValue)}
-          onChange={(event) => handleChange('date', FormatDateForPersistance(event.target.value), subKey)}
-        />
-        <TextAreaComponent
-          id={id + 'notes' + subKey}
-          value={notesValue}
-          onChange={(event) => handleChange('notes', event.target.value, subKey)}
-        />
+        <div className={dateFieldClass}>
+          <p>Date</p>
+          <DateField
+            id={id + 'date' + subKey}
+            value={FormatDateForDisplay(dateValue)}
+            onChange={(event) => handleChange('date', FormatDateForPersistance(event.target.value), subKey)}
+          />
+        </div>
+        <div className={textFieldClass}>
+          <p>Notes</p>
+          <TextAreaComponent
+            id={id + 'notes' + subKey}
+            value={notesValue}
+            onChange={(event) => handleChange('notes', event.target.value, subKey)}
+          />
+        </div>
       </div>
       : <div className={containerClass}>
-        <p>{FormatDateForDisplay(dateValue)}</p>
-        <p>{notesValue}</p>
+        <div>
+          <p>Date</p>
+          <p>{FormatDateForDisplay(dateValue)}</p>
+        </div>
+        <div>
+          <p>Notes</p>
+          <p>{notesValue}</p>
+        </div>
       </div>
   )
 }
@@ -37,7 +51,9 @@ const DateNoteFields = ({
 DateNoteFields.defaultProps = {
   containerClass: 'col-xs-12',
   dateValue: '',
-  notesValue: ''
+  notesValue: '',
+  textFieldClass: '',
+  dateFieldClass: ''
 }
 
 export default DateNoteFields

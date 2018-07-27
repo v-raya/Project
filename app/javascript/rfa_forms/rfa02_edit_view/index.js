@@ -27,15 +27,17 @@ export default class Rfa02EditView extends React.Component {
       cardBeingEdited: false,
       activeNavLinkHref: ''
     }
+    this.rfaBaseState = this.props.rfa02
   }
   editProgress (event) {
     this.setState({ cardBeingEdited: true })
   }
 
   cancelProgress (event) {
+    let oldState = this.rfaBaseState
     this.setState({
       cardBeingEdited: false,
-      rfa02: Immutable.fromJS(this.props.rfa02)
+      rfa02: Immutable.fromJS(oldState)
     })
   }
 
@@ -53,11 +55,17 @@ export default class Rfa02EditView extends React.Component {
     fetchRequest(url, 'PUT', this.state.rfa02.toJS())
       .then((response) => {
         return response.json()
+      }).then((data) => {
+        this.setState({
+          cardBeingEdited: false,
+          rfa02: Immutable.fromJS(data)
+        })
       }).catch((errors) => {
         this.setState({
           errors: errors
         })
       })
+    this.rfaBaseState = this.state.rfa02
   }
 
   handleHrefClick (href) {
