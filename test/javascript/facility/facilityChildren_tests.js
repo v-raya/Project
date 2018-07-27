@@ -11,7 +11,19 @@ describe('Verify Children Component', function () {
       'age': 17,
       'date_of_birth': 'N/A',
       'gender': 'F',
-      'date_of_placement': 'N/A',
+      'date_of_placement': '11/03/2004',
+      'assigned_worker': 'Peter Parker',
+      'county_of_origin': 'sacramento',
+      'display_client_id': '2222-2222-2222-2222222'
+    },
+    {
+      'id': 2222,
+      'first_name': 'Mei',
+      'last_name': 'Takahashi',
+      'age': 17,
+      'date_of_birth': 'N/A',
+      'gender': 'F',
+      'date_of_placement': '04/30/2001',
       'assigned_worker': 'Peter Parker',
       'county_of_origin': 'sacramento',
       'display_client_id': '2222-2222-2222-2222222'
@@ -34,30 +46,30 @@ describe('Verify Children Component', function () {
     expect(renderChildComp.length).toBe(1)
   })
   it('Verify ID', () => {
-    expect(renderChildComp.find('td[data-label="id"]').props().children[1]).toBe('2222-2222-2222-2222222')
+    expect(renderChildComp.find('.table').props().data[0].display_client_id).toBe('2222-2222-2222-2222222')
   })
   it('Verify child first name', () => {
-    expect(renderChildComp.find('td[data-label="first name"]').props().children[1]).toBe('Mei')
+    expect(renderChildComp.find('.table').props().data[0].first_name).toBe('Mei')
   })
   it('Verify child last name', () => {
-    expect(renderChildComp.find('td[data-label="last name"]').props().children[1]).toBe('Takahashi')
+    expect(renderChildComp.find('.table').props().data[0].last_name).toBe('Takahashi')
   })
   it('Verify child gender', () => {
-    expect(renderChildComp.find('td[data-label="sex"]').props().children[1]).toBe('F')
+    expect(renderChildComp.find('.table').props().data[0].gender).toBe('F')
   })
   it('Verify child age', () => {
-    expect(renderChildComp.find('td[data-label="age"]').props().children[1]).toBe(17)
+    expect(renderChildComp.find('.table').props().data[0].age).toBe(17)
   })
   it('Verify assigned worker full name', () => {
-    expect(renderChildComp.find('td[data-label="assigned worker"]').props().children[1]).toBe('Peter Parker')
+    expect(renderChildComp.find('.table').props().data[0].assigned_worker).toBe('Peter Parker')
   })
   it('Verify child county of origin', () => {
-    expect(renderChildComp.find('td[data-label="county of origin"]').props().children[1]).toBe('sacramento')
+    expect(renderChildComp.find('.table').props().data[0].county_of_origin).toBe('sacramento')
   })
   it('Verify date of placement for N/A', () => {
-    expect(renderChildComp.find('td[data-label="date of placement"]').props().children[1]).toBe('N/A')
+    expect(renderChildComp.find('.table').props().data[0].date_of_placement).toBe('11/03/2004')
   })
   it('Verify date of birth for N/A', () => {
-    expect(renderChildComp.find('td[data-label="date of birth"]').props().children[1]).toBe('N/A')
+    expect(renderChildComp.find('.table').props().data[0].date_of_birth).toBe('N/A')
   })
 })

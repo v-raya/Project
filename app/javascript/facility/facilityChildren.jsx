@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
 import Spinner from 'facility/common/spinner'
+import {childrenColumns} from 'facility/common/reactTableHeaders'
+import ReactTable from 'react-table'
 
 export default class FacilityChildren extends React.Component {
   componentDidMount () {
@@ -18,38 +20,17 @@ export default class FacilityChildren extends React.Component {
           <div className='children-title'> <h3>Children currently placed in facility</h3> </div>
           <ApiErrorMessages errors={errors.issue_details}/>
           {isFetching ? <Spinner/>
-            : <table id='facility-children-table' className='table'>
-              <thead>
-                <tr>
-                  <th> CLIENT ID </th>
-                  <th> FIRST NAME </th>
-                  <th> LAST NAME </th>
-                  <th> GENDER </th>
-                  <th> AGE </th>
-                  <th> DATE OF BIRTH </th>
-                  <th> DATE OF PLACEMENT </th>
-                  <th> CHILD'S SOCIAL WORKER </th>
-                  <th> COUNTY OF ORIGIN </th>
-                </tr>
-              </thead>
-              <tbody >
-                {children.map((child) => {
-                  return (
-                    <tr key={child.id} >
-                      <td data-label='id'> {child.display_client_id} </td>
-                      <td data-label='first name'> {child.first_name} </td>
-                      <td data-label='last name'> {child.last_name} </td>
-                      <td data-label='sex'> {child.gender} </td>
-                      <td data-label='age'> {child.age} </td>
-                      <td data-label='date of birth'> {child.date_of_birth} </td>
-                      <td data-label='date of placement'> {child.date_of_placement} </td>
-                      <td data-label='assigned worker'> {child.assigned_worker} </td>
-                      <td data-label='county of origin'> {child.county_of_origin} </td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
+            : <ReactTable
+              id='facility-children-table'
+              className='table'
+              data={children}
+              columns={childrenColumns}
+              defaultPageSize={children.length}
+              showPagination={false}
+              sortable={true}
+              resizable
+              noDataText=''
+            />
           }
         </div>
       </div>

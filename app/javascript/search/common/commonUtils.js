@@ -71,6 +71,12 @@ export const checkforDateOrNa = (date) => {
   }
 }
 
+export const sortbyDate = (a, b) => {
+  const dateA = new Date(a).getTime()
+  const dateB = new Date(b).getTime()
+  return dateA > dateB ? 1 : -1
+}
+
 export const formatPhoneNumberForDashes = (phone) => {
   return phone.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3')
 }

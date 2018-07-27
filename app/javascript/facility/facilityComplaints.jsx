@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import ReactTable from 'react-table'
 import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
 import Spinner from 'facility/common/spinner'
+import {complaintsColumns, allegationColumns} from 'facility/common/reactTableHeaders'
 
 export default class FacilityComplaints extends React.Component {
   componentDidMount () {
@@ -13,55 +14,6 @@ export default class FacilityComplaints extends React.Component {
   }
 
   render () {
-    const complaintsColumns = [
-      {
-        Header: 'COMPLAINT DATE',
-        accessor: 'complaint_date'
-      },
-      {
-        Header: 'ASSIGNED WORKER',
-        accessor: 'assigned_worker'
-      },
-      {
-        Header: 'CONTROL NUMBER',
-        accessor: 'control_number'
-      },
-      {
-        Header: 'PRIORITY',
-        accessor: 'priority_level'
-      },
-      {
-        Header: 'STATUS',
-        accessor: 'status'
-      },
-      {
-        Header: 'APPROVAL DATE',
-        accessor: 'approval_date'
-      }
-    ]
-
-    const allegationColumns = [
-      {
-        Header: '',
-        maxWidth: 50,
-        accessor: 'index_subcomponent'
-      },
-      {
-        maxWidth: 300,
-        Header: 'TYPE / CODE',
-        accessor: 'type_code'
-      },
-      {
-        Header: 'ALLEGATION DESCRIPTION',
-        maxWidth: 700,
-        accessor: 'allegation'
-      },
-      {
-        maxWidth: 200,
-        Header: 'RESOLUTION CODE',
-        accessor: 'resolution_type_description'
-      }
-    ]
     const {complaints, errors, isFetching} = this.props
     return (
       <div className='facility-children'>
@@ -87,7 +39,7 @@ export default class FacilityComplaints extends React.Component {
                       data={row.original.allegations}
                       columns={allegationColumns}
                       defaultPageSize={row.original.allegations.length}
-                      sortable={false}
+                      sortable={true}
                       resizable={false}
                       showPagination={false}
                     />

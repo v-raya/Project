@@ -1,4 +1,4 @@
-import { checkAndSplitValue, checkForLicenseStatus } from 'search/common/commonUtils.js'
+import { checkAndSplitValue, checkForLicenseStatus, sortbyDate } from 'search/common/commonUtils.js'
 
 describe('check and split value method with different inputs', () => {
   it('should return wildcard tokens attached to both words', () => {
@@ -36,5 +36,20 @@ describe('check licenseStatus based on isAllActive flag', () => {
     const statusValue = [{id: 8, value: 'Application Denied'}, {id: 7, value: 'Application Withdrawn'}]
     const output = [8, 7]
     expect(checkForLicenseStatus(isAllActive, statusValue)).toEqual(output)
+  })
+})
+
+describe('sort by date ', () => {
+  it('should return asc order', () => {
+    const a = '11/03/2001'
+    const b = '04/30/2004'
+    const output = -1
+    expect(sortbyDate(a, b)).toEqual(output)
+  })
+  it('should return desc order', () => {
+    const a = '11/03/2004'
+    const b = '04/30/2001'
+    const output = 1
+    expect(sortbyDate(a, b)).toEqual(output)
   })
 })
