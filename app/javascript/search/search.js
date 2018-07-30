@@ -124,9 +124,9 @@ class Search extends Component {
           </div>
           {searchResponseHasValues &&
             (
-              <div className='bottom-pagination'>
+              <center className='bottom-pagination'>
                 {paginationRender}
-              </div>
+              </center>
             )
           }
         </div>
