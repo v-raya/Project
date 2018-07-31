@@ -44,7 +44,7 @@ export default class EmergencyPlacement extends React.Component {
         />
           : <YesNoFieldShow
             value={emergencyPlacementList.get('is_emergency')}
-            label='is this an emergency placement?'
+            label='Is this an emergency placement?'
           />
         }
 
