@@ -28,6 +28,10 @@ export default class FacilityChildren extends React.Component {
               defaultPageSize={children.length}
               showPagination={false}
               sortable={true}
+              defaultSorted={[{
+                id: 'dateOfPlacement',
+                desc: true
+              }]}
               resizable
               noDataText=''
             />

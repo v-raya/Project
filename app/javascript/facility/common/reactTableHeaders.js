@@ -33,6 +33,7 @@ export const childrenColumns = [
     sortMethod: (a, b) => sortbyDate(a, b)
   },
   {
+    id: 'dateOfPlacement',
     Header: props => <span> DATE OF PLACEMENT <i className="fa fa-angle-down"/></span>,
     maxWidth: 190,
     accessor: 'date_of_placement',
