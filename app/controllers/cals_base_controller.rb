@@ -9,7 +9,8 @@ class CalsBaseController < ApplicationController
   def logout
     delete_user_from_session
     default_callback_url = ''
-    redirect_to Cwds::Authentication.logout_url(AUTHENTICATION_API_BASE_URL, default_callback_url)
+    login_url = Cwds::Authentication.authentication_url(AUTHENTICATION_API_BASE_URL, default_callback_url)
+    redirect_to Cwds::Authentication.logout_url(AUTHENTICATION_API_BASE_URL, login_url)
   end
 
   def user_from_session

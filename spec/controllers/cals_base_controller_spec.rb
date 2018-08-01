@@ -9,7 +9,10 @@ describe CalsBaseController do
   end
 
   before do
-    routes.draw { get 'custom' => 'cals_base#custom' }
+    routes.draw do
+      get 'custom' => 'cals_base#custom'
+      get 'logout' => 'cals_base#logout'
+    end
   end
 
   it 'sets token when token is empty' do
@@ -26,4 +29,11 @@ describe CalsBaseController do
     expect(response).to redirect_to 'www.google.com'
   end
 
+  it 'logs out the user' do
+    allow_any_instance_of(CalsBaseController).to receive(:authenticate_with_cwds).and_return(true)
+    allow(Cwds::Authentication).to receive(:authentication_url).with(AUTHENTICATION_API_BASE_URL, '').and_return('www.google.com')
+    allow(Cwds::Authentication).to receive(:logout_url).with(AUTHENTICATION_API_BASE_URL, 'www.google.com').and_return('www.google.com/login')
+    get :logout
+    assert_redirected_to 'www.google.com/login'
+  end
 end
