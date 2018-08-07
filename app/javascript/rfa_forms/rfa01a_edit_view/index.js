@@ -14,7 +14,7 @@ import {CountyUseOnlyCard} from 'components/rfa_forms/countyUseOnlyCard.js'
 import RfaSideBar from 'rfa_forms/rfa_sidebar/index.js'
 import PageTemplate from 'components/common/pageTemplate'
 import {fetchRequest} from 'helpers/http'
-import {getDictionaryId, dictionaryNilSelect, checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
+import {getDictionaryId, dictionaryNilSelect, checkArrayObjectPresence, unMaskedPhoneFields} from 'helpers/commonHelper.jsx'
 import {checkForNameValidation, checkFieldsForSubmit, validateStatus} from 'helpers/cardsHelper.jsx'
 import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 import Validator from 'helpers/validator'
@@ -91,8 +91,18 @@ export default class Rfa01EditView extends React.Component {
   }
 
   saveProgress () {
+    let overAllState = this.state.application
+    let newApplicants = overAllState.get('applicants').map((applicant) =>
+      applicant.update('phones', (phones) =>
+        unMaskedPhoneFields(phones, 'number')
+      )
+    )
+    let newOverAllState = overAllState.set('applicants', newApplicants)
+    let newReferenceList = unMaskedPhoneFields(newOverAllState.getIn(['references', 'items']), 'phone_number')
+    let finalState = newOverAllState.getIn(['references', 'items']) ? newOverAllState.setIn(['references', 'items'], newReferenceList) : newOverAllState
+
     const url = '/rfa/a01/' + this.props.application_id
-    this.fetchToRails(url, 'PUT', this.state.application.toJS())
+    this.fetchToRails(url, 'PUT', finalState.toJS())
   }
 
   submit () {

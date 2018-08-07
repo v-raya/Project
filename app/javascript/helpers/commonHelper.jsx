@@ -42,6 +42,18 @@ export const removeLegalNameType = (nameTypes) => {
 export const getFromValue = (pageSize, pageNumber) => {
   return pageSize * (pageNumber - 1)
 }
+
+export const unMaskedPhoneFields = (mappedList, key) => {
+  if (mappedList) {
+    const newList = mappedList.map((obj) => {
+      return obj.update(key, value => value.replace(/\D+/g, ''))
+    })
+    return newList
+  } else {
+    return mappedList
+  }
+}
+
 export const FormatDateForPersistance = (dateString) => {
   let persistantDateString
   if (dateString) {

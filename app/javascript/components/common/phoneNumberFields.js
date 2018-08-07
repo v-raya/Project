@@ -29,26 +29,21 @@ export class PhoneNumberField extends React.PureComponent {
 
     return (
       <div>
-
-        <CleaveInputField
+        <MaskedInputField
           gridClassName='col-md-4'
           id={this.phoneNumberId}
-          value={phoneFields.number}
           label='Phone Number (required)'
+          mask='(111) 111-1111'
+          value={phoneFields.number}
           placeholder=''
           blurPlaceholder=''
           focusPlaceholder='(___)___-____'
-          options={{
-            delimiters: ['(', ')', ' ', '-'],
-            blocks: [0, 3, 0, 3, 4],
-            numericOnly: true}}
-          type='text'
           errors={fieldErrorsAsImmutableSet(this.props.errors.number)}
-          onChange={(event) => this.props.onPhoneFieldChange(
-            this.props.index,
-            event.target.rawValue,
-            'number')}
-          onBlur={(event) => this.props.validator.validateFieldSetErrorState(this.phoneNumberId, event.target.rawValue)}
+          maxLength='10'
+          type='text'
+          onChange={({target: {value}}) => this.props.onPhoneFieldChange(
+            this.props.index, value, 'number')}
+          onBlur={(event) => this.props.validator.validateFieldSetErrorState(this.phoneNumberId, event.target.value.replace(/\D+/g, ''))}
         />
         <DropDownField gridClassName='col-md-4' id='phone_type'
           selectClassName='reusable-select'

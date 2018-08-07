@@ -3,6 +3,7 @@ import Immutable from 'immutable'
 import {InputComponent} from 'components/common/inputFields'
 import CompleteNameFields from './completeNameField'
 import PropTypes from 'prop-types'
+import MaskedInputField from 'components/common/maskedInputField.jsx'
 import CleaveInputField from 'components/common/cleaveInputField.jsx'
 import {fieldErrorsAsImmutableSet} from 'helpers/validationHelper.jsx'
 import AddressComponent from 'components/rfa_forms/addressComponent.js'
@@ -62,22 +63,20 @@ export default class ReferencesCard extends React.Component {
           />
         </div>
         <div className='col-md-12'>
-          <CleaveInputField
+          <MaskedInputField
             gridClassName='col-md-4'
             id={phoneNumberId}
-            value={this.props.reference.phone_number}
+            value={reference.phone_number}
             label='Phone Number (required)'
+            maxLength='10'
             placeholder=''
             blurPlaceholder=''
             focusPlaceholder='(___)___-____'
-            options={{
-              delimiters: ['(', ')', ' ', '-'],
-              blocks: [0, 3, 0, 3, 4],
-              numericOnly: true}}
+            mask='(111) 111-1111'
             type='text'
             errors={fieldErrorsAsImmutableSet(this.props.errors.phone_number)}
-            onChange={(event) => this.props.setParentState('phone_number', event.target.rawValue, this.props.index)}
-            onBlur={(event) => this.props.validator.validateFieldSetErrorState(phoneNumberId, event.target.rawValue)} />
+            onChange={({target: {value}}) => this.props.setParentState('phone_number', value, this.props.index)}
+            onBlur={(event) => this.props.validator.validateFieldSetErrorState(phoneNumberId, event.target.value.replace(/\D+/g, ''))} />
 
           <InputComponent gridClassName='col-md-4' id='email'
             value={this.props.reference.email}

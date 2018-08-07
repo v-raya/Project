@@ -1,10 +1,11 @@
 import React from 'react'
 import Immutable from 'immutable'
-import PhoneComponent, {blankPhoneNumberFields} from 'rfa_forms/rfa01a_edit_view/phoneNumberCardsGroup'
+import PhoneComponent from 'rfa_forms/rfa01a_edit_view/phoneNumberCardsGroup'
 import {PhoneNumberField} from 'components/common/phoneNumberFields'
 import {shallow, mount} from 'enzyme'
 import {phoneTypes} from './../../helpers/constants'
 import Validator from 'helpers/validator.js'
+
 var TestUtils = require('react-dom/test-utils')
 
 describe('Verify Phone Card Component View', function () {
@@ -12,6 +13,9 @@ describe('Verify Phone Card Component View', function () {
   let props
   const phoneNumber = {number: '3333-222-5545',
     phone_type: {id: '1', value: 'Cell'},
+    preferred: false}
+  const blankPhoneNumberFields = {number: '',
+    phone_type: {id: 2, value: 'Home'},
     preferred: false}
 
   let setParentStateSpy // = jasmine.createSpy()
@@ -21,10 +25,10 @@ describe('Verify Phone Card Component View', function () {
     props = {
       phoneTypes: phoneTypes,
       phones: Immutable.fromJS([phoneNumber]),
+      blankPhones: Immutable.fromJS([blankPhoneNumberFields]),
       setParentState: setParentStateSpy,
       validator: new Validator({})
     }
-
     component = shallow(
       <PhoneComponent {...props} />
     )
@@ -114,6 +118,9 @@ describe('Preferred logic', () => {
   let phoneNumbers = Immutable.fromJS([{number: '3333-222-5545',
     phone_type: {id: '1', value: 'Cell'},
     preferred: false}])
+  let blankPhoneNumbers = Immutable.fromJS([{number: '(888) 444-2323',
+    phone_type: {id: '1', value: 'Cell'},
+    preferred: false}])
   let setParentStateSpy
   // let onPhoneFieldChangeSpy
 
@@ -122,6 +129,7 @@ describe('Preferred logic', () => {
     props = {
       phoneTypes: phoneTypes,
       phones: phoneNumbers,
+      blankPhone: blankPhoneNumbers,
       validator: new Validator({}),
       setParentState: setParentStateSpy
     }
@@ -147,11 +155,18 @@ describe('Preferred logic', () => {
   })
 
   it('allows to change number', () => {
-    const newNumber = '8884442323'
+    const newNumber = '(888) 444-2323'
     component.find('input[type="text"]').simulate('change', {target: {value: newNumber}})
 
     let newData = phoneNumbers.setIn([0, 'number'], newNumber)
     expect(setParentStateSpy).toHaveBeenCalledWith('phones', newData)
+  })
+
+  it('verify when a random number is missing', () => {
+    const newNumber = '(888) _44-2323'
+    component.find('input[type="text"]').simulate('change', {target: {value: newNumber}})
+    let newData = phoneNumbers.setIn([0, 'number'], newNumber)
+    expect(newNumber).toEqual('(888) _44-2323')
   })
 
   it('allows to change type', () => {

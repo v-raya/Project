@@ -3,12 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {PhoneNumberField} from 'components/common/phoneNumberFields'
 import {addCardAsJS, removeCard} from 'helpers/cardsHelper.jsx'
-
-export const blankPhoneNumberFields = Object.freeze({
-  number: '',
-  phone_type: {id: 2, value: 'Home'},
-  preferred: false
-})
+import {blankPhoneNumberFields} from 'constants/defaultFields'
 
 export default class PhoneComponent extends React.Component {
   constructor (props) {
@@ -25,11 +20,9 @@ export default class PhoneComponent extends React.Component {
 
   onPhoneFieldChange (phoneCardIndex, value, type) {
     let phoneNumbersList = this.props.phones
-    // if type preferred then set all preferred =false
     if (type === 'preferred') {
       phoneNumbersList = phoneNumbersList.map(x => x.set(type, false))
     }
-
     phoneNumbersList = phoneNumbersList.update(phoneCardIndex, x => x.set(type, value))
     this.props.setParentState('phones', phoneNumbersList)
   }

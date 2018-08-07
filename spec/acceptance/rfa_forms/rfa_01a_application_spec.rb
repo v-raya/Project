@@ -51,7 +51,7 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     expect(page).to have_content 'Phone Number'
     fill_in 'applicants[0].phones[0].number', with: '201-222-2345'
     click_button('Save Progress')
-    visit page.driver.current_url
+    #visit page.driver.current_url
     expect(find_field('highest_education_level').value).to eq '2'
     expect(find_field('ethnicity').value).to eq '4'
     expect(find_field('applicants[0].driver_license_number').value).to eq 'ABC123'

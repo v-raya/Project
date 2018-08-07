@@ -23,6 +23,12 @@ export const phoneDefaults = Object.freeze({
   number: ''
 })
 
+export const blankPhoneNumberFields = Object.freeze({
+  number: '',
+  phone_type: {id: 2, value: 'Home'},
+  preferred: false
+})
+
 const facilityDataAddressDefaults = Object.freeze({
   physicalStreetAddress: '',
   physicalAddressCityZipState: '',

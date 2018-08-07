@@ -55,9 +55,9 @@ describe('References Card', () => {
   })
   it('verify phone change in reference Card', () => {
     let phoneField = referencesComp.find('#reference1phone_number').hostNodes()
-    phoneField.simulate('change', {target: {value: '800-800-8000'}})
-    fieldRefValues.phone_number = '800-800-8000'
-    expect(setParentStateSpy).toHaveBeenCalledWith('phone_number', '8008008000', 0)
+    phoneField.simulate('change', {target: {value: '(888) 444-2323'}})
+    fieldRefValues.phone_number = '(888) 444-2323'
+    expect(setParentStateSpy).toHaveBeenCalledWith('phone_number', '(888) 444-2323', 0)
   })
   it('verify phone change in reference Card', () => {
     let phoneField = referencesComp.find('#email').hostNodes()
