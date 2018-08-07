@@ -24,6 +24,11 @@ export default class ApplicantDetailsCard extends React.Component {
     this.dateOfBirthId = 'date_of_birth'
     this.driversLicenseStateId = 'driver_license_state'
     this.driversLicenseNumberId = 'driver_license'
+    this.props.validator.addFieldValidation('residence_address.street_address', {rule: 'isRequired', message: 'Required'})
+    this.props.validator.addFieldValidation('residence_address.city', {rule: 'isRequired', message: 'Required'})
+    this.props.validator.addFieldValidation('residence_address.state.id', {rule: 'isRequired', message: 'Required'})
+    this.props.validator.addFieldValidation('residence_address.zip', {rule: 'isRequired', message: 'Required'})
+
     this.props.validator.addNewValidation(
       {
         [this.dateOfBirthId]: [{

@@ -199,12 +199,11 @@ describe('Rfa01BEditView test', () => {
     applicantDetailsCard.find('#applicant_first_name').hostNodes().simulate('change', {target: {value: 'name'}})
     applicantDetailsCard.find('#applicant_last_name').hostNodes().simulate('change', {target: {value: 'last'}})
 
-    applicantDetailsCard.find('#Residentialstreet_address').hostNodes().simulate('change', {target: {value: 'last'}})
-    applicantDetailsCard.find('#Residentialzip').hostNodes().simulate('change', {target: {value: 'last'}})
-    applicantDetailsCard.find('#Residentialcity').hostNodes().simulate('change', {target: {value: 'last'}})
-    let state = applicantDetailsCard.find('.Select-control').simulate('keyDown', { keyCode: 40 })
+    applicantDetailsCard.find('#Residentialstreet_address').hostNodes().simulate('change', {target: {value: '4400 Truxel Rd'}})
+    applicantDetailsCard.find('#Residentialzip').hostNodes().simulate('change', {target: {value: '34388'}})
+    applicantDetailsCard.find('#Residentialcity').hostNodes().simulate('change', {target: {value: 'Springfield'}})
+    let state = applicantDetailsCard.find('#Residentialstate_type').hostNodes().simulate('keyDown', { keyCode: 40 })
     state.simulate('keyDown', { keyCode: 13 })
-
     let submitBtn = _Rfa01BEditView.find('#submitApplication')
     submitBtn.simulate('click')
     expect(submitSpy).toHaveBeenCalled()

@@ -89,8 +89,8 @@ describe('Verify ApplicantDetailsCard card', function () {
     it('verify component did mount', () => {
       expect(shallowMount.length).toEqual(1)
     })
-    it('expects 6 validations', () => {
-      expect(shallowMountNoResidence.instance().props.validator.validations.size).toEqual(6)
+    it('number of validations to be', () => {
+      expect(shallowMountNoResidence.instance().props.validator.validations.size).toEqual(10)
     })
     it('tests handleNavLinkClick', () => {
       let CACrimeDisclosureCard = shallowMountNoResidence.find('#applicantDetailsCard').hostNodes()
