@@ -22,8 +22,8 @@ class Rfa::C01Controller < CalsBaseController
   end
 
   def submit
-    @a01_id= params[:a01_id]
-    @b01_id= params[:c01_id]
+    @a01_id= params[:a01_id].to_s
+    @c01_id= params[:c01_id].to_s
     rfa_application_helper.submit_application(@a01_id)
     render json: rfa_c01_application_helper.find_by_id(@a01_id, @c01_id)
   rescue  => e
