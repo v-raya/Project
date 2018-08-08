@@ -9,36 +9,49 @@ import {minorDefaults} from 'constants/defaultFields'
 export default class MinorCardsGroup extends React.Component {
   constructor (props) {
     super(props)
+    this.state = {minorChildren: this.prepareChildrenList(this.props.minorChildren)}
     this.addCard = this.addCard.bind(this)
     this.onFieldChange = this.onFieldChange.bind(this)
     this.clickClose = this.clickClose.bind(this)
     this.handleRelationshipTypeChange = this.handleRelationshipTypeChange.bind(this)
   }
 
+  prepareChildrenList (propsChildrenList) {
+    let minorChildrenList = JSON.parse(JSON.stringify(propsChildrenList)) // clone minor children
+    let visibleChildrenList = propsChildrenList.filter(minorChild => minorChild && !minorChild.to_delete)
+    if (!visibleChildrenList.length) {
+      let childlist = Immutable.fromJS(minorChildrenList)
+      minorChildrenList = childlist.push(minorDefaults).toJS()
+    }
+    return minorChildrenList
+  }
+
+  updateState (childrenList) {
+    this.props.setParentState('minor_children', childrenList)
+    this.setState({minorChildren: this.prepareChildrenList(childrenList)})
+  }
+
   addCard (event) {
-    this.props.setParentState('minor_children', addCardAsJS(this.props.minorChildren, minorDefaults))
+    this.updateState(addCardAsJS(this.state.minorChildren, minorDefaults))
   }
 
   clickClose (cardIndex) {
-    this.props.setParentState('minor_children',
-      removeCardWithId(this.props.minorChildren, cardIndex, minorDefaults))
+    this.updateState(removeCardWithId(this.state.minorChildren, cardIndex, null))
   }
 
   onFieldChange (cardIndex, value, type) {
-    let minorChildrenList = Immutable.fromJS(this.props.minorChildren)
-    minorChildrenList = minorChildrenList.update(cardIndex, x => x.set(type, value))
-    this.props.setParentState('minor_children', minorChildrenList.toJS())
+    let itemsList = Immutable.fromJS(this.state.minorChildren)
+    itemsList = itemsList.update(cardIndex, x => x.set(type, value))
+    this.updateState(itemsList.toJS())
   }
 
   handleRelationshipTypeChange (applicant, value, index, subIndex, type) {
-    let itemsList = Immutable.fromJS(this.props.minorChildren)
+    let itemsList = Immutable.fromJS(this.state.minorChildren)
     itemsList = handleRelationshipTypeToApplicant(itemsList, applicant.id, value, index, subIndex, type)
-    this.props.setParentState('minor_children', itemsList.toJS())// handleRelationshipTypeToApplicant(index, subIndex, value, 'relationship_to_applicant_freeform', this.props.minorChildren))
+    this.updateState(itemsList.toJS())
   }
 
   render () {
-    let minorChildrenList = this.props.minorChildren
-
     return (
       <div className='minor_card'>
         <div id='minorsSection' onClick={() => this.props.setFocusState('minorsSection')}
@@ -48,7 +61,7 @@ export default class MinorCardsGroup extends React.Component {
           </div>
           <div className='card-body'>
             {
-              minorChildrenList.map((minor, index) => {
+              this.state.minorChildren.map((minor, index) => {
                 const idPrefix = 'minor_children[' + index + '].'
                 if (!minor.to_delete) {
                   return (

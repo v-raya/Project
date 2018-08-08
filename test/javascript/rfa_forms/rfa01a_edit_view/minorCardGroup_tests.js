@@ -59,7 +59,6 @@ describe('Verify minor children Component View', function () {
   setParentStateSpy = jasmine.createSpy('setParentState')
   handleRelationshipTypeChangeSpy = jasmine.createSpy('handleRelationshipTypeChange')
   onFieldChangeSpy = jasmine.createSpy('onFieldChange')
-  validator = new Validator({})
 
   beforeEach(() => {
     props = {
@@ -72,7 +71,7 @@ describe('Verify minor children Component View', function () {
       setParentState: setParentStateSpy,
       setFocusState: setFocusStateSpy,
       getFocusClassName: getFocusClassNameSpy,
-      validator: validator
+      validator: new Validator({})
     }
 
     component = shallow(
@@ -89,7 +88,7 @@ describe('Verify minor children Component View', function () {
       setParentState={setParentStateSpy}
       setFocusState={setFocusStateSpy}
       getFocusClassName={getFocusClassNameSpy}
-      validator={validator} />)
+      validator={new Validator({})} />)
 
     componentMount = mount(<MinorCardsGroup {...props} />)
   })
@@ -133,7 +132,7 @@ describe('Verify minor children Component View', function () {
       expect(component.children.length).toEqual(1)
     })
     it('expects six validations', function () {
-      expect(component.instance().props.validator.validations.size).toEqual(5)
+      expect(componentMount.instance().props.validator.validations.size).toEqual(5)
     })
   })
 
@@ -165,7 +164,7 @@ describe('Verify minor children Component View', function () {
         newData[1] = minorDefaults
         expect(component.instance().clickClose).toHaveBeenCalled()
         expect(props.minorChildren.length).toEqual(1)
-        expect(setParentStateSpy).toHaveBeenCalledWith('minor_children', [minorDefaults])
+        expect(setParentStateSpy).toHaveBeenCalledWith('minor_children', [])
       })
 
       it('Deletes minor children when 2 cards are present', () => {
@@ -181,7 +180,7 @@ describe('Verify minor children Component View', function () {
         expect(component.instance().clickClose).toHaveBeenCalledWith(0)
 
         // check if setParent is called
-        expect(setParentStateSpy).toHaveBeenCalledWith('minor_children', [minorDefaults])
+        expect(setParentStateSpy).toHaveBeenCalledWith('minor_children', [])
         expect(props.minorChildren.length).toEqual(1)
       })
     })

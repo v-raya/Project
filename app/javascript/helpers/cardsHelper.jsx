@@ -44,7 +44,7 @@ export const removeCardWithId = (inputArray, index, newCardFields) => {
     // the item marked for deletion has already been saved once,
     // so we need to add a flag for deletion to make a delete api call
     // rather than an update api call.
-    if (itemForDeletion.get('id')) {
+    if (itemForDeletion && itemForDeletion.get('id')) {
       itemForDeletion = itemForDeletion.set('to_delete', true)
       inputList = inputList.set(index, itemForDeletion)
       visibleCount--
@@ -52,7 +52,7 @@ export const removeCardWithId = (inputArray, index, newCardFields) => {
       inputList = inputList.delete(index)
       visibleCount--
     }
-    if (visibleCount === 0) {
+    if (newCardFields && visibleCount === 0) {
       inputList = inputList.push(newCardFields)
     }
     return inputList.toJS()
