@@ -25,10 +25,14 @@ Rails.application.routes.draw do
         post :submit, on: :member
         resources :applicant, only: [:index, :create, :edit]
         resource :residence, only: [:show, :create, :edit]
-        resources :c01
+        resources :c01 do
+          post :submit, on: :member
+        end
         resources :tracking
       end
-      resources :b01
+      resources :b01 do
+        post :submit, on: :member
+      end
     end
   end
 

@@ -9,9 +9,9 @@ import {shallow, mount} from 'enzyme'
 
 describe('Rfa01BEditView test', () => {
   let setFocusStateSpy, submitSpy, _Rfa01BEditView, props,
-    setApplicationStateSpy, setDisplayStateSpy, saveProgressSpy,
-    handleClearOnConditionalChangeSpy, getFocusClassNameSpy,
-    rfaB01Application
+    setApplicationStateSpy, setDisplayStateSpy, saveProgressSpy, validateFieldSetErrorStateSpy,
+    handleClearOnConditionalChangeSpy, getFocusClassNameSpy, _Rfa01BEditViewSubmitEnabled,
+    rfaB01Application, rfaA01Application, rfaB01ApplicationSubmitEnabled, submitEnabledProps
 
   beforeEach(() => {
     rfaB01Application = {
@@ -19,89 +19,100 @@ describe('Rfa01BEditView test', () => {
       applicant_first_name: '',
       applicant_last_name: '',
       applicant_middle_name: '',
+      resource_family_name: 'Peterson'
+    }
+
+    rfaB01ApplicationSubmitEnabled = {
+      id: 357,
+      applicant_first_name: 'rick',
+      applicant_last_name: 'sanchez',
+      applicant_middle_name: '',
       metadata: {submit_enabled: true},
       resource_family_name: 'Peterson'
     }
-    props = {
-      user: {county_code: 1},
-      rfa_a01_application: {
-        'id': 744,
-        application_county: {
-          value: 'Los Angeles',
-          'id': 19
-        },
-        'residence': {
-          'addresses': [
-            {
-              'street_address': '4220 Ardwell Way',
-              'zip': '95823',
-              'city': 'Sacramento',
-              'state': {
-                'value': 'California',
-                'id': 'CA'
-              },
-              'type': {
-                'value': 'Residential',
-                'id': 1
-              }
+
+    rfaA01Application = {
+      'id': 744,
+      application_county: {
+        value: 'Los Angeles',
+        'id': 19
+      },
+      'residence': {
+        'addresses': [
+          {
+            'street_address': '4220 Ardwell Way',
+            'zip': '95823',
+            'city': 'Sacramento',
+            'state': {
+              'value': 'California',
+              'id': 'CA'
             },
-            {
-              'street_address': '',
-              'zip': '',
-              'city': '',
-              'type': {
-                'value': 'Mailing',
-                'id': 3
-              }
-            }
-          ],
-          'physical_mailing_similar': true,
-          'residence_ownership': {
-            'value': 'Own',
-            'id': 1
-          },
-          'weapon_in_home': true,
-          'body_of_water_exist': false,
-          'body_of_water_description': '',
-          'others_using_residence_as_mailing': false,
-          'directions_to_home': '',
-          'home_languages': [
-            {
-              'value': 'American Sign Language',
+            'type': {
+              'value': 'Residential',
               'id': 1
             }
-          ]
-        },
-        'applicants': [
+          },
           {
-            'id': 396,
-            'first_name': 'lkj',
-            'middle_name': '',
-            'last_name': 'lj',
-            'other_names': [],
-            'date_of_birth': '1111-11-11',
-            'driver_license_number': '',
-            'email': '',
-            'phones': [
-              {
-                'phone_type': {
-                  'value': 'Home',
-                  'id': 2
-                },
-                'number': '1111111111',
-                'preferred': false
-              }
-            ]
+            'street_address': '',
+            'zip': '',
+            'city': '',
+            'type': {
+              'value': 'Mailing',
+              'id': 3
+            }
           }
         ],
-        'child_desired': {
-          'child_identified': true,
-          'child_in_home': false,
-          'preferred_ages': []
+        'physical_mailing_similar': true,
+        'residence_ownership': {
+          'value': 'Own',
+          'id': 1
         },
-        'is_initial_application': false,
-        metadata: {submit_enabled: true}
+        'weapon_in_home': true,
+        'body_of_water_exist': false,
+        'body_of_water_description': '',
+        'others_using_residence_as_mailing': false,
+        'directions_to_home': '',
+        'home_languages': [
+          {
+            'value': 'American Sign Language',
+            'id': 1
+          }
+        ]
       },
+      'applicants': [
+        {
+          'id': 396,
+          'first_name': 'lkj',
+          'middle_name': '',
+          'last_name': 'lj',
+          'other_names': [],
+          'date_of_birth': '1111-11-11',
+          'driver_license_number': '',
+          'email': '',
+          'phones': [
+            {
+              'phone_type': {
+                'value': 'Home',
+                'id': 2
+              },
+              'number': '1111111111',
+              'preferred': false
+            }
+          ]
+        }
+      ],
+      'child_desired': {
+        'child_identified': true,
+        'child_in_home': false,
+        'preferred_ages': []
+      },
+      'is_initial_application': false,
+      metadata: {submit_enabled: true}
+    }
+
+    props = {
+      user: {county_code: 1},
+      rfa_a01_application: rfaA01Application,
       rfa_b01_application: rfaB01Application,
       countyTypes: countyTypes.items,
       suffixTypes: suffixTypes.items,
@@ -123,6 +134,30 @@ describe('Rfa01BEditView test', () => {
       marriageTerminationReasons: marriageTerminationReasons.items
     }
 
+    submitEnabledProps = {
+      user: {county_code: 1},
+      rfa_a01_application: rfaA01Application,
+      rfa_b01_application: rfaB01ApplicationSubmitEnabled,
+      countyTypes: countyTypes.items,
+      suffixTypes: suffixTypes.items,
+      prefixTypes: prefixTypes.items,
+      nameTypes: nameTypes.items,
+      phoneTypes: phoneTypes,
+      genderTypes: genderTypes.items,
+      siblingGroups: siblingGroups.items,
+      ageGroups: ageGroups.items,
+      ethnicityTypes: ethnicityTypes.items,
+      educationLevels: educationLevels.items,
+      languageTypes: languageTypes.items,
+      relationshipToApplicantTypes: relationshipToApplicantTypes.items,
+      stateTypes: stateTypes.items,
+      license_types: licenseTypes.items,
+      salaryTypes: salaryTypes.items,
+      residenceTypes: residenceTypes.items,
+      relationshipTypes: relationshipTypes,
+      marriageTerminationReasons: marriageTerminationReasons.items
+    }
+    validateFieldSetErrorStateSpy = spyOn(Rfa01BEditView.prototype, 'validateFieldSetErrorState').and.callThrough()
     saveProgressSpy = spyOn(Rfa01BEditView.prototype, 'saveProgress').and.callThrough()
     submitSpy = spyOn(Rfa01BEditView.prototype, 'submit').and.callThrough()
     setApplicationStateSpy = spyOn(Rfa01BEditView.prototype, 'setApplicationState').and.callThrough()
@@ -132,13 +167,26 @@ describe('Rfa01BEditView test', () => {
     handleClearOnConditionalChangeSpy = spyOn(Rfa01BEditView.prototype, 'handleClearOnConditionalChange').and.callThrough()
 
     _Rfa01BEditView = mount(<Rfa01BEditView {...props} />)
+    _Rfa01BEditViewSubmitEnabled = mount(<Rfa01BEditView {...submitEnabledProps} />)
   })
 
   it('tests rendering index', () => {
     expect(_Rfa01BEditView.length).toEqual(1)
+    expect(_Rfa01BEditView.find('#submitApplication').length).toEqual(1)
   })
 
-  it('tests handleNavLinkClick', () => {
+  it('tests rendering index with submitEnabled', () => {
+    expect(_Rfa01BEditViewSubmitEnabled.length).toEqual(1)
+  })
+
+  it('tests county change ', () => {
+    let countyCard = _Rfa01BEditView.find('#CountyUseOnlySection')
+    let countyCardField = countyCard.find('#county').hostNodes()
+    countyCardField.simulate('change', {target: {options: {'0': {value: '2', text: 'Alpine'}, selectedIndex: 0}}})
+    expect(setApplicationStateSpy).toHaveBeenCalledWith('application_county', { id: '2', value: 'Alpine' })
+  })
+
+  it('tests set focus state', () => {
     let outOfStateDisclosureCard = _Rfa01BEditView.find('#outOfStateDisclosureCard').hostNodes()
     outOfStateDisclosureCard.simulate('click')
     expect(setFocusStateSpy).toHaveBeenCalledWith('outOfStateDisclosureCard')
@@ -151,6 +199,14 @@ describe('Rfa01BEditView test', () => {
     expect(setDisplayStateSpy).toHaveBeenCalledWith('disclosureInstructionsDisplay', true)
   })
 
+  it('tests validateFieldAndGetError', () => {
+    let applicantDetailsCard = _Rfa01BEditView.find('#applicantDetailsCard').hostNodes().find('#NameOfResourceFamily').hostNodes()
+    applicantDetailsCard.simulate('change', {target: {value: 'resource family'}})
+    applicantDetailsCard.simulate('change', {target: {value: null}})
+    applicantDetailsCard.simulate('blur')
+    _Rfa01BEditView.instance().validateFieldSetErrorState()
+    expect(validateFieldSetErrorStateSpy).toHaveBeenCalled()
+  })
   it('Header to have applicant full name', () => {
     rfaB01Application.applicant_first_name = 'Applicant'
     rfaB01Application.applicant_last_name = 'Full name'

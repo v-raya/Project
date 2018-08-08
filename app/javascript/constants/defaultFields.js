@@ -173,7 +173,7 @@ export const blankResidenceFields = Object.freeze({
   others_using_residence_as_mailing: '',
   directions_to_home: '',
   addresses: [],
-  home_languages: []
+  home_languages: null
 })
 
 export const blankEmploymentFields = Object.freeze({

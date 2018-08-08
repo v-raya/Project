@@ -139,9 +139,9 @@ RSpec.feature 'RFA01B', js: true, inaccessible: true do
     fill_in('residence.other_people_using_residence_as_mailing[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
     fill_in('residence.other_people_using_residence_as_mailing[0].last_name', with: Faker::Name.first_name, match: :prefer_exact)
     page.find(:css, '.languages').click
-    page.find(:css, '#react-select-4--option-0').click
+    page.find(:css, '#react-select-2--option-0').click
     page.find(:css, '.languages').click
-    page.find(:css, '#react-select-4--option-1').click
+    page.find(:css, '#react-select-2--option-1').click
     expect(page).to have_button('Submit', disabled: false)
     click_button('Save Progress')
     visit page.driver.current_url
@@ -157,7 +157,6 @@ RSpec.feature 'RFA01B', js: true, inaccessible: true do
     fill_in('Residentialcity', with: 'Sacremento', match: :prefer_exact)
     find('#react-select-2--value').click
     find('#react-select-2--option-5').click
-
     expect(page).to have_button('Submit', disabled: false)
     find('[for=californiaCriminalBackgroundRadiotrue]').click
     expect(page).to have_button('Submit', disabled: true)
@@ -179,9 +178,10 @@ RSpec.feature 'RFA01B', js: true, inaccessible: true do
     fill_in('outsideCaliforniaCriminalBackgroundoffenseCity', with: 'outside test offense city', match: :prefer_exact)
     fill_in('outsideCaliforniaCriminalBackgroundOffenseDate', with: 'outside date of offense', match: :prefer_exact)
     fill_in('outsideCaliforniaCriminalBackgroundoffenseDetails', with: 'outside offense details', match: :prefer_exact)
-
     expect(page).to have_button('Submit', disabled: false)
     click_button 'Submit'
+    expect(page).not_to have_content('an exception occured: form-submission-validation')
+    visit page.driver.current_url
     # commenting out this test case until Submit button bug is fixed in API
     # expect(page).to have_button('Submit', disabled: true)
   end

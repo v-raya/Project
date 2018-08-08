@@ -33,7 +33,7 @@ describe('verify Reusable Address Component', () => {
       suggestions: [],
       onSelection: onChangeSpy
     }
-    addressComponent = shallow(<AddressComponent {...props}/>)
+    addressComponent = shallow(<AddressComponent {...props} />)
     url = '/geoservice/'
     fetchMock.mock(url, {
       body: [],

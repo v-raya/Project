@@ -110,7 +110,7 @@ export const checkForNameValidation = (applicantData) => {
 }
 
 export const validateStatus = (applicationStatus) => {
-  return applicationStatus === 'SUBMITTED'
+  return applicationStatus && applicationStatus === 'SUBMITTED'
 }
 
 export const checkRelationshipFreeformPresence = (relationshipObject, index) => {

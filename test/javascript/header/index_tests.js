@@ -29,7 +29,7 @@ describe('Header Component', () => {
     expect(header.props().logoutUrl).toEqual('/abcd')
   })
   it('allow user logout', () => {
-    let avatar = header.find('.profile-avatar a')
+    let avatar = header.find('button').last()
     avatar.simulate('click')
     expect(header.instance().redirectUrl.calls.any()).toEqual(false)
 
@@ -40,8 +40,8 @@ describe('Header Component', () => {
   })
 
   it('Renders user full name', function () {
-    const userName = header.find('a[href="#/"]').at(0)
-    expect(userName.props().children).toBe('peter parker')
+    const userName = header.find('ul').props().children[3].props.children.props.children
+    expect(userName).toBe('peter parker')
   })
 
   it('Renders "Not Available" when first and last name are not available', () => {
@@ -52,8 +52,8 @@ describe('Header Component', () => {
       }
     }
     header = mount(<HeaderComponent {...props} />)
-    const userName = header.find('a[href="#/"]').at(0)
-    expect(userName.props().children).toBe('Not Available')
+    const userName = header.find('ul').props().children[3].props.children.props.children
+    expect(userName).toBe('Not Available')
   })
 
   it('Renders only first name and last name as unknown', () => {
@@ -64,8 +64,8 @@ describe('Header Component', () => {
       }
     }
     header = mount(<HeaderComponent {...props} />)
-    const userName = header.find('a[href="#/"]').at(0)
-    expect(userName.props().children).toBe('Jhon (Unknown last name)')
+    const userName = header.find('ul').props().children[3].props.children.props.children
+    expect(userName).toBe('Jhon (Unknown last name)')
   })
 
   it('Renders only last name and first name as unknown', () => {
@@ -76,7 +76,7 @@ describe('Header Component', () => {
       }
     }
     header = mount(<HeaderComponent {...props} />)
-    const userName = header.find('a[href="#/"]').at(0)
-    expect(userName.props().children).toBe('(Unknown first name) Wick')
+    const userName = header.find('ul').props().children[3].props.children.props.children
+    expect(userName).toBe('(Unknown first name) Wick')
   })
 })

@@ -74,7 +74,6 @@ export default class ApplicantDetailsCard extends React.Component {
       'state': residenceAddress.state,
       'type': residenceAddress.type
     }
-
     return (
       <CardLayout
         idClassName='appliant_details_card'

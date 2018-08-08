@@ -119,9 +119,9 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     fill_in('residence.other_people_using_residence_as_mailing[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
     fill_in('residence.other_people_using_residence_as_mailing[0].last_name', with: Faker::Name.first_name, match: :prefer_exact)
     page.find(:css, '.languages').click
-    page.find(:css, '#react-select-4--option-0').click
+    page.find(:css, '#react-select-2--option-0').click
     page.find(:css, '.languages').click
-    page.find(:css, '#react-select-4--option-1').click
+    page.find(:css, '#react-select-2--option-1').click
     expect(page).to have_button('Submit', disabled: false)
     expect(page).to have_content 'IV. Minor Children Residing in the Home'
 
@@ -235,9 +235,9 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     end
     fill_in('directions', with: 'directions goes here', match: :prefer_exact)
     page.find(:css, '.languages').click
-    page.find(:css, '#react-select-4--option-0').click
+    page.find(:css, '#react-select-2--option-0').click
     page.find(:css, '.languages').click
-    page.find(:css, '#react-select-4--option-1').click
+    page.find(:css, '#react-select-2--option-1').click
     expect(page).to have_css(:span, text: 'American Sign Language')
     expect(page).to have_css(:span, text: 'Armenian')
     click_button('Save Progress')
@@ -287,9 +287,9 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     fill_in('residence.other_people_using_residence_as_mailing[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
     fill_in('residence.other_people_using_residence_as_mailing[0].last_name', with: Faker::Name.first_name, match: :prefer_exact)
     page.find(:css, '.languages').click
-    page.find(:css, '#react-select-4--option-0').click
+    page.find(:css, '#react-select-2--option-0').click
     page.find(:css, '.languages').click
-    page.find(:css, '#react-select-4--option-1').click
+    page.find(:css, '#react-select-2--option-1').click
     expect(page).to have_content 'IV. Minor Children Residing in the Home'
 
     fill_in('relationship_to_applicant0child0relationship_to_applicant_freeform', with: 'child', match: :prefer_exact)

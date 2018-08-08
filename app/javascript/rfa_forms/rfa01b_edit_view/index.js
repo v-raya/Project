@@ -13,7 +13,7 @@ import RfaSideBar from 'rfa_forms/rfa_sidebar/index.js'
 import {CountyUseOnlyCard} from 'components/rfa_forms/countyUseOnlyCard.js'
 import {getDictionaryId, dictionaryNilSelect, checkArrayObjectPresence} from 'helpers/commonHelper.jsx'
 import CardsGroupLayout from 'components/common/cardsGroupLayout.js'
-import {addCardAsJS, getFocusClassName, removeCard, checkForNameValidation, checkFieldsForSubmit, validateStatus} from 'helpers/cardsHelper.jsx'
+import {addCardAsJS, removeCard, checkForNameValidation, checkFieldsForSubmit, validateStatus} from 'helpers/cardsHelper.jsx'
 
 import Validator from 'helpers/validator'
 import PageTemplate from 'components/common/pageTemplate'
@@ -36,15 +36,18 @@ export default class Rfa01bEditView extends React.Component {
     this.isNavLinkActive = this.isNavLinkActive.bind(this)
     this.getApplicantFullName = this.getApplicantFullName.bind(this)
 
-    let submitEnabled = this.props.rfa_a01_application.metadata &&
-    this.props.rfa_a01_application.metadata.submit_enabled &&
-    this.props.rfa_b01_application.metadata &&
-    this.props.rfa_b01_application.metadata.submit_enabled
-    const submitStatus = this.props.rfa_a01_application.status
+    let submitEnabled = false
 
-    if (submitEnabled === undefined) {
-      submitEnabled = false
+    if (this.props.rfa_a01_application.metadata !== undefined) {
+      submitEnabled = this.props.rfa_a01_application.metadata.submit_enabled
+      if (this.props.rfa_b01_application.metadata === undefined) {
+        submitEnabled = false
+      } else {
+        submitEnabled = submitEnabled && this.props.rfa_b01_application.metadata.submit_enabled &&
+          this.validateAllRequiredForSubmit(this.props.rfa_b01_application)
+      }
     }
+
     this.state = {
       application: this.props.rfa_b01_application,
       activeNavLinkId: this.props.rfa_b01_application.id,
@@ -54,31 +57,14 @@ export default class Rfa01bEditView extends React.Component {
       privacyStatementDisplay: null,
       focusComponentName: '',
       errors: {},
+      metadata: {},
       disableSave: !checkForNameValidation(this.props.rfa_a01_application.applicants),
-      disableSubmit: !submitEnabled || validateStatus(submitStatus)
+      disableSubmit: !submitEnabled
     }
 
     if (!this.props.rfa_b01_application.application_county) {
       const countyValue = (this.props.user && this.props.user.county_code)
       this.state.application.application_county = this.props.countyTypes.find(countyType => countyType.id === parseInt(countyValue))
-    }
-  }
-
-  componentDidUpdate (prevProps, prevState) {
-    if (prevState.application !== this.state.application) {
-      const DataValidForSubmit = !(this.props.rfa_a01_application.metadata &&
-      this.props.rfa_a01_application.metadata.submit_enabled && this.validateAllRequiredForSubmit(this.state.application))
-      const DataValidForSave = !checkForNameValidation(this.state.rfa_a01_application.applicants)
-
-      if (prevState.disableSubmit !== DataValidForSubmit) {
-        this.setState({disableSubmit: DataValidForSubmit})
-        let application = this.state.application
-        application.metadata = {submit_enabled: !DataValidForSubmit}
-        this.setState({application: application})
-      }
-      if (prevState.disableSave !== DataValidForSave) {
-        this.setState({disableSave: DataValidForSave})
-      }
     }
   }
 
@@ -103,26 +89,31 @@ export default class Rfa01bEditView extends React.Component {
   }
 
   saveProgress () {
-    let url = '/rfa/b01/' + this.props.application_id
-    this.fetchToRails(url, 'PUT', this.state.application)
+    let newApp = Immutable.fromJS(this.state.application).setIn(['metadata', 'submit_enabled'],
+      this.validateAllRequiredForSubmit(this.state.application))
+    const url = '/rfa/b01/' + this.state.rfa_a01_application.id
+    return this.fetchToRails(url, 'PUT', newApp.toJS())
   }
 
   submit () {
-    this.saveProgress()
-    const url = '/rfa/a01/' + this.state.rfa_a01_application.id + '/submit'
-    this.fetchToRails(url, 'POST', this.state.rfa_a01_application)
+    this.saveProgress().then(() => {
+      if (this.state.errors && !this.state.errors.issue_details) {
+        let newApp = Immutable.fromJS(this.state.application).setIn(['metadata', 'submit_enabled'], false)
+        const url = '/rfa/a01/' + this.state.rfa_a01_application.id + '/submit'
+        this.fetchToRails(url, 'POST', this.state.rfa_a01_application)
+      }
+    })
   }
 
   fetchToRails (url, method, body) {
-    fetchRequest(url, method, body)
+    return fetchRequest(url, method, body)
       .then((response) => {
         return response.json()
       }).then((data) => {
         if (!data.issue_details) {
           this.setState({
             application: data,
-            errors: {},
-            disableSubmit: validateStatus(data.status)
+            errors: {}
           })
         } else {
           this.setState({
@@ -145,9 +136,13 @@ export default class Rfa01bEditView extends React.Component {
   }
 
   setApplicationState (key, value) {
-    let newState = Immutable.fromJS(this.state)
-    newState = newState.setIn(['application', key], value)
-    this.setState(newState.toJS())
+    let newStateApplication = Immutable.fromJS(this.state.application).set(key, value)
+    this.setState({
+      application: newStateApplication.toJS(),
+      disableSubmit: !this.validateAllRequiredForSubmit(newStateApplication.toJS())
+    })
+    Immutable.fromJS(this.state.application).setIn(['metadata', 'submit_enabled'],
+      !this.validateAllRequiredForSubmit(newStateApplication.toJS()))
   }
 
   setDisplayState (key, value) {
@@ -157,11 +152,17 @@ export default class Rfa01bEditView extends React.Component {
   }
 
   handleClearOnConditionalChange (key, value, hiddenKey, hiddenDefaultValue) {
+    let newState = Immutable.fromJS(this.state)
     if (value === 'false') {
-      let newState = Immutable.fromJS(this.state)
       newState = newState.setIn(['application', key], value)
       newState = newState.setIn(['application', hiddenKey], hiddenDefaultValue)
       this.setState(newState.toJS())
+    } else if ((value === true || value === 'true') &&
+      ((newState.getIn([ 'application', key ]) === undefined) ||
+      (newState.getIn([ 'application', key ]) === false))) {
+      newState = newState.setIn(['application', key], value)
+      this.setState(newState.toJS())
+      this.setState({disableSubmit: true})
     } else {
       this.setApplicationState(key, value)
     }
@@ -291,7 +292,7 @@ export default class Rfa01bEditView extends React.Component {
             application={this.state.application}
             resourceFamily={this.state.application.resource_family_name}
             validator={this.validator}
-            focusComponentName={this.state.focusComponentName}
+            focusComponentName={this.focusComponentName}
             getFocusClassName={this.getFocusClassName}
             setFocusState={this.setFocusState}
             setParentState={this.setApplicationState}

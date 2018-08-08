@@ -17,7 +17,9 @@ export default class Validator {
       isNotInTheFuture: this.isNotInTheFuture,
       isBeforeOtherDate: this.isBeforeOtherDate,
       is10digits: this.is10digits,
-      isValidDate: this.isValidDate
+      isValidDate: this.isValidDate,
+      isRequiredArray: this.isRequiredArray,
+      isRequiredIfArray: this.isRequiredIfArray
     }
   }
 
@@ -82,6 +84,10 @@ export default class Validator {
     return !(_.isEmpty(opt.value) || _.isEmpty(opt.value.trim()))
   }
 
+  isRequiredArray (opt) {
+    return !(_.isArray(opt.value) && _.isEmpty(opt.value))
+  }
+
   isRequiredBoolean (opt) {
     // TODO: find a better way to check boolean value for "true/false"
     return (_.isBoolean(opt.value) || !_.isEmpty(opt.value))
@@ -111,6 +117,12 @@ export default class Validator {
       return !(_.isEmpty(opt.value) || (typeof (opt.value) === 'string' && _.isEmpty(opt.value.trim())))
     }
     return true
+  }
+  isRequiredIfArray (opt) {
+    if (opt.condition()) {
+      return !(_.isArray(opt.value) && _.isEmpty(opt.value))
+    }
+    return false
   }
 
   isNotInTheFuture ({value}) {

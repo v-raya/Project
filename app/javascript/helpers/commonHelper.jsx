@@ -91,7 +91,7 @@ export const getCountyValue = (application, user) => {
 }
 
 export const checkSubmitEnabledForForms = (form) => {
-  return form.metadata && form.metadata.submit_enabled
+  return form.metadata !== undefined && form.metadata.submit_enabled === true
 }
 
 export const userNameFormatter = (firstName, lastName) => {

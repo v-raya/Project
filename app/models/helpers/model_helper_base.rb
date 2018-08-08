@@ -20,8 +20,8 @@ class Helpers::ModelHelperBase
     model_class.create(auth_header, parent_id, body)
   end
 
-  def update(parent_id, id, body)
-    model_class.update(auth_header, parent_id, id, body)
+  def update(parent_id, body)
+    model_class.update(auth_header, parent_id, body)
   end
 
   def delete(parent_id, id)

@@ -52,9 +52,9 @@ RSpec.feature 'RFA01C', js: true, inaccessible: true do
     fill_in('residence.other_people_using_residence_as_mailing[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
     fill_in('residence.other_people_using_residence_as_mailing[0].last_name', with: Faker::Name.first_name, match: :prefer_exact)
     page.find(:css, '.languages').click
-    page.find(:css, '#react-select-4--option-0').click
+    page.find(:css, '#react-select-2--option-0').click
     page.find(:css, '.languages').click
-    page.find(:css, '#react-select-4--option-1').click
+    page.find(:css, '#react-select-2--option-1').click
     expect(page).to have_button('Submit', disabled: false)
     click_button('Save Progress')
     visit page.driver.current_url
@@ -64,7 +64,7 @@ RSpec.feature 'RFA01C', js: true, inaccessible: true do
     fill_in('applicant_last_name', with: 'last name', match: :prefer_exact)
     fill_in('NameOfResourceFamily', with: 'test', match: :prefer_exact)
     fill_in('date_of_birth', with: '11/11/1111', match: :prefer_exact)
-    fill_in('Residentialstreet_address', with: '2870 something else', match: :prefer_exact)   
+    fill_in('Residentialstreet_address', with: '2870 something else', match: :prefer_exact)
     fill_in('Residentialzip', with: '12345', match: :prefer_exact)
     fill_in('Residentialcity', with: 'Sacremento', match: :prefer_exact)
     find('#react-select-2--value').click
@@ -79,7 +79,7 @@ RSpec.feature 'RFA01C', js: true, inaccessible: true do
     fill_in('identified_children[0].date_of_birth', with: '01/01/2000', match: :prefer_exact)
     select 'Sr', from: 'identified_children[0].name_suffix'
     select 'TK', from: 'grade'
-    fill_in('name_of_school', with: 'School name', match: :prefer_exact) 
+    fill_in('name_of_school', with: 'School name', match: :prefer_exact)
     click_button('Save Progress')
     expect(find_field('identified_children[0].date_of_birth').value).to eq '01/01/2000'
     expect(find_field('name_of_school').value).to eq 'School name'

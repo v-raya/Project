@@ -19,7 +19,7 @@ module Concerns::Rfa::ApplicationApiProtocolProvider
       response.status == 200 ? nil : JSON.parse(response.body)
     end
 
-    def update(auth_header, parent_id, _id, body)
+    def update(auth_header, parent_id, body)
       response = FaradayCals.put("/rfa-1a-forms/#{parent_id}", auth_header, body)
       new(JSON.parse(response.body))
     end

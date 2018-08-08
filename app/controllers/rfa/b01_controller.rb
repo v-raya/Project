@@ -20,7 +20,6 @@ class Rfa::B01Controller < CalsBaseController
 
   def update
     rfa_b01_application_helper.update(params[:b01][:id], params[:id], b01_params.to_json)
-
     render json: rfa_b01_application_helper.find_by_id(params[:b01][:id], params[:id])
   rescue ApiError => e
     render json: e.response, status: e.status
@@ -49,6 +48,10 @@ class Rfa::B01Controller < CalsBaseController
 
   def rfa_b01_application_helper
     Helpers::Rfa::B01::ApplicationHelper.new(auth_header: get_session_token)
+  end
+
+  def rfa_application_helper
+    Helpers::Rfa::ApplicationHelper.new(auth_header: get_session_token)
   end
 
   def dictionaries_helper

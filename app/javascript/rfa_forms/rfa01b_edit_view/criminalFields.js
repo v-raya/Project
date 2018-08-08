@@ -49,7 +49,6 @@ export default class CriminalFields extends React.Component {
   }
   render () {
     const crime = this.props.crime
-
     return (
       <div className='row'>
         <hr />

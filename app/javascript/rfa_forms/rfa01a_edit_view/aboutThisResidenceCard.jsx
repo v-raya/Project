@@ -42,7 +42,6 @@ export default class AboutThisResidenceCard extends React.Component {
   render () {
     const aboutResidence = this.props.aboutResidence
     const othersMailing = aboutResidence.other_people_using_residence_as_mailing || [othersUsingAddressMailing]
-
     const hiddenBodyOfWater = (aboutResidence.body_of_water_exist !== undefined && aboutResidence.body_of_water_exist.toString() === 'true') ? '' : 'hidden'
     return (
       <div className='card-body'>
@@ -121,7 +120,7 @@ export default class AboutThisResidenceCard extends React.Component {
           <MultiSelect
             gridClassName='col-md-12'
             label='Language(s) spoken in the home (required)'
-            values={aboutResidence.home_languages}
+            values={aboutResidence.home_languages || []}
             className='languages'
             optionList={this.props.languageTypes}
             onChange={(event) => this.props.setParentState('home_languages', event.map((e) => ({id: e.id, value: e.value})))} />

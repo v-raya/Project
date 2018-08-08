@@ -10,7 +10,7 @@ import {shallow, mount} from 'enzyme'
 describe('Rfa01CEditView test', () => {
   let setFocusStateSpy, submitSpy, _Rfa01CEditView,
     setApplicationStateSpy, saveProgressSpy,
-    getFocusClassNameSpy
+    getFocusClassNameSpy, validateFieldSetErrorStateSpy
 
   beforeEach(() => {
     const props = {
@@ -157,7 +157,7 @@ describe('Rfa01CEditView test', () => {
       relationshipTypes: relationshipTypes,
       marriageTerminationReasons: marriageTerminationReasons.items
     }
-
+    validateFieldSetErrorStateSpy = spyOn(Rfa01CEditView.prototype, 'validateFieldSetErrorState').and.callThrough()
     saveProgressSpy = spyOn(Rfa01CEditView.prototype, 'saveProgress').and.callThrough()
     submitSpy = spyOn(Rfa01CEditView.prototype, 'submit').and.callThrough()
     setApplicationStateSpy = spyOn(Rfa01CEditView.prototype, 'setApplicationState').and.callThrough()
@@ -169,6 +169,28 @@ describe('Rfa01CEditView test', () => {
 
   it('tests RFA 01c rendering index', () => {
     expect(_Rfa01CEditView.length).toEqual(1)
+  })
+
+  it('tests county change ', () => {
+    let countyCard = _Rfa01CEditView.find('#CountyUseOnlySection')
+    let countyCardField = countyCard.find('#county').hostNodes()
+    countyCardField.simulate('change', {target: {options: {'0': {value: '2', text: 'Alpine'}, selectedIndex: 0}}})
+    expect(setApplicationStateSpy).toHaveBeenCalledWith('application_county', { id: '2', value: 'Alpine' })
+  })
+
+  it('tests set focus state', () => {
+    let desirecChild = _Rfa01CEditView.find('#DesiredChildSection').hostNodes()
+    desirecChild.simulate('click')
+    expect(setFocusStateSpy).toHaveBeenCalledWith('ChildDesiredMain')
+  })
+
+  it('tests validateFieldAndGetError', () => {
+    let applicantDetailsCard = _Rfa01CEditView.find('#DesiredChildSection').hostNodes()
+    applicantDetailsCard.find('.col-md-4').at(3).simulate('change', {target: {value: 'abcd'}})
+    applicantDetailsCard.find('.col-md-4').at(3).simulate('change', {target: {value: null}})
+    applicantDetailsCard.find('.col-md-4').at(3).simulate('blur')
+    _Rfa01CEditView.instance().validateFieldSetErrorState()
+    expect(validateFieldSetErrorStateSpy).toHaveBeenCalled()
   })
 
   it('tests saveProgress', () => {

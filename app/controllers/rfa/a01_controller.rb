@@ -19,7 +19,7 @@ class Rfa::A01Controller < CalsBaseController
 
   def update
     @application_id= params[:id]
-    response = rfa_application_helper.update(@application_id, @application_id, params[:a01].to_json)
+    response = rfa_application_helper.update(@application_id, params[:a01].to_json)
     render json: response
   rescue ApiError => e
     render json: e.response, status: e.status
@@ -27,11 +27,10 @@ class Rfa::A01Controller < CalsBaseController
 
   def submit
     @application_id= params[:id]
-    rfa_application_helper.update(@application_id, @application_id, params[:a01].to_json)
     rfa_application_helper.submit_application(@application_id)
     render json: rfa_application_helper.find_by_application_id(@application_id)
   rescue  => e
-    render json: e.response, status: e.status
+    render json: e,  status: e.status
   end
 
   private
