@@ -25,6 +25,15 @@ class Rfa::B01Controller < CalsBaseController
     render json: e.response, status: e.status
   end
 
+  def submit
+     @a01_id= params[:a01_id]
+     @b01_id= params[:b01_id]
+     rfa_application_helper.submit_application(@a01_id)
+     render json: rfa_b01_application_helper.find_by_id(@b01_id, @a01_id)
+   rescue  => e
+     render json: e.response, status: e.status
+   end
+
   private
 
   def b01_params

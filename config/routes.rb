@@ -28,6 +28,9 @@ Rails.application.routes.draw do
         resources :c01 do
           post :submit, on: :member
         end
+        resources :b01 do
+          post :submit, on: :member
+        end
         resources :tracking
       end
       resources :b01 do

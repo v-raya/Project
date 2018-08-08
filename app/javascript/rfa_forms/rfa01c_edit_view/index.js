@@ -81,8 +81,8 @@ export default class Rfa01cEditView extends React.Component {
     this.saveProgress().then(() => {
       if (this.state.errors && !this.state.errors.issue_details) {
         let newApp = Immutable.fromJS(this.state.application).setIn(['metadata', 'submit_enabled'], false)
-        const url = '/rfa/a01/' + this.state.rfa_a01_application.id + '/submit'
-        this.fetchToRails(url, 'POST', this.state.rfa_a01_application)
+        const url = '/rfa/a01/' + this.state.rfa_a01_application.id + '/c01/' + this.state.application.id + '/submit'
+        this.fetchToRails(url, 'POST', {a01_id: this.state.rfa_a01_application.id, c01_id: this.state.application.id})
       }
     })
   }
