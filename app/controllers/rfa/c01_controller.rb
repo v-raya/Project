@@ -25,7 +25,7 @@ class Rfa::C01Controller < CalsBaseController
     @a01_id= params[:a01_id]
     @b01_id= params[:c01_id]
     rfa_application_helper.submit_application(@a01_id)
-    render json: rfa_b01_application_helper.find_by_id(@a01_id, @c01_id)
+    render json: rfa_c01_application_helper.find_by_id(@a01_id, @c01_id)
   rescue  => e
     render json: e.response, status: e.status
   end
