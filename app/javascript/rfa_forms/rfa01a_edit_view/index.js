@@ -58,6 +58,21 @@ export default class Rfa01EditView extends React.Component {
     }
   }
 
+  componentDidUpdate (prevProps, prevState) {
+    if (prevState.application !== this.state.application) {
+      const DataValidForSubmit = !this.validateAllRequiredForSubmit(this.state.application.toJS())
+      const DataValidForSave = !checkForNameValidation(this.state.application.toJS().applicants)
+
+      if (prevState.disableSubmit !== DataValidForSubmit) {
+        this.setState({disableSubmit: DataValidForSubmit})
+        this.setApplicationState('metadata', {'submit_enabled': !DataValidForSubmit})
+      }
+      if (prevState.disableSave !== DataValidForSave) {
+        this.setState({disableSave: DataValidForSave})
+      }
+    }
+  }
+
   validateAllRequiredForSubmit (data) {
     let requiredRules = this.validator.allIsRequiredRules()
     requiredRules = requiredRules.merge(this.validator.allValidationsWithOnlyRule('isRequiredBoolean'))
