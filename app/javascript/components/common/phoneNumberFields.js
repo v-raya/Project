@@ -29,20 +29,24 @@ export class PhoneNumberField extends React.PureComponent {
 
     return (
       <div>
-        <MaskedInputField
+        <CleaveInputField
           gridClassName='col-md-4'
           id={this.phoneNumberId}
-          label='Phone Number (required)'
-          mask='(111) 111-1111'
           value={phoneFields.number}
+          label='Phone Number (required)'
           placeholder=''
           blurPlaceholder=''
           focusPlaceholder='(___)___-____'
-          errors={fieldErrorsAsImmutableSet(this.props.errors.number)}
-          maxLength='10'
+          options={{
+            delimiters: ['(', ')', ' ', '-'],
+            blocks: [0, 3, 0, 3, 4],
+            numericOnly: true}}
           type='text'
-          onChange={({target: {value}}) => this.props.onPhoneFieldChange(
-            this.props.index, value, 'number')}
+          errors={fieldErrorsAsImmutableSet(this.props.errors.number)}
+          onChange={(event) => this.props.onPhoneFieldChange(
+            this.props.index,
+            event.target.value,
+            'number')}
           onBlur={(event) => this.props.validator.validateFieldSetErrorState(this.phoneNumberId, event.target.value.replace(/\D+/g, ''))}
         />
         <DropDownField gridClassName='col-md-4' id='phone_type'

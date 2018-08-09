@@ -63,19 +63,21 @@ export default class ReferencesCard extends React.Component {
           />
         </div>
         <div className='col-md-12'>
-          <MaskedInputField
+          <CleaveInputField
             gridClassName='col-md-4'
             id={phoneNumberId}
-            value={reference.phone_number}
+            value={this.props.reference.phone_number}
             label='Phone Number (required)'
-            maxLength='10'
             placeholder=''
             blurPlaceholder=''
             focusPlaceholder='(___)___-____'
-            mask='(111) 111-1111'
+            options={{
+              delimiters: ['(', ')', ' ', '-'],
+              blocks: [0, 3, 0, 3, 4],
+              numericOnly: true}}
             type='text'
             errors={fieldErrorsAsImmutableSet(this.props.errors.phone_number)}
-            onChange={({target: {value}}) => this.props.setParentState('phone_number', value, this.props.index)}
+            onChange={(event) => this.props.setParentState('phone_number', event.target.value, this.props.index)}
             onBlur={(event) => this.props.validator.validateFieldSetErrorState(phoneNumberId, event.target.value.replace(/\D+/g, ''))} />
 
           <InputComponent gridClassName='col-md-4' id='email'
