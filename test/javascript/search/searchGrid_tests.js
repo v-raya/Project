@@ -90,8 +90,8 @@ describe('Render Search results to Grid', function () {
     expect(searchGridRender.find('GridInnerLayout[title="Facility ID / Approval #"]').props().value).toBe(193600008)
   })
 
-  it('expect loaded facility phone number', function () {
-    expect(searchGridRender.find('GridInnerLayout[title="Facility Phone Number"]').props().value).toBe('(831) 763-2735')
+  it('expect loaded phone number', function () {
+    expect(searchGridRender.find('GridInnerLayout[title="Phone Number"]').props().value).toBe('(831) 763-2735')
   })
   it('Verify Anchor Tag href value', function () {
     expect(searchGridRender.find('GridInnerLayout[title="County"]').props().value).toBe('N/A')

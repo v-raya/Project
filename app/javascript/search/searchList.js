@@ -44,7 +44,7 @@ const searchListColumns = [
     Header: 'Facility Address',
     id: 'facilityAddress',
     className: 'facility_address',
-    minWidth: 150,
+    minWidth: 130,
     accessor: data => respectiveFullAddressOrNA(data.addresses, physicalAddressType)
   },
   {
@@ -56,7 +56,7 @@ const searchListColumns = [
   },
   {
     Header: 'Phone Number',
-    minWidth: 70,
+    minWidth: 90,
     id: 'phoneNumber',
     className: 'phone_number',
     accessor: data => respectiveNumberOrNA(data.phones, primaryPhoneRelation)

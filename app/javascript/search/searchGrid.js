@@ -46,7 +46,7 @@ const SearchGrid = ({
                 title='County'
                 value={checkForNA(result.county)} />
               <GridInnerLayout
-                title='Facility Phone Number'
+                title='Phone Number'
                 value={respectiveNumberOrNA(result.phones, primaryPhoneRelation)} />
               <GridInnerLayout
                 title='Facility Email'
