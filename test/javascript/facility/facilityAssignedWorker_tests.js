@@ -11,16 +11,16 @@ describe('Verify Facility Assigned Worker', function () {
     }
   }
   let AssignedWorkerCompShallow = shallow(<FacilityAssignedWorker {...props} />)
-  it('verify Facility Assigned Worker', function () {
+  it('verify Facility Assigned Worker', () => {
     expect(AssignedWorkerCompShallow.find('.facility-address').length).toEqual(1)
   })
-  it('verify Facility Assigned Worker Full Name', function () {
-    expect(AssignedWorkerCompShallow.find('SmallInnerBlockDetails[title="APPROVAL / LICENSING WORKER"]').props().value).toBe('Ananya Nandi')
+  it('verify Facility Assigned Worker Full Name', () => {
+    expect(AssignedWorkerCompShallow.find('SmallInnerBlockDetails[title="LICENSING / APPROVAL WORKER"]').props().value).toBe('Ananya Nandi')
   })
-  it('verify Facility Assigned Worker Phone Number', function () {
-    expect(AssignedWorkerCompShallow.find('SmallInnerBlockDetails[title="APPROVAL / LICENSING WORKER PHONE NUMBER"]').props().value).toBe('(945) 432-1234')
+  it('verify Facility Assigned Worker Phone Number', () => {
+    expect(AssignedWorkerCompShallow.find('SmallInnerBlockDetails[title="LICENSING / APPROVAL WORKER PHONE NUMBER"]').props().value).toBe('(945) 432-1234')
   })
-  it('verify Facility Assigned Worker Email', function () {
-    expect(AssignedWorkerCompShallow.find('SmallInnerBlockDetails[title="APPROVAL / LICENSING WORKER EMAIL"]').props().value).toBe('email@gmail.com')
+  it('verify Facility Assigned Worker Email', () => {
+    expect(AssignedWorkerCompShallow.find('SmallInnerBlockDetails[title="LICENSING / APPROVAL WORKER EMAIL"]').props().value).toBe('email@gmail.com')
   })
 })

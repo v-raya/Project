@@ -24,7 +24,7 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     facilities_list
     click_link('Allen, Alberta')
     page.evaluate_script('window.location.reload()')
-    expect(page).to have_content('FACILITY TYPE :', minimum: 1)
+    expect(page).to have_content('FACILITY / HOME TYPE :', minimum: 1)
   end
 
   scenario 'To click into facility and validate Complaints' do

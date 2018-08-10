@@ -32,16 +32,16 @@ describe('Verify Facility Details', function () {
     expect(detailsCompShallow.find('SmallInnerBlockDetails[title="ASSIGNED OVERSIGHT AGENCY"]').props().value).toBe('PACIFIC INLAND CR')
   })
   it('Verify Facility License Number', function () {
-    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="FACILITY LICENSE NUMBER"]').props().value).toBe('300665437')
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="LICENSE NUMBER / FAMILY ID"]').props().value).toBe('300665437')
   })
   it('Verify License status', function () {
-    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="LICENSE STATUS"]').props().value).toBe('LICENSED')
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="STATUS"]').props().value).toBe('LICENSED')
   })
   it('Verify Capacity / Capacity Last Changed', function () {
     expect(detailsCompShallow.find('SmallInnerBlockDetails[title="CAPACITY / CAPACITY LAST CHANGED"]').props().value).toBe('10 / 10/01/2012')
   })
   it('Verify License Effective Date when license status is "Licensed"', function () {
-    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="LICENSE EFFECTIVE DATE"]').props().value).toBe('10/01/2012')
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="LICENSE / APPROVAL EFFECTIVE DATE"]').props().value).toBe('10/01/2012')
   })
   it('Verify Application Received Date', function () {
     expect(detailsCompShallow.find('SmallInnerBlockDetails[title="APPLICATION RECEIVED DATE"]').props().value).toBe('07/18/2012')

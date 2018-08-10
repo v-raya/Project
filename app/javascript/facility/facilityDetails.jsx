@@ -33,10 +33,10 @@ const FacilityDetails = ({
       <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
         <div className='inner_block'>
           <SmallInnerBlockDetails
-            title='FACILITY LICENSE NUMBER'
+            title='LICENSE NUMBER / FAMILY ID'
             value={facilityData.license_number} />
           <SmallInnerBlockDetails
-            title='LICENSE STATUS'
+            title='STATUS'
             value={facilityData.status} />
           <SmallInnerBlockDetails
             title='CAPACITY / CAPACITY LAST CHANGED'
@@ -46,7 +46,7 @@ const FacilityDetails = ({
       <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
         <div className='inner_block'>
           <SmallInnerBlockDetails
-            title='LICENSE EFFECTIVE DATE'
+            title='LICENSE / APPROVAL EFFECTIVE DATE'
             value={facilityData.license_effective_date} />
           <SmallInnerBlockDetails
             title='APPLICATION RECEIVED DATE'

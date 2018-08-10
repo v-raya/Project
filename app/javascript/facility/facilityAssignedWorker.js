@@ -10,21 +10,21 @@ const FacilityAssignedWorker = ({
       <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
         <div className='inner_block'>
           <SmallInnerBlockDetails
-            title='APPROVAL / LICENSING WORKER'
+            title='LICENSING / APPROVAL WORKER'
             value={facilityAssignedWorker.assignedWorkerFullName} />
         </div>
       </div>
       <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
         <div className='inner_block'>
           <SmallInnerBlockDetails
-            title='APPROVAL / LICENSING WORKER PHONE NUMBER'
+            title='LICENSING / APPROVAL WORKER PHONE NUMBER'
             value={facilityAssignedWorker.assignedWorkerPhoneNumber} />
         </div>
       </div>
       <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
         <div className='inner_block'>
           <SmallInnerBlockDetails
-            title='APPROVAL / LICENSING WORKER EMAIL'
+            title='LICENSING / APPROVAL WORKER EMAIL'
             value={facilityAssignedWorker.assignedWorkerEmail} />
         </div>
       </div>
