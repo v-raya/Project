@@ -20,7 +20,7 @@ const FacilityDetails = ({
       <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
         <div className='inner_block'>
           <SmallInnerBlockDetails
-            title='FACILITY NAME'
+            title='FACILITY / HOME NAME'
             value={facilityName} />
           <SmallInnerBlockDetails
             title='NAME OF LICENSEE / PARENTS'

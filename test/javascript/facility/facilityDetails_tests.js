@@ -23,7 +23,7 @@ describe('Verify Facility Details', function () {
     expect(detailsCompShallow.find('.facility-details').length).toEqual(1)
   })
   it('Verify Facility Name', function () {
-    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="FACILITY NAME"]').props().value).toBe('Ananya Nandi')
+    expect(detailsCompShallow.find('SmallInnerBlockDetails[title="FACILITY / HOME NAME"]').props().value).toBe('Ananya Nandi')
   })
   it('Verify Name of Licensee / Parents', function () {
     expect(detailsCompShallow.find('SmallInnerBlockDetails[title="NAME OF LICENSEE / PARENTS"]').props().value).toBe('Lederhouse Transitions Inc.')
