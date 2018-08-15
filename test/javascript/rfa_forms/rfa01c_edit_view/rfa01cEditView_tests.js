@@ -36,7 +36,7 @@ describe('Rfa01CEditView test', () => {
             },
             'relationship_to_applicants': [
               {
-                'relationship_to_applicant_freeform': ''
+                'relationship_to_applicant_freeform': 'child'
               }
             ],
             'school_grade': {
@@ -136,7 +136,30 @@ describe('Rfa01CEditView test', () => {
       },
       rfa_b01_applications: [{
         id: 357,
-        metadata: {submit_enabled: true}
+        applicant_first_name: 'rick',
+        applicant_last_name: 'sanchez',
+        applicant_middle_name: '',
+        metadata: {submit_enabled: true},
+        resource_family_name: 'Peterson',
+        applicant_name_suffix: null,
+        applicant_name_prefix: null,
+        ssn: '',
+        date_of_birth: '11-11-1984',
+        driver_license: '',
+        driver_license_state: null,
+        residence_address: {
+          'street_address': '4220 Ardwell Way',
+          'zip': '95823',
+          'city': 'Sacramento',
+          'state': {
+            'value': 'California',
+            'id': 'CA'
+          },
+          'type': {
+            'value': 'Residential',
+            'id': 1
+          }
+        }
       }],
       countyTypes: countyTypes.items,
       suffixTypes: suffixTypes.items,
@@ -200,11 +223,6 @@ describe('Rfa01CEditView test', () => {
   })
 
   it('tests submit', () => {
-    let applicantDetailsCard = _Rfa01CEditView.find('#DesiredChildSection').hostNodes()
-    let radio = applicantDetailsCard.find('input[type="radio"]').first().simulate('change', {target: {value: 'true'}})
-    applicantDetailsCard.find('.col-md-4').at(3).simulate('change', {target: {value: 'abcd'}})
-    applicantDetailsCard.find('.col-md-4').at(5).simulate('change', {target: {value: 'Smith'}})
-    applicantDetailsCard.find('.dateOfBirthField').hostNodes().simulate('change', {target: {value: '01/11/1988'}})
     let submitBtn = _Rfa01CEditView.find('#submitApplication')
     submitBtn.simulate('click')
     expect(submitSpy).toHaveBeenCalled()

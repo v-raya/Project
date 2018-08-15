@@ -28,7 +28,26 @@ describe('Rfa01BEditView test', () => {
       applicant_last_name: 'sanchez',
       applicant_middle_name: '',
       metadata: {submit_enabled: true},
-      resource_family_name: 'Peterson'
+      resource_family_name: 'Peterson',
+      applicant_name_suffix: null,
+      applicant_name_prefix: null,
+      ssn: '',
+      date_of_birth: '11-11-1984',
+      driver_license: '',
+      driver_license_state: null,
+      residence_address: {
+        'street_address': '4220 Ardwell Way',
+        'zip': '95823',
+        'city': 'Sacramento',
+        'state': {
+          'value': 'California',
+          'id': 'CA'
+        },
+        'type': {
+          'value': 'Residential',
+          'id': 1
+        }
+      }
     }
 
     rfaA01Application = {
@@ -107,6 +126,7 @@ describe('Rfa01BEditView test', () => {
         'preferred_ages': []
       },
       'is_initial_application': false,
+      status: 'DRAFT',
       metadata: {submit_enabled: true}
     }
 
@@ -249,18 +269,7 @@ describe('Rfa01BEditView test', () => {
   })
 
   it('tests submit', () => {
-    let applicantDetailsCard = _Rfa01BEditView.find('#applicantDetailsCard').hostNodes()
-    applicantDetailsCard.find('#NameOfResourceFamily').hostNodes().simulate('change', {target: {value: 'resource family'}})
-    applicantDetailsCard.find('#date_of_birth').hostNodes().simulate('change', {target: {value: '11/12/2000'}})
-    applicantDetailsCard.find('#applicant_first_name').hostNodes().simulate('change', {target: {value: 'name'}})
-    applicantDetailsCard.find('#applicant_last_name').hostNodes().simulate('change', {target: {value: 'last'}})
-
-    applicantDetailsCard.find('#Residentialstreet_address').hostNodes().simulate('change', {target: {value: '4400 Truxel Rd'}})
-    applicantDetailsCard.find('#Residentialzip').hostNodes().simulate('change', {target: {value: '34388'}})
-    applicantDetailsCard.find('#Residentialcity').hostNodes().simulate('change', {target: {value: 'Springfield'}})
-    let state = applicantDetailsCard.find('#Residentialstate_type').hostNodes().simulate('keyDown', { keyCode: 40 })
-    state.simulate('keyDown', { keyCode: 13 })
-    let submitBtn = _Rfa01BEditView.find('#submitApplication')
+    let submitBtn = _Rfa01BEditViewSubmitEnabled.find('#submitApplication')
     submitBtn.simulate('click')
     expect(submitSpy).toHaveBeenCalled()
   })

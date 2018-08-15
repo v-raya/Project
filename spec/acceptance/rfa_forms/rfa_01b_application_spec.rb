@@ -146,7 +146,6 @@ RSpec.feature 'RFA01B', js: true, inaccessible: true do
     click_button('Save Progress')
     visit page.driver.current_url
     click_link('Geovanni Moen')
-
     expect(page).to have_button('Submit', disabled: true)
     fill_in('applicant_first_name', with: 'first name', match: :prefer_exact)
     fill_in('applicant_last_name', with: 'last name', match: :prefer_exact)
@@ -182,7 +181,8 @@ RSpec.feature 'RFA01B', js: true, inaccessible: true do
     click_button 'Submit'
     expect(page).not_to have_content('an exception occured: form-submission-validation')
     visit page.driver.current_url
-    # commenting out this test case until Submit button bug is fixed in API
-    # expect(page).to have_button('Submit', disabled: true)
+    expect(page).to have_button('Submit', disabled: true)
+    fill_in('applicant_first_name', with: 'G', match: :prefer_exact)
+    expect(page).to have_button('Submit', disabled: true)
   end
 end

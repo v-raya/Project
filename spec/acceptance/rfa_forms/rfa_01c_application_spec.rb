@@ -88,5 +88,10 @@ RSpec.feature 'RFA01C', js: true, inaccessible: true do
     expect(page).to have_button('Submit', disabled: false)
     click_button('Save Progress')
     click_button 'Submit'
+    sleep(3.seconds)
+    visit page.driver.current_url
+    expect(page).to have_button('Submit', disabled: true)
+    fill_in('identified_children[0].first_name', with: 'G', match: :prefer_exact)
+    expect(page).to have_button('Submit', disabled: true)
     end
 end

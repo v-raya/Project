@@ -178,11 +178,13 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     click_link('Applicant Information')
     click_button('Save Progress')
     click_button 'Submit'
-    # commenting out this test case until Submit button bug is fixed in API
-    # expect(page).to have_button('Submit', disabled: true)
+    expect(page).to have_button('Submit', disabled: true)
+    visit page.driver.current_url
+    expect(page).to have_button('Submit', disabled: true)
+    fill_in('applicants[0].first_name', with: 'G', match: :prefer_exact)
+    expect(page).to have_button('Submit', disabled: true)
 
-    # DevNote: this test case will be updated to include more fields as submit
-    # functionality is further fleshed out.
+
   end
 
   scenario 'prevent backspace navigation on IE', set_auth_header: true do
@@ -199,7 +201,7 @@ RSpec.feature 'RFA01A', js: true, inaccessible: true do
     find('#addAnotherApplicant').send_keys :backspace
     expect(page).to have_content 'Applicant 1 - Information'
   end
- 
+
   scenario 'validate Residence card', set_auth_header: true do
     visit root_path
     click_button 'Create RFA Application'
