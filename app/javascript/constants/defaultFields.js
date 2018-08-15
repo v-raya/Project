@@ -273,18 +273,22 @@ export const emergencyPlacementTable = Object.freeze({
 })
 
 export const outOfStateRegistry = Object.freeze({
-  items: [
-    {
-      'title': 'Requested Arizona State info',
-      'date': '',
-      'notes': '',
-      'checked': false
-    },
-    {
-      'title': 'Received Arizona State info',
-      'date': '',
-      'notes': '',
-      'checked': false
-    }
-  ]
+  'state': {
+    'value': '',
+    'id': ''},
+  'is_registry_maintained_by_state': null,
+  'registry_info': {
+    'items': [
+      {
+        'title': '',
+        'date': '',
+        'notes': '',
+        'checked': null
+      }
+    ]
+  }
+})
+
+export const exemptions = Object.freeze({
+  'is_requested': false
 })

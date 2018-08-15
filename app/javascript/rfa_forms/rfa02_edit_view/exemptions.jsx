@@ -5,6 +5,7 @@ import {isTrue} from 'helpers/commonHelper'
 import YesNoRadioComponent from 'components/common/yesNoFields'
 import YesNoFieldShow from 'components/common/yesNoFieldShow'
 import DateNoteFields from 'components/common/dateNoteFields'
+import {exemptions} from 'constants/defaultFields'
 
 export default class Exemptions extends React.Component {
   constructor (props) {
@@ -14,7 +15,9 @@ export default class Exemptions extends React.Component {
   exemptionHandler (key, value, subKey) {
     let exemptionList = this.props.exemptionList
     let newExemptionList
-    if (subKey) {
+    if (key === 'is_requested' && value === 'false') {
+      newExemptionList = Immutable.fromJS(exemptions)
+    } else if (subKey) {
       newExemptionList = exemptionList.setIn([subKey, key], value)
     } else {
       newExemptionList = exemptionList.set(key, value)
@@ -92,11 +95,11 @@ Exemptions.propTypes = {
 
 Exemptions.defaultProps = {
   exemptionList: Immutable.fromJS({
-    'is_requested': true,
+    'is_requested': false,
     'date': '',
     'notes': '',
     'approval': {
-      'is_approved': true,
+      'is_approved': false,
       'date': '',
       'notes': ''
     }

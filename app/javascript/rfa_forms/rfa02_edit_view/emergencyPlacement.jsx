@@ -67,20 +67,6 @@ export default class EmergencyPlacement extends React.Component {
 
 EmergencyPlacement.defaultProps = {
   emergencyPlacementList: Immutable.fromJS({
-    'is_emergency': true,
-    'items': [
-      {
-        'title': 'CLETS',
-        'date': '',
-        'notes': '',
-        'checked': false
-      },
-      {
-        'title': 'CACI',
-        'date': '',
-        'notes': '',
-        'checked': false
-      }
-    ]
+    emergencyPlacementTable
   })
 }

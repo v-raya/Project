@@ -20,6 +20,9 @@ export default class OutOfStateRegistryCheck extends React.Component {
   }
   handleOutOfStateRegistry (key, value, index) {
     let outOfStateRegistryList = this.props.outOfStateRegistryList
+    if (key === 'is_registry_maintained_by_state' && value === 'false') {
+      outOfStateRegistryList = Immutable.fromJS(outOfStateRegistry)
+    }
     let newOutOfStateRegistryList = outOfStateRegistryList.setIn(['state_registries', index, key], value)
     this.props.setParentState('out_of_state_registry_checklist', newOutOfStateRegistryList, this.props.peopleIndex)
   }
@@ -37,6 +40,9 @@ export default class OutOfStateRegistryCheck extends React.Component {
   }
   render () {
     const outOfStateRegistryList = this.props.outOfStateRegistryList.get('state_registries')
+    if (outOfStateRegistryList === undefined || outOfStateRegistryList.toJS().length === 0) {
+      return null
+    }
     return (
       <div id='outOfStateRegistryCheck' className='col-xs-12'>
         <div className='tracking-card-header'>
@@ -45,20 +51,20 @@ export default class OutOfStateRegistryCheck extends React.Component {
         {
           outOfStateRegistryList.map((outOfStateData, index) => {
             return (
-              <div key={index}>
+              <div key={'person' + this.props.peopleIndex + 'outofstate' + index}>
                 <div className='col-xs-12'>
                   <h5>{outOfStateData.getIn(['state', 'value']) + ' Information'}</h5>
                 </div>
                 {this.props.editMode
                   ? <YesNoRadioComponent
-                    idPrefix={'outOfStateRegistry' + this.props.peopleIndex + index}
+                    idPrefix={'person' + this.props.peopleIndex + 'outOfStateRegistry' + index}
                     label={'Is registry maintained by ' + outOfStateData.getIn(['state', 'value']) + '?'}
                     gridClassName='col-xs-12 no-padding'
                     value={outOfStateData.get('is_registry_maintained_by_state')}
                     onFieldChange={(event) => { this.handleOutOfStateRegistry('is_registry_maintained_by_state', event.target.value, index) }}
                   />
                   : <YesNoFieldShow
-                    id={'outOfStateRegistry' + this.props.peopleIndex + index}
+                    id={'person' + this.props.peopleIndex + 'outOfStateRegistry' + index}
                     value={outOfStateData.get('is_registry_maintained_by_state')}
                     label={'Is registry maintained by ' + outOfStateData.getIn(['state', 'value']) + '?'}
                   />
@@ -69,16 +75,16 @@ export default class OutOfStateRegistryCheck extends React.Component {
                     rowsComponent={
                       <CheckListRow
                         cardIndex={index}
-                        id={'outOfStateRegistry' + index}
+                        id={'person' + this.props.peopleIndex + 'outOfStateRegistry' + index}
                         handleChange={this.handleRequestInfo}
-                        checkListDocuments={outOfStateData.getIn(['registry_info', 'items']) || outOfStateRegistryDefaults.get('items')}
+                        checkListDocuments={outOfStateData.getIn(['registry_info', 'items'])}
                         editMode={this.props.editMode}
                       />
                     }
                   />
                   {this.props.editMode
                     ? <YesNoRadioComponent
-                      idPrefix={'outOfStateRegistryCleared' + this.props.peopleIndex + index}
+                      idPrefix={'person' + this.props.peopleIndex + 'outOfStateRegistryCleared' + index}
                       label='Was the request cleared or not cleared?'
                       gridClassName='col-xs-12 no-padding'
                       value={outOfStateData.getIn(['registry_info', 'is_cleared'])}
@@ -87,7 +93,7 @@ export default class OutOfStateRegistryCheck extends React.Component {
                       onFieldChange={(event) => { this.handleRegistryClear('is_cleared', event.target.value, index) }}
                     />
                     : <YesNoFieldShow
-                      id={'outOfStateRegistryCleared' + this.props.peopleIndex + index}
+                      id={'person' + this.props.peopleIndex + 'outOfStateRegistryCleared' + index}
                       labelDefaultYes='Cleared'
                       labelDefaultNo='Not Cleared'
                       value={outOfStateData.getIn(['registry_info', 'is_cleared'])}
@@ -95,7 +101,7 @@ export default class OutOfStateRegistryCheck extends React.Component {
                     />
                   }
                   <DateNoteFields
-                    id='outOfStateRegistry'
+                    id={'person' + this.props.peopleIndex + 'outOfStateRegistry' + index}
                     dateFieldClass='col-xs-4 no-padding'
                     textFieldClass='col-xs-12 no-padding'
                     subKey={index}
@@ -116,40 +122,6 @@ export default class OutOfStateRegistryCheck extends React.Component {
 
 OutOfStateRegistryCheck.defaultProps = {
   outOfStateRegistryList: Immutable.fromJS({
-    'state_registries': [
-      {
-        'state': {
-          'value': 'Arizona',
-          'id': 'AZ'
-        },
-        'is_registry_maintained_by_state': true,
-        'registry_info': {
-          'items': [
-            {
-              'title': 'Requested Arizona State info',
-              'date': '',
-              'notes': '',
-              'checked': false
-            },
-            {
-              'title': 'Received Arizona State info',
-              'date': '',
-              'notes': '',
-              'checked': false
-            }
-          ],
-          'is_cleared': true,
-          'date': '',
-          'notes': ''
-        }
-      },
-      {
-        'state': {
-          'value': 'Nevada',
-          'id': 'NV'
-        },
-        'is_registry_maintained_by_state': false
-      }
-    ]
+    outOfStateRegistryDefaults
   })
 }
