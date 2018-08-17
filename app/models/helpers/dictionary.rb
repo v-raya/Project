@@ -90,6 +90,22 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     Dictionaries::SchoolGrade.all(auth_header)
   end
 
+  def contact_classifications
+    Dictionaries::ContactClassifications.all(auth_header)
+  end
+
+  def contact_locations
+    Dictionaries::ContactLocations.all(auth_header)
+  end
+
+  def contact_visit_types
+    Dictionaries::ContactVisitTypes.all(auth_header)
+  end
+
+  def contact_methods
+    Dictionaries::ContactMethods.all(auth_header)
+  end
+
   def facilities_dictionaries
     dictionaries = {}
     dictionaries[:county_types] = county_types

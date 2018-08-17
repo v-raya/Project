@@ -1,0 +1,28 @@
+{
+  "id": 1,
+  "date": "2000-12-31",
+  "classification": {
+    "value": "Confidential",
+    "id": 1
+  },
+  "contact_method": {
+    "value": "In Person",
+    "id": 1
+  },
+  "in_person_contact_data": {
+    "location": {
+      "value": "Office",
+      "id": 1
+    },
+    "notice": false,
+    "is_collateral_visit": false,
+    "collateral_visit_start_time": "15:20:00",
+    "collateral_visit_end_time": "15:20:00",
+    "visit_type": {
+      "value": "Emergency Placement Assessment",
+      "id": 1
+    }
+  },
+  "title": "title",
+  "notes": "notes"
+}
