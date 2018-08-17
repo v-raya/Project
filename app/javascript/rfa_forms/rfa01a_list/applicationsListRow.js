@@ -18,7 +18,8 @@ const getAddress = (address, key) => {
 }
 
 const ApplicationsListRow = ({
-  facilityId,
+  rfaApplicationId,
+  facilityHomeId,
   familyName,
   trackingId,
   applicantsInfo,
@@ -26,15 +27,13 @@ const ApplicationsListRow = ({
   applicationStatus,
   applicationReceivedDate
 }) => {
-  let trackingUrl = trackingId
-    ? urlPrefixHelper('/rfa/a01/' + facilityId + '/tracking/' + trackingId + '/edit')
-    : urlPrefixHelper('/rfa/a01/' + facilityId + '/tracking/')
-
+  let profileUrl = facilityHomeId ? urlPrefixHelper('/rfa/a01/' + rfaApplicationId + '/facility/' + facilityHomeId + '/profile') : null
+  let profileLink = facilityHomeId ? <a href={profileUrl} >Profile link</a> : null
   return (
     <tr>
-      <td>{facilityId}</td>
-      <td><a href={urlPrefixHelper('/rfa/a01/' + facilityId + '/edit')}>{familyName}</a></td>
-      <td className='tracking'><a href={trackingUrl} >tracking</a></td>
+      <td>{rfaApplicationId}</td>
+      <td><a href={urlPrefixHelper('/rfa/a01/' + rfaApplicationId + '/edit')}>{familyName}</a></td>
+      <td className='tracking'>{profileLink}</td>
       <td>{getPhoneNumber(applicantsInfo.getIn([0, 'phones']))}</td>
       <td>{getAddress(applicationAddress, 'street_address')}</td>
       <td>{getAddress(applicationAddress, 'city')}</td>
@@ -46,7 +45,8 @@ const ApplicationsListRow = ({
 }
 
 ApplicationsListRow.defaultProps = {
-  facilityId: '',
+  rfaApplicationId: '',
+  facilityHomeId: '',
   familyName: '',
   applicationStatus: '',
   applicationReceivedDate: '',

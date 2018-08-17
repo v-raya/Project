@@ -13,9 +13,9 @@ export default class ApplicationsTable extends React.Component {
           <table className='table table-hover'>
             <thead>
               <tr>
-                <th scope='col'>Facility ID</th>
+                <th scope='col'>RFA Application ID</th>
                 <th scope='col'>Facility / Family Name</th>
-                <th scope='col'>Tracking Link</th>
+                <th scope='col'>Profile</th>
                 <th scope='col'>Phone</th>
                 <th scope='col'>Address</th>
                 <th scope='col'>City</th>
@@ -31,7 +31,8 @@ export default class ApplicationsTable extends React.Component {
                     <ApplicationsListRow
                       key={index}
                       familyName={application.get('resource_family_name')}
-                      facilityId={application.get('id')}
+                      rfaApplicationId={application.get('id')}
+                      facilityHomeId={application.get('placement_home_id')}
                       trackingId={application.get('tracking_id')}
                       applicantsInfo={application.get('applicants')}
                       applicationStatus={application.get('status')}

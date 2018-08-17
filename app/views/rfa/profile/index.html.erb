@@ -1,0 +1,8 @@
+<div id="tracking_edit_page">
+      <%= react_component('rfa_forms/profile', {
+         user: @user,
+         rfa_application: @rfa_application,
+         tracking: @tracking},
+        {prerender: false}) %>
+    <%= javascript_pack_tag 'rfa_forms/profile' %>
+</div>

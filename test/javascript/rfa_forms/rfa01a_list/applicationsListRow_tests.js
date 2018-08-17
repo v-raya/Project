@@ -48,7 +48,7 @@ describe('Verify Application List Rows', () => {
   ])
   const props = {
     key: 0,
-    facilityId: '380037218',
+    rfaApplicationId: '380037218',
     familyName: 'Simmon, Smith & Jack',
     applicationStatus: '',
     applicationReceivedDate: '',
