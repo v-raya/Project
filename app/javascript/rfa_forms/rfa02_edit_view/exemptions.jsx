@@ -34,7 +34,7 @@ export default class Exemptions extends React.Component {
         <div className='col-xs-6'>
           {this.props.editMode ? <YesNoRadioComponent
             idPrefix={'exemptionRequest' + this.props.peopleIndex}
-            label='Exemption requested by applicant?'
+            label='Exemption approved or denied?'
             gridClassName='col-xs-12 no-padding'
             value={exemptionList.get('is_requested')}
             onFieldChange={(event) => { this.exemptionHandler('is_requested', event.target.value) }}
