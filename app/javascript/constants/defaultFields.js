@@ -165,7 +165,7 @@ export const blankMailingAddress = Object.freeze({
 })
 
 export const blankResidenceFields = Object.freeze({
-  residence_ownership: '',
+  residence_ownership: null,
   physical_mailing_similar: '',
   weapon_in_home: '',
   body_of_water_exist: '',
