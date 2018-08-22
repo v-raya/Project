@@ -18,9 +18,9 @@ class Rfa::B01Controller < CalsBaseController
     @rfa_a01_application['rfa1c_forms'] = rfa_c01_application_helper.all(@application_id)
   end
 
-  def update
-    rfa_b01_application_helper.update(params[:b01][:id], params[:id], b01_params.to_json)
-    render json: rfa_b01_application_helper.find_by_id(params[:b01][:id], params[:id])
+  def update    
+    rfa_b01_application_helper.update(params[:b01][:id], params[:a01_id], b01_params.to_json)
+    render json: rfa_b01_application_helper.find_by_id(params[:b01][:id], params[:a01_id])
   rescue ApiError => e
     render json: e.response, status: e.status
   end

@@ -70,24 +70,39 @@ export default class Rfa01bEditView extends React.Component {
   }
 
   componentDidMount () {
-    let submitEnabled = false
-    if (!validateStatus(this.state.rfa_a01_application.status)) {
-      if (this.state.application.metadata === undefined) {
-        submitEnabled = this.validateAllRequiredForSubmit(this.state.application)
-        this.setState({disableSubmit: !submitEnabled})
+    let submitEnabled
+    if (validateStatus(this.props.rfa_a01_application.status)) {
+      submitEnabled = false
+    } else if (this.props.rfa_a01_application.metadata !== undefined) {
+      submitEnabled = this.props.rfa_a01_application.metadata.submit_enabled
+      if (this.props.rfa_b01_application.metadata === undefined) {
+        submitEnabled = submitEnabled && this.validateAllRequiredForSubmit(this.props.rfa_b01_application)
+      } else {
+        submitEnabled = this.props.rfa_a01_application.metadata.submit_enabled &&
+        this.props.rfa_b01_application.metadata.submit_enabled &&
+        this.validateAllRequiredForSubmit(this.props.rfa_b01_application)
       }
     }
+    this.setState({disableSubmit: !submitEnabled})
   }
 
   componentDidUpdate (prevProps, prevState) {
     if (prevState.application !== this.state.application) {
-      const disableSubmit = !(!validateStatus(this.props.rfa_a01_application.status) &&
-        this.validateAllRequiredForSubmit(this.state.application))
-      const DataValidForSave = !checkForNameValidation(this.state.rfa_a01_application.applicants)
-      if (prevState.disableSubmit !== disableSubmit) {
-        this.setState({disableSubmit: disableSubmit})
-      } if (prevState.disableSave !== DataValidForSave) {
-        this.setState({disableSave: DataValidForSave})
+      let submitEnabled
+      if (validateStatus(this.props.rfa_a01_application.status)) {
+        submitEnabled = false
+      } else if (this.props.rfa_a01_application.metadata !== undefined) {
+        submitEnabled = this.props.rfa_a01_application.metadata.submit_enabled
+        if (this.state.application.metadata === undefined) {
+          submitEnabled = submitEnabled && this.validateAllRequiredForSubmit(this.state.application)
+        } else {
+          submitEnabled = this.props.rfa_a01_application.metadata.submit_enabled &&
+          this.state.application.metadata.submit_enabled &&
+          this.validateAllRequiredForSubmit(this.state.application)
+        }
+      }
+      if (prevState.disableSubmit !== !submitEnabled) {
+        this.setState({disableSubmit: !submitEnabled})
       }
     }
   }
@@ -112,19 +127,17 @@ export default class Rfa01bEditView extends React.Component {
   }
 
   saveProgress () {
-    let newApp = Immutable.fromJS(this.state.application).setIn(['metadata', 'submit_enabled'],
-      !(!validateStatus(this.state.rfa_a01_application.status) && !this.validateAllRequiredForSubmit(this.state.application)))
-    const url = '/rfa/b01/' + this.state.rfa_a01_application.id
-    return this.fetchToRails(url, 'PUT', newApp.toJS())
+    const url = '/rfa/b01/' + this.state.application.id
+    return this.fetchToRails(url, 'PUT', {a01_id: this.state.rfa_a01_application.id, b01: this.state.application})
   }
 
   submit () {
     let newApp = Immutable.fromJS(this.state.application).setIn(['metadata', 'submit_enabled'], false)
-    this.setState({application: newApp})
-    this.saveProgress().then(() => {
+    const saveUrl = '/rfa/b01/' + this.state.application.id
+    this.fetchToRails(saveUrl, 'PUT', {a01_id: this.state.rfa_a01_application.id, b01: newApp.toJS()}).then(() => {
       if (this.state.errors && !this.state.errors.issue_details) {
-        const url = '/rfa/a01/' + this.state.rfa_a01_application.id + '/b01/' + this.state.application.id + '/submit'
-        this.fetchToRails(url, 'POST', {a01_id: this.state.rfa_a01_application.id, b01_id: this.state.application.id})
+        const submitUrl = '/rfa/a01/' + this.state.rfa_a01_application.id + '/b01/' + this.state.application.id + '/submit'
+        this.fetchToRails(submitUrl, 'POST', {a01_id: this.state.rfa_a01_application.id, b01_id: this.state.application.id})
       }
     })
   }
