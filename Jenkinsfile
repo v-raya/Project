@@ -181,6 +181,7 @@ node('cals-slave') {
         }
     }
     catch (e) {
+        currentBuild.result = 'FAILURE'
         newTag = ''
         throw e
     }
