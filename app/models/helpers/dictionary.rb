@@ -106,6 +106,15 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     Dictionaries::ContactMethods.all(auth_header)
   end
 
+  def contact_dictionaries
+    dictionaries = {}
+    dictionaries[:contact_classifications] = contact_classifications
+    dictionaries[:contact_locations] = contact_locations
+    dictionaries[:contact_visit_types] = contact_visit_types
+    dictionaries[:contact_methods] = contact_methods
+    return dictionaries
+  end
+
   def facilities_dictionaries
     dictionaries = {}
     dictionaries[:county_types] = county_types

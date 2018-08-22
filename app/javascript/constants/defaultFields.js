@@ -298,3 +298,21 @@ export const outOfStateRegistry = Object.freeze({
 export const exemptions = Object.freeze({
   'is_requested': false
 })
+
+export const inPersonContactDataDefaults = Object.freeze({
+  'location': '',
+  'notice': '',
+  'is_collateral_visit': '',
+  'collateral_visit_start_time': '',
+  'collateral_visit_end_time': '',
+  'visit_type': null
+})
+
+export const contactDefaults = Object.freeze({
+  'date': '',
+  'classification': null,
+  'contact_method': null,
+  'in_person_contact_data': inPersonContactDataDefaults,
+  'title': '',
+  'notes': ''
+})

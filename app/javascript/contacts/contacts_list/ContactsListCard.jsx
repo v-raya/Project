@@ -5,6 +5,7 @@ export default class ContactsListCard extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      rfa01aId: props.rfa01aId,
       contacts: props.contacts
     }
   }
@@ -13,7 +14,7 @@ export default class ContactsListCard extends React.Component {
     let title
     let contactsListContent
     if (this.state.contacts && this.state.contacts.length > 0) {
-      contactsListContent = <ContactsTable contacts={this.state.contacts} />
+      contactsListContent = <ContactsTable rfa01aId={this.state.rfa01aId} contacts={this.state.contacts} />
     } else {
       contactsListContent = (
         <div className='no-contacts text-center pad-top'>
@@ -35,7 +36,7 @@ export default class ContactsListCard extends React.Component {
             <div id='ContactsTable' className='pad-top'>
               {contactsListContent}
               <div className='text-right'>
-                <button onClick={this.props.onClickCreateContact} className='btn btn-default btn-create-contact'>+ CREATE NEW CONTACT</button>
+                <button onClick={this.props.onClickCreateContact} className='btn btn-default btn-create-contact'>+ CREATE A NEW CONTACT</button>
               </div>
             </div>
           </div>

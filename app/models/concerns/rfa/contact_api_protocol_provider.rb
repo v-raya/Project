@@ -6,8 +6,8 @@ module Concerns::Rfa::ContactApiProtocolProvider
   include Concerns::RfaBaseApiProtocolProvider
 
   class_methods do
-    def create_contact(auth_header, contact_json)
-      response = FaradayCals.post("/#{api_resource_path}", auth_header, contact_json)
+    def create_contact(auth_header, a01_application_id, contact_json)
+      response = FaradayCals.post("/rfa-1a-forms/#{a01_application_id}/#{api_resource_path}", auth_header, contact_json)
       new(JSON.parse(response.body))
     end
 

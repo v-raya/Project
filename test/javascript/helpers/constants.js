@@ -615,6 +615,101 @@ const user = Object.freeze({
   user: 'RACFID'
 })
 
+const contactLocations = Object.freeze({
+  'items': [
+    {
+      'value': 'Office',
+      'id': 1
+    },
+    {
+      'value': 'Home/Facility',
+      'id': 2
+    },
+    {
+      'value': 'Other',
+      'id': 3
+    }
+  ]
+})
+const contactVisitTypes = Object.freeze({
+  'items': [
+    {
+      'value': 'Emergency Placement Assessment',
+      'id': 1
+    },
+    {
+      'value': 'Initial Home Inspection',
+      'id': 2
+    },
+    {
+      'value': 'Follow-up Visit (for Initials or Reassessments)',
+      'id': 3
+    },
+    {
+      'value': 'Initial Assessment - Psychosocial',
+      'id': 4
+    },
+    {
+      'value': 'Follow-up Assessment - Psychosocial',
+      'id': 5
+    },
+    {
+      'value': 'Annual Review/Reassessment',
+      'id': 6
+    },
+    {
+      'value': 'Location Change',
+      'id': 7
+    },
+    {
+      'value': 'Case Management Visit',
+      'id': 8
+    },
+    {
+      'value': 'Complaint',
+      'id': 9
+    },
+    {
+      'value': 'Incident Report Investigation',
+      'id': 10
+    },
+    {
+      'value': 'RSO Check',
+      'id': 11
+    },
+    {
+      'value': 'Client Death',
+      'id': 12
+    },
+    {
+      'value': 'Other',
+      'id': 13
+    }
+  ]
+})
+const contactMethods = Object.freeze({
+  'items': [
+    {
+      'value': 'In Person',
+      'id': 1
+    },
+    {
+      'value': 'Telephone',
+      'id': 2
+    },
+    {
+      'value': 'Email',
+      'id': 3
+    },
+    {
+      'value': 'Other',
+      'id': 4
+    }
+  ]
+})
+
 export {siblingGroups, ageGroups, marriageTerminationReasons, relationshipToApplicantTypes,
   nameTypes, suffixTypes, prefixTypes, salaryTypes, relationshipTypes, applicantrelationTypes,
-  educationLevels, ethnicityTypes, genderTypes, schoolGrades, stateTypes, languageTypes, residenceTypes, countyTypes, facilityTypes, licenseStatuses, user, selectedYes, phoneTypes, licenseTypes }
+  educationLevels, ethnicityTypes, genderTypes, schoolGrades, stateTypes, languageTypes,
+  residenceTypes, countyTypes, facilityTypes, licenseStatuses, user, selectedYes, phoneTypes,
+  licenseTypes, contactLocations, contactVisitTypes, contactMethods}

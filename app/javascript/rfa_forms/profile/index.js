@@ -11,7 +11,7 @@ export default class Profile extends React.Component {
 
     this.state = {
       user: this.props.user,
-      rfa_application: this.props.rfa_application.id,
+      rfa_application: this.props.rfa_application,
       tracking: this.props.rfa_application.tracking_id,
       contacts: this.props.contacts
     }
@@ -20,10 +20,10 @@ export default class Profile extends React.Component {
   render () {
     const trackingId = this.props.rfa_application.tracking_id
     const rfaApplication = this.state.rfa_application
-    const createContactUrl = urlPrefixHelper('/rfa/a01/' + rfaApplication + '/contact')
+    const createContactUrl = urlPrefixHelper('/rfa/a01/' + rfaApplication.id + '/contacts/new')
     let trackingUrl = trackingId
-      ? urlPrefixHelper('/rfa/a01/' + rfaApplication + '/tracking/' + trackingId + '/edit')
-      : urlPrefixHelper('/rfa/a01/' + rfaApplication + '/tracking/')
+      ? urlPrefixHelper('/rfa/a01/' + rfaApplication.id + '/tracking/' + trackingId + '/edit')
+      : urlPrefixHelper('/rfa/a01/' + rfaApplication.id + '/tracking/')
     return (
       <div className='profile-main-page'>
         <PageHeader headerLabel={rfaApplication.facility_name + ' Facility Profile'} />
@@ -41,6 +41,7 @@ export default class Profile extends React.Component {
                   <ContactsListCard
                     title={'Summary of Contacts'}
                     contacts={this.state.contacts}
+                    rfa01aId={rfaApplication.id}
                     onClickCreateContact={() => { window.location.href = createContactUrl }}
                   />
                 </div>

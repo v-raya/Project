@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   namespace :rfa do
     constraints lambda{ |request| !DISABLE_RFA_APPLICATION } do
       resources :a01 do
-        resources :facility, only: [] do 
+        resources :contacts, only: [:new, :create, :edit, :update]
+        resources :facility, only: [] do
           resources :profile, only: [:index]
         end
         post :submit, on: :member

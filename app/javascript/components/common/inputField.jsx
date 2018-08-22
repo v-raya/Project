@@ -15,6 +15,7 @@ const InputField = ({
   required,
   type,
   value,
+  step,
   disabled
 }) => {
   const formFieldProps = {
@@ -29,7 +30,7 @@ const InputField = ({
 
   return (
     <FormField {...formFieldProps}>
-      <input id={id} type={type} placeholder={placeholder}
+      <input id={id} type={type} placeholder={placeholder} step={step}
         value={value} onChange={onChange} maxLength={maxLength} onBlur={onBlur}
         aria-required={required} required={required} disabled={disabled}
       />

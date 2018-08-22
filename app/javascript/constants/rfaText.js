@@ -49,7 +49,8 @@ const toggleInstructionStyle = Object.freeze({
 })
 
 const yesNoMarginStyle = Object.freeze({
-  marginBottom: '20px'
+  marginBottom: '20px',
+  paddingRight: '0px !important'
 })
 
 const rfa01ALabels = Object.freeze({

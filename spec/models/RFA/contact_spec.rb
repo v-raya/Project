@@ -39,13 +39,13 @@ describe Helpers::Rfa::ContactHelper do
   it 'Test create contact' do
     begin
       allow(FaradayCals).to receive(:post) do |path, auth_header, body|
-        expect(path).to eq("/contacts")
+        expect(path).to eq("/rfa-1a-forms/1/contacts")
         expect(auth_header).to eq("token")
         expect(body).to eq(@contact)
         env = Faraday::Env.from :status => 201, :body => @contact
         Faraday::Response.new env
       end
-      result = @contact_helper.create_contact(@contact)
+      result = @contact_helper.create_contact(1, @contact)
       validate(result)
     ensure
       allow(FaradayCals).to receive(:post).and_call_original
@@ -115,5 +115,3 @@ describe Helpers::Rfa::ContactHelper do
     end
   end
 end
-
-

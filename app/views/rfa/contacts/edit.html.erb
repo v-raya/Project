@@ -1,0 +1,11 @@
+<div id="new-contact-page">
+  <%= react_component('contacts/contact_edit_view', {
+    user: @user,
+    rfa_application: @rfa_application,
+    contact_locations: @dictionaries[:contact_locations],
+    contact_visit_types: @dictionaries[:contact_visit_types],
+    contact_methods: @dictionaries[:contact_methods],
+    contact: @contact },
+    {prerender: false}) %>
+ <%= javascript_pack_tag 'contacts/contact_edit_view' %>
+</div>

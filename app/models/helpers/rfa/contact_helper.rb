@@ -6,8 +6,8 @@ class Helpers::Rfa::ContactHelper < Helpers::ModelHelperBase
     Rfa::Contact
   end
 
-  def create_contact(contact_json)
-    Rfa::Contact.create_contact(auth_header, contact_json)
+  def create_contact(a01_application_id, contact_json)
+    Rfa::Contact.create_contact(auth_header, a01_application_id, contact_json)
   end
 
   def update_contact(id, contact_json)
