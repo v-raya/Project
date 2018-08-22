@@ -8,4 +8,4 @@ RUN cd /cals \
   && bundle install \
   && yarn install --frozen-lockfile --production=false
 
-CMD sleep 600
+CMD sleep 1200
