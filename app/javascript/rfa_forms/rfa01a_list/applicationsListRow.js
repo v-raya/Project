@@ -4,7 +4,7 @@ import Immutable from 'immutable'
 import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'
 import {addressDefaults} from 'constants/defaultFields'
 import {findArrayValueByMethod} from 'helpers/commonHelper'
-import {formatPhoneNumberForDashes} from 'search/common/commonUtils'
+import {formatPhoneNumberForDashes, handleStatus} from 'search/common/commonUtils'
 
 const getPhoneNumber = (phonesList) => {
   const primaryPhoneObj = phonesList && phonesList.size > 0 && (findArrayValueByMethod(phonesList, 'find', 'preferred', true) || phonesList.get(0))
@@ -38,7 +38,7 @@ const ApplicationsListRow = ({
       <td>{getAddress(applicationAddress, 'street_address')}</td>
       <td>{getAddress(applicationAddress, 'city')}</td>
       <td>{getAddress(applicationAddress, 'zip')}</td>
-      <td>{applicationStatus}</td>
+      <td>{handleStatus(applicationStatus)}</td>
       <td>{applicationReceivedDate}</td>
     </tr>
   )

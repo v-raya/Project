@@ -130,6 +130,19 @@ export const handleLicenseEffectiveDate = (result) => {
   }
 }
 
+export const handleStatus = (status) => {
+  switch (status) {
+    case 'SUBMITTED':
+      return 'Submitted'
+    case 'IN_PROGRESS':
+      return 'In-Progress'
+    case 'DRAFT':
+      return 'Draft'
+    default:
+      return ''
+  }
+}
+
 export const defaultDateFormat = 'MM/DD/YYYY'
 
 export const formatDate = (date, format) => { return Moment(date).local().format(format || defaultDateFormat) }

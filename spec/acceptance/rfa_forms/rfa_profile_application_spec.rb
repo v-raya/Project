@@ -34,6 +34,7 @@ RSpec.feature 'Profile', js: true, inaccessible: true do
     click_button 'Submit'
     click_link 'RFA Application list'
     expect(page).to have_content('123Monteo, James')
+    expect(page).to have_content('Submitted')
     page.find("a", :text => '0123Monteo, James', match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'Profile link').click
   end
 
