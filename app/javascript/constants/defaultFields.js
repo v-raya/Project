@@ -272,27 +272,28 @@ export const emergencyPlacementTable = Object.freeze({
   ]
 })
 
+export const defaultRegistryInfo = Object.freeze({
+  'items': [
+    {
+      'title': 'Requested State Info',
+      'date': '',
+      'notes': '',
+      'checked': null
+    },
+    {
+      'title': 'Received State info',
+      'date': '',
+      'notes': '',
+      'checked': null
+    }
+  ]
+})
+
 export const outOfStateRegistry = Object.freeze({
   'state': {
     'value': '',
     'id': ''},
-  'is_registry_maintained_by_state': null,
-  'registry_info': {
-    'items': [
-      {
-        'title': 'Requested State Info',
-        'date': '',
-        'notes': '',
-        'checked': null
-      },
-      {
-        'title': 'Received State info',
-        'date': '',
-        'notes': '',
-        'checked': null
-      }
-    ]
-  }
+  'is_registry_maintained_by_state': null
 })
 
 export const exemptions = Object.freeze({

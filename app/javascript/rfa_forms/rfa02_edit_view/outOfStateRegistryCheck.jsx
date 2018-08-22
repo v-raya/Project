@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Immutable from 'immutable'
 import {isTrue} from 'helpers/commonHelper'
 import YesNoRadioComponent from 'components/common/yesNoFields'
-import {outOfStateRegistry} from 'constants/defaultFields'
+import {outOfStateRegistry, defaultRegistryInfo} from 'constants/defaultFields'
 import DateNoteFields from 'components/common/dateNoteFields'
 import TrackingTable from '../tracking/trackingTable'
 import CheckListRow from './backGroundCheckRows/checkListRow'
@@ -20,10 +20,14 @@ export default class OutOfStateRegistryCheck extends React.Component {
   }
   handleOutOfStateRegistry (key, value, index) {
     let outOfStateRegistryList = this.props.outOfStateRegistryList
-    if (key === 'is_registry_maintained_by_state' && value === 'false') {
-      outOfStateRegistryList = Immutable.fromJS(outOfStateRegistry)
-    }
     let newOutOfStateRegistryList = outOfStateRegistryList.setIn(['state_registries', index, key], value)
+    if (key === 'is_registry_maintained_by_state') {
+      let registryInfo
+      if (value === 'true') {
+        registryInfo = Immutable.fromJS(defaultRegistryInfo)
+      }
+      newOutOfStateRegistryList = newOutOfStateRegistryList.setIn(['state_registries', index, 'registry_info'], registryInfo)
+    }
     this.props.setParentState('out_of_state_registry_checklist', newOutOfStateRegistryList, this.props.peopleIndex)
   }
   handleRequestInfo (key, value, rowIndex, cardIndex) {
@@ -77,7 +81,7 @@ export default class OutOfStateRegistryCheck extends React.Component {
                         cardIndex={index}
                         id={'person' + this.props.peopleIndex + 'outOfStateRegistry' + index}
                         handleChange={this.handleRequestInfo}
-                        checkListDocuments={outOfStateData.getIn(['registry_info', 'items']) || outOfStateRegistryDefaults.getIn(['registry_info', 'items'])}
+                        checkListDocuments={outOfStateData.getIn(['registry_info', 'items'])}
                         editMode={this.props.editMode}
                       />
                     }
