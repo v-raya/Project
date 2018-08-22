@@ -280,7 +280,13 @@ export const outOfStateRegistry = Object.freeze({
   'registry_info': {
     'items': [
       {
-        'title': '',
+        'title': 'Requested State Info',
+        'date': '',
+        'notes': '',
+        'checked': null
+      },
+      {
+        'title': 'Received State info',
         'date': '',
         'notes': '',
         'checked': null

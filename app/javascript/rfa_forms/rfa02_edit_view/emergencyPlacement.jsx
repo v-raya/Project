@@ -38,7 +38,7 @@ export default class EmergencyPlacement extends React.Component {
           idPrefix={'emergencyPlacement' + this.props.peopleIndex}
           index={this.props.peopleIndex}
           label='Is this an emergency placement?'
-          gridClassName='col-xs-12 no-padding'
+          gridClassName='no-padding'
           value={emergencyPlacementList.get('is_emergency')}
           onFieldChange={(event) => { this.isEmergencyPlacement('is_emergency', event.target.value) }}
         />

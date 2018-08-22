@@ -77,7 +77,7 @@ export default class OutOfStateRegistryCheck extends React.Component {
                         cardIndex={index}
                         id={'person' + this.props.peopleIndex + 'outOfStateRegistry' + index}
                         handleChange={this.handleRequestInfo}
-                        checkListDocuments={outOfStateData.getIn(['registry_info', 'items'])}
+                        checkListDocuments={outOfStateData.getIn(['registry_info', 'items']) || outOfStateRegistryDefaults.getIn(['registry_info', 'items'])}
                         editMode={this.props.editMode}
                       />
                     }
