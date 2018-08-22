@@ -100,7 +100,6 @@ node('cals-slave') {
     def branch = env.GIT_BRANCH
     def curStage = 'Start'
     def emailList = 'ratnesh.raval@osi.ca.gov'
-    def pipelineStatus = 'SUCCESS'
     String newTag = ''
 
     def appDockerImage
@@ -182,8 +181,6 @@ node('cals-slave') {
         }
     }
     catch (e) {
-        pipelineStatus = 'FAILED'
-        currentBuild.result = 'FAILURE'
         newTag = ''
         throw e
     }
