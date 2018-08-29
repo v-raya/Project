@@ -1,5 +1,4 @@
 require 'capybara/rspec'
-require 'capybara/poltergeist'
 require 'capybara/accessible'
 require 'selenium/webdriver'
 
@@ -77,7 +76,7 @@ when :internet_explorer
   register_internet_explorer(Capybara, selenium_browser)
 
 else
-  Capybara.javascript_driver = :poltergeist
+  Capybara.javascript_driver = selenium_browser.to_sym
 end
 
 Capybara.app = Rack::Builder.parse_file(File.expand_path('../../../config.ru', __FILE__)).first
