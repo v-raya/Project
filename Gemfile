@@ -47,8 +47,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.7'
-  gem 'capybara-accessible', github: 'ca-cwds/capybara-accessible'
+  gem 'capybara', '~> 3.6'
+  gem 'capybara-accessible', github: 'ca-cwds/capybara-accessible', branch: 'master'
   gem 'selenium-webdriver'
   gem 'vcr'
   gem 'webmock'
@@ -61,8 +61,7 @@ group :development, :test do
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'rails-controller-testing'
-  gem 'poltergeist'
-  gem 'chromedriver-helper'
+  gem 'chromedriver-helper', '1.2.0'
   gem 'transpec'
 end
 
