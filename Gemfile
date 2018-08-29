@@ -49,7 +49,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.6'
   gem 'capybara-accessible', github: 'ca-cwds/capybara-accessible', branch: 'master'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '~> 3.11'
   gem 'vcr'
   gem 'webmock'
   gem 'faker'
