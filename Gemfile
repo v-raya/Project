@@ -42,6 +42,7 @@ group :development, :test do
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'parallel_tests', '~> 2.22'
   gem 'rails-controller-testing'
   gem 'rspec', '~> 3.7'
   gem 'rspec-rails', '~> 3.7'
