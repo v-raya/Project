@@ -81,9 +81,6 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bindex (0.5.0)
-    bootstrap (4.0.0.alpha6)
-      autoprefixer-rails (>= 6.0.3)
-      sass (>= 3.4.19)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -127,9 +124,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.11.0.1)
       faraday (>= 0.7.4, < 1.0)
-    ffi (1.9.18)
-    foreman (0.84.0)
-      thor (~> 0.19.1)
+    ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     hashdiff (0.3.4)
@@ -202,7 +197,7 @@ GEM
     rainbow (2.2.2)
       rake
     rake (12.3.1)
-    rb-fsevent (0.9.8)
+    rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     react-rails (2.2.0)
@@ -267,7 +262,11 @@ GEM
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
     safe_yaml (1.0.4)
-    sass (3.4.24)
+    sass (3.5.7)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     selenium-webdriver (3.14.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
@@ -329,7 +328,6 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails (~> 6.7)
   awesome_print
-  bootstrap
   bootstrap-sass (~> 3.3.6)
   byebug
   capybara (~> 3.6)
@@ -343,7 +341,6 @@ DEPENDENCIES
   faker
   faraday
   faraday_middleware
-  foreman
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mock_redis
