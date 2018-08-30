@@ -28,20 +28,19 @@ def register_internet_explorer(capybara_config, selenium_browser)
   selenium_server = ENV['SELENIUM_SERVER'] || 'localhost:4444'
 
   capybara_config.register_driver selenium_browser do |app|
-
     capabilities = Selenium::WebDriver::Remote::Capabilities.internet_explorer(
       native_events: false,
       javascript_enabled: true,
       version: 11
     )
-    Capybara::Selenium::Driver.new app,
+    Capybara::Selenium::Driver.new \
+      app,
       browser: selenium_browser,
       url: "http://#{selenium_server}/wd/hub",
       desired_capabilities: capabilities
   end
   # Selenium::WebDriver.logger.level = :debug
   capybara_config.javascript_driver = selenium_browser
-
 end
 
 def registar_chrome(capybara_config, selenium_browser)
@@ -61,6 +60,8 @@ def registar_chrome(capybara_config, selenium_browser)
   capybara_config.javascript_driver = :accessible_selenium
 
 end
+
+Capybara.server_port = 8889 + ENV['TEST_ENV_NUMBER'].to_i
 
 remote_capabilities(Capybara)
 
