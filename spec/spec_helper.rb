@@ -1,9 +1,12 @@
-require "simplecov"
+# frozen_string_literal: true
+
 require 'selenium/webdriver'
 require 'chromedriver/helper'
+require 'simplecov/parallel'
 
 Chromedriver.set_version('2.38')
 
+SimpleCov::Parallel.activate
 SimpleCov.start 'rails' do
   coverage_dir 'reports/coverage/rspec/'
 

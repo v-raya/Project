@@ -98,6 +98,7 @@ GEM
     chromedriver-helper (1.2.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    circleci-parallel (0.5.0)
     codeclimate-test-reporter (1.0.8)
       simplecov (<= 0.13)
     concurrent-ruby (1.0.5)
@@ -278,6 +279,9 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
+    simplecov-parallel (0.3.0)
+      circleci-parallel (~> 0.5)
+      simplecov (~> 0.13)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -363,7 +367,7 @@ DEPENDENCIES
   rubocop (~> 0.48.1)
   sass-rails!
   selenium-webdriver (~> 3.11)
-  simplecov
+  simplecov-parallel
   spring
   spring-watcher-listen (~> 2.0.0)
   transpec
