@@ -46,7 +46,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec', '~> 3.7'
   gem 'rspec-rails', '~> 3.7'
-  gem 'rubocop', '~> 0.48.1', require: false
+  gem 'rubocop', '~> 0.58', require: false
   gem 'selenium-webdriver', '~> 3.11'
   gem 'transpec'
   gem 'vcr'

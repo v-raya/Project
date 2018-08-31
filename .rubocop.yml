@@ -6,3 +6,6 @@ Metrics/LineLength:
   Enabled: false
 Metrics/MethodLength:
   CountComments: false
+
+Style/GuardClause:
+  Enabled: false
