@@ -3,10 +3,15 @@
 require 'selenium/webdriver'
 require 'chromedriver/helper'
 require 'simplecov/parallel'
-
-Chromedriver.set_version('2.38')
+# require 'simplecov'
+require 'factory_girl'
 
 SimpleCov::Parallel.activate
+SimpleCov.command_name("Rspec:#{ENV['TEST_ENV_NUMBER']}")
+SimpleCov.merge_timeout 600
+SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new(
+  [SimpleCov::Formatter::HTMLFormatter]
+)
 SimpleCov.start 'rails' do
   coverage_dir 'reports/coverage/rspec/'
 
@@ -30,6 +35,8 @@ SimpleCov.start 'rails' do
 
   minimum_coverage 90 unless ENV['TEST_END_TO_END']
 end
+
+Chromedriver.set_version('2.38')
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
