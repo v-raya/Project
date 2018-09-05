@@ -44,7 +44,7 @@ def register_internet_explorer(capybara_config, selenium_browser)
 
 end
 
-def registar_chrome(capybara_config, selenium_browser)
+def register_chrome(capybara_config, selenium_browser)
   capability_options = selenium_browser == :headless_chrome ? %w[headless disable-gpu no-sandbox] : []
 
   capybara_config.register_driver :accessible_selenium do |app|
@@ -70,7 +70,7 @@ Capybara.default_max_wait_time = 5
 
 case selenium_browser
 when :chrome, :headless_chrome
-  registar_chrome(Capybara, selenium_browser)
+  register_chrome(Capybara, selenium_browser)
 
 when :internet_explorer
   register_internet_explorer(Capybara, selenium_browser)
