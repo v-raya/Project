@@ -1,11 +1,13 @@
-# version 0.7
+# version 0.8
 
 # versions at time of creation
-# node : 8.11.3
-# yarn : 1.7.0
-# puma : 3.11.4
+# node : 8.12
+# yarn : 1.9.4
+# puma : 3.12
 
 FROM ruby:2.5.1
+
+ENV BASE_REFRESH=2018-09-11
 
 # Get latest nodejs PPA and other repos
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \

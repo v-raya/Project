@@ -1,4 +1,4 @@
-FROM ratneshraval/cals-base:0.7
+FROM ratneshraval/cals-base:0.8
 
 COPY . /cals
 
