@@ -81,3 +81,7 @@ see docker wiki
 The structural interface of the service contains the array of `roles` and the array of `permissions`. 
 The logged in user account has to have one of the listed `roles` or one of the listed `permissions` to see the particular functional button.
 If both `roles` and `permissions` arrays of the service are empty/not authorized, than the functional button will not be showed to any user.
+
+# Questions
+
+If you have any questions regarding the contents of this repository, please email the Office of Systems Integration at FOSS@osi.ca.gov.
