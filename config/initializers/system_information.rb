@@ -16,6 +16,9 @@ SystemInformation.configure do |config|
             'system-information' },
         { name: :dora_api,
           url: "#{ENV.fetch('BASE_SEARCH_API_URL', 'http://localhost/dora')}/"\
-          'system-information' }    
+          'system-information' },
+        {name: :geo_api,
+        url: "#{ENV.fetch('GEO_SERVICE_URL', 'http://localhost/geo')}/"\
+        'system-information' }
       ]
   end
