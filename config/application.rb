@@ -44,5 +44,6 @@ module Cals
     config.assets.prefix = "#{ENV['RAILS_RELATIVE_URL_ROOT']}/assets"
     # config.action_controller.relative_url_root = ENV['RAILS_RELATIVE_URL_ROOT'] || '/'
     #  config.cache_store = :redis_store
+    config.middleware.use SystemInformation::SystemInformationMiddleware
   end
 end

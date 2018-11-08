@@ -22,7 +22,7 @@ Make sure XCode is installed.
 ## Initialization
 
 run the command:
-`yarn run dev-build`
+`yarn dev`
 
 from the root folder. This will perform the following actions:
  - `bundle install`
