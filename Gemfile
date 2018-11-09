@@ -47,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'rubocop', '~> 0.58', require: false
   gem 'selenium-webdriver', '~> 3.11'
+  gem 'system_information', github: 'ca-cwds/system_information'
   gem 'transpec'
   gem 'vcr'
   gem 'webmock'
