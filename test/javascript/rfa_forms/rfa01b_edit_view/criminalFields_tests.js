@@ -3,7 +3,7 @@ import CriminalFields from 'rfa_forms/rfa01b_edit_view/criminalFields'
 import {shallow, mount} from 'enzyme'
 import Validator from 'helpers/validator'
 
-describe('Verify criminal fields card', function () {
+describe('Verify criminal fields card', () => {
   const crime = Object.freeze({
     'offense': 'test',
     'offense_city': 'sacramento',

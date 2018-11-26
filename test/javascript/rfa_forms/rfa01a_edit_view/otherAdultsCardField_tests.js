@@ -4,7 +4,7 @@ import {shallow, mount} from 'enzyme'
 import {relationshipTypes, suffixTypes, prefixTypes} from './../../helpers/constants'
 import Validator from 'helpers/validator'
 
-describe('Verify other adultsFields', function () {
+describe('Verify other adultsFields', () => {
   const applicants = [{
     first_name: 'gdfghfhgv',
     last_name: 'hgbhg',

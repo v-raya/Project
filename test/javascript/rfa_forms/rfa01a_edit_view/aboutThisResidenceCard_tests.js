@@ -5,7 +5,7 @@ import {suffixTypes, prefixTypes, languageTypes, residenceTypes, selectedYes} fr
 import {shallow, mount} from 'enzyme'
 import {othersUsingAddressMailing} from 'constants/defaultFields'
 
-describe('Verify Physical Address', function () {
+describe('Verify Physical Address', () => {
   const blankAboutThisResidenceFields = Object.freeze({
     residence_ownership_type: {
       id: '',
@@ -109,7 +109,7 @@ describe('Verify Physical Address', function () {
   })
 })
 
-describe('Verify Physical Address prefix, suffix, first name, middle name and last name', function () {
+describe('Verify Physical Address prefix, suffix, first name, middle name and last name', () => {
   let blankAboutThisResidenceFields = {
     home_languages: [{
       id: '',

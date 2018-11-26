@@ -4,7 +4,7 @@ import {shallow, mount} from 'enzyme'
 import {stateTypes, prefixTypes, suffixTypes} from '../../helpers/constants'
 import Validator from 'helpers/validator'
 
-describe('Verify ApplicantDetailsCard card', function () {
+describe('Verify ApplicantDetailsCard card', () => {
   const blankValues = Object.freeze({
     focusComponentName: null
   })

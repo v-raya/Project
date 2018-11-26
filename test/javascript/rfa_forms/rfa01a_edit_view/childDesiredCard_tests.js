@@ -3,7 +3,7 @@ import ChildDesiredCard from 'rfa_forms/rfa01a_edit_view/childDesiredCard.jsx'
 import {siblingGroups, ageGroups, selec} from './../../helpers/constants'
 import {shallow, mount} from 'enzyme'
 
-describe('Verify relation between applicant', function () {
+describe('Verify relation between applicant', () => {
   const childDesired = {
     child_identified: '',
     child_in_home: '',

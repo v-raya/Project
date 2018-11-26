@@ -2,7 +2,7 @@ import React from 'react'
 import Pagination from 'search/pagination'
 import {shallow, mount} from 'enzyme'
 
-describe('Facility Search pagination', function () {
+describe('Facility Search pagination', () => {
   let paginationCompRendered,
     searchApiCallSpy,
     handlePageNumberChangeSpy,

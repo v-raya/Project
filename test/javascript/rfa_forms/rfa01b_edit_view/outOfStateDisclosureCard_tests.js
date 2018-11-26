@@ -4,7 +4,7 @@ import {shallow, mount} from 'enzyme'
 import {stateTypes} from '../../helpers/constants'
 import Validator from 'helpers/validator'
 
-describe('Verify out Of state disclosure card card', function () {
+describe('Verify out Of state disclosure card card', () => {
   let setParentStateSpy, setDisplayStateSpy, componentMountinState, componentMountOtherState,
     componentMountLivedOutOfState, componentShallowInState,
     setFocusStateSpy, setApplicationStateSpy, getFocusClassNameSpy, handleClearOnConditionalChangeSpy

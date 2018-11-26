@@ -6,7 +6,7 @@ import {yesNo, licenseTypes, selectedYes} from './../../helpers/constants'
 import {rfa01ALabels} from 'constants/rfaText'
 var TestUtils = require('react-dom/test-utils')
 
-describe('foster car card tests', function () {
+describe('foster car card tests', () => {
   let fosterCareCardComponent
   let fosterCareFieldsComponent
   let props
@@ -70,7 +70,7 @@ describe('foster car card tests', function () {
   })
 
   describe('when "radio button is changed', () => {
-    it('expect set foster care nested state to be called', function () {
+    it('expect set foster care nested state to be called', () => {
       const onChangeSpy = jasmine.createSpy('setFosterCareNestedState')
       handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
 

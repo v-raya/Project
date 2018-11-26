@@ -39,7 +39,7 @@ describe('Header Component', () => {
     expect(header.instance().redirectUrl).toHaveBeenCalledWith('/logout')
   })
 
-  it('Renders user full name', function () {
+  it('Renders user full name', () => {
     const userName = header.find('ul').props().children[3].props.children.props.children
     expect(userName).toBe('peter parker')
   })

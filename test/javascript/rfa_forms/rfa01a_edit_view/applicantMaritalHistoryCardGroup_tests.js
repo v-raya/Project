@@ -7,7 +7,7 @@ import {shallow, mount} from 'enzyme'
 import {relationshipTypes, suffixTypes, prefixTypes, nameTypes, stateTypes, marriageTerminationReasons, relationshipToApplicantTypes} from '../../helpers/constants'
 import Validator from 'helpers/validator'
 
-describe('foster care card tests', function () {
+describe('foster care card tests', () => {
   let applicantMaritalHistoryCardGroupComponent
 
   let setParentStateSpy

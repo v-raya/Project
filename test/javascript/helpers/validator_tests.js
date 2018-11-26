@@ -69,7 +69,7 @@ describe('Validator', () => {
       validator = new Validator(validations)
     })
     it('allValidationsWithOnlyRule', () => {
-      newDateOfBirthArray = validations.date_of_birth.filter(function (obj) {
+      newDateOfBirthArray = validations.date_of_birth.filter(obj => {
         return obj.rule === 'isRequired'
       })
       expect(validator.allValidationsWithOnlyRule('isRequired').toJS().date_of_birth).toEqual(newDateOfBirthArray)

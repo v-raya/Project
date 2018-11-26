@@ -2,7 +2,7 @@ import React from 'react'
 import SearchInput from 'search/searchInput'
 import {shallow, mount} from 'enzyme'
 
-describe('Verify search input component', function () {
+describe('Verify search input component', () => {
   const props = {
     facilityTypes: [
       {

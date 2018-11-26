@@ -8,7 +8,7 @@ import Validator from 'helpers/validator.js'
 
 var TestUtils = require('react-dom/test-utils')
 
-describe('Verify Phone Card Component View', function () {
+describe('Verify Phone Card Component View', () => {
   let component
   let props
   const phoneNumber = {number: '3333-222-5545',
@@ -35,16 +35,16 @@ describe('Verify Phone Card Component View', function () {
   })
 
   describe('Verify Phone Card Component View', () => {
-    it('has class name', function () {
+    it('has class name', () => {
       expect(component.find('.card-body').length).toEqual(1)
     })
-    it('expcet children to be array', function () {
+    it('expcet children to be array', () => {
       expect(component.children.length).toEqual(1)
     })
   })
 
   describe('when "Add new phone number" is clicked', () => {
-    it('expect phone card to be button', function () {
+    it('expect phone card to be button', () => {
       const x = component.find('button[className="btn btn-default"]')
       expect(component.find('button[className="btn btn-default"]').type()).toEqual('button')
     })

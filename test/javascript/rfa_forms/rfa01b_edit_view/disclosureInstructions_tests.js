@@ -2,7 +2,7 @@ import React from 'react'
 import DisclosureInstructions from 'rfa_forms/rfa01b_edit_view/disclosureInstructions'
 import {shallow, mount} from 'enzyme'
 
-describe('Verify disclosure Instructions card', function () {
+describe('Verify disclosure Instructions card', () => {
   let setParentStateSpy, setDisplayStateSpy, componentMount, componentMountShowDisplay,
     setFocusStateSpy, handleOnClickSpy
 

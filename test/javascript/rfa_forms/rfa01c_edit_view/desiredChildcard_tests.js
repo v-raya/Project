@@ -5,7 +5,7 @@ import {shallow, mount} from 'enzyme'
 import Validator from 'helpers/validator'
 import {RfaCommon} from 'constants/rfaText'
 
-describe('Verify RFA 01C child desired', function () {
+describe('Verify RFA 01C child desired', () => {
   const applicants = [{
     id: 20,
     first_name: 'gdfghfhgv',

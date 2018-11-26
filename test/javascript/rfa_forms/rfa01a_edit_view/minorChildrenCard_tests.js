@@ -3,7 +3,7 @@ import {MinorCardField} from 'rfa_forms/rfa01a_edit_view/minorCardField.js'
 import {shallow, mount} from 'enzyme'
 import {relationshipTypes, genderTypes, selectedYes} from './../../helpers/constants'
 import Validator from 'helpers/validator'
-describe('Verify MinorCardFields', function () {
+describe('Verify MinorCardFields', () => {
   const applicants = [{
     first_name: 'gdfghfhgv',
     last_name: 'hgbhg',

@@ -4,7 +4,7 @@ import ShallowRenderer from 'react-test-renderer/shallow'
 import { Switch, BrowserRouter } from 'react-router-dom'
 import {shallow, mount} from 'enzyme'
 
-describe('Render Search results to Grid', function () {
+describe('Render Search results to Grid', () => {
   let indexValue = '0'
   const prop = {
     searchResults: [
@@ -83,25 +83,25 @@ describe('Render Search results to Grid', function () {
     ]
   }
   const searchGridRender = mount(<BrowserRouter><SearchGrid searchResults={prop.searchResults} /></BrowserRouter>)
-  it('Render Grid view block', function () {
+  it('Render Grid view block', () => {
     expect(searchGridRender.length).toBe(1)
   })
-  it('verify loaded Facility ID', function () {
+  it('verify loaded Facility ID', () => {
     expect(searchGridRender.find('GridInnerLayout[title="Facility ID / Approval #"]').props().value).toBe(193600008)
   })
 
-  it('expect loaded phone number', function () {
+  it('expect loaded phone number', () => {
     expect(searchGridRender.find('GridInnerLayout[title="Phone Number"]').props().value).toBe('(831) 763-2735')
   })
-  it('Verify Anchor Tag href value', function () {
+  it('Verify Anchor Tag href value', () => {
     expect(searchGridRender.find('GridInnerLayout[title="County"]').props().value).toBe('N/A')
   })
-  it('Verify Approval / Licensing worker is rendered', function () {
+  it('Verify Approval / Licensing worker is rendered', () => {
     expect(searchGridRender.find('GridInnerLayout[title="Approval / Licensing Worker"]').props().value).toBe('Wayne Fehlberg')
   })
 })
 
-describe('Search results to Grid', function () {
+describe('Search results to Grid', () => {
   let indexValue = '0'
   const props = {
     searchResults: [
@@ -123,13 +123,13 @@ describe('Search results to Grid', function () {
   it('Verify address to be N/A', () => {
     expect(searchGridComp.find('GridInnerLayout[title="Facility Address"]').props().value).toBe('N/A')
   })
-  it('Verify email address', function () {
+  it('Verify email address', () => {
     expect(searchGridComp.find('GridInnerLayout[title="Facility Email"]').props().value).toBe('test@test.com')
   })
-  it('Verify licensee name', function () {
+  it('Verify licensee name', () => {
     expect(searchGridComp.find('GridInnerLayout[title="Licensee Name"]').props().value).toBe('Ananya Nandi')
   })
-  it('Verify Approval / Licensing worker is N/A', function () {
+  it('Verify Approval / Licensing worker is N/A', () => {
     expect(searchGridComp.find('GridInnerLayout[title="Approval / Licensing Worker"]').props().value).toBe('N/A')
   })
 })

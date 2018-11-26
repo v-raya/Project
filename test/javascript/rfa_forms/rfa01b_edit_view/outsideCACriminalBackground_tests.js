@@ -3,7 +3,7 @@ import OutsideCACriminalBackground from 'rfa_forms/rfa01b_edit_view/outsideCACri
 import {shallow, mount} from 'enzyme'
 import Validator from 'helpers/validator'
 
-describe('Verify OutsideCACriminalBackground card', function () {
+describe('Verify OutsideCACriminalBackground card', () => {
   let setParentStateSpy, setDisplayStateSpy, componentMount,
     componentMountWithoutDisclosures, setFocusStateSpy, handleClearOnConditionalChangeSpy
 

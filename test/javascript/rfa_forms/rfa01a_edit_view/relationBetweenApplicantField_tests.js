@@ -4,7 +4,7 @@ import {stateTypes, applicantrelationTypes} from './../../helpers/constants'
 import {shallow, mount} from 'enzyme'
 import Validator from 'helpers/validator'
 
-describe('Verify relation between applicant', function () {
+describe('Verify relation between applicant', () => {
   const blankValues = Object.freeze({
     relationship_type: {
       id: 1,

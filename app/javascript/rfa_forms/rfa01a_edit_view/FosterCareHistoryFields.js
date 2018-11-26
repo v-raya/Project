@@ -223,7 +223,7 @@ export class FosterCareHistoryFields extends React.Component {
                         dropdownLabel='License Type'
                         inputId={'agency-q1-name-' + index}
                         dropDownId={'agency-q1-type-' + index}
-                        optionList={Object.keys(licenseTypes).map(function (v) { return licenseTypes[v] })}
+                        optionList={Object.keys(licenseTypes).map(v => { return licenseTypes[v] })}
                         dropDownValue={agencyQ1Fields.type}
                         inputValue={agencyQ1Fields.name}
                         removeAgencyCard={this.removeAgencyCard}
@@ -309,7 +309,7 @@ export class FosterCareHistoryFields extends React.Component {
                         dropdownLabel='License Type (required)'
                         inputId={'agency-q3-name-' + index}
                         dropDownId={'agency-q3-type-' + index}
-                        optionList={Object.keys(licenseTypes).map(function (v) { return licenseTypes[v] })}
+                        optionList={Object.keys(licenseTypes).map(v => { return licenseTypes[v] })}
                         dropDownValue={agencyFields.type}
                         inputValue={agencyFields.name}
                         onAgencyChange={this.onAgencyChange}
@@ -395,7 +395,7 @@ export class FosterCareHistoryFields extends React.Component {
                         dropdownLabel='License Type (required)'
                         inputId={'agency-q5-name-' + index}
                         dropDownId={'agency-q5-type-' + index}
-                        optionList={Object.keys(licenseTypes).map(function (v) { return licenseTypes[v] })}
+                        optionList={Object.keys(licenseTypes).map(v => { return licenseTypes[v] })}
                         dropDownValue={agencyFields.type}
                         inputValue={agencyFields.name}
                         onAgencyChange={this.onAgencyChange}
@@ -440,7 +440,7 @@ export class FosterCareHistoryFields extends React.Component {
                         dropdownLabel='License Type (required)'
                         inputId={'agency-q6-name-' + index}
                         dropDownId={'agency-q6-type-' + index}
-                        optionList={Object.keys(licenseTypes).map(function (v) { return licenseTypes[v] })}
+                        optionList={Object.keys(licenseTypes).map(v => { return licenseTypes[v] })}
                         dropDownValue={agencyFields.type}
                         inputValue={agencyFields.name}
                         onAgencyChange={this.onAgencyChange}

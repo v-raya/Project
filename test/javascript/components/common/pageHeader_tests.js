@@ -4,12 +4,12 @@ import PageHeader from 'components/common/pageHeader'
 import Rfa01PageHeaderButtons from 'components/common/rfa01PageHeaderButtons'
 import Button from 'components/common/button'
 
-describe('Verify Page Header rendering', function () {
+describe('Verify Page Header rendering', () => {
   const headerLabel = 'page title'
 
   let headerComp = mount(<PageHeader pageHeaderButtons={<Rfa01PageHeaderButtons />} />)
 
-  it('verify page header render', function () {
+  it('verify page header render', () => {
     expect(headerComp.length).toBe(1)
   })
   it('verify button render', () => {

@@ -6,7 +6,7 @@ import {shallow, mount} from 'enzyme'
 import {salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes} from './../../helpers/constants'
 import ShallowRenderer from 'react-test-renderer/shallow'
 
-describe('Employment Card', function () {
+describe('Employment Card', () => {
   const props = {
     stateTypes: stateTypes.items,
     salaryTypes: salaryTypes.items
@@ -33,7 +33,7 @@ describe('Employment Card', function () {
   // const employmentCard = new ShallowRenderer()
   // const cardRendered = employmentCard.render(<Employment {...props} />)
 
-  // it('verify Resident Address fields', function () {
+  // it('verify Resident Address fields', () => {
   //   let employmentClassName = cardRendered
   //   expect(employmentClassName.props.className).toBe('card-body')
   // })

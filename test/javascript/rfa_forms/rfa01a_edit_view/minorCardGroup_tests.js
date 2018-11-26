@@ -4,7 +4,7 @@ import {shallow, mount} from 'enzyme'
 import {genderTypes, relationshipTypes, selectedYes} from '../../helpers/constants'
 import {minorDefaults} from 'constants/defaultFields'
 import Validator from 'helpers/validator'
-describe('Verify minor children Component View', function () {
+describe('Verify minor children Component View', () => {
   let component, componentMount, setFocusStateSpy, onFieldChangeSpy
   let props, handleRelationshipTypeChangeSpy, validator, componentToDelete
   const applicants = [{
@@ -100,7 +100,7 @@ describe('Verify minor children Component View', function () {
     })
   })
   describe('Verify minor card Component View', () => {
-    it('has class name', function () {
+    it('has class name', () => {
       componentMount.update()
       spyOn(componentMount.instance(), 'handleRelationshipTypeChange').and.callThrough()
 
@@ -125,19 +125,19 @@ describe('Verify minor children Component View', function () {
   })
 
   describe('Verify minor card Component View', () => {
-    it('has class name', function () {
+    it('has class name', () => {
       expect(component.find('.card-body').length).toEqual(1)
     })
-    it('expect children to be array', function () {
+    it('expect children to be array', () => {
       expect(component.children.length).toEqual(1)
     })
-    it('expects six validations', function () {
+    it('expects six validations', () => {
       expect(componentMount.instance().props.validator.validations.size).toEqual(5)
     })
   })
 
   describe('when "Add new minor card" is clicked', () => {
-    it('expect minor card to be button', function () {
+    it('expect minor card to be button', () => {
       expect(component.find('button[className="btn btn-default"]').type()).toEqual('button')
     })
 

@@ -21,6 +21,7 @@
     "babel/no-invalid-this": 1,
     "consistent-return": [2],
     "dot-notation": [2],
+    "func-names": [2],
     "object-curly-spacing": 0,
     "no-invalid-this": [2],
     "no-unused-vars": [0, { "vars": "local", "args": "after-used", "ignoreRestSiblings": false }],

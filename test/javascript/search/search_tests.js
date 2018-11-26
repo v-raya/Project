@@ -3,7 +3,7 @@ import {Search} from 'search/search'
 import {shallow, mount} from 'enzyme'
 import { BrowserRouter } from 'react-router-dom'
 
-describe('Verify Search component', function () {
+describe('Verify Search component', () => {
   let handleToggleSpy, searchComp, handleChangeSpy, handleInputChangeSpy, searchApiCallSpy,
     handleResetFormSpy, handlePageNumberChangeSpy, handleDropDownAndPageNumberChangeSpy, searchDictionariesCallSpy, searchUserDataCallSpy
 

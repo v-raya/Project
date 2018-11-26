@@ -3,7 +3,7 @@ import CrimeBackgroundAgainstCohabitant from 'rfa_forms/rfa01b_edit_view/crimeBa
 import {shallow, mount} from 'enzyme'
 import Validator from 'helpers/validator'
 
-describe('Verify crimeBackgroundAgainstCohabitant card', function () {
+describe('Verify crimeBackgroundAgainstCohabitant card', () => {
   let setParentStateSpy, getFocusClassNameSpy, setDisplayStateSpy, componentMount,
     setFocusStateSpy, componentMountWithoutDisclosures, handleClearOnConditionalChangeSpy
 

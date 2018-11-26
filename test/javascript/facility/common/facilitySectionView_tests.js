@@ -2,7 +2,7 @@ import React from 'react'
 import FacilitySectionView from 'facility/common/facilitySectionView'
 import {shallow, mount} from 'enzyme'
 
-describe('Verify Facility Assigned Worker', function () {
+describe('Verify Facility Assigned Worker', () => {
   const props = {
     label1: 'LICENSING / APPROVAL WORKER',
     label2: 'LICENSING / APPROVAL WORKER PHONE NUMBER',
@@ -26,7 +26,7 @@ describe('Verify Facility Assigned Worker', function () {
   })
 })
 
-describe('Verify Facility Capacity block', function () {
+describe('Verify Facility Capacity block', () => {
   const props = {
     label1: 'CAPACITY',
     label2: 'AVAILABLE BEDS',

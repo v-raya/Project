@@ -18,9 +18,9 @@ export default class Rfa01ListView extends React.Component {
   submit () {
     const url = '/rfa/a01/'
     const data = fetchRequest(url, 'POST').then(response => response.json())
-    data.then(function (result) {
+    data.then(result => {
       return result
-    }).then(function (result) {
+    }).then(result => {
       window.location.href = urlPrefixHelper('/rfa/a01/' + result.id + '/edit')
     })
   }

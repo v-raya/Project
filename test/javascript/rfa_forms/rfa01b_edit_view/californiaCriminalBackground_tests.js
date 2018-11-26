@@ -3,7 +3,7 @@ import CaliforniaCriminalBackground from 'rfa_forms/rfa01b_edit_view/californiaC
 import {shallow, mount} from 'enzyme'
 import Validator from 'helpers/validator'
 
-describe('Verify californiaCriminalBackground card', function () {
+describe('Verify californiaCriminalBackground card', () => {
   let setStateSpy, setParentStateSpy, setDisplayStateSpy,
     componentMount, setFocusStateSpy, onHideClickSpy, componentMountWithoutDisclosures,
     getFocusClassNameSpy, addCardSpy, clickCloseSpy, onFieldChangeSpy, handleClearOnConditionalChangeSpy

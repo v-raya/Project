@@ -6,7 +6,7 @@ import Validator from 'helpers/validator'
 import {shallow, mount} from 'enzyme'
 import ShallowRenderer from 'react-test-renderer/shallow'
 
-describe('Verify Physical Address', function () {
+describe('Verify Physical Address', () => {
   const props = {
     stateTypes: stateTypes.items,
     validator: new Validator({})
@@ -14,13 +14,13 @@ describe('Verify Physical Address', function () {
   const addressCard = new ShallowRenderer()
   const cardRendered = addressCard.render(<AddressCard {...props} />)
 
-  it('verify Resident Address fields', function () {
+  it('verify Resident Address fields', () => {
     let addressClassName = cardRendered
     expect(addressClassName.props.className).toBe('card-body')
   })
 })
 
-describe('Verify Address card fields', function () {
+describe('Verify Address card fields', () => {
   const physicalAddressFields = {
     street_address: 'gate way oaks',
     zip: '',

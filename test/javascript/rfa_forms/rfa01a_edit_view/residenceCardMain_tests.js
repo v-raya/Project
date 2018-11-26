@@ -5,7 +5,7 @@ import {mount} from 'enzyme'
 import {stateTypes, languageTypes, residenceTypes} from '../../helpers/constants'
 import {othersUsingAddressMailing} from 'constants/defaultFields'
 
-describe('Verify Residence main', function () {
+describe('Verify Residence main', () => {
   const blankResidenceFields = Object.freeze({
     residence_ownership: {
       'id': 0,

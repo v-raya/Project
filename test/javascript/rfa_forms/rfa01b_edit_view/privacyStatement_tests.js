@@ -2,7 +2,7 @@ import React from 'react'
 import PrivacyStatement from 'rfa_forms/rfa01b_edit_view/privacyStatement'
 import {shallow, mount} from 'enzyme'
 
-describe('Verify privacyStatement card', function () {
+describe('Verify privacyStatement card', () => {
   const blankValues = Object.freeze({
     privacyStatementDisplay: false,
     focusComponentName: null
