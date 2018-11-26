@@ -6,7 +6,7 @@ import {shallow, mount} from 'enzyme'
 import {phoneTypes} from './../../helpers/constants'
 import Validator from 'helpers/validator.js'
 
-var TestUtils = require('react-dom/test-utils')
+let TestUtils = require('react-dom/test-utils')
 
 describe('Verify Phone Card Component View', () => {
   let component

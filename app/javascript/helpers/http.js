@@ -2,7 +2,7 @@ import 'whatwg-fetch'
 import {urlPrefixHelper} from './url_prefix_helper.js.erb'
 
 export const getCsrfToken = value => {
-  var metas = document.getElementsByTagName('meta')
+  let metas = document.getElementsByTagName('meta')
   return metas[value] ? metas[value].content : ''
 }
 

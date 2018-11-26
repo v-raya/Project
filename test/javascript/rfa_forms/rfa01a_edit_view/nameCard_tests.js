@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 import {nameTypes, suffixTypes, prefixTypes} from './../../helpers/constants'
 import NameCard from 'rfa_forms/rfa01a_edit_view/nameCard'
 import Validator from 'helpers/validator.js'
-var TestUtils = require('react-dom/test-utils')
+let TestUtils = require('react-dom/test-utils')
 
 describe('Name Card Component', () => {
   let setCardState, isNameCardRemoved,

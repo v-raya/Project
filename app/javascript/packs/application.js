@@ -12,8 +12,8 @@ import React from 'react'
 
 console.log('Hello World from CALS')
 // Support component names relative to this directory:
-var componentRequireContext = require.context('.', true)
-var ReactRailsUJS = require('react_ujs')
+let componentRequireContext = require.context('.', true)
+let ReactRailsUJS = require('react_ujs')
 ReactRailsUJS.useContext(componentRequireContext)
 
 // Preventing event default on backspace navigation on IE

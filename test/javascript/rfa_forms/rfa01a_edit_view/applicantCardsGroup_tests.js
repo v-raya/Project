@@ -6,7 +6,7 @@ import ApplicantCardsGroup from 'rfa_forms/rfa01a_edit_view/applicantCardsGroup.
 import ReactDOM from 'react-dom'
 import {shallow, mount} from 'enzyme'
 import Validator from 'helpers/validator.js'
-var TestUtils = require('react-dom/test-utils')
+let TestUtils = require('react-dom/test-utils')
 
 describe('Verify Applicant Card Group', () => {
   let setApplicantsStateSpy = jasmine.createSpy('setApplicantsState')

@@ -6,7 +6,7 @@ import {salaryTypes, educationLevels, ethnicityTypes, genderTypes, stateTypes, l
 import AboutApplicant from 'rfa_forms/rfa01a_edit_view/aboutApplicantCard.jsx'
 import Validator from 'helpers/validator.js'
 
-var TestUtils = require('react-dom/test-utils')
+let TestUtils = require('react-dom/test-utils')
 
 describe('Verify More About Applican', () => {
   let aboutApplicantComp, setCardState,

@@ -4,7 +4,7 @@ import {FosterCareHistoryFields, blankFosterCareFields} from 'rfa_forms/rfa01a_e
 import {shallow, mount} from 'enzyme'
 import {yesNo, licenseTypes, selectedYes} from './../../helpers/constants'
 import {rfa01ALabels} from 'constants/rfaText'
-var TestUtils = require('react-dom/test-utils')
+let TestUtils = require('react-dom/test-utils')
 
 describe('foster car card tests', () => {
   let fosterCareCardComponent
