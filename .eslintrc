@@ -28,6 +28,8 @@
     "no-invalid-this": [2],
     "no-lonely-if": [2],
     "no-loop-func": [2],
+    "no-magic-numbers": [1, { "enforceConst": true, "ignore": [-1,0,1,2] }],
+    "no-native-reassign": [2],
     "no-unused-vars": [0, { "vars": "local", "args": "after-used", "ignoreRestSiblings": false }],
     "object-curly-spacing": 0,
     "react/require-extension": "off",
