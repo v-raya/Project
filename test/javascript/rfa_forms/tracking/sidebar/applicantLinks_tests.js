@@ -5,8 +5,8 @@ import {APPLICANT_PERSON_TYPE} from 'rfa_forms/tracking/trackingSideBar'
 
 describe('RFA 01a tracking sidebar applicant links ', () => {
   let component, peopleDocs
-  let isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
-  let handleNavLinkClickSpy = jasmine.createSpy('handleHrefClick')
+  const isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
+  const handleNavLinkClickSpy = jasmine.createSpy('handleHrefClick')
   beforeEach(() => {
     peopleDocs = [
       {

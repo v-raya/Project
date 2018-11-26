@@ -34,19 +34,19 @@ describe('Facility Search pagination', () => {
   })
 
   it('verify number of facilities dropdown after component render', () => {
-    let dropDownFacilities = paginationCompRendered.find('.no_of_facilities')
+    const dropDownFacilities = paginationCompRendered.find('.no_of_facilities')
     dropDownFacilities.simulate('change', {target: {options: {'5': {id: '5', value: '5'}, selectedIndex: 5}}})
     expect(handleDropDownAndPageNumberChangeSpy).toHaveBeenCalledWith(1, 5)
   })
 
   it('verify handlePageNumberChange on page number change ', () => {
-    let pageNumberInput = paginationCompRendered.find('.page_number').at(0)
+    const pageNumberInput = paginationCompRendered.find('.page_number').at(0)
     pageNumberInput.simulate('change', {target: {value: '2'}})
     expect(handlePageNumberChangeSpy).toHaveBeenCalledWith('2')
   })
 
   it('verify pagination input element is restricted to max length of 5 digits ', () => {
-    let pageNumberInput = paginationCompRendered.find('.page_number').at(0)
+    const pageNumberInput = paginationCompRendered.find('.page_number').at(0)
     pageNumberInput.simulate('change', {target: {value: '12345'}})
     expect(handlePageNumberChangeSpy).toHaveBeenCalledWith('12345')
     pageNumberInput.simulate('change', {target: {value: '123456'}})
@@ -54,13 +54,13 @@ describe('Facility Search pagination', () => {
   })
 
   it('verify onPageNumberInputChange on tab key down ', () => {
-    let pageNumber = paginationCompRendered.find('.page_number').at(0)
+    const pageNumber = paginationCompRendered.find('.page_number').at(0)
     pageNumber.simulate('keydown', {which: 9, target: {value: '2'}})
     expect(onPageNumberInputChangeSpy).toHaveBeenCalledWith('2')
   })
 
   it('verify onPageNumberInputChange on enter key down ', () => {
-    let pageNumber = paginationCompRendered.find('.page_number').at(0)
+    const pageNumber = paginationCompRendered.find('.page_number').at(0)
     pageNumber.simulate('keydown', {which: 13, target: {value: '2'}})
     expect(onPageNumberInputChangeSpy).toHaveBeenCalledWith('2')
   })
@@ -70,21 +70,21 @@ describe('Facility Search pagination', () => {
   })
 
   it('verify dropDown value change number of facilities', () => {
-    let dropdownForfacilitiesCount = paginationCompRendered.find('#noOfFacilities')
+    const dropdownForfacilitiesCount = paginationCompRendered.find('#noOfFacilities')
     dropdownForfacilitiesCount.simulate('change', {target: {options: {'5': {id: '5', value: '5'}, selectedIndex: 5}}})
     expect(handleDropDownAndPageNumberChangeSpy).toHaveBeenCalledWith(1, 5)
     expect(searchApiCallSpy).toHaveBeenCalledWith(0, 5)
   })
 
   it('verify clicking next button ', () => {
-    let searchFacility = paginationCompRendered.find('#nextButton')
+    const searchFacility = paginationCompRendered.find('#nextButton')
     searchFacility.simulate('click')
     expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(3)
     expect(searchApiCallSpy).toHaveBeenCalledWith(10, 5)
   })
 
   it('verify clicking previous button ', () => {
-    let searchFacility = paginationCompRendered.find('#previousButton')
+    const searchFacility = paginationCompRendered.find('#previousButton')
     searchFacility.simulate('click')
     expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(1)
     expect(searchApiCallSpy).toHaveBeenCalledWith(0, 5)

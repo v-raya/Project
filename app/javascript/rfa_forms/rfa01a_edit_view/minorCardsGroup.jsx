@@ -18,9 +18,9 @@ export default class MinorCardsGroup extends React.Component {
 
   prepareChildrenList (propsChildrenList) {
     let minorChildrenList = JSON.parse(JSON.stringify(propsChildrenList)) // clone minor children
-    let visibleChildrenList = propsChildrenList.filter(minorChild => minorChild && !minorChild.to_delete)
+    const visibleChildrenList = propsChildrenList.filter(minorChild => minorChild && !minorChild.to_delete)
     if (!visibleChildrenList.length) {
-      let childlist = Immutable.fromJS(minorChildrenList)
+      const childlist = Immutable.fromJS(minorChildrenList)
       minorChildrenList = childlist.push(minorDefaults).toJS()
     }
     return minorChildrenList

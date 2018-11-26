@@ -35,7 +35,7 @@ describe('Verify Children Component', () => {
     }
   }
 
-  let facilityChildrenApiCallSpy = jasmine.createSpy('facilityChildrenApiCall')
+  const facilityChildrenApiCallSpy = jasmine.createSpy('facilityChildrenApiCall')
 
   const renderChildComp = shallow(
     <Children

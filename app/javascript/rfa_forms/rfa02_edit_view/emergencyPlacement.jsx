@@ -17,7 +17,7 @@ export default class EmergencyPlacement extends React.Component {
     this.isEmergencyPlacement = this.isEmergencyPlacement.bind(this)
   }
   isEmergencyPlacement (key, value) {
-    let emergencyPlacement = this.props.emergencyPlacementList
+    const emergencyPlacement = this.props.emergencyPlacementList
     let newEmergencyPlacement = emergencyPlacement.set(key, value)
     if (value === 'false') {
       newEmergencyPlacement = newEmergencyPlacement.delete('items')
@@ -25,9 +25,9 @@ export default class EmergencyPlacement extends React.Component {
     this.props.setParentState('emergency_placement_only', newEmergencyPlacement, this.props.peopleIndex)
   }
   handleEmergencyPlacementChange (key, value, index) {
-    let props = this.props.emergencyPlacementList
-    let emergencyPlacement = props.get('items') ? props : emergencyPlacementDefaults
-    let newEmergencyPlacement = emergencyPlacement.setIn(['items', index, key], value)
+    const props = this.props.emergencyPlacementList
+    const emergencyPlacement = props.get('items') ? props : emergencyPlacementDefaults
+    const newEmergencyPlacement = emergencyPlacement.setIn(['items', index, key], value)
     this.props.setParentState('emergency_placement_only', newEmergencyPlacement, this.props.peopleIndex)
   }
   render () {

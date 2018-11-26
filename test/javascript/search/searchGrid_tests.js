@@ -5,7 +5,7 @@ import { Switch, BrowserRouter } from 'react-router-dom'
 import {shallow, mount} from 'enzyme'
 
 describe('Render Search results to Grid', () => {
-  let indexValue = '0'
+  const indexValue = '0'
   const prop = {
     searchResults: [
       {
@@ -102,7 +102,7 @@ describe('Render Search results to Grid', () => {
 })
 
 describe('Search results to Grid', () => {
-  let indexValue = '0'
+  const indexValue = '0'
   const props = {
     searchResults: [
       {

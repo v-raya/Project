@@ -74,14 +74,14 @@ export default class ContactEditView extends React.Component {
   }
 
   setContactState (key, value) {
-    let newState = Immutable.fromJS(this.state.contact).set(key, value)
+    const newState = Immutable.fromJS(this.state.contact).set(key, value)
     this.setState({
       contact: newState.toJS()
     })
   }
 
   setInPersonData (key, value) {
-    let newState = Immutable.fromJS(this.state.contact).setIn(
+    const newState = Immutable.fromJS(this.state.contact).setIn(
       ['in_person_contact_data', key], value)
     this.setState({
       contact: newState.toJS()
@@ -89,8 +89,8 @@ export default class ContactEditView extends React.Component {
   }
 
   render () {
-    let contact = this.state.contact
-    let inPersonContactData = this.state.contact.in_person_contact_data
+    const contact = this.state.contact
+    const inPersonContactData = this.state.contact.in_person_contact_data
     let classificationValue
     if (contact.classification !== '' && contact.classification !== null) {
       classificationValue = getDictionaryId(contact.classification) === 1

@@ -109,7 +109,7 @@ describe('Verify facilityComplainstReducer', () => {
         ]
       })
 
-      let outputState = {}
+      const outputState = {}
       outputState.complaints = facilityComplaintsAction.payload.complaints
       outputState.errors = undefined
       outputState.isFetching = false
@@ -138,7 +138,7 @@ describe('Verify facilityComplainstReducer', () => {
         errors: error
       })
 
-      let outputState = {}
+      const outputState = {}
       outputState.complaints = null
       outputState.isFetching = false
       outputState.errors = facilityComplaintsFailure.payload.error

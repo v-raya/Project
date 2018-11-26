@@ -15,7 +15,7 @@ describe('Verify Application List View', () => {
     phones: null
   }]
 
-  let applications = [
+  const applications = [
     {
       applicants: undefined,
       id: 43,
@@ -74,7 +74,7 @@ describe('Verify Application List View', () => {
     expect(AppListViewCard.find('th').first().props().children).toBe('RFA Application ID')
   })
   it('To have array of Items', () => {
-    let applicationTable = AppListViewCard
+    const applicationTable = AppListViewCard
     expect(applicationTable.props().applications.length).toEqual(2)
   })
 })
@@ -92,7 +92,7 @@ describe('Verify Application List View with Empty address', () => {
     phones: null
   }]
 
-  let applications = [
+  const applications = [
     {
       applicants: undefined,
       id: 43,
@@ -128,7 +128,7 @@ describe('Verify Application List View with Empty address', () => {
     expect(AppListViewCard.find('th').first().props().children).toBe('RFA Application ID')
   })
   it('To have array of Items', () => {
-    let applicationTable = AppListViewCard
+    const applicationTable = AppListViewCard
     expect(applicationTable.props().applications.length).toEqual(2)
   })
 })

@@ -11,7 +11,7 @@ describe('Verify Facility Assigned Worker', () => {
     value2: '(945) 432-1234',
     value3: 'email@gmail.com'
   }
-  let AssignedWorkerCompShallow = shallow(<FacilitySectionView {...props} />)
+  const AssignedWorkerCompShallow = shallow(<FacilitySectionView {...props} />)
   it('verify Facility Assigned Worker', () => {
     expect(AssignedWorkerCompShallow.find('.facility-address').length).toEqual(1)
   })
@@ -35,7 +35,7 @@ describe('Verify Facility Capacity block', () => {
     value2: 0,
     value3: '12/12/2O12'
   }
-  let FacilityCapacityCompShallow = shallow(<FacilitySectionView {...props} />)
+  const FacilityCapacityCompShallow = shallow(<FacilitySectionView {...props} />)
   it('verify Facility Capacity', () => {
     expect(FacilityCapacityCompShallow.find('SmallInnerBlockDetails[title="CAPACITY"]').props().value).toBe(0)
   })

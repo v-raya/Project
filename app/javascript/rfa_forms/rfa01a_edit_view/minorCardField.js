@@ -59,9 +59,9 @@ export class MinorCardField extends React.Component {
   }
 
   render () {
-    let index = this.props.index
-    let minor = this.props.minorChild
-    let applicants = this.props.applicants
+    const index = this.props.index
+    const minor = this.props.minorChild
+    const applicants = this.props.applicants
 
     const isRequiredLabel = this.isRelationShipToApplicantObject() ? ' (required)' : ''
     const relationshipLabel = applicants.length > 1

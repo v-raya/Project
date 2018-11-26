@@ -50,44 +50,44 @@ describe('Verify relation between applicant', () => {
     />)
   })
   it('verify relationship_type', () => {
-    let relationshipField = relationshipComp.find('#relationship_type').hostNodes()
+    const relationshipField = relationshipComp.find('#relationship_type').hostNodes()
     relationshipField.simulate('change', {target: {options: {'1': {value: '1', text: 'Married'}, selectedIndex: 1}}})
-    let relationshipDropdownSection = relationshipComp.find('.relationship-status')
+    const relationshipDropdownSection = relationshipComp.find('.relationship-status')
     expect(setStateSpy).toHaveBeenCalledWith('relationship_type', ({ id: '1', value: 'Married' }))
   })
 
   it('verify relation ship state', () => {
-    let relationField = relationCardComp.find('#place_of_relationship_state')
+    const relationField = relationCardComp.find('#place_of_relationship_state')
     relationField.simulate('change', {target: {options: {'1': {value: '1', text: 'Alabama'}, selectedIndex: 1}}})
     expect(setStateSpy).toHaveBeenCalledWith('place_of_relationship_state', {id: '1', value: 'Alabama'})
   })
 
   it('verify relationship_type', () => {
-    let relationField = relationCardComp.find('#relationship_type')
+    const relationField = relationCardComp.find('#relationship_type')
     relationField.simulate('change', {target: {options: {'1': {value: '1', text: 'Married'}, selectedIndex: 1}}})
     expect(setStateSpy).toHaveBeenCalledWith('relationship_type', {id: '1', value: 'Married'})
   })
 
   it('verify date_of_relationship', () => {
-    let dateOfRelationshipField = relationCardComp.find('#date_of_relationship')
+    const dateOfRelationshipField = relationCardComp.find('#date_of_relationship')
     dateOfRelationshipField.simulate('change', {target: {value: '04/10/2000'}})
     expect(setStateSpy).toHaveBeenCalledWith('date_of_relationship', '2000-04-10')
   })
 
   it('verify date_of_relationship is not formatted for persistance when not fully entered', () => {
-    let dateOfRelationshipField = relationCardComp.find('#date_of_relationship')
+    const dateOfRelationshipField = relationCardComp.find('#date_of_relationship')
     dateOfRelationshipField.simulate('change', {target: {value: '01/20/2001'}})
     expect(setStateSpy).toHaveBeenCalledWith('date_of_relationship', '2001-01-20')
   })
 
   it('verify place_of_relationship_city', () => {
-    let relationField = relationCardComp.find('#place_of_relationship_city')
+    const relationField = relationCardComp.find('#place_of_relationship_city')
     relationField.simulate('change', {target: {value: 'some city'}})
     expect(setStateSpy).toHaveBeenCalledWith('place_of_relationship_city', 'some city')
   })
 
   it('verify other_relationship', () => {
-    let relationField = relationCardComp.find('#other_relationship')
+    const relationField = relationCardComp.find('#other_relationship')
     relationField.simulate('change', {target: {value: 'other text'}})
     expect(setStateSpy).toHaveBeenCalledWith('other_relationship', 'other text')
   })

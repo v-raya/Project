@@ -34,7 +34,7 @@ describe('Verify Complaints Component', () => {
     }
   }
 
-  let facilityComplaintsApiCallSpy = jasmine.createSpy('facilityComplaintsApiCall')
+  const facilityComplaintsApiCallSpy = jasmine.createSpy('facilityComplaintsApiCall')
 
   const renderComplaintsComp = shallow(
     <FacilityComplaints {...props} facilityComplaintsApiCall={facilityComplaintsApiCallSpy}

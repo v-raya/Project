@@ -33,17 +33,17 @@ describe('Test Tracking For Training Table', () => {
     expect(editTrainingDocRow.length).toBe(1)
   })
   it('edit text area', () => {
-    let textAreaField = editTrainingDocRow.at(0).shallow().find('#training0EditText0')
+    const textAreaField = editTrainingDocRow.at(0).shallow().find('#training0EditText0')
     textAreaField.simulate('change', {target: {value: 'text input'}})
     expect(changeSpy).toHaveBeenCalledWith('notes', 'text input', 0, 0)
   })
   it('edit checkbox', () => {
-    let checkBoxField = editTrainingDocRow.at(0).shallow().find('#training0EditCheckbox0')
+    const checkBoxField = editTrainingDocRow.at(0).shallow().find('#training0EditCheckbox0')
     checkBoxField.simulate('change', {target: {checked: true}})
     expect(changeSpy).toHaveBeenCalledWith('checked', true, 0, 0)
   })
   it('edit date field', () => {
-    let textAreaField = editTrainingDocRow.at(0).shallow().find('#training0EditExpirationDate0')
+    const textAreaField = editTrainingDocRow.at(0).shallow().find('#training0EditExpirationDate0')
     textAreaField.simulate('change', {target: {value: '01/20/1981'}})
     expect(changeSpy).toHaveBeenCalledWith('expiration_date', '1981-01-20', 0, 0)
   })
@@ -52,15 +52,15 @@ describe('Test Tracking For Training Table', () => {
     expect(showTrainingDocRow.length).toBe(1)
   })
   it('Show text area', () => {
-    let textAreaField = showTrainingDocRow.at(0).shallow().find('#training0ShowText0')
+    const textAreaField = showTrainingDocRow.at(0).shallow().find('#training0ShowText0')
     expect(textAreaField.text()).toEqual('testing')
   })
   it('Show checkbox', () => {
-    let checkBoxField = showTrainingDocRow.at(0).shallow().find('#training0ShowCheckbox0')
+    const checkBoxField = showTrainingDocRow.at(0).shallow().find('#training0ShowCheckbox0')
     expect(checkBoxField.length).toEqual(1)
   })
   it('Show date field', () => {
-    let submittedDateField = showTrainingDocRow.at(0).shallow().find('#training0ShowExpirationDate0')
+    const submittedDateField = showTrainingDocRow.at(0).shallow().find('#training0ShowExpirationDate0')
     expect(submittedDateField.text()).toEqual('01/21/1978')
   })
 })

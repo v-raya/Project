@@ -34,7 +34,7 @@ describe('Verify other adultsFields', () => {
   beforeEach(() => {
     handleRelationshipTypeChangeSpy = jasmine.createSpy('handleRelationshipTypeChange')
     onFieldChangeSpy = jasmine.createSpy('onFieldChange')
-    let validator = new Validator({})
+    const validator = new Validator({})
     otherAdultsCardComp = mount(<OtherAdultsCardField
       index={0}
       relationship_types={relationshipTypes}
@@ -48,43 +48,43 @@ describe('Verify other adultsFields', () => {
   })
 
   it('verifies relationship type field', () => {
-    let relationShipField = otherAdultsCardComp.find('.col-md-12').find('#relationship_to_applicants0adult0relationship_to_applicant_freeform').hostNodes()
+    const relationShipField = otherAdultsCardComp.find('.col-md-12').find('#relationship_to_applicants0adult0relationship_to_applicant_freeform').hostNodes()
     relationShipField.simulate('change', {target: {value: 'Sibling'}})
     expect(handleRelationshipTypeChangeSpy).toHaveBeenCalledWith({ first_name: 'gdfghfhgv', last_name: 'hgbhg', middle_name: '' }, 'Sibling', 0, 0, 'relationship_to_applicant_freeform')
   })
   it('verify is residing in Home', () => {
-    let relationShipField = otherAdultsCardComp.find('#is_residing_in_hometrue').hostNodes()
+    const relationShipField = otherAdultsCardComp.find('#is_residing_in_hometrue').hostNodes()
     relationShipField.simulate('change', {target: {value: 'true'}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'true', 'is_residing_in_home')
   })
   it('verify is not residing in Home', () => {
-    let relationShipField = otherAdultsCardComp.find('#is_residing_in_hometrue').hostNodes()
+    const relationShipField = otherAdultsCardComp.find('#is_residing_in_hometrue').hostNodes()
     relationShipField.simulate('change', {target: {value: 'false'}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'false', 'is_residing_in_home')
   })
 
   it('verifies date of birth', () => {
-    let dateOfBirthField = otherAdultsCardComp.find('#date_of_birth').hostNodes()
+    const dateOfBirthField = otherAdultsCardComp.find('#date_of_birth').hostNodes()
     dateOfBirthField.simulate('change', {target: {value: '02/01/2000'}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, '2000-02-01', 'date_of_birth')
   })
   it('verifies first name field', () => {
-    let firstNameField = otherAdultsCardComp.find('#first_name').hostNodes()
+    const firstNameField = otherAdultsCardComp.find('#first_name').hostNodes()
     firstNameField.simulate('change', {target: {value: 'test'}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'test', 'first_name')
   })
   it('verifies middle name field', () => {
-    let middleNameField = otherAdultsCardComp.find('#middle_name').hostNodes()
+    const middleNameField = otherAdultsCardComp.find('#middle_name').hostNodes()
     middleNameField.simulate('change', {target: {value: 'test'}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'test', 'middle_name')
   })
   it('verifies last name field', () => {
-    let lastNameField = otherAdultsCardComp.find('#last_name').hostNodes()
+    const lastNameField = otherAdultsCardComp.find('#last_name').hostNodes()
     lastNameField.simulate('change', {target: {value: 'test'}})
     expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'test', 'last_name')
   })
   it('verifies component did unmount', () => {
-    let instance = otherAdultsCardComp.instance()
+    const instance = otherAdultsCardComp.instance()
     expect(instance.props.validator.validations.size).toEqual(4)
     otherAdultsCardComp.unmount()
     expect(instance.props.validator.validations.size).toEqual(0)

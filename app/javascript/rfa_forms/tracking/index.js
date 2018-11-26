@@ -61,8 +61,8 @@ export default class TrackingList extends React.Component {
   }
 
   setPeopleDocumentsState (key, value) {
-    let newState = Immutable.fromJS(this.state)
-    let stateUpdate = newState.setIn(['tracking', 'tracking_documents', key], value)
+    const newState = Immutable.fromJS(this.state)
+    const stateUpdate = newState.setIn(['tracking', 'tracking_documents', key], value)
     this.setState(stateUpdate.toJS())
   }
 

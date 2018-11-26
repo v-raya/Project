@@ -13,9 +13,9 @@ describe('Verify criminal fields card', () => {
   })
 
   let clickCloseSpy, onFieldChangeSpy, componentMount
-  let validator = new Validator({})
+  const validator = new Validator({})
   beforeEach(() => {
-    let clickCloseSpy = jasmine.createSpy('clickClose')
+    const clickCloseSpy = jasmine.createSpy('clickClose')
     onFieldChangeSpy = jasmine.createSpy('onFieldChange')
 
     componentMount = shallow(<CriminalFields
@@ -32,30 +32,30 @@ describe('Verify criminal fields card', () => {
     })
 
     it('onChange event of offense', () => {
-      let applicantDetails = componentMount.find('#test_offenseReason')
+      const applicantDetails = componentMount.find('#test_offenseReason')
       applicantDetails.simulate('change', {target: {value: 'offense name'}})
       expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'offense', 'offense name')
     })
 
     it('onChange event on offense city', () => {
-      let applicantDetails = componentMount.find('#test_offenseCity')
+      const applicantDetails = componentMount.find('#test_offenseCity')
       applicantDetails.simulate('change', {target: {value: 'gate way oaks'}})
       expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'offense_city', 'gate way oaks')
     })
 
     it('onChange event on offense date', () => {
-      let applicantDetails = componentMount.find('#test_OffenseDate')
+      const applicantDetails = componentMount.find('#test_OffenseDate')
       applicantDetails.simulate('change', {target: {value: 'new time'}})
       expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'when_offense_happen', 'new time')
     })
 
     it('onChange event on offense details', () => {
-      let applicantDetails = componentMount.find('#test_offenseDetails')
+      const applicantDetails = componentMount.find('#test_offenseDetails')
       applicantDetails.simulate('change', {target: {value: 'new details'}})
       expect(onFieldChangeSpy).toHaveBeenCalledWith(0, 'offense_details', 'new details')
     })
     it('verifies component did unmount', () => {
-      let instance = componentMount.instance()
+      const instance = componentMount.instance()
       expect(instance.props.validator.validations.size).toEqual(4)
       componentMount.unmount()
       expect(instance.props.validator.validations.size).toEqual(0)

@@ -4,10 +4,10 @@ import C01SideBar from 'rfa_forms/rfa_sidebar/c01SideBar'
 
 describe('RFA 01c side bar ', () => {
   let component
-  let isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
-  let handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
-  let rfa01aApplicationId = 88
-  let rfa01cForm = {
+  const isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
+  const handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
+  const rfa01aApplicationId = 88
+  const rfa01cForm = {
     'id': 89,
     'child_identified': false
   }
@@ -39,10 +39,10 @@ describe('RFA 01c side bar ', () => {
 
 describe('RFA 01b side bar componenet with rfa 01c form', () => {
   let componentWithRfa1c
-  let isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
-  let handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
-  let rfa01aApplicationId = 88
-  let rfa01cForm = {
+  const isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
+  const handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
+  const rfa01aApplicationId = 88
+  const rfa01cForm = {
     'id': 89,
     'child_identified': false
   }

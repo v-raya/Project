@@ -21,7 +21,7 @@ export default class Profile extends React.Component {
     const trackingId = this.props.rfa_application.tracking_id
     const rfaApplication = this.state.rfa_application
     const createContactUrl = urlPrefixHelper('/rfa/a01/' + rfaApplication.id + '/contacts/new')
-    let trackingUrl = trackingId
+    const trackingUrl = trackingId
       ? urlPrefixHelper('/rfa/a01/' + rfaApplication.id + '/tracking/' + trackingId + '/edit')
       : urlPrefixHelper('/rfa/a01/' + rfaApplication.id + '/tracking/')
     return (

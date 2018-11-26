@@ -86,7 +86,7 @@ describe('Validator', () => {
       expect(validator.validateFieldAndGetError('date_of_birth', '1/')).toEqual('date is invalid')
     })
     it('addFieldValidation', () => {
-      let OtherAdultsRule = {rule: 'isRequired', message: 'Relationship is Required', condition: conditionSpy}
+      const OtherAdultsRule = {rule: 'isRequired', message: 'Relationship is Required', condition: conditionSpy}
 
       newValidations = Immutable.fromJS(validations).set('other_adults[0].availableApplicants', [OtherAdultsRule])
       validator.addFieldValidation('other_adults[0].availableApplicants', OtherAdultsRule)

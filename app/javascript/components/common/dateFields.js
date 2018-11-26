@@ -12,8 +12,8 @@ import Cleave from 'cleave.js/react'
 moment.locale('en')
 momentLocalizer()
 
-let formatter = 'mm/dd/yyyy'
-let placeholder = 'mm/dd/yyyy'
+const formatter = 'mm/dd/yyyy'
+const placeholder = 'mm/dd/yyyy'
 
 const DateField = ({
   value,

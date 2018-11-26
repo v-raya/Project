@@ -2,7 +2,7 @@ import 'whatwg-fetch'
 import {urlPrefixHelper} from './url_prefix_helper.js.erb'
 
 export const getCsrfToken = value => {
-  let metas = document.getElementsByTagName('meta')
+  const metas = document.getElementsByTagName('meta')
   return metas[value] ? metas[value].content : ''
 }
 
@@ -13,7 +13,7 @@ const myHeaders = {
   'X-CSRF-param': getCsrfToken('csrf-param')
 }
 export const getMethod = (url, method, query) => {
-  let data = {
+  const data = {
     method: method,
     headers: myHeaders,
     mode: 'no-cors',
@@ -22,8 +22,8 @@ export const getMethod = (url, method, query) => {
   return fetch(url, data)
 }
 export const fetchRequest = (urlFromComponent, method, params, headerParams) => {
-  let url = urlPrefixHelper(urlFromComponent)
-  let options = {
+  const url = urlPrefixHelper(urlFromComponent)
+  const options = {
     method: method,
     headers: myHeaders,
     credentials: 'same-origin'

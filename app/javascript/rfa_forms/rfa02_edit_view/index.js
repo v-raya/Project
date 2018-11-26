@@ -34,7 +34,7 @@ export default class Rfa02EditView extends React.Component {
   }
 
   cancelProgress (event) {
-    let oldState = this.rfaBaseState
+    const oldState = this.rfaBaseState
     this.setState({
       cardBeingEdited: false,
       rfa02: Immutable.fromJS(oldState)
@@ -42,8 +42,8 @@ export default class Rfa02EditView extends React.Component {
   }
 
   setApplicationState (key, value) {
-    let stateObj = Immutable.fromJS(this.state.rfa02)
-    let newState = stateObj.set(key, value)
+    const stateObj = Immutable.fromJS(this.state.rfa02)
+    const newState = stateObj.set(key, value)
     this.setState({
       rfa02: newState
     })

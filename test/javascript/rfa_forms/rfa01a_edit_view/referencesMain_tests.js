@@ -8,7 +8,7 @@ describe('Verify References Main', () => {
   let referenceMainComp, referenceMainFieldObjectComp,
     setParentStateSpy, getFocusClassNameSpy, setFocusStateSpy,
     setApplicationStateSpy
-  let fieldRefValues = {
+  const fieldRefValues = {
     name_suffix: null,
     name_prefix: null,
     first_name: '',
@@ -25,7 +25,7 @@ describe('Verify References Main', () => {
     email: ''
   }
 
-  let fieldObjectRefValues = {
+  const fieldObjectRefValues = {
     items: [fieldRefValues]
   }
   beforeEach(() => {
@@ -33,7 +33,7 @@ describe('Verify References Main', () => {
     setApplicationStateSpy = jasmine.createSpy('setResidenceState')
     getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
-    let validator = new Validator({})
+    const validator = new Validator({})
 
     referenceMainComp = mount(<ReferenceMain
       index={0}
@@ -67,16 +67,16 @@ describe('Verify References Main', () => {
     expect(referenceMainComp.length).toEqual(1)
   })
   it('verify reference card to create reference Object', () => {
-    let firstNameFieldChange = referenceMainComp.find('#first_name').hostNodes()
+    const firstNameFieldChange = referenceMainComp.find('#first_name').hostNodes()
     fieldRefValues.first_name = 'First Name'
     firstNameFieldChange.simulate('change', {target: {value: 'First Name'}})
     expect(setApplicationStateSpy).toHaveBeenCalledWith('references', {'items': [fieldRefValues]})
   })
   it('verify reference card to check focus', () => {
-    let firstNameFieldChange = referenceMainComp.find('#first_name').hostNodes()
+    const firstNameFieldChange = referenceMainComp.find('#first_name').hostNodes()
     firstNameFieldChange.simulate('change', {target: {value: 'First Name'}})
     expect(getFocusClassNameSpy).toHaveBeenCalledWith('referenceMain_0')
-    let firstReferenceSection = referenceMainComp.find('#referenceMain_0')
+    const firstReferenceSection = referenceMainComp.find('#referenceMain_0')
     firstReferenceSection.simulate('click')
     expect(setFocusStateSpy).toHaveBeenCalled()
   })

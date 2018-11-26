@@ -46,7 +46,7 @@ describe('Verify searchReducer', () => {
   it('input change returns updated state with inputData', () => {
     const inputChangeAction = handleInputChange('facilityNameValue', 'good home')
 
-    let outputState = initialState
+    const outputState = initialState
     outputState.inputData = {
       facilityNameValue: 'good home'
     }
@@ -60,7 +60,7 @@ describe('Verify searchReducer', () => {
       total: 1
     })
 
-    let outputState = initialState
+    const outputState = initialState
     outputState.searchResults = {id: 5, name: 'John'}
     outputState.totalNoOfResults = 1
 
@@ -70,20 +70,20 @@ describe('Verify searchReducer', () => {
   it('Search dictionary fetch call returns initial state', () => {
     const searchDictionariesCallAction = searchDictionariesCall()
 
-    let outputState = initialState
+    const outputState = initialState
     expect(searchReducer(undefined, searchDictionariesCallAction)).toEqual(outputState)
   })
 
   it('Search user data fetch call returns initial state', () => {
     const searchUserDataCallAction = searchUserDataCall()
 
-    let outputState = initialState
+    const outputState = initialState
     expect(searchReducer(undefined, searchUserDataCallAction)).toEqual(outputState)
   })
 
   it('Search user data fetch call success returns user data', () => {
     const fetchUserDataSuccessAction = fetchUserDataSuccess({user})
-    let outputState = initialState
+    const outputState = initialState
 
     outputState.inputData = {'countyValue': user.county_code}
     outputState.userCounty = user.county_code
@@ -93,7 +93,7 @@ describe('Verify searchReducer', () => {
   it('Search dictionary fetch call success returns countyTypes, facilityTypes, licenseStatuses', () => {
     const fetchDictionarySuccessAction = fetchDictionarySuccess({countyTypes, facilityTypes, licenseStatuses})
 
-    let outputState = initialState
+    const outputState = initialState
     outputState.countyTypes = countyTypes
     outputState.facilityTypes = facilityTypes
     outputState.licenseStatuses = licenseStatuses
@@ -112,7 +112,7 @@ describe('Verify searchReducer', () => {
       errorMessage: NoSearchResultsErrorMessage
     })
 
-    let outputState = initialState
+    const outputState = initialState
     outputState.searchResults = []
     outputState.totalNoOfResults = undefined
     outputState.errorMessage = NoSearchResultsErrorMessage
@@ -121,7 +121,7 @@ describe('Verify searchReducer', () => {
   })
 
   it('fetch call failure returns updated state with api errors', () => {
-    let errorResponse = {
+    const errorResponse = {
       'issue_details': [ {
         'incident_id': '95100850-f514-4365-9b93-6cbd28adcf27',
         'type': 'unexpected_exception',
@@ -134,7 +134,7 @@ describe('Verify searchReducer', () => {
       error: errorResponse
     })
 
-    let outputState = initialState
+    const outputState = initialState
     outputState.searchResults = []
     outputState.errors = errorResponse
     outputState.errorMessage = undefined
@@ -147,7 +147,7 @@ describe('Verify searchReducer', () => {
       errorMessage: NoSearchCriteriaMessage
     })
 
-    let outputState = initialState
+    const outputState = initialState
     outputState.searchResults = []
     outputState.errorMessage = NoSearchCriteriaMessage
 
@@ -157,7 +157,7 @@ describe('Verify searchReducer', () => {
   it('toggle returns new toggle state', () => {
     const handleToggleAction = handleToggle()
 
-    let outputState = initialState
+    const outputState = initialState
     outputState.isToggled = false
 
     expect(searchReducer(undefined, handleToggleAction)).toEqual(outputState)
@@ -202,7 +202,7 @@ describe('Verify searchReducer', () => {
   it('page number change updates state page number', () => {
     const handlePageNumberChangeAction = handlePageNumberChange(4)
 
-    let outputState = initialState
+    const outputState = initialState
     outputState.pageNumber = 4
 
     expect(searchReducer(undefined, handlePageNumberChangeAction)).toEqual(outputState)
@@ -211,7 +211,7 @@ describe('Verify searchReducer', () => {
   it('page number with dropdown change', () => {
     const handleDropDownAndPageNumberChangeAction = handleDropDownAndPageNumberChange(2, 20)
 
-    let outputState = initialState
+    const outputState = initialState
     outputState.sizeValue = 20
     outputState.pageNumber = 2
 

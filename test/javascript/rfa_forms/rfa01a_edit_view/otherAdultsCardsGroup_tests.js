@@ -114,7 +114,7 @@ describe('Verify other adults Component View', () => {
     it('has simulates relationship field change', () => {
       componentMount.update()
       spyOn(componentMount.instance(), 'handleRelationshipTypeChange').and.callThrough()
-      let relationShipField = componentMount.find('.col-md-12').first().find('#relationship_to_applicants0adult0relationship_to_applicant_freeform').hostNodes()
+      const relationShipField = componentMount.find('.col-md-12').first().find('#relationship_to_applicants0adult0relationship_to_applicant_freeform').hostNodes()
       relationShipField.simulate('change', {target: {value: 'Sibling'}})
 
       expect(setParentStateSpy).toHaveBeenCalledWith('other_adults', [ Object({ relationship_to_applicants: [ Object({ applicant_id: null, relationship_to_applicant_freeform: 'Sibling', relationship_to_applicant: Object({ id: 0, value: '' }) }) ], index: 0, first_name: '', middle_name: '', last_name: '', date_of_birth: '2017-01-01' }) ])
@@ -137,7 +137,7 @@ describe('Verify other adults Component View', () => {
     })
     it('expects set focus to be set on click', () => {
       expect(getFocusClassNameSpy).toHaveBeenCalledWith('otherAdultsSection')
-      let componentSection = componentMount.find('#otherAdultsSection')
+      const componentSection = componentMount.find('#otherAdultsSection')
       componentSection.simulate('click')
       expect(setFocusStateSpy).toHaveBeenCalled()
     })
@@ -157,7 +157,7 @@ describe('Verify other adults Component View', () => {
       expect(component.instance().addCard).toHaveBeenCalled()
 
       // build data that parent should be called with
-      let newData = []
+      const newData = []
       newData[0] = OtherAdultsCard
       newData[1] = otherAdultsDefaults
 
@@ -177,7 +177,7 @@ describe('Verify other adults Component View', () => {
     })
 
     it('Deletes other adult when 2 cards are present', () => {
-      let newData = []
+      const newData = []
       newData[0] = OtherAdultsCard
       newData[1] = otherAdultsDefaults
       component.setProps({other_adults: newData})
@@ -194,8 +194,8 @@ describe('Verify other adults Component View', () => {
     })
 
     it('Verify application State Change', () => {
-      let NameFields = componentMount.find('input[type="text"]')
-      let lastNameField = NameFields.findWhere(n => n.props().id === 'other_adults[0].last_name')
+      const NameFields = componentMount.find('input[type="text"]')
+      const lastNameField = NameFields.findWhere(n => n.props().id === 'other_adults[0].last_name')
       lastNameField.simulate('change', {target: {value: 'dude'}})
       expect(setParentStateSpy).toHaveBeenCalledWith('other_adults', [ Object({ relationship_to_applicants: [ Object({ applicant_id: null, relationship_to_applicant_freeform: '', relationship_to_applicant: Object({ id: 0, value: '' }) }) ], index: 0, first_name: '', middle_name: '', last_name: 'dude', date_of_birth: '2017-01-01' }) ])
     })

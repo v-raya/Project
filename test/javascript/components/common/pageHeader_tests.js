@@ -7,7 +7,7 @@ import Button from 'components/common/button'
 describe('Verify Page Header rendering', () => {
   const headerLabel = 'page title'
 
-  let headerComp = mount(<PageHeader pageHeaderButtons={<Rfa01PageHeaderButtons />} />)
+  const headerComp = mount(<PageHeader pageHeaderButtons={<Rfa01PageHeaderButtons />} />)
 
   it('verify page header render', () => {
     expect(headerComp.length).toBe(1)

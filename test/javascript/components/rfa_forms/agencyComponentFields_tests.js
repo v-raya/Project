@@ -6,7 +6,7 @@ import {stateTypes} from '../../helpers/constants'
 describe('verify agency component fields ', () => {
   let agencyComponent, onAgencyChangeSpy,
     removeAgencyCardSpy, q1History, optionList
-  let indexValue = 0
+  const indexValue = 0
 
   beforeEach(() => {
     q1History = {
@@ -40,19 +40,19 @@ describe('verify agency component fields ', () => {
   })
 
   it('verify remove added Agency Name', () => {
-    let removeButton = agencyComponent.find('a')
+    const removeButton = agencyComponent.find('a')
     removeButton.simulate('click', 'event')
     expect(removeAgencyCardSpy).toHaveBeenCalledWith('event', [ 'new' ], indexValue, 'foster_care_licenses_q1', 'agencies')
   })
 
   it('verify onChange function for agency name field', () => {
-    let changeAgencyName = agencyComponent.find('#agency-q1-name-' + indexValue)
+    const changeAgencyName = agencyComponent.find('#agency-q1-name-' + indexValue)
     changeAgencyName.simulate('change', {target: {value: 'Agency New'}})
     expect(onAgencyChangeSpy).toHaveBeenCalledWith({target: {value: 'Agency New'}}, [ 'new' ], indexValue, 'name', 'foster_care_licenses_q1', 'agencies', 'Agency New')
   })
 
   it('verify agency change drop down', () => {
-    let agencyDropDownField = agencyComponent.find('#agency-q1-type-' + indexValue)
+    const agencyDropDownField = agencyComponent.find('#agency-q1-type-' + indexValue)
     agencyDropDownField.simulate('change', {target: {options: {'1': {value: '1', text: 'License'}, selectedIndex: 1}}})
     expect(onAgencyChangeSpy).toHaveBeenCalledWith({target: {options: { '1': { value: '1', text: 'License' }, selectedIndex: 1 }}}, [ 'new' ], indexValue, 'type', 'foster_care_licenses_q1', 'agencies', ({ id: '1', value: 'License' }))
   })

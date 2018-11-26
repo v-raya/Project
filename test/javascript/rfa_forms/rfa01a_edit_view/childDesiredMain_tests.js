@@ -5,7 +5,7 @@ import {siblingGroups, ageGroups} from './../../helpers/constants'
 
 describe('Verify Child Desired Component', () => {
   let childDesiredComp, setParentStateSpy, getFocusClassNameSpy, setFocusStateSpy
-  let childDesired = {
+  const childDesired = {
     child_identified: true,
     child_in_home: false,
     preferred_ages: [
@@ -31,22 +31,22 @@ describe('Verify Child Desired Component', () => {
     />)
   })
   it('verify component load', () => {
-    let componentId = childDesiredComp.find('#ChildDesiredMain')
+    const componentId = childDesiredComp.find('#ChildDesiredMain')
     expect(componentId.length).toBe(1)
   })
   it('verify focus component', () => {
-    let componentId = childDesiredComp.find('#ChildDesiredMain')
+    const componentId = childDesiredComp.find('#ChildDesiredMain')
     componentId.simulate('click')
     expect(setFocusStateSpy).toHaveBeenCalledWith('ChildDesiredMain')
   })
   it('verify child component change State', () => {
-    let componentId = childDesiredComp.find('#child_identifiedtrue').hostNodes()
+    const componentId = childDesiredComp.find('#child_identifiedtrue').hostNodes()
     componentId.simulate('change', {target: {value: 'false'}})
     expect(setParentStateSpy).toHaveBeenCalledWith('child_desired', Object({ child_identified: 'false', child_in_home: '', preferred_ages: [ ], preferred_sibling_group_up_to: Object({ id: '', value: '' }) }))
   })
 
   it('verify child component change State', () => {
-    let componentId = childDesiredComp.find('#child_identifiedfalse').hostNodes()
+    const componentId = childDesiredComp.find('#child_identifiedfalse').hostNodes()
     componentId.simulate('change', {target: {value: 'true'}})
     expect(setParentStateSpy).toHaveBeenCalledWith('child_desired', Object({ child_identified: 'true', child_in_home: false, preferred_ages: [ ], preferred_sibling_group_up_to: Object({ id: '', value: '' }) }))
   })

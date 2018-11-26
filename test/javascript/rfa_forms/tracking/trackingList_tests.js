@@ -266,34 +266,34 @@ describe('Tracking Page test', () => {
   })
 
   it('tests save', () => {
-    let editProgressBtn = trackingListView.find('#editTracking')
+    const editProgressBtn = trackingListView.find('#editTracking')
     editProgressBtn.simulate('click')
-    let saveProgressBtn = trackingListView.find('#saveTracking')
+    const saveProgressBtn = trackingListView.find('#saveTracking')
     saveProgressBtn.simulate('click')
     expect(saveProgressSpy).toHaveBeenCalled()
   })
 
   it('tests Edit', () => {
-    let editProgressBtn = trackingListView.find('#editTracking')
+    const editProgressBtn = trackingListView.find('#editTracking')
     editProgressBtn.simulate('click')
     expect(editProgressSpy).toHaveBeenCalled()
   })
   it('test cancel', () => {
-    let editProgressBtn = trackingListView.find('#editTracking')
+    const editProgressBtn = trackingListView.find('#editTracking')
     editProgressBtn.simulate('click')
-    let cancelProgressLink = trackingListView.find('#CancelTracking')
+    const cancelProgressLink = trackingListView.find('#CancelTracking')
     cancelProgressLink.simulate('click')
     expect(cancelProgressSpy).toHaveBeenCalled()
   })
   it('call setApplicationState', () => {
     trackingListView.find('#editTracking').simulate('click')
-    let familyDocReceivedDate = trackingListView.find('input#familyEditRecievedDate0')
+    const familyDocReceivedDate = trackingListView.find('input#familyEditRecievedDate0')
     familyDocReceivedDate.simulate('change', {target: {value: '12/12/1997'}})
     expect(setApplicationStateSpy).toHaveBeenCalled()
   })
   it('call setPeopleDocumentsState', () => {
     trackingListView.find('#editTracking').simulate('click')
-    let familyDocReceivedDate = trackingListView.find('input#clearance0EditStartDate1')
+    const familyDocReceivedDate = trackingListView.find('input#clearance0EditStartDate1')
     familyDocReceivedDate.simulate('change', {target: {value: '12/12/1990'}})
     expect(setPeopleDocumentsStateSpy).toHaveBeenCalled()
   })

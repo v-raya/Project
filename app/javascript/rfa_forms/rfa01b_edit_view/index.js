@@ -117,7 +117,7 @@ export default class Rfa01bEditView extends React.Component {
   validateFieldSetErrorState (fieldName, value) {
     const error = this.validator.validateFieldAndGetError(fieldName, value)
 
-    let currentErrors = this.state.errors
+    const currentErrors = this.state.errors
     if (error === undefined) {
       _.unset(currentErrors, fieldName)
     } else {
@@ -132,7 +132,7 @@ export default class Rfa01bEditView extends React.Component {
   }
 
   submit () {
-    let newApp = Immutable.fromJS(this.state.application).setIn(['metadata', 'submit_enabled'], false)
+    const newApp = Immutable.fromJS(this.state.application).setIn(['metadata', 'submit_enabled'], false)
     const saveUrl = '/rfa/b01/' + this.state.application.id
     this.fetchToRails(saveUrl, 'PUT', {a01_id: this.state.rfa_a01_application.id, b01: newApp.toJS()}).then(() => {
       if (this.state.errors && !this.state.errors.issue_details) {
@@ -173,7 +173,7 @@ export default class Rfa01bEditView extends React.Component {
   }
 
   setApplicationState (key, value) {
-    let newStateApplication = Immutable.fromJS(this.state.application).set(key, value)
+    const newStateApplication = Immutable.fromJS(this.state.application).set(key, value)
     this.setState({
       application: newStateApplication.toJS()
     })

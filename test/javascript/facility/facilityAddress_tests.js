@@ -20,7 +20,7 @@ describe('Verify Facility Address', () => {
       'county': 'ORANGE'
     }
   }
-  let AddressCompShallow = shallow(<FacilityAddress {...props} />)
+  const AddressCompShallow = shallow(<FacilityAddress {...props} />)
   it('verify Facility Address fields', () => {
     expect(AddressCompShallow.find('.facility-address').length).toEqual(1)
   })

@@ -93,27 +93,27 @@ describe('Verify Search component', () => {
   })
 
   it('verify handlePageNumberChange with no input  ', () => {
-    let pageNumber = searchComp.find('.page_number').at(0)
+    const pageNumber = searchComp.find('.page_number').at(0)
     pageNumber.simulate('keydown', {which: 13, target: {value: ''}})
     expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(1)
   })
 
   it('verify handlePageNumberChange with page number higher than available ', () => {
-    let pageNumber = searchComp.find('.page_number').at(0)
+    const pageNumber = searchComp.find('.page_number').at(0)
     pageNumber.simulate('keydown', {which: 13, target: {value: '122'}})
     expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(3)
   })
 
   it('verify onclick for toggle button', () => {
-    let searchFacility = searchComp.find('#search')
+    const searchFacility = searchComp.find('#search')
     searchFacility.simulate('submit')
-    let handleToggleButton = searchComp.find('#toggle_button')
+    const handleToggleButton = searchComp.find('#toggle_button')
     handleToggleButton.simulate('click')
     expect(handleToggleSpy).toHaveBeenCalled()
   })
 
   it('verify dropDown value change number of facilities', () => {
-    let dropdownForfacilitiesCount = searchComp.find('#noOfFacilities').at(1)
+    const dropdownForfacilitiesCount = searchComp.find('#noOfFacilities').at(1)
     dropdownForfacilitiesCount.simulate('change', {target: {options: {'5': {id: '5', value: '5'}, selectedIndex: 5}}})
 
     const expectedQuery = {
@@ -138,7 +138,7 @@ describe('Verify Search component', () => {
     expect(handleInputChangeSpy).toHaveBeenCalledWith('countyValue', 'Los Angeles')
   })
   it('verify clicking reset button calls resetForm method', () => {
-    let resetForm = searchComp.find('#reset')
+    const resetForm = searchComp.find('#reset')
     resetForm.simulate('click')
     expect(handleResetFormSpy).toHaveBeenCalled()
   })
@@ -203,7 +203,7 @@ describe('Verify Search component', () => {
 
     }
     searchComp = mount(<BrowserRouter><Search {...props} /></BrowserRouter>)
-    let searchFacility = searchComp.find('#search')
+    const searchFacility = searchComp.find('#search')
     searchFacility.simulate('submit')
     expect(searchComp.text()).toContain('Message: There was an error processing your request')
   })

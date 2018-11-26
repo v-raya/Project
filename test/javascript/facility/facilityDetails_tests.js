@@ -18,7 +18,7 @@ describe('Verify Facility Details', () => {
     },
     facilityName: 'Ananya Nandi'
   }
-  let detailsCompShallow = shallow(<FacilityDetails {...props} />)
+  const detailsCompShallow = shallow(<FacilityDetails {...props} />)
   it('verify Facility Details fields', () => {
     expect(detailsCompShallow.find('.facility-details').length).toEqual(1)
   })

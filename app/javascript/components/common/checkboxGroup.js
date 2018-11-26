@@ -4,7 +4,7 @@ import Immutable from 'immutable'
 import {BinarySelectorField} from './binarySelectorField.js'
 import {findArrayValueByMethod} from 'helpers/commonHelper.jsx'
 
-let agePreferenceText = 'No preference'
+const agePreferenceText = 'No preference'
 
 export default class CheckboxGroup extends React.Component {
   constructor (props) {
@@ -13,7 +13,7 @@ export default class CheckboxGroup extends React.Component {
     this.onNoPreferenceChange = this.onNoPreferenceChange.bind(this)
   }
   onNoPreferenceChange (checkedValue, id, text) {
-    let selectedAgePreference = checkedValue ? [{id: id, value: text}] : []
+    const selectedAgePreference = checkedValue ? [{id: id, value: text}] : []
     this.props.onChange('preferred_ages', selectedAgePreference)
   }
 

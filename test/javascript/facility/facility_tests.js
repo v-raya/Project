@@ -12,7 +12,7 @@ describe('Verify Facility component', () => {
       'id': 'SouUlov56F'
     }
   }
-  let store = createStore(rootReducer)
+  const store = createStore(rootReducer)
   it('renders facility index component', () => {
     const FacilityCompMount = mount(
       <Provider store={store}>

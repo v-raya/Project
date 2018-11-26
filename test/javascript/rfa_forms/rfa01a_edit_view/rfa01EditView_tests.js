@@ -272,26 +272,26 @@ describe('Rfa01EditView test', () => {
   })
 
   it('tests setFocusState', () => {
-    let minorsCard = _Rfa01EditView.find('#minorsSection').hostNodes()
+    const minorsCard = _Rfa01EditView.find('#minorsSection').hostNodes()
     minorsCard.simulate('click')
     expect(setFocusStateSpy).toHaveBeenCalledWith('minorsSection')
   })
 
   it('tests saveProgress', () => {
-    let saveProgressBtn = _Rfa01EditView.find('#saveProgress')
+    const saveProgressBtn = _Rfa01EditView.find('#saveProgress')
     saveProgressBtn.simulate('click')
     expect(saveProgressSpy).toHaveBeenCalled()
   })
 
   it('tests submit', () => {
-    let submitBtn = _Rfa01EditViewSubmitEnabled.find('#submitApplication')
+    const submitBtn = _Rfa01EditViewSubmitEnabled.find('#submitApplication')
     submitBtn.simulate('click')
     expect(_Rfa01EditView.length).toEqual(1)
   })
 
   it('tests county change ', () => {
-    let countyCard = _Rfa01EditView.find('#CountyUseOnlySection')
-    let countyCardField = countyCard.find('#county').hostNodes()
+    const countyCard = _Rfa01EditView.find('#CountyUseOnlySection')
+    const countyCardField = countyCard.find('#county').hostNodes()
     countyCardField.simulate('change', {target: {options: {'0': {value: '2', text: 'Alpine'}, selectedIndex: 0}}})
     expect(setApplicationStateSpy).toHaveBeenCalledWith('application_county', { id: '2', value: 'Alpine' })
   })

@@ -6,9 +6,9 @@ import {countyTypes} from '../../helpers/constants'
 describe('Verify CountyUseOnlyCard Component', () => {
   let CountyUseOnlyCardComp, CountyUseOnlyCardFields
 
-  let onFieldChangeSpy = jasmine.createSpy('onFieldChange')
-  let setFocusStateSpy = jasmine.createSpy('setFocusState')
-  let getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
+  const onFieldChangeSpy = jasmine.createSpy('onFieldChange')
+  const setFocusStateSpy = jasmine.createSpy('setFocusState')
+  const getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
   beforeEach(() => {
     CountyUseOnlyCardFields = {
       county: {
@@ -31,14 +31,14 @@ describe('Verify CountyUseOnlyCard Component', () => {
     expect(CountyUseOnlyCardComp.length).toEqual(1)
   })
   it('verifies county field', () => {
-    let countyField = CountyUseOnlyCardComp.find('#county').hostNodes()
+    const countyField = CountyUseOnlyCardComp.find('#county').hostNodes()
     countyField.simulate('change', {target: {selectedOptions: [{value: 2, text: 'Alpine'}]}})
     expect(onFieldChangeSpy).toHaveBeenCalled()
   })
 
   it('verify CountyUseOnly card to check focus', () => {
     expect(getFocusClassNameSpy).toHaveBeenCalledWith('CountyUseOnlySection')
-    let cardSection = CountyUseOnlyCardComp.find('#CountyUseOnlySection')
+    const cardSection = CountyUseOnlyCardComp.find('#CountyUseOnlySection')
     cardSection.simulate('click')
     expect(setFocusStateSpy).toHaveBeenCalled()
   })

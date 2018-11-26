@@ -32,17 +32,17 @@ describe('Test Tracking For Family Documents Table', () => {
     expect(editFamilyDocRow.length).toBe(1)
   })
   it('edit text area', () => {
-    let textAreaField = editFamilyDocRow.at(0).shallow().find('#familyEditNotes0')
+    const textAreaField = editFamilyDocRow.at(0).shallow().find('#familyEditNotes0')
     textAreaField.simulate('change', {target: {value: 'text input'}})
     expect(changeSpy).toHaveBeenCalledWith('notes', 'text input', 0)
   })
   it('edit checkbox', () => {
-    let checkBoxField = editFamilyDocRow.at(0).shallow().find('#familyEditCheckbox0')
+    const checkBoxField = editFamilyDocRow.at(0).shallow().find('#familyEditCheckbox0')
     checkBoxField.simulate('change', {target: {checked: true}})
     expect(changeSpy).toHaveBeenCalledWith('checked', true, 0)
   })
   it('edit date field', () => {
-    let textAreaField = editFamilyDocRow.at(0).shallow().find('#familyEditRecievedDate0')
+    const textAreaField = editFamilyDocRow.at(0).shallow().find('#familyEditRecievedDate0')
     textAreaField.simulate('change', {target: {value: '01/20/1981'}})
     expect(changeSpy).toHaveBeenCalledWith('received_date', '1981-01-20', 0)
   })
@@ -51,15 +51,15 @@ describe('Test Tracking For Family Documents Table', () => {
     expect(showFamilyDocRow.length).toBe(1)
   })
   it('Show text area', () => {
-    let textAreaField = showFamilyDocRow.at(0).shallow().find('#familyShowNotes0')
+    const textAreaField = showFamilyDocRow.at(0).shallow().find('#familyShowNotes0')
     expect(textAreaField.text()).toEqual('testing')
   })
   it('Show checkbox', () => {
-    let checkBoxField = showFamilyDocRow.at(0).shallow().find('#familyShowCheckbox0')
+    const checkBoxField = showFamilyDocRow.at(0).shallow().find('#familyShowCheckbox0')
     expect(checkBoxField.length).toEqual(1)
   })
   it('Show date field', () => {
-    let approvedDateField = showFamilyDocRow.at(0).shallow().find('#familyShowRecievedDate0')
+    const approvedDateField = showFamilyDocRow.at(0).shallow().find('#familyShowRecievedDate0')
     expect(approvedDateField.text()).toEqual('01/21/1978')
   })
 })

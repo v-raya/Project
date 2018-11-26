@@ -54,25 +54,25 @@ describe('Verify search input component', () => {
   })
 
   it('verify county select after component render', () => {
-    let countyField = searchInputComp.find('#county_select')
+    const countyField = searchInputComp.find('#county_select')
     countyField.simulate('change', {target: {options: {'19': {id: '19', value: 'Los Angeles'}, selectedIndex: 19}}})
     expect(spyHandleInputChange).toHaveBeenCalledWith('countyValue', 'Los Angeles')
   })
 
   it('verify facilityTypes select after component render', () => {
-    let facilityType = searchInputComp.find('#facility_select')
+    const facilityType = searchInputComp.find('#facility_select')
     facilityType.simulate('change', {target: {options: {'2': {id: '400', value: 'Adoption Agency'}, selectedIndex: 2}}})
     expect(spyHandleInputChange).toHaveBeenCalledWith('facilityTypeValue', 'Adoption Agency')
   })
 
   it('verify licenseStatus multi-select after component render', () => {
-    let licenseStatus = searchInputComp.find('.my-react-select')
+    const licenseStatus = searchInputComp.find('.my-react-select')
     licenseStatus.simulate('change', [{id: 8, value: 'Application Denied'}, {id: 2, value: 'Pending'}])
     expect(spyHandleInputChange).toHaveBeenCalledWith('licenseStatusValue', [{id: 8, value: 'Application Denied'}, {id: 2, value: 'Pending'}])
   })
 
   it('Verify all active checkbox', () => {
-    let allActiveCheckbox = searchInputComp.find('#all_active')
+    const allActiveCheckbox = searchInputComp.find('#all_active')
     allActiveCheckbox.simulate('change', {target: {checked: true}})
     expect(spyHandleInputChange).toHaveBeenCalledWith('isAllActive', true)
     expect(searchInputComp.find('.my-react-select').props().disabled).toBe(false)
@@ -83,25 +83,25 @@ describe('Verify search input component', () => {
       isAllActive= {true}
       handleInputChange={spyHandleInputChange}
     />)
-    let allActiveCheckbox = searchInputComp.find('#all_active')
+    const allActiveCheckbox = searchInputComp.find('#all_active')
     allActiveCheckbox.simulate('change', {target: {checked: false}})
     expect(spyHandleInputChange).toHaveBeenCalledWith('isAllActive', false)
   })
 
   it('verify facility Id value after component render', () => {
-    let facilityId = searchInputComp.find('#facilityIdValue')
+    const facilityId = searchInputComp.find('#facilityIdValue')
     facilityId.simulate('change', {target: {value: '300665437'}})
     expect(spyHandleInputChange).toHaveBeenCalledWith('facilityIdValue', '300665437')
   })
 
   it('verify facility name value after component render', () => {
-    let facilityName = searchInputComp.find('#facilityNameValue')
+    const facilityName = searchInputComp.find('#facilityNameValue')
     facilityName.simulate('change', {target: {value: 'Lederhouse Transitions'}})
     expect(spyHandleInputChange).toHaveBeenCalledWith('facilityNameValue', 'Lederhouse Transitions')
   })
 
   it('verify facility address value after component render', () => {
-    let facilityAddressValue = searchInputComp.find('#facilityAddressValue')
+    const facilityAddressValue = searchInputComp.find('#facilityAddressValue')
     facilityAddressValue.simulate('change', {target: {value: '36 Sequoia Dr, Aliso Viejo, CA 92656'}})
     expect(spyHandleInputChange).toHaveBeenCalledWith('facilityAddressValue', '36 Sequoia Dr, Aliso Viejo, CA 92656')
   })
@@ -111,7 +111,7 @@ describe('Verify search input component', () => {
       searchApiCall={spySearchApiCall}
       handlePageNumberChange={spyHandlePageNumberChange}
     />)
-    let searchFacility = searchInputComp.find('#search')
+    const searchFacility = searchInputComp.find('#search')
     searchFacility.simulate('submit')
     expect(spySearchApiCall).toHaveBeenCalledWith(0, props.sizeValue)
   })

@@ -6,7 +6,7 @@ import Validator from 'helpers/validator'
 
 describe('Verify Child Desired Comp', () => {
   let childDesiredComp, setParentStateSpy, getFocusClassNameSpy, setFocusStateSpy
-  let validator = new Validator({})
+  const validator = new Validator({})
   const applicants = [{
     id: 20,
     first_name: 'gdfghfhgv',
@@ -68,7 +68,7 @@ describe('Verify Child Desired Comp', () => {
   })
 
   it('verify focus component', () => {
-    let cardComponent = childDesiredComp.find('#DesiredChildSection').hostNodes()
+    const cardComponent = childDesiredComp.find('#DesiredChildSection').hostNodes()
     cardComponent.simulate('click')
     expect(setFocusStateSpy).toHaveBeenCalledWith('ChildDesiredMain')
   })
@@ -80,12 +80,12 @@ describe('Verify Child Desired Comp', () => {
   })
 
   it('verify relationship to applicant Id value after component render', () => {
-    let relationField = childDesiredComp.find('#relationship_to_applicant1child0').hostNodes()
+    const relationField = childDesiredComp.find('#relationship_to_applicant1child0').hostNodes()
     expect(relationField.length).toBe(1)
   })
 
   it('verify relationship to applicant on change', () => {
-    let relationField = childDesiredComp.find('#relationship_to_applicant1child0').hostNodes()
+    const relationField = childDesiredComp.find('#relationship_to_applicant1child0').hostNodes()
     relationField.simulate('change', {target: {value: 'test'}})
     expect(setParentStateSpy).toHaveBeenCalledWith('identified_children', [ { gender: null,
       name_suffix: null,

@@ -25,13 +25,13 @@ describe('RFA 02 Excemption card test', () => {
   })
 
   it('exemption approval or pending ?', () => {
-    let exemptionStatusfalseField = exemptionWrapperWithProps.find('#exemptionStatus0false').hostNodes()
+    const exemptionStatusfalseField = exemptionWrapperWithProps.find('#exemptionStatus0false').hostNodes()
     exemptionStatusfalseField.simulate('change', {target: {value: 'false'}})
     expect(exemptionHandlerSpy).toHaveBeenCalledWith('is_approved', 'false', 'approval')
   })
 
   it('exemptionHandler method on, is Exemption requested?', () => {
-    let exemptionRequestfalseField = exemptionWrapperWithProps.find('#exemptionRequest0false').hostNodes()
+    const exemptionRequestfalseField = exemptionWrapperWithProps.find('#exemptionRequest0false').hostNodes()
     exemptionRequestfalseField.simulate('change', {target: {value: 'false'}})
     exemptionsObj.is_requested = 'false'
     expect(exemptionHandlerSpy).toHaveBeenCalledWith('is_requested', 'false')

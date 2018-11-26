@@ -12,9 +12,9 @@ describe('Verify privacyStatement card', () => {
     setFocusStateSpy, onHideClickSpy
 
   beforeEach(() => {
-    let setStateSpy = jasmine.createSpy('setState')
+    const setStateSpy = jasmine.createSpy('setState')
     setDisplayStateSpy = jasmine.createSpy('setDisplayState')
-    let getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
+    const getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
     onHideClickSpy = jasmine.createSpy('onHideClick')
     componentMount = mount(<PrivacyStatement
@@ -37,12 +37,12 @@ describe('Verify privacyStatement card', () => {
       expect(componentMount.length).toEqual(1)
     })
     it('onClick event shows details toggles display to true', () => {
-      let cardComponent = componentMount.find('#privacyStatementToggle')
+      const cardComponent = componentMount.find('#privacyStatementToggle')
       cardComponent.simulate('click')
       expect(setDisplayStateSpy).toHaveBeenCalledWith('privacyStatementDisplay', true)
     })
     it('onClick event shows details toggles display to false ', () => {
-      let cardComponent = componentMountShowPrivacy.find('#privacyStatementToggle')
+      const cardComponent = componentMountShowPrivacy.find('#privacyStatementToggle')
       cardComponent.simulate('click')
       expect(setDisplayStateSpy).toHaveBeenCalledWith('privacyStatementDisplay', false)
     })

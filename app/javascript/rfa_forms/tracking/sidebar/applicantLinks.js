@@ -10,11 +10,11 @@ const ApplicantLinks = ({
   idSuffix,
   isNavLinkActive
 }) => {
-  let indexes = applicants.indexes
+  const indexes = applicants.indexes
   applicants = applicants.apps
   return (
     applicants.map((applicant, index) => {
-      let href = '#Applicant' + indexes[index] + '-tracking-card'
+      const href = '#Applicant' + indexes[index] + '-tracking-card'
       return (
         <div key={index}>
           <NavLink

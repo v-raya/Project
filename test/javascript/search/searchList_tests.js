@@ -100,7 +100,7 @@ describe('Render search list and each method', () => {
       facility_source: null
     }]
   }
-  let searchListComp = mount(<BrowserRouter><SearchList searchResults={props.searchResults} /></BrowserRouter>)
+  const searchListComp = mount(<BrowserRouter><SearchList searchResults={props.searchResults} /></BrowserRouter>)
 
   it('Verify Search component render', () => {
     expect(searchListComp.length).toBe(1)

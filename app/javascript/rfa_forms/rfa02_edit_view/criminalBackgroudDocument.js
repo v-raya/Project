@@ -14,8 +14,8 @@ export default class CriminalBackgroudDocument extends React.Component {
     this.setParentState = this.setParentState.bind(this)
   }
   setParentState (key, value, index) {
-    let people = this.props.people
-    let peopleObj = people.setIn([index, 'background_check', key], value)
+    const people = this.props.people
+    const peopleObj = people.setIn([index, 'background_check', key], value)
     this.props.setState('people', peopleObj)
   }
   render () {

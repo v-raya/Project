@@ -12,15 +12,15 @@ import React from 'react'
 
 console.log('Hello World from CALS')
 // Support component names relative to this directory:
-let componentRequireContext = require.context('.', true)
-let ReactRailsUJS = require('react_ujs')
+const componentRequireContext = require.context('.', true)
+const ReactRailsUJS = require('react_ujs')
 ReactRailsUJS.useContext(componentRequireContext)
 
 // Preventing event default on backspace navigation on IE
 document.addEventListener('keydown', keyDownSelect)
 
 function keyDownSelect (e) {
-  let keyCode = e.which
+  const keyCode = e.which
   if ((document.activeElement === document.body ||
       document.activeElement.tagName === 'SELECT' ||
       document.activeElement.tagName === 'BUTTON' ||

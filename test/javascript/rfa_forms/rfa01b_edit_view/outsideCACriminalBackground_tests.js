@@ -7,18 +7,18 @@ describe('Verify OutsideCACriminalBackground card', () => {
   let setParentStateSpy, setDisplayStateSpy, componentMount,
     componentMountWithoutDisclosures, setFocusStateSpy, handleClearOnConditionalChangeSpy
 
-  let disclosures = [{
+  const disclosures = [{
     'offense': 'test',
     'offense_city': 'test',
     'offense_state': {},
     'when_offense_happen': 'test',
     'offense_details': 'test'
   }]
-  let validator = new Validator({})
+  const validator = new Validator({})
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     setDisplayStateSpy = jasmine.createSpy('setDisplayState')
-    let getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
+    const getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
     handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
 
@@ -50,7 +50,7 @@ describe('Verify OutsideCACriminalBackground card', () => {
       expect(componentMount.instance().props.validator.validations.size).toEqual(4)
     })
     it('tests handleNavLinkClick', () => {
-      let outsideCADisclosureCard = componentMount.find('#OutsideCACriminalBackgroundCard').hostNodes()
+      const outsideCADisclosureCard = componentMount.find('#OutsideCACriminalBackgroundCard').hostNodes()
       outsideCADisclosureCard.simulate('click')
       expect(setFocusStateSpy).toHaveBeenCalledWith('OutsideCACriminalBackgroundCard')
     })
@@ -66,27 +66,27 @@ describe('Verify OutsideCACriminalBackground card', () => {
     })
 
     it('onClick event shows lived in other state multi select', () => {
-      let cardComponent = componentMount.find('input[type="radio"]')
-      let trueComponent = cardComponent.find('#outsideCACriminalBackgroundtrue')
+      const cardComponent = componentMount.find('input[type="radio"]')
+      const trueComponent = cardComponent.find('#outsideCACriminalBackgroundtrue')
       trueComponent.simulate('change', {target: {value: 'true'}})
       expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('convicted_in_another_state', 'true', 'convicted_in_another_state_disclosures', [ Object({ offense: '', offense_city: '', offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
 
     it('onClick event shows lived in other state multi select', () => {
-      let cardComponent = componentMountWithoutDisclosures.find('input[type="radio"]')
-      let trueComponent = cardComponent.find('#outsideCACriminalBackgroundtrue')
+      const cardComponent = componentMountWithoutDisclosures.find('input[type="radio"]')
+      const trueComponent = cardComponent.find('#outsideCACriminalBackgroundtrue')
       trueComponent.simulate('change', {target: {value: 'false'}})
       expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('convicted_in_another_state', 'false', 'convicted_in_another_state_disclosures', [ Object({ offense: '', offense_city: '', offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
 
     it('onchange sets disclosures ', () => {
-      let cardComponent = componentMountWithoutDisclosures.find('#outsideCaliforniaCriminalBackgroundoffenseReason').hostNodes()
+      const cardComponent = componentMountWithoutDisclosures.find('#outsideCaliforniaCriminalBackgroundoffenseReason').hostNodes()
       cardComponent.simulate('change', {target: {value: 'testing'}})
       expect(setParentStateSpy).toHaveBeenCalledWith('convicted_in_another_state_disclosures', [ Object({ offense: 'testing', offense_city: '', offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
 
     it('check required fields indicator', () => {
-      let componentHtml = componentMountWithoutDisclosures.html()
+      const componentHtml = componentMountWithoutDisclosures.html()
       expect(componentHtml).toContain('What was the offense? (required)')
       expect(componentHtml).toContain('Where did the offense happen? (City, State, Country or other location information) (required)')
       expect(componentHtml).toContain('When did the offense happen? (required)')

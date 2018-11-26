@@ -26,7 +26,7 @@ describe('Rfa 02 Inter County Transfer Info, test', () => {
     expect(liveScanWithProps.length).toBe(1)
   })
   it('handleLiveScan method', () => {
-    let liveScan0checkboxEdit0Field = liveScanWithProps.find('#liveScan0checkboxEdit0').hostNodes()
+    const liveScan0checkboxEdit0Field = liveScanWithProps.find('#liveScan0checkboxEdit0').hostNodes()
     liveScan0checkboxEdit0Field.simulate('change', {target: {checked: 'true'}})
     expect(handleLiveScanSpy).toHaveBeenCalledWith('checked', 'true', 0)
   })

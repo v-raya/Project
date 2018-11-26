@@ -6,8 +6,8 @@ import 'whatwg-fetch'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-let testsContext = require.context('./', true, /_tests$/)
+const testsContext = require.context('./', true, /_tests$/)
 testsContext.keys().forEach(testsContext)
 
-let componentContext = require.context('./../', true, /\*\.(js|jsx)$/)
+const componentContext = require.context('./../', true, /\*\.(js|jsx)$/)
 componentContext.keys().forEach(componentContext)

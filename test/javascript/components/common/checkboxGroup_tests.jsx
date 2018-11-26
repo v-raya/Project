@@ -31,13 +31,13 @@ describe('Verify Check Box Group', () => {
     />)
   })
   it('test preferred ages checkbox', () => {
-    let preferredField = checkboxGroupComp.find('#age-1')
+    const preferredField = checkboxGroupComp.find('#age-1')
     preferredField.simulate('change', {target: {checked: false}})
     childDesired.preferred_ages.pop()
     expect(setParentStateSpy).toHaveBeenCalledWith('preferred_ages', childDesired.preferred_ages)
   })
   it('check preferred ages checkbox no Preference True', () => {
-    let preferredField = checkboxGroupComp.find('#age-6')
+    const preferredField = checkboxGroupComp.find('#age-6')
     preferredField.simulate('change', {target: {checked: true}})
     childDesired.preferred_ages = []
     childDesired.preferred_ages.push({

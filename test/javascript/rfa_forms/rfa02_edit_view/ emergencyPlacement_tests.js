@@ -28,13 +28,13 @@ describe('RFA 02 Emergency Placement card, test', () => {
   })
 
   it('handleEmergencyPlacementChange method call', () => {
-    let emergencyPlacement0checkboxEdit0Field = emergencyPlacementWithProps.find('#emergencyPlacement0checkboxEdit0').hostNodes()
+    const emergencyPlacement0checkboxEdit0Field = emergencyPlacementWithProps.find('#emergencyPlacement0checkboxEdit0').hostNodes()
     emergencyPlacement0checkboxEdit0Field.simulate('change', {target: {checked: true}})
     expect(handleEmergencyPlacementChangeSpy).toHaveBeenCalled()
   })
 
   it('isEmergencyPlacement method call', () => {
-    let emergencyPlacementfalseField = emergencyPlacementWithProps.find('#emergencyPlacement0false').hostNodes()
+    const emergencyPlacementfalseField = emergencyPlacementWithProps.find('#emergencyPlacement0false').hostNodes()
     emergencyPlacementfalseField.simulate('change', {target: {value: false}})
     expect(isEmergencyPlacementSpy).toHaveBeenCalled()
   })

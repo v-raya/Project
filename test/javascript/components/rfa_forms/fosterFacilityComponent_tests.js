@@ -23,12 +23,12 @@ describe('foster Facility Component', () => {
     />)
   })
   it('verify remove added Facility Name', () => {
-    let removeButton = component.find('a')
+    const removeButton = component.find('a')
     removeButton.simulate('click', 'event')
     expect(removeFacilityCardSpy).toHaveBeenCalledWith('event', [ 'new' ], 0, 'applications_for_adoption_q2', 'facilities')
   })
   it('verify onChange function for Facility name Field', () => {
-    let changeFacilityName = component.find('#typeOfLicense0')
+    const changeFacilityName = component.find('#typeOfLicense0')
     changeFacilityName.simulate('change', {target: {value: 'Faciity New'}})
     expect(onFacilityChangeSpy).toHaveBeenCalledWith({ target: { value: 'Faciity New' } }, [ 'new' ], 0, 'applications_for_adoption_q2', 'facilities', 'Faciity New')
   })

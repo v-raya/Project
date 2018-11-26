@@ -7,9 +7,9 @@ describe('Verify disclosure Instructions card', () => {
     setFocusStateSpy, handleOnClickSpy
 
   beforeEach(() => {
-    let setStateSpy = jasmine.createSpy('setState')
+    const setStateSpy = jasmine.createSpy('setState')
     setDisplayStateSpy = jasmine.createSpy('setDisplayState')
-    let getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
+    const getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
     handleOnClickSpy = jasmine.createSpy('handleOnClick')
     componentMount = mount(<DisclosureInstructions
@@ -35,13 +35,13 @@ describe('Verify disclosure Instructions card', () => {
     })
 
     it('onClick event shows details', () => {
-      let cardComponent = componentMount.find('#disclosureInstructionsToggle')
+      const cardComponent = componentMount.find('#disclosureInstructionsToggle')
       cardComponent.simulate('click')
       expect(setDisplayStateSpy).toHaveBeenCalledWith('disclosureInstructionsDisplay', true)
     })
 
     it('onClick event hides details', () => {
-      let cardComponent = componentMountShowDisplay.find('#disclosureInstructionsToggle')
+      const cardComponent = componentMountShowDisplay.find('#disclosureInstructionsToggle')
       cardComponent.simulate('click')
       expect(setDisplayStateSpy).toHaveBeenCalledWith('disclosureInstructionsDisplay', false)
     })

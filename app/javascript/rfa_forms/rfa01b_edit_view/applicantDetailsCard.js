@@ -64,10 +64,10 @@ export default class ApplicantDetailsCard extends React.Component {
   }
 
   render () {
-    let application = this.props.application
-    let residenceAddress = this.props.application.residence_address || residenceAddressValueDefaults
+    const application = this.props.application
+    const residenceAddress = this.props.application.residence_address || residenceAddressValueDefaults
 
-    let residenceAddressValues = {
+    const residenceAddressValues = {
       'street_address': residenceAddress.street_address,
       'zip': residenceAddress.zip,
       'city': residenceAddress.city,
