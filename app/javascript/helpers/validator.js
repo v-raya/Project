@@ -106,7 +106,7 @@ export default class Validator {
         if (typeof (opt.value) === 'string') {
           return !_.isEmpty(opt.value.trim())
         } else {
-          return (!isNaN(+opt.value))
+          return (!isNaN(Number(opt.value)))
         }
       }
     }

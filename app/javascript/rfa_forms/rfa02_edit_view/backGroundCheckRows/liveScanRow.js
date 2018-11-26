@@ -53,7 +53,7 @@ const LiveScanRow = ({
       })
       : checkListDocuments.get('items').map((docs, index) => {
         return (
-          <tr key={id + 'checkboxShow' + +index}>
+          <tr key={id + 'checkboxShow' + Number(index)}>
             <td id={id + 'checkboxShow' + index}>
               <BinarySelectorField
                 type='checkbox'
