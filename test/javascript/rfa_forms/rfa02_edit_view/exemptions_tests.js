@@ -33,7 +33,7 @@ describe('RFA 02 Excemption card test', () => {
   it('exemptionHandler method on, is Exemption requested?', () => {
     let exemptionRequestfalseField = exemptionWrapperWithProps.find('#exemptionRequest0false').hostNodes()
     exemptionRequestfalseField.simulate('change', {target: {value: 'false'}})
-    exemptionsObj['is_requested'] = 'false'
+    exemptionsObj.is_requested = 'false'
     expect(exemptionHandlerSpy).toHaveBeenCalledWith('is_requested', 'false')
   })
 })

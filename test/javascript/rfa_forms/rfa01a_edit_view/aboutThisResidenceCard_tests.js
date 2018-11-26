@@ -180,7 +180,7 @@ describe('Verify Physical Address prefix, suffix, first name, middle name and la
     expect(AboutThisResidenceCard.prototype.addCard).not.toHaveBeenCalled()
     addAnotherPersonButton.simulate('click')
     expect(AboutThisResidenceCard.prototype.addCard).toHaveBeenCalled()
-    blankAboutThisResidenceFields['other_people_using_residence_as_mailing'].push(othersUsingAddressMailing)
+    blankAboutThisResidenceFields.other_people_using_residence_as_mailing.push(othersUsingAddressMailing)
     let personsList = blankAboutThisResidenceFields.other_people_using_residence_as_mailing
     expect(setParentStateSpy).toHaveBeenCalledWith('other_people_using_residence_as_mailing', personsList)
   })

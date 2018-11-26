@@ -173,7 +173,7 @@ describe('Verify RFA 01C child desired', function () {
       let streetAddressField = childCardComponent.find('#Residentialstreet_address').hostNodes()
       streetAddressField.simulate('change', {target: {value: '2870 Gateway Oaks Dr'}})
       let addressObj = childDesired.identified_children[0].school_address
-      addressObj['street_address'] = '2870 Gateway Oaks Dr'
+      addressObj.street_address = '2870 Gateway Oaks Dr'
       expect(setParentStateSpy).toHaveBeenCalledWith(1, 'school_address', addressObj)
     })
 
