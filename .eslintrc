@@ -18,7 +18,10 @@
   },
 
   "rules": {
+    "babel/no-invalid-this": 1,
+    "consistent-return": [2],
     "object-curly-spacing": 0,
+    "no-invalid-this": [2],
     "no-unused-vars": [0, { "vars": "local", "args": "after-used", "ignoreRestSiblings": false }],
     "react/require-extension": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
