@@ -101,7 +101,7 @@ export const getFacilityName = (state) => {
   if (facilityState !== null) {
     return facilityState.name || 'N/A'
   }
-  return null
+  return undefined
 }
 
 export const getFacilityAssignedWorker = (state) => {
@@ -109,7 +109,7 @@ export const getFacilityAssignedWorker = (state) => {
   if (facilityState !== null) {
     return getAssignedWorkerData(facilityState.assigned_worker)
   }
-  return null
+  return undefined
 }
 
 export const getOtherFacilityData = (state) => {
@@ -117,7 +117,7 @@ export const getOtherFacilityData = (state) => {
   if (facilityState !== null) {
     return getOtherDataOfFacility(facilityState)
   }
-  return null
+  return undefined
 }
 
 export const getFacilityAddresses = (state) => {
@@ -125,7 +125,7 @@ export const getFacilityAddresses = (state) => {
   if (facilityState !== null) {
     return getAddressesOfFacility(facilityState.addresses)
   }
-  return null
+  return undefined
 }
 
 export const getFacilityPhones = (state) => {
@@ -133,7 +133,7 @@ export const getFacilityPhones = (state) => {
   if (facilityState !== null) {
     return getPhonesOfFacility(facilityState.phones)
   }
-  return null
+  return undefined
 }
 
 export const getFacilityData = (state) => {
@@ -141,7 +141,7 @@ export const getFacilityData = (state) => {
   if (facilityState !== null) {
     return getFacilityDetails(facilityState)
   }
-  return null
+  return undefined
 }
 
 export const getFacilityChildren = (state) => {
@@ -149,7 +149,7 @@ export const getFacilityChildren = (state) => {
   if (facilityChildren !== null) {
     return getFacilityChildrenData(facilityChildren)
   }
-  return null
+  return undefined
 }
 
 export const getFacilityComplaints = (state) => {
@@ -157,5 +157,5 @@ export const getFacilityComplaints = (state) => {
   if (facilityComplaints !== null) {
     return getFacilityComplaintsData(facilityComplaints)
   }
-  return null
+  return undefined
 }
