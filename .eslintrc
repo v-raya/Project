@@ -37,8 +37,10 @@
     "object-curly-spacing": 0,
     "prefer-const": [2],
     "prefer-template": [2],
+    "radix": [2, "as-needed"],
     "react/require-extension": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "semi": [2, "never"]
   },
   "env": {
     "browser": true,
