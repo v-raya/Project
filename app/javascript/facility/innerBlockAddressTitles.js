@@ -7,7 +7,7 @@ const InnerBlockAddressTitles = ({
   cityCountry
 }) => {
   return (
-    <div className={'small_inner_block' + ' ' + classNameTitle}>
+    <div className={`${'small_inner_block' + ' '}${classNameTitle}`}>
       <p>{title}</p>
       <p>{streetApt}</p>
       <p>{cityCountry}</p>

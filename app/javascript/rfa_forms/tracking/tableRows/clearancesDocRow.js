@@ -22,12 +22,12 @@ const ClearancesDocRow = ({
           ? <a href={urlPrefixHelper(rfa02Link)}> {peopleDoc.title} </a>
           : peopleDoc.title
         return (
-          <tr key={'clearance' + peopleIndex + 'Edit' + itemIndex}>
+          <tr key={`clearance${peopleIndex}Edit${itemIndex}`}>
             <td><BinarySelectorField
-              id={'clearance' + peopleIndex + 'EditCheckbox' + itemIndex}
+              id={`clearance${peopleIndex}EditCheckbox${itemIndex}`}
               type='checkbox'
               key={itemIndex}
-              labelId={'checkLabel' + itemIndex}
+              labelId={`checkLabel${itemIndex}`}
               label={href}
               gridClassName='col-xs-12 align-row'
               onChange={(event) => handleChange('checked', event.target.checked, peopleIndex, itemIndex)}
@@ -36,19 +36,19 @@ const ClearancesDocRow = ({
             </td>
             <td>
               <DateField
-                id={'clearance' + peopleIndex + 'EditStartDate' + itemIndex}
+                id={`clearance${peopleIndex}EditStartDate${itemIndex}`}
                 value={FormatDateForDisplay(peopleDoc.start_date)}
                 onChange={(event) => handleChange('start_date', FormatDateForPersistance(event.target.value), peopleIndex, itemIndex)} />
             </td>
             <td>
               <DateField
-                id={'clearance' + peopleIndex + 'EditCompleteDate' + itemIndex}
+                id={`clearance${peopleIndex}EditCompleteDate${itemIndex}`}
                 value={FormatDateForDisplay(peopleDoc.completed_date)}
                 onChange={(event) => handleChange('completed_date', FormatDateForPersistance(event.target.value), peopleIndex, itemIndex)} />
             </td>
             <td>
               <TextAreaComponent
-                id={'clearance' + peopleIndex + 'EditText' + itemIndex}
+                id={`clearance${peopleIndex}EditText${itemIndex}`}
                 value={peopleDoc.notes}
                 onChange={(event) => handleChange('notes', event.target.value, peopleIndex, itemIndex)} />
             </td>
@@ -60,23 +60,23 @@ const ClearancesDocRow = ({
           ? <a href={urlPrefixHelper(rfa02Link)}> {peopleDoc.title} </a>
           : peopleDoc.title
         return (
-          <tr key={'clearance' + peopleIndex + 'Show' + index}>
-            <td id={'clearanceShowCheckbox' + index}>
+          <tr key={`clearance${peopleIndex}Show${index}`}>
+            <td id={`clearanceShowCheckbox${index}`}>
               <BinarySelectorField
                 type='checkbox'
                 key={index}
-                labelId={'checkLabel' + index}
+                labelId={`checkLabel${index}`}
                 label={href}
                 gridClassName='col-xs-12 align-row'
                 defaultChecked={peopleDoc.checked} />
             </td>
-            <td id={'clearance' + peopleIndex + 'ShowStartDate' + index}>
+            <td id={`clearance${peopleIndex}ShowStartDate${index}`}>
               {FormatDateForDisplay(peopleDoc.start_date)}
             </td>
-            <td id={'clearance' + peopleIndex + 'ShowCompleteDate' + index}>
+            <td id={`clearance${peopleIndex}ShowCompleteDate${index}`}>
               {FormatDateForDisplay(peopleDoc.completed_date)}
             </td>
-            <td id={'clearanceShowText' + index}>
+            <td id={`clearanceShowText${index}`}>
               {peopleDoc.notes}
             </td>
           </tr>

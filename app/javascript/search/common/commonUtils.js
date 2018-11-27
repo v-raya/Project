@@ -4,7 +4,7 @@ import Moment from 'moment'
 export const respectiveStreetAddressOrNA = (addresses, addressType) => {
   const addressObject = addresses && addresses.find(o => o.type === addressType)
   if (addressObject && addressObject.address.street_address) {
-    return addressObject.address.street_address + ','
+    return `${addressObject.address.street_address},`
   } else {
     return 'N/A'
   }
@@ -13,7 +13,7 @@ export const respectiveStreetAddressOrNA = (addresses, addressType) => {
 export const cityStateZipOfRespectiveAddressOrNA = (addresses, addressType) => {
   const addressObject = addresses && addresses.find(o => o.type === addressType)
   if (addressObject) {
-    const cityStateString = checkForValueOrBlank(addressObject.address.city) + ', ' + checkForValueOrBlank(addressObject.address.state) + ' ' + checkForValueOrBlank(addressObject.address.zip_code)
+    const cityStateString = `${checkForValueOrBlank(addressObject.address.city)}, ${checkForValueOrBlank(addressObject.address.state)} ${checkForValueOrBlank(addressObject.address.zip_code)}`
     return cityStateString === ',  ' ? '' : cityStateString
   } else {
     return 'N/A'
@@ -31,7 +31,7 @@ export const checkForValue = (value) => {
 export const checkAndSplitValue = (value) => {
   if (value !== undefined || '') {
     const filteredSet = ['*', '']
-    return value.split(' ').filter((val) => !filteredSet.includes(val)).map((val) => '*' + val + '*').join(' ')
+    return value.split(' ').filter((val) => !filteredSet.includes(val)).map((val) => `*${val}*`).join(' ')
   }
   return undefined
 }
@@ -59,7 +59,7 @@ export const respectiveNumberOrNA = (phones, phoneRelation) => {
 export const respectiveFullAddressOrNA = (addresses, addressType) => {
   const addressObject = addresses && addresses.find(o => o.type === addressType)
   if (addressObject) {
-    const stringForFullAddress = checkForValueOrBlank(addressObject.address.street_address) + ', ' + checkForValueOrBlank(addressObject.address.city) + ', ' + checkForValueOrBlank(addressObject.address.state) + ' ' + checkForValueOrBlank(addressObject.address.zip_code)
+    const stringForFullAddress = `${checkForValueOrBlank(addressObject.address.street_address)}, ${checkForValueOrBlank(addressObject.address.city)}, ${checkForValueOrBlank(addressObject.address.state)} ${checkForValueOrBlank(addressObject.address.zip_code)}`
     return stringForFullAddress === ', ,  ' ? '' : stringForFullAddress
   } else {
     return 'N/A'

@@ -36,6 +36,7 @@
     "no-void": [2],
     "object-curly-spacing": 0,
     "prefer-const": [2],
+    "prefer-template": [2],
     "react/require-extension": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },

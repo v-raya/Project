@@ -46,7 +46,7 @@ describe('Verify References Main', () => {
       suffixTypes={suffixTypes.items}
       prefixTypes={prefixTypes.items}
       nameTypes={nameTypes.items}
-      idPrefix={'reference' + 1}
+      idPrefix={`reference${1}`}
       validator={validator} />)
 
     referenceMainFieldObjectComp = mount(<ReferenceMain
@@ -60,7 +60,7 @@ describe('Verify References Main', () => {
       suffixTypes={suffixTypes.items}
       prefixTypes={prefixTypes.items}
       nameTypes={nameTypes.items}
-      idPrefix={'reference' + 1}
+      idPrefix={`reference${1}`}
       validator={validator} />)
   })
   it('verify component load', () => {

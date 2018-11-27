@@ -19,22 +19,22 @@ const B01SideBar = ({
       {
         applicants && applicants.map((applicant, index) => {
           return (
-            <div key={'applicant_id' + applicant.id + 'index' + index}
-              id={'rfa01b.Applicant' + applicant.id}>
+            <div key={`applicant_id${applicant.id}index${index}`}
+              id={`rfa01b.Applicant${applicant.id}`}>
               {applicant.id
                 ? (applicant.rfa1b_form && applicant.rfa1b_form.id
                   ? <NavLink
                     active={isNavLinkActive(applicant.rfa1b_form.id)}
                     clickHandler={() => handleNavLinkClick(applicant.rfa1b_form.id)}
-                    text={applicant.first_name + ' ' + applicant.last_name}
-                    href={urlPrefixHelper('/rfa/b01/' + applicant.rfa1b_form.id +
-                 '/edit?application_id=' + rfa01aApplicationId)} />
+                    text={`${applicant.first_name} ${applicant.last_name}`}
+                    href={urlPrefixHelper(`/rfa/b01/${applicant.rfa1b_form.id
+                    }/edit?application_id=${rfa01aApplicationId}`)} />
                   : <NavLink
                     active={isNavLinkActive(applicant.id)}
                     clickHandler={() => handleNavLinkClick(applicant.id)}
-                    text={applicant.first_name + ' ' + applicant.last_name}
-                    href={urlPrefixHelper('/rfa/b01/?application_id=' +
-                   rfa01aApplicationId + '&adult_id=' + applicant.id + '&api_url_path=applicants')} />)
+                    text={`${applicant.first_name} ${applicant.last_name}`}
+                    href={urlPrefixHelper(`/rfa/b01/?application_id=${
+                      rfa01aApplicationId}&adult_id=${applicant.id}&api_url_path=applicants`)} />)
                 : null
               }
             </div>
@@ -43,19 +43,19 @@ const B01SideBar = ({
       }{
         otherAdults && otherAdults.map((otherAdult, index) => {
           return (
-            <div key={'other_adult_id' + otherAdult.id + 'index' + index} >
+            <div key={`other_adult_id${otherAdult.id}index${index}`} >
               {otherAdult.id
                 ? (otherAdult.rfa1b_form && otherAdult.rfa1b_form.id
                   ? <NavLink
                     active={isNavLinkActive(otherAdult.rfa1b_form.id)}
                     clickHandler={() => handleNavLinkClick(otherAdult)}
-                    text={otherAdult.first_name + ' ' + otherAdult.last_name}
-                    href={urlPrefixHelper('/rfa/b01/' + otherAdult.rfa1b_form.id + '/edit?application_id=' + rfa01aApplicationId)} />
+                    text={`${otherAdult.first_name} ${otherAdult.last_name}`}
+                    href={urlPrefixHelper(`/rfa/b01/${otherAdult.rfa1b_form.id}/edit?application_id=${rfa01aApplicationId}`)} />
                   : <NavLink
                     active={isNavLinkActive(otherAdult.id)}
                     clickHandler={() => handleNavLinkClick(otherAdult.id)}
-                    text={otherAdult.first_name + ' ' + otherAdult.last_name}
-                    href={urlPrefixHelper('/rfa/b01/?application_id=' + rfa01aApplicationId + '&adult_id=' + otherAdult.id + '&api_url_path=other-adults')} />)
+                    text={`${otherAdult.first_name} ${otherAdult.last_name}`}
+                    href={urlPrefixHelper(`/rfa/b01/?application_id=${rfa01aApplicationId}&adult_id=${otherAdult.id}&api_url_path=other-adults`)} />)
                 : null
               }
             </div>

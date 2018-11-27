@@ -18,15 +18,15 @@ describe('verify agency component fields ', () => {
 
     agencyComponent = shallow(<AgencyComponent
       index={indexValue}
-      id={'Q1-' + indexValue}
+      id={`Q1-${indexValue}`}
       defKey='foster_care_licenses_q1'
       subKey='agencies'
       agencies={q1History.agencies}
       label='Agency Name'
       placeholder=''
       dropdownLabel='license type'
-      inputId={'agency-q1-name-' + indexValue}
-      dropDownId={'agency-q1-type-' + indexValue}
+      inputId={`agency-q1-name-${indexValue}`}
+      dropDownId={`agency-q1-type-${indexValue}`}
       optionList={stateTypes.items}
       dropDownValue='a'
       inputValue='ABC'
@@ -46,13 +46,13 @@ describe('verify agency component fields ', () => {
   })
 
   it('verify onChange function for agency name field', () => {
-    const changeAgencyName = agencyComponent.find('#agency-q1-name-' + indexValue)
+    const changeAgencyName = agencyComponent.find(`#agency-q1-name-${indexValue}`)
     changeAgencyName.simulate('change', {target: {value: 'Agency New'}})
     expect(onAgencyChangeSpy).toHaveBeenCalledWith({target: {value: 'Agency New'}}, [ 'new' ], indexValue, 'name', 'foster_care_licenses_q1', 'agencies', 'Agency New')
   })
 
   it('verify agency change drop down', () => {
-    const agencyDropDownField = agencyComponent.find('#agency-q1-type-' + indexValue)
+    const agencyDropDownField = agencyComponent.find(`#agency-q1-type-${indexValue}`)
     agencyDropDownField.simulate('change', {target: {options: {'1': {value: '1', text: 'License'}, selectedIndex: 1}}})
     expect(onAgencyChangeSpy).toHaveBeenCalledWith({target: {options: { '1': { value: '1', text: 'License' }, selectedIndex: 1 }}}, [ 'new' ], indexValue, 'type', 'foster_care_licenses_q1', 'agencies', ({ id: '1', value: 'License' }))
   })

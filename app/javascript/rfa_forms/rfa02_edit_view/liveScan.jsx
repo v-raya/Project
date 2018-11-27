@@ -20,7 +20,7 @@ export default class LiveScan extends React.Component {
           colHeaders={['Live Scan', 'Submitted', 'Received', 'Notes']}
           rowsComponent={
             <LiveScanRow
-              id={'liveScan' + this.props.peopleIndex}
+              id={`liveScan${this.props.peopleIndex}`}
               handleChange={this.handleLiveScan}
               checkListDocuments={this.props.liveScanList}
               editMode={this.props.editMode}

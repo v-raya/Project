@@ -41,7 +41,7 @@ export default class CheckboxGroup extends React.Component {
             return (
               <BinarySelectorField
                 type={'checkbox'}
-                id={'age-' + index}
+                id={`age-${index}`}
                 gridClassName={item.value === agePreferenceText ? 'col-xs-12' : 'col-xs-4'}
                 key={index}
                 disabled={item.value !== agePreferenceText ? isNoPreferenceChecked : false}

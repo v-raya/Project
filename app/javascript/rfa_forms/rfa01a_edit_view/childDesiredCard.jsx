@@ -57,7 +57,7 @@ export default class ChildDesiredCard extends React.Component {
               return (
                 <BinarySelectorField gridClassName={'col-md-4'}
                   key={index}
-                  id={'sibling-' + index}
+                  id={`sibling-${index}`}
                   label={sibling.value}
                   type='radio'
                   value={getDictionaryId(this.props.desiredChildSection.preferred_sibling_group_up_to) === sibling.id}

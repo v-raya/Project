@@ -28,7 +28,7 @@ export default class TrackingSideBar extends React.Component {
             <NavLinks>
               <div className='tracking-sidenav-title'>
                 <NavLink
-                  text={this.props.facilityName + ' ' + titleSuffix}
+                  text={`${this.props.facilityName} ${titleSuffix}`}
                   clickHandler={() => this.props.handleHrefClick('#facility-card')}
                   href={'#facility-card'} />
               </div>

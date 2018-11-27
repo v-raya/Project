@@ -6,7 +6,7 @@ const SmallInnerBlockDetails = ({
   value
 }) => {
   return (
-    <div className={'small_inner_block' + ' ' + classNameTitle}>
+    <div className={`${'small_inner_block' + ' '}${classNameTitle}`}>
       <p>{title}</p>
       <p>{value}</p>
     </div>

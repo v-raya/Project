@@ -38,7 +38,7 @@ export default class PhoneComponent extends React.Component {
       <div className='card-body'>
         {
           phonesList.map((numberFields, index) => {
-            const idPrefix = this.props.idPrefix + 'phones[' + index + '].'
+            const idPrefix = `${this.props.idPrefix}phones[${index}].`
             return (
               <div key={idPrefix} className='row list-item'>
                 <a onClick={(event) => this.onPhoneClickClose(index)}

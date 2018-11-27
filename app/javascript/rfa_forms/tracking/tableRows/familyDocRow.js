@@ -15,12 +15,12 @@ const FamilyDocRow = ({
     editMode
       ? trackingDocuments.items.map((docs, index) => {
         return (
-          <tr key={'familyEdit' + index}>
+          <tr key={`familyEdit${index}`}>
             <td><BinarySelectorField
-              id={'familyEditCheckbox' + index}
+              id={`familyEditCheckbox${index}`}
               type='checkbox'
               key={index}
-              labelId={'checkLabel' + index}
+              labelId={`checkLabel${index}`}
               label={docs.title}
               gridClassName='col-xs-12 align-row'
               onChange={(event) => handleChange('checked', event.target.checked, index)}
@@ -30,13 +30,13 @@ const FamilyDocRow = ({
             <td />
             <td>
               <DateField
-                id={'familyEditRecievedDate' + index}
+                id={`familyEditRecievedDate${index}`}
                 value={FormatDateForDisplay(docs.received_date)}
                 onChange={(event) => handleChange('received_date', FormatDateForPersistance(event.target.value), index)} />
             </td>
             <td>
               <TextAreaComponent
-                id={'familyEditNotes' + index}
+                id={`familyEditNotes${index}`}
                 value={docs.notes}
                 onChange={(event) => handleChange('notes', event.target.value, index)} />
             </td>
@@ -45,21 +45,21 @@ const FamilyDocRow = ({
       })
       : trackingDocuments.items.map((docs, index) => {
         return (
-          <tr key={'familyShow' + index}>
+          <tr key={`familyShow${index}`}>
             <td><BinarySelectorField
-              id={'familyShowCheckbox' + index}
+              id={`familyShowCheckbox${index}`}
               type='checkbox'
               key={index}
-              labelId={'checkLabel' + index}
+              labelId={`checkLabel${index}`}
               label={docs.title}
               gridClassName='col-xs-12 align-row'
               defaultChecked={docs.checked} />
             </td>
             <td />
-            <td id={'familyShowRecievedDate' + index}>
+            <td id={`familyShowRecievedDate${index}`}>
               {FormatDateForDisplay(docs.received_date)}
             </td>
-            <td id={'familyShowNotes' + index}>
+            <td id={`familyShowNotes${index}`}>
               {docs.notes}
             </td>
           </tr>

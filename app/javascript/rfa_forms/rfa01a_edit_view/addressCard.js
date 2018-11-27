@@ -15,25 +15,25 @@ export default class AddressCard extends React.Component {
     this.onMailingAddressChange = this.onMailingAddressChange.bind(this)
     this.onPhysicalAddressChange = this.onPhysicalAddressChange.bind(this)
     //  this.isPhysicalDifferentThanMailingAddress = this.isPhysicalDifferentThanMailingAddress.bind(this)
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'physical_mailing_similar', {rule: 'isRequiredBoolean', message: 'Required'})
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].street_address', {rule: 'isRequired', message: 'Required'})
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].zip', {rule: 'isRequired', message: 'Required'})
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].city', {rule: 'isRequired', message: 'Required'})
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[0].state', {rule: 'isRequiredBoolean', message: 'Required'})
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}physical_mailing_similar`, {rule: 'isRequiredBoolean', message: 'Required'})
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}addresses[0].street_address`, {rule: 'isRequired', message: 'Required'})
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}addresses[0].zip`, {rule: 'isRequired', message: 'Required'})
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}addresses[0].city`, {rule: 'isRequired', message: 'Required'})
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}addresses[0].state`, {rule: 'isRequiredBoolean', message: 'Required'})
 
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[1].street_address',
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}addresses[1].street_address`,
       {rule: 'isRequiredIf',
         message: 'Required',
         condition: () => this.isPhysicalDifferentThanMailingAddress()})
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[1].zip',
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}addresses[1].zip`,
       {rule: 'isRequiredIf',
         message: 'Required',
         condition: () => this.isPhysicalDifferentThanMailingAddress()})
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[1].city',
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}addresses[1].city`,
       {rule: 'isRequiredIf',
         message: 'Required',
         condition: () => this.isPhysicalDifferentThanMailingAddress()})
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'addresses[1].state',
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}addresses[1].state`,
       {rule: 'isRequiredIf',
         message: 'Required',
         condition: () => this.isPhysicalDifferentThanMailingAddress()})

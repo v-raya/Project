@@ -111,7 +111,7 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
     return (
       <div className='applicant_marital_history_cards'>
         <div id='ApplicantMaritalHistoryCardGroup' onClick={() => this.props.setFocusState('ApplicantMaritalHistoryCardGroup')}
-          className={this.props.getFocusClassName('ApplicantMaritalHistoryCardGroup') + ' ' + 'card phone-section double-gap-top active-bar'}>
+          className={`${this.props.getFocusClassName('ApplicantMaritalHistoryCardGroup')} ` + `card phone-section double-gap-top active-bar`}>
           <div className='card-header'>
             <span>Applicants Marital / Domestic Partnership History</span>
           </div>
@@ -119,12 +119,12 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
             {
               applicantMaritalHistories.map((applicantMaritalHistory, index) => {
                 return (
-                  <div key={'formerSpouse' + '[' + index + ']'} className='row list-item' >
+                  <div key={`${'formerSpouse' + '['}${index}]`} className='row list-item' >
                     <div> <a onClick={(event) => this.onMaritalHistoryClickClose(index)} className='pull-right remove-btn'>Remove</a>
                     </div>
                     { <ApplicantMaritalHistoryCard
                       index={index}
-                      idPrefix={'applicantsHistory.former_spouses' + '[' + index + '].'}
+                      idPrefix={`${'applicantsHistory.former_spouses' + '['}${index}].`}
                       applicants={this.props.applicants}
                       maritalHistory={applicantMaritalHistory}
                       validator={this.props.validator}
@@ -154,12 +154,12 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
               adultChildrenList.map((adultChild, index) => {
                 return (
 
-                  <div key={'adultChild' + '[' + index + ']'} className='row list-item' >
+                  <div key={`${'adultChild' + '['}${index}]`} className='row list-item' >
                     <a onClick={() => this.onAdultChildClickClose(index)} className='pull-right remove-btn'>Remove</a>
 
                     { <AdultChildrenFields
                       index={index}
-                      idPrefix={'applicantsHistory.adult_children' + '[' + index + '].'}
+                      idPrefix={`${'applicantsHistory.adult_children' + '['}${index}].`}
                       applicants={this.props.applicants}
                       adultChild={adultChild}
                       validator={this.props.validator}

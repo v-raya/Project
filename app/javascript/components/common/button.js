@@ -8,7 +8,7 @@ const Button = ({
   disabled,
   textAlignment
 }) => (
-  <div className={'text-' + textAlignment}>
+  <div className={`text-${textAlignment}`}>
     <button className='btn'
       disabled={disabled}
       id={buttonId}

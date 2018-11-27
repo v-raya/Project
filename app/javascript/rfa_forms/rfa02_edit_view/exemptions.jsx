@@ -33,7 +33,7 @@ export default class Exemptions extends React.Component {
         </div>
         <div className='col-xs-6'>
           {this.props.editMode ? <YesNoRadioComponent
-            idPrefix={'exemptionRequest' + this.props.peopleIndex}
+            idPrefix={`exemptionRequest${this.props.peopleIndex}`}
             label='Exemption requested by applicant?'
             gridClassName='col-xs-12 no-padding'
             value={exemptionList.get('is_requested')}
@@ -46,7 +46,7 @@ export default class Exemptions extends React.Component {
           }
           {isTrue(exemptionList.get('is_requested'))
             ? <DateNoteFields
-              id={'exemptionRequest' + this.props.peopleIndex}
+              id={`exemptionRequest${this.props.peopleIndex}`}
               dateValue={exemptionList.get('date')}
               notesValue={exemptionList.get('notes')}
               editMode={this.props.editMode}
@@ -58,7 +58,7 @@ export default class Exemptions extends React.Component {
           ? <div className='col-xs-6'>
             {this.props.editMode
               ? <YesNoRadioComponent
-                idPrefix={'exemptionStatus' + this.props.peopleIndex}
+                idPrefix={`exemptionStatus${this.props.peopleIndex}`}
                 label='Exemption approved or denied?'
                 gridClassName='col-xs-12 no-padding'
                 value={exemptionList.getIn(['approval', 'is_approved'])}
@@ -74,7 +74,7 @@ export default class Exemptions extends React.Component {
               />
             }
             {<DateNoteFields
-              id={'exemptionApproval' + this.props.peopleIndex}
+              id={`exemptionApproval${this.props.peopleIndex}`}
               subKey='approval'
               handleChange={this.exemptionHandler}
               dateValue={exemptionList.getIn(['approval', 'date'])}

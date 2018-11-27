@@ -21,7 +21,7 @@ const DateNoteFields = ({
         <div className={dateFieldClass}>
           <p>Date</p>
           <DateField
-            id={id + 'date' + subKey}
+            id={`${id}date${subKey}`}
             value={FormatDateForDisplay(dateValue)}
             onChange={(event) => handleChange('date', FormatDateForPersistance(event.target.value), subKey)}
           />
@@ -29,7 +29,7 @@ const DateNoteFields = ({
         <div className={textFieldClass}>
           <p>Notes</p>
           <TextAreaComponent
-            id={id + 'notes' + subKey}
+            id={`${id}notes${subKey}`}
             value={notesValue}
             onChange={(event) => handleChange('notes', event.target.value, subKey)}
           />

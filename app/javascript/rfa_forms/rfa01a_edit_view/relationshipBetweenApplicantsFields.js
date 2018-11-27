@@ -19,7 +19,7 @@ const dateValidator = {rule: 'isValidDate', message: 'date is invalid'}
 export default class RelationshipBetweenApplicantsFields extends React.Component {
   constructor (props) {
     super(props)
-    this.validator = this.props.validator.addFieldValidation(this.props.idPrefix + 'date_of_relationship', dateValidator)
+    this.validator = this.props.validator.addFieldValidation(`${this.props.idPrefix}date_of_relationship`, dateValidator)
   }
   render () {
     const relationship = this.props.relationshipBetweenApplicants
@@ -27,9 +27,9 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
     const relationshipType = typeof (relationship.relationship_type) !== 'undefined' && relationship.relationship_type !== null ? relationship.relationship_type.value : false
     const hideRelationshipDetails = relationshipType === 'Married' || relationshipType === 'Domestic Partnership' ? 'row' : 'row hidden'
     const hideOtherRelationship = relationshipType === 'Other' ? 'row' : 'row hidden'
-    const applicantsFullNames = applicants.length > 1 ? applicants[0].first_name + ' ' + applicants[0].middle_name + ' ' + applicants[0].last_name + ' ' + ' and' + ' ' + applicants[1].first_name + ' ' + applicants[1].middle_name + ' ' + applicants[1].last_name : ''
+    const applicantsFullNames = applicants.length > 1 ? `${applicants[0].first_name} ${applicants[0].middle_name} ${applicants[0].last_name} ` + ` and` + ` ${applicants[1].first_name} ${applicants[1].middle_name} ${applicants[1].last_name}` : ''
 
-    const relationshipId = this.props.idPrefix + 'date_of_relationship'
+    const relationshipId = `${this.props.idPrefix}date_of_relationship`
 
     return (
       <form>
@@ -38,11 +38,11 @@ export default class RelationshipBetweenApplicantsFields extends React.Component
             selectClassName='reusable-select'
             value={getDictionaryId(relationship.relationship_type)}
             optionList={this.props.relationshipTypes}
-            label={'Relationship between ' + applicantsFullNames + ' (required)'}
+            label={`Relationship between ${applicantsFullNames} (required)`}
             onChange={(event) => this.props.setParentState('relationship_type', dictionaryNilSelect(event.target.options))} />
         </div>
-        <div className={'relationship-status ' + hideRelationshipDetails}>Status of relationship</div>
-        <div className={'relationship-status-details ' + hideRelationshipDetails} >
+        <div className={`relationship-status ${hideRelationshipDetails}`}>Status of relationship</div>
+        <div className={`relationship-status-details ${hideRelationshipDetails}`} >
 
           <DateField
             gridClassName='col-md-4'

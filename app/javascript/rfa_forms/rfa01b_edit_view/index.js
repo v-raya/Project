@@ -127,16 +127,16 @@ export default class Rfa01bEditView extends React.Component {
   }
 
   saveProgress () {
-    const url = '/rfa/b01/' + this.state.application.id
+    const url = `/rfa/b01/${this.state.application.id}`
     return this.fetchToRails(url, 'PUT', {a01_id: this.state.rfa_a01_application.id, b01: this.state.application})
   }
 
   submit () {
     const newApp = Immutable.fromJS(this.state.application).setIn(['metadata', 'submit_enabled'], false)
-    const saveUrl = '/rfa/b01/' + this.state.application.id
+    const saveUrl = `/rfa/b01/${this.state.application.id}`
     this.fetchToRails(saveUrl, 'PUT', {a01_id: this.state.rfa_a01_application.id, b01: newApp.toJS()}).then(() => {
       if (this.state.errors && !this.state.errors.issue_details) {
-        const submitUrl = '/rfa/a01/' + this.state.rfa_a01_application.id + '/b01/' + this.state.application.id + '/submit'
+        const submitUrl = `/rfa/a01/${this.state.rfa_a01_application.id}/b01/${this.state.application.id}/submit`
         this.fetchToRails(submitUrl, 'POST', {a01_id: this.state.rfa_a01_application.id, b01_id: this.state.application.id})
       }
     })
@@ -213,7 +213,7 @@ export default class Rfa01bEditView extends React.Component {
   }
 
   getApplicantFullName (applicants) {
-    return applicants ? applicants.applicant_first_name + ' ' + applicants.applicant_last_name : undefined
+    return applicants ? `${applicants.applicant_first_name} ${applicants.applicant_last_name}` : undefined
   }
 
   render () {
@@ -226,7 +226,7 @@ export default class Rfa01bEditView extends React.Component {
         pageSubHeader={this.getApplicantFullName(this.state.rfa_b01_application)}
         onSaveProgressClick={this.saveProgress}
         disableSave={this.state.disableSave}
-        submitId={'submitApplication' + this.state.rfa_a01_application.id}
+        submitId={`submitApplication${this.state.rfa_a01_application.id}`}
         disableSubmit={this.state.disableSubmit}
         onSubmitClick={this.submit}
         rfa01aApplicationId={this.state.rfa_a01_application.id}

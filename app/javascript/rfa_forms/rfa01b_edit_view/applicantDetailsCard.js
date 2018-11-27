@@ -81,14 +81,14 @@ export default class ApplicantDetailsCard extends React.Component {
         textAlignment='left'
         label='Applicant or Other Adult Information'
         handleOnClick={() => this.props.setFocusState('applicantDetailsCard')}
-        focusClassName={this.props.getFocusClassName('applicantDetailsCard') + ' ' + 'card phone-section double-gap-top active-bar'}>
+        focusClassName={`${this.props.getFocusClassName('applicantDetailsCard')} ` + `card phone-section double-gap-top active-bar`}>
         <div><p>{Rfa01bApplicantDetailsCardText.perjury}</p></div>
         <div className='col-lg-12'>
           <InputComponent
             gridClassName='col-md-12'
             id='NameOfResourceFamily'
             value={this.props.resourceFamily}
-            label={'Name of Resource Family' + RfaCommon.requiredIndicator}
+            label={`Name of Resource Family${RfaCommon.requiredIndicator}`}
             type='text'
             onChange={(event) => this.props.setParentState('resource_family_name', event.target.value)} />
         </div>
@@ -109,7 +109,7 @@ export default class ApplicantDetailsCard extends React.Component {
           <AddressComponent
             index={0}
             stateTypes={this.props.stateTypes}
-            addressTitle={'Residence Address' + RfaCommon.requiredIndicator}
+            addressTitle={`Residence Address${RfaCommon.requiredIndicator}`}
             id='street_address'
             label=' (required)'
             addressFields={residenceAddressValues}
@@ -130,7 +130,7 @@ export default class ApplicantDetailsCard extends React.Component {
 
           <DateField
             gridClassName='col-md-4'
-            label={'Date of Birth' + RfaCommon.requiredIndicator}
+            label={`Date of Birth${RfaCommon.requiredIndicator}`}
             id='date_of_birth'
             value={FormatDateForDisplay(application.date_of_birth)}
             errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}
@@ -143,7 +143,7 @@ export default class ApplicantDetailsCard extends React.Component {
             gridClassName='col-md-4'
             id='driversLicenseNumberId'
             value={application.driver_license}
-            label={application.driver_license_state ? 'Driver License Number' + RfaCommon.requiredIndicator : 'Driver License Number'}
+            label={application.driver_license_state ? `Driver License Number${RfaCommon.requiredIndicator}` : 'Driver License Number'}
             placeholder=''
             type='text'
             onChange={(event) => this.props.setParentState('driver_license', event.target.value)}
@@ -156,7 +156,7 @@ export default class ApplicantDetailsCard extends React.Component {
             selectClassName='reusable-select'
             value={getDictionaryId(application.driver_license_state)}
             optionList={this.props.stateTypes}
-            label={application.driver_license ? 'Driver License State' + RfaCommon.requiredIndicator : 'Driver License State'}
+            label={application.driver_license ? `Driver License State${RfaCommon.requiredIndicator}` : 'Driver License State'}
             onChange={(event) => this.props.setParentState('driver_license_state', dictionaryNilSelect(event.target.options))}
             errors={fieldErrorsAsImmutableSet()}
           //  onBlur={(event) => this.validateDLcombo()}

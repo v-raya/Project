@@ -36,10 +36,10 @@ export default class ContactEditView extends React.Component {
   saveProgress () {
     let url, method
     if (this.state.contact.id) {
-      url = '/rfa/a01/' + this.state.rfa_application.id + '/contacts/' + this.state.contact.id
+      url = `/rfa/a01/${this.state.rfa_application.id}/contacts/${this.state.contact.id}`
       method = 'PUT'
     } else {
-      url = '/rfa/a01/' + this.state.rfa_application.id + '/contacts/'
+      url = `/rfa/a01/${this.state.rfa_application.id}/contacts/`
       method = 'POST'
     }
     return this.fetchToRails(url, method, this.state.contact)
@@ -115,14 +115,14 @@ export default class ContactEditView extends React.Component {
                         <div className='col-xs-4' >
                           <DateField
                             id='dateOfContact'
-                            label={'Date' + RfaCommon.requiredIndicator}
+                            label={`Date${RfaCommon.requiredIndicator}`}
                             value={FormatDateForDisplay(contact.date)}
                             onChange={(event) => this.setContactState('date', FormatDateForPersistance(event.target.value))} />
                         </div>
                         <div className='col-xs-2' />
                         <div className='col-xs-4' >
                           <YesNoRadioComponent
-                            label={'Classification' + RfaCommon.requiredIndicator}
+                            label={`Classification${RfaCommon.requiredIndicator}`}
                             gridClassName='col-xs-6 no-padding'
                             labelDefaultYes='Confidential'
                             labelDefaultNo='Public'
@@ -138,7 +138,7 @@ export default class ContactEditView extends React.Component {
                             id='methodOfContact'
                             value={getDictionaryId(contact.contact_method)}
                             optionList={this.props.contact_methods}
-                            label={'Method of Contact' + RfaCommon.requiredIndicator}
+                            label={`Method of Contact${RfaCommon.requiredIndicator}`}
                             onChange={(event) => this.setContactState('contact_method', dictionaryNilSelect(event.target.options))} />
                         </div>
                       </div>
@@ -151,7 +151,7 @@ export default class ContactEditView extends React.Component {
                         <div className='col-xs-12'>
                           <InputComponent
                             id='contactTitle'
-                            label={'Title' + RfaCommon.requiredIndicator}
+                            label={`Title${RfaCommon.requiredIndicator}`}
                             value={contact.title}
                             onChange={(event) => this.setContactState('title', event.target.value)} />
                           <TextAreaComponent

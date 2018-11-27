@@ -15,12 +15,12 @@ const DesiredChildRelationships = ({
       {
         applicants && applicants.map((applicant, subIndex) => {
           return (
-            <div className='col-md-12' key={'desiredChildRelationships' + index + 'child' + subIndex} >
+            <div className='col-md-12' key={`desiredChildRelationships${index}child${subIndex}`} >
               <InputComponent
                 gridClassName='col-md-4'
-                id={'relationship_to_applicant' + index + 'child' + subIndex}
+                id={`relationship_to_applicant${index}child${subIndex}`}
                 value={checkRelationshipFreeformPresence(child, subIndex)}
-                label={'Relationship to Applicant ' + applicant.first_name + ' ' + applicant.last_name}
+                label={`Relationship to Applicant ${applicant.first_name} ${applicant.last_name}`}
                 placeholder=''
                 onChange={(event) => handleRelationshipChange(applicant, event.target.value, index, subIndex)} />
             </div>

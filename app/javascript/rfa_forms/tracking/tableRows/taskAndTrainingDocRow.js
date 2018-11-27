@@ -15,12 +15,12 @@ const taskAndTrainingDocRow = ({
     editMode
       ? trackingDocuments.items.map((docs, index) => {
         return (
-          <tr key={'taskAndTrainingEdit' + index}>
+          <tr key={`taskAndTrainingEdit${index}`}>
             <td><BinarySelectorField
-              id={'taskAndTrainingEditCheckbox' + index}
+              id={`taskAndTrainingEditCheckbox${index}`}
               type='checkbox'
               key={index}
-              labelId={'checkLabel' + index}
+              labelId={`checkLabel${index}`}
               label={docs.title}
               gridClassName='col-xs-12 align-row'
               onChange={(event) => handleChange('checked', event.target.checked, index)}
@@ -30,13 +30,13 @@ const taskAndTrainingDocRow = ({
             <td />
             <td>
               <DateField
-                id={'taskAndTrainingEditCompletedDate' + index}
+                id={`taskAndTrainingEditCompletedDate${index}`}
                 value={FormatDateForDisplay(docs.completed_date)}
                 onChange={(event) => handleChange('completed_date', FormatDateForPersistance(event.target.value), index)} />
             </td>
             <td>
               <TextAreaComponent
-                id={'taskAndTrainingEditNotes' + index}
+                id={`taskAndTrainingEditNotes${index}`}
                 value={docs.notes}
                 onChange={(event) => handleChange('notes', event.target.value, index)} />
             </td>
@@ -46,21 +46,21 @@ const taskAndTrainingDocRow = ({
 
       : trackingDocuments.items.map((docs, index) => {
         return (
-          <tr key={'taskAndTrainingShow' + index}>
+          <tr key={`taskAndTrainingShow${index}`}>
             <td><BinarySelectorField
-              id={'taskAndTrainingShowCheckbox' + index}
+              id={`taskAndTrainingShowCheckbox${index}`}
               type='checkbox'
               key={index}
-              labelId={'checkLabel' + index}
+              labelId={`checkLabel${index}`}
               label={docs.title}
               gridClassName='col-xs-12 align-row'
               defaultChecked={docs.checked} />
             </td>
             <td />
-            <td id={'taskAndTrainingShowCompletedDate' + index}>
+            <td id={`taskAndTrainingShowCompletedDate${index}`}>
               {FormatDateForDisplay(docs.completed_date)}
             </td>
-            <td id={'taskAndTrainingShowNotes' + index}>
+            <td id={`taskAndTrainingShowNotes${index}`}>
               {docs.notes}
             </td>
           </tr>

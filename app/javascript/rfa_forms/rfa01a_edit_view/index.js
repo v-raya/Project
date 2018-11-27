@@ -109,7 +109,7 @@ export default class Rfa01EditView extends React.Component {
     const newReferenceList = unMaskedPhoneFields(newOverAllState.getIn(['references', 'items']), 'phone_number')
     const finalState = newOverAllState.getIn(['references', 'items']) ? newOverAllState.setIn(['references', 'items'], newReferenceList) : newOverAllState
 
-    const url = '/rfa/a01/' + this.state.application.get('id')
+    const url = `/rfa/a01/${this.state.application.get('id')}`
     return this.fetchToRails(url, 'PUT', finalState.toJS())
   }
 
@@ -118,7 +118,7 @@ export default class Rfa01EditView extends React.Component {
     this.setState({application: newApp})
     this.saveProgress().then(() => {
       if (this.state.errors && !this.state.errors.issue_details) {
-        const url = '/rfa/a01/' + this.state.application.get('id') + '/submit'
+        const url = `/rfa/a01/${this.state.application.get('id')}/submit`
         this.fetchToRails(url, 'POST', newApp.toJS())
       }
     })
@@ -187,7 +187,7 @@ export default class Rfa01EditView extends React.Component {
         saveProgressId='saveProgress'
         onSaveProgressClick={this.saveProgress}
         disableSave={this.state.disableSave}
-        submitId={'submitApplication' + stateApplicationJS.id}
+        submitId={`submitApplication${stateApplicationJS.id}`}
         disableSubmit={this.state.disableSubmit}
         onSubmitClick={this.submit}
         rfa01aApplicationId={stateApplicationJS.id}

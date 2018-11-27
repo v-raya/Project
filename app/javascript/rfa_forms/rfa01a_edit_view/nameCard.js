@@ -28,8 +28,8 @@ export default class NameCard extends React.PureComponent {
     this.removeCard = this.removeCard.bind(this)
     this.handleNameChange = this.handleNameChange.bind(this)
 
-    this.firstNameValidationId = this.props.idPrefix + 'first_name'
-    this.lastNameValidationId = this.props.idPrefix + 'last_name'
+    this.firstNameValidationId = `${this.props.idPrefix}first_name`
+    this.lastNameValidationId = `${this.props.idPrefix}last_name`
     this.props.validator.addFieldValidation(this.firstNameValidationId, requiredNameRule)
     this.props.validator.addFieldValidation(this.lastNameValidationId, requiredNameRule)
   }
@@ -83,7 +83,7 @@ export default class NameCard extends React.PureComponent {
                   className='pull-right remove-btn'>Remove</a>
                 <CompleteNameFields
                   index={index}
-                  idPrefix={this.props.idPrefix + 'other_names[' + index + '].'}
+                  idPrefix={`${this.props.idPrefix}other_names[${index}].`}
                   firstName={nameCardFields.first_name}
                   middleName={nameCardFields.middle_name}
                   lastName={nameCardFields.last_name}

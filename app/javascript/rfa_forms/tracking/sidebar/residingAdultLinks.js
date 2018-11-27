@@ -14,7 +14,7 @@ const ResidingAdultLinks = ({
   residingAdults = residingAdults.adults
   return (
     residingAdults.map((residingAdult, index) => {
-      const href = '#ResidingAdult' + indexes[index] + '-tracking-card'
+      const href = `#ResidingAdult${indexes[index]}-tracking-card`
       return (
         <div key={index}>
           <NavLink

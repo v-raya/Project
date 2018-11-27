@@ -89,7 +89,7 @@ export default class Rfa01cEditView extends React.Component {
       !(!validateStatus(this.state.rfa_a01_application.status) &&
      this.checkBFormsForSubmit() &&
      this.validateAllRequiredForSubmit(this.state.application)))
-    const url = '/rfa/a01/' + this.state.rfa_a01_application.id + '/c01/' + this.state.application.id
+    const url = `/rfa/a01/${this.state.rfa_a01_application.id}/c01/${this.state.application.id}`
     return this.fetchToRails(url, 'PUT', newApp.toJS())
   }
 
@@ -98,7 +98,7 @@ export default class Rfa01cEditView extends React.Component {
     this.setState({application: newApp})
     this.saveProgress().then(() => {
       if (this.state.errors && !this.state.errors.issue_details) {
-        const url = '/rfa/a01/' + this.state.rfa_a01_application.id + '/c01/' + this.state.application.id + '/submit'
+        const url = `/rfa/a01/${this.state.rfa_a01_application.id}/c01/${this.state.application.id}/submit`
         this.fetchToRails(url, 'POST', {a01_id: this.state.rfa_a01_application.id, c01_id: this.state.application.id})
       }
     })
@@ -158,7 +158,7 @@ export default class Rfa01cEditView extends React.Component {
         saveProgressId='desiredChildCardsaveProgress'
         onSaveProgressClick={this.saveProgress}
         disableSave={this.state.disableSave}
-        submitId={'submitApplication' + this.state.rfa_a01_application.id}
+        submitId={`submitApplication${this.state.rfa_a01_application.id}`}
         disableSubmit={this.state.disableSubmit}
         onSubmitClick={this.submit}
         rfa01aApplicationId={this.state.rfa_a01_application.id}

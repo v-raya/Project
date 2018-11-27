@@ -64,18 +64,18 @@ export default class TrackPeopleDocs extends React.Component {
     const peopleDocuments = trackingDocuments.people_documents
 
     const Rfa02Link = this.props.rfa02Id
-      ? ('/trackings/' + this.props.trackingId + '/a02/' + String(this.props.rfa02Id) + '/edit')
-      : ('/trackings/' + this.props.trackingId + '/a02/')
+      ? (`/trackings/${this.props.trackingId}/a02/${String(this.props.rfa02Id)}/edit`)
+      : (`/trackings/${this.props.trackingId}/a02/`)
     return (
       peopleDocuments.map((peopleDoc, peopleIndex) => {
-        const hrefId = peopleDoc.person_type.replace(/\s+/g, '') + peopleIndex + '-tracking-card'
+        const hrefId = `${peopleDoc.person_type.replace(/\s+/g, '') + peopleIndex}-tracking-card`
 
         return (
           <div key={peopleIndex} >
-            <ScrollSpy onEnter={() => this.props.handleHrefClick('#' + hrefId)}>
+            <ScrollSpy onEnter={() => this.props.handleHrefClick(`#${hrefId}`)}>
               <div className='tracking-card' id={hrefId}>
                 <div className='tracking-card-header people_documents'>
-                  <h3>{peopleDoc.person_type + ': ' + peopleDoc.person_name + ' RFA Documents'}</h3>
+                  <h3>{`${peopleDoc.person_type}: ${peopleDoc.person_name} RFA Documents`}</h3>
                 </div>
                 <TrackingTable
                   colHeaders={['Individual Documents', 'Started', 'Completed', 'Notes']}

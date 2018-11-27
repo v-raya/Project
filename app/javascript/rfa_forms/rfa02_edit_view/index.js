@@ -51,7 +51,7 @@ export default class Rfa02EditView extends React.Component {
 
   saveProgress (event) {
     this.setState({ cardBeingEdited: false })
-    const url = '/trackings/' + this.state.tracking.id + '/a02/' + this.state.rfa02.get('id')
+    const url = `/trackings/${this.state.tracking.id}/a02/${this.state.rfa02.get('id')}`
     fetchRequest(url, 'PUT', this.state.rfa02.toJS())
       .then((response) => {
         return response.json()
@@ -91,7 +91,7 @@ export default class Rfa02EditView extends React.Component {
         <BreadCrumb
           navigationElements={[
             <a href={urlPrefixHelper('/')}>RFA Application list</a>,
-            <a href={urlPrefixHelper('/rfa/a01/' + this.state.tracking.rfa_1a_id + '/tracking/' + this.state.tracking.id + '/edit')}>
+            <a href={urlPrefixHelper(`/rfa/a01/${this.state.tracking.rfa_1a_id}/tracking/${this.state.tracking.id}/edit`)}>
             RFA-Tracking</a>
           ]} />
         <div className='container'>

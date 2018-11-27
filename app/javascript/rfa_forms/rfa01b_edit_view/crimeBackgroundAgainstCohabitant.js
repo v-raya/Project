@@ -44,7 +44,7 @@ export default class CrimeBackgroundAgainstCohabitant extends React.Component {
         textAlignment='left'
         label='Disclosure of Criminal Background - Against Child / Spouse / Cohabitant'
         handleOnClick={() => this.props.setFocusState('crimeBackgroundAgainstCohabitantCard')}
-        focusClassName={this.props.getFocusClassName('crimeBackgroundAgainstCohabitantCard') + ' ' + 'card phone-section double-gap-top active-bar'}>
+        focusClassName={`${this.props.getFocusClassName('crimeBackgroundAgainstCohabitantCard')} ` + `card phone-section double-gap-top active-bar`}>
         <div>
           <div>{Rfa01bCrimeBackGroundAgainstCohabCardText.abuse}</div>
           <div>
@@ -58,7 +58,7 @@ export default class CrimeBackgroundAgainstCohabitant extends React.Component {
         { isTrue(arrestedForCrime)
           ? disclosures.map((crime, index) => {
             return (
-              <div key={'crimeBackgroundAgainstCohabitant' + index} >
+              <div key={`crimeBackgroundAgainstCohabitant${index}`} >
                 <CriminalFields
                   index={index}
                   crime={crime}
@@ -66,7 +66,7 @@ export default class CrimeBackgroundAgainstCohabitant extends React.Component {
                   clickClose={this.clickClose}
                   onFieldChange={this.onFieldChange}
                   validator={this.props.validator}
-                  validatorPrefix={'arrested_for_crime_disclosures.[' + index + '].'}
+                  validatorPrefix={`arrested_for_crime_disclosures.[${index}].`}
                   validatorCondition={isTrue(arrestedForCrime)} />
               </div>
             )

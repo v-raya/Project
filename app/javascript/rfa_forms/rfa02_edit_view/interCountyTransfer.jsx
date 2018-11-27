@@ -20,7 +20,7 @@ export default class InterCountyTransfer extends React.Component {
           colHeaders={['Inter-County Transfer', 'Date', 'Notes']}
           rowsComponent={
             <CheckListRow
-              id={'interCountyTransfer' + this.props.peopleIndex}
+              id={`interCountyTransfer${this.props.peopleIndex}`}
               handleChange={this.handleCountyTrasferChange}
               checkListDocuments={this.props.countyTrasferList.get('items')}
               editMode={this.props.editMode}

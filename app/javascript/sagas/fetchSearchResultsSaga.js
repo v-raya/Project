@@ -9,7 +9,7 @@ import {NoSearchResultsErrorMessage, NoSearchCriteriaMessage} from 'search/commo
 export function * fetchSearchResults (action) {
   try {
     const payload = action.payload
-    const url = '/facilities/search' + '?from=' + payload.urlParams.fromValue + '&size=' + payload.urlParams.sizeValue + '&sort=' + payload.urlParams.sort + '&order=' + payload.urlParams.order
+    const url = `${'/facilities/search' + '?from='}${payload.urlParams.fromValue}&size=${payload.urlParams.sizeValue}&sort=${payload.urlParams.sort}&order=${payload.urlParams.order}`
     const response = yield call(fetchRequestWithErrors, url, 'POST', payload.searchParams)
     yield put(fetchSuccess({
       searchResults: response.facilities,

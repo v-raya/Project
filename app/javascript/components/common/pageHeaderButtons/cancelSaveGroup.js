@@ -9,16 +9,16 @@ const CancelSaveGroup = ({
 }) => {
   return (
     <div className='pull-right col-xs-4' >
-      <div className={idPrefix + '-cancel inlineBlock'}>
+      <div className={`${idPrefix}-cancel inlineBlock`}>
         <Button
-          buttonId={idPrefix + 'Cancel'}
+          buttonId={`${idPrefix}Cancel`}
           label='Cancel'
           textAlignment='center'
           onClick={cancelAction} />
       </div>
-      <div className={idPrefix + '-save inlineBlock'}>
+      <div className={`${idPrefix}-save inlineBlock`}>
         <Button
-          buttonId={idPrefix + 'Save'}
+          buttonId={`${idPrefix}Save`}
           label='Save'
           textAlignment='center'
           onClick={saveAction} />

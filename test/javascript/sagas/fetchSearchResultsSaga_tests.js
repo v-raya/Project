@@ -17,7 +17,7 @@ describe('fetchSearchResults', () => {
   const urlParams = {fromValue: '1', sizeValue: '10', sort: 'name', order: 'asc'}
   const action = searchApiCall(searchParams, urlParams)
   const payload = action.payload
-  const url = '/facilities/search' + '?from=' + payload.urlParams.fromValue + '&size=' + payload.urlParams.sizeValue + '&sort=' + payload.urlParams.sort + '&order=' + payload.urlParams.order
+  const url = `${'/facilities/search' + '?from='}${payload.urlParams.fromValue}&size=${payload.urlParams.sizeValue}&sort=${payload.urlParams.sort}&order=${payload.urlParams.order}`
   describe('fetch search results', () => {
     it('fetches 0 search results', () => {
       const gen = fetchSearchResults(action)

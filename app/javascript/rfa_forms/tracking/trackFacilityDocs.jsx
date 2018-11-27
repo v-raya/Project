@@ -51,7 +51,7 @@ export default class TrackFacilityDocs extends React.Component {
       <ScrollSpy onEnter={() => this.props.handleHrefClick('#facility-card')}>
         <div className='tracking-card' id='facility-card'>
           <div className='tracking-card-header'>
-            <h3>{this.props.facilityName + ' Family RFA Documents'}</h3>
+            <h3>{`${this.props.facilityName} Family RFA Documents`}</h3>
           </div>
           <TrackingTable
             colHeaders={['Family Documents', '', 'Received', 'Notes']}

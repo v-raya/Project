@@ -20,7 +20,7 @@ export default class OtherResources extends React.Component {
           colHeaders={['Other Resources', 'Date', 'Notes']}
           rowsComponent={
             <CheckListRow
-              id={'otherResources' + this.props.peopleIndex}
+              id={`otherResources${this.props.peopleIndex}`}
               handleChange={this.handleOtherResourceList}
               checkListDocuments={this.props.otherResourcesList.get('items')}
               editMode={this.props.editMode}

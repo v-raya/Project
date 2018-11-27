@@ -19,11 +19,11 @@ export default class AboutThisResidenceCard extends React.Component {
     this.addCard = this.addCard.bind(this)
     this.removeCard = this.removeCard.bind(this)
 
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'weapon_in_home', {rule: 'isRequiredBoolean', message: 'Required'})
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'body_of_water_exist', {rule: 'isRequiredBoolean', message: 'Required'})
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'others_using_residence_as_mailing', {rule: 'isRequiredBoolean', message: 'Required'})
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'residence_ownership', {rule: 'isRequiredBoolean', message: 'Required'})
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'home_languages', {rule: 'isRequiredBoolean', message: 'Required'})
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}weapon_in_home`, {rule: 'isRequiredBoolean', message: 'Required'})
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}body_of_water_exist`, {rule: 'isRequiredBoolean', message: 'Required'})
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}others_using_residence_as_mailing`, {rule: 'isRequiredBoolean', message: 'Required'})
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}residence_ownership`, {rule: 'isRequiredBoolean', message: 'Required'})
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}home_languages`, {rule: 'isRequiredBoolean', message: 'Required'})
   }
 
   onChange (key, value, index) {
@@ -89,7 +89,7 @@ export default class AboutThisResidenceCard extends React.Component {
                       <a onClick={() => this.removeCard(index)}
                         className='pull-right remove-btn'>Remove</a>
                       <CompleteNameFields
-                        idPrefix={this.props.idPrefix + 'other_people_using_residence_as_mailing' + '[' + index + '].'}
+                        idPrefix={`${this.props.idPrefix}other_people_using_residence_as_mailing` + `[${index}].`}
                         index={index}
                         required={false}
                         firstName={person.first_name}

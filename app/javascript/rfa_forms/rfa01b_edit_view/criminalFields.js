@@ -12,10 +12,10 @@ export default class CriminalFields extends React.Component {
   constructor (props) {
     super(props)
 
-    this.offenseId = this.props.validatorPrefix + 'offense'
-    this.offenseCityId = this.props.validatorPrefix + 'offense_city'
-    this.offenseDateId = this.props.validatorPrefix + 'when_offense_happen'
-    this.offenseDetailsId = this.props.validatorPrefix + 'offense_details'
+    this.offenseId = `${this.props.validatorPrefix}offense`
+    this.offenseCityId = `${this.props.validatorPrefix}offense_city`
+    this.offenseDateId = `${this.props.validatorPrefix}when_offense_happen`
+    this.offenseDetailsId = `${this.props.validatorPrefix}offense_details`
     this.props.validator.addNewValidation(
       {
         [this.offenseId]: [{
@@ -58,27 +58,27 @@ export default class CriminalFields extends React.Component {
         <div><b>{Rfa01bCriminalFieldsCardText.details}</b></div>
         <InputComponent
           gridClassName='col-md-12'
-          id={this.props.idPrefix + 'offenseReason'}
+          id={`${this.props.idPrefix}offenseReason`}
           value={crime.offense}
-          label={'What was the offense?' + RfaCommon.requiredIndicator}
+          label={`What was the offense?${RfaCommon.requiredIndicator}`}
           onChange={(event) => this.props.onFieldChange(this.props.index, 'offense', event.target.value)} />
         <InputComponent
           gridClassName='col-md-12'
-          id={this.props.idPrefix + 'offenseCity'}
+          id={`${this.props.idPrefix}offenseCity`}
           value={crime.offense_city}
-          label={'Where did the offense happen? (City, State, Country or other location information)' + RfaCommon.requiredIndicator}
+          label={`Where did the offense happen? (City, State, Country or other location information)${RfaCommon.requiredIndicator}`}
           onChange={(event) => this.props.onFieldChange(this.props.index, 'offense_city', event.target.value)} />
         <InputComponent
           gridClassName='col-md-12'
-          id={this.props.idPrefix + 'OffenseDate'}
+          id={`${this.props.idPrefix}OffenseDate`}
           value={crime.when_offense_happen}
-          label={'When did the offense happen?' + RfaCommon.requiredIndicator}
+          label={`When did the offense happen?${RfaCommon.requiredIndicator}`}
           onChange={(event) => this.props.onFieldChange(this.props.index, 'when_offense_happen', event.target.value)} />
         <TextAreaComponent
           gridClassName='col-md-12'
-          id={this.props.idPrefix + 'offenseDetails'}
+          id={`${this.props.idPrefix}offenseDetails`}
           value={crime.offense_details}
-          label={'Explain what happened.' + RfaCommon.requiredIndicator}
+          label={`Explain what happened.${RfaCommon.requiredIndicator}`}
           placeholder=''
           onChange={(event) => this.props.onFieldChange(this.props.index, 'offense_details', event.target.value)} />
       </div>

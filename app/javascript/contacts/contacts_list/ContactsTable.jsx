@@ -71,7 +71,7 @@ const columns = (rfa01aId) => {
       accessor: d => d,
       maxWidth: 600,
       className: 'contacts-td',
-      Cell: row => (<a href={urlPrefixHelper('/rfa/a01/' + rfa01aId + '/contacts/' + row.value.id + '/edit')}>{row.value.title}</a>)
+      Cell: row => (<a href={urlPrefixHelper(`/rfa/a01/${rfa01aId}/contacts/${row.value.id}/edit`)}>{row.value.title}</a>)
     }
   ])
 }

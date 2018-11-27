@@ -39,14 +39,14 @@ export default class DesiredChildCardGroup extends React.Component {
         textAlignment='left'
         label='Child Identification'
         handleOnClick={() => this.props.setFocusState('ChildDesiredMain')}
-        focusClassName={this.props.getFocusClassName('ChildDesiredMain') + ' ' + 'card phone-section double-gap-top active-bar'}>
+        focusClassName={`${this.props.getFocusClassName('ChildDesiredMain')} ` + `card phone-section double-gap-top active-bar`}>
         {
           this.props.identifiedChildren.map((child, index) => {
             return (
-              <div key={'desiredChildCard' + index} className='row'>
+              <div key={`desiredChildCard${index}`} className='row'>
                 <DesiredChildCard
                   index={index}
-                  idPrefix={'identified_children[' + index + '].'}
+                  idPrefix={`identified_children[${index}].`}
                   setParentState={this.setApplicationNestedState}
                   desiredChild={child}
                   applicants={this.props.applicants}

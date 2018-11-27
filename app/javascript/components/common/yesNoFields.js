@@ -15,8 +15,8 @@ const YesNoRadioComponent = ({
     <label>{label}</label>
     <BinarySelectorField
       gridClassName={gridClassName}
-      id={idPrefix + 'true'}
-      labelId={idPrefix + 'Yes'}
+      id={`${idPrefix}true`}
+      labelId={`${idPrefix}Yes`}
       type='radio'
       value='true'
       checked={value === true || value === 'true'}
@@ -24,8 +24,8 @@ const YesNoRadioComponent = ({
       onChange={onFieldChange} />
     <BinarySelectorField
       gridClassName={gridClassName}
-      id={idPrefix + 'false'}
-      labelId={idPrefix + 'No'}
+      id={`${idPrefix}false`}
+      labelId={`${idPrefix}No`}
       type='radio'
       value='false'
       checked={value === false || value === 'false'}

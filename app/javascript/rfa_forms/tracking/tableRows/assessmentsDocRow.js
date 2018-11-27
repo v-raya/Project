@@ -15,12 +15,12 @@ const AssessmentsDocRow = ({
     editMode
       ? trackingDocuments.items.map((docs, index) => {
         return (
-          <tr key={'assessmentEdit' + index}>
+          <tr key={`assessmentEdit${index}`}>
             <td><BinarySelectorField
-              id={'assessmentEditCheckbox' + index}
+              id={`assessmentEditCheckbox${index}`}
               type='checkbox'
               key={index}
-              labelId={'checkLabel' + index}
+              labelId={`checkLabel${index}`}
               label={docs.title}
               gridClassName='col-xs-12 align-row'
               onChange={(event) => handleChange('checked', event.target.checked, index)}
@@ -29,20 +29,20 @@ const AssessmentsDocRow = ({
             </td>
             <td>
               <DateField
-                id={'assessmentEditSubmittedDate' + index}
+                id={`assessmentEditSubmittedDate${index}`}
                 value={FormatDateForDisplay(docs.submitted_date)}
                 onChange={(event) => handleChange('submitted_date', FormatDateForPersistance(event.target.value), index)} />
             </td>
             <td>
               <DateField
-                id={'assessmentEditApprovedDate' + index}
+                id={`assessmentEditApprovedDate${index}`}
                 value={FormatDateForDisplay(docs.approved_date)}
                 onChange={(event) => handleChange('approved_date', FormatDateForPersistance(event.target.value), index)} />
 
             </td>
             <td>
               <TextAreaComponent
-                id={'assessmentEditText' + index}
+                id={`assessmentEditText${index}`}
                 value={docs.notes}
                 onChange={(event) => handleChange('notes', event.target.value, index)} />
             </td>
@@ -51,23 +51,23 @@ const AssessmentsDocRow = ({
       })
       : trackingDocuments.items.map((docs, index) => {
         return (
-          <tr key={'assessmentShow' + index}>
-            <td id={'assessmentShowCheckbox' + index}>
+          <tr key={`assessmentShow${index}`}>
+            <td id={`assessmentShowCheckbox${index}`}>
               <BinarySelectorField
                 type='checkbox'
                 key={index}
-                labelId={'checkLabel' + index}
+                labelId={`checkLabel${index}`}
                 label={docs.title}
                 gridClassName='col-xs-12 align-row'
                 defaultChecked={docs.checked} />
             </td>
-            <td id={'assessmentShowSubmittedDate' + index}>
+            <td id={`assessmentShowSubmittedDate${index}`}>
               {FormatDateForDisplay(docs.submitted_date)}
             </td>
-            <td id={'assessmentShowApprovedDate' + index}>
+            <td id={`assessmentShowApprovedDate${index}`}>
               {FormatDateForDisplay(docs.approved_date)}
             </td>
-            <td id={'assessmentShowText' + index}>
+            <td id={`assessmentShowText${index}`}>
               {docs.notes}
             </td>
           </tr>

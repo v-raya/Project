@@ -55,14 +55,14 @@ export default class MinorCardsGroup extends React.Component {
     return (
       <div className='minor_card'>
         <div id='minorsSection' onClick={() => this.props.setFocusState('minorsSection')}
-          className={this.props.getFocusClassName('minorsSection') + ' ' + 'card minors-section double-gap-top active-bar'}>
+          className={`${this.props.getFocusClassName('minorsSection')} ` + `card minors-section double-gap-top active-bar`}>
           <div className='card-header'>
             <span>Minor Children Information</span>
           </div>
           <div className='card-body'>
             {
               this.state.minorChildren.map((minor, index) => {
-                const idPrefix = 'minor_children[' + index + '].'
+                const idPrefix = `minor_children[${index}].`
                 if (!minor.to_delete) {
                   return (
                     <div key={index} className='row list-item' >

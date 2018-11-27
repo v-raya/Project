@@ -26,13 +26,13 @@ const C01SideBar = ({
               key='editChildIdentified'
               active={isNavLinkActive(rfa01cForm.id)}
               clickHandler={() => handleNavLinkClick(rfa01cForm.id)}
-              href={urlPrefixHelper('/rfa/a01/' + rfa01aApplicationId + '/c01/' + rfa01cForm.id + '/edit')}
-              text={'child id: ' + rfa01cForm.id} />
+              href={urlPrefixHelper(`/rfa/a01/${rfa01aApplicationId}/c01/${rfa01cForm.id}/edit`)}
+              text={`child id: ${rfa01cForm.id}`} />
             : <NavLink
               key='createChildIdentified'
               active={isNavLinkActive(rfa01aApplicationId)}
               clickHandler={() => handleNavLinkClick(rfa01aApplicationId)}
-              href={urlPrefixHelper('/rfa/a01/' + rfa01aApplicationId + '/c01/')}
+              href={urlPrefixHelper(`/rfa/a01/${rfa01aApplicationId}/c01/`)}
               text='child identified' />)
           : null
       }

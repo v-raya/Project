@@ -82,7 +82,7 @@ export const getFocusClassName = (focusedComponentName, currentComponentName) =>
 
 export const setToWhomOptionList = (applicants) => {
   const newApplicants = applicants.map((applicant, index) => {
-    return {id: applicant.id, value: applicant.first_name + ' ' + applicant.middle_name + ' ' + applicant.last_name}
+    return {id: applicant.id, value: `${applicant.first_name} ${applicant.middle_name} ${applicant.last_name}`}
   })
   return newApplicants
 }
@@ -91,7 +91,7 @@ export const handleToWhomValue = (applicantId, applicants) => {
   let newApplicants = {id: '', value: ''}
   if (applicantId) {
     newApplicants = applicants.map((applicant) => {
-      return {id: (applicant.id ? applicant.id : 0), value: applicant.first_name + ' ' + applicant.middle_name + ' ' + applicant.last_name}
+      return {id: (applicant.id ? applicant.id : 0), value: `${applicant.first_name} ${applicant.middle_name} ${applicant.last_name}`}
     })
     if (!isNaN(Number(applicantId))) {
       newApplicants = newApplicants.find(x => x.id === Number(applicantId))

@@ -20,7 +20,7 @@ export default class AdultChildrenFields extends React.Component {
         <div className='col-md-12'>
           <DropDownField
             gridClassName='col-md-4'
-            id={this.props.idPrefix + 'relationship_type'}
+            id={`${this.props.idPrefix}relationship_type`}
             selectClassName='reusable-select'
             optionList={this.props.relationshipToApplicantTypes}
             label='Relationship Type (required)'
@@ -31,7 +31,7 @@ export default class AdultChildrenFields extends React.Component {
             gridClassName='col-md-4'
             selectClassName='reusable-select'
             label='To Whom'
-            id={this.props.idPrefix + 'available_applicants'}
+            id={`${this.props.idPrefix}available_applicants`}
             optionList={setToWhomOptionList(this.props.applicants)}
             value={handleToWhomValue(adultChild.relationship_to_applicants[0].applicant_name, this.props.applicants).id}
             onChange={(event) => this.props.handleRelationshipTypeToApplicant(this.props.index,
@@ -52,7 +52,7 @@ export default class AdultChildrenFields extends React.Component {
         <div className='col-md-12'>
           <YesNoRadioComponent
             label='Lives in home? (required)'
-            idPrefix={this.props.idPrefix + 'lives_in_home'}
+            idPrefix={`${this.props.idPrefix}lives_in_home`}
             value={adultChild.lives_in_home}
             onFieldChange={(event) => this.props.handleClearOnConditionalChange('lives_in_home', 'address', event.target.value, addressDefaults, this.props.index)} />
 

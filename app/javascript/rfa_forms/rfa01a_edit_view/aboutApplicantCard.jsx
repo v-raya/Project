@@ -14,10 +14,10 @@ export default class AboutApplicant extends React.Component {
   constructor (props) {
     super(props)
 
-    this.dateOfBirthId = this.props.idPrefix + 'date_of_birth'
-    this.driversLicenseNumberId = this.props.idPrefix + 'driver_license_number'
-    this.driversLicenseStateId = this.props.idPrefix + 'driver_license_state'
-    this.genderId = this.props.idPrefix + 'gender'
+    this.dateOfBirthId = `${this.props.idPrefix}date_of_birth`
+    this.driversLicenseNumberId = `${this.props.idPrefix}driver_license_number`
+    this.driversLicenseStateId = `${this.props.idPrefix}driver_license_state`
+    this.genderId = `${this.props.idPrefix}gender`
 
     this.props.validator.addNewValidation(
       {
@@ -94,7 +94,7 @@ export default class AboutApplicant extends React.Component {
                 value={getDictionaryId(aboutApplicantFields.gender)}
                 errors={fieldErrorsAsImmutableSet(this.props.errors.gender)}
                 optionList={this.props.genderTypes}
-                label={'Gender' + RfaCommon.requiredIndicator}
+                label={`Gender${RfaCommon.requiredIndicator}`}
                 onChange={(event) => this.props.setParentState('gender', dictionaryNilSelect(event.target.options))}
                 onBlur={(event) => this.props.validator.validateFieldSetErrorState(this.genderId, event.target.value)} />
             </div>

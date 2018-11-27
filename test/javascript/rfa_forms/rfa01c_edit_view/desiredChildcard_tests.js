@@ -149,10 +149,10 @@ describe('Verify RFA 01C child desired', () => {
 
   it('verify required fields labels', () => {
     const componentHtml = childCardComp.html()
-    expect(componentHtml).toContain('Is the child currently in your home?' + RfaCommon.requiredIndicator)
-    expect(childCardComp.find('[htmlFor="childIdentifiedFielddate_of_birth"]').html()).toContain('Date of Birth' + RfaCommon.requiredIndicator)
-    expect(childCardComp.find('[htmlFor="childIdentifiedFieldfirst_name"]').html()).toContain('First Name' + RfaCommon.requiredIndicator)
-    expect(childCardComp.find('[htmlFor="childIdentifiedFieldlast_name"]').html()).toContain('Last Name' + RfaCommon.requiredIndicator)
+    expect(componentHtml).toContain(`Is the child currently in your home?${RfaCommon.requiredIndicator}`)
+    expect(childCardComp.find('[htmlFor="childIdentifiedFielddate_of_birth"]').html()).toContain(`Date of Birth${RfaCommon.requiredIndicator}`)
+    expect(childCardComp.find('[htmlFor="childIdentifiedFieldfirst_name"]').html()).toContain(`First Name${RfaCommon.requiredIndicator}`)
+    expect(childCardComp.find('[htmlFor="childIdentifiedFieldlast_name"]').html()).toContain(`Last Name${RfaCommon.requiredIndicator}`)
   })
 
   describe('Address component mount', () => {

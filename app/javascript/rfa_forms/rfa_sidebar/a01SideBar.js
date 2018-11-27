@@ -24,7 +24,7 @@ const A01SideBar = ({
           handleNavLinkClick={handleNavLinkClick}
           showRelationshipBetweenApplicants={showRelationshipBetweenApplicants} />
         : <ANavLinks
-          hrefPrefix={urlPrefixHelper('/rfa/a01/' + rfa01aApplicationId + '/edit')}
+          hrefPrefix={urlPrefixHelper(`/rfa/a01/${rfa01aApplicationId}/edit`)}
           isNavLinkActive={isNavLinkActive}
           handleNavLinkClick={handleNavLinkClick}
           showRelationshipBetweenApplicants={showRelationshipBetweenApplicants} />

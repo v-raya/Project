@@ -54,7 +54,7 @@ export default class CaliforniaCriminalBackground extends React.Component {
         textAlignment='left'
         label='Disclosure of Criminal Background - California (only)'
         handleOnClick={() => this.props.setFocusState('CACriminalBackgroundCard')}
-        focusClassName={this.props.getFocusClassName('CACriminalBackgroundCard') + ' ' + 'card phone-section double-gap-top active-bar'}>
+        focusClassName={`${this.props.getFocusClassName('CACriminalBackgroundCard')} ` + `card phone-section double-gap-top active-bar`}>
         <div>
           <div>{Rfa01bCaliforniaCriminalBackGroundCardText.convicted}</div>
           <div>{Rfa01bCaliforniaCriminalBackGroundCardText.marijuana}</div>
@@ -69,7 +69,7 @@ export default class CaliforniaCriminalBackground extends React.Component {
         {isTrue(convictedInCalifornia)
           ? disclosures.map((crime, index) => {
             return (
-              <div key={'californiaCriminalBackgroundKey' + index}>
+              <div key={`californiaCriminalBackgroundKey${index}`}>
                 <CriminalFields
                   index={index}
                   crime={crime}
@@ -77,7 +77,7 @@ export default class CaliforniaCriminalBackground extends React.Component {
                   clickClose={this.clickClose}
                   onFieldChange={this.onFieldChange}
                   validator={this.props.validator}
-                  validatorPrefix={'convicted_in_california_disclosures[' + index + '].'}
+                  validatorPrefix={`convicted_in_california_disclosures[${index}].`}
                   validatorCondition={isTrue(convictedInCalifornia)} />
               </div>
             )

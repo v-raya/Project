@@ -55,22 +55,22 @@ export default class OutOfStateRegistryCheck extends React.Component {
         {
           outOfStateRegistryList.map((outOfStateData, index) => {
             return (
-              <div key={'person' + this.props.peopleIndex + 'outofstate' + index}>
+              <div key={`person${this.props.peopleIndex}outofstate${index}`}>
                 <div className='col-xs-12'>
-                  <h5>{outOfStateData.getIn(['state', 'value']) + ' Information'}</h5>
+                  <h5>{`${outOfStateData.getIn(['state', 'value'])} Information`}</h5>
                 </div>
                 {this.props.editMode
                   ? <YesNoRadioComponent
-                    idPrefix={'person' + this.props.peopleIndex + 'outOfStateRegistry' + index}
-                    label={'Is registry maintained by ' + outOfStateData.getIn(['state', 'value']) + '?'}
+                    idPrefix={`person${this.props.peopleIndex}outOfStateRegistry${index}`}
+                    label={`Is registry maintained by ${outOfStateData.getIn(['state', 'value'])}?`}
                     gridClassName='col-xs-12 no-padding'
                     value={outOfStateData.get('is_registry_maintained_by_state')}
                     onFieldChange={(event) => { this.handleOutOfStateRegistry('is_registry_maintained_by_state', event.target.value, index) }}
                   />
                   : <YesNoFieldShow
-                    id={'person' + this.props.peopleIndex + 'outOfStateRegistry' + index}
+                    id={`person${this.props.peopleIndex}outOfStateRegistry${index}`}
                     value={outOfStateData.get('is_registry_maintained_by_state')}
-                    label={'Is registry maintained by ' + outOfStateData.getIn(['state', 'value']) + '?'}
+                    label={`Is registry maintained by ${outOfStateData.getIn(['state', 'value'])}?`}
                   />
                 }
                 {isTrue(outOfStateData.get('is_registry_maintained_by_state')) ? <div>
@@ -79,7 +79,7 @@ export default class OutOfStateRegistryCheck extends React.Component {
                     rowsComponent={
                       <CheckListRow
                         cardIndex={index}
-                        id={'person' + this.props.peopleIndex + 'outOfStateRegistry' + index}
+                        id={`person${this.props.peopleIndex}outOfStateRegistry${index}`}
                         handleChange={this.handleRequestInfo}
                         checkListDocuments={outOfStateData.getIn(['registry_info', 'items'])}
                         editMode={this.props.editMode}
@@ -88,7 +88,7 @@ export default class OutOfStateRegistryCheck extends React.Component {
                   />
                   {this.props.editMode
                     ? <YesNoRadioComponent
-                      idPrefix={'person' + this.props.peopleIndex + 'outOfStateRegistryCleared' + index}
+                      idPrefix={`person${this.props.peopleIndex}outOfStateRegistryCleared${index}`}
                       label='Was the request cleared or not cleared?'
                       gridClassName='col-xs-12 no-padding'
                       value={outOfStateData.getIn(['registry_info', 'is_cleared'])}
@@ -97,7 +97,7 @@ export default class OutOfStateRegistryCheck extends React.Component {
                       onFieldChange={(event) => { this.handleRegistryClear('is_cleared', event.target.value, index) }}
                     />
                     : <YesNoFieldShow
-                      id={'person' + this.props.peopleIndex + 'outOfStateRegistryCleared' + index}
+                      id={`person${this.props.peopleIndex}outOfStateRegistryCleared${index}`}
                       labelDefaultYes='Cleared'
                       labelDefaultNo='Not Cleared'
                       value={outOfStateData.getIn(['registry_info', 'is_cleared'])}
@@ -105,7 +105,7 @@ export default class OutOfStateRegistryCheck extends React.Component {
                     />
                   }
                   <DateNoteFields
-                    id={'person' + this.props.peopleIndex + 'outOfStateRegistry' + index}
+                    id={`person${this.props.peopleIndex}outOfStateRegistry${index}`}
                     dateFieldClass='col-xs-4 no-padding'
                     textFieldClass='col-xs-12 no-padding'
                     subKey={index}

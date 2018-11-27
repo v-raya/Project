@@ -33,7 +33,7 @@ const CardLayout = ({
       </div>
       <div className='card-body'>
         <div className='row'>
-          <div className={'text-' + textAlignment}>
+          <div className={`text-${textAlignment}`}>
             {children}
           </div>
         </div>

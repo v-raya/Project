@@ -14,7 +14,7 @@ const RegularAdultLinks = ({
   regularAdults = regularAdults.adults
   return (
     regularAdults.map((regularAdult, index) => {
-      const href = '#PresentAdult' + indexes[index] + '-tracking-card'
+      const href = `#PresentAdult${indexes[index]}-tracking-card`
       return (
         <div key={index}>
           <NavLink

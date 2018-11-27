@@ -43,7 +43,7 @@ export default class TrackingList extends React.Component {
 
   saveProgress (event) {
     this.setState({ cardBeingEdited: false })
-    const url = '/rfa/a01/' + this.state.rfaApplication.id + '/tracking/' + this.state.tracking.id
+    const url = `/rfa/a01/${this.state.rfaApplication.id}/tracking/${this.state.tracking.id}`
     fetchRequest(url, 'PUT', this.state.tracking)
       .then((response) => {
         return response.json()
@@ -80,7 +80,7 @@ export default class TrackingList extends React.Component {
     return (
       <div className='tracking-main-page'>
         <PageHeader
-          headerLabel={facilityName + '-RFA Application'}
+          headerLabel={`${facilityName}-RFA Application`}
           pageHeaderButtons={
             <TrackingButtons
               editMode={this.state.cardBeingEdited}

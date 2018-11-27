@@ -8,7 +8,7 @@ export class AgencyComponent extends React.Component {
     return (
       <div className='row list-item'>
         <a onClick={(event) => { this.props.removeAgencyCard(event, this.props.agencies, this.props.index, this.props.defKey, this.props.subKey) }}
-          className={'pull-right remove-btn agency' + this.props.index}>Remove</a>
+          className={`pull-right remove-btn agency${this.props.index}`}>Remove</a>
 
         <InputComponent gridClassName='col-md-7' id={this.props.inputId}
           value={this.props.inputValue}

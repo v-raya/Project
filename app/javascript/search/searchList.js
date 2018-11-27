@@ -12,7 +12,7 @@ const searchListColumns = [
     minWidth: 70,
     className: 'facility_name',
     id: 'facilityName',
-    accessor: data => (<Link to={urlPrefixHelper('/facilities/' + data.id)}>{checkNullOrEmptyValue(data.name)}</Link>)
+    accessor: data => (<Link to={urlPrefixHelper(`/facilities/${data.id}`)}>{checkNullOrEmptyValue(data.name)}</Link>)
   },
   {
     Header: 'Facility ID / Approval #',

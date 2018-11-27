@@ -22,15 +22,15 @@ export default class CriminalBackgroudDocument extends React.Component {
     const peopleList = this.props.people
     return (
       peopleList.map((person, index) => {
-        const hrefId = person.toJS().person_type.replace(/\s+/g, '') + index + '-tracking-card'
+        const hrefId = `${person.toJS().person_type.replace(/\s+/g, '') + index}-tracking-card`
         const backGroundCheckDocs = person.get('background_check')
         return (
           <div key={index} className='rfa-tracking col-xs-12'>
-            <ScrollSpy onEnter={() => this.props.handleHrefClick('#' + hrefId)}>
+            <ScrollSpy onEnter={() => this.props.handleHrefClick(`#${hrefId}`)}>
               <div className='tracking-card' id={hrefId}>
                 <div className='tracking-card row'>
                   <div className={'tracking-card-header people_documents'}>
-                    <h3>{person.get('person_type') + ': ' + person.get('person_name') + ' Criminal Background Checklist'}</h3>
+                    <h3>{`${person.get('person_type')}: ${person.get('person_name')} Criminal Background Checklist`}</h3>
                   </div>
                   <div className='tracking-table'>
                     <EmergencyPlacement

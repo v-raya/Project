@@ -6,7 +6,7 @@ import {FACILITY_RESULTS_FETCH} from 'constants/actionTypes'
 // worker saga: makes the api call when watcher saga sees the action
 export function * fetchFacilityById (action) {
   try {
-    const url = '/facilities/' + action.payload.facilityParams.id + '/profile'
+    const url = `/facilities/${action.payload.facilityParams.id}/profile`
     const response = yield call(fetchRequestWithErrors, url, 'GET', null)
     yield put(fetchSuccess({facility: response}))
   } catch (error) {

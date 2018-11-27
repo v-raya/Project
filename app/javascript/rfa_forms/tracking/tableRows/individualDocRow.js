@@ -16,12 +16,12 @@ const IndividualDocRow = ({
     editMode
       ? individualDocuments.items.map((peopleDoc, itemIndex) => {
         return (
-          <tr key={'individual' + peopleIndex + 'Edit' + itemIndex}>
+          <tr key={`individual${peopleIndex}Edit${itemIndex}`}>
             <td><BinarySelectorField
-              id={'individual' + peopleIndex + 'EditCheckbox' + itemIndex}
+              id={`individual${peopleIndex}EditCheckbox${itemIndex}`}
               type='checkbox'
               key={itemIndex}
-              labelId={'checkLabel' + itemIndex}
+              labelId={`checkLabel${itemIndex}`}
               label={peopleDoc.title}
               gridClassName='col-xs-12 align-row'
               onChange={(event) => handleChange('checked', event.target.checked, peopleIndex, itemIndex)}
@@ -30,7 +30,7 @@ const IndividualDocRow = ({
             </td>
             <td>
               <DateField
-                id={'individual' + peopleIndex + 'EditStartDate' + itemIndex}
+                id={`individual${peopleIndex}EditStartDate${itemIndex}`}
                 value={FormatDateForDisplay(peopleDoc.start_date)}
                 onChange={(event) => handleChange('start_date', FormatDateForPersistance(event.target.value), peopleIndex, itemIndex)} />
 
@@ -38,13 +38,13 @@ const IndividualDocRow = ({
 
             <td>
               <DateField
-                id={'individual' + peopleIndex + 'EditApprovedDate' + itemIndex}
+                id={`individual${peopleIndex}EditApprovedDate${itemIndex}`}
                 value={FormatDateForDisplay(peopleDoc.completed_date)}
                 onChange={(event) => handleChange('completed_date', FormatDateForPersistance(event.target.value), peopleIndex, itemIndex)} />
             </td>
             <td>
               <TextAreaComponent
-                id={'individual' + peopleIndex + 'EditText' + itemIndex}
+                id={`individual${peopleIndex}EditText${itemIndex}`}
                 value={peopleDoc.notes}
                 onChange={(event) => handleChange('notes', event.target.value, peopleIndex, itemIndex)} />
             </td>
@@ -53,24 +53,24 @@ const IndividualDocRow = ({
       })
       : individualDocuments.items.map((peopleDoc, index) => {
         return (
-          <tr key={'individual' + peopleIndex + 'Show' + index}>
+          <tr key={`individual${peopleIndex}Show${index}`}>
             <td>
               <BinarySelectorField
-                id={'individual' + peopleIndex + 'ShowCheckbox' + index}
+                id={`individual${peopleIndex}ShowCheckbox${index}`}
                 type='checkbox'
                 key={index}
-                labelId={'checkLabel' + index}
+                labelId={`checkLabel${index}`}
                 label={peopleDoc.title}
                 gridClassName='col-xs-12 align-row'
                 defaultChecked={peopleDoc.checked} />
             </td>
-            <td id={'individual' + peopleIndex + 'showStartDate' + index}>
+            <td id={`individual${peopleIndex}showStartDate${index}`}>
               {FormatDateForDisplay(peopleDoc.start_date)}
             </td>
-            <td id={'individual' + peopleIndex + 'ShowApprovedDate' + index}>
+            <td id={`individual${peopleIndex}ShowApprovedDate${index}`}>
               {FormatDateForDisplay(peopleDoc.completed_date)}
             </td>
-            <td id={'individual' + peopleIndex + 'ShowText' + index}>
+            <td id={`individual${peopleIndex}ShowText${index}`}>
               {peopleDoc.notes}
             </td>
           </tr>

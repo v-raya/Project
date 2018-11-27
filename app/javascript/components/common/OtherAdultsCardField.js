@@ -16,13 +16,13 @@ export class OtherAdultsCardField extends React.Component {
     super(props)
     this.isRelationshipToApplicantObject = this.isRelationshipToApplicantObject.bind(this)
 
-    this.relationshipToApplicantID = this.props.idPrefix + 'relationship_to_applicants[0].relationship_to_applicant_freeform'
-    this.ApplicantIdID = this.props.idPrefix + 'relationship_to_applicants[0].applicant_id'
-    this.isResidingInHome = this.props.idPrefix + 'is_residing_in_home'
-    this.otherAdultDOBId = this.props.idPrefix + 'date_of_birth'
-    this.otherAdultFirstNameID = this.props.idPrefix + 'first_name'
-    this.otherAdultMiddleNameID = this.props.idPrefix + 'middle_name'
-    this.otherAdultLastNameID = this.props.idPrefix + 'last_name'
+    this.relationshipToApplicantID = `${this.props.idPrefix}relationship_to_applicants[0].relationship_to_applicant_freeform`
+    this.ApplicantIdID = `${this.props.idPrefix}relationship_to_applicants[0].applicant_id`
+    this.isResidingInHome = `${this.props.idPrefix}is_residing_in_home`
+    this.otherAdultDOBId = `${this.props.idPrefix}date_of_birth`
+    this.otherAdultFirstNameID = `${this.props.idPrefix}first_name`
+    this.otherAdultMiddleNameID = `${this.props.idPrefix}middle_name`
+    this.otherAdultLastNameID = `${this.props.idPrefix}last_name`
 
     this.props.validator.addFieldValidation(this.otherAdultDOBId, dateValidator)
     this.props.validator.addFieldValidation(
@@ -77,12 +77,12 @@ export class OtherAdultsCardField extends React.Component {
 
             applicants && applicants.map((applicant, subIndex) => {
               return (
-                <div key={'adult[' + index + '].applicant[' + subIndex + ']'} >
+                <div key={`adult[${index}].applicant[${subIndex}]`} >
                   <InputComponent
                     gridClassName='col-md-4'
-                    id={'relationship_to_applicants' + index + 'adult' + subIndex + 'relationship_to_applicant_freeform'}
+                    id={`relationship_to_applicants${index}adult${subIndex}relationship_to_applicant_freeform`}
                     value={checkRelationshipFreeformPresence(adult, subIndex)}
-                    label={applicant.first_name + ' ' + applicant.last_name}
+                    label={`${applicant.first_name} ${applicant.last_name}`}
                     placeholder=''
                     onChange={(event) => this.props.handleRelationshipTypeChange(applicant, event.target.value, index, subIndex, 'relationship_to_applicant_freeform')} />
 
@@ -107,7 +107,7 @@ export class OtherAdultsCardField extends React.Component {
         <div className='col-md-12'>
           <DateField gridClassName='col-md-4'
             id={this.otherAdultDOBId}
-            label={'Date of Birth' + isRequiredLabel}
+            label={`Date of Birth${isRequiredLabel}`}
             value={FormatDateForDisplay(adult.date_of_birth)}
             errors={fieldErrorsAsImmutableSet(this.props.errors.date_of_birth)}
             onChange={(event) => this.props.onFieldChange(index,
@@ -116,7 +116,7 @@ export class OtherAdultsCardField extends React.Component {
         </div>
         <div className='col-md-12'>
           <DropDownField gridClassName='col-md-4'
-            id={this.props.idPrefix + 'name_prefix'}
+            id={`${this.props.idPrefix}name_prefix`}
             value={getDictionaryId(adult.name_prefix)}
             selectClassName={'reusable-select'}
             optionList={this.props.prefixTypes}
@@ -127,7 +127,7 @@ export class OtherAdultsCardField extends React.Component {
           <InputComponent gridClassName='col-md-4'
             id={this.otherAdultFirstNameID}
             value={adult.first_name}
-            label={'First Name' + isRequiredLabel}
+            label={`First Name${isRequiredLabel}`}
             maxLength='20'
             placeholder='Enter First Name'
             type='text'
@@ -143,7 +143,7 @@ export class OtherAdultsCardField extends React.Component {
           <InputComponent gridClassName='col-md-4'
             id={this.otherAdultLastNameID}
             value={adult.last_name}
-            label={'Last Name' + isRequiredLabel}
+            label={`Last Name${isRequiredLabel}`}
             maxLength='25'
             placeholder='Enter Last Name'
             type='text'
@@ -152,7 +152,7 @@ export class OtherAdultsCardField extends React.Component {
         <div className='col-md-12'>
           <DropDownField
             gridClassName='col-md-4'
-            id={this.props.idPrefix + 'name_suffix'}
+            id={`${this.props.idPrefix}name_suffix`}
             value={getDictionaryId(adult.name_suffix)}
             selectClassName={'reusable-select'}
             optionList={this.props.suffixTypes}

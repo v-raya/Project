@@ -12,7 +12,7 @@ const RfaSideBarTemplate = ({
 }) => {
   return (
     <div>
-      <div className={'side-bar' + idPrefix} aria-label='Side Bar'>
+      <div className={`side-bar${idPrefix}`} aria-label='Side Bar'>
         <Collapsible trigger={<div className='collapsible-label'>{label}</div>} open>
           <NavLinks>
             <div className='nav-link'>

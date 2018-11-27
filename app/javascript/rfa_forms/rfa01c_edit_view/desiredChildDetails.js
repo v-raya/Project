@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 export default class DesiredChildDetails extends React.Component {
   constructor (props) {
     super(props)
-    this.dateOfBirthId = this.props.idPrefix + 'date_of_birth'
+    this.dateOfBirthId = `${this.props.idPrefix}date_of_birth`
     // this.dateOfPlacement = this.props.idPrefix + 'date_of_placement'
     this.props.validator.addNewValidation(
       {
@@ -52,8 +52,8 @@ export default class DesiredChildDetails extends React.Component {
         <div className='col-md-12'>
           <DateField
             gridClassName='col-md-4 dateOfBirthField'
-            label={'Date of Birth' + RfaCommon.requiredIndicator}
-            id={this.props.idPrefix + 'date_of_birth'}
+            label={`Date of Birth${RfaCommon.requiredIndicator}`}
+            id={`${this.props.idPrefix}date_of_birth`}
             value={FormatDateForDisplay(child.date_of_birth)}
             onChange={(event) => this.props.setParentState(this.props.index, 'date_of_birth', FormatDateForPersistance(event.target.value))}
             onBlur={(event) => this.props.setParentState(this.props.index, 'date_of_birth', FormatDateForPersistance(event.target.value))} />
@@ -79,7 +79,7 @@ export default class DesiredChildDetails extends React.Component {
           <DateField
             gridClassName='col-md-4'
             label='Date of Placement'
-            id={this.props.idPrefix + 'date_of_placement'}
+            id={`${this.props.idPrefix}date_of_placement`}
             value={FormatDateForDisplay(child.date_of_placement)}
             onChange={(event) => this.props.setParentState(this.props.index, 'date_of_placement', FormatDateForPersistance(event.target.value))}
             onBlur={(event) => this.props.setParentState(this.props.index, 'date_of_placement', FormatDateForPersistance(event.target.value))} />

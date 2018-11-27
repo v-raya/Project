@@ -27,12 +27,12 @@ const ApplicationsListRow = ({
   applicationStatus,
   applicationReceivedDate
 }) => {
-  const profileUrl = facilityHomeId ? urlPrefixHelper('/rfa/a01/' + rfaApplicationId + '/facility/' + facilityHomeId + '/profile') : null
+  const profileUrl = facilityHomeId ? urlPrefixHelper(`/rfa/a01/${rfaApplicationId}/facility/${facilityHomeId}/profile`) : null
   const profileLink = facilityHomeId ? <a href={profileUrl} >Profile link</a> : null
   return (
     <tr>
       <td>{rfaApplicationId}</td>
-      <td><a href={urlPrefixHelper('/rfa/a01/' + rfaApplicationId + '/edit')}>{familyName}</a></td>
+      <td><a href={urlPrefixHelper(`/rfa/a01/${rfaApplicationId}/edit`)}>{familyName}</a></td>
       <td className='tracking'>{profileLink}</td>
       <td>{getPhoneNumber(applicantsInfo.getIn([0, 'phones']))}</td>
       <td>{getAddress(applicationAddress, 'street_address')}</td>

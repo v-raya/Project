@@ -15,8 +15,8 @@ export default class DesiredChildCard extends React.Component {
     super(props)
     this.handleAddressChange = this.handleAddressChange.bind(this)
     this.handleRelationshipChange = this.handleRelationshipChange.bind(this)
-    this.childInHomeValidationId = this.props.idPrefix + 'child_in_home'
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'child_in_home', {rule: 'isRequiredBoolean', message: 'Required'})
+    this.childInHomeValidationId = `${this.props.idPrefix}child_in_home`
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}child_in_home`, {rule: 'isRequiredBoolean', message: 'Required'})
   }
 
   handleAddressChange (key, value, index) {
@@ -42,7 +42,7 @@ export default class DesiredChildCard extends React.Component {
     const index = this.props.index
     return (
       <div className='container-fluid'>
-        <div key={'desiredChildRemoveLink' + index} className='col-md-12'>
+        <div key={`desiredChildRemoveLink${index}`} className='col-md-12'>
           {index > 0
             ? <div>
               <hr style={{padding: '1rem', marginBottom: '0px', marginTop: '10px'}} />
@@ -51,8 +51,8 @@ export default class DesiredChildCard extends React.Component {
           <a onClick={(event) => this.props.clickClose(index)} className='pull-right remove-btn'>Remove</a>
         </div>
         <YesNoRadioComponent
-          idPrefix={this.props.idPrefix + 'child_in_home'}
-          label={'Is the child currently in your home?' + RfaCommon.requiredIndicator}
+          idPrefix={`${this.props.idPrefix}child_in_home`}
+          label={`Is the child currently in your home?${RfaCommon.requiredIndicator}`}
           value={child.child_in_home}
           onFieldChange={(event) => this.props.setParentState(index, 'child_in_home', event.target.value)} />
         <DesiredChildDetails

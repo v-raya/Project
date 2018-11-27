@@ -17,12 +17,12 @@ const CheckListRow = ({
     editMode
       ? checkListDocuments.map((docs, index) => {
         return (
-          <tr key={id + 'checkboxEdit' + index}>
+          <tr key={`${id}checkboxEdit${index}`}>
             <td><BinarySelectorField
-              id={id + 'checkboxEdit' + index}
+              id={`${id}checkboxEdit${index}`}
               type='checkbox'
               key={index}
-              labelId={'checkLabel' + index}
+              labelId={`checkLabel${index}`}
               label={docs.get('title')}
               gridClassName='col-xs-12'
               onChange={(event) => handleChange('checked', event.target.checked, index, cardIndex)}
@@ -31,14 +31,14 @@ const CheckListRow = ({
             </td>
             <td>
               <DateField
-                id={id + 'dateEdit' + index}
+                id={`${id}dateEdit${index}`}
                 value={FormatDateForDisplay(docs.get('date'))}
                 onChange={(event) => handleChange('date', FormatDateForPersistance(event.target.value), index, cardIndex)} />
 
             </td>
             <td>
               <TextAreaComponent
-                id={id + 'textAreaEdit' + index}
+                id={`${id}textAreaEdit${index}`}
                 value={docs.get('notes')}
                 onChange={(event) => handleChange('notes', event.target.value, index, cardIndex)} />
             </td>
@@ -47,20 +47,20 @@ const CheckListRow = ({
       })
       : checkListDocuments.map((docs, index) => {
         return (
-          <tr key={id + 'checkboxShow' + index}>
-            <td id={id + 'checkboxShow' + index}>
+          <tr key={`${id}checkboxShow${index}`}>
+            <td id={`${id}checkboxShow${index}`}>
               <BinarySelectorField
                 type='checkbox'
                 key={index}
-                labelId={'checkLabel' + index}
+                labelId={`checkLabel${index}`}
                 label={docs.get('title')}
                 gridClassName='col-xs-12'
                 defaultChecked={docs.get('checked')} />
             </td>
-            <td id={id + 'dateShow' + index}>
+            <td id={`${id}dateShow${index}`}>
               {FormatDateForDisplay(docs.get('date'))}
             </td>
-            <td id={id + 'textAreaShow' + index}>
+            <td id={`${id}textAreaShow${index}`}>
               {docs.get('notes')}
             </td>
           </tr>

@@ -212,17 +212,17 @@ export class FosterCareHistoryFields extends React.Component {
               {
                 agencyQ1List && q1History.agencies.map((agencyQ1Fields, index) => {
                   return (
-                    <div key={'agency-q1-' + index} >
+                    <div key={`agency-q1-${index}`} >
                       <AgencyComponent
                         index={index}
-                        id={'Q1-' + index}
+                        id={`Q1-${index}`}
                         defKey='foster_care_licenses_q1' subKey='agencies'
                         agencies={q1History.agencies}
                         label='Agency Name'
                         placeholder=''
                         dropdownLabel='License Type'
-                        inputId={'agency-q1-name-' + index}
-                        dropDownId={'agency-q1-type-' + index}
+                        inputId={`agency-q1-name-${index}`}
+                        dropDownId={`agency-q1-type-${index}`}
                         optionList={Object.keys(licenseTypes).map(v => { return licenseTypes[v] })}
                         dropDownValue={agencyQ1Fields.type}
                         inputValue={agencyQ1Fields.name}
@@ -259,7 +259,7 @@ export class FosterCareHistoryFields extends React.Component {
               {
                 q2History.facilities.map((name, index) => {
                   return (
-                    <div key={'facility-q2-' + index}>
+                    <div key={`facility-q2-${index}`}>
                       <FacilityComponent
                         index={index}
                         value={name}
@@ -298,17 +298,17 @@ export class FosterCareHistoryFields extends React.Component {
               {
                 agencyQ3List && q3History.agencies.map((agencyFields, index) => {
                   return (
-                    <div key={'agency-q3-' + index}>
+                    <div key={`agency-q3-${index}`}>
                       <AgencyComponent
                         index={index}
-                        id={'Q3-' + index}
+                        id={`Q3-${index}`}
                         label='Agency Name (required)'
                         placeholder=''
                         agencies={q3History.agencies}
                         defKey='facility_operation_licenses_q3'subKey='agencies'
                         dropdownLabel='License Type (required)'
-                        inputId={'agency-q3-name-' + index}
-                        dropDownId={'agency-q3-type-' + index}
+                        inputId={`agency-q3-name-${index}`}
+                        dropDownId={`agency-q3-type-${index}`}
                         optionList={Object.keys(licenseTypes).map(v => { return licenseTypes[v] })}
                         dropDownValue={agencyFields.type}
                         inputValue={agencyFields.name}
@@ -344,7 +344,7 @@ export class FosterCareHistoryFields extends React.Component {
               {
                 q4History.facilities.map((name, index) => {
                   return (
-                    <div key={'facility-q4-' + index}>
+                    <div key={`facility-q4-${index}`}>
                       <FacilityComponent
                         index={index}
                         value={name}
@@ -384,17 +384,17 @@ export class FosterCareHistoryFields extends React.Component {
               {
                 agencyQ5List && q5History.agencies.map((agencyFields, index) => {
                   return (
-                    <div key={'agency-q5-' + index}>
+                    <div key={`agency-q5-${index}`}>
                       <AgencyComponent
                         index={index}
-                        id={'Q5-' + index}
+                        id={`Q5-${index}`}
                         label='Agency Name (required)'
                         placeholder=''
                         agencies={q5History.agencies}
                         defKey='denial_history_q5' subKey='agencies'
                         dropdownLabel='License Type (required)'
-                        inputId={'agency-q5-name-' + index}
-                        dropDownId={'agency-q5-type-' + index}
+                        inputId={`agency-q5-name-${index}`}
+                        dropDownId={`agency-q5-type-${index}`}
                         optionList={Object.keys(licenseTypes).map(v => { return licenseTypes[v] })}
                         dropDownValue={agencyFields.type}
                         inputValue={agencyFields.name}
@@ -429,17 +429,17 @@ export class FosterCareHistoryFields extends React.Component {
               {
                 agencyQ6List && q6History.agencies.map((agencyFields, index) => {
                   return (
-                    <div key={'agency-q6-' + index}>
+                    <div key={`agency-q6-${index}`}>
                       <AgencyComponent
                         index={index}
-                        id={'Q6-' + index}
+                        id={`Q6-${index}`}
                         label='Agency Name (required)'
                         placeholder=''
                         agencies={q6History.agencies}
                         defKey='suspension_revocation_history_q6'subKey='agencies'
                         dropdownLabel='License Type (required)'
-                        inputId={'agency-q6-name-' + index}
-                        dropDownId={'agency-q6-type-' + index}
+                        inputId={`agency-q6-name-${index}`}
+                        dropDownId={`agency-q6-type-${index}`}
                         optionList={Object.keys(licenseTypes).map(v => { return licenseTypes[v] })}
                         dropDownValue={agencyFields.type}
                         inputValue={agencyFields.name}

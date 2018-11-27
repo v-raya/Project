@@ -20,7 +20,7 @@ export default class ReferencesCard extends React.Component {
     this.state = {
       suggestions: []
     }
-    this.props.validator.addFieldValidation(this.props.idPrefix + 'phone_number', phoneNumberRule)
+    this.props.validator.addFieldValidation(`${this.props.idPrefix}phone_number`, phoneNumberRule)
   }
   handleAddressChange (key, value) {
     let mailingAddressObj = Immutable.fromJS(this.props.reference.mailing_address)
@@ -35,7 +35,7 @@ export default class ReferencesCard extends React.Component {
   }
 
   render () {
-    const phoneNumberId = this.props.idPrefix + 'phone_number'
+    const phoneNumberId = `${this.props.idPrefix}phone_number`
     const reference = this.props.reference
     return (
       <div>
@@ -82,7 +82,7 @@ export default class ReferencesCard extends React.Component {
 
           <InputComponent gridClassName='col-md-4' id='email'
             value={this.props.reference.email}
-            label={'Email Address' + RfaCommon.requiredIndicator} placeholder=''
+            label={`Email Address${RfaCommon.requiredIndicator}`} placeholder=''
             type='text' onChange={(event) => this.props.setParentState('email',
               event.target.value, this.props.index)} />
         </div>

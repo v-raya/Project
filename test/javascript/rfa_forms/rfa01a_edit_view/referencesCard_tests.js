@@ -28,7 +28,7 @@ describe('References Card', () => {
     const validator = new Validator({})
     referencesComp = mount(<ReferencesCard
       index={0}
-      idPrefix={'reference' + 1}
+      idPrefix={`reference${1}`}
       reference={fieldRefValues}
       namePrefixId='name_prefix'
       nameSuffixId='name_suffix'
@@ -51,7 +51,7 @@ describe('References Card', () => {
     expect(referencesComp.length).toEqual(1)
   })
   it('Verify email address label', () => {
-    expect(referencesComp.find('#email').at(0).props().label).toBe('Email Address' + RfaCommon.requiredIndicator)
+    expect(referencesComp.find('#email').at(0).props().label).toBe(`Email Address${RfaCommon.requiredIndicator}`)
   })
   it('verify phone change in reference Card', () => {
     const phoneField = referencesComp.find('#reference1phone_number').hostNodes()

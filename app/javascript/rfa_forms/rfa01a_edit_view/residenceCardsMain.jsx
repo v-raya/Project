@@ -62,8 +62,8 @@ export default class ResidenceCards extends React.Component {
           textAlignment='left'
           label='Address'
           handleOnClick={() => this.props.setFocusState('residentAddress')}
-          focusClassName={this.props.getFocusClassName('residentAddress') + ' ' +
-          'card phone-section double-gap-top active-bar'}>
+          focusClassName={`${this.props.getFocusClassName('residentAddress')} ` +
+          `card phone-section double-gap-top active-bar`}>
 
           <AddressCard
             stateTypes={this.props.stateTypes}
@@ -81,8 +81,8 @@ export default class ResidenceCards extends React.Component {
           textAlignment='left'
           label='About This Residence'
           handleOnClick={() => this.props.setFocusState('aboutResidence')}
-          focusClassName={this.props.getFocusClassName('aboutResidence') + ' ' +
-          'card phone-section double-gap-top active-bar'}>
+          focusClassName={`${this.props.getFocusClassName('aboutResidence')} ` +
+          `card phone-section double-gap-top active-bar`}>
 
           <AboutThisResidenceCard
             residenceTypes={this.props.residenceTypes}

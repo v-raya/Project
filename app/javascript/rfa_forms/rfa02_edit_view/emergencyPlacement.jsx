@@ -35,7 +35,7 @@ export default class EmergencyPlacement extends React.Component {
     return (
       <div>
         {this.props.editMode ? <YesNoRadioComponent
-          idPrefix={'emergencyPlacement' + this.props.peopleIndex}
+          idPrefix={`emergencyPlacement${this.props.peopleIndex}`}
           index={this.props.peopleIndex}
           label='Is this an emergency placement?'
           gridClassName='no-padding'
@@ -53,7 +53,7 @@ export default class EmergencyPlacement extends React.Component {
             colHeaders={['Emergency Placement Only', 'Date', 'Notes']}
             rowsComponent={
               <CheckListRow
-                id={'emergencyPlacement' + this.props.peopleIndex}
+                id={`emergencyPlacement${this.props.peopleIndex}`}
                 handleChange={this.handleEmergencyPlacementChange}
                 checkListDocuments={emergencyPlacementList.get('items') || emergencyPlacementDefaults.get('items')}
                 editMode={this.props.editMode} />

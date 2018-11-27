@@ -14,7 +14,7 @@ const ApplicantLinks = ({
   applicants = applicants.apps
   return (
     applicants.map((applicant, index) => {
-      const href = '#Applicant' + indexes[index] + '-tracking-card'
+      const href = `#Applicant${indexes[index]}-tracking-card`
       return (
         <div key={index}>
           <NavLink

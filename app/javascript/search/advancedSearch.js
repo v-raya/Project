@@ -10,8 +10,8 @@ const AdvancedSearch = ({
     <p className='search-results-label'>Search Results:</p>
     {paginationRender}
     <span className='toggle_result'>
-      <span id='toggle_button' onClick={handleToggle} className={(isToggled ? 'line_off-icon' : 'line_on-icon') + ' ' + 'navbar-brand'} alt={'list'} />
-      <span onClick={handleToggle} className={(isToggled ? 'grid_on-icon' : 'grid_off-icon') + ' ' + 'navbar-brand'} alt={'grid'} />
+      <span id='toggle_button' onClick={handleToggle} className={`${isToggled ? 'line_off-icon' : 'line_on-icon'} ` + `navbar-brand`} alt={'list'} />
+      <span onClick={handleToggle} className={`${isToggled ? 'grid_on-icon' : 'grid_off-icon'} ` + `navbar-brand`} alt={'grid'} />
     </span>
   </div>
 )

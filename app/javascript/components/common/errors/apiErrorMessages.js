@@ -3,7 +3,7 @@ import React from 'react'
 
 const ApiErrorMessages = ({errors}) => (
   errors.map((error, index) =>
-    <div key={'error' + '[' + index + ']'} >
+    <div key={`${'error' + '['}${index}]`} >
       <span className='input-error-message' role='alert'>Type: {error.type}</span>
       <span className='input-error-message' role='alert'>Message: {error.user_message}</span>
       {(() => {

@@ -5,7 +5,7 @@ const FacilityTypeDetails = ({
 }) => (
   <div>
     <h3>
-           FACILITY / HOME TYPE : {' ' + value}
+           FACILITY / HOME TYPE : {` ${value}`}
     </h3>
   </div>
 )

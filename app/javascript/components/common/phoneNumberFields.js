@@ -13,7 +13,7 @@ export class PhoneNumberField extends React.PureComponent {
   constructor (props) {
     super(props)
 
-    this.phoneNumberId = this.props.idPrefix + 'number'
+    this.phoneNumberId = `${this.props.idPrefix}number`
     this.props.validator.addFieldValidation(this.phoneNumberId, phoneNumberRule)
     this.props.validator.addFieldValidation(this.phoneNumberId, {rule: 'isRequired', message: 'Required'})
   }
@@ -57,7 +57,7 @@ export class PhoneNumberField extends React.PureComponent {
           disableNullVal
           onChange={(event) => this.props.onPhoneFieldChange(this.props.index,
             dictionaryNilSelect(event.target.options), 'phone_type')} />
-        <BinarySelectorField gridClassName='col-md-4' id={this.props.idPrefix + 'preferred'}
+        <BinarySelectorField gridClassName='col-md-4' id={`${this.props.idPrefix}preferred`}
           type={'checkbox'}
           checked={phoneFields.preferred}
           value={phoneFields.preferred}

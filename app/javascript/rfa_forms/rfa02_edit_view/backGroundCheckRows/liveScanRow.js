@@ -17,12 +17,12 @@ const LiveScanRow = ({
     editMode
       ? checkListDocuments.get('items').map((docs, index) => {
         return (
-          <tr key={id + 'checkboxEdit' + index}>
+          <tr key={`${id}checkboxEdit${index}`}>
             <td><BinarySelectorField
-              id={id + 'checkboxEdit' + index}
+              id={`${id}checkboxEdit${index}`}
               type='checkbox'
               key={index}
-              labelId={'checkLabel' + index}
+              labelId={`checkLabel${index}`}
               label={docs.get('title')}
               gridClassName='col-xs-12'
               onChange={(event) => handleChange('checked', event.target.checked, index)}
@@ -31,20 +31,20 @@ const LiveScanRow = ({
             </td>
             <td>
               <DateField
-                id={id + 'submitDateEdit' + index}
+                id={`${id}submitDateEdit${index}`}
                 value={FormatDateForDisplay(docs.get('date_submitted'))}
                 onChange={(event) => handleChange('date_submitted', FormatDateForPersistance(event.target.value), index)} />
             </td>
             <td>
               <DateField
-                id={id + 'approveDateEdit' + index}
+                id={`${id}approveDateEdit${index}`}
                 value={FormatDateForDisplay(docs.get('date_received'))}
                 onChange={(event) => handleChange('date_received', FormatDateForPersistance(event.target.value), index)} />
 
             </td>
             <td>
               <TextAreaComponent
-                id={id + 'textAreaEdit' + index}
+                id={`${id}textAreaEdit${index}`}
                 value={docs.get('notes')}
                 onChange={(event) => handleChange('notes', event.target.value, index)} />
             </td>
@@ -53,23 +53,23 @@ const LiveScanRow = ({
       })
       : checkListDocuments.get('items').map((docs, index) => {
         return (
-          <tr key={id + 'checkboxShow' + Number(index)}>
-            <td id={id + 'checkboxShow' + index}>
+          <tr key={`${id}checkboxShow${Number(index)}`}>
+            <td id={`${id}checkboxShow${index}`}>
               <BinarySelectorField
                 type='checkbox'
                 key={index}
-                labelId={'checkLabel' + index}
+                labelId={`checkLabel${index}`}
                 label={docs.get('title')}
                 gridClassName='col-xs-12'
                 defaultChecked={docs.get('checked')} />
             </td>
-            <td id={id + 'submitDateShow' + index}>
+            <td id={`${id}submitDateShow${index}`}>
               {FormatDateForDisplay(docs.get('date_submitted'))}
             </td>
-            <td id={id + 'approveDateShow' + index}>
+            <td id={`${id}approveDateShow${index}`}>
               {FormatDateForDisplay(docs.get('date_received'))}
             </td>
-            <td id={id + 'textAreaShow' + index}>
+            <td id={`${id}textAreaShow${index}`}>
               {docs.get('notes')}
             </td>
           </tr>
