@@ -39,17 +39,17 @@ describe('Verify Complete Name Field Component', () => {
       onChange={onChangeSpy} />)
   })
   it('onChange event on Prefix dropdown', () => {
-    let prefixDropDown = component.find('#name_prefix').hostNodes()
+    const prefixDropDown = component.find('#name_prefix').hostNodes()
     prefixDropDown.simulate('change', {target: {options: {'4': {value: '4', text: 'Dr'}, selectedIndex: 4}}})
     expect(onChangeSpy).toHaveBeenCalledWith('name_prefix', {id: '4', value: 'Dr'}, 0)
   })
   it('onChange event on Prefix dropdown', () => {
-    let suffixDropDown = component.find('#name_suffix').hostNodes()
+    const suffixDropDown = component.find('#name_suffix').hostNodes()
     suffixDropDown.simulate('change', {target: {options: {'2': {value: '2', text: 'II'}, selectedIndex: 2}}})
     expect(onChangeSpy).toHaveBeenCalledWith('name_suffix', {id: '2', value: 'II'}, 0)
   })
   it('onChange event on Prefix dropdown', () => {
-    let addedNameComponent = mount(<CompleteNameField
+    const addedNameComponent = mount(<CompleteNameField
       index={0}
       fieldValues={fieldValues}
       prefixTypes={prefixTypes.items}
@@ -57,12 +57,12 @@ describe('Verify Complete Name Field Component', () => {
       suffixTypes={suffixTypes.items}
       nameTypeId='name_type'
       onChange={onChangeSpy} />)
-    let suffixDropDown = addedNameComponent.find('#name_type').hostNodes()
+    const suffixDropDown = addedNameComponent.find('#name_type').hostNodes()
     suffixDropDown.simulate('change', {target: {options: {'2': {value: '2', text: 'Legal'}, selectedIndex: 2}}})
     expect(onChangeSpy).toHaveBeenCalledWith('name_type', {id: '2', value: 'Legal'}, 0)
   })
   it('verifies component did unmount', () => {
-    let instance = component.instance()
+    const instance = component.instance()
     expect(instance.props.validator.validations.size).toEqual(2)
     component.unmount()
     expect(instance.props.validator.validations.size).toEqual(0)

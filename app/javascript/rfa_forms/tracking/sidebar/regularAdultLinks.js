@@ -10,11 +10,11 @@ const RegularAdultLinks = ({
   idSuffix,
   isNavLinkActive
 }) => {
-  let indexes = regularAdults.indexes
+  const indexes = regularAdults.indexes
   regularAdults = regularAdults.adults
   return (
     regularAdults.map((regularAdult, index) => {
-      let href = '#PresentAdult' + indexes[index] + '-tracking-card'
+      const href = '#PresentAdult' + indexes[index] + '-tracking-card'
       return (
         <div key={index}>
           <NavLink

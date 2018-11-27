@@ -85,7 +85,7 @@ export default class Rfa01EditView extends React.Component {
   validateFieldSetErrorState (fieldName, value) {
     const error = this.validator.validateFieldAndGetError(fieldName, value)
 
-    let currentErrors = this.state.errors
+    const currentErrors = this.state.errors
     if (error === undefined) {
       _.unset(currentErrors, fieldName)
     } else {
@@ -95,26 +95,26 @@ export default class Rfa01EditView extends React.Component {
   }
 
   saveProgress () {
-    let newApp = this.state.application.setIn(['metadata', 'submit_enabled'],
+    const newApp = this.state.application.setIn(['metadata', 'submit_enabled'],
       (!validateStatus(this.state.application.get('status')) &&
     this.validateAllRequiredForSubmit(this.state.application.toJS())))
 
-    let overAllState = newApp
-    let newApplicants = overAllState.get('applicants').map((applicant) =>
+    const overAllState = newApp
+    const newApplicants = overAllState.get('applicants').map((applicant) =>
       applicant.update('phones', (phones) =>
         unMaskedPhoneFields(phones, 'number')
       )
     )
-    let newOverAllState = overAllState.set('applicants', newApplicants)
-    let newReferenceList = unMaskedPhoneFields(newOverAllState.getIn(['references', 'items']), 'phone_number')
-    let finalState = newOverAllState.getIn(['references', 'items']) ? newOverAllState.setIn(['references', 'items'], newReferenceList) : newOverAllState
+    const newOverAllState = overAllState.set('applicants', newApplicants)
+    const newReferenceList = unMaskedPhoneFields(newOverAllState.getIn(['references', 'items']), 'phone_number')
+    const finalState = newOverAllState.getIn(['references', 'items']) ? newOverAllState.setIn(['references', 'items'], newReferenceList) : newOverAllState
 
     const url = '/rfa/a01/' + this.state.application.get('id')
     return this.fetchToRails(url, 'PUT', finalState.toJS())
   }
 
   submit () {
-    let newApp = this.state.application.setIn(['metadata', 'submit_enabled'], false)
+    const newApp = this.state.application.setIn(['metadata', 'submit_enabled'], false)
     this.setState({application: newApp})
     this.saveProgress().then(() => {
       if (this.state.errors && !this.state.errors.issue_details) {
@@ -150,7 +150,7 @@ export default class Rfa01EditView extends React.Component {
     if (Immutable.Iterable.isIterable(value) === false) {
       value = Immutable.fromJS(value)
     }
-    let newStateApplication = this.state.application.set(key, value)
+    const newStateApplication = this.state.application.set(key, value)
 
     newStateApplication.setIn(['metadata', 'submit_enabled'],
       (!validateStatus(this.state.application.get('status')) &&

@@ -75,7 +75,7 @@ export default class Rfa01cEditView extends React.Component {
 
   validateFieldSetErrorState (fieldName, value) {
     const error = this.validator.validateFieldAndGetError(fieldName, value)
-    let currentErrors = this.state.errors
+    const currentErrors = this.state.errors
     if (error === undefined) {
       _.unset(currentErrors, fieldName)
     } else {
@@ -85,16 +85,16 @@ export default class Rfa01cEditView extends React.Component {
   }
 
   saveProgress () {
-    let newApp = Immutable.fromJS(this.state.application).setIn(['metadata', 'submit_enabled'],
+    const newApp = Immutable.fromJS(this.state.application).setIn(['metadata', 'submit_enabled'],
       !(!validateStatus(this.state.rfa_a01_application.status) &&
      this.checkBFormsForSubmit() &&
      this.validateAllRequiredForSubmit(this.state.application)))
-    let url = '/rfa/a01/' + this.state.rfa_a01_application.id + '/c01/' + this.state.application.id
+    const url = '/rfa/a01/' + this.state.rfa_a01_application.id + '/c01/' + this.state.application.id
     return this.fetchToRails(url, 'PUT', newApp.toJS())
   }
 
   submit () {
-    let newApp = Immutable.fromJS(this.state.application).setIn(['metadata', 'submit_enabled'], false)
+    const newApp = Immutable.fromJS(this.state.application).setIn(['metadata', 'submit_enabled'], false)
     this.setState({application: newApp})
     this.saveProgress().then(() => {
       if (this.state.errors && !this.state.errors.issue_details) {
@@ -127,7 +127,7 @@ export default class Rfa01cEditView extends React.Component {
   }
 
   setApplicationState (key, value) {
-    let newState = Immutable.fromJS(this.state.application).set(key, value)
+    const newState = Immutable.fromJS(this.state.application).set(key, value)
     this.setState({
       application: newState.toJS()
     })

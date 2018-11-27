@@ -81,15 +81,15 @@ export class FosterCareHistoryFields extends React.Component {
   }
 
   setFosterCareNestedState (key, subKey, value) {
-    let newData = Immutable.fromJS((Object.keys(this.props.fosterCareHistory).length !== 0) ? this.props.fosterCareHistory : blankFosterCareFields)
-    let newerData = newData.update(key,
+    const newData = Immutable.fromJS((Object.keys(this.props.fosterCareHistory).length !== 0) ? this.props.fosterCareHistory : blankFosterCareFields)
+    const newerData = newData.update(key,
       data => data.set(subKey, value))
     this.props.setParentState('adoption_history', newerData.toJS())
   }
 
   handleClearOnConditionalChange (key, subKey, value, hiddenKey, hiddenDefaultValue) {
     if (value === 'false') {
-      let newData = Immutable.fromJS((Object.keys(this.props.fosterCareHistory).length !== 0) ? this.props.fosterCareHistory : blankFosterCareFields)
+      const newData = Immutable.fromJS((Object.keys(this.props.fosterCareHistory).length !== 0) ? this.props.fosterCareHistory : blankFosterCareFields)
       let newerData = newData.update(key, data => data.set(subKey, value))
       newerData = newerData.update(key, data => data.set(hiddenKey, hiddenDefaultValue))
       this.props.setParentState('adoption_history', newerData.toJS())
@@ -99,17 +99,17 @@ export class FosterCareHistoryFields extends React.Component {
   }
 
   setFosterCareHistoryState (key, value) {
-    let newData = Immutable.fromJS((Object.keys(this.props.fosterCareHistory).length !== 0) ? this.props.fosterCareHistory : blankFosterCareFields)
-    let newerData = newData.set(key, value)
+    const newData = Immutable.fromJS((Object.keys(this.props.fosterCareHistory).length !== 0) ? this.props.fosterCareHistory : blankFosterCareFields)
+    const newerData = newData.set(key, value)
     this.props.setParentState('adoption_history', newerData.toJS())
   }
 
   addAgencyCard (event, agency, key, subKey) {
     event.preventDefault()
-    let agencyCardsList = checkArrayObjectPresence(agency) || []
+    const agencyCardsList = checkArrayObjectPresence(agency) || []
     agencyCardsList.push(blankAgencyFields)
-    let newData = Immutable.fromJS(this.props.fosterCareHistory)
-    let newerData = newData.update(key,
+    const newData = Immutable.fromJS(this.props.fosterCareHistory)
+    const newerData = newData.update(key,
       data => data.set(subKey, agencyCardsList))
     this.props.setParentState('adoption_history', newerData.toJS())
     // let newData = Immutable.fromJS(this.props.fosterCareHistory)
@@ -125,10 +125,10 @@ export class FosterCareHistoryFields extends React.Component {
 
   addFacilityCard (event, facility, key, subKey) {
     event.preventDefault()
-    let facilityCardsList = checkArrayObjectPresence(facility) || []
+    const facilityCardsList = checkArrayObjectPresence(facility) || []
     facilityCardsList.push('')
-    let newData = Immutable.fromJS(this.props.fosterCareHistory)
-    let newerData = newData.update(key,
+    const newData = Immutable.fromJS(this.props.fosterCareHistory)
+    const newerData = newData.update(key,
       data => data.set(subKey, facilityCardsList))
     this.props.setParentState('adoption_history', newerData.toJS())
     // let newData = Immutable.fromJS(this.props.fosterCareHistory)
@@ -144,11 +144,11 @@ export class FosterCareHistoryFields extends React.Component {
 
   onAgencyChange (event, agency, index, type, key, subKey, value) {
     let agencyCardsList = checkArrayObjectPresence(agency) || blankAgencyFields
-    let immutableAgency = Immutable.fromJS(agencyCardsList)
+    const immutableAgency = Immutable.fromJS(agencyCardsList)
     agencyCardsList = immutableAgency.update(index, x => x.set(type, value))
-    let newData = Immutable.fromJS(this.props.fosterCareHistory)
+    const newData = Immutable.fromJS(this.props.fosterCareHistory)
 
-    let newerData = newData.update(key,
+    const newerData = newData.update(key,
       data => data.set(subKey, agencyCardsList))
 
     this.props.setParentState('adoption_history', newerData.toJS())
@@ -157,10 +157,10 @@ export class FosterCareHistoryFields extends React.Component {
   onFacilityChange (event, facility, index, key, subKey, value) {
     let facilityList = checkArrayObjectPresence(facility) || []
     //  facilityList.push(value)
-    let immutableFacilty = Immutable.fromJS(facilityList)
+    const immutableFacilty = Immutable.fromJS(facilityList)
     facilityList = immutableFacilty.set(index, value)
-    let newData = Immutable.fromJS(this.props.fosterCareHistory)
-    let newerData = newData.update(key,
+    const newData = Immutable.fromJS(this.props.fosterCareHistory)
+    const newerData = newData.update(key,
       data => data.set(subKey, facilityList))
 
     this.props.setParentState('adoption_history', newerData.toJS())
@@ -223,7 +223,7 @@ export class FosterCareHistoryFields extends React.Component {
                         dropdownLabel='License Type'
                         inputId={'agency-q1-name-' + index}
                         dropDownId={'agency-q1-type-' + index}
-                        optionList={Object.keys(licenseTypes).map(function (v) { return licenseTypes[v] })}
+                        optionList={Object.keys(licenseTypes).map(v => { return licenseTypes[v] })}
                         dropDownValue={agencyQ1Fields.type}
                         inputValue={agencyQ1Fields.name}
                         removeAgencyCard={this.removeAgencyCard}
@@ -309,7 +309,7 @@ export class FosterCareHistoryFields extends React.Component {
                         dropdownLabel='License Type (required)'
                         inputId={'agency-q3-name-' + index}
                         dropDownId={'agency-q3-type-' + index}
-                        optionList={Object.keys(licenseTypes).map(function (v) { return licenseTypes[v] })}
+                        optionList={Object.keys(licenseTypes).map(v => { return licenseTypes[v] })}
                         dropDownValue={agencyFields.type}
                         inputValue={agencyFields.name}
                         onAgencyChange={this.onAgencyChange}
@@ -395,7 +395,7 @@ export class FosterCareHistoryFields extends React.Component {
                         dropdownLabel='License Type (required)'
                         inputId={'agency-q5-name-' + index}
                         dropDownId={'agency-q5-type-' + index}
-                        optionList={Object.keys(licenseTypes).map(function (v) { return licenseTypes[v] })}
+                        optionList={Object.keys(licenseTypes).map(v => { return licenseTypes[v] })}
                         dropDownValue={agencyFields.type}
                         inputValue={agencyFields.name}
                         onAgencyChange={this.onAgencyChange}
@@ -440,7 +440,7 @@ export class FosterCareHistoryFields extends React.Component {
                         dropdownLabel='License Type (required)'
                         inputId={'agency-q6-name-' + index}
                         dropDownId={'agency-q6-type-' + index}
-                        optionList={Object.keys(licenseTypes).map(function (v) { return licenseTypes[v] })}
+                        optionList={Object.keys(licenseTypes).map(v => { return licenseTypes[v] })}
                         dropDownValue={agencyFields.type}
                         inputValue={agencyFields.name}
                         onAgencyChange={this.onAgencyChange}

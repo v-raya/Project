@@ -3,7 +3,7 @@ import {fetchRequest} from 'helpers/http'
 import fetchMock from 'fetch-mock'
 
 describe('test real API', () => {
-  let mockParams = {
+  const mockParams = {
     data: 'home'
   }
   let fetchCall, url

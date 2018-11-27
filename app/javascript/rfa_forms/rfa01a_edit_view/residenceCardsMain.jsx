@@ -28,7 +28,7 @@ export default class ResidenceCards extends React.Component {
       residence = residence.set(hiddenKey, hiddenDefaultValue)
       this.props.setParentState('residence', residence.toJS())
     } else {
-      let newResidence = residence.delete(hiddenKey)
+      const newResidence = residence.delete(hiddenKey)
       this.props.setParentState('residence', newResidence.toJS())
     }
   }
@@ -53,7 +53,7 @@ export default class ResidenceCards extends React.Component {
   }
 
   render () {
-    let residenceData = this.props.residence
+    const residenceData = this.props.residence
     return (
       <div>
         <CardLayout

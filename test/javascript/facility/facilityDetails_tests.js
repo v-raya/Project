@@ -2,7 +2,7 @@ import React from 'react'
 import FacilityDetails from 'facility/facilityDetails.jsx'
 import {shallow} from 'enzyme'
 
-describe('Verify Facility Details', function () {
+describe('Verify Facility Details', () => {
   const props = {
     facilityData: {
       'href': 'facilities/300665437',
@@ -18,29 +18,29 @@ describe('Verify Facility Details', function () {
     },
     facilityName: 'Ananya Nandi'
   }
-  let detailsCompShallow = shallow(<FacilityDetails {...props} />)
-  it('verify Facility Details fields', function () {
+  const detailsCompShallow = shallow(<FacilityDetails {...props} />)
+  it('verify Facility Details fields', () => {
     expect(detailsCompShallow.find('.facility-details').length).toEqual(1)
   })
-  it('Verify Facility Name', function () {
+  it('Verify Facility Name', () => {
     expect(detailsCompShallow.find('SmallInnerBlockDetails[title="FACILITY / HOME NAME"]').props().value).toBe('Ananya Nandi')
   })
-  it('Verify Name of Licensee / Parents', function () {
+  it('Verify Name of Licensee / Parents', () => {
     expect(detailsCompShallow.find('SmallInnerBlockDetails[title="NAME OF LICENSEE / PARENTS"]').props().value).toBe('Lederhouse Transitions Inc.')
   })
-  it('Verify Assigned Oversight agency', function () {
+  it('Verify Assigned Oversight agency', () => {
     expect(detailsCompShallow.find('SmallInnerBlockDetails[title="ASSIGNED OVERSIGHT AGENCY"]').props().value).toBe('PACIFIC INLAND CR')
   })
-  it('Verify Facility License Number', function () {
+  it('Verify Facility License Number', () => {
     expect(detailsCompShallow.find('SmallInnerBlockDetails[title="LICENSE NUMBER / FAMILY ID"]').props().value).toBe('300665437')
   })
-  it('Verify License status', function () {
+  it('Verify License status', () => {
     expect(detailsCompShallow.find('SmallInnerBlockDetails[title="STATUS"]').props().value).toBe('LICENSED')
   })
-  it('Verify License Effective Date when license status is "Licensed"', function () {
+  it('Verify License Effective Date when license status is "Licensed"', () => {
     expect(detailsCompShallow.find('SmallInnerBlockDetails[title="LICENSE / APPROVAL EFFECTIVE DATE"]').props().value).toBe('10/01/2012')
   })
-  it('Verify Application Received Date', function () {
+  it('Verify Application Received Date', () => {
     expect(detailsCompShallow.find('SmallInnerBlockDetails[title="APPLICATION RECEIVED DATE"]').props().value).toBe('07/18/2012')
   })
 })

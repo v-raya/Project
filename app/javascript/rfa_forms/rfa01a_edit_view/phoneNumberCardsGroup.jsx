@@ -32,7 +32,7 @@ export default class PhoneComponent extends React.Component {
   }
 
   render () {
-    let phonesList = this.props.phones.toJS()
+    const phonesList = this.props.phones.toJS()
 
     return (
       <div className='card-body'>

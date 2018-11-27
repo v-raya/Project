@@ -3,11 +3,11 @@ import {shallow, mount} from 'enzyme'
 import B01SideBar from 'rfa_forms/rfa_sidebar/b01SideBar'
 
 describe('RFA 01b side bar ', () => {
-  let component, applicants, otherAdults, applicationId
-  let isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
-  let handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
-  applicationId = 88
-  applicants = [
+  let component
+  const isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
+  const handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
+  const applicationId = 88
+  const applicants = [
     {
       'id': 643,
       'first_name': 'f',
@@ -30,7 +30,7 @@ describe('RFA 01b side bar ', () => {
       'email': ''
     }
   ]
-  otherAdults = [
+  const otherAdults = [
     {
       'id': 171,
       'first_name': 'persona',

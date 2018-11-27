@@ -27,8 +27,8 @@ const ApplicationsListRow = ({
   applicationStatus,
   applicationReceivedDate
 }) => {
-  let profileUrl = facilityHomeId ? urlPrefixHelper('/rfa/a01/' + rfaApplicationId + '/facility/' + facilityHomeId + '/profile') : null
-  let profileLink = facilityHomeId ? <a href={profileUrl} >Profile link</a> : null
+  const profileUrl = facilityHomeId ? urlPrefixHelper('/rfa/a01/' + rfaApplicationId + '/facility/' + facilityHomeId + '/profile') : null
+  const profileLink = facilityHomeId ? <a href={profileUrl} >Profile link</a> : null
   return (
     <tr>
       <td>{rfaApplicationId}</td>

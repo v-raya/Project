@@ -8,7 +8,7 @@ import {getDictionaryId, dictionaryNilSelect} from 'helpers/commonHelper.jsx'
 
 export default class InPersonData extends React.Component {
   render () {
-    let inPersonContactData = this.props.inPersonContactData
+    const inPersonContactData = this.props.inPersonContactData
     return (
       <div>
         <div className='row' >

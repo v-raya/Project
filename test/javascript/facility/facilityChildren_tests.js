@@ -2,7 +2,7 @@ import React from 'react'
 import Children from 'facility/facilityChildren.jsx'
 import {mount, shallow} from 'enzyme'
 
-describe('Verify Children Component', function () {
+describe('Verify Children Component', () => {
   const props = {
     'children': [{
       'id': 2222,
@@ -35,7 +35,7 @@ describe('Verify Children Component', function () {
     }
   }
 
-  let facilityChildrenApiCallSpy = jasmine.createSpy('facilityChildrenApiCall')
+  const facilityChildrenApiCallSpy = jasmine.createSpy('facilityChildrenApiCall')
 
   const renderChildComp = shallow(
     <Children

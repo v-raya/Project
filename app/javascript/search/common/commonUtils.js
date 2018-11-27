@@ -33,12 +33,14 @@ export const checkAndSplitValue = (value) => {
     const filteredSet = ['*', '']
     return value.split(' ').filter((val) => !filteredSet.includes(val)).map((val) => '*' + val + '*').join(' ')
   }
+  return undefined
 }
 
 export const getArrayOfId = (array) => {
   if (array && array.length > 0) {
     return array.map((e) => (e.id))
   }
+  return undefined
 }
 
 export const checkForLicenseStatus = (isAllActive, statusValue) => {

@@ -4,15 +4,14 @@ import {shallow, mount} from 'enzyme'
 import {genderTypes, relationshipTypes, selectedYes} from '../../helpers/constants'
 import {minorDefaults} from 'constants/defaultFields'
 import Validator from 'helpers/validator'
-describe('Verify minor children Component View', function () {
-  let component, componentMount, setFocusStateSpy, onFieldChangeSpy
-  let props, handleRelationshipTypeChangeSpy, validator, componentToDelete
+describe('Verify minor children Component View', () => {
+  let component, componentMount, props, validator, componentToDelete
   const applicants = [{
     first_name: 'gdfghfhgv',
     last_name: 'hgbhg',
     middle_name: ''
   }]
-  let minorCardChild = {
+  const minorCardChild = {
     gender: {
       'id': 0,
       'value': ''
@@ -32,7 +31,7 @@ describe('Verify minor children Component View', function () {
     date_of_birth: '2017-01-01'
   }
 
-  let minorCardChildToDelete = {
+  const minorCardChildToDelete = {
     to_delete: true,
     gender: {
       'id': 0,
@@ -54,11 +53,11 @@ describe('Verify minor children Component View', function () {
   }
 
   let setParentStateSpy = jasmine.createSpy()
-  setFocusStateSpy = jasmine.createSpy('setFocusState')
-  let getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
+  const setFocusStateSpy = jasmine.createSpy('setFocusState')
+  const getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
   setParentStateSpy = jasmine.createSpy('setParentState')
-  handleRelationshipTypeChangeSpy = jasmine.createSpy('handleRelationshipTypeChange')
-  onFieldChangeSpy = jasmine.createSpy('onFieldChange')
+  const handleRelationshipTypeChangeSpy = jasmine.createSpy('handleRelationshipTypeChange')
+  const onFieldChangeSpy = jasmine.createSpy('onFieldChange')
 
   beforeEach(() => {
     props = {
@@ -94,17 +93,17 @@ describe('Verify minor children Component View', function () {
   })
   describe('Verify Foster Care Card Selection', () => {
     it('select foster care card', () => {
-      let minorsSectionDiv = component.find('#minorsSection')
+      const minorsSectionDiv = component.find('#minorsSection')
       minorsSectionDiv.simulate('click')
       expect(setFocusStateSpy).toHaveBeenCalledWith('minorsSection')
     })
   })
   describe('Verify minor card Component View', () => {
-    it('has class name', function () {
+    it('has class name', () => {
       componentMount.update()
       spyOn(componentMount.instance(), 'handleRelationshipTypeChange').and.callThrough()
 
-      let relationShipField = componentMount.find('.col-md-12').first().find('#relationship_to_applicant0child0relationship_to_applicant_freeform').hostNodes()
+      const relationShipField = componentMount.find('.col-md-12').first().find('#relationship_to_applicant0child0relationship_to_applicant_freeform').hostNodes()
       relationShipField.simulate('change', {target: {value: 'Sibling'}})
 
       minorCardChild.relationship_to_applicants[0].relationship_to_applicant_freeform = 'Sibling'
@@ -117,7 +116,7 @@ describe('Verify minor children Component View', function () {
     it('tests onFieldChange', () => {
       componentMount.update()
       spyOn(componentMount.instance(), 'handleRelationshipTypeChange').and.callThrough()
-      let childFinanciallySupported = componentMount.find('input[type="radio"]').at(0).hostNodes()
+      const childFinanciallySupported = componentMount.find('input[type="radio"]').at(0).hostNodes()
       childFinanciallySupported.simulate('change', {target: {value: 'false'}})
       // minorCardChild.child_financially_supported = '2'
       expect(setParentStateSpy).toHaveBeenCalledWith('minor_children', [minorCardChild])
@@ -125,19 +124,19 @@ describe('Verify minor children Component View', function () {
   })
 
   describe('Verify minor card Component View', () => {
-    it('has class name', function () {
+    it('has class name', () => {
       expect(component.find('.card-body').length).toEqual(1)
     })
-    it('expect children to be array', function () {
+    it('expect children to be array', () => {
       expect(component.children.length).toEqual(1)
     })
-    it('expects six validations', function () {
+    it('expects six validations', () => {
       expect(componentMount.instance().props.validator.validations.size).toEqual(5)
     })
   })
 
   describe('when "Add new minor card" is clicked', () => {
-    it('expect minor card to be button', function () {
+    it('expect minor card to be button', () => {
       expect(component.find('button[className="btn btn-default"]').type()).toEqual('button')
     })
 
@@ -147,7 +146,7 @@ describe('Verify minor children Component View', function () {
       expect(component.instance().addCard).toHaveBeenCalled()
 
       // build data that parent should be called with
-      let newData = []
+      const newData = []
       newData[0] = minorCardChild
       newData[1] = minorDefaults
 
@@ -159,7 +158,7 @@ describe('Verify minor children Component View', function () {
       it('Clears data when 1 phone number is present', () => {
         spyOn(component.instance(), 'clickClose').and.callThrough()
         component.find('.remove-btn').simulate('click')
-        let newData = []
+        const newData = []
         newData[0] = minorCardChild
         newData[1] = minorDefaults
         expect(component.instance().clickClose).toHaveBeenCalled()
@@ -168,7 +167,7 @@ describe('Verify minor children Component View', function () {
       })
 
       it('Deletes minor children when 2 cards are present', () => {
-        let newData = []
+        const newData = []
         newData[0] = minorCardChild
         newData[1] = minorDefaults
         component.setProps({minorChildren: newData})

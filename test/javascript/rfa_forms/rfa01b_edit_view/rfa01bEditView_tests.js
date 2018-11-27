@@ -367,34 +367,34 @@ describe('Rfa01BEditView test', () => {
   })
 
   it('tests county change  on submitdisabled', () => {
-    let countyCard = _Rfa01BEditViewSubmitted.find('#CountyUseOnlySection')
-    let countyCardField = countyCard.find('#county').hostNodes()
+    const countyCard = _Rfa01BEditViewSubmitted.find('#CountyUseOnlySection')
+    const countyCardField = countyCard.find('#county').hostNodes()
     countyCardField.simulate('change', {target: {options: {'0': {value: '2', text: 'Alpine'}, selectedIndex: 0}}})
     expect(setApplicationStateSpy).toHaveBeenCalledWith('application_county', { id: '2', value: 'Alpine' })
   })
 
   it('tests county change ', () => {
-    let countyCard = _Rfa01BEditView.find('#CountyUseOnlySection')
-    let countyCardField = countyCard.find('#county').hostNodes()
+    const countyCard = _Rfa01BEditView.find('#CountyUseOnlySection')
+    const countyCardField = countyCard.find('#county').hostNodes()
     countyCardField.simulate('change', {target: {options: {'0': {value: '2', text: 'Alpine'}, selectedIndex: 0}}})
     expect(setApplicationStateSpy).toHaveBeenCalledWith('application_county', { id: '2', value: 'Alpine' })
   })
 
   it('tests set focus state', () => {
-    let outOfStateDisclosureCard = _Rfa01BEditView.find('#outOfStateDisclosureCard').hostNodes()
+    const outOfStateDisclosureCard = _Rfa01BEditView.find('#outOfStateDisclosureCard').hostNodes()
     outOfStateDisclosureCard.simulate('click')
     expect(setFocusStateSpy).toHaveBeenCalledWith('outOfStateDisclosureCard')
   })
 
   it('tests setDisplayState', () => {
-    let disclosureInstructionsCard = _Rfa01BEditView.find('#DisclosureInstructionsCard').hostNodes()
+    const disclosureInstructionsCard = _Rfa01BEditView.find('#DisclosureInstructionsCard').hostNodes()
     disclosureInstructionsCard.find('#disclosureInstructionsToggle').simulate('click')
     _Rfa01BEditView.instance().setDisplayState()
     expect(setDisplayStateSpy).toHaveBeenCalledWith('disclosureInstructionsDisplay', true)
   })
 
   it('tests validateFieldAndGetError', () => {
-    let applicantDetailsCard = _Rfa01BEditView.find('#applicantDetailsCard').hostNodes().find('#NameOfResourceFamily').hostNodes()
+    const applicantDetailsCard = _Rfa01BEditView.find('#applicantDetailsCard').hostNodes().find('#NameOfResourceFamily').hostNodes()
     applicantDetailsCard.simulate('change', {target: {value: 'resource family'}})
     applicantDetailsCard.simulate('change', {target: {value: null}})
     applicantDetailsCard.simulate('blur')
@@ -407,13 +407,13 @@ describe('Rfa01BEditView test', () => {
     _Rfa01BEditView.setProps({
       rfa_b01_application: rfaB01Application
     })
-    let rfa01bApplicantName = _Rfa01BEditView.find('.name-field')
+    const rfa01bApplicantName = _Rfa01BEditView.find('.name-field')
     expect(rfa01bApplicantName.props().children).toEqual('Applicant Full name')
   })
 
   it('tests county change ', () => {
-    let countyCard = _Rfa01BEditView.find('#CountyUseOnlySection')
-    let countyCardField = countyCard.find('#county').hostNodes()// .simulate('keyup', { keyCode: 38 })
+    const countyCard = _Rfa01BEditView.find('#CountyUseOnlySection')
+    const countyCardField = countyCard.find('#county').hostNodes()// .simulate('keyup', { keyCode: 38 })
     // countyCardField.simulate('keypress', { keyCode: 13 })
     countyCardField.simulate('change', {target: {options: {'0': {value: '2', text: 'Alpine'}, selectedIndex: 0}}})
     // _Rfa01BEditView.instance().setApplicationState('application_county', { value: 'Alameda', id: 1 })
@@ -421,29 +421,29 @@ describe('Rfa01BEditView test', () => {
   })
 
   it('tests handle change on true', () => {
-    let outOfStateCard = _Rfa01BEditView.find('#outOfStateDisclosureCard')
-    let cardComponent = outOfStateCard.find('input[type="radio"]')
-    let trueComponent = cardComponent.find('#outOfStateDisclosureCardtrue')
+    const outOfStateCard = _Rfa01BEditView.find('#outOfStateDisclosureCard')
+    const cardComponent = outOfStateCard.find('input[type="radio"]')
+    const trueComponent = cardComponent.find('#outOfStateDisclosureCardtrue')
     trueComponent.simulate('change', {target: {value: 'true'}})
     expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('lived_in_other_state', 'true', 'other_states_of_living', [ ])
   })
 
   it('tests handle change on false', () => {
-    let outOfStateCard = _Rfa01BEditView.find('#outOfStateDisclosureCard')
-    let cardComponent = outOfStateCard.find('input[type="radio"]')
-    let trueComponent = cardComponent.find('#outOfStateDisclosureCardfalse')
+    const outOfStateCard = _Rfa01BEditView.find('#outOfStateDisclosureCard')
+    const cardComponent = outOfStateCard.find('input[type="radio"]')
+    const trueComponent = cardComponent.find('#outOfStateDisclosureCardfalse')
     trueComponent.simulate('change', {target: {value: 'false'}})
     expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('lived_in_other_state', 'false', 'other_states_of_living', [ ])
   })
 
   it('tests saveProgress', () => {
-    let saveProgressBtn = _Rfa01BEditView.find('#saveProgress')
+    const saveProgressBtn = _Rfa01BEditView.find('#saveProgress')
     saveProgressBtn.simulate('click')
     expect(saveProgressSpy).toHaveBeenCalled()
   })
 
   it('tests submit', () => {
-    let submitBtn = _Rfa01BEditViewSubmitEnabled.find('#submitApplication')
+    const submitBtn = _Rfa01BEditViewSubmitEnabled.find('#submitApplication')
     submitBtn.simulate('click')
     expect(submitSpy).toHaveBeenCalled()
   })

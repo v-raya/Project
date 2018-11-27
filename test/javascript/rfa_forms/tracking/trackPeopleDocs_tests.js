@@ -6,7 +6,7 @@ describe('Tracking People Documents test', () => {
   let trackPeopleDocsView, props, handleHrefClickSpy, handleIndividualDocRowChangeSpy,
     handleTrainingsDocsChangeSpy, handleClearancesDocsChangeSpy, setApplicationStateSpy
   beforeEach(() => {
-    let trackingDocuments = {
+    const trackingDocuments = {
 
       'people_documents': [
         {
@@ -112,21 +112,21 @@ describe('Tracking People Documents test', () => {
   })
 
   it('Edit individual doc row text area', () => {
-    let textAreaField = trackPeopleDocsView.find('#individual0ShowText0')
+    const textAreaField = trackPeopleDocsView.find('#individual0ShowText0')
     textAreaField.simulate('change', {target: {value: 'text input'}})
     spyOn(trackPeopleDocsView.instance(), 'handleIndividualDocRowChange').and.callThrough()
     trackPeopleDocsView.instance().handleIndividualDocRowChange('notes', 'text input', 0, 0)
     expect(trackPeopleDocsView.instance().handleIndividualDocRowChange).toHaveBeenCalled()
   })
   it('Edit individual doc row start date field', () => {
-    let textAreaField = trackPeopleDocsView.find('#individual0showStartDate0')
+    const textAreaField = trackPeopleDocsView.find('#individual0showStartDate0')
     textAreaField.simulate('change', {target: {value: '07-06-1989'}})
     spyOn(trackPeopleDocsView.instance(), 'handleIndividualDocRowChange').and.callThrough()
     trackPeopleDocsView.instance().handleIndividualDocRowChange('start_date', '07-06-1989', 0, 0)
     expect(trackPeopleDocsView.instance().handleIndividualDocRowChange).toHaveBeenCalled()
   })
   it('Edit individual doc row complete date field', () => {
-    let textAreaField = trackPeopleDocsView.find('#individual0ShowApprovedDate0')
+    const textAreaField = trackPeopleDocsView.find('#individual0ShowApprovedDate0')
     textAreaField.simulate('change', {target: {value: '07-06-1989'}})
     spyOn(trackPeopleDocsView.instance(), 'handleIndividualDocRowChange').and.callThrough()
     trackPeopleDocsView.instance().handleIndividualDocRowChange('completed_date', '07-06-1989', 0, 0)
@@ -134,14 +134,14 @@ describe('Tracking People Documents test', () => {
   })
 
   it('Edit training doc row text area', () => {
-    let textAreaField = trackPeopleDocsView.find('#training0ShowText0')
+    const textAreaField = trackPeopleDocsView.find('#training0ShowText0')
     textAreaField.simulate('change', {target: {value: 'text input'}})
     spyOn(trackPeopleDocsView.instance(), 'handleTrainingsDocsChange').and.callThrough()
     trackPeopleDocsView.instance().handleTrainingsDocsChange('notes', 'text input', 0, 0)
     expect(trackPeopleDocsView.instance().handleTrainingsDocsChange).toHaveBeenCalled()
   })
   it('Edit training doc row expiration date field', () => {
-    let textAreaField = trackPeopleDocsView.find('#training0ShowExpirationDate0')
+    const textAreaField = trackPeopleDocsView.find('#training0ShowExpirationDate0')
     textAreaField.simulate('change', {target: {value: '07-06-1989'}})
     spyOn(trackPeopleDocsView.instance(), 'handleTrainingsDocsChange').and.callThrough()
     trackPeopleDocsView.instance().handleTrainingsDocsChange('expiration_date', '07-06-1989', 0, 0)
@@ -149,21 +149,21 @@ describe('Tracking People Documents test', () => {
   })
 
   it('Edit clearances doc row text area', () => {
-    let textAreaField = trackPeopleDocsView.find('#clearanceShowText0')
+    const textAreaField = trackPeopleDocsView.find('#clearanceShowText0')
     textAreaField.simulate('change', {target: {value: 'text input'}})
     spyOn(trackPeopleDocsView.instance(), 'handleClearancesDocsChange').and.callThrough()
     trackPeopleDocsView.instance().handleClearancesDocsChange('notes', 'text input', 0, 0)
     expect(trackPeopleDocsView.instance().handleClearancesDocsChange).toHaveBeenCalled()
   })
   it('Edit clearances doc row start date field', () => {
-    let textAreaField = trackPeopleDocsView.find('#clearance0ShowStartDate0')
+    const textAreaField = trackPeopleDocsView.find('#clearance0ShowStartDate0')
     textAreaField.simulate('change', {target: {value: '07-06-1989'}})
     spyOn(trackPeopleDocsView.instance(), 'handleClearancesDocsChange').and.callThrough()
     trackPeopleDocsView.instance().handleClearancesDocsChange('start_date', '07-06-1989', 0, 0)
     expect(trackPeopleDocsView.instance().handleClearancesDocsChange).toHaveBeenCalled()
   })
   it('Edit clearances doc row complete date field', () => {
-    let textAreaField = trackPeopleDocsView.find('#clearance0ShowCompleteDate0')
+    const textAreaField = trackPeopleDocsView.find('#clearance0ShowCompleteDate0')
     textAreaField.simulate('change', {target: {value: '07-06-1989'}})
     spyOn(trackPeopleDocsView.instance(), 'handleClearancesDocsChange').and.callThrough()
     trackPeopleDocsView.instance().handleClearancesDocsChange('completed_date', '07-06-1989', 0, 0)

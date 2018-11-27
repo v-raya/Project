@@ -17,9 +17,9 @@ export default class ApplicantMaritalHistoryCard extends React.PureComponent {
   }
 
   render () {
-    let maritalHistory = this.props.maritalHistory
-    let previousRelationshipPrefixId = this.props.idPrefix + 'PreviousRelationship.'
-    let previousDissolutionPrefixId = this.props.idPrefix + 'PreviousDissolution.'
+    const maritalHistory = this.props.maritalHistory
+    const previousRelationshipPrefixId = this.props.idPrefix + 'PreviousRelationship.'
+    const previousDissolutionPrefixId = this.props.idPrefix + 'PreviousDissolution.'
 
     return (
       <form>

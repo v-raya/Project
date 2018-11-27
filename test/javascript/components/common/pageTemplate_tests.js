@@ -4,12 +4,12 @@ import {shallow, mount} from 'enzyme'
 
 describe('Verify PageTemplate', () => {
   let pageTemplateMount
-  let rfaA01ApplicationId = 242
-  let handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
-  let isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
-  let saveProgressSpy = jasmine.createSpy('saveProgress')
-  let submitSpy = jasmine.createSpy('submit')
-  let applicants = [
+  const rfaA01ApplicationId = 242
+  const handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
+  const isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
+  const saveProgressSpy = jasmine.createSpy('saveProgress')
+  const submitSpy = jasmine.createSpy('submit')
+  const applicants = [
     {
       'id': 242,
       'first_name': 'Kimberley',
@@ -48,9 +48,9 @@ describe('Verify PageTemplate', () => {
       ]
     }
   ]
-  let rfa1cForms = []
-  let otherAdults = []
-  let childIdentified = {}
+  const rfa1cForms = []
+  const otherAdults = []
+  const childIdentified = {}
 
   beforeEach(() => {
     pageTemplateMount = mount(

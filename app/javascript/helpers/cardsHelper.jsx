@@ -185,7 +185,7 @@ export const handleRelationshipTypeToApplicant = (itemsList, applicantId, value,
 export const arrayLastToFirst = (arraytoSort) => {
   if (arraytoSort.length > 1) {
     let finalArray = Immutable.fromJS(arraytoSort).slice(0, -1).toJS()
-    let lastValue = Immutable.fromJS(arraytoSort).slice(-1).toJS()
+    const lastValue = Immutable.fromJS(arraytoSort).slice(-1).toJS()
     finalArray = lastValue.concat(finalArray)
     return finalArray
   } else {

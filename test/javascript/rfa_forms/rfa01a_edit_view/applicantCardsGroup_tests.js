@@ -6,10 +6,10 @@ import ApplicantCardsGroup from 'rfa_forms/rfa01a_edit_view/applicantCardsGroup.
 import ReactDOM from 'react-dom'
 import {shallow, mount} from 'enzyme'
 import Validator from 'helpers/validator.js'
-var TestUtils = require('react-dom/test-utils')
+const TestUtils = require('react-dom/test-utils')
 
 describe('Verify Applicant Card Group', () => {
-  let setApplicantsStateSpy = jasmine.createSpy('setApplicantsState')
+  const setApplicantsStateSpy = jasmine.createSpy('setApplicantsState')
   const isApplicantAdded = sinon.spy()
   const getFocusClassNameSpy = sinon.spy()
   let applicants = Immutable.fromJS([{
@@ -23,7 +23,7 @@ describe('Verify Applicant Card Group', () => {
     email: '',
     phones: null
   }])
-  let props = {
+  const props = {
     nameTypes: nameTypes.items,
     suffixTypes: suffixTypes.items,
     prefixTypes: prefixTypes.items,
@@ -40,8 +40,8 @@ describe('Verify Applicant Card Group', () => {
 
   }
   let applicantRender = TestUtils.renderIntoDocument(<ApplicantCardsGroup {...props} />)
-  let renderedDOM = (componentToRender) => ReactDOM.findDOMNode(componentToRender)
-  let componentToDelete = mount(<ApplicantCardsGroup
+  const renderedDOM = (componentToRender) => ReactDOM.findDOMNode(componentToRender)
+  const componentToDelete = mount(<ApplicantCardsGroup
     applicants={applicants}
     nameTypes={nameTypes.items}
     suffixTypes={suffixTypes.items}
@@ -66,7 +66,7 @@ describe('Verify Applicant Card Group', () => {
   })
   it('verify default props', () => {
     applicantRender = TestUtils.renderIntoDocument(<ApplicantCardsGroup {...props} />)
-    let applicantCard = renderedDOM(applicantRender)
+    const applicantCard = renderedDOM(applicantRender)
     expect(applicantCard.children.length).toBe(2)
     expect(applicantCard.children[0].children[0].children[1].children.length).toEqual(4)
   })
@@ -78,13 +78,13 @@ describe('Verify Applicant Card Group', () => {
   describe('close second applicant', () => {
     props.applicants = Immutable.fromJS([applicants, applicants])
     applicantRender = TestUtils.renderIntoDocument(<ApplicantCardsGroup {...props} />)
-    let applicantCard = renderedDOM(applicantRender)
-    let applicantsList = applicantCard.children[0].children[1].children
+    const applicantCard = renderedDOM(applicantRender)
+    const applicantsList = applicantCard.children[0].children[1].children
     it('Verify added applicant', () => {
       expect(applicantsList.length).toEqual(3)
     })
     it('Verify added applicant click close', () => {
-      let clickCloseButton = applicantsList[1]
+      const clickCloseButton = applicantsList[1]
       TestUtils.Simulate.click(clickCloseButton)
       expect(isApplicantAdded.called).toBe(true)
     })
@@ -93,7 +93,7 @@ describe('Verify Applicant Card Group', () => {
   describe('updates child component calls setParentState', () => {
     applicants = applicants.update(0, x => x.set('to_delete', false))
 
-    let applicant = mount(<ApplicantCardsGroup
+    const applicant = mount(<ApplicantCardsGroup
       applicants={applicants}
       nameTypes={nameTypes.items}
       suffixTypes={suffixTypes.items}
@@ -109,8 +109,8 @@ describe('Verify Applicant Card Group', () => {
       validator={new Validator({})}
       getFocusClassName={getFocusClassNameSpy} />)
 
-    let nameCard = applicant.find('.name-section').find('input[type="text"]')
-    let firstNameField = nameCard.findWhere(n => n.props().id === 'applicants[0].first_name')
+    const nameCard = applicant.find('.name-section').find('input[type="text"]')
+    const firstNameField = nameCard.findWhere(n => n.props().id === 'applicants[0].first_name')
     it('check name change', () => {
       applicants = applicants.update(0, x => x.set('first_name', 'Applicant'))
       firstNameField.simulate('change', {target: {value: 'Applicant'}})

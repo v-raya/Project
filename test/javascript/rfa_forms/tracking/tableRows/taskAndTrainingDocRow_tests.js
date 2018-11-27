@@ -32,17 +32,17 @@ describe('Tracking Task And Training Document test', () => {
     expect(editTaskAndTrainingDocRow.length).toBe(1)
   })
   it('edit text area', () => {
-    let textAreaField = editTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingEditNotes0')
+    const textAreaField = editTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingEditNotes0')
     textAreaField.simulate('change', {target: {value: 'text input'}})
     expect(changeSpy).toHaveBeenCalledWith('notes', 'text input', 0)
   })
   it('edit checkbox', () => {
-    let checkBoxField = editTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingEditCheckbox0')
+    const checkBoxField = editTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingEditCheckbox0')
     checkBoxField.simulate('change', {target: {checked: true}})
     expect(changeSpy).toHaveBeenCalledWith('checked', true, 0)
   })
   it('edit date field', () => {
-    let textAreaField = editTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingEditCompletedDate0')
+    const textAreaField = editTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingEditCompletedDate0')
     textAreaField.simulate('change', {target: {value: '01/20/1981'}})
     expect(changeSpy).toHaveBeenCalledWith('completed_date', '1981-01-20', 0)
   })
@@ -50,15 +50,15 @@ describe('Tracking Task And Training Document test', () => {
     expect(showTaskAndTrainingDocRow.length).toBe(1)
   })
   it('show text area', () => {
-    let textAreaField = showTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingShowNotes0')
+    const textAreaField = showTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingShowNotes0')
     expect(textAreaField.text()).toEqual('testing')
   })
   it('show checkbox', () => {
-    let checkBoxField = showTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingShowCheckbox0')
+    const checkBoxField = showTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingShowCheckbox0')
     expect(checkBoxField.length).toEqual(1)
   })
   it('show date field', () => {
-    let approvedDateField = showTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingShowCompletedDate0')
+    const approvedDateField = showTaskAndTrainingDocRow.at(0).shallow().find('#taskAndTrainingShowCompletedDate0')
     expect(approvedDateField.text()).toEqual('01/21/1978')
   })
 })

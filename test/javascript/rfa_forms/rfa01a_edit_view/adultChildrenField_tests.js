@@ -7,7 +7,7 @@ import Validator from 'helpers/validator.js'
 describe('Adult Children Component', () => {
   let adultChildComponent, setParentStateSpy, onChangeSpy, adultChildNotInHomeComponent,
     handleClearOnConditionalChangeSpy
-  let relationshipToAdultsDefaults = Object.freeze({
+  const relationshipToAdultsDefaults = Object.freeze({
     applicant_id: '34',
     relationship_to_applicant: null
   })
@@ -61,7 +61,7 @@ describe('Adult Children Component', () => {
     setParentStateSpy = jasmine.createSpy('setParentState')
     onChangeSpy = jasmine.createSpy('onChange')
     handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
-    let validator = new Validator({})
+    const validator = new Validator({})
     adultChildComponent = mount(<AdultChildrenFields
       index={0}
       idPrefix={''}
@@ -100,17 +100,17 @@ describe('Adult Children Component', () => {
     />)
   })
   it('relation ship type DropDown Change', () => {
-    let selectRelationType = adultChildComponent.find('select').at(0)
+    const selectRelationType = adultChildComponent.find('select').at(0)
     selectRelationType.simulate('change', {target: {options: {'1': {value: '1', text: 'Child'}, selectedIndex: 1}}})
     expect(onChangeSpy).toHaveBeenCalledWith(0, {id: '1', value: 'Child'}, 'relationship_to_applicant')
   })
   it('Available applicants type DropDown Change', () => {
-    let selectApplicant = adultChildComponent.find('select').at(1)
+    const selectApplicant = adultChildComponent.find('select').at(1)
     selectApplicant.simulate('change', {target: {value: '35', text: 'David Smith'}})
     expect(onChangeSpy).toHaveBeenCalledWith(0, '35', 'applicant_name')
   })
   it('Child Name Prefix type DropDown Change', () => {
-    let selectNamePrefix = adultChildComponent.find('select').at(2)
+    const selectNamePrefix = adultChildComponent.find('select').at(2)
     selectNamePrefix.simulate('change', {target: {options: {'1': {value: '1', text: 'Mr.'}, selectedIndex: 1}}})
     expect(onChangeSpy).toHaveBeenCalledWith('name_prefix', {id: '1', value: 'Mr.'}, 0)
   })

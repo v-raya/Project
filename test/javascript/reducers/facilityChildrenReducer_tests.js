@@ -87,7 +87,7 @@ describe('Verify facilityChildrenReducer', () => {
         }]
       })
 
-      let outputState = {}
+      const outputState = {}
       outputState.children = facilityChildrenAction.payload.children
       outputState.errors = undefined
       outputState.isFetching = false
@@ -116,7 +116,7 @@ describe('Verify facilityChildrenReducer', () => {
         errors: error
       })
 
-      let outputState = {}
+      const outputState = {}
       outputState.children = null
       outputState.isFetching = false
       outputState.errors = facilityChildrenFailure.payload.error

@@ -7,7 +7,7 @@ import {shallow, mount} from 'enzyme'
 import {relationshipTypes, suffixTypes, prefixTypes, nameTypes, stateTypes, marriageTerminationReasons, relationshipToApplicantTypes} from '../../helpers/constants'
 import Validator from 'helpers/validator'
 
-describe('foster care card tests', function () {
+describe('foster care card tests', () => {
   let applicantMaritalHistoryCardGroupComponent
 
   let setParentStateSpy
@@ -83,26 +83,26 @@ describe('foster care card tests', function () {
       expect(applicantMaritalHistoryCardGroupComponent.find('button').length).toEqual(2)
     })
     it('verify add Marital History Card', () => {
-      let addCardButton = applicantMaritalHistoryCardGroupComponent.find('button.btn').at(0)
+      const addCardButton = applicantMaritalHistoryCardGroupComponent.find('button.btn').at(0)
       spyOn(applicantMaritalHistoryCardGroupComponent.instance(), 'addMaritalHistoryCard').and.callThrough()
       addCardButton.simulate('click')
       expect(applicantMaritalHistoryCardGroupComponent.instance().addMaritalHistoryCard).toHaveBeenCalledWith([formerSpousesDefaults])
     })
     it('verify add Adult Child Card', () => {
-      let addCardButton = applicantMaritalHistoryCardGroupComponent.find('button.btn').at(1)
+      const addCardButton = applicantMaritalHistoryCardGroupComponent.find('button.btn').at(1)
       spyOn(applicantMaritalHistoryCardGroupComponent.instance(), 'addAdultChildCard').and.callThrough()
       addCardButton.simulate('click')
       expect(applicantMaritalHistoryCardGroupComponent.instance().addAdultChildCard).toHaveBeenCalledWith([adultChildrenDefaults])
     })
 
     it('verify remove Marital History Card', () => {
-      let removeCardBtn = applicantMaritalHistoryCardGroupComponent.find('a.remove-btn').at(0)
+      const removeCardBtn = applicantMaritalHistoryCardGroupComponent.find('a.remove-btn').at(0)
       spyOn(applicantMaritalHistoryCardGroupComponent.instance(), 'onMaritalHistoryClickClose').and.callThrough()
       removeCardBtn.simulate('click')
       expect(applicantMaritalHistoryCardGroupComponent.instance().onMaritalHistoryClickClose).toHaveBeenCalledWith(0)
     })
     it('verify remove Adult Child Card', () => {
-      let removeCardBtn = applicantMaritalHistoryCardGroupComponent.find('a.remove-btn').at(1)
+      const removeCardBtn = applicantMaritalHistoryCardGroupComponent.find('a.remove-btn').at(1)
       spyOn(applicantMaritalHistoryCardGroupComponent.instance(), 'onAdultChildClickClose').and.callThrough()
       removeCardBtn.simulate('click')
       expect(applicantMaritalHistoryCardGroupComponent.instance().onAdultChildClickClose).toHaveBeenCalledWith(0)
@@ -154,25 +154,25 @@ describe('foster care card tests', function () {
     })
 
     it('verify Change Marital History', () => {
-      let marriageCityField = applicantMaritalHistoryCardGroupComponent.find(
+      const marriageCityField = applicantMaritalHistoryCardGroupComponent.find(
         'input[type="text"]').findWhere(n => n.props().id === 'applicantsHistory.former_spouses[0].place_of_marriage_city')
       marriageCityField.simulate('change', {target: {value: 'sacramento'}})
       expect(changeMaritalHistorySpy).toHaveBeenCalledWith('place_of_marriage_city', 'sacramento', 0)
     })
     it('verify set focus state is called', () => {
       expect(getFocusClassNameSpy).toHaveBeenCalledWith('ApplicantMaritalHistoryCardGroup')
-      let componentSection = applicantMaritalHistoryCardGroupComponent.find('#ApplicantMaritalHistoryCardGroup')
+      const componentSection = applicantMaritalHistoryCardGroupComponent.find('#ApplicantMaritalHistoryCardGroup')
       componentSection.simulate('click')
       expect(setFocusStateSpy).toHaveBeenCalled()
     })
     it('verify change Adult History is called', () => {
-      let firstNameField = applicantMaritalHistoryCardGroupComponent.find(
+      const firstNameField = applicantMaritalHistoryCardGroupComponent.find(
         'input[type="text"]').findWhere(n => n.props().id === 'first_name').hostNodes().last()
       firstNameField.simulate('change', {target: {value: 'sacramento'}})
       expect(changeAdultChildSpy).toHaveBeenCalledWith('first_name', 'sacramento', 0)
     })
     it('verify change Adult History Address is called', () => {
-      let firstNameField = applicantMaritalHistoryCardGroupComponent.find(
+      const firstNameField = applicantMaritalHistoryCardGroupComponent.find(
         'input[type="text"]').findWhere(n => n.props().id === 'Residentialstreet_address').hostNodes().last()
       firstNameField.simulate('change', {target: {value: 'sacramento'}})
       expect(changeAdultHistoryAddressSpy).toHaveBeenCalledWith('street_address', 'sacramento', 0)

@@ -6,7 +6,7 @@ describe('Verify ContactsListCard component', () => {
   it('Has title', () => {
     const title = 'TestTitle'
     const wrapper = shallow(<ContactsListCard title={title} />)
-    let titleWrapper = wrapper.find('.contacts-list-title')
+    const titleWrapper = wrapper.find('.contacts-list-title')
     expect(1).toEqual(titleWrapper.length)
     expect(titleWrapper.text()).toEqual(title)
   })
@@ -29,7 +29,7 @@ describe('Verify ContactsListCard component', () => {
   })
 
   it('Calls create new contact function', () => {
-    let createContactSpy = jasmine.createSpy('createContact')
+    const createContactSpy = jasmine.createSpy('createContact')
     const wrapper = shallow(<ContactsListCard onClickCreateContact={createContactSpy} />)
     wrapper.find('.btn-create-contact').simulate('click')
     expect(createContactSpy).toHaveBeenCalled()

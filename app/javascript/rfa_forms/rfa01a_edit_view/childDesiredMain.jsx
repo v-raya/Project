@@ -27,7 +27,7 @@ export default class ChildDesiredMain extends React.Component {
   }
 
   render () {
-    let child = this.props.childDesired
+    const child = this.props.childDesired
     return (
       <div className='desired_child_card'>
         <div id='ChildDesiredMain' onClick={() => this.props.setFocusState('ChildDesiredMain')}

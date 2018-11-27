@@ -6,14 +6,14 @@ import {createStore} from 'redux'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
-describe('Verify Facility component', function () {
+describe('Verify Facility component', () => {
   const match = {
     params: {
       'id': 'SouUlov56F'
     }
   }
-  let store = createStore(rootReducer)
-  it('renders facility index component', function () {
+  const store = createStore(rootReducer)
+  it('renders facility index component', () => {
     const FacilityCompMount = mount(
       <Provider store={store}>
         <BrowserRouter>

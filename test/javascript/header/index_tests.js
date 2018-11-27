@@ -29,17 +29,17 @@ describe('Header Component', () => {
     expect(header.props().logoutUrl).toEqual('/abcd')
   })
   it('allow user logout', () => {
-    let avatar = header.find('button').last()
+    const avatar = header.find('button').last()
     avatar.simulate('click')
     expect(header.instance().redirectUrl.calls.any()).toEqual(false)
 
-    let logOutLink = header.find('ul.c_dropdown a')
+    const logOutLink = header.find('ul.c_dropdown a')
     logOutLink.simulate('click')
     expect(header.instance().redirectUrl.calls.any()).toEqual(true)
     expect(header.instance().redirectUrl).toHaveBeenCalledWith('/logout')
   })
 
-  it('Renders user full name', function () {
+  it('Renders user full name', () => {
     const userName = header.find('ul').props().children[3].props.children.props.children
     expect(userName).toBe('peter parker')
   })

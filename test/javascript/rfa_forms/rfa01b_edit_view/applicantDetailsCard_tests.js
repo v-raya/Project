@@ -4,7 +4,7 @@ import {shallow, mount} from 'enzyme'
 import {stateTypes, prefixTypes, suffixTypes} from '../../helpers/constants'
 import Validator from 'helpers/validator'
 
-describe('Verify ApplicantDetailsCard card', function () {
+describe('Verify ApplicantDetailsCard card', () => {
   const blankValues = Object.freeze({
     focusComponentName: null
   })
@@ -93,43 +93,43 @@ describe('Verify ApplicantDetailsCard card', function () {
       expect(shallowMountNoResidence.instance().props.validator.validations.size).toEqual(10)
     })
     it('tests handleNavLinkClick', () => {
-      let CACrimeDisclosureCard = shallowMountNoResidence.find('#applicantDetailsCard').hostNodes()
+      const CACrimeDisclosureCard = shallowMountNoResidence.find('#applicantDetailsCard').hostNodes()
       CACrimeDisclosureCard.simulate('click')
       expect(setFocusStateSpy).toHaveBeenCalledWith('applicantDetailsCard')
     })
 
     it('onChange event on Name Of Resource Family', () => {
-      let applicantDetails = shallowMount.find('#NameOfResourceFamily')
+      const applicantDetails = shallowMount.find('#NameOfResourceFamily')
       applicantDetails.simulate('change', {target: {value: 'gate way oaks'}})
       expect(setParentStateSpy).toHaveBeenCalledWith('resource_family_name', 'gate way oaks')
     })
 
     it('onChange event on ssn', () => {
-      let applicantDetails = shallowMount.find('#ssn')
+      const applicantDetails = shallowMount.find('#ssn')
       applicantDetails.simulate('change', {target: {value: '1234'}})
       expect(setParentStateSpy).toHaveBeenCalledWith('ssn', '1234')
     })
 
     it('onChange event on Date Of Birth', () => {
-      let applicantDetails = shallowMount.find('#date_of_birth')
+      const applicantDetails = shallowMount.find('#date_of_birth')
       applicantDetails.simulate('change', {target: {value: '11/20/1990'}})
       expect(setParentStateSpy).toHaveBeenCalledWith('date_of_birth', '1990-11-20')
     })
 
     it('onChange event on driver_license', () => {
-      let applicantDetails = shallowMount.find('#driversLicenseNumberId')
+      const applicantDetails = shallowMount.find('#driversLicenseNumberId')
       applicantDetails.simulate('change', {target: {value: 'D12345'}})
       expect(setParentStateSpy).toHaveBeenCalledWith('driver_license', 'D12345')
     })
 
     it('onChange event on driver_license_state', () => {
-      let applicantDetails = shallowMount.find('#driversLicenseStateId')
+      const applicantDetails = shallowMount.find('#driversLicenseStateId')
       applicantDetails.simulate('change', {target: {options: {'17': {value: '17', text: 'Illinois'}, selectedIndex: 17}}})
       expect(setParentStateSpy).toHaveBeenCalledWith('driver_license_state', {id: '17', value: 'Illinois'})
     })
 
     it('onChange event on street address', () => {
-      let applicantDetails = shallowMountNoResidence.find('#Residentialzip').hostNodes()
+      const applicantDetails = shallowMountNoResidence.find('#Residentialzip').hostNodes()
       spyOn(shallowMountNoResidence.instance(), 'onAddressChange').and.callThrough()
       shallowMountNoResidence.update()
       applicantDetails.simulate('change', {target: {value: '95823'}})
@@ -185,7 +185,7 @@ describe('Verify ApplicantDetailsCard card', function () {
     })
 
     it('check required fields indicators', () => {
-      let componentHtml = shallowMount.html()
+      const componentHtml = shallowMount.html()
       expect(componentHtml).toContain('Name of Resource Family (required)')
       expect(componentHtml).toContain('First Name (required)')
       expect(componentHtml).toContain('Last Name (required)')

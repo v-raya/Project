@@ -4,8 +4,8 @@ import A01SideBar from 'rfa_forms/rfa_sidebar/a01SideBar'
 
 describe('RFA 01a side bar ', () => {
   let component
-  let isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
-  let handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
+  const isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
+  const handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
   beforeEach(() => {
     component = mount(<A01SideBar
       showRelationshipBetweenApplicants={false}
@@ -101,8 +101,8 @@ describe('RFA 01a side bar ', () => {
 
 describe('RFA 01a side bar  relationship links', () => {
   let noHiddenRelationshipNavcomponent
-  let isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
-  let handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
+  const isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
+  const handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
   beforeEach(() => {
     noHiddenRelationshipNavcomponent = mount(<A01SideBar
       showRelationshipBetweenApplicants
@@ -124,8 +124,8 @@ describe('RFA 01a side bar  relationship links', () => {
 })
 describe('RFA 01a side bar  not on rfa 01a form', () => {
   let notOnRfa01AForm
-  let isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
-  let handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
+  const isNavLinkActiveSpy = jasmine.createSpy('isNavLinkActive')
+  const handleNavLinkClickSpy = jasmine.createSpy('handleNavLinkClick')
   beforeEach(() => {
     notOnRfa01AForm = mount(<A01SideBar
       showRelationshipBetweenApplicants

@@ -33,7 +33,7 @@ describe('Verify facilityReducer', () => {
         facility: {id: 4, name: 'John'}
       })
 
-      let outputState = {}
+      const outputState = {}
       outputState.facility = facilityAction.payload.facility
       outputState.errors = undefined
       outputState.isFetching = false
@@ -63,7 +63,7 @@ describe('Verify facilityReducer', () => {
         errors: error
       })
 
-      let outputState = {}
+      const outputState = {}
       outputState.facility = null
       outputState.isFetching = false
       outputState.errors = facilityFailure.payload.error

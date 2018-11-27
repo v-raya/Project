@@ -26,7 +26,7 @@ export default class AddressComponent extends React.PureComponent {
 
     autoFillData.type = blankAddressFields.type
 
-    let addresses = addressType === physicalAddressType
+    const addresses = addressType === physicalAddressType
       ? Immutable.List([autoFillData, this.props.mailingAddress].filter(n => n))
       : Immutable.List([this.props.physicalAddress, autoFillData].filter(n => n))
 
@@ -47,8 +47,8 @@ export default class AddressComponent extends React.PureComponent {
   }
 
   onSuggestionsFetchRequested ({value, reason}) {
-    let url = '/geoservice/'
-    let params = encodeURIComponent(value)
+    const url = '/geoservice/'
+    const params = encodeURIComponent(value)
     fetchRequest(url, 'POST', params).then(
       response => response.json()).then((response) => {
       return this.setState({
@@ -69,8 +69,8 @@ export default class AddressComponent extends React.PureComponent {
   }
 
   onSuggestionSelected (event, {suggestion, suggestionValue, suggestionIndex, sectionIndex, method}) {
-    let url = '/geoservice/validate'
-    let params = suggestion
+    const url = '/geoservice/validate'
+    const params = suggestion
     let updateSuggetions
     fetchRequest(url, 'POST', params).then(
       response => response.json()).then((response) => {

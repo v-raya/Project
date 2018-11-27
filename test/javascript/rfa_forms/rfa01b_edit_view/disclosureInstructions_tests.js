@@ -2,14 +2,14 @@ import React from 'react'
 import DisclosureInstructions from 'rfa_forms/rfa01b_edit_view/disclosureInstructions'
 import {shallow, mount} from 'enzyme'
 
-describe('Verify disclosure Instructions card', function () {
+describe('Verify disclosure Instructions card', () => {
   let setParentStateSpy, setDisplayStateSpy, componentMount, componentMountShowDisplay,
     setFocusStateSpy, handleOnClickSpy
 
   beforeEach(() => {
-    let setStateSpy = jasmine.createSpy('setState')
+    const setStateSpy = jasmine.createSpy('setState')
     setDisplayStateSpy = jasmine.createSpy('setDisplayState')
-    let getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
+    const getFocusClassNameSpy = jasmine.createSpy('getFocusClassName')
     setFocusStateSpy = jasmine.createSpy('setFocusState')
     handleOnClickSpy = jasmine.createSpy('handleOnClick')
     componentMount = mount(<DisclosureInstructions
@@ -35,13 +35,13 @@ describe('Verify disclosure Instructions card', function () {
     })
 
     it('onClick event shows details', () => {
-      let cardComponent = componentMount.find('#disclosureInstructionsToggle')
+      const cardComponent = componentMount.find('#disclosureInstructionsToggle')
       cardComponent.simulate('click')
       expect(setDisplayStateSpy).toHaveBeenCalledWith('disclosureInstructionsDisplay', true)
     })
 
     it('onClick event hides details', () => {
-      let cardComponent = componentMountShowDisplay.find('#disclosureInstructionsToggle')
+      const cardComponent = componentMountShowDisplay.find('#disclosureInstructionsToggle')
       cardComponent.simulate('click')
       expect(setDisplayStateSpy).toHaveBeenCalledWith('disclosureInstructionsDisplay', false)
     })

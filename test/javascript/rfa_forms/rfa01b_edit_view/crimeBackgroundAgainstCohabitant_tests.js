@@ -3,11 +3,11 @@ import CrimeBackgroundAgainstCohabitant from 'rfa_forms/rfa01b_edit_view/crimeBa
 import {shallow, mount} from 'enzyme'
 import Validator from 'helpers/validator'
 
-describe('Verify crimeBackgroundAgainstCohabitant card', function () {
+describe('Verify crimeBackgroundAgainstCohabitant card', () => {
   let setParentStateSpy, getFocusClassNameSpy, setDisplayStateSpy, componentMount,
     setFocusStateSpy, componentMountWithoutDisclosures, handleClearOnConditionalChangeSpy
 
-  let disclosures = [{
+  const disclosures = [{
     'offense': 'test',
     'offense_city': 'test',
     'offense_state': {},
@@ -15,7 +15,7 @@ describe('Verify crimeBackgroundAgainstCohabitant card', function () {
     'offense_details': 'test'
   }]
 
-  let validator = new Validator({})
+  const validator = new Validator({})
 
   beforeEach(() => {
     setParentStateSpy = jasmine.createSpy('setParentState')
@@ -52,7 +52,7 @@ describe('Verify crimeBackgroundAgainstCohabitant card', function () {
       expect(componentMount.instance().props.validator.validations.size).toEqual(4)
     })
     it('tests handleNavLinkClick', () => {
-      let crimeBackgroundAgainstCohabitantCard = componentMount.find('#crimeBackgroundAgainstCohabitantCard').hostNodes()
+      const crimeBackgroundAgainstCohabitantCard = componentMount.find('#crimeBackgroundAgainstCohabitantCard').hostNodes()
       crimeBackgroundAgainstCohabitantCard.simulate('click')
       expect(setFocusStateSpy).toHaveBeenCalledWith('crimeBackgroundAgainstCohabitantCard')
     })
@@ -69,18 +69,18 @@ describe('Verify crimeBackgroundAgainstCohabitant card', function () {
     })
 
     it('onClick event shows lived in other state multi select', () => {
-      let cardComponent = componentMountWithoutDisclosures.find('input[type="radio"]')
-      let trueComponent = cardComponent.find('#crimeBackgroundAgainstCohabitantRadiotrue')
+      const cardComponent = componentMountWithoutDisclosures.find('input[type="radio"]')
+      const trueComponent = cardComponent.find('#crimeBackgroundAgainstCohabitantRadiotrue')
       trueComponent.simulate('change', {target: {value: 'false'}})
       expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('arrested_for_crime', 'false', 'arrested_for_crime_disclosures', [ Object({ offense: '', offense_city: '', offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
     it('onchange sets disclosures ', () => {
-      let cardComponent = componentMountWithoutDisclosures.find('#crimeBackgroundAgainstCohabitantoffenseReason').hostNodes()
+      const cardComponent = componentMountWithoutDisclosures.find('#crimeBackgroundAgainstCohabitantoffenseReason').hostNodes()
       cardComponent.simulate('change', {target: {value: 'testing'}})
       expect(setParentStateSpy).toHaveBeenCalledWith('arrested_for_crime_disclosures', [ Object({ offense: 'testing', offense_city: '', offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
     it('check required fields indicator', () => {
-      let componentHtml = componentMountWithoutDisclosures.html()
+      const componentHtml = componentMountWithoutDisclosures.html()
       expect(componentHtml).toContain('What was the offense? (required)')
       expect(componentHtml).toContain('Where did the offense happen? (City, State, Country or other location information) (required)')
       expect(componentHtml).toContain('When did the offense happen? (required)')

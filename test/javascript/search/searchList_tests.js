@@ -3,7 +3,7 @@ import SearchList from 'search/searchList'
 import { BrowserRouter } from 'react-router-dom'
 import { mount } from 'enzyme'
 
-describe('Render search list and each method', function () {
+describe('Render search list and each method', () => {
   const indexValue = '0'
   const props = {
     searchResults: [{
@@ -100,7 +100,7 @@ describe('Render search list and each method', function () {
       facility_source: null
     }]
   }
-  let searchListComp = mount(<BrowserRouter><SearchList searchResults={props.searchResults} /></BrowserRouter>)
+  const searchListComp = mount(<BrowserRouter><SearchList searchResults={props.searchResults} /></BrowserRouter>)
 
   it('Verify Search component render', () => {
     expect(searchListComp.length).toBe(1)

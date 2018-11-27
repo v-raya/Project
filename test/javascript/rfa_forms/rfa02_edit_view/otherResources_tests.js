@@ -26,7 +26,7 @@ describe('Rfa 02 Inter County Transfer Info, test', () => {
     expect(otherResourcesWithProps.length).toBe(1)
   })
   it('handleOtherResourceList method', () => {
-    let otherResources0checkboxEdit0Field = otherResourcesWithProps.find('#otherResources0checkboxEdit0').hostNodes()
+    const otherResources0checkboxEdit0Field = otherResourcesWithProps.find('#otherResources0checkboxEdit0').hostNodes()
     otherResources0checkboxEdit0Field.simulate('change', {target: {checked: 'true'}})
     expect(handleOtherResourceListSpy).toHaveBeenCalledWith('checked', 'true', 0, undefined)
   })

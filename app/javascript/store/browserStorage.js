@@ -1,3 +1,5 @@
+/* eslint no-console: ["error", { allow: ["log"] }] */
+
 export const loadState = () => {
   try {
     const serializedState = sessionStorage.getItem('cals-state')

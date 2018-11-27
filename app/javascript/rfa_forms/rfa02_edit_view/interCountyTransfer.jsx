@@ -9,8 +9,8 @@ export default class InterCountyTransfer extends React.Component {
     this.handleCountyTrasferChange = this.handleCountyTrasferChange.bind(this)
   }
   handleCountyTrasferChange (key, value, index) {
-    let countyTrasferList = this.props.countyTrasferList
-    let newCountyTrasferList = countyTrasferList.setIn(['items', index, key], value)
+    const countyTrasferList = this.props.countyTrasferList
+    const newCountyTrasferList = countyTrasferList.setIn(['items', index, key], value)
     this.props.setParentState('inter_county_transfer', newCountyTrasferList, this.props.peopleIndex)
   }
   render () {

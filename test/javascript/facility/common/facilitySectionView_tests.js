@@ -2,7 +2,7 @@ import React from 'react'
 import FacilitySectionView from 'facility/common/facilitySectionView'
 import {shallow, mount} from 'enzyme'
 
-describe('Verify Facility Assigned Worker', function () {
+describe('Verify Facility Assigned Worker', () => {
   const props = {
     label1: 'LICENSING / APPROVAL WORKER',
     label2: 'LICENSING / APPROVAL WORKER PHONE NUMBER',
@@ -11,7 +11,7 @@ describe('Verify Facility Assigned Worker', function () {
     value2: '(945) 432-1234',
     value3: 'email@gmail.com'
   }
-  let AssignedWorkerCompShallow = shallow(<FacilitySectionView {...props} />)
+  const AssignedWorkerCompShallow = shallow(<FacilitySectionView {...props} />)
   it('verify Facility Assigned Worker', () => {
     expect(AssignedWorkerCompShallow.find('.facility-address').length).toEqual(1)
   })
@@ -26,7 +26,7 @@ describe('Verify Facility Assigned Worker', function () {
   })
 })
 
-describe('Verify Facility Capacity block', function () {
+describe('Verify Facility Capacity block', () => {
   const props = {
     label1: 'CAPACITY',
     label2: 'AVAILABLE BEDS',
@@ -35,7 +35,7 @@ describe('Verify Facility Capacity block', function () {
     value2: 0,
     value3: '12/12/2O12'
   }
-  let FacilityCapacityCompShallow = shallow(<FacilitySectionView {...props} />)
+  const FacilityCapacityCompShallow = shallow(<FacilitySectionView {...props} />)
   it('verify Facility Capacity', () => {
     expect(FacilityCapacityCompShallow.find('SmallInnerBlockDetails[title="CAPACITY"]').props().value).toBe(0)
   })

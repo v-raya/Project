@@ -168,7 +168,7 @@ describe('RFA 02 test Criminal background Page', () => {
     expect(criminalBackgroudWithProps.props().people.size).toBe(1)
   })
   it('setParentState to be called', () => {
-    let emergencyPlacementSelect = criminalBackgroudWithProps.find('#emergencyPlacement0false').hostNodes()
+    const emergencyPlacementSelect = criminalBackgroudWithProps.find('#emergencyPlacement0false').hostNodes()
     emergencyPlacementSelect.simulate('change', {target: {value: 'false'}})
     expect(setParentStateSpy).toHaveBeenCalled()
   })

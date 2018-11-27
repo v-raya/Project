@@ -26,7 +26,7 @@ describe('Rfa 02 Inter County Transfer Info, test', () => {
     expect(interCountyTransferWithProps.length).toBe(1)
   })
   it('handleCountyTrasferChange method', () => {
-    let interCountyTransfer0checkboxEdit0Field = interCountyTransferWithProps.find('#interCountyTransfer0checkboxEdit0').hostNodes()
+    const interCountyTransfer0checkboxEdit0Field = interCountyTransferWithProps.find('#interCountyTransfer0checkboxEdit0').hostNodes()
     interCountyTransfer0checkboxEdit0Field.simulate('change', {target: {checked: 'true'}})
     expect(handleCountyTrasferChangeSpy).toHaveBeenCalledWith('checked', 'true', 0, undefined)
   })

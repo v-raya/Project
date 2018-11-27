@@ -19,7 +19,7 @@ export default class OutOfStateRegistryCheck extends React.Component {
     this.handleRegistryClear = this.handleRegistryClear.bind(this)
   }
   handleOutOfStateRegistry (key, value, index) {
-    let outOfStateRegistryList = this.props.outOfStateRegistryList
+    const outOfStateRegistryList = this.props.outOfStateRegistryList
     let newOutOfStateRegistryList = outOfStateRegistryList.setIn(['state_registries', index, key], value)
     if (key === 'is_registry_maintained_by_state') {
       let registryInfo
@@ -31,15 +31,15 @@ export default class OutOfStateRegistryCheck extends React.Component {
     this.props.setParentState('out_of_state_registry_checklist', newOutOfStateRegistryList, this.props.peopleIndex)
   }
   handleRequestInfo (key, value, rowIndex, cardIndex) {
-    let outOfStateRegistryList = this.props.outOfStateRegistryList
-    let registryCheckItems = outOfStateRegistryList.getIn(['state_registries', cardIndex, 'registry_info']) ? outOfStateRegistryList.getIn(['state_registries', cardIndex, 'registry_info']) : outOfStateRegistryDefaults
-    let newRegistryCheckList = registryCheckItems.setIn(['items', rowIndex, key], value)
-    let newOutOfStateRegistryList = outOfStateRegistryList.setIn(['state_registries', cardIndex, 'registry_info'], newRegistryCheckList)
+    const outOfStateRegistryList = this.props.outOfStateRegistryList
+    const registryCheckItems = outOfStateRegistryList.getIn(['state_registries', cardIndex, 'registry_info']) ? outOfStateRegistryList.getIn(['state_registries', cardIndex, 'registry_info']) : outOfStateRegistryDefaults
+    const newRegistryCheckList = registryCheckItems.setIn(['items', rowIndex, key], value)
+    const newOutOfStateRegistryList = outOfStateRegistryList.setIn(['state_registries', cardIndex, 'registry_info'], newRegistryCheckList)
     this.props.setParentState('out_of_state_registry_checklist', newOutOfStateRegistryList, this.props.peopleIndex)
   }
   handleRegistryClear (key, value, subKeyIndex) {
-    let outOfStateRegistryList = this.props.outOfStateRegistryList
-    let newOutOfStateRegistryList = outOfStateRegistryList.setIn(['state_registries', subKeyIndex, 'registry_info', key], value)
+    const outOfStateRegistryList = this.props.outOfStateRegistryList
+    const newOutOfStateRegistryList = outOfStateRegistryList.setIn(['state_registries', subKeyIndex, 'registry_info', key], value)
     this.props.setParentState('out_of_state_registry_checklist', newOutOfStateRegistryList, this.props.peopleIndex)
   }
   render () {

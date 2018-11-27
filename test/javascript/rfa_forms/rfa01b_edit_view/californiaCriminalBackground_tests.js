@@ -3,12 +3,12 @@ import CaliforniaCriminalBackground from 'rfa_forms/rfa01b_edit_view/californiaC
 import {shallow, mount} from 'enzyme'
 import Validator from 'helpers/validator'
 
-describe('Verify californiaCriminalBackground card', function () {
+describe('Verify californiaCriminalBackground card', () => {
   let setStateSpy, setParentStateSpy, setDisplayStateSpy,
     componentMount, setFocusStateSpy, onHideClickSpy, componentMountWithoutDisclosures,
     getFocusClassNameSpy, addCardSpy, clickCloseSpy, onFieldChangeSpy, handleClearOnConditionalChangeSpy
 
-  let disclosures = [{
+  const disclosures = [{
     'offense': 'test',
     'offense_city': 'test',
     'offense_state': {},
@@ -16,7 +16,7 @@ describe('Verify californiaCriminalBackground card', function () {
     'offense_details': 'test'
   }]
 
-  let disclosureDefaults = [{
+  const disclosureDefaults = [{
     'offense': '',
     'offense_city': '',
     'offense_state': {},
@@ -24,7 +24,7 @@ describe('Verify californiaCriminalBackground card', function () {
     'offense_details': ''
   }]
 
-  let validator = new Validator({})
+  const validator = new Validator({})
 
   beforeEach(() => {
     setStateSpy = jasmine.createSpy('setState')
@@ -66,7 +66,7 @@ describe('Verify californiaCriminalBackground card', function () {
       expect(componentMount.instance().props.validator.validations.size).toEqual(4)
     })
     it('tests handleNavLinkClick', () => {
-      let CACrimeDisclosureCard = componentMount.find('#CACriminalBackgroundCard').hostNodes()
+      const CACrimeDisclosureCard = componentMount.find('#CACriminalBackgroundCard').hostNodes()
       CACrimeDisclosureCard.simulate('click')
       expect(setFocusStateSpy).toHaveBeenCalledWith('CACriminalBackgroundCard')
     })
@@ -82,25 +82,25 @@ describe('Verify californiaCriminalBackground card', function () {
     })
 
     it('onClick event shows lived in other state multi select', () => {
-      let cardComponent = componentMount.find('input[type="radio"]')
-      let trueComponent = cardComponent.find('#californiaCriminalBackgroundRadiotrue')
+      const cardComponent = componentMount.find('input[type="radio"]')
+      const trueComponent = cardComponent.find('#californiaCriminalBackgroundRadiotrue')
       trueComponent.simulate('change', {target: {value: 'true'}})
       expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('convicted_in_california', 'true', 'convicted_in_california_disclosures', null)
     })
 
     it('onClick event shows lived in other state multi select', () => {
-      let cardComponent = componentMountWithoutDisclosures.find('input[type="radio"]')
-      let trueComponent = cardComponent.find('#californiaCriminalBackgroundRadiotrue')
+      const cardComponent = componentMountWithoutDisclosures.find('input[type="radio"]')
+      const trueComponent = cardComponent.find('#californiaCriminalBackgroundRadiotrue')
       trueComponent.simulate('change', {target: {value: 'false'}})
       expect(handleClearOnConditionalChangeSpy).toHaveBeenCalledWith('convicted_in_california', 'false', 'convicted_in_california_disclosures', null)
     })
     it('onchange sets disclosures ', () => {
-      let cardComponent = componentMountWithoutDisclosures.find('#californiaCriminalBackgroundoffenseReason').hostNodes()
+      const cardComponent = componentMountWithoutDisclosures.find('#californiaCriminalBackgroundoffenseReason').hostNodes()
       cardComponent.simulate('change', {target: {value: 'testing'}})
       expect(setParentStateSpy).toHaveBeenCalledWith('convicted_in_california_disclosures', [ Object({ offense: 'testing', offense_city: '', offense_state: Object({ value: 'California', id: 'CA' }), offense_date: '', when_offense_happen: '', offense_details: '' }) ])
     })
     it('check required fields indicator', () => {
-      let componentHtml = componentMountWithoutDisclosures.html()
+      const componentHtml = componentMountWithoutDisclosures.html()
       expect(componentHtml).toContain('What was the offense? (required)')
       expect(componentHtml).toContain('Where did the offense happen? (City, State, Country or other location information) (required)')
       expect(componentHtml).toContain('When did the offense happen? (required)')

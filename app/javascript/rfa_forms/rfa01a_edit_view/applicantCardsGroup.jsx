@@ -39,7 +39,7 @@ export default class ApplicantCardsGroup extends React.Component {
   }
 
   render () {
-    let applicantsList = this.props.applicants
+    const applicantsList = this.props.applicants
 
     return (
       <div>

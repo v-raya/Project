@@ -42,14 +42,14 @@ export default class AddressCard extends React.Component {
   onMailingAddressChange (key, value) {
     let mailingAddress = Immutable.fromJS(this.props.mailingAddress)
     mailingAddress = mailingAddress.set(key, value)
-    let addresses = Immutable.List([this.props.physicalAddress, mailingAddress])
+    const addresses = Immutable.List([this.props.physicalAddress, mailingAddress])
     this.props.setParentState('addresses', addresses.toJS())
   }
 
   onPhysicalAddressChange (key, value) {
     let physicalAddress = Immutable.fromJS(this.props.physicalAddress)
     physicalAddress = physicalAddress.set(key, value)
-    let addresses = Immutable.List([physicalAddress, this.props.mailingAddress])
+    const addresses = Immutable.List([physicalAddress, this.props.mailingAddress])
     this.props.setParentState('addresses', addresses.toJS())
   }
 

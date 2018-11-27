@@ -6,9 +6,9 @@ import {shallow, mount} from 'enzyme'
 import {phoneTypes} from './../../helpers/constants'
 import Validator from 'helpers/validator.js'
 
-var TestUtils = require('react-dom/test-utils')
+const TestUtils = require('react-dom/test-utils')
 
-describe('Verify Phone Card Component View', function () {
+describe('Verify Phone Card Component View', () => {
   let component
   let props
   const phoneNumber = {number: '3333-222-5545',
@@ -35,16 +35,16 @@ describe('Verify Phone Card Component View', function () {
   })
 
   describe('Verify Phone Card Component View', () => {
-    it('has class name', function () {
+    it('has class name', () => {
       expect(component.find('.card-body').length).toEqual(1)
     })
-    it('expcet children to be array', function () {
+    it('expcet children to be array', () => {
       expect(component.children.length).toEqual(1)
     })
   })
 
   describe('when "Add new phone number" is clicked', () => {
-    it('expect phone card to be button', function () {
+    it('expect phone card to be button', () => {
       const x = component.find('button[className="btn btn-default"]')
       expect(component.find('button[className="btn btn-default"]').type()).toEqual('button')
     })
@@ -115,10 +115,10 @@ describe('Verify Phone Card Component View', function () {
 describe('Preferred logic', () => {
   let component
   let props
-  let phoneNumbers = Immutable.fromJS([{number: '3333-222-5545',
+  const phoneNumbers = Immutable.fromJS([{number: '3333-222-5545',
     phone_type: {id: '1', value: 'Cell'},
     preferred: false}])
-  let blankPhoneNumbers = Immutable.fromJS([{number: '(888) 444-2323',
+  const blankPhoneNumbers = Immutable.fromJS([{number: '(888) 444-2323',
     phone_type: {id: '1', value: 'Cell'},
     preferred: false}])
   let setParentStateSpy
@@ -142,7 +142,7 @@ describe('Preferred logic', () => {
   })
 
   it('only 1 phone number is preferred', () => {
-    let tmpData = phoneNumbers.push(Immutable.fromJS({number: '999-444-2323',
+    const tmpData = phoneNumbers.push(Immutable.fromJS({number: '999-444-2323',
       phone_type: {id: '1', value: 'Cell'},
       preferred: true}))
 
@@ -150,7 +150,7 @@ describe('Preferred logic', () => {
     component.find('input[type="checkbox"]').at(0).simulate('change', {target: {checked: true}})
     expect(component.instance().onPhoneFieldChange).toHaveBeenCalledWith(0, true, 'preferred')
 
-    let newData = tmpData.setIn([0, 'preferred'], true).setIn([1, 'preferred'], false)
+    const newData = tmpData.setIn([0, 'preferred'], true).setIn([1, 'preferred'], false)
     expect(setParentStateSpy).toHaveBeenCalledWith('phones', newData)
   })
 
@@ -158,14 +158,14 @@ describe('Preferred logic', () => {
     const newNumber = '(888) 444-2323'
     component.find('input[type="text"]').simulate('change', {target: {value: newNumber}})
 
-    let newData = phoneNumbers.setIn([0, 'number'], newNumber)
+    const newData = phoneNumbers.setIn([0, 'number'], newNumber)
     expect(setParentStateSpy).toHaveBeenCalledWith('phones', newData)
   })
 
   it('verify when a random number is missing', () => {
     const newNumber = '(888) _44-2323'
     component.find('input[type="text"]').simulate('change', {target: {value: newNumber}})
-    let newData = phoneNumbers.setIn([0, 'number'], newNumber)
+    const newData = phoneNumbers.setIn([0, 'number'], newNumber)
     expect(newNumber).toEqual('(888) _44-2323')
   })
 
@@ -182,7 +182,7 @@ describe('Preferred logic', () => {
   })
 
   it('verifies component did unmount', () => {
-    let instance = component.instance()
+    const instance = component.instance()
     expect(instance.props.validator.validations.size).toEqual(1)
     component.unmount()
     expect(instance.props.validator.validations.size).toEqual(0)

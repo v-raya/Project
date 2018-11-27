@@ -13,7 +13,7 @@ export default class Exemptions extends React.Component {
     this.exemptionHandler = this.exemptionHandler.bind(this)
   }
   exemptionHandler (key, value, subKey) {
-    let exemptionList = this.props.exemptionList
+    const exemptionList = this.props.exemptionList
     let newExemptionList
     if (key === 'is_requested' && value === 'false') {
       newExemptionList = Immutable.fromJS(exemptions)

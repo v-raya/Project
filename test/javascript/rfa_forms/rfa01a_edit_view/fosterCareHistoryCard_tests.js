@@ -4,9 +4,9 @@ import {FosterCareHistoryFields, blankFosterCareFields} from 'rfa_forms/rfa01a_e
 import {shallow, mount} from 'enzyme'
 import {yesNo, licenseTypes, selectedYes} from './../../helpers/constants'
 import {rfa01ALabels} from 'constants/rfaText'
-var TestUtils = require('react-dom/test-utils')
+const TestUtils = require('react-dom/test-utils')
 
-describe('foster car card tests', function () {
+describe('foster car card tests', () => {
   let fosterCareCardComponent
   let fosterCareFieldsComponent
   let props
@@ -51,7 +51,7 @@ describe('foster car card tests', function () {
   })
   describe('Verify Foster Care Card Selection', () => {
     it('select foster care card', () => {
-      let fosterCareCardComponentDiv = fosterCareCardComponent.find('#FosterCareHistorySection')
+      const fosterCareCardComponentDiv = fosterCareCardComponent.find('#FosterCareHistorySection')
       fosterCareCardComponentDiv.simulate('click')
       expect(setFocusStateSpy).toHaveBeenCalledWith('FosterCareHistoryCard')
     })
@@ -70,7 +70,7 @@ describe('foster car card tests', function () {
   })
 
   describe('when "radio button is changed', () => {
-    it('expect set foster care nested state to be called', function () {
+    it('expect set foster care nested state to be called', () => {
       const onChangeSpy = jasmine.createSpy('setFosterCareNestedState')
       handleClearOnConditionalChangeSpy = jasmine.createSpy('handleClearOnConditionalChange')
 

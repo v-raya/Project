@@ -1,3 +1,5 @@
+/* eslint no-console: ["error", { allow: ["log"] }] */
+
 import {takeLatest, put, call} from 'redux-saga/effects'
 import {fetchRequestWithErrors} from 'helpers/http'
 import {urlPrefixHelper} from 'helpers/url_prefix_helper.js.erb'

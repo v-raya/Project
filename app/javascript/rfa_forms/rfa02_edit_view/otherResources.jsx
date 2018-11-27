@@ -9,8 +9,8 @@ export default class OtherResources extends React.Component {
     this.handleOtherResourceList = this.handleOtherResourceList.bind(this)
   }
   handleOtherResourceList (key, value, index) {
-    let otherResourcesList = this.props.otherResourcesList
-    let newOtherResourcesList = otherResourcesList.setIn(['items', index, key], value)
+    const otherResourcesList = this.props.otherResourcesList
+    const newOtherResourcesList = otherResourcesList.setIn(['items', index, key], value)
     this.props.setParentState('other_resources', newOtherResourcesList, this.props.peopleIndex)
   }
   render () {

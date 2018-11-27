@@ -16,7 +16,7 @@ export const REGULAR_PERSON_TYPE = 'Present Adult'
 
 export default class TrackingSideBar extends React.Component {
   render () {
-    let people = this.props.people
+    const people = this.props.people
     const titleSuffix = this.props.titleSuffix
     return (
       <div className='nav-menu col-sm-12 pull-right'>

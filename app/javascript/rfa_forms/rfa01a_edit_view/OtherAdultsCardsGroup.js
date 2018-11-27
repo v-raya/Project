@@ -38,7 +38,7 @@ export default class OtherAdultsCardsGroup extends React.Component {
   }
 
   render () {
-    let otherAdultsList = this.props.otherAdults
+    const otherAdultsList = this.props.otherAdults
 
     return (
       <div className='other_adults_card'>

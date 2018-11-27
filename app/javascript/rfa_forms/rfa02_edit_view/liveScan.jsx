@@ -9,8 +9,8 @@ export default class LiveScan extends React.Component {
     this.handleLiveScan = this.handleLiveScan.bind(this)
   }
   handleLiveScan (key, value, index) {
-    let liveScanList = this.props.liveScanList
-    let newLiveScanList = liveScanList.setIn(['items', index, key], value)
+    const liveScanList = this.props.liveScanList
+    const newLiveScanList = liveScanList.setIn(['items', index, key], value)
     this.props.setParentState('live_scan', newLiveScanList, this.props.peopleIndex)
   }
   render () {

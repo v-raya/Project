@@ -30,7 +30,7 @@ export default class Validator {
 
   // add new validation rule by field name
   addFieldValidation (fieldName, validation) {
-    let currentRules = this.validations.get(fieldName) || Immutable.fromJS([])
+    const currentRules = this.validations.get(fieldName) || Immutable.fromJS([])
 
     // get list of validations minus the rule we are tryingt to add
     // this is done to avoid having multiple rules of same type
@@ -106,7 +106,7 @@ export default class Validator {
         if (typeof (opt.value) === 'string') {
           return !_.isEmpty(opt.value.trim())
         } else {
-          return (!isNaN(+opt.value))
+          return (!isNaN(Number(opt.value)))
         }
       }
     }
@@ -228,9 +228,9 @@ export default class Validator {
   validateFieldWithRule (fieldName, value, ruleName) {
     let allValidPass = true
     if (ruleName) {
-      let ruleNameAsJS = ruleName.toJS()
-      for (let s in ruleNameAsJS) {
-        let ruleOptions = Immutable.fromJS(ruleNameAsJS[s])
+      const ruleNameAsJS = ruleName.toJS()
+      for (const s in ruleNameAsJS) {
+        const ruleOptions = Immutable.fromJS(ruleNameAsJS[s])
         const opts = {
           value: value,
           ruleName: ruleOptions.get('rule'),
@@ -253,7 +253,7 @@ export default class Validator {
     return allValidPass
   }
   validateAllRequired (data) {
-    let requiredRules = this.allIsRequiredRules()
+    const requiredRules = this.allIsRequiredRules()
     this.validateAllFieldsWithRules(data, requiredRules)
   }
 
