@@ -6,7 +6,7 @@ const RemoveLink = (
   clickClose
 ) => (
   <div key={key} className='row'>
-    <a onClick={clickClose} className='pull-right remove-btn'>Remove</a>
+    <button onClick={clickClose} className='pull-right remove-btn'>Remove</button>
   </div>
 )
 RemoveLink.propTypes = {

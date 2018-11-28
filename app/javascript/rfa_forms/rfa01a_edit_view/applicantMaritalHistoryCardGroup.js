@@ -111,7 +111,8 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
     return (
       <div className='applicant_marital_history_cards'>
         <div id='ApplicantMaritalHistoryCardGroup' onClick={() => this.props.setFocusState('ApplicantMaritalHistoryCardGroup')}
-          className={this.props.getFocusClassName('ApplicantMaritalHistoryCardGroup') + ' ' + 'card phone-section double-gap-top active-bar'}>
+          className={`${this.props.getFocusClassName('ApplicantMaritalHistoryCardGroup')} ` + `card phone-section double-gap-top active-bar`}
+          role='button' aria-hidden>
           <div className='card-header'>
             <span>Applicants Marital / Domestic Partnership History</span>
           </div>
@@ -119,8 +120,8 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
             {
               applicantMaritalHistories.map((applicantMaritalHistory, index) => {
                 return (
-                  <div key={'formerSpouse' + '[' + index + ']'} className='row list-item' >
-                    <div> <a onClick={(event) => this.onMaritalHistoryClickClose(index)} className='pull-right remove-btn'>Remove</a>
+                  <div key={`formerSpouse[${index}]`} className='row list-item' >
+                    <div> <button onClick={(event) => this.onMaritalHistoryClickClose(index)} className='pull-right remove-btn'>Remove</button>
                     </div>
                     { <ApplicantMaritalHistoryCard
                       index={index}
@@ -154,8 +155,8 @@ export default class ApplicantMaritalHistoryCardGroup extends React.Component {
               adultChildrenList.map((adultChild, index) => {
                 return (
 
-                  <div key={'adultChild' + '[' + index + ']'} className='row list-item' >
-                    <a onClick={() => this.onAdultChildClickClose(index)} className='pull-right remove-btn'>Remove</a>
+                  <div key={`adultChild${index}]`} className='row list-item' >
+                    <button onClick={() => this.onAdultChildClickClose(index)} className='pull-right remove-btn'>Remove</button>
 
                     { <AdultChildrenFields
                       index={index}

@@ -45,19 +45,21 @@ export default class Employment extends React.PureComponent {
               label='Occupation' placeholder=''
               type='text' onChange={(event) => this.onEmploymentChange('occupation', event.target.value)} />
             <div className='col-md-2' >
-              <label>Income</label>
-              <Cleave placeholder='$0'
-                id='income'
-                value={employmentFields.income}
-                options={{
-                  prefix: '$',
-                  numeral: true,
-                  numeralThousandsGroupStyle: 'thousand',
-                  numeralDecimalScale: 0,
-                  numeralIntegerScale: 8,
-                  rawValueTrimPrefix: true
-                }}
-                onChange={(event) => this.onEmploymentChange('income', event.target.rawValue)} />
+              <label htmlFor='income'>
+                <Cleave placeholder='$0'
+                  id='income'
+                  value={employmentFields.income}
+                  options={{
+                    prefix: '$',
+                    numeral: true,
+                    numeralThousandsGroupStyle: 'thousand',
+                    numeralDecimalScale: 0,
+                    numeralIntegerScale: 8,
+                    rawValueTrimPrefix: true
+                  }}
+                  onChange={(event) => this.onEmploymentChange('income', event.target.rawValue)} />
+                Income
+              </label>
             </div>
 
             <DropDownField gridClassName='col-md-2' id='income_type'

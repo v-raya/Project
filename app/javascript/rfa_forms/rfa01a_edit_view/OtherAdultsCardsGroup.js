@@ -43,7 +43,8 @@ export default class OtherAdultsCardsGroup extends React.Component {
     return (
       <div className='other_adults_card'>
         <div id='otherAdultsSection' onClick={() => this.props.setFocusState('otherAdultsSection')}
-          className={this.props.getFocusClassName('otherAdultsSection') + ' ' + 'card other-adults-section double-gap-top active-bar'}>
+          className={`${this.props.getFocusClassName('otherAdultsSection')} ` + `card other-adults-section double-gap-top active-bar`}
+          role='button' aria-hidden>
           <div className='card-header'>
             <span>Other Adults Information</span>
           </div>
@@ -54,7 +55,7 @@ export default class OtherAdultsCardsGroup extends React.Component {
                 if (!otherAdultsFields.to_delete) {
                   return (
                     <div key={index} className='row list-item' >
-                      <div > <a onClick={() => this.clickClose(index)} className='pull-right remove-btn'>Remove</a>
+                      <div > <button onClick={() => this.clickClose(index)} className='pull-right remove-btn'>Remove</button>
                       </div>
                       <OtherAdultsCardField
                         suffixTypes={this.props.suffixTypes}

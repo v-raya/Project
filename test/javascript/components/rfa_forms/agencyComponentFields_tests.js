@@ -40,7 +40,7 @@ describe('verify agency component fields ', () => {
   })
 
   it('verify remove added Agency Name', () => {
-    const removeButton = agencyComponent.find('a')
+    const removeButton = agencyComponent.find('button')
     removeButton.simulate('click', 'event')
     expect(removeAgencyCardSpy).toHaveBeenCalledWith('event', [ 'new' ], indexValue, 'foster_care_licenses_q1', 'agencies')
   })

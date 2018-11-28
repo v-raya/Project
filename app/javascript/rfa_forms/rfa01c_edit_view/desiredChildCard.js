@@ -48,7 +48,7 @@ export default class DesiredChildCard extends React.Component {
               <hr style={{padding: '1rem', marginBottom: '0px', marginTop: '10px'}} />
             </div>
             : null }
-          <a onClick={(event) => this.props.clickClose(index)} className='pull-right remove-btn'>Remove</a>
+          <button onClick={(event) => this.props.clickClose(index)} className='pull-right remove-btn'>Remove</button>
         </div>
         <YesNoRadioComponent
           idPrefix={this.props.idPrefix + 'child_in_home'}
