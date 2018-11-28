@@ -19,14 +19,18 @@ const CardLayout = ({
     <div
       className={focusClassName}
       onClick={handleOnClick}
-      id={id}>
+      id={id}
+      role='button'
+      aria-hidden>
       <div className='card-header'>
         <span>{label}</span>
         { showHeaderLink
           ? <div id={headerToggleId}
             style={toggleInstructionStyle}
             className='text-right'
-            onClick={onHeaderToggleClick}>
+            onClick={onHeaderToggleClick}
+            role='button'
+            aria-hidden>
             {headerDisplayLink ? 'hide' : 'view'}
           </div>
           : null}

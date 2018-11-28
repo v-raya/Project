@@ -53,7 +53,7 @@ export default class CriminalFields extends React.Component {
       <div className='row'>
         <hr />
         <div>
-          <span onClick={() => this.props.clickClose(this.props.index)} className='pull-right glyphicon glyphicon-remove' />
+          <span onClick={() => this.props.clickClose(this.props.index)} className='pull-right glyphicon glyphicon-remove' role='presentation'/>
         </div>
         <div><b>{Rfa01bCriminalFieldsCardText.details}</b></div>
         <InputComponent

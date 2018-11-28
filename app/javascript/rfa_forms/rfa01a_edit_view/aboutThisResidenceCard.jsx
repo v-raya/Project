@@ -86,8 +86,8 @@ export default class AboutThisResidenceCard extends React.Component {
                 othersMailing.map((person, index) => {
                   return (
                     <div key={index}>
-                      <a onClick={() => this.removeCard(index)}
-                        className='pull-right remove-btn'>Remove</a>
+                      <button onClick={() => this.removeCard(index)}
+                        className='pull-right remove-btn'>Remove</button>
                       <CompleteNameFields
                         idPrefix={`${this.props.idPrefix}other_people_using_residence_as_mailing` + `[${index}].`}
                         index={index}

@@ -79,8 +79,8 @@ export default class NameCard extends React.PureComponent {
           nameCardsList && nameCardsList.map((nameCardFields, index) => {
             return (
               <div key={index} className='row list-item'>
-                <a onClick={(event) => this.removeCard(index)}
-                  className='pull-right remove-btn'>Remove</a>
+                <button onClick={(event) => this.removeCard(index)}
+                  className='pull-right remove-btn'>Remove</button>
                 <CompleteNameFields
                   index={index}
                   idPrefix={`${this.props.idPrefix}other_names[${index}].`}

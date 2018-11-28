@@ -1,6 +1,7 @@
 {
   "extends": [
-    "standard"
+    "standard",
+    "plugin:jsx-a11y/recommended"
   ],
   "plugins": [
     "react",
@@ -23,6 +24,19 @@
     "dot-notation": [2],
     "func-names": [2],
     "func-style": [2, "declaration", { "allowArrowFunctions": true }],
+    "jsx-a11y/no-autofocus": 1,
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "components": ["label"],
+        "required": {
+          "some": ["nesting", "id"]
+        },
+        "allowChildren": true
+      }
+    ],
+    "jsx-a11y/tabindex-no-positive": [2],
+    "jsx-a11y/no-onchange": 0,
     "no-console": [2],
     "no-implicit-coercion": [2],
     "no-invalid-this": [2],

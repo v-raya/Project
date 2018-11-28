@@ -80,7 +80,7 @@ describe('foster care card tests', () => {
     it('verify default layout', () => {
       expect(applicantMaritalHistoryCardGroupComponent.findWhere(n => n.type() === 'div').length).toEqual(11)
       expect(applicantMaritalHistoryCardGroupComponent.find('#applicant_marital_history_cards').children.length).toEqual(1)
-      expect(applicantMaritalHistoryCardGroupComponent.find('button').length).toEqual(2)
+      expect(applicantMaritalHistoryCardGroupComponent.find('button').length).toEqual(4)
     })
     it('verify add Marital History Card', () => {
       const addCardButton = applicantMaritalHistoryCardGroupComponent.find('button.btn').at(0)
@@ -96,13 +96,13 @@ describe('foster care card tests', () => {
     })
 
     it('verify remove Marital History Card', () => {
-      const removeCardBtn = applicantMaritalHistoryCardGroupComponent.find('a.remove-btn').at(0)
+      const removeCardBtn = applicantMaritalHistoryCardGroupComponent.find('button.remove-btn').at(0)
       spyOn(applicantMaritalHistoryCardGroupComponent.instance(), 'onMaritalHistoryClickClose').and.callThrough()
       removeCardBtn.simulate('click')
       expect(applicantMaritalHistoryCardGroupComponent.instance().onMaritalHistoryClickClose).toHaveBeenCalledWith(0)
     })
     it('verify remove Adult Child Card', () => {
-      const removeCardBtn = applicantMaritalHistoryCardGroupComponent.find('a.remove-btn').at(1)
+      const removeCardBtn = applicantMaritalHistoryCardGroupComponent.find('button.remove-btn').at(1)
       spyOn(applicantMaritalHistoryCardGroupComponent.instance(), 'onAdultChildClickClose').and.callThrough()
       removeCardBtn.simulate('click')
       expect(applicantMaritalHistoryCardGroupComponent.instance().onAdultChildClickClose).toHaveBeenCalledWith(0)

@@ -41,8 +41,8 @@ export default class PhoneComponent extends React.Component {
             const idPrefix = `${this.props.idPrefix}phones[${index}].`
             return (
               <div key={idPrefix} className='row list-item'>
-                <a onClick={(event) => this.onPhoneClickClose(index)}
-                  className='pull-right remove-btn'>Remove</a>
+                <button onClick={(event) => this.onPhoneClickClose(index)}
+                  className='pull-right remove-btn'>Remove</button>
                 <PhoneNumberField
                   index={index}
                   idPrefix={idPrefix}

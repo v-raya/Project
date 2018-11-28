@@ -55,7 +55,8 @@ export default class MinorCardsGroup extends React.Component {
     return (
       <div className='minor_card'>
         <div id='minorsSection' onClick={() => this.props.setFocusState('minorsSection')}
-          className={`${this.props.getFocusClassName('minorsSection')} ` + `card minors-section double-gap-top active-bar`}>
+          className={`${this.props.getFocusClassName('minorsSection')} ` + `card minors-section double-gap-top active-bar`}
+          role='button' aria-hidden>
           <div className='card-header'>
             <span>Minor Children Information</span>
           </div>
@@ -66,7 +67,7 @@ export default class MinorCardsGroup extends React.Component {
                 if (!minor.to_delete) {
                   return (
                     <div key={index} className='row list-item' >
-                      <div> <a onClick={() => this.clickClose(index)} className='pull-right remove-btn'>Remove</a>
+                      <div> <button onClick={() => this.clickClose(index)} className='pull-right remove-btn'>Remove</button>
                       </div>
                       <MinorCardField
                         index={index}
