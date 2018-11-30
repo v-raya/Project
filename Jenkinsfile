@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-import java.text.SimpleDateFormat
+@Library('jenkins-pipeline-utils') _
 
 DOCKER_GROUP = 'cwds'
 DOCKER_APP_IMAGE = 'cals'
@@ -75,28 +75,10 @@ def pushToDocker(imageLocation, args, docker_credential_id) {
     }
 }
 
-def getBuildTag() {
-    int baseTagNumber = env.BASE_TAG_NUMBER ? env.BASE_TAG_NUMBER.toInteger() : 61
-    def baseDate = env.BASE_TAG_DATE ? new SimpleDateFormat("yyyy-MM-dd").parse(env.BASE_TAG_DATE) : new SimpleDateFormat("yyyy-MM-dd").parse("2018-02-21")
-    def today = new Date()
-    int sprintsSince = (today - baseDate).intdiv(14)
-
-    return getNewTagNumber(baseTagNumber, sprintsSince)
-}
-def getNewTagNumber(baseTagNumber, sprints) {
-    int newTagNumber = baseTagNumber
-    sprints.times {
-        newTagNumber += 1
-        if ((newTagNumber % 10) >= 5) {
-            newTagNumber += 6
-        }
-    }
-    return newTagNumber
-}
-
 node('cals-slave') {
     env.DISABLE_SPRING = 1
 
+    final def MAIN_BRANCH = 'development'
     def branch = env.GIT_BRANCH
     def curStage = 'Start'
     def emailList = 'ratnesh.raval@osi.ca.gov'
@@ -108,7 +90,6 @@ node('cals-slave') {
         deleteDir()
         stage ('Checkout Github') {
             checkout scm
-
         }
 
         // build the container from current code
@@ -121,6 +102,11 @@ node('cals-slave') {
         appDockerImage.withRun { container ->
             stage('Lint') {
                 sh "docker exec -t ${container.id} yarn lint"
+            }
+            if (branch != MAIN_BRANCH) { // PR build
+                stage('Verify SemVer Label') {
+                    checkForLabel('cals')
+                }
             }
             stage('Compile Assets') {
                 curStage = 'assets'
@@ -144,7 +130,7 @@ node('cals-slave') {
             }
         }
 
-        if (branch == 'development') {
+        if (branch == MAIN_BRANCH) {
             // run test bubble
             // commented till cals-api can work with perry v2
             // stage('Test Bubble') {
@@ -155,22 +141,24 @@ node('cals-slave') {
             //     }
             // }
 
-            // push to docker
-            newTag = "1.${getBuildTag()}.${env.BUILD_ID}"
-            dockerStages(newTag)
-
-            sshagent([GITHUB_CREDENTIALS_ID]) {
-                sh "git config user.email ratneshraval@gmail.com"
-                sh "git config user.name 'Ratnesh Raval'"
-                sh 'git remote set-url origin git@github.com:ca-cwds/CALS.git'
-                sh "git tag -a ${newTag} -m 'v${newTag}'"
-                sh "git push origin ${newTag}"
+            stage("Increment Tag") {
+                newTag = newSemVer()
             }
+
+            stage('Tag Repo') {
+                tagGithubRepo(newTag, GITHUB_CREDENTIALS_ID)
+            }
+
+            dockerStages(newTag)
 
             stage('Deploy Preint') {
                 sh "curl -v 'http://${JENKINS_USER}:${JENKINS_API_TOKEN}@jenkins.mgmt.cwds.io:8080/job/preint/job/deploy-CALS/buildWithParameters" +
                     "?" + "token=${JENKINS_TRIGGER_TOKEN}" + "&" + "cause=Caused%20by%20Build%20${env.BUILD_ID}" +
                     "&" + "version=${newTag}'"
+            }
+
+            stage('Update Manifest Version') {
+                updateManifest("cals", "preint", GITHUB_CREDENTIALS_ID, newTag)
             }
         }
 
