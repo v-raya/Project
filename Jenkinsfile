@@ -78,10 +78,9 @@ def pushToDocker(imageLocation, args, docker_credential_id) {
 node('cals-slave') {
     env.DISABLE_SPRING = 1
 
-    final def MAIN_BRANCH = 'development'
+    final def MAIN_BRANCH = 'master'
     def branch = env.GIT_BRANCH
     def curStage = 'Start'
-    def emailList = 'ratnesh.raval@osi.ca.gov'
     String newTag = ''
 
     def appDockerImage
