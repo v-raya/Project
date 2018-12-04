@@ -48,7 +48,6 @@ def reports() {
 
 def dockerStages(newTag) {
     stage('Docker App Build Publish') {
-        curStage = 'Docker App Build Publish'
         pushToDocker(
             "${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:${newTag}",
             "-f ./docker/release/Dockerfile .",
@@ -57,7 +56,6 @@ def dockerStages(newTag) {
 
     }
     stage('Docker Test Build Publish') {
-        curStage = 'Docker Test Build Publish'
         pushToDocker(
             "${DOCKER_GROUP}/${DOCKER_TEST_IMAGE}:${newTag}",
             "-f ./docker/acceptance-tests/Dockerfile .",
@@ -80,7 +78,6 @@ node('cals-slave') {
 
     final def MAIN_BRANCH = 'master'
     def branch = env.GIT_BRANCH
-    def curStage = 'Start'
     String newTag = ''
 
     def appDockerImage
@@ -108,11 +105,9 @@ node('cals-slave') {
                 }
             }
             stage('Compile Assets') {
-                curStage = 'assets'
                 sh "docker exec -t ${container.id} bundle exec rails assets:precompile RAILS_ENV=test"
             }
             stage('Test - Jasmine') {
-                curStage = 'karma'
                 sh "docker exec -t ${container.id} yarn karma-ci"
             }
             stage('Test - Rspec') {
@@ -120,7 +115,6 @@ node('cals-slave') {
                     ' -e GEO_SERVICE_URL=https://geo.preint.cwds.io' +
                     ' -e BASE_SEARCH_API_URL=https://dora.preint.cwds.io' +
                     ' -e AUTHENTICATION_API_BASE_URL=https://web.preint.cwds.io/perry'
-                curStage = 'rspec'
                 sh "docker exec -e ${envVariablesRspec} -t ${container.id} yarn spec-ci"
             }
             stage('Reports') {
