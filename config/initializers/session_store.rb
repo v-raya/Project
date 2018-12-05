@@ -1,12 +1,6 @@
-# config/initializers/session_store.rb
-Cals::Application.config.session_store :redis_store, {
-  servers: [
-    {
-      host: REDIS_HOST,
-      port: REDIS_PORT,
-      db: 0,
-      namespace: "cals:session"
-    }
-  ],
-  expire_after: 4.hours
+# frozen_string_literal: true
+
+Cals::Application.config.session_store CwdsStore::Store, {
+  host: ENV.fetch('REDIS_HOST', '127.0.0.1'),
+  port: ENV.fetch('REDIS_PORT', '6379')
 }

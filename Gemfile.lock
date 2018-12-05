@@ -16,6 +16,13 @@ GIT
       faraday (~> 0.9.2)
 
 GIT
+  remote: https://github.com/ca-cwds/cwds_store.git
+  revision: 753fb9a393f166279df0c570bc71b066519527cf
+  specs:
+    cwds_store (0.1.4)
+      redis-rails (~> 5.0)
+
+GIT
   remote: https://github.com/ca-cwds/system_information.git
   revision: 43342776d49a3b3f03964272e22f697fcecea0a0
   specs:
@@ -356,6 +363,7 @@ DEPENDENCIES
   chromedriver-helper (= 1.2.0)
   codeclimate-test-reporter (~> 1.0.0)
   cwds-authentication!
+  cwds_store!
   dotenv-rails (~> 2.2)
   factory_girl
   factory_girl_rails

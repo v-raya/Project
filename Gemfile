@@ -15,6 +15,7 @@ gem 'dotenv-rails', '~> 2.2', groups: %i[development test aws_dev]
 gem 'autoprefixer-rails', '~> 6.7'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'cwds-authentication', github: 'ca-cwds/cwds-authentication', ref: '82c1dcf'
+gem 'cwds_store', github: 'ca-cwds/cwds_store'
 gem 'faraday'
 gem 'faraday_middleware'
 gem 'jbuilder', '~> 2.5'
