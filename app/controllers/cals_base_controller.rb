@@ -45,15 +45,15 @@ class CalsBaseController < ApplicationController
   protected
 
   def authenticate_with_cwds
-    token = Cwds::Authentication.token_generation(params[:accessCode], AUTHENTICATION_API_BASE_URL) if session[:user_details].blank?
+    token = Cwds::Authentication.token_generation(params[:accessCode], AUTHENTICATION_API_BASE_URL)
     session.delete(:token) if token.present?
     if session[:token].blank?
       if Cwds::Authentication.token_validation(token, AUTHENTICATION_API_BASE_URL)
-        store_token_in_redis(token)
-        session[:user_details] = Cwds::Authentication.store_user_details_from_token(token)
+        store_token_in_redis(token)      
       else
         redirect_to Cwds::Authentication.authentication_url(AUTHENTICATION_API_BASE_URL, request.url)
       end
     end
+    session[:user_details] = Cwds::Authentication.store_user_details_from_token(session[:token]) if session[:user_details].nil?
   end
 end
