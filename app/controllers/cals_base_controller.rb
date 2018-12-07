@@ -52,6 +52,7 @@ class CalsBaseController < ApplicationController
         store_token_in_redis(token)      
       else
         redirect_to Cwds::Authentication.authentication_url(AUTHENTICATION_API_BASE_URL, request.url)
+        return
       end
     end
     session[:user_details] = Cwds::Authentication.store_user_details_from_token(session[:token]) if session[:user_details].nil?
