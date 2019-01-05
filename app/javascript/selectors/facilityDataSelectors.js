@@ -49,6 +49,7 @@ const getFacilityDetails = (facilityState) => ({
   available_beds: facilityState.available_beds,
   capacity: facilityState.capacity,
   capacity_last_changed: checkforDateOrNa(facilityState.capacity_last_changed),
+  adjusted_capacity: facilityState.adjusted_capacity,
   district_office: checkNameorNA(facilityState.district_office),
   licensee_name: facilityState.licensee_name || 'N/A',
   license_number: facilityState.license_number || 'N/A',

@@ -4,6 +4,7 @@ import FacilityDetails from 'facility/facilityDetails'
 import FacilityAddress from 'facility/facilityAddress'
 import Spinner from 'facility/common/spinner'
 import FacilitySectionView from 'facility/common/facilitySectionView'
+import FacilityCapacityView from 'facility/common/facilityCapacityView'
 
 class FacilityWrapper extends React.Component {
   componentDidMount () {
@@ -35,13 +36,15 @@ class FacilityWrapper extends React.Component {
               facilityName={facilityName}
               errors={errors}
             />
-            <FacilitySectionView
+            <FacilityCapacityView
               label1='CAPACITY'
-              label2='AVAILABLE BEDS'
-              label3='CAPACITY LAST CHANGED'
+              label2='ADJUSTED CAPACITY'
+              label3='AVAILABLE BEDS'
+              label4='CAPACITY LAST CHANGED'
               value1={facilityData.capacity}
-              value2={facilityData.available_beds}
-              value3={facilityData.capacity_last_changed}
+              value2={facilityData.adjusted_capacity}
+              value3={facilityData.available_beds}
+              value4={facilityData.capacity_last_changed}
             />
             <FacilityAddress
               facilityAddress={facilityAddress}
@@ -82,6 +85,7 @@ FacilityWrapper.defaultProps = {
   },
   facilityData: {
     capacity: 'N/A',
+    adjusted_capacity: 'N/A',
     available_beds: 'N/A',
     capacity_last_changed: ''
   },
