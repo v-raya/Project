@@ -31,4 +31,30 @@ describe FacilitiesController do
       expect(response.body.include?('TWEEDLE'))
     end
   end
+
+  describe 'Methods' do
+    it 'builds facilties_response' do
+      facilities = {
+        hits: {
+          hits: [
+            _source: { name: 'f1' }
+          ],
+          total: 10
+        }
+      }.as_json
+
+      expected_response = {
+        facilities: [{ name: 'f1' }],
+        total: 10
+      }.deep_stringify_keys
+
+      expect(controller.send(:build_facilities_response, facilities)).to eql expected_response
+    end
+
+    it 'limits total to 5k' do
+      expect(controller.send(:total_upto_5k, 5001)).to eql 5000
+      expect(controller.send(:total_upto_5k, 5000)).to eql 5000
+      expect(controller.send(:total_upto_5k, 100)).to eql 100
+    end
+  end
 end

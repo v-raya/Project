@@ -36,6 +36,7 @@ describe('facilityDataSelectors', () => {
             },
             'capacity': 0,
             'available_beds': 0,
+            'adjusted_capacity': 0,
             'district_office': {
               'number': '19',
               'name': 'PACIFIC INLAND CR'
@@ -74,6 +75,7 @@ describe('facilityDataSelectors', () => {
         capacity: 0,
         capacity_last_changed: 'N/A',
         available_beds: 0,
+        adjusted_capacity: 0,
         district_office: 'PACIFIC INLAND CR',
         licensee_name: 'Ananya Nandi',
         license_number: '100000299',
