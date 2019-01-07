@@ -22,6 +22,16 @@ describe('check and split value method with different inputs', () => {
     const input = '*'
     expect(checkAndSplitValue(input)).toEqual('')
   })
+  it('should return escape characters string if special character ( is passed', () => {
+    const input = 'FST FFH (On Hold)'
+    const output = '*FST* *FFH* *\\(On* *Hold\\)*'
+    expect(checkAndSplitValue(input)).toEqual(output)
+  })
+  it('should return escape characters string if special character ( is passed', () => {
+    const input = 'FST FFH (On Hold) [][][][]][][]][][[]][][][][]['
+    const output = '*FST* *FFH* *\\(On* *Hold\\)* *\\[\\]\\[\\]\\[\\]\\[\\]\\]\\[\\]\\[\\]\\]\\[\\]\\[\\[\\]\\]\\[\\]\\[\\]\\[\\]\\[\\]\\[*'
+    expect(checkAndSplitValue(input)).toEqual(output)
+  })
 })
 
 describe('check licenseStatus based on isAllActive flag', () => {

@@ -1,5 +1,6 @@
 import React from 'react'
 import Moment from 'moment'
+import escapeElastic from 'elasticsearch-sanitize'
 
 export const respectiveStreetAddressOrNA = (addresses, addressType) => {
   const addressObject = addresses && addresses.find(o => o.type === addressType)
@@ -31,7 +32,9 @@ export const checkForValue = (value) => {
 export const checkAndSplitValue = (value) => {
   if (value !== undefined || '') {
     const filteredSet = ['*', '']
-    return value.split(' ').filter((val) => !filteredSet.includes(val)).map((val) => '*' + val + '*').join(' ')
+    const sanitizedValue = value.split(' ').filter((val) => !filteredSet.includes(val)).map((val) => '*' + escapeElastic(val) + '*').join(' ')
+    console.log(sanitizedValue)
+    return sanitizedValue
   }
   return undefined
 }
