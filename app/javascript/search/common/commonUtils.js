@@ -32,9 +32,7 @@ export const checkForValue = (value) => {
 export const checkAndSplitValue = (value) => {
   if (value !== undefined || '') {
     const filteredSet = ['*', '']
-    const sanitizedValue = value.split(' ').filter((val) => !filteredSet.includes(val)).map((val) => '*' + escapeElastic(val) + '*').join(' ')
-    console.log(sanitizedValue)
-    return sanitizedValue
+    return value.split(' ').filter((val) => !filteredSet.includes(val)).map((val) => '*' + escapeElastic(val) + '*').join(' ')
   }
   return undefined
 }
