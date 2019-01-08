@@ -31,9 +31,19 @@ export const checkForValue = (value) => {
 export const checkAndSplitValue = (value) => {
   if (value !== undefined || '') {
     const filteredSet = ['*', '']
-    return value.split(' ').filter((val) => !filteredSet.includes(val)).map((val) => '*' + val + '*').join(' ')
+    return value.split(' ').filter((val) => !filteredSet.includes(val)).map((val) => '*' + escapeElastic(val) + '*').join(' ')
   }
   return undefined
+}
+
+const escapeElastic = (query) => {
+  return query
+    .replace(/[\\*\\+\-=~><\\"\\?^\\${}\\(\\)\\:\\!\\/[\]\\\s]/g, '\\$&') // replace single character special characters
+    .replace(/\|\|/g, '\\||') // replace ||
+    .replace(/\\&\\&/g, '\\&&') // replace &&
+    .replace(/AND/g, '\\A\\N\\D') // replace AND
+    .replace(/OR/g, '\\O\\R') // replace OR
+    .replace(/NOT/g, '\\N\\O\\T') // replace NOT
 }
 
 export const getArrayOfId = (array) => {
