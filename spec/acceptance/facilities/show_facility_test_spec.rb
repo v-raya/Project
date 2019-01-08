@@ -5,7 +5,7 @@ require 'vcr'
 
 RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
   before(:each) do
-    allow_any_instance_of(SearchController).to receive(:user_from_session).and_return(FactoryGirl.build(:user))
+    allow_any_instance_of(SearchController).to receive(:user_from_session).and_return(FactoryBot.build(:user))
   end
 
   scenario 'To get list of facilities from search results' do

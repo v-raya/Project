@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :non_resident, class: 'Rfa::NonResident' do
     sequence(:legal_first) {Faker::Name.first_name}
     sequence(:legal_middle) {Faker::Name.first_name}

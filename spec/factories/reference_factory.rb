@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
 factory :reference, class: 'Reference' do
  sequence(:email_address) {Faker::Internet.email}

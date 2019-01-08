@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 factory :applicant, class: 'Rfa::Applicant' do
    #sequence(:language)  #TODO: what to put here
   #  sequence(:education_level)  #TODO: what to put here

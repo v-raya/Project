@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :application_residence, class: 'Rfa::ApplicationResidence'  do
     #sequence(:property_type) #TODO whats this
     #  sequence(:own_rent_lease)

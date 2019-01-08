@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
 factory :application, class: 'Rfa::Application' do
 #  sequence(:application_type) {} #TODO: what to put here

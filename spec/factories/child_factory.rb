@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :child, class: 'Child' do
     sequence(:name) { Faker::Lorem.sentence(1, true, 2) }
     sequence(:id) { Faker::Number.number(2) }

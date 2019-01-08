@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
   factory :alternative_name, class: 'AlternativeName' do
     sequence(:first_name) {Faker::Name.first_name}

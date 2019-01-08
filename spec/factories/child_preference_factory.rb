@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
 factory :child_preference, class: 'ChildPreference' do
 

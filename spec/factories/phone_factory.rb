@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
 factory :phone, class: 'Phone' do
 sequence(:number) {Faker::PhoneNumber.phone_number}

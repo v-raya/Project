@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 factory :signatory, class: 'Signatory' do
    sequence(:city) {Faker::Address.city}
    sequence(:county) {Faker::Address.city}

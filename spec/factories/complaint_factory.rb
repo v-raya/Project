@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :complaint, class: 'Complaint' do
     sequence(:id) { Faker::Number.number(9) }
     sequence(:code) { Faker::Number.number(2) }

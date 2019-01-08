@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
 factory :relationship, class: 'Relationship' do
 #  sequence(:relationship_type) #TODO: whats this

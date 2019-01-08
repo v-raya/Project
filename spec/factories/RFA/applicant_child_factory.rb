@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
 factory :applicant_child, class: 'Rfa::ApplicantChild' do
   #  sequence(:relationship_type) #TODO: what to put here

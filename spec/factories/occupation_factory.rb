@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :occupation, class: 'Occupation' do
     sequence(:employer_name) {Faker::Company.name}
     sequence(:job_title) {Faker::Company.bs}

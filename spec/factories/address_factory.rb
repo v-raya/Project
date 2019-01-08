@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
   factory :address, class: 'Address' do
     sequence(:street_address) {Faker::Address.street_address}

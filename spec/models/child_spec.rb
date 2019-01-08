@@ -5,7 +5,7 @@ include RSpec
 
 describe Child do
   it 'builds a default child model' do
-    child = FactoryGirl.build(:child, name: 'test')
+    child = FactoryBot.build(:child, name: 'test')
     expect(child.name).to eq('test')
   end
 end

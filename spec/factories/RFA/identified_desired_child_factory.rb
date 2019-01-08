@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :identified_desired_child, class: 'Rfa::IdentifiedDesiredChild' do
     sequence(:currently_in_home) {Faker::Boolean.boolean}
     sequence(:date_of_birth) {Faker::Date.birthday}
