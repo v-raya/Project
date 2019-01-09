@@ -1,8 +1,14 @@
-FROM ratneshraval/cals-base:0.6
+FROM ratneshraval/cals-test-base:0.2
 
-ENV APP_HOME /cals
-RUN mkdir $APP_HOME
-WORKDIR $APP_HOME
+RUN git clone https://github.com/ca-cwds/CALS.git cals
 
-ENV DISPLAY :1
-ENV BUNDLE_PATH /ruby_gems
+WORKDIR /cals
+
+RUN cd /cals \
+  && bundle install \
+  && yarn install --frozen-lockfile --production=false
+
+RUN yarn karma-ci 
+RUN yarn spec-ci 
+
+CMD sleep 1200
