@@ -104,9 +104,6 @@ node('cals-slave') {
                     checkForLabel('cals')
                 }
             }
-            stage('Compile Assets') {
-                // sh "docker exec -t ${container.id} bundle exec rails assets:precompile RAILS_ENV=test"
-            }
             stage('Test - Jasmine') {
                 sh "docker exec -t ${container.id} yarn karma-ci"
             }
