@@ -8,7 +8,4 @@ RUN cd /cals \
   && bundle install \
   && yarn install --frozen-lockfile --production=false
 
-RUN yarn karma-ci 
-RUN yarn spec-ci 
-
 CMD sleep 1200
