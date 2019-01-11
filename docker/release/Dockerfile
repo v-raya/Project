@@ -1,4 +1,4 @@
-FROM ratneshraval/cals-base:0.8
+FROM cwds/ruby:12
 
 COPY . /cals
 

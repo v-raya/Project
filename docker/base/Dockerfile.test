@@ -1,8 +1,8 @@
-# version 0.2
+# version 0.3
 
 # Google Chrome 69.0.3497.92
 
-FROM ratneshraval/cals-base:0.8
+FROM cwds/ruby:12
 
 RUN apt-get install -y \
     chrpath \
